@@ -1,5 +1,5 @@
 This is binutils.info, produced by makeinfo version 4.8 from
-/scratch/andrew/4.1-nios2-wrs-linux-gnu/obj/binutils-src-4.1-165-nios2-wrs-linux-gnu-i686-pc-linux-gnu/binutils/doc/binutils.texi.
+/scratch/andrew/4.1-nios2-wrs-linux-gnu/obj/binutils-src-4.1-175-nios2-wrs-linux-gnu-i686-pc-linux-gnu/binutils/doc/binutils.texi.
 
 START-INFO-DIR-ENTRY
 * Binutils: (binutils).         The GNU binary utilities.
@@ -38,7 +38,7 @@ Introduction
 ************
 
 This brief manual contains documentation for the GNU binary utilities
-(Wind River Linux Sourcery G++ 4.1-165) version 2.17.50:
+(Wind River Linux Sourcery G++ 4.1-175) version 2.17.50:
 
    This document is distributed under the terms of the GNU Free
 Documentation License.  A copy of the license is included in the

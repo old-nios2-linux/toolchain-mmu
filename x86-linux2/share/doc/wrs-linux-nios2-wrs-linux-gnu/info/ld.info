@@ -1,12 +1,12 @@
 This is ld.info, produced by makeinfo version 4.8 from
-/scratch/andrew/4.1-nios2-wrs-linux-gnu/obj/binutils-src-4.1-165-nios2-wrs-linux-gnu-i686-pc-linux-gnu/ld/ld.texinfo.
+/scratch/andrew/4.1-nios2-wrs-linux-gnu/obj/binutils-src-4.1-175-nios2-wrs-linux-gnu-i686-pc-linux-gnu/ld/ld.texinfo.
 
 START-INFO-DIR-ENTRY
 * Ld: (ld).                       The GNU linker.
 END-INFO-DIR-ENTRY
 
    This file documents the GNU linker LD (Wind River Linux Sourcery G++
-4.1-165) version 2.17.50.
+4.1-175) version 2.17.50.
 
    Copyright (C) 1991, 92, 93, 94, 95, 96, 97, 98, 99, 2000, 2001,
 2002, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
@@ -18,7 +18,7 @@ LD
 **
 
 This file documents the GNU linker ld (Wind River Linux Sourcery G++
-4.1-165) version 2.17.50.
+4.1-175) version 2.17.50.
 
    This document is distributed under the terms of the GNU Free
 Documentation License.  A copy of the license is included in the

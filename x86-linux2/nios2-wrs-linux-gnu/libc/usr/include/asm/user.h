@@ -60,20 +60,6 @@ struct user_m68kfp_struct {
 };
 
 /* This is needs more work, probably should look like gdb useage */
-#if 0
-struct user_regs_struct {
-	long r1,r2,r3,r4,r5,r6,r7,r8;
-	long r9,r10,r11,r12,r13,r14,r15;
-	long r16,r17,r18,r19,r20,r21,r22,r23;
-	long gp;
-	long sp;
-	long ra;
-	long fp;
-	long orig_r2;
-	long estatus;
-	long ea;
-};
-#else
 struct user_regs_struct {
 	unsigned long  r8;		/* r8-r15 Caller-saved GP registers */
 	unsigned long  r9;
@@ -97,7 +83,7 @@ struct user_regs_struct {
 	unsigned long  gp;		/* Global pointer */
 	unsigned long  estatus;
 	unsigned long  ea;		/* Exception return address (pc) */
-    unsigned long  orig_r7;
+	unsigned long  orig_r7;
 
 	unsigned long  r16;		/* r16-r23 Callee-saved GP registers */
 	unsigned long  r17;
@@ -111,8 +97,6 @@ struct user_regs_struct {
 	unsigned long  sw_gp;
 	unsigned long  sw_ra;
 };
-#endif
-
 
 	
 /* When the kernel dumps core, it starts by dumping the user struct -
