@@ -1,5 +1,5 @@
 This is gprof.info, produced by makeinfo version 4.8 from
-/scratch/andrew/4.1-nios2-wrs-linux-gnu/obj/binutils-src-4.1-175-nios2-wrs-linux-gnu-i686-pc-linux-gnu/gprof/gprof.texi.
+/scratch/andrew/4.1-nios2-wrs-linux-gnu/obj/binutils-src-4.1-176-nios2-wrs-linux-gnu-i686-pc-linux-gnu/gprof/gprof.texi.
 
 START-INFO-DIR-ENTRY
 * gprof: (gprof).                Profiling your program's execution
@@ -28,7 +28,7 @@ to determine which parts of a program are taking most of the execution
 time.  We assume that you know how to write, compile, and execute
 programs.  GNU `gprof' was written by Jay Fenlason.
 
-   This manual is for `gprof' (Wind River Linux Sourcery G++ 4.1-175)
+   This manual is for `gprof' (Wind River Linux Sourcery G++ 4.1-176)
 version 2.17.50.
 
    This document is distributed under the terms of the GNU Free
