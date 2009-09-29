@@ -3,7 +3,7 @@
 <title>Symbolic Links - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-System-Interface.html#File-System-Interface" title="File System Interface">
 <link rel="prev" href="Hard-Links.html#Hard-Links" title="Hard Links">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Symbolic-Links"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Deleting-Files.html#Deleting-Files">Deleting Files</a>,
+<a name="Symbolic-Links"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Deleting-Files.html#Deleting-Files">Deleting Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Hard-Links.html#Hard-Links">Hard Links</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-System-Interface.html#File-System-Interface">File System Interface</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">14.5 Symbolic Links</h3>
@@ -61,14 +59,14 @@ symbolic link, which one rarely wants.
 
    <p>Some systems have for some functions operating on files have a limit on
 how many symbolic links are followed when resolving a path name.  The
-limit if it exists is published in the <samp><span class="file">sys/param.h</span></samp> header file.
+limit if it exists is published in the <span class="file">sys/param.h</span> header file.
 
 <!-- sys/param.h -->
 <!-- BSD -->
 <div class="defun">
 &mdash; Macro: int <b>MAXSYMLINKS</b><var><a name="index-MAXSYMLINKS-1465"></a></var><br>
 <blockquote>
-        <p>The macro <code>MAXSYMLINKS</code> specifies how many symlinks some function
+<p>The macro <code>MAXSYMLINKS</code> specifies how many symlinks some function
 will follow before returning <code>ELOOP</code>.  Not all functions behave the
 same and this value is not the same a that returned for
 <code>_SC_SYMLOOP</code> by <code>sysconf</code>.  In fact, the <code>sysconf</code>
@@ -77,7 +75,7 @@ result can indicate that there is no fixed limit although
 </p></blockquote></div>
 
    <p>Prototypes for most of the functions listed in this section are in
-<samp><span class="file">unistd.h</span></samp>. 
+<span class="file">unistd.h</span>. 
 <a name="index-unistd_002eh-1466"></a>
 <!-- unistd.h -->
 <!-- BSD -->
@@ -139,9 +137,9 @@ call <code>readlink</code> again.  Here is an example:
                 size *= 2;
               }
           }
-</pre>
+     </pre>
         <!-- @group  Invalid outside example. -->
-        <p>A value of <code>-1</code> is returned in case of error.  In addition to the
+<p>A value of <code>-1</code> is returned in case of error.  In addition to the
 usual file name errors (see <a href="File-Name-Errors.html#File-Name-Errors">File Name Errors</a>), the following
 <code>errno</code> error conditions are defined for this function:
 
@@ -165,7 +163,7 @@ names can refer to the same inode.
 <div class="defun">
 &mdash; Function: char * <b>canonicalize_file_name</b> (<var>const char *name</var>)<var><a name="index-canonicalize_005ffile_005fname-1469"></a></var><br>
 <blockquote>
-        <p>The <code>canonicalize_file_name</code> function returns the absolute name of
+<p>The <code>canonicalize_file_name</code> function returns the absolute name of
 the file named by <var>name</var> which contains no <code>.</code>, <code>..</code>
 components nor any repeated path separators (<code>/</code>) or symlinks.  The
 result is passed back as the return value of the function in a block of
@@ -190,7 +188,7 @@ have a limit on the file name length.
           <br><dt><code>ELOOP</code><dd>More than <code>MAXSYMLINKS</code> many symlinks have been followed. 
 </dl>
 
-        <p>This function is a GNU extension and is declared in <samp><span class="file">stdlib.h</span></samp>. 
+        <p>This function is a GNU extension and is declared in <span class="file">stdlib.h</span>. 
 </p></blockquote></div>
 
    <p>The Unix standard includes a similar function which differs from
@@ -202,7 +200,7 @@ where the result is placed in.
 <div class="defun">
 &mdash; Function: char * <b>realpath</b> (<var>const char *restrict name, char *restrict resolved</var>)<var><a name="index-realpath-1470"></a></var><br>
 <blockquote>
-        <p>A call to <code>realpath</code> where the <var>resolved</var> parameter is
+<p>A call to <code>realpath</code> where the <var>resolved</var> parameter is
 <code>NULL</code> behaves exactly like <code>canonicalize_file_name</code>.  The
 function allocates a buffer for the file name and returns a pointer to
 it.  If <var>resolved</var> is not <code>NULL</code> it points to a buffer into
@@ -218,7 +216,7 @@ contain the part of the path component which does not exist or is not
 readable if the function returns <code>NULL</code> and <code>errno</code> is set to
 <code>EACCES</code> or <code>ENOENT</code>.
 
-        <p>This function is declared in <samp><span class="file">stdlib.h</span></samp>. 
+        <p>This function is declared in <span class="file">stdlib.h</span>. 
 </p></blockquote></div>
 
    <p>The advantage of using this function is that it is more widely

@@ -3,7 +3,7 @@
 <title>Signals - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stopping.html#Stopping" title="Stopping">
 <link rel="prev" href="Continuing-and-Stepping.html#Continuing-and-Stepping" title="Continuing and Stepping">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Signals"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Thread-Stops.html#Thread-Stops">Thread Stops</a>,
+<a name="Signals"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Thread-Stops.html#Thread-Stops">Thread Stops</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Continuing-and-Stepping.html#Continuing-and-Stepping">Continuing and Stepping</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stopping.html#Stopping">Stopping</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.3 Signals</h3>
@@ -74,14 +72,14 @@ the defined types of signals.
 
      <p><a name="index-handle-285"></a><br><dt><code>handle </code><var>signal</var> <span class="roman">[</span><var>keywords</var><code>...</code><span class="roman">]</span><dd>Change the way <span class="sc">gdb</span> handles signal <var>signal</var>.  <var>signal</var>
 can be the number of a signal or its name (with or without the
-&lsquo;<samp><span class="samp">SIG</span></samp>&rsquo; at the beginning); a list of signal numbers of the form
-&lsquo;<samp><var>low</var><span class="samp">-</span><var>high</var></samp>&rsquo;; or the word &lsquo;<samp><span class="samp">all</span></samp>&rsquo;, meaning all the
+<span class="samp">SIG</span> at the beginning); a list of signal numbers of the form
+<var>low</var><span class="samp">-</span><var>high</var>; or the word <span class="samp">all</span>, meaning all the
 known signals.  Optional arguments <var>keywords</var>, described below,
 say what change to make. 
 </dl>
 
 <!-- @group -->
-   <p>The keywords allowed by the <code>handle</code> command can be abbreviated. 
+<p>The keywords allowed by the <code>handle</code> command can be abbreviated. 
 Their full names are:
 
      <dl>
@@ -125,7 +123,7 @@ due to some sort of memory reference error, you might store correct
 values into the erroneous variables and continue, hoping to see more
 execution; but your program would probably terminate immediately as
 a result of the fatal signal once it saw the signal.  To prevent this,
-you can continue with &lsquo;<samp><span class="samp">signal 0</span></samp>&rsquo;.  See <a href="Signaling.html#Signaling">Giving your Program a Signal</a>.
+you can continue with <span class="samp">signal 0</span>.  See <a href="Signaling.html#Signaling">Giving your Program a Signal</a>.
 
    </body></html>
 

@@ -3,7 +3,7 @@
 <title>Argp - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Parsing-Program-Arguments.html#Parsing-Program-Arguments" title="Parsing Program Arguments">
 <link rel="prev" href="Getopt.html#Getopt" title="Getopt">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Argp"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Suboptions.html#Suboptions">Suboptions</a>,
+<a name="Argp"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Suboptions.html#Suboptions">Suboptions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Getopt.html#Getopt">Getopt</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Parsing-Program-Arguments.html#Parsing-Program-Arguments">Parsing Program Arguments</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">25.3 Parsing Program Options with Argp</h3>
@@ -40,7 +38,7 @@ See <a href="Program-Arguments.html#Program-Arguments">Program Arguments</a>.
 
    <p>Argp provides features unavailable in the more commonly used
 <code>getopt</code> interface.  These features include automatically producing
-output in response to the &lsquo;<samp><span class="samp">--help</span></samp>&rsquo; and &lsquo;<samp><span class="samp">--version</span></samp>&rsquo; options, as
+output in response to the <span class="samp">--help</span> and <span class="samp">--version</span> options, as
 described in the GNU coding standards.  Using argp makes it less likely
 that programmers will neglect to implement these additional options or
 keep them up to date.
@@ -53,7 +51,7 @@ resulting in less work for the user programs.  Some programs may use only
 argument parsers exported by libraries, thereby achieving consistent and
 efficient option-parsing for abstractions implemented by the libraries.
 
-   <p><a name="index-argp_002eh-3034"></a>The header file <samp><span class="file">&lt;argp.h&gt;</span></samp> should be included to use argp.
+   <p><a name="index-argp_002eh-3034"></a>The header file <span class="file">&lt;argp.h&gt;</span> should be included to use argp.
 
 <h4 class="subsection">25.3.1 The <code>argp_parse</code> Function</h4>
 
@@ -98,7 +96,7 @@ an unknown option or option argument is encountered.
 <li><a accesskey="4" href="Argp-Help.html#Argp-Help">Help</a>:               Printing help messages when not parsing. 
 <li><a accesskey="5" href="Argp-Examples.html#Argp-Examples">Examples</a>:       Simple examples of programs using argp. 
 <li><a accesskey="6" href="Argp-User-Customization.html#Argp-User-Customization">Customization</a>
-                                Users may control the &lsquo;<samp><span class="samp">--help</span></samp>&rsquo; output format. 
+                                Users may control the <span class="samp">--help</span> output format. 
 </ul>
 
    </body></html>

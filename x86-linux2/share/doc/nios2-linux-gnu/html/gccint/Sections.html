@@ -3,7 +3,7 @@
 <title>Sections - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Macros.html#Target-Macros" title="Target Macros">
 <link rel="prev" href="Scheduling.html#Scheduling" title="Scheduling">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Sections"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="PIC.html#PIC">PIC</a>,
+<a name="Sections"></a>Next:&nbsp;<a rel="next" accesskey="n" href="PIC.html#PIC">PIC</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Scheduling.html#Scheduling">Scheduling</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Macros.html#Target-Macros">Target Macros</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">14.17 Dividing the Output into Sections (Texts, Data, <small class="dots">...</small>)</h3>
@@ -120,7 +118,7 @@ containing the assembler operation to identify the following data as
 uninitialized global data.  If not defined, and neither
 <code>ASM_OUTPUT_BSS</code> nor <code>ASM_OUTPUT_ALIGNED_BSS</code> are defined,
 uninitialized global data will be output in the data section if
-<samp><span class="option">-fno-common</span></samp> is passed, otherwise <code>ASM_OUTPUT_COMMON</code> will be
+<span class="option">-fno-common</span> is passed, otherwise <code>ASM_OUTPUT_COMMON</code> will be
 used. 
 </p></blockquote></div>
 
@@ -162,7 +160,7 @@ both this macro and <code>FINI_SECTION_ASM_OP</code>.
 &mdash; Macro: <b>CRT_CALL_STATIC_FUNCTION</b> (<var>section_op, function</var>)<var><a name="index-CRT_005fCALL_005fSTATIC_005fFUNCTION-2230"></a></var><br>
 <blockquote><p>If defined, an ASM statement that switches to a different section
 via <var>section_op</var>, calls <var>function</var>, and switches back to
-the text section.  This is used in <samp><span class="file">crtstuff.c</span></samp> if
+the text section.  This is used in <span class="file">crtstuff.c</span> if
 <code>INIT_SECTION_ASM_OP</code> or <code>FINI_SECTION_ASM_OP</code> to calls
 to initialization and finalization functions from the init and fini
 sections.  By default, this macro uses a simple function call.  Some
@@ -192,7 +190,7 @@ on a system with no other sections (that GCC needs to use).
 
 <div class="defun">
 &mdash; Macro: <b>EXTRA_SECTION_FUNCTIONS</b><var><a name="index-EXTRA_005fSECTION_005fFUNCTIONS-2237"></a></var><br>
-<blockquote><p>One or more functions to be defined in <samp><span class="file">varasm.c</span></samp>.  These
+<blockquote><p>One or more functions to be defined in <span class="file">varasm.c</span>.  These
 functions should do jobs analogous to those of <code>text_section</code> and
 <code>data_section</code>, for your additional sections.  Do not define this
 macro if you do not define <code>EXTRA_SECTIONS</code>. 
@@ -238,7 +236,7 @@ it is unlikely to be called.
 <div class="defun">
 &mdash; Target Hook: void <b>TARGET_ASM_UNIQUE_SECTION</b> (<var>tree decl, int reloc</var>)<var><a name="index-TARGET_005fASM_005fUNIQUE_005fSECTION-2241"></a></var><br>
 <blockquote><p>Build up a unique section name, expressed as a <code>STRING_CST</code> node,
-and assign it to &lsquo;<samp><span class="samp">DECL_SECTION_NAME (</span><var>decl</var><span class="samp">)</span></samp>&rsquo;. 
+and assign it to <span class="samp">DECL_SECTION_NAME (</span><var>decl</var><span class="samp">)</span>. 
 As with <code>TARGET_ASM_SELECT_SECTION</code>, <var>reloc</var> indicates whether
 the initial value of <var>exp</var> requires link-time relocations.
 
@@ -251,7 +249,7 @@ Whatever the actual target object format, this is often good enough.
 <div class="defun">
 &mdash; Target Hook: void <b>TARGET_ASM_FUNCTION_RODATA_SECTION</b> (<var>tree decl</var>)<var><a name="index-TARGET_005fASM_005fFUNCTION_005fRODATA_005fSECTION-2242"></a></var><br>
 <blockquote><p>Switches to a readonly data section associated with
-&lsquo;<samp><span class="samp">DECL_SECTION_NAME (</span><var>decl</var><span class="samp">)</span></samp>&rsquo;. 
+<span class="samp">DECL_SECTION_NAME (</span><var>decl</var><span class="samp">)</span>. 
 The default version of this function switches to <code>.gnu.linkonce.r.name</code>
 section if function's section is <code>.gnu.linkonce.t.name</code>, to
 <code>.rodata.name</code> if function is in <code>.text.name</code> section
@@ -298,14 +296,14 @@ declarations.  Whether or not anything must be done for the duplicate
 declaration depends on whether the hook examines <code>DECL_ATTRIBUTES</code>. 
 <var>new_decl_p</var> is always true when the hook is called for a constant.
 
-      <p><a name="index-g_t_0040code_007bSYMBOL_005fREF_005fFLAG_007d_002c-in-_0040code_007bTARGET_005fENCODE_005fSECTION_005fINFO_007d-2245"></a>The usual thing for this hook to do is to record flags in the
+      <p><a name="index-_0040code_007bSYMBOL_005fREF_005fFLAG_007d_002c-in-_0040code_007bTARGET_005fENCODE_005fSECTION_005fINFO_007d-2245"></a>The usual thing for this hook to do is to record flags in the
 <code>symbol_ref</code>, using <code>SYMBOL_REF_FLAG</code> or <code>SYMBOL_REF_FLAGS</code>. 
 Historically, the name string was modified if it was necessary to
 encode more than one bit of information, but this practice is now
 discouraged; use <code>SYMBOL_REF_FLAGS</code>.
 
       <p>The default definition of this hook, <code>default_encode_section_info</code>
-in <samp><span class="file">varasm.c</span></samp>, sets a number of commonly-useful bits in
+in <span class="file">varasm.c</span>, sets a number of commonly-useful bits in
 <code>SYMBOL_REF_FLAGS</code>.  Check whether the default does what you need
 before overriding it. 
 </p></blockquote></div>
@@ -350,7 +348,7 @@ The default value is false.
 &mdash; Variable: Target Hook <b>TARGET_USE_COMDAT_GROUPS</b><var><a name="index-TARGET_005fUSE_005fCOMDAT_005fGROUPS-2251"></a></var><br>
 <blockquote><p>This hook only applies to ELF targets, and is true if we should use
 COMDAT groups instead of linkonce sections.  The default is set from
-the <code>HAVE_COMDAT_GROUP</code> <samp><span class="file">config.in</span></samp> macro. 
+the <code>HAVE_COMDAT_GROUP</code> <span class="file">config.in</span> macro. 
 </p></blockquote></div>
 
  </body></html>

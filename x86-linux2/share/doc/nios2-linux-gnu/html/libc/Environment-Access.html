@@ -3,7 +3,7 @@
 <title>Environment Access - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Environment-Variables.html#Environment-Variables" title="Environment Variables">
 <link rel="next" href="Standard-Environment.html#Standard-Environment" title="Standard Environment">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Environment-Access"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Standard-Environment.html#Standard-Environment">Standard Environment</a>,
+<a name="Environment-Access"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Standard-Environment.html#Standard-Environment">Standard Environment</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Environment-Variables.html#Environment-Variables">Environment Variables</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">25.4.1 Environment Access</h4>
@@ -35,7 +33,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Environment-Variables.html#Environment-
 <p><a name="index-environment-access-3099"></a><a name="index-environment-representation-3100"></a>
 The value of an environment variable can be accessed with the
 <code>getenv</code> function.  This is declared in the header file
-<samp><span class="file">stdlib.h</span></samp>.  All of the following functions can be safely used in
+<span class="file">stdlib.h</span>.  All of the following functions can be safely used in
 multi-threaded programs.  It is made sure that concurrent modifications
 to the environment do not lead to errors. 
 <a name="index-stdlib_002eh-3101"></a>
@@ -57,7 +55,7 @@ pointer.
 <div class="defun">
 &mdash; Function: int <b>putenv</b> (<var>char *string</var>)<var><a name="index-putenv-3103"></a></var><br>
 <blockquote><p>The <code>putenv</code> function adds or removes definitions from the environment. 
-If the <var>string</var> is of the form &lsquo;<samp><var>name</var><span class="samp">=</span><var>value</var></samp>&rsquo;, the
+If the <var>string</var> is of the form <var>name</var><span class="samp">=</span><var>value</var>, the
 definition is added to the environment.  Otherwise, the <var>string</var> is
 interpreted as the name of an environment variable, and any definition
 for this variable in the environment is removed.
@@ -81,7 +79,7 @@ available in old SVID libraries you should define either
 &mdash; Function: int <b>setenv</b> (<var>const char *name, const char *value, int replace</var>)<var><a name="index-setenv-3104"></a></var><br>
 <blockquote><p>The <code>setenv</code> function can be used to add a new definition to the
 environment.  The entry with the name <var>name</var> is replaced by the
-value &lsquo;<samp><var>name</var><span class="samp">=</span><var>value</var></samp>&rsquo;.  Please note that this is also true
+value <var>name</var><span class="samp">=</span><var>value</var>.  Please note that this is also true
 if <var>value</var> is the empty string.  To do this a new string is created
 and the strings <var>name</var> and <var>value</var> are copied.  A null pointer
 for the <var>value</var> parameter is illegal.  If the environment already
@@ -141,12 +139,12 @@ see <a href="Executing-a-File.html#Executing-a-File">Executing a File</a>).
 <div class="defun">
 &mdash; Variable: char ** <b>environ</b><var><a name="index-environ-3107"></a></var><br>
 <blockquote><p>The environment is represented as an array of strings.  Each string is
-of the format &lsquo;<samp><var>name</var><span class="samp">=</span><var>value</var></samp>&rsquo;.  The order in which
+of the format <var>name</var><span class="samp">=</span><var>value</var>.  The order in which
 strings appear in the environment is not significant, but the same
 <var>name</var> must not appear more than once.  The last element of the
 array is a null pointer.
 
-        <p>This variable is declared in the header file <samp><span class="file">unistd.h</span></samp>.
+        <p>This variable is declared in the header file <span class="file">unistd.h</span>.
 
         <p>If you just want to get the value of an environment variable, use
 <code>getenv</code>. 

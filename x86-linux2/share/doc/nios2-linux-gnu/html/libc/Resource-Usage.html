@@ -3,7 +3,7 @@
 <title>Resource Usage - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Resource-Usage-And-Limitation.html#Resource-Usage-And-Limitation" title="Resource Usage And Limitation">
 <link rel="next" href="Limits-on-Resources.html#Limits-on-Resources" title="Limits on Resources">
@@ -16,25 +16,23 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Resource-Usage"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Limits-on-Resources.html#Limits-on-Resources">Limits on Resources</a>,
+<a name="Resource-Usage"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Limits-on-Resources.html#Limits-on-Resources">Limits on Resources</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Resource-Usage-And-Limitation.html#Resource-Usage-And-Limitation">Resource Usage And Limitation</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">22.1 Resource Usage</h3>
 
 <p><a name="index-sys_002fresource_002eh-2698"></a>The function <code>getrusage</code> and the data type <code>struct rusage</code>
 are used to examine the resource usage of a process.  They are declared
-in <samp><span class="file">sys/resource.h</span></samp>.
+in <span class="file">sys/resource.h</span>.
 
 <!-- sys/resource.h -->
 <!-- BSD -->
@@ -51,8 +49,8 @@ in <samp><span class="file">sys/resource.h</span></samp>.
 <dt><code>RUSAGE_SELF</code><dd>Just the current process.
 
           <!-- sys/resource.h -->
-          <!-- BSD -->
-          <br><dt><code>RUSAGE_CHILDREN</code><dd>All child processes (direct and indirect) that have already terminated. 
+<!-- BSD -->
+<br><dt><code>RUSAGE_CHILDREN</code><dd>All child processes (direct and indirect) that have already terminated. 
 </dl>
 
         <p>In the GNU system, you can also inquire about a particular child process
@@ -127,13 +125,13 @@ scheduled).
 <code>getrusage</code> does.  <code>getrusage</code> is a better choice.
 
    <p><code>vtimes</code> and its <code>vtimes</code> data structure are declared in
-<samp><span class="file">sys/vtimes.h</span></samp>. 
+<span class="file">sys/vtimes.h</span>. 
 <a name="index-sys_002fvtimes_002eh-2701"></a><!-- vtimes.h -->
 
 <div class="defun">
 &mdash; Function: int <b>vtimes</b> (<var>struct vtimes current, struct vtimes child</var>)<var><a name="index-vtimes-2702"></a></var><br>
 <blockquote>
-        <p><code>vtimes</code> reports resource usage totals for a process.
+<p><code>vtimes</code> reports resource usage totals for a process.
 
         <p>If <var>current</var> is non-null, <code>vtimes</code> stores resource usage totals for
 the invoking process alone in the structure to which it points.  If
@@ -143,7 +141,7 @@ to which it points.
 
      <div class="defun">
 &mdash; Data Type: <b>struct vtimes</b><var><a name="index-struct-vtimes-2703"></a></var><br>
-<blockquote> <p>This data type contains information about the resource usage of a process. 
+<blockquote><p>This data type contains information about the resource usage of a process. 
 Each member corresponds to a member of the <code>struct rusage</code> data type
 described above.
 
@@ -168,7 +166,7 @@ described above.
         </blockquote></div>
    An additional historical function for examining resource usage,
 <code>vtimes</code>, is supported but not documented here.  It is declared in
-<samp><span class="file">sys/vtimes.h</span></samp>.
+<span class="file">sys/vtimes.h</span>.
 
    </body></html>
 

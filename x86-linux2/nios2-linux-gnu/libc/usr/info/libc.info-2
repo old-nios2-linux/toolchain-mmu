@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.13 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -1938,7 +1938,7 @@ headers file `string.h') and `wcscoll' and `wcsxfrm' (declared in the
 headers file `wchar') to compare strings using a collation ordering
 appropriate for the current locale.  The locale used by these functions
 in particular can be specified by setting the locale for the
-`LC_COLLATE' category; see *note Locales::.  
+`LC_COLLATE' category; see *Note Locales::.  
 
    In the standard C locale, the collation sequence for `strcoll' is
 the same as that for `strcmp'.  Similarly, `wcscoll' and `wcscmp' are
@@ -2003,7 +2003,7 @@ efficiently using `strxfrm'.)
      character) are stored.
 
      The behavior is undefined if the strings TO and FROM overlap; see
-     *note Copying and Concatenation::.
+     *Note Copying and Concatenation::.
 
      The return value is the length of the entire transformed string.
      This value is not affected by the value of SIZE, but if it is
@@ -2031,7 +2031,7 @@ efficiently using `strxfrm'.)
      terminating null character) are stored.
 
      The behavior is undefined if the strings WTO and WFROM overlap;
-     see *note Copying and Concatenation::.
+     see *Note Copying and Concatenation::.
 
      The return value is the length of the entire transformed wide
      character string.  This value is not affected by the value of
@@ -3416,7 +3416,7 @@ of peculiarities:
    * The character set assumed for the multibyte encoding is not
      specified as an argument to the functions.  Instead the character
      set specified by the `LC_CTYPE' category of the current locale is
-     used; see *note Locale Categories::.
+     used; see *Note Locale Categories::.
 
    * The functions handling more than one character at a time require
      NUL terminated strings as the argument (i.e., converting blocks of
@@ -3680,8 +3680,8 @@ and they also do not require it to be in the initial state.
      object is afterwards in the initial state.  If the next N or fewer
      bytes form a correct multibyte character, the return value is the
      number of bytes starting from S that form the multibyte character.
-     The conversion state is updated according to the bytes consumed in
-     the conversion.  In both cases the wide character (either the
+     The conversion state is updated according to the bytes consumed
+     in the conversion.  In both cases the wide character (either the
      `L'\0'' or the one found in the conversion) is stored in the
      string pointed to by PWC if PWC is not null.
 
@@ -4377,7 +4377,7 @@ File: libc.info,  Node: Non-reentrant String Conversion,  Next: Shift State,  Pr
 For convenience the ISO C90 standard also defines functions to convert
 entire strings instead of single characters.  These functions suffer
 from the same problems as their reentrant counterparts from Amendment 1
-to ISO C90; see *note Converting Strings::.
+to ISO C90; see *Note Converting Strings::.
 
  -- Function: size_t mbstowcs (wchar_t *WSTRING, const char *STRING,
           size_t SIZE)
@@ -5229,8 +5229,8 @@ really two type definitions like this in `gconv.h'.
     `int __counter'
           All these elements of the structure are used internally in
           the C library to coordinate loading and unloading the shared.
-          One must not expect any of the other elements to be available
-          or initialized.
+          One must not expect any of the other elements to be
+          available or initialized.
 
     `const char *__from_name'
     `const char *__to_name'
@@ -5253,8 +5253,8 @@ really two type definitions like this in `gconv.h'.
           These values have to be supplied in the init function of the
           module.  The `__min_needed_from' value specifies how many
           bytes a character of the source character set at least needs.
-          The `__max_needed_from' specifies the maximum value that also
-          includes possible shift sequences.
+          The `__max_needed_from' specifies the maximum value that
+          also includes possible shift sequences.
 
           The `__min_needed_to' and `__max_needed_to' values serve the
           same purpose as `__min_needed_from' and `__max_needed_from'
@@ -5615,12 +5615,12 @@ the conversion function.
      to which the first parameter points.
 
      The more interesting mode is when actual text has to be converted.
-     The first step in this case is to convert as much text as possible
-     from the input buffer and store the result in the output buffer.
-     The start of the input buffer is determined by the third argument,
-     which is a pointer to a pointer variable referencing the beginning
-     of the buffer.  The fourth argument is a pointer to the byte right
-     after the last byte in the buffer.
+     The first step in this case is to convert as much text as
+     possible from the input buffer and store the result in the output
+     buffer.  The start of the input buffer is determined by the third
+     argument, which is a pointer to a pointer variable referencing the
+     beginning of the buffer.  The fourth argument is a pointer to the
+     byte right after the last byte in the buffer.
 
      The conversion has to be performed according to the current state
      if the character set is stateful.  The state is stored in an
@@ -5971,24 +5971,24 @@ use as an argument to `setlocale'.
 
 `LC_COLLATE'
      This category applies to collation of strings (functions `strcoll'
-     and `strxfrm'); see *note Collation Functions::.
+     and `strxfrm'); see *Note Collation Functions::.
 
 `LC_CTYPE'
      This category applies to classification and conversion of
-     characters, and to multibyte and wide characters; see *note
-     Character Handling::, and *note Character Set Handling::.
+     characters, and to multibyte and wide characters; see *Note
+     Character Handling::, and *Note Character Set Handling::.
 
 `LC_MONETARY'
-     This category applies to formatting monetary values; see *note
+     This category applies to formatting monetary values; see *Note
      General Numeric::.
 
 `LC_NUMERIC'
      This category applies to formatting numeric values that are not
-     monetary; see *note General Numeric::.
+     monetary; see *Note General Numeric::.
 
 `LC_TIME'
      This category applies to formatting date and time values; see
-     *note Formatting Calendar Time::.
+     *Note Formatting Calendar Time::.
 
 `LC_MESSAGES'
      This category applies to selecting the language used in the user
@@ -6015,7 +6015,7 @@ whose messages are output in English by default.  It should be possible
 to specify that the first choice of language is Swedish, the second
 German, and if this also fails to use English.  This is possible with
 the variable `LANGUAGE'.  For further description of this GNU extension
-see *note Using gettextized software::.
+see *Note Using gettextized software::.
 
 
 File: libc.info,  Node: Setting the Locale,  Next: Standard Locales,  Prev: Locale Categories,  Up: Locales
@@ -7361,7 +7361,7 @@ is as follows:
           a number assigned.  This value is one added to the largest
           set number which so far appeared.
 
-          How to use the symbolic names is explained in section *note
+          How to use the symbolic names is explained in section *Note
           Common Usage::.
 
           It is an error if a symbol name appears more than once.  All

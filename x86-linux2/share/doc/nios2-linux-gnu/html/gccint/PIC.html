@@ -3,7 +3,7 @@
 <title>PIC - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Macros.html#Target-Macros" title="Target Macros">
 <link rel="prev" href="Sections.html#Sections" title="Sections">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="PIC"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Assembler-Format.html#Assembler-Format">Assembler Format</a>,
+<a name="PIC"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Assembler-Format.html#Assembler-Format">Assembler Format</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Sections.html#Sections">Sections</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Macros.html#Target-Macros">Target Macros</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">14.18 Position Independent Code</h3>
@@ -61,7 +59,7 @@ independent code.  Simply defining these macros is not enough to
 generate valid PIC; you must also add support to the macros
 <code>GO_IF_LEGITIMATE_ADDRESS</code> and <code>PRINT_OPERAND_ADDRESS</code>, as
 well as <code>LEGITIMIZE_ADDRESS</code>.  You must modify the definition of
-&lsquo;<samp><span class="samp">movsi</span></samp>&rsquo; to do something appropriate when the source operand
+<span class="samp">movsi</span> to do something appropriate when the source operand
 contains a symbolic address.  You may also need to alter the handling of
 switch statements so that they use relative addresses. 
 <!-- i rearranged the order of the macros above to try to force one of -->

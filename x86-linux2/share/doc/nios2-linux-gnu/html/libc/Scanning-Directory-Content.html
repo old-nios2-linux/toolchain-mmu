@@ -3,7 +3,7 @@
 <title>Scanning Directory Content - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Accessing-Directories.html#Accessing-Directories" title="Accessing Directories">
 <link rel="prev" href="Random-Access-Directory.html#Random-Access-Directory" title="Random Access Directory">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Scanning-Directory-Content"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Simple-Directory-Lister-Mark-II.html#Simple-Directory-Lister-Mark-II">Simple Directory Lister Mark II</a>,
+<a name="Scanning-Directory-Content"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Simple-Directory-Lister-Mark-II.html#Simple-Directory-Lister-Mark-II">Simple Directory Lister Mark II</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Random-Access-Directory.html#Random-Access-Directory">Random Access Directory</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Accessing-Directories.html#Accessing-Directories">Accessing Directories</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.2.6 Scanning the Content of a Directory</h4>
@@ -44,7 +42,7 @@ the result.
 <div class="defun">
 &mdash; Function: int <b>scandir</b> (<var>const char *dir, struct dirent ***namelist, int </var>(<var>*selector</var>) (<var>const struct dirent *</var>)<var>, int </var>(<var>*cmp</var>) (<var>const void *, const void *</var>))<var><a name="index-scandir-1425"></a></var><br>
 <blockquote>
-        <p>The <code>scandir</code> function scans the contents of the directory selected
+<p>The <code>scandir</code> function scans the contents of the directory selected
 by <var>dir</var>.  The result in *<var>namelist</var> is an array of pointers to
 structure of type <code>struct dirent</code> which describe all selected
 directory entries and which is allocated using <code>malloc</code>.  Instead

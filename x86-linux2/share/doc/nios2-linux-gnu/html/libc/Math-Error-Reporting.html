@@ -3,7 +3,7 @@
 <title>Math Error Reporting - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Floating-Point-Errors.html#Floating-Point-Errors" title="Floating Point Errors">
 <link rel="prev" href="Status-bit-operations.html#Status-bit-operations" title="Status bit operations">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Math-Error-Reporting"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Status-bit-operations.html#Status-bit-operations">Status bit operations</a>,
+<a name="Math-Error-Reporting"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Status-bit-operations.html#Status-bit-operations">Status bit operations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Floating-Point-Errors.html#Floating-Point-Errors">Floating Point Errors</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">20.5.4 Error Reporting by Mathematical Functions</h4>
@@ -60,7 +58,7 @@ signal a domain error.
 
    <p>Some older hardware does not support infinities.  On that hardware,
 overflows instead return a particular very large number (usually the
-largest representable number).  <samp><span class="file">math.h</span></samp> defines macros you can use
+largest representable number).  <span class="file">math.h</span> defines macros you can use
 to test for overflow on both old and new hardware.
 
 <!-- math.h -->
@@ -68,11 +66,11 @@ to test for overflow on both old and new hardware.
 <div class="defun">
 &mdash; Macro: double <b>HUGE_VAL</b><var><a name="index-HUGE_005fVAL-2385"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Macro: float <b>HUGE_VALF</b><var><a name="index-HUGE_005fVALF-2386"></a></var><br>
+<!-- ISO -->
+&mdash; Macro: float <b>HUGE_VALF</b><var><a name="index-HUGE_005fVALF-2386"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Macro: long double <b>HUGE_VALL</b><var><a name="index-HUGE_005fVALL-2387"></a></var><br>
+<!-- ISO -->
+&mdash; Macro: long double <b>HUGE_VALL</b><var><a name="index-HUGE_005fVALL-2387"></a></var><br>
 <blockquote><p>An expression representing a particular very large number.  On machines
 that use IEEE&nbsp;754<!-- /@w --> floating point format, <code>HUGE_VAL</code> is infinity. 
 On other machines, it's typically the largest positive number that can

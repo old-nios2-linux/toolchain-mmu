@@ -3,7 +3,7 @@
 <title>Copying and Concatenation - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="String-and-Array-Utilities.html#String-and-Array-Utilities" title="String and Array Utilities">
 <link rel="prev" href="String-Length.html#String-Length" title="String Length">
@@ -17,28 +17,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Copying-and-Concatenation"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="String_002fArray-Comparison.html#String_002fArray-Comparison">String/Array Comparison</a>,
+<a name="Copying-and-Concatenation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="String_002fArray-Comparison.html#String_002fArray-Comparison">String/Array Comparison</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="String-Length.html#String-Length">String Length</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-and-Array-Utilities">String and Array Utilities</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.4 Copying and Concatenation</h3>
 
 <p>You can use the functions described in this section to copy the contents
 of strings and arrays, or to append the contents of one string to
-another.  The &lsquo;<samp><span class="samp">str</span></samp>&rsquo; and &lsquo;<samp><span class="samp">mem</span></samp>&rsquo; functions are declared in the
-header file <samp><span class="file">string.h</span></samp> while the &lsquo;<samp><span class="samp">wstr</span></samp>&rsquo; and &lsquo;<samp><span class="samp">wmem</span></samp>&rsquo;
-functions are declared in the file <samp><span class="file">wchar.h</span></samp>. 
+another.  The <span class="samp">str</span> and <span class="samp">mem</span> functions are declared in the
+header file <span class="file">string.h</span> while the <span class="samp">wstr</span> and <span class="samp">wmem</span>
+functions are declared in the file <span class="file">wchar.h</span>. 
 <a name="index-string_002eh-477"></a><a name="index-wchar_002eh-478"></a><a name="index-copying-strings-and-arrays-479"></a><a name="index-string-copy-functions-480"></a><a name="index-array-copy-functions-481"></a><a name="index-concatenating-strings-482"></a><a name="index-string-concatenation-functions-483"></a>
 A helpful way to remember the ordering of the arguments to the functions
 in this section is that it corresponds to an assignment expression, with
@@ -76,7 +74,7 @@ contents of an array:
           int arraysize;
           ...
           memcpy (new, old, arraysize * sizeof (struct foo));
-</pre>
+     </pre>
         </blockquote></div>
 
 <!-- wchar.h -->
@@ -97,7 +95,7 @@ are more optimizations possible.
           {
             return (wchar_t *) memcpy (wto, wfrom, size * sizeof (wchar_t));
           }
-</pre>
+     </pre>
         <p>The value returned by <code>wmemcpy</code> is the value of <var>wto</var>.
 
         <p>This function was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w -->. 
@@ -125,7 +123,7 @@ copied to consecutive memory positions.
               mempcpy (mempcpy (result, o1, s1), o2, s2);
             return result;
           }
-</pre>
+     </pre>
         <p>This function is a GNU extension. 
 </p></blockquote></div>
 
@@ -152,7 +150,7 @@ are more optimizations possible.
           {
             return (wchar_t *) mempcpy (wto, wfrom, size * sizeof (wchar_t));
           }
-</pre>
+     </pre>
         <p>This function is a GNU extension. 
 </p></blockquote></div>
 
@@ -189,7 +187,7 @@ are more optimizations possible.
           {
             return (wchar_t *) mempcpy (wto, wfrom, size * sizeof (wchar_t));
           }
-</pre>
+     </pre>
         <p>The value returned by <code>wmemmove</code> is the value of <var>wto</var>.
 
         <p>This function is a GNU extension. 
@@ -348,8 +346,8 @@ terminates the destination string.
 the end of the string <var>to</var> (that is, the address of the terminating
 null character <code>to + strlen (from)</code>) rather than the beginning.
 
-        <p>For example, this program uses <code>stpcpy</code> to concatenate &lsquo;<samp><span class="samp">foo</span></samp>&rsquo;
-and &lsquo;<samp><span class="samp">bar</span></samp>&rsquo; to produce &lsquo;<samp><span class="samp">foobar</span></samp>&rsquo;, which it then prints.
+        <p>For example, this program uses <code>stpcpy</code> to concatenate <span class="samp">foo</span>
+and <span class="samp">bar</span> to produce <span class="samp">foobar</span>, which it then prints.
 
      <pre class="smallexample">          #include &lt;string.h&gt;
           #include &lt;stdio.h&gt;
@@ -364,13 +362,13 @@ and &lsquo;<samp><span class="samp">bar</span></samp>&rsquo; to produce &lsquo;<
             puts (buffer);
             return 0;
           }
-</pre>
+     </pre>
         <p>This function is not part of the ISO or POSIX standards, and is not
 customary on Unix systems, but we did not invent it either.  Perhaps it
 comes from MS-DOG.
 
         <p>Its behavior is undefined if the strings overlap.  The function is
-declared in <samp><span class="file">string.h</span></samp>. 
+declared in <span class="file">string.h</span>. 
 </p></blockquote></div>
 
 <!-- wchar.h -->
@@ -386,7 +384,7 @@ developing the GNU C Library itself.
 
         <p>The behavior of <code>wcpcpy</code> is undefined if the strings overlap.
 
-        <p><code>wcpcpy</code> is a GNU extension and is declared in <samp><span class="file">wchar.h</span></samp>. 
+        <p><code>wcpcpy</code> is a GNU extension and is declared in <span class="file">wchar.h</span>. 
 </p></blockquote></div>
 
 <!-- string.h -->
@@ -412,7 +410,7 @@ is implemented to be useful in contexts where this behavior of the
 developing the GNU C Library itself.
 
         <p>Its behavior is undefined if the strings overlap.  The function is
-declared in <samp><span class="file">string.h</span></samp>. 
+declared in <span class="file">string.h</span>. 
 </p></blockquote></div>
 
 <!-- wchar.h -->
@@ -440,7 +438,7 @@ developing the GNU C Library itself.
 
         <p>Its behavior is undefined if the strings overlap.
 
-        <p><code>wcpncpy</code> is a GNU extension and is declared in <samp><span class="file">wchar.h</span></samp>. 
+        <p><code>wcpncpy</code> is a GNU extension and is declared in <span class="file">wchar.h</span>. 
 </p></blockquote></div>
 
 <!-- string.h -->
@@ -475,7 +473,7 @@ using <code>malloc</code> would be a lot more expensive.
               }
             return 0;
           }
-</pre>
+     </pre>
         <p>Please note that calling <code>strtok</code> using <var>path</var> directly is
 invalid.  It is also not allowed to call <code>strdupa</code> in the argument
 list of <code>strtok</code> since <code>strdupa</code> uses <code>alloca</code>
@@ -518,7 +516,7 @@ characters from <var>from</var> are concatenated or appended to the end of
             strcpy (to + strlen (to), from);
             return to;
           }
-</pre>
+     </pre>
         <p>This function has undefined results if the strings overlap. 
 </p></blockquote></div>
 
@@ -539,7 +537,7 @@ characters from <var>wfrom</var> are concatenated or appended to the end of
             wcscpy (wto + wcslen (wto), wfrom);
             return wto;
           }
-</pre>
+     </pre>
         <p>This function has undefined results if the strings overlap. 
 </p></blockquote></div>
 
@@ -554,7 +552,7 @@ to use <code>strcat</code>/<code>wcscat</code>.  A lot of time is wasted finding
 end of the destination string so that the actual copying can start. 
 This is a common example:
 
-   <p><a name="index-g_t_005f_005fva_005fcopy-508"></a><a name="index-va_005fcopy-509"></a>
+   <p><a name="index-_005f_005fva_005fcopy-508"></a><a name="index-va_005fcopy-509"></a>
 <pre class="smallexample">     /* <span class="roman">This function concatenates arbitrarily many strings.  The last</span>
         <span class="roman">parameter must be </span><code>NULL</code><span class="roman">.</span>  */
      char *
@@ -685,7 +683,7 @@ longer than its initial length.
             strncpy (to + strlen (to), from, size);
             return to;
           }
-</pre>
+     </pre>
         <p>The behavior of <code>strncat</code> is undefined if the strings overlap. 
 </p></blockquote></div>
 
@@ -709,7 +707,7 @@ longer than its initial length.
             wcsncpy (wto + wcslen (wto), wfrom, size);
             return wto;
           }
-</pre>
+     </pre>
         <p>The behavior of <code>wcsncat</code> is undefined if the strings overlap. 
 </p></blockquote></div>
 

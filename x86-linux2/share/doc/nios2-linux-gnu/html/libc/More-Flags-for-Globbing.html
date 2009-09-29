@@ -3,7 +3,7 @@
 <title>More Flags for Globbing - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Globbing.html#Globbing" title="Globbing">
 <link rel="prev" href="Flags-for-Globbing.html#Flags-for-Globbing" title="Flags for Globbing">
@@ -16,25 +16,23 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="More-Flags-for-Globbing"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Flags-for-Globbing.html#Flags-for-Globbing">Flags for Globbing</a>,
+<a name="More-Flags-for-Globbing"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Flags-for-Globbing.html#Flags-for-Globbing">Flags for Globbing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Globbing.html#Globbing">Globbing</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">10.2.3 More Flags for Globbing</h4>
 
 <p>Beside the flags described in the last section, the GNU implementation of
 <code>glob</code> allows a few more flags which are also defined in the
-<samp><span class="file">glob.h</span></samp> file.  Some of the extensions implement functionality
+<span class="file">glob.h</span> file.  Some of the extensions implement functionality
 which is available in modern shell implementations.
 
      <dl>
@@ -44,15 +42,15 @@ which is available in modern shell implementations.
 matched by wildcards.  See <a href="Wildcard-Matching.html#Wildcard-Matching">Wildcard Matching</a>, <code>FNM_PERIOD</code>.
 
      <!-- glob.h -->
-     <!-- GNU -->
-     <br><dt><code>GLOB_MAGCHAR</code><a name="index-GLOB_005fMAGCHAR-867"></a><dd>The <code>GLOB_MAGCHAR</code> value is not to be given to <code>glob</code> in the
+<!-- GNU -->
+<br><dt><code>GLOB_MAGCHAR</code><a name="index-GLOB_005fMAGCHAR-867"></a><dd>The <code>GLOB_MAGCHAR</code> value is not to be given to <code>glob</code> in the
 <var>flags</var> parameter.  Instead, <code>glob</code> sets this bit in the
 <var>gl_flags</var> element of the <var>glob_t</var> structure provided as the
 result if the pattern used for matching contains any wildcard character.
 
      <!-- glob.h -->
-     <!-- GNU -->
-     <br><dt><code>GLOB_ALTDIRFUNC</code><a name="index-GLOB_005fALTDIRFUNC-868"></a><dd>Instead of the using the using the normal functions for accessing the
+<!-- GNU -->
+<br><dt><code>GLOB_ALTDIRFUNC</code><a name="index-GLOB_005fALTDIRFUNC-868"></a><dd>Instead of the using the using the normal functions for accessing the
 filesystem the <code>glob</code> implementation uses the user-supplied
 functions specified in the structure pointed to by <var>pglob</var>
 parameter.  For more information about the functions refer to the
@@ -60,8 +58,8 @@ sections about directory handling see <a href="Accessing-Directories.html#Access
 <a href="Reading-Attributes.html#Reading-Attributes">Reading Attributes</a>.
 
      <!-- glob.h -->
-     <!-- GNU -->
-     <br><dt><code>GLOB_BRACE</code><a name="index-GLOB_005fBRACE-869"></a><dd>If this flag is given the handling of braces in the pattern is changed. 
+<!-- GNU -->
+<br><dt><code>GLOB_BRACE</code><a name="index-GLOB_005fBRACE-869"></a><dd>If this flag is given the handling of braces in the pattern is changed. 
 It is now required that braces appear correctly grouped.  I.e., for each
 opening brace there must be a closing one.  Braces can be used
 recursively.  So it is possible to define one brace expression in
@@ -78,24 +76,24 @@ They are used during expansion of the brace expression of the deeper
 level.  The example below shows this
 
      <pre class="smallexample">          glob ("{foo/{,bar,biz},baz}", GLOB_BRACE, NULL, &amp;result)
-</pre>
+     </pre>
      <p class="noindent">is equivalent to the sequence
 
      <pre class="smallexample">          glob ("foo/", GLOB_BRACE, NULL, &amp;result)
           glob ("foo/bar", GLOB_BRACE|GLOB_APPEND, NULL, &amp;result)
           glob ("foo/biz", GLOB_BRACE|GLOB_APPEND, NULL, &amp;result)
           glob ("baz", GLOB_BRACE|GLOB_APPEND, NULL, &amp;result)
-</pre>
+     </pre>
      <p class="noindent">if we leave aside error handling.
 
      <!-- glob.h -->
-     <!-- GNU -->
-     <br><dt><code>GLOB_NOMAGIC</code><a name="index-GLOB_005fNOMAGIC-870"></a><dd>If the pattern contains no wildcard constructs (it is a literal file name),
+<!-- GNU -->
+<br><dt><code>GLOB_NOMAGIC</code><a name="index-GLOB_005fNOMAGIC-870"></a><dd>If the pattern contains no wildcard constructs (it is a literal file name),
 return it as the sole &ldquo;matching&rdquo; word, even if no file exists by that name.
 
      <!-- glob.h -->
-     <!-- GNU -->
-     <br><dt><code>GLOB_TILDE</code><a name="index-GLOB_005fTILDE-871"></a><dd>If this flag is used the character <code>~</code> (tilde) is handled special
+<!-- GNU -->
+<br><dt><code>GLOB_TILDE</code><a name="index-GLOB_005fTILDE-871"></a><dd>If this flag is used the character <code>~</code> (tilde) is handled special
 if it appears at the beginning of the pattern.  Instead of being taken
 verbatim it is used to represent the home directory of a known user.
 
@@ -103,18 +101,18 @@ verbatim it is used to represent the home directory of a known user.
 <code>/</code> (slash), the home directory of the process owner is
 substituted.  Using <code>getlogin</code> and <code>getpwnam</code> the information
 is read from the system databases.  As an example take user <code>bart</code>
-with his home directory at <samp><span class="file">/home/bart</span></samp>.  For him a call like
+with his home directory at <span class="file">/home/bart</span>.  For him a call like
 
      <pre class="smallexample">          glob ("~/bin/*", GLOB_TILDE, NULL, &amp;result)
-</pre>
-     <p class="noindent">would return the contents of the directory <samp><span class="file">/home/bart/bin</span></samp>. 
+     </pre>
+     <p class="noindent">would return the contents of the directory <span class="file">/home/bart/bin</span>. 
 Instead of referring to the own home directory it is also possible to
 name the home directory of other users.  To do so one has to append the
 user name after the tilde character.  So the contents of user
-<code>homer</code>'s <samp><span class="file">bin</span></samp> directory can be retrieved by
+<code>homer</code>'s <span class="file">bin</span> directory can be retrieved by
 
      <pre class="smallexample">          glob ("~homer/bin/*", GLOB_TILDE, NULL, &amp;result)
-</pre>
+     </pre>
      <p>If the user name is not valid or the home directory cannot be determined
 for some reason the pattern is left untouched and itself used as the
 result.  I.e., if in the last example <code>home</code> is not available the
@@ -125,8 +123,8 @@ looking for a directory named <code>~homer</code>.
 <code>nonomatch</code> flag is set.
 
      <!-- glob.h -->
-     <!-- GNU -->
-     <br><dt><code>GLOB_TILDE_CHECK</code><a name="index-GLOB_005fTILDE_005fCHECK-872"></a><dd>If this flag is used <code>glob</code> behaves like as if <code>GLOB_TILDE</code> is
+<!-- GNU -->
+<br><dt><code>GLOB_TILDE_CHECK</code><a name="index-GLOB_005fTILDE_005fCHECK-872"></a><dd>If this flag is used <code>glob</code> behaves like as if <code>GLOB_TILDE</code> is
 given.  The only difference is that if the user name is not available or
 the home directory cannot be determined for other reasons this leads to
 an error.  <code>glob</code> will return <code>GLOB_NOMATCH</code> instead of using
@@ -136,8 +134,8 @@ the pattern itself as the name.
 <code>nonomatch</code> flag is not set.
 
      <!-- glob.h -->
-     <!-- GNU -->
-     <br><dt><code>GLOB_ONLYDIR</code><a name="index-GLOB_005fONLYDIR-873"></a><dd>If this flag is used the globbing function takes this as a
+<!-- GNU -->
+<br><dt><code>GLOB_ONLYDIR</code><a name="index-GLOB_005fONLYDIR-873"></a><dd>If this flag is used the globbing function takes this as a
 <strong>hint</strong> that the caller is only interested in directories
 matching the pattern.  If the information about the type of the file
 is easily available non-directories will be rejected but no extra

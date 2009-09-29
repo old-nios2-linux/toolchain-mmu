@@ -3,7 +3,7 @@
 <title>glibc iconv Implementation - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Generic-Charset-Conversion.html#Generic-Charset-Conversion" title="Generic Charset Conversion">
 <link rel="prev" href="Other-iconv-Implementations.html#Other-iconv-Implementations" title="Other iconv Implementations">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="glibc-iconv-Implementation"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Other-iconv-Implementations.html#Other-iconv-Implementations">Other iconv Implementations</a>,
+<a name="glibc-iconv-Implementation"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Other-iconv-Implementations.html#Other-iconv-Implementations">Other iconv Implementations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Generic-Charset-Conversion.html#Generic-Charset-Conversion">Generic Charset Conversion</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">6.5.4 The <code>iconv</code> Implementation in the GNU C library</h4>
@@ -90,11 +88,11 @@ as a better alternative.  The GNU C library <code>iconv</code> implementation
 would automatically use the module implementing the conversion if it is
 specified to be more efficient.
 
-<h5 class="subsubsection">6.5.4.1 Format of <samp><span class="file">gconv-modules</span></samp> files</h5>
+<h5 class="subsubsection">6.5.4.1 Format of <span class="file">gconv-modules</span> files</h5>
 
 <p>All information about the available conversions comes from a file named
-<samp><span class="file">gconv-modules</span></samp>, which can be found in any of the directories along
-the <code>GCONV_PATH</code>.  The <samp><span class="file">gconv-modules</span></samp> files are line-oriented
+<span class="file">gconv-modules</span>, which can be found in any of the directories along
+the <code>GCONV_PATH</code>.  The <span class="file">gconv-modules</span> files are line-oriented
 text files, where each of the lines has one of the following formats:
 
      <ul>
@@ -125,8 +123,8 @@ module.  These lines must contain three or four more words.
 destination character set of conversion implemented in this module, and
 the third word is the name of the loadable module.  The filename is
 constructed by appending the usual shared object suffix (normally
-<samp><span class="file">.so</span></samp>) and this file is then supposed to be found in the same
-directory the <samp><span class="file">gconv-modules</span></samp> file is in.  The last word on the line,
+<span class="file">.so</span>) and this file is then supposed to be found in the same
+directory the <span class="file">gconv-modules</span> file is in.  The last word on the line,
 which is optional, is a numeric value representing the cost of the
 conversion.  If this word is missing, a cost of 1 is assumed.  The
 numeric value itself does not matter that much; what counts are the
@@ -137,7 +135,7 @@ Below is a more precise description of the use of the cost value.
    <p>Returning to the example above where one has written a module to directly
 convert from ISO-2022-JP to EUC-JP and back.  All that has to be done is
 to put the new module, let its name be ISO2022JP-EUCJP.so, in a directory
-and add a file <samp><span class="file">gconv-modules</span></samp> with the following content in the
+and add a file <span class="file">gconv-modules</span> with the following content in the
 same directory:
 
 <pre class="smallexample">     module  ISO-2022-JP//   EUC-JP//        ISO2022JP-EUCJP    1
@@ -148,7 +146,7 @@ conversion used by <code>iconv</code> (and described in the descriptor) is
 selected.  The approach to this problem is quite simple.
 
    <p>At the first call of the <code>iconv_open</code> function the program reads
-all available <samp><span class="file">gconv-modules</span></samp> files and builds up two tables: one
+all available <span class="file">gconv-modules</span> files and builds up two tables: one
 containing all the known aliases and another that contains the
 information about the conversions and which shared object implements
 them.
@@ -157,22 +155,22 @@ them.
 
 <p>The set of available conversions form a directed graph with weighted
 edges.  The weights on the edges are the costs specified in the
-<samp><span class="file">gconv-modules</span></samp> files.  The <code>iconv_open</code> function uses an
+<span class="file">gconv-modules</span> files.  The <code>iconv_open</code> function uses an
 algorithm suitable for search for the best path in such a graph and so
 constructs a list of conversions that must be performed in succession
 to get the transformation from the source to the destination character
 set.
 
-   <p>Explaining why the above <samp><span class="file">gconv-modules</span></samp> files allows the
+   <p>Explaining why the above <span class="file">gconv-modules</span> files allows the
 <code>iconv</code> implementation to resolve the specific ISO-2022-JP to
 EUC-JP conversion module instead of the conversion coming with the
 library itself is straightforward.  Since the latter conversion takes two
 steps (from ISO-2022-JP to ISO&nbsp;10646<!-- /@w --> and then from ISO&nbsp;10646<!-- /@w --> to
-EUC-JP), the cost is 1+1 = 2.  The above <samp><span class="file">gconv-modules</span></samp>
+EUC-JP), the cost is 1+1 = 2.  The above <span class="file">gconv-modules</span>
 file, however, specifies that the new conversion modules can perform this
 conversion with only the cost of 1.
 
-   <p>A mysterious item about the <samp><span class="file">gconv-modules</span></samp> file above (and also
+   <p>A mysterious item about the <span class="file">gconv-modules</span> file above (and also
 the file coming with the GNU C library) are the names of the character
 sets specified in the <code>module</code> lines.  Why do almost all the names
 end in <code>//</code>?  And this is not all: the names can actually be
@@ -184,7 +182,7 @@ from Cebu, etc.  Sorry!  <strong>The part of the implementation where
 this is used is not yet finished.  For now please simply follow the
 existing examples.  It'll become clearer once it is. &ndash;drepper</strong>
 
-   <p>A last remark about the <samp><span class="file">gconv-modules</span></samp> is about the names not
+   <p>A last remark about the <span class="file">gconv-modules</span> is about the names not
 ending with <code>//</code>.  A character set named <code>INTERNAL</code> is often
 mentioned.  From the discussion above and the chosen name it should have
 become clear that this is the name for the representation used in the
@@ -210,7 +208,7 @@ it is in use in January 1999.  The interface will change a bit in the
 future but, with luck, only in an upwardly compatible way.
 
    <p>The definitions necessary to write new modules are publicly available
-in the non-standard header <samp><span class="file">gconv.h</span></samp>.  The following text,
+in the non-standard header <span class="file">gconv.h</span>.  The following text,
 therefore, describes the definitions from this header file.  First,
 however, it is necessary to get an overview.
 
@@ -225,7 +223,7 @@ elements necessary to understanding the implementation.
 
    <p>We need two different kinds of data structures.  The first describes the
 conversion and the second describes the state etc.  There are really two
-type definitions like this in <samp><span class="file">gconv.h</span></samp>. 
+type definitions like this in <span class="file">gconv.h</span>. 
 <a name="index-gconv_002eh-679"></a>
 <!-- gconv.h -->
 <!-- GNU -->
@@ -343,7 +341,7 @@ information.
                     &amp;&amp; data-&gt;__invocation_counter == 0)
                  /* <span class="roman">Emit prolog.</span>  */
                  ...
-</pre>
+          </pre>
           <p>This element must never be modified.
 
           <br><dt><code>mbstate_t *__statep</code><dd>The <code>__statep</code> element points to an object of type <code>mbstate_t</code>
@@ -407,7 +405,7 @@ functions and these define the interface.
 <!-- gconv.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Data type: int <b>(*__gconv_init_fct)</b> (<var>struct __gconv_step *</var>)<var><a name="index-g_t_0028_002a_005f_005fgconv_005finit_005ffct_0029-682"></a></var><br>
+&mdash; Data type: int <b>(*__gconv_init_fct)</b> (<var>struct __gconv_step *</var>)<var><a name="index-_0028_002a_005f_005fgconv_005finit_005ffct_0029-682"></a></var><br>
 <blockquote><p>This specifies the interface of the initialization function of the
 module.  It is called exactly once for each conversion the module
 implements.
@@ -504,7 +502,7 @@ the conversion function.  The example below shows how this can be used.
           
             return result;
           }
-</pre>
+     </pre>
         <p>The function first checks which conversion is wanted.  The module from
 which this function is taken implements four different conversions;
 which one is selected can be determined by comparing the names.  The
@@ -543,7 +541,7 @@ Therefore one needs more room than only for the character itself.
           <dl>
 <dt><code>__GCONV_OK</code><dd>The initialization succeeded
 <br><dt><code>__GCONV_NOCONV</code><dd>The requested conversion is not supported in the module.  This can
-happen if the <samp><span class="file">gconv-modules</span></samp> file has errors. 
+happen if the <span class="file">gconv-modules</span> file has errors. 
 <br><dt><code>__GCONV_NOMEM</code><dd>Memory required to store additional information could not be allocated. 
 </dl>
         </p></blockquote></div>
@@ -555,7 +553,7 @@ out completely.
 <!-- gconv.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Data type: void <b>(*__gconv_end_fct)</b> (<var>struct gconv_step *</var>)<var><a name="index-g_t_0028_002a_005f_005fgconv_005fend_005ffct_0029-683"></a></var><br>
+&mdash; Data type: void <b>(*__gconv_end_fct)</b> (<var>struct gconv_step *</var>)<var><a name="index-_0028_002a_005f_005fgconv_005fend_005ffct_0029-683"></a></var><br>
 <blockquote><p>The task of this function is to free all resources allocated in the
 initialization function.  Therefore only the <code>__data</code> element of
 the object pointed to by the argument is of interest.  Continuing the
@@ -567,7 +565,7 @@ looks like this:
           {
             free (data-&gt;__data);
           }
-</pre>
+     </pre>
         </blockquote></div>
 
    <p>The most important function is the conversion function itself, which can
@@ -578,7 +576,7 @@ conversion function.
 <!-- gconv.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Data type: int <b>(*__gconv_fct)</b> (<var>struct __gconv_step *, struct __gconv_step_data *, const char **, const char *, size_t *, int</var>)<var><a name="index-g_t_0028_002a_005f_005fgconv_005ffct_0029-684"></a></var><br>
+&mdash; Data type: int <b>(*__gconv_fct)</b> (<var>struct __gconv_step *, struct __gconv_step_data *, const char **, const char *, size_t *, int</var>)<var><a name="index-_0028_002a_005f_005fgconv_005ffct_0029-684"></a></var><br>
 <blockquote><p>The conversion function can be called for two basic reason: to convert
 text or to reset the state.  From the description of the <code>iconv</code>
 function it can be seen why the flushing mode is necessary.  What mode
@@ -640,14 +638,14 @@ element in both cases can be found by simple pointer arithmetic:
             struct __gconv_step *next_step = step + 1;
             struct __gconv_step_data *next_data = data + 1;
             ...
-</pre>
+     </pre>
         <p>The <code>next_step</code> pointer references the next step information and
 <code>next_data</code> the next data record.  The call of the next function
 therefore will look similar to this:
 
      <pre class="smallexample">            next_step-&gt;__fct (next_step, next_data, &amp;outerr, outbuf,
                               written, 0)
-</pre>
+     </pre>
         <p>But this is not yet all.  Once the function call returns the conversion
 function might have some more to do.  If the return value of the function
 is <code>__GCONV_EMPTY_INPUT</code>, more room is available in the output
@@ -808,7 +806,7 @@ implementation have to be filled and that is it.
           
             return status;
           }
-</pre>
+     </pre>
         </blockquote></div>
 
    <p>This information should be sufficient to write new modules.  Anybody
@@ -817,5 +815,5 @@ C library sources.  It contains many examples of working and optimized
 modules.
 
 <!-- File charset.texi edited October 2001 by Dennis Grace, IBM Corporation -->
-   </body></html>
+</body></html>
 

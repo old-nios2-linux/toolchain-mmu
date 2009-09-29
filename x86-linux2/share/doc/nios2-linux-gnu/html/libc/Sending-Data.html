@@ -3,7 +3,7 @@
 <title>Sending Data - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Transferring-Data.html#Transferring-Data" title="Transferring Data">
 <link rel="next" href="Receiving-Data.html#Receiving-Data" title="Receiving Data">
@@ -16,24 +16,22 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Sending-Data"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Receiving-Data.html#Receiving-Data">Receiving Data</a>,
+<a name="Sending-Data"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Receiving-Data.html#Receiving-Data">Receiving Data</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Transferring-Data.html#Transferring-Data">Transferring Data</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">16.9.5.1 Sending Data</h5>
 
 <p><a name="index-sys_002fsocket_002eh-1805"></a>The <code>send</code> function is declared in the header file
-<samp><span class="file">sys/socket.h</span></samp>.  If your <var>flags</var> argument is zero, you can just
+<span class="file">sys/socket.h</span>.  If your <var>flags</var> argument is zero, you can just
 as well use <code>write</code> instead of <code>send</code>; see <a href="I_002fO-Primitives.html#I_002fO-Primitives">I/O Primitives</a>.  If the socket was connected but the connection has broken,
 you get a <code>SIGPIPE</code> signal for any use of <code>send</code> or
 <code>write</code> (see <a href="Miscellaneous-Signals.html#Miscellaneous-Signals">Miscellaneous Signals</a>).

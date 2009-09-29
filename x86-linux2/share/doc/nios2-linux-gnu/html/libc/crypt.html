@@ -3,7 +3,7 @@
 <title>crypt - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cryptographic-Functions.html#Cryptographic-Functions" title="Cryptographic Functions">
 <link rel="prev" href="getpass.html#getpass" title="getpass">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="crypt"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="DES-Encryption.html#DES-Encryption">DES Encryption</a>,
+<a name="crypt"></a>Next:&nbsp;<a rel="next" accesskey="n" href="DES-Encryption.html#DES-Encryption">DES Encryption</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="getpass.html#getpass">getpass</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cryptographic-Functions.html#Cryptographic-Functions">Cryptographic Functions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">32.3 Encrypting Passwords</h3>
@@ -39,7 +37,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Cryptographic-Functions.html#Cryptograp
 <div class="defun">
 &mdash; Function: char * <b>crypt</b> (<var>const char *key, const char *salt</var>)<var><a name="index-crypt-3676"></a></var><br>
 <blockquote>
-        <p>The <code>crypt</code> function takes a password, <var>key</var>, as a string, and
+<p>The <code>crypt</code> function takes a password, <var>key</var>, as a string, and
 a <var>salt</var> character array which is described below, and returns a
 printable ASCII string which starts with another salt.  It is believed
 that, given the output of the function, the best way to find a <var>key</var>
@@ -151,7 +149,7 @@ for a password and prints &ldquo;Access granted.&rdquo; if the user types
 <div class="defun">
 &mdash; Function: char * <b>crypt_r</b> (<var>const char *key, const char *salt, struct crypt_data * data</var>)<var><a name="index-crypt_005fr-3677"></a></var><br>
 <blockquote>
-        <p>The <code>crypt_r</code> function does the same thing as <code>crypt</code>, but
+<p>The <code>crypt_r</code> function does the same thing as <code>crypt</code>, but
 takes an extra parameter which includes space for its result (among
 other things), so it can be reentrant.  <code>data-&gt;<!-- /@w -->initialized</code> must be
 cleared to zero before the first time <code>crypt_r</code> is called.
@@ -160,7 +158,7 @@ cleared to zero before the first time <code>crypt_r</code> is called.
 </p></blockquote></div>
 
    <p>The <code>crypt</code> and <code>crypt_r</code> functions are prototyped in the
-header <samp><span class="file">crypt.h</span></samp>.
+header <span class="file">crypt.h</span>.
 
    </body></html>
 

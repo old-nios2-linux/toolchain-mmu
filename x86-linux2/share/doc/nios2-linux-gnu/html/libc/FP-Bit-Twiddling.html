@@ -3,7 +3,7 @@
 <title>FP Bit Twiddling - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Arithmetic-Functions.html#Arithmetic-Functions" title="Arithmetic Functions">
 <link rel="prev" href="Remainder-Functions.html#Remainder-Functions" title="Remainder Functions">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="FP-Bit-Twiddling"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="FP-Comparison-Functions.html#FP-Comparison-Functions">FP Comparison Functions</a>,
+<a name="FP-Bit-Twiddling"></a>Next:&nbsp;<a rel="next" accesskey="n" href="FP-Comparison-Functions.html#FP-Comparison-Functions">FP Comparison Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Remainder-Functions.html#Remainder-Functions">Remainder Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic-Functions.html#Arithmetic-Functions">Arithmetic Functions</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">20.8.5 Setting and modifying single bits of FP values</h4>
@@ -45,11 +43,11 @@ bits.
 <div class="defun">
 &mdash; Function: double <b>copysign</b> (<var>double x, double y</var>)<var><a name="index-copysign-2481"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Function: float <b>copysignf</b> (<var>float x, float y</var>)<var><a name="index-copysignf-2482"></a></var><br>
+<!-- ISO -->
+&mdash; Function: float <b>copysignf</b> (<var>float x, float y</var>)<var><a name="index-copysignf-2482"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Function: long double <b>copysignl</b> (<var>long double x, long double y</var>)<var><a name="index-copysignl-2483"></a></var><br>
+<!-- ISO -->
+&mdash; Function: long double <b>copysignl</b> (<var>long double x, long double y</var>)<var><a name="index-copysignl-2483"></a></var><br>
 <blockquote><p>These functions return <var>x</var> but with the sign of <var>y</var>.  They work
 even if <var>x</var> or <var>y</var> are NaN or zero.  Both of these can carry a
 sign (although not all implementations support it) and this is one of
@@ -80,11 +78,11 @@ false, but <code>signbit (-0.0)</code> will return a nonzero value.
 <div class="defun">
 &mdash; Function: double <b>nextafter</b> (<var>double x, double y</var>)<var><a name="index-nextafter-2485"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Function: float <b>nextafterf</b> (<var>float x, float y</var>)<var><a name="index-nextafterf-2486"></a></var><br>
+<!-- ISO -->
+&mdash; Function: float <b>nextafterf</b> (<var>float x, float y</var>)<var><a name="index-nextafterf-2486"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Function: long double <b>nextafterl</b> (<var>long double x, long double y</var>)<var><a name="index-nextafterl-2487"></a></var><br>
+<!-- ISO -->
+&mdash; Function: long double <b>nextafterl</b> (<var>long double x, long double y</var>)<var><a name="index-nextafterl-2487"></a></var><br>
 <blockquote><p>The <code>nextafter</code> function returns the next representable neighbor of
 <var>x</var> in the direction towards <var>y</var>.  The size of the step between
 <var>x</var> and the result depends on the type of the result.  If
@@ -104,11 +102,11 @@ recommended functions in IEEE&nbsp;754<!-- /@w -->/IEEE&nbsp;854<!-- /@w -->).
 <div class="defun">
 &mdash; Function: double <b>nexttoward</b> (<var>double x, long double y</var>)<var><a name="index-nexttoward-2488"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Function: float <b>nexttowardf</b> (<var>float x, long double y</var>)<var><a name="index-nexttowardf-2489"></a></var><br>
+<!-- ISO -->
+&mdash; Function: float <b>nexttowardf</b> (<var>float x, long double y</var>)<var><a name="index-nexttowardf-2489"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Function: long double <b>nexttowardl</b> (<var>long double x, long double y</var>)<var><a name="index-nexttowardl-2490"></a></var><br>
+<!-- ISO -->
+&mdash; Function: long double <b>nexttowardl</b> (<var>long double x, long double y</var>)<var><a name="index-nexttowardl-2490"></a></var><br>
 <blockquote><p>These functions are identical to the corresponding versions of
 <code>nextafter</code> except that their second argument is a <code>long
 double</code>. 
@@ -120,11 +118,11 @@ double</code>.
 <div class="defun">
 &mdash; Function: double <b>nan</b> (<var>const char *tagp</var>)<var><a name="index-nan-2492"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Function: float <b>nanf</b> (<var>const char *tagp</var>)<var><a name="index-nanf-2493"></a></var><br>
+<!-- ISO -->
+&mdash; Function: float <b>nanf</b> (<var>const char *tagp</var>)<var><a name="index-nanf-2493"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- ISO -->
-   &mdash; Function: long double <b>nanl</b> (<var>const char *tagp</var>)<var><a name="index-nanl-2494"></a></var><br>
+<!-- ISO -->
+&mdash; Function: long double <b>nanl</b> (<var>const char *tagp</var>)<var><a name="index-nanl-2494"></a></var><br>
 <blockquote><p>The <code>nan</code> function returns a representation of NaN, provided that
 NaN is supported by the target platform. 
 <code>nan ("</code><var>n-char-sequence</var><code>")</code> is equivalent to

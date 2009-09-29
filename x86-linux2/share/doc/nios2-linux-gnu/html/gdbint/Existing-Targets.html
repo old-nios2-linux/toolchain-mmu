@@ -3,7 +3,7 @@
 <title>Existing Targets - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Vector-Definition.html#Target-Vector-Definition" title="Target Vector Definition">
 <link rel="prev" href="Managing-Execution-State.html#Managing-Execution-State" title="Managing Execution State">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Existing-Targets"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Managing-Execution-State.html#Managing-Execution-State">Managing Execution State</a>,
+<a name="Existing-Targets"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Managing-Execution-State.html#Managing-Execution-State">Managing Execution State</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Vector-Definition.html#Target-Vector-Definition">Target Vector Definition</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">11.2 Existing Targets</h3>
@@ -40,10 +38,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Target-Vector-Definition.html#Target-Ve
 
 <h4 class="subsection">11.2.2 Standard Protocol and Remote Stubs</h4>
 
-<p><span class="sc">gdb</span>'s file <samp><span class="file">remote.c</span></samp> talks a serial protocol to code
+<p><span class="sc">gdb</span>'s file <span class="file">remote.c</span> talks a serial protocol to code
 that runs in the target system.  <span class="sc">gdb</span> provides several sample
 <dfn>stubs</dfn> that can be integrated into target programs or operating
-systems for this purpose; they are named <samp><span class="file">*-stub.c</span></samp>.
+systems for this purpose; they are named <span class="file">*-stub.c</span>.
 
    <p>The <span class="sc">gdb</span> user's manual describes how to put such a stub into
 your target code.  What follows is a discussion of integrating the

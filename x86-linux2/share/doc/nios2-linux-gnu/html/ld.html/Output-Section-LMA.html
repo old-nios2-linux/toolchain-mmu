@@ -3,7 +3,7 @@
 <title>Output Section LMA - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Output-Section-Attributes.html#Output-Section-Attributes" title="Output Section Attributes">
 <link rel="prev" href="Output-Section-Type.html#Output-Section-Type" title="Output Section Type">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Output-Section-LMA"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Forced-Output-Alignment.html#Forced-Output-Alignment">Forced Output Alignment</a>,
+<a name="Output-Section-LMA"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Forced-Output-Alignment.html#Forced-Output-Alignment">Forced Output Alignment</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Output-Section-Type.html#Output-Section-Type">Output Section Type</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Output-Section-Attributes.html#Output-Section-Attributes">Output Section Attributes</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">3.6.8.2 Output Section LMA</h5>
@@ -41,7 +39,7 @@ an output section description sets the VMA (see <a href="Output-Section-Address.
    <p>The expression <var>lma</var> that follows the <code>AT</code> keyword specifies
 the load address of the section.
 
-   <p>Alternatively, with &lsquo;<samp><span class="samp">AT&gt;</span><var>lma_region</var></samp>&rsquo; expression, you may
+   <p>Alternatively, with <span class="samp">AT&gt;</span><var>lma_region</var> expression, you may
 specify a memory region for the section's load address. See <a href="MEMORY.html#MEMORY">MEMORY</a>. 
 Note that if the section has not had a VMA assigned to it then the
 linker will use the <var>lma_region</var> as the VMA region as well.
@@ -56,9 +54,9 @@ See <a href="Output-Section-Region.html#Output-Section-Region">Output Section Re
 
    <p><a name="index-ROM-initialized-data-403"></a><a name="index-initialized-data-in-ROM-404"></a>This feature is designed to make it easy to build a ROM image.  For
 example, the following linker script creates three output sections: one
-called &lsquo;<samp><span class="samp">.text</span></samp>&rsquo;, which starts at <code>0x1000</code>, one called
-&lsquo;<samp><span class="samp">.mdata</span></samp>&rsquo;, which is loaded at the end of the &lsquo;<samp><span class="samp">.text</span></samp>&rsquo; section
-even though its VMA is <code>0x2000</code>, and one called &lsquo;<samp><span class="samp">.bss</span></samp>&rsquo; to hold
+called <span class="samp">.text</span>, which starts at <code>0x1000</code>, one called
+<span class="samp">.mdata</span>, which is loaded at the end of the <span class="samp">.text</span> section
+even though its VMA is <code>0x2000</code>, and one called <span class="samp">.bss</span> to hold
 uninitialized data at address <code>0x3000</code>.  The symbol <code>_data</code> is
 defined with the value <code>0x2000</code>, which shows that the location
 counter holds the VMA value, not the LMA value.

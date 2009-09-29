@@ -3,7 +3,7 @@
 <title>Profile information - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Control-Flow.html#Control-Flow" title="Control Flow">
 <link rel="prev" href="Edges.html#Edges" title="Edges">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Profile-information"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Maintaining-the-CFG.html#Maintaining-the-CFG">Maintaining the CFG</a>,
+<a name="Profile-information"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Maintaining-the-CFG.html#Maintaining-the-CFG">Maintaining the CFG</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Edges.html#Edges">Edges</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Control-Flow.html#Control-Flow">Control Flow</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">12.3 Profile information</h3>
@@ -76,7 +74,7 @@ marginally over different data sets.
 
  <p><a name="index-Static-profile-estimation-1193"></a><a name="index-branch-prediction-1194"></a><a name="index-predict_002edef-1195"></a>When profile feedback is not available, the compiler may be asked to
 attempt to predict the behavior of each branch in the program using a
-set of heuristics (see <samp><span class="file">predict.def</span></samp> for details) and compute
+set of heuristics (see <span class="file">predict.def</span> for details) and compute
 estimated frequencies of each basic block by propagating the
 probabilities over the graph.
 

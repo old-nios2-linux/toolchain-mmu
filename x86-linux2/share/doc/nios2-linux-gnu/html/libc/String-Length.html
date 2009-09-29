@@ -3,7 +3,7 @@
 <title>String Length - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="String-and-Array-Utilities.html#String-and-Array-Utilities" title="String and Array Utilities">
 <link rel="prev" href="String_002fArray-Conventions.html#String_002fArray-Conventions" title="String/Array Conventions">
@@ -17,25 +17,23 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="String-Length"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Copying-and-Concatenation.html#Copying-and-Concatenation">Copying and Concatenation</a>,
+<a name="String-Length"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Copying-and-Concatenation.html#Copying-and-Concatenation">Copying and Concatenation</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="String_002fArray-Conventions.html#String_002fArray-Conventions">String/Array Conventions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-and-Array-Utilities">String and Array Utilities</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.3 String Length</h3>
 
 <p>You can get the length of a string using the <code>strlen</code> function. 
-This function is declared in the header file <samp><span class="file">string.h</span></samp>. 
+This function is declared in the header file <span class="file">string.h</span>. 
 <a name="index-string_002eh-472"></a>
 <!-- string.h -->
 <!-- ISO -->
@@ -48,8 +46,8 @@ terminating null character within the array.)
 
         <p>For example,
      <pre class="smallexample">          strlen ("hello, world")
-              &rArr; 12
-</pre>
+              =&gt; 12
+     </pre>
         <p>When applied to a character array, the <code>strlen</code> function returns
 the length of the string stored there, not its allocated size.  You can
 get the allocated size of the character array that holds a string using
@@ -57,20 +55,20 @@ the <code>sizeof</code> operator:
 
      <pre class="smallexample">          char string[32] = "hello, world";
           sizeof (string)
-              &rArr; 32
+              =&gt; 32
           strlen (string)
-              &rArr; 12
-</pre>
+              =&gt; 12
+     </pre>
         <p>But beware, this will not work unless <var>string</var> is the character
 array itself, not a pointer to it.  For example:
 
      <pre class="smallexample">          char string[32] = "hello, world";
           char *ptr = string;
           sizeof (string)
-              &rArr; 32
+              =&gt; 32
           sizeof (ptr)
-              &rArr; 4  /* <span class="roman">(on a machine with 4 byte pointers)</span> */
-</pre>
+              =&gt; 4  /* <span class="roman">(on a machine with 4 byte pointers)</span> */
+     </pre>
         <p>This is an easy mistake to make when you are working with functions that
 take string arguments; those arguments are always pointers, not arrays.
 
@@ -90,12 +88,12 @@ code can be used:
             /* Determine number of characters.  */
             n = mbsrtowcs (NULL, &amp;scopy, strlen (scopy), &amp;t);
           }
-</pre>
+     </pre>
         <p>This is cumbersome to do so if the number of characters (as opposed to
 bytes) is needed often it is better to work with wide characters. 
 </p></blockquote></div>
 
-   <p>The wide character equivalent is declared in <samp><span class="file">wchar.h</span></samp>.
+   <p>The wide character equivalent is declared in <span class="file">wchar.h</span>.
 
 <!-- wchar.h -->
 <!-- ISO -->
@@ -126,11 +124,11 @@ null-terminated.
 
      <pre class="smallexample">          char string[32] = "hello, world";
           strnlen (string, 32)
-              &rArr; 12
+              =&gt; 12
           strnlen (string, 5)
-              &rArr; 5
-</pre>
-        <p>This function is a GNU extension and is declared in <samp><span class="file">string.h</span></samp>. 
+              =&gt; 5
+     </pre>
+        <p>This function is a GNU extension and is declared in <span class="file">string.h</span>. 
 </p></blockquote></div>
 
 <!-- wchar.h -->
@@ -140,7 +138,7 @@ null-terminated.
 <blockquote><p><code>wcsnlen</code> is the wide character equivalent to <code>strnlen</code>.  The
 <var>maxlen</var> parameter specifies the maximum number of wide characters.
 
-        <p>This function is a GNU extension and is declared in <samp><span class="file">wchar.h</span></samp>. 
+        <p>This function is a GNU extension and is declared in <span class="file">wchar.h</span>. 
 </p></blockquote></div>
 
    </body></html>

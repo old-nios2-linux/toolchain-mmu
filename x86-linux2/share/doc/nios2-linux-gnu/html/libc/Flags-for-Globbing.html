@@ -3,7 +3,7 @@
 <title>Flags for Globbing - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Globbing.html#Globbing" title="Globbing">
 <link rel="prev" href="Calling-Glob.html#Calling-Glob" title="Calling Glob">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Flags-for-Globbing"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="More-Flags-for-Globbing.html#More-Flags-for-Globbing">More Flags for Globbing</a>,
+<a name="Flags-for-Globbing"></a>Next:&nbsp;<a rel="next" accesskey="n" href="More-Flags-for-Globbing.html#More-Flags-for-Globbing">More Flags for Globbing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Calling-Glob.html#Calling-Glob">Calling Glob</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Globbing.html#Globbing">Globbing</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">10.2.2 Flags for Globbing</h4>
@@ -57,14 +55,14 @@ have relocated the vector.  So always fetch <code>gl_pathv</code> from the
 the pointer across calls.
 
      <!-- glob.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>GLOB_DOOFFS</code><a name="index-GLOB_005fDOOFFS-860"></a><dd>Leave blank slots at the beginning of the vector of words. 
+<!-- POSIX.2 -->
+<br><dt><code>GLOB_DOOFFS</code><a name="index-GLOB_005fDOOFFS-860"></a><dd>Leave blank slots at the beginning of the vector of words. 
 The <code>gl_offs</code> field says how many slots to leave. 
 The blank slots contain null pointers.
 
      <!-- glob.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>GLOB_ERR</code><a name="index-GLOB_005fERR-861"></a><dd>Give up right away and report an error if there is any difficulty
+<!-- POSIX.2 -->
+<br><dt><code>GLOB_ERR</code><a name="index-GLOB_005fERR-861"></a><dd>Give up right away and report an error if there is any difficulty
 reading the directories that must be read in order to expand <var>pattern</var>
 fully.  Such difficulties might include a directory in which you don't
 have the requisite access.  Normally, <code>glob</code> tries its best to keep
@@ -77,7 +75,7 @@ right away when it can't read a directory; instead, it calls
 <var>errfunc</var> with two arguments, like this:
 
      <pre class="smallexample">          (*<var>errfunc</var>) (<var>filename</var>, <var>error-code</var>)
-</pre>
+     </pre>
      <p class="noindent">The argument <var>filename</var> is the name of the directory that
 <code>glob</code> couldn't open or couldn't read, and <var>error-code</var> is the
 <code>errno</code> value that was reported to <code>glob</code>.
@@ -86,32 +84,32 @@ right away when it can't read a directory; instead, it calls
 right away.  Otherwise, it continues.
 
      <!-- glob.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>GLOB_MARK</code><a name="index-GLOB_005fMARK-862"></a><dd>If the pattern matches the name of a directory, append &lsquo;<samp><span class="samp">/</span></samp>&rsquo; to the
+<!-- POSIX.2 -->
+<br><dt><code>GLOB_MARK</code><a name="index-GLOB_005fMARK-862"></a><dd>If the pattern matches the name of a directory, append <span class="samp">/</span> to the
 directory's name when returning it.
 
      <!-- glob.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>GLOB_NOCHECK</code><a name="index-GLOB_005fNOCHECK-863"></a><dd>If the pattern doesn't match any file names, return the pattern itself
+<!-- POSIX.2 -->
+<br><dt><code>GLOB_NOCHECK</code><a name="index-GLOB_005fNOCHECK-863"></a><dd>If the pattern doesn't match any file names, return the pattern itself
 as if it were a file name that had been matched.  (Normally, when the
 pattern doesn't match anything, <code>glob</code> returns that there were no
 matches.)
 
      <!-- glob.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>GLOB_NOSORT</code><a name="index-GLOB_005fNOSORT-864"></a><dd>Don't sort the file names; return them in no particular order. 
+<!-- POSIX.2 -->
+<br><dt><code>GLOB_NOSORT</code><a name="index-GLOB_005fNOSORT-864"></a><dd>Don't sort the file names; return them in no particular order. 
 (In practice, the order will depend on the order of the entries in
 the directory.)  The only reason <em>not</em> to sort is to save time.
 
      <!-- glob.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>GLOB_NOESCAPE</code><a name="index-GLOB_005fNOESCAPE-865"></a><dd>Don't treat the &lsquo;<samp><span class="samp">\</span></samp>&rsquo; character specially in patterns.  Normally,
-&lsquo;<samp><span class="samp">\</span></samp>&rsquo; quotes the following character, turning off its special meaning
+<!-- POSIX.2 -->
+<br><dt><code>GLOB_NOESCAPE</code><a name="index-GLOB_005fNOESCAPE-865"></a><dd>Don't treat the <span class="samp">\</span> character specially in patterns.  Normally,
+<span class="samp">\</span> quotes the following character, turning off its special meaning
 (if any) so that it matches only itself.  When quoting is enabled, the
-pattern &lsquo;<samp><span class="samp">\?</span></samp>&rsquo; matches only the string &lsquo;<samp><span class="samp">?</span></samp>&rsquo;, because the question
+pattern <span class="samp">\?</span> matches only the string <span class="samp">?</span>, because the question
 mark in the pattern acts like an ordinary character.
 
-     <p>If you use <code>GLOB_NOESCAPE</code>, then &lsquo;<samp><span class="samp">\</span></samp>&rsquo; is an ordinary character.
+     <p>If you use <code>GLOB_NOESCAPE</code>, then <span class="samp">\</span> is an ordinary character.
 
      <p><code>glob</code> does its work by calling the function <code>fnmatch</code>
 repeatedly.  It handles the flag <code>GLOB_NOESCAPE</code> by turning on the

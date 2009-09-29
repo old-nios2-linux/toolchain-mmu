@@ -3,7 +3,7 @@
 <title>Core File Generation - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Dump_002fRestore-Files.html#Dump_002fRestore-Files" title="Dump/Restore Files">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Core-File-Generation"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Character-Sets.html#Character-Sets">Character Sets</a>,
+<a name="Core-File-Generation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Character-Sets.html#Character-Sets">Character Sets</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Dump_002fRestore-Files.html#Dump_002fRestore-Files">Dump/Restore Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">8.16 How to Produce a Core File from Your Program</h3>
@@ -52,7 +50,7 @@ are debugging in order to preserve a snapshot of its state.
 <a name="index-generate_002dcore_002dfile-516"></a>
 <dl><dt><code>generate-core-file [</code><var>file</var><code>]</code><dt><code>gcore [</code><var>file</var><code>]</code><dd>Produce a core dump of the inferior process.  The optional argument
 <var>file</var> specifies the file name where to put the core dump.  If not
-specified, the file name defaults to <samp><span class="file">core.</span><var>pid</var></samp>, where
+specified, the file name defaults to <span class="file">core.</span><var>pid</var>, where
 <var>pid</var> is the inferior process ID.
 
      <p>Note that this command is implemented only for some systems (as of

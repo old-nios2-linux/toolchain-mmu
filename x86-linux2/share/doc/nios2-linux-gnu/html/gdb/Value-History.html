@@ -3,7 +3,7 @@
 <title>Value History - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Print-Settings.html#Print-Settings" title="Print Settings">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Value-History"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Convenience-Vars.html#Convenience-Vars">Convenience Vars</a>,
+<a name="Value-History"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Convenience-Vars.html#Convenience-Vars">Convenience Vars</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Print-Settings.html#Print-Settings">Print Settings</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">8.8 Value History</h3>
@@ -42,13 +40,13 @@ When the symbol table changes, the value history is discarded,
 since the values may contain pointers back to the types defined in the
 symbol table.
 
-   <p><a name="index-g_t_0040code_007b_0024_007d-464"></a><a name="index-g_t_0040code_007b_0024_0024_007d-465"></a><a name="index-history-number-466"></a>The values printed are given <dfn>history numbers</dfn> by which you can
+   <p><a name="index-_0040code_007b_0024_007d-464"></a><a name="index-_0040code_007b_0024_0024_007d-465"></a><a name="index-history-number-466"></a>The values printed are given <dfn>history numbers</dfn> by which you can
 refer to them.  These are successive integers starting with one. 
 <code>print</code> shows you the history number assigned to a value by
-printing &lsquo;<samp><span class="samp">$</span><var>num</var><span class="samp"> = </span></samp>&rsquo; before the value; here <var>num</var> is the
+printing <span class="samp">$</span><var>num</var><span class="samp"> = </span> before the value; here <var>num</var> is the
 history number.
 
-   <p>To refer to any previous value, use &lsquo;<samp><span class="samp">$</span></samp>&rsquo; followed by the value's
+   <p>To refer to any previous value, use <span class="samp">$</span> followed by the value's
 history number.  The way <code>print</code> labels its output is designed to
 remind you of this.  Just <code>$</code> refers to the most recent value in
 the history, and <code>$$</code> refers to the value before that. 
@@ -81,7 +79,7 @@ remains 4 even though the value of <code>x</code> has changed.
      
 <a name="index-show-values-467"></a>
 <dl><dt><code>show values</code><dd>Print the last ten values in the value history, with their item numbers. 
-This is like &lsquo;<samp><span class="samp">p $$9</span></samp>&rsquo; repeated ten times, except that <code>show
+This is like <span class="samp">p $$9</span> repeated ten times, except that <code>show
 values</code> does not change the history.
 
      <br><dt><code>show values </code><var>n</var><dd>Print ten history values centered on history item number <var>n</var>.
@@ -91,7 +89,7 @@ values are available, <code>show values +</code> produces no display.
 </dl>
 
    <p>Pressing &lt;RET&gt; to repeat <code>show values </code><var>n</var> has exactly the
-same effect as &lsquo;<samp><span class="samp">show values +</span></samp>&rsquo;.
+same effect as <span class="samp">show values +</span>.
 
    </body></html>
 

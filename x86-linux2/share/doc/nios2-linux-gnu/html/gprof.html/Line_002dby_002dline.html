@@ -3,7 +3,7 @@
 <title>Line-by-line - GNU gprof</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU gprof">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Output.html#Output" title="Output">
 <link rel="prev" href="Call-Graph.html#Call-Graph" title="Call Graph">
@@ -17,29 +17,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Line-by-line"></a>
-<a name="Line_002dby_002dline"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Annotated-Source.html#Annotated-Source">Annotated Source</a>,
+<a name="Line_002dby_002dline"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Annotated-Source.html#Annotated-Source">Annotated Source</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Call-Graph.html#Call-Graph">Call Graph</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Output.html#Output">Output</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.3 Line-by-line Profiling</h3>
 
-<p><code>gprof</code>'s &lsquo;<samp><span class="samp">-l</span></samp>&rsquo; option causes the program to perform
+<p><code>gprof</code>'s <span class="samp">-l</span> option causes the program to perform
 <dfn>line-by-line</dfn> profiling.  In this mode, histogram
 samples are assigned not to functions, but to individual
 lines of source code.  The program usually must be compiled
-with a &lsquo;<samp><span class="samp">-g</span></samp>&rsquo; option, in addition to &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo;, in order
+with a <span class="samp">-g</span> option, in addition to <span class="samp">-pg</span>, in order
 to generate debugging symbols for tracking source code lines.
 
    <p>The flat profile is the most useful output table

@@ -3,7 +3,7 @@
 <title>Algorithms - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Overall-Structure.html#Overall-Structure" title="Overall Structure">
 <link rel="next" href="User-Interface.html#User-Interface" title="User Interface">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Algorithms"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="User-Interface.html#User-Interface">User Interface</a>,
+<a name="Algorithms"></a>Next:&nbsp;<a rel="next" accesskey="n" href="User-Interface.html#User-Interface">User Interface</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Overall-Structure.html#Overall-Structure">Overall Structure</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">3 Algorithms</h2>
@@ -53,7 +51,7 @@ read the <span class="sc">dwarf</span> specification.
 
    <p><a name="index-frame_005fregister_005funwind-9"></a><a name="index-get_005fframe_005fregister-10"></a><span class="sc">gdb</span>'s model is that you find a frame's registers by
 &ldquo;unwinding&rdquo; them from the next younger frame.  That is,
-&lsquo;<samp><span class="samp">get_frame_register</span></samp>&rsquo; which returns the value of a register in
+<span class="samp">get_frame_register</span> which returns the value of a register in
 frame #1 (the next-to-youngest frame), is implemented by calling frame
 #0's <code>frame_register_unwind</code> (the youngest frame).  But then the
 obvious question is: how do you access the registers of the youngest
@@ -101,8 +99,8 @@ themselves; in response, <span class="sc">gdb</span>'s analyzers became more com
 and fragile.  Keeping the prologue analyzers working as GCC (and the
 instruction sets themselves) evolved became a substantial task.
 
-   <p><a name="index-g_t_0040file_007bprologue_002dvalue_002ec_007d-17"></a><a name="index-abstract-interpretation-of-function-prologues-18"></a><a name="index-pseudo_002devaluation-of-function-prologues-19"></a>To try to address this problem, the code in <samp><span class="file">prologue-value.h</span></samp>
-and <samp><span class="file">prologue-value.c</span></samp> provides a general framework for writing
+   <p><a name="index-_0040file_007bprologue_002dvalue_002ec_007d-17"></a><a name="index-abstract-interpretation-of-function-prologues-18"></a><a name="index-pseudo_002devaluation-of-function-prologues-19"></a>To try to address this problem, the code in <span class="file">prologue-value.h</span>
+and <span class="file">prologue-value.c</span> provides a general framework for writing
 prologue analyzers that are simpler and more robust than ad-hoc
 analyzers.  When we analyze a prologue using the prologue-value
 framework, we're really doing &ldquo;abstract interpretation&rdquo; or
@@ -207,7 +205,7 @@ already gathering the right data for you.
 
    </ul>
 
-   <p>The file <samp><span class="file">prologue-value.h</span></samp> contains detailed comments explaining
+   <p>The file <span class="file">prologue-value.h</span> contains detailed comments explaining
 the framework and how to use it.
 
 <h3 class="section">3.3 Breakpoint Handling</h3>
@@ -273,8 +271,8 @@ instruction.
    <p><a name="index-BREAKPOINT-24"></a>The basic definition of the software breakpoint is the macro
 <code>BREAKPOINT</code>.
 
-   <p>Basic breakpoint object handling is in <samp><span class="file">breakpoint.c</span></samp>.  However,
-much of the interesting breakpoint action is in <samp><span class="file">infrun.c</span></samp>.
+   <p>Basic breakpoint object handling is in <span class="file">breakpoint.c</span>.  However,
+much of the interesting breakpoint action is in <span class="file">infrun.c</span>.
 
      
 <a name="index-insert-or-remove-software-breakpoint-25"></a>
@@ -295,10 +293,10 @@ memory cached in <code>shadow_contents</code>, if any; and the field
 <code>placed_size</code> is optionally set and used by the target, if
 it could differ from <code>shadow_len</code>.
 
-     <p>For example, the remote target &lsquo;<samp><span class="samp">Z0</span></samp>&rsquo; packet does not require
+     <p>For example, the remote target <span class="samp">Z0</span> packet does not require
 shadowing memory, so <code>shadow_len</code> is left at zero.  However,
 the length reported by <code>BREAKPOINT_FROM_PC</code> is cached in
-<code>placed_size</code>, so that a matching &lsquo;<samp><span class="samp">z0</span></samp>&rsquo; packet can be
+<code>placed_size</code>, so that a matching <span class="samp">z0</span> packet can be
 used to remove the breakpoint.
 
      <p><a name="index-insert-or-remove-hardware-breakpoint-28"></a><a name="index-target_005fremove_005fhw_005fbreakpoint-29"></a><a name="index-target_005finsert_005fhw_005fbreakpoint-30"></a><br><dt><code>target_remove_hw_breakpoint (</code><var>bp_tgt</var><code>)</code><dt><code>target_insert_hw_breakpoint (</code><var>bp_tgt</var><code>)</code><dd>Insert or remove a hardware-assisted breakpoint at address
@@ -333,18 +331,18 @@ specfic to each core in multicore debugging.
 
 <h3 class="section">3.8 Longjmp Support</h3>
 
-<p><a name="index-g_t_0040code_007blongjmp_007d-debugging-38"></a><span class="sc">gdb</span> has support for figuring out that the target is doing a
+<p><a name="index-_0040code_007blongjmp_007d-debugging-38"></a><span class="sc">gdb</span> has support for figuring out that the target is doing a
 <code>longjmp</code> and for stopping at the target of the jump, if we are
 stepping.  This is done with a few specialized internal breakpoints,
-which are visible in the output of the &lsquo;<samp><span class="samp">maint info breakpoint</span></samp>&rsquo;
+which are visible in the output of the <span class="samp">maint info breakpoint</span>
 command.
 
    <p><a name="index-GET_005fLONGJMP_005fTARGET-39"></a>To make this work, you need to define a macro called
 <code>GET_LONGJMP_TARGET</code>, which will examine the <code>jmp_buf</code>
 structure and extract the longjmp target address.  Since <code>jmp_buf</code>
 is target specific, you will need to define it in the appropriate
-<samp><span class="file">tm-</span><var>target</var><span class="file">.h</span></samp> file.  Look in <samp><span class="file">tm-sun4os4.h</span></samp> and
-<samp><span class="file">sparc-tdep.c</span></samp> for examples of how to do this.
+<span class="file">tm-</span><var>target</var><span class="file">.h</span> file.  Look in <span class="file">tm-sun4os4.h</span> and
+<span class="file">sparc-tdep.c</span> for examples of how to do this.
 
 <h3 class="section">3.9 Watchpoints</h3>
 
@@ -419,7 +417,7 @@ whose address is <var>addr</var> and whose length in bytes is <var>len</var>.
      <p><a name="index-insert-or-remove-hardware-watchpoint-46"></a><a name="index-target_005finsert_005fwatchpoint-47"></a><a name="index-target_005fremove_005fwatchpoint-48"></a><br><dt><code>target_insert_watchpoint (</code><var>addr</var><code>, </code><var>len</var><code>, </code><var>type</var><code>)</code><dt><code>target_remove_watchpoint (</code><var>addr</var><code>, </code><var>len</var><code>, </code><var>type</var><code>)</code><dd>Insert or remove a hardware watchpoint starting at <var>addr</var>, for
 <var>len</var> bytes.  <var>type</var> is the watchpoint type, one of the
 possible values of the enumerated data type <code>target_hw_bp_type</code>,
-defined by <samp><span class="file">breakpoint.h</span></samp> as follows:
+defined by <span class="file">breakpoint.h</span> as follows:
 
      <pre class="smallexample">           enum target_hw_bp_type
              {
@@ -428,7 +426,7 @@ defined by <samp><span class="file">breakpoint.h</span></samp> as follows:
                hw_access  = 2, /* Access (read or write) HW watchpoint */
                hw_execute = 3  /* Execute HW breakpoint */
              };
-</pre>
+     </pre>
      <p class="noindent">These two macros should return 0 for success, non-zero for failure.
 
      <p><a name="index-target_005fstopped_005fdata_005faddress-49"></a><br><dt><code>target_stopped_data_address (</code><var>addr_p</var><code>)</code><dd>If the inferior has some watchpoint that triggered, place the address
@@ -452,10 +450,10 @@ inferior after a watchpoint has been hit.
 watchpoints before stepping the inferior.
 
      <p><a name="index-STOPPED_005fBY_005fWATCHPOINT-54"></a><br><dt><code>STOPPED_BY_WATCHPOINT (</code><var>wait_status</var><code>)</code><dd>Return non-zero if stopped by a watchpoint.  <var>wait_status</var> is of
-the type <code>struct target_waitstatus</code>, defined by <samp><span class="file">target.h</span></samp>. 
+the type <code>struct target_waitstatus</code>, defined by <span class="file">target.h</span>. 
 Normally, this macro is defined to invoke the function pointed to by
 the <code>to_stopped_by_watchpoint</code> member of the structure (of the
-type <code>target_ops</code>, defined on <samp><span class="file">target.h</span></samp>) that describes the
+type <code>target_ops</code>, defined on <span class="file">target.h</span>) that describes the
 target-specific operations; <code>to_stopped_by_watchpoint</code> ignores
 the <var>wait_status</var> argument.
 
@@ -482,10 +480,10 @@ following:
 <ul><li>Define the macro <code>I386_USE_GENERIC_WATCHPOINTS</code> somewhere in the
 target-dependent headers.
 
-     <li>Include the <samp><span class="file">config/i386/nm-i386.h</span></samp> header file <em>after</em>
+     <li>Include the <span class="file">config/i386/nm-i386.h</span> header file <em>after</em>
 defining <code>I386_USE_GENERIC_WATCHPOINTS</code>.
 
-     <li>Add <samp><span class="file">i386-nat.o</span></samp> to the value of the Make variable
+     <li>Add <span class="file">i386-nat.o</span> to the value of the Make variable
 <code>NATDEPFILES</code> (see <a href="Native-Debugging.html#Native-Debugging">NATDEPFILES</a>) or
 <code>TDEPFILES</code> (see <a href="Target-Architecture-Definition.html#Target-Architecture-Definition">TDEPFILES</a>).
 

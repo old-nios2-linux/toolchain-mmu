@@ -3,7 +3,7 @@
 <title>Arguments - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Running.html#Running" title="Running">
 <link rel="prev" href="Starting.html#Starting" title="Starting">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Arguments"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Environment.html#Environment">Environment</a>,
+<a name="Arguments"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Environment.html#Environment">Environment</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Starting.html#Starting">Starting</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Running.html#Running">Running</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">4.3 Your Program's Arguments</h3>
@@ -40,7 +38,7 @@ They are passed to a shell, which expands wildcard characters and
 performs redirection of I/O, and thence to your program.  Your
 <code>SHELL</code> environment variable (if it exists) specifies what shell
 <span class="sc">gdb</span> uses.  If you do not define <code>SHELL</code>, <span class="sc">gdb</span> uses
-the default shell (<samp><span class="file">/bin/sh</span></samp> on Unix).
+the default shell (<span class="file">/bin/sh</span> on Unix).
 
    <p>On non-Unix systems, the program is usually invoked directly by
 <span class="sc">gdb</span>, which emulates I/O redirection via the appropriate system

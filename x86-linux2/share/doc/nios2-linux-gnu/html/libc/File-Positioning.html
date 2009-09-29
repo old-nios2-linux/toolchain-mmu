@@ -3,7 +3,7 @@
 <title>File Positioning - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="I_002fO-on-Streams.html#I_002fO-on-Streams" title="I/O on Streams">
 <link rel="prev" href="Binary-Streams.html#Binary-Streams" title="Binary Streams">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="File-Positioning"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Portable-Positioning.html#Portable-Positioning">Portable Positioning</a>,
+<a name="File-Positioning"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Portable-Positioning.html#Portable-Positioning">Portable Positioning</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Binary-Streams.html#Binary-Streams">Binary Streams</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="I_002fO-on-Streams.html#I_002fO-on-Streams">I/O on Streams</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">12.18 File Positioning</h3>
@@ -49,7 +47,7 @@ files.
 
    <p>You can use the functions in this section to examine or modify the file
 position indicator associated with a stream.  The symbols listed below
-are declared in the header file <samp><span class="file">stdio.h</span></samp>. 
+are declared in the header file <span class="file">stdio.h</span>. 
 <a name="index-stdio_002eh-1109"></a>
 <!-- stdio.h -->
 <!-- ISO -->
@@ -213,9 +211,9 @@ the return value is discarded and the error indicator for the stream is
 reset. 
 </p></blockquote></div>
 
-   <p>These three aliases for the &lsquo;<samp><span class="samp">SEEK_...</span></samp>&rsquo; constants exist for the
+   <p>These three aliases for the <span class="samp">SEEK_...</span> constants exist for the
 sake of compatibility with older BSD systems.  They are defined in two
-different header files: <samp><span class="file">fcntl.h</span></samp> and <samp><span class="file">sys/file.h</span></samp>.
+different header files: <span class="file">fcntl.h</span> and <span class="file">sys/file.h</span>.
 
      <dl>
 <!-- sys/file.h -->
@@ -223,12 +221,12 @@ different header files: <samp><span class="file">fcntl.h</span></samp> and <samp
 <dt><code>L_SET</code><dd><a name="index-L_005fSET-1120"></a>An alias for <code>SEEK_SET</code>.
 
      <!-- sys/file.h -->
-     <!-- BSD -->
-     <br><dt><code>L_INCR</code><dd><a name="index-L_005fINCR-1121"></a>An alias for <code>SEEK_CUR</code>.
+<!-- BSD -->
+<br><dt><code>L_INCR</code><dd><a name="index-L_005fINCR-1121"></a>An alias for <code>SEEK_CUR</code>.
 
      <!-- sys/file.h -->
-     <!-- BSD -->
-     <br><dt><code>L_XTND</code><dd><a name="index-L_005fXTND-1122"></a>An alias for <code>SEEK_END</code>. 
+<!-- BSD -->
+<br><dt><code>L_XTND</code><dd><a name="index-L_005fXTND-1122"></a>An alias for <code>SEEK_END</code>. 
 </dl>
 
    </body></html>

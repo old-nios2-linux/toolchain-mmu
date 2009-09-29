@@ -3,7 +3,7 @@
 <title>Non-bugs - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Trouble.html#Trouble" title="Trouble">
 <link rel="prev" href="Protoize-Caveats.html#Protoize-Caveats" title="Protoize Caveats">
@@ -38,20 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Non-bugs"></a>
-<a name="Non_002dbugs"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Warnings-and-Errors.html#Warnings-and-Errors">Warnings and Errors</a>,
+<a name="Non_002dbugs"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Warnings-and-Errors.html#Warnings-and-Errors">Warnings and Errors</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Protoize-Caveats.html#Protoize-Caveats">Protoize Caveats</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Trouble.html#Trouble">Trouble</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">10.10 Certain Changes We Don't Want to Make</h3>
@@ -91,7 +88,7 @@ information about the intentions of the programmer.  For functions
 where the return value should never be ignored, use the
 <code>warn_unused_result</code> function attribute (see <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>).
 
-     <li><a name="index-fshort_002denums-2595"></a>Making <samp><span class="option">-fshort-enums</span></samp> the default.
+     <li><a name="index-fshort_002denums-2595"></a>Making <span class="option">-fshort-enums</span> the default.
 
      <p>This would cause storage layout to be incompatible with most other C
 compilers.  And it doesn't seem very important, given that you can get
@@ -107,8 +104,8 @@ declared plain <code>int</code> is signed or not.  This in effect creates two
 alternative dialects of C.
 
      <p><a name="index-fsigned_002dbitfields-2596"></a><a name="index-funsigned_002dbitfields-2597"></a>The GNU C compiler supports both dialects; you can specify the signed
-dialect with <samp><span class="option">-fsigned-bitfields</span></samp> and the unsigned dialect with
-<samp><span class="option">-funsigned-bitfields</span></samp>.  However, this leaves open the question of
+dialect with <span class="option">-fsigned-bitfields</span> and the unsigned dialect with
+<span class="option">-funsigned-bitfields</span>.  However, this leaves open the question of
 which dialect to use by default.
 
      <p>Currently, the preferred dialect makes plain bit-fields signed, because
@@ -154,14 +151,14 @@ to be considered in the future.
 explicitly in each bit-field whether it is signed or not.  In this way,
 they write programs which have the same meaning in both C dialects.)
 
-     <li><a name="index-ansi-2598"></a><a name="index-std-2599"></a>Undefining <code>__STDC__</code> when <samp><span class="option">-ansi</span></samp> is not used.
+     <li><a name="index-ansi-2598"></a><a name="index-std-2599"></a>Undefining <code>__STDC__</code> when <span class="option">-ansi</span> is not used.
 
      <p>Currently, GCC defines <code>__STDC__</code> unconditionally.  This provides
 good results in practice.
 
      <p>Programmers normally use conditionals on <code>__STDC__</code> to ask whether
 it is safe to use certain features of ISO C, such as function
-prototypes or ISO token concatenation.  Since plain <samp><span class="command">gcc</span></samp> supports
+prototypes or ISO token concatenation.  Since plain <span class="command">gcc</span> supports
 all the features of ISO C, the correct answer to these questions is
 &ldquo;yes&rdquo;.
 
@@ -169,7 +166,7 @@ all the features of ISO C, the correct answer to these questions is
 certain library facilities.  This is actually incorrect usage in an ISO
 C program, because the ISO C standard says that a conforming
 freestanding implementation should define <code>__STDC__</code> even though it
-does not have the library facilities.  &lsquo;<samp><span class="samp">gcc -ansi -pedantic</span></samp>&rsquo; is a
+does not have the library facilities.  <span class="samp">gcc -ansi -pedantic</span> is a
 conforming freestanding implementation, and it is therefore required to
 define <code>__STDC__</code>, even though it does not come with an ISO C
 library.
@@ -177,14 +174,14 @@ library.
      <p>Sometimes people say that defining <code>__STDC__</code> in a compiler that
 does not completely conform to the ISO C standard somehow violates the
 standard.  This is illogical.  The standard is a standard for compilers
-that claim to support ISO C, such as &lsquo;<samp><span class="samp">gcc -ansi</span></samp>&rsquo;&mdash;not for other
-compilers such as plain <samp><span class="command">gcc</span></samp>.  Whatever the ISO C standard says
-is relevant to the design of plain <samp><span class="command">gcc</span></samp> without <samp><span class="option">-ansi</span></samp> only
+that claim to support ISO C, such as <span class="samp">gcc -ansi</span>&mdash;not for other
+compilers such as plain <span class="command">gcc</span>.  Whatever the ISO C standard says
+is relevant to the design of plain <span class="command">gcc</span> without <span class="option">-ansi</span> only
 for pragmatic reasons, not as a requirement.
 
      <p>GCC normally defines <code>__STDC__</code> to be 1, and in addition
-defines <code>__STRICT_ANSI__</code> if you specify the <samp><span class="option">-ansi</span></samp> option,
-or a <samp><span class="option">-std</span></samp> option for strict conformance to some version of ISO C. 
+defines <code>__STRICT_ANSI__</code> if you specify the <span class="option">-ansi</span> option,
+or a <span class="option">-std</span> option for strict conformance to some version of ISO C. 
 On some hosts, system include files use a different convention, where
 <code>__STDC__</code> is normally 0, but is 1 if the user specifies strict
 conformance to the C Standard.  GCC follows the host convention when
@@ -236,7 +233,7 @@ following loop can be completely removed, provided
              for (ix = 0; ix != 10000; ix++)
                 sum += some_expression;
           }
-</pre>
+     </pre>
      <p>Even though <code>sum</code> is accumulated in the loop, no use is made of
 that summation, so the accumulation can be removed.
 
@@ -250,11 +247,11 @@ from one compiler to another:
           
           int i = 2;
           func (i++, i++);
-</pre>
+     </pre>
      <p>There is no guarantee (in either the C or the C++ standard language
 definitions) that the increments will be evaluated in any particular
 order.  Either increment might happen first.  <code>func</code> might get the
-arguments &lsquo;<samp><span class="samp">2, 3</span></samp>&rsquo;, or it might get &lsquo;<samp><span class="samp">3, 2</span></samp>&rsquo;, or even &lsquo;<samp><span class="samp">2, 2</span></samp>&rsquo;.
+arguments <span class="samp">2, 3</span>, or it might get <span class="samp">3, 2</span>, or even <span class="samp">2, 2</span>.
 
      <li>Making certain warnings into errors by default.
 
@@ -265,7 +262,7 @@ an error message for a certain program.
 programs, but a warning is defined by GCC to count as a diagnostic.  If
 GCC produces a warning but not an error, that is correct ISO C support. 
 If testsuites call this &ldquo;failure&rdquo;, they should be run with the GCC
-option <samp><span class="option">-pedantic-errors</span></samp>, which will turn these warnings into
+option <span class="option">-pedantic-errors</span>, which will turn these warnings into
 errors.
 
  </ul>

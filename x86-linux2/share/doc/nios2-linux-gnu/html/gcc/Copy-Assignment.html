@@ -3,7 +3,7 @@
 <title>Copy Assignment - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002b_002b-Misunderstandings.html#C_002b_002b-Misunderstandings" title="C++ Misunderstandings">
 <link rel="prev" href="Temporaries.html#Temporaries" title="Temporaries">
@@ -37,18 +37,16 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Copy-Assignment"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Temporaries.html#Temporaries">Temporaries</a>,
+<a name="Copy-Assignment"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Temporaries.html#Temporaries">Temporaries</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002b_002b-Misunderstandings.html#C_002b_002b-Misunderstandings">C++ Misunderstandings</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">10.8.4 Implicit Copy-Assignment for Virtual Bases</h4>
@@ -86,17 +84,17 @@ objects behave unspecified when being assigned.  For example:
        d1 = d2;
      }
 </pre>
- <p>The C++ standard specifies that &lsquo;<samp><span class="samp">Base::Base</span></samp>&rsquo; is only called once
+ <p>The C++ standard specifies that <span class="samp">Base::Base</span> is only called once
 when constructing or copy-constructing a Derived object.  It is
-unspecified whether &lsquo;<samp><span class="samp">Base::operator=</span></samp>&rsquo; is called more than once when
+unspecified whether <span class="samp">Base::operator=</span> is called more than once when
 the implicit copy-assignment for Derived objects is invoked (as it is
-inside &lsquo;<samp><span class="samp">func</span></samp>&rsquo; in the example).
+inside <span class="samp">func</span> in the example).
 
  <p>G++ implements the &ldquo;intuitive&rdquo; algorithm for copy-assignment: assign all
 direct bases, then assign all members.  In that algorithm, the virtual
 base subobject can be encountered more than once.  In the example, copying
-proceeds in the following order: &lsquo;<samp><span class="samp">val</span></samp>&rsquo;, &lsquo;<samp><span class="samp">name</span></samp>&rsquo; (via
-<code>strdup</code>), &lsquo;<samp><span class="samp">bval</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">name</span></samp>&rsquo; again.
+proceeds in the following order: <span class="samp">val</span>, <span class="samp">name</span> (via
+<code>strdup</code>), <span class="samp">bval</span>, and <span class="samp">name</span> again.
 
  <p>If application code relies on copy-assignment, a user-defined
 copy-assignment operator removes any uncertainties.  With such an

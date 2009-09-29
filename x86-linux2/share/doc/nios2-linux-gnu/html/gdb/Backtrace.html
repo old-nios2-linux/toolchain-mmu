@@ -3,7 +3,7 @@
 <title>Backtrace - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stack.html#Stack" title="Stack">
 <link rel="prev" href="Frames.html#Frames" title="Frames">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Backtrace"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Selection.html#Selection">Selection</a>,
+<a name="Backtrace"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Selection.html#Selection">Selection</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Frames.html#Frames">Frames</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stack.html#Stack">Stack</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">6.2 Backtraces</h3>
@@ -75,7 +73,7 @@ counter value is omitted if it is at the beginning of the code for that
 line number.
 
    <p>Here is an example of a backtrace.  It was made with the command
-&lsquo;<samp><span class="samp">bt 3</span></samp>&rsquo;, so it shows the innermost three frames.
+<span class="samp">bt 3</span>, so it shows the innermost three frames.
 
 <pre class="smallexample">     #0  m4_traceon (obs=0x24eb0, argc=1, argv=0x2b8c8)
          at builtin.c:993
@@ -104,7 +102,7 @@ such a backtrace might look like:
      (More stack frames follow...)
 </pre>
    <p class="noindent">The values of arguments that were not saved in their stack frames are
-shown as &lsquo;<samp><span class="samp">&lt;value optimized out&gt;</span></samp>&rsquo;.
+shown as <span class="samp">&lt;value optimized out&gt;</span>.
 
    <p>If you need to display the values of such optimized-out arguments,
 either deduce that from other variables whose values depend on the one
@@ -150,7 +148,7 @@ Note that embedded programs (the so-called &ldquo;free-standing&rdquo;
 environment) are not required to have a <code>main</code> function as the
 entry point.  They could even have multiple entry points.</p>
 
-   <hr></div>
+   <p><hr></div>
 
    </body></html>
 

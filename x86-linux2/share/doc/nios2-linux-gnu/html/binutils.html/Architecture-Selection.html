@@ -3,7 +3,7 @@
 <title>Architecture Selection - GNU Binary Utilities</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Binary Utilities">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Selecting-The-Target-System.html#Selecting-The-Target-System" title="Selecting The Target System">
 <link rel="prev" href="Target-Selection.html#Target-Selection" title="Target Selection">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Architecture-Selection"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Target-Selection.html#Target-Selection">Target Selection</a>,
+<a name="Architecture-Selection"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Target-Selection.html#Target-Selection">Target Selection</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Selecting-The-Target-System.html#Selecting-The-Target-System">Selecting The Target System</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">16.2 Architecture Selection</h3>
@@ -36,22 +34,22 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Selecting-The-Target-System.html#Select
 to run.  Its name may contain a colon, separating the name of the
 processor family from the name of the particular <span class="sc">cpu</span>.
 
-   <p>The command to list valid architecture values is &lsquo;<samp><span class="samp">objdump -i</span></samp>&rsquo; (the
+   <p>The command to list valid architecture values is <span class="samp">objdump -i</span> (the
 second column contains the relevant information).
 
-   <p>Sample values: &lsquo;<samp><span class="samp">m68k:68020</span></samp>&rsquo;, &lsquo;<samp><span class="samp">mips:3000</span></samp>&rsquo;, &lsquo;<samp><span class="samp">sparc</span></samp>&rsquo;.
+   <p>Sample values: <span class="samp">m68k:68020</span>, <span class="samp">mips:3000</span>, <span class="samp">sparc</span>.
 
-<h4 class="subheading"><samp><span class="command">objdump</span></samp> Architecture</h4>
+<h4 class="subheading"><span class="command">objdump</span> Architecture</h4>
 
 <p>Ways to specify:
 
      <ol type=1 start=1>
-<li>command line option: <samp><span class="option">-m</span></samp> or <samp><span class="option">--architecture</span></samp>
+<li>command line option: <span class="option">-m</span> or <span class="option">--architecture</span>
 
      <li>deduced from the input file
         </ol>
 
-<h4 class="subheading"><samp><span class="command">objcopy</span></samp>, <samp><span class="command">nm</span></samp>, <samp><span class="command">size</span></samp>, <samp><span class="command">strings</span></samp> Architecture</h4>
+<h4 class="subheading"><span class="command">objcopy</span>, <span class="command">nm</span>, <span class="command">size</span>, <span class="command">strings</span> Architecture</h4>
 
 <p>Ways to specify:
 

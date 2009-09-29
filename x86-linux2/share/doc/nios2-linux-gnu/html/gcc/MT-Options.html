@@ -3,7 +3,7 @@
 <title>MT Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="MN10300-Options.html#MN10300-Options" title="MN10300 Options">
@@ -38,33 +38,31 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="MT-Options"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="PDP_002d11-Options.html#PDP_002d11-Options">PDP-11 Options</a>,
+<a name="MT-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="PDP_002d11-Options.html#PDP_002d11-Options">PDP-11 Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="MN10300-Options.html#MN10300-Options">MN10300 Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.17.25 MT Options</h4>
 
 <p><a name="index-MT-options-1321"></a>
-These <samp><span class="option">-m</span></samp> options are defined for Morpho MT architectures:
+These <span class="option">-m</span> options are defined for Morpho MT architectures:
 
      <dl>
 <dt><code>-march=</code><var>cpu-type</var><dd><a name="index-march-1322"></a>Generate code that will run on <var>cpu-type</var>, which is the name of a system
 representing a certain processor type.  Possible values for
-<var>cpu-type</var> are &lsquo;<samp><span class="samp">ms1-64-001</span></samp>&rsquo;, &lsquo;<samp><span class="samp">ms1-16-002</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">ms1-16-003</span></samp>&rsquo; and &lsquo;<samp><span class="samp">ms2</span></samp>&rsquo;.
+<var>cpu-type</var> are <span class="samp">ms1-64-001</span>, <span class="samp">ms1-16-002</span>,
+<span class="samp">ms1-16-003</span> and <span class="samp">ms2</span>.
 
-     <p>When this option is not used, the default is <samp><span class="option">-march=ms1-16-002</span></samp>.
+     <p>When this option is not used, the default is <span class="option">-march=ms1-16-002</span>.
 
      <br><dt><code>-mbacc</code><dd><a name="index-mbacc-1323"></a>Use byte loads and stores when generating code.
 
@@ -73,8 +71,8 @@ representing a certain processor type.  Possible values for
      <br><dt><code>-msim</code><dd><a name="index-msim-1325"></a>Use simulator runtime
 
      <br><dt><code>-mno-crt0</code><dd><a name="index-mno_002dcrt0-1326"></a>Do not link in the C run-time initialization object file
-<samp><span class="file">crti.o</span></samp>.  Other run-time initialization and termination files
-such as <samp><span class="file">startup.o</span></samp> and <samp><span class="file">exit.o</span></samp> are still included on the
+<span class="file">crti.o</span>.  Other run-time initialization and termination files
+such as <span class="file">startup.o</span> and <span class="file">exit.o</span> are still included on the
 linker command line.
 
  </dl>

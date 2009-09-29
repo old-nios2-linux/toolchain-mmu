@@ -3,7 +3,7 @@
 <title>Cross-References - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Types.html#Types" title="Types">
 <link rel="prev" href="Miscellaneous-Types.html#Miscellaneous-Types" title="Miscellaneous Types">
@@ -17,20 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Cross-References"></a>
-<a name="Cross_002dReferences"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Subranges.html#Subranges">Subranges</a>,
+<a name="Cross_002dReferences"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Subranges.html#Subranges">Subranges</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Miscellaneous-Types.html#Miscellaneous-Types">Miscellaneous Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Types.html#Types">Types</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.3 Cross-References to Other Types</h3>
@@ -39,12 +36,12 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Types.html#Types">Types</a>
 that situation is just to use a type reference to a type which has not
 yet been defined.
 
-   <p>Another way is with the &lsquo;<samp><span class="samp">x</span></samp>&rsquo; type descriptor, which is followed by
-&lsquo;<samp><span class="samp">s</span></samp>&rsquo; for a structure tag, &lsquo;<samp><span class="samp">u</span></samp>&rsquo; for a union tag, or &lsquo;<samp><span class="samp">e</span></samp>&rsquo; for
-a enumerator tag, followed by the name of the tag, followed by &lsquo;<samp><span class="samp">:</span></samp>&rsquo;. 
-If the name contains &lsquo;<samp><span class="samp">::</span></samp>&rsquo; between a &lsquo;<samp><span class="samp">&lt;</span></samp>&rsquo; and &lsquo;<samp><span class="samp">&gt;</span></samp>&rsquo; pair (for
-C<tt>++</tt> templates), such a &lsquo;<samp><span class="samp">::</span></samp>&rsquo; does not end the name&mdash;only a single
-&lsquo;<samp><span class="samp">:</span></samp>&rsquo; ends the name; see <a href="Nested-Symbols.html#Nested-Symbols">Nested Symbols</a>.
+   <p>Another way is with the <span class="samp">x</span> type descriptor, which is followed by
+<span class="samp">s</span> for a structure tag, <span class="samp">u</span> for a union tag, or <span class="samp">e</span> for
+a enumerator tag, followed by the name of the tag, followed by <span class="samp">:</span>. 
+If the name contains <span class="samp">::</span> between a <span class="samp">&lt;</span> and <span class="samp">&gt;</span> pair (for
+C<tt>++</tt> templates), such a <span class="samp">::</span> does not end the name&mdash;only a single
+<span class="samp">:</span> ends the name; see <a href="Nested-Symbols.html#Nested-Symbols">Nested Symbols</a>.
 
    <p>For example, the following C declarations:
 
@@ -55,20 +52,20 @@ C<tt>++</tt> templates), such a &lsquo;<samp><span class="samp">::</span></samp>
 
 <pre class="example">     .stabs "bar:G16=*17=xsfoo:",32,0,0,0
 </pre>
-   <p>Not all debuggers support the &lsquo;<samp><span class="samp">x</span></samp>&rsquo; type descriptor, so on some
+   <p>Not all debuggers support the <span class="samp">x</span> type descriptor, so on some
 machines GCC does not use it.  I believe that for the above example it
 would just emit a reference to type 17 and never define it, but I
 haven't verified that.
 
-   <p>Modula-2 imported types, at least on AIX, use the &lsquo;<samp><span class="samp">i</span></samp>&rsquo; type
+   <p>Modula-2 imported types, at least on AIX, use the <span class="samp">i</span> type
 descriptor, which is followed by the name of the module from which the
-type is imported, followed by &lsquo;<samp><span class="samp">:</span></samp>&rsquo;, followed by the name of the
+type is imported, followed by <span class="samp">:</span>, followed by the name of the
 type.  There is then optionally a comma followed by type information for
 the type.  This differs from merely naming the type (see <a href="Typedefs.html#Typedefs">Typedefs</a>) in
 that it identifies the module; I don't understand whether the name of
 the type given here is always just the same as the name we are giving
 it, or whether this type descriptor is used with a nameless stab
-(see <a href="String-Field.html#String-Field">String Field</a>), or what.  The symbol ends with &lsquo;<samp><span class="samp">;</span></samp>&rsquo;.
+(see <a href="String-Field.html#String-Field">String Field</a>), or what.  The symbol ends with <span class="samp">;</span>.
 
    </body></html>
 

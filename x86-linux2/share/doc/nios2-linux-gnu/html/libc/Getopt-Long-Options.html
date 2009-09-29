@@ -3,7 +3,7 @@
 <title>Getopt Long Options - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Getopt.html#Getopt" title="Getopt">
 <link rel="prev" href="Example-of-Getopt.html#Example-of-Getopt" title="Example of Getopt">
@@ -17,26 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Getopt-Long-Options"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Getopt-Long-Option-Example.html#Getopt-Long-Option-Example">Getopt Long Option Example</a>,
+<a name="Getopt-Long-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Getopt-Long-Option-Example.html#Getopt-Long-Option-Example">Getopt Long Option Example</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Example-of-Getopt.html#Example-of-Getopt">Example of Getopt</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Getopt.html#Getopt">Getopt</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">25.2.3 Parsing Long Options with <code>getopt_long</code></h4>
 
 <p>To accept GNU-style long options as well as single-character options,
 use <code>getopt_long</code> instead of <code>getopt</code>.  This function is
-declared in <samp><span class="file">getopt.h</span></samp>, not <samp><span class="file">unistd.h</span></samp>.  You should make every
+declared in <span class="file">getopt.h</span>, not <span class="file">unistd.h</span>.  You should make every
 program accept long options if it uses any options, for this takes
 little extra work and helps beginners remember how to use the program.
 
@@ -121,8 +119,8 @@ how you can tell whether an optional argument was supplied.
 
    <p>Since long option names were used before before the <code>getopt_long</code>
 options was invented there are program interfaces which require programs
-to recognize options like &lsquo;<samp><span class="samp">-option&nbsp;value</span></samp>&rsquo;<!-- /@w --> instead of
-&lsquo;<samp><span class="samp">--option&nbsp;value</span></samp>&rsquo;<!-- /@w -->.  To enable these programs to use the GNU
+to recognize options like <span class="samp">-option&nbsp;value</span><!-- /@w --> instead of
+<span class="samp">--option&nbsp;value</span><!-- /@w -->.  To enable these programs to use the GNU
 getopt functionality there is one more function available.
 
 <!-- getopt.h -->
@@ -130,21 +128,21 @@ getopt functionality there is one more function available.
 <div class="defun">
 &mdash; Function: int <b>getopt_long_only</b> (<var>int argc, char *const *argv, const char *shortopts, const struct option *longopts, int *indexptr</var>)<var><a name="index-getopt_005flong_005fonly-3030"></a></var><br>
 <blockquote>
-        <p>The <code>getopt_long_only</code> function is equivalent to the
+<p>The <code>getopt_long_only</code> function is equivalent to the
 <code>getopt_long</code> function but it allows to specify the user of the
-application to pass long options with only &lsquo;<samp><span class="samp">-</span></samp>&rsquo; instead of
-&lsquo;<samp><span class="samp">--</span></samp>&rsquo;.  The &lsquo;<samp><span class="samp">--</span></samp>&rsquo; prefix is still recognized but instead of
-looking through the short options if a &lsquo;<samp><span class="samp">-</span></samp>&rsquo; is seen it is first
+application to pass long options with only <span class="samp">-</span> instead of
+<span class="samp">--</span>.  The <span class="samp">--</span> prefix is still recognized but instead of
+looking through the short options if a <span class="samp">-</span> is seen it is first
 tried whether this parameter names a long option.  If not, it is parsed
 as a short option.
 
         <p>Assuming <code>getopt_long_only</code> is used starting an application with
 
      <pre class="smallexample">            app -foo
-</pre>
+     </pre>
         <p class="noindent">the <code>getopt_long_only</code> will first look for a long option named
-&lsquo;<samp><span class="samp">foo</span></samp>&rsquo;.  If this is not found, the short options &lsquo;<samp><span class="samp">f</span></samp>&rsquo;, &lsquo;<samp><span class="samp">o</span></samp>&rsquo;,
-and again &lsquo;<samp><span class="samp">o</span></samp>&rsquo; are recognized. 
+<span class="samp">foo</span>.  If this is not found, the short options <span class="samp">f</span>, <span class="samp">o</span>,
+and again <span class="samp">o</span> are recognized. 
 </p></blockquote></div>
 
    </body></html>

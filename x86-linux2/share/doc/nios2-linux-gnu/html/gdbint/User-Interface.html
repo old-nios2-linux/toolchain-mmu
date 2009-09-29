@@ -3,7 +3,7 @@
 <title>User Interface - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Algorithms.html#Algorithms" title="Algorithms">
 <link rel="next" href="libgdb.html#libgdb" title="libgdb">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="User-Interface"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="libgdb.html#libgdb">libgdb</a>,
+<a name="User-Interface"></a>Next:&nbsp;<a rel="next" accesskey="n" href="libgdb.html#libgdb">libgdb</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Algorithms.html#Algorithms">Algorithms</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">4 User Interface</h2>
@@ -43,8 +41,8 @@ allow for the set of commands to be augmented dynamically, and also
 has a recursive subcommand capability, where the first argument to
 a command may itself direct a lookup on a different command list.
 
-   <p>For instance, the &lsquo;<samp><span class="samp">set</span></samp>&rsquo; command just starts a lookup on the
-<code>setlist</code> command list, while &lsquo;<samp><span class="samp">set thread</span></samp>&rsquo; recurses
+   <p>For instance, the <span class="samp">set</span> command just starts a lookup on the
+<code>setlist</code> command list, while <span class="samp">set thread</span> recurses
 to the <code>set_thread_cmd_list</code>.
 
    <p><a name="index-add_005fcmd-77"></a><a name="index-add_005fcom-78"></a>To add commands in general, use <code>add_cmd</code>.  <code>add_com</code> adds to
@@ -52,7 +50,7 @@ the main command list, and should be used for those commands.  The usual
 place to add commands is in the <code>_initialize_</code><var>xyz</var> routines at
 the ends of most source files.
 
-   <p><a name="index-add_005fsetshow_005fcmd-79"></a><a name="index-add_005fsetshow_005fcmd_005ffull-80"></a>To add paired &lsquo;<samp><span class="samp">set</span></samp>&rsquo; and &lsquo;<samp><span class="samp">show</span></samp>&rsquo; commands, use
+   <p><a name="index-add_005fsetshow_005fcmd-79"></a><a name="index-add_005fsetshow_005fcmd_005ffull-80"></a>To add paired <span class="samp">set</span> and <span class="samp">show</span> commands, use
 <code>add_setshow_cmd</code> or <code>add_setshow_cmd_full</code>.  The former is
 a slightly simpler interface which is useful when you don't need to
 further modify the new command structures, while the latter returns
@@ -74,7 +72,7 @@ entire string the user should type at the command line.
 
 <!-- This section is based on the documentation written by Fernando -->
 <!-- Nasser <fnasser@redhat.com>. -->
-<p><a name="index-g_t_0040code_007bui_005fout_007d-functions-83"></a>The <code>ui_out</code> functions present an abstraction level for the
+<p><a name="index-_0040code_007bui_005fout_007d-functions-83"></a>The <code>ui_out</code> functions present an abstraction level for the
 <span class="sc">gdb</span> output code.  They hide the specifics of different user
 interfaces supported by <span class="sc">gdb</span>, and thus free the programmer
 from the need to write several versions of the same code, one each for
@@ -267,7 +265,7 @@ and correct implementation of the non-portable<a rel="footnote" href="#fn-1" nam
           ui_out_tuple_begin (uiout, "...");
           old_cleanup = make_cleanup ((void(*)(void *)) ui_out_tuple_end,
                                       uiout);
-</pre>
+     </pre>
         </blockquote></div>
 
 <div class="defun">
@@ -432,8 +430,8 @@ list.
 &mdash; Function: void <b>ui_out_message</b> (<var>struct ui_out *uiout, int verbosity, const char *format, ...</var>)<var><a name="index-ui_005fout_005fmessage-112"></a></var><br>
 <blockquote><p>This function produces a formatted message, provided that the current
 verbosity level is at least as large as given by <var>verbosity</var>.  The
-current verbosity level is specified by the user with the &lsquo;<samp><span class="samp">set
-verbositylevel</span></samp>&rsquo; command.<a rel="footnote" href="#fn-2" name="fnd-2"><sup>2</sup></a>
+current verbosity level is specified by the user with the <span class="samp">set
+verbositylevel</span> command.<a rel="footnote" href="#fn-2" name="fnd-2"><sup>2</sup></a>
 </p></blockquote></div>
 
 <div class="defun">
@@ -455,10 +453,10 @@ the UI buffers output.
 
 <h4 class="subsection">4.2.6 Examples of Use of <code>ui_out</code> functions</h4>
 
-<p><a name="index-using-_0040code_007bui_005fout_007d-functions-115"></a><a name="index-g_t_0040code_007bui_005fout_007d-functions_002c-usage-examples-116"></a>This section gives some practical examples of using the <code>ui_out</code>
+<p><a name="index-using-_0040code_007bui_005fout_007d-functions-115"></a><a name="index-_0040code_007bui_005fout_007d-functions_002c-usage-examples-116"></a>This section gives some practical examples of using the <code>ui_out</code>
 functions to generalize the old console-oriented code in
 <span class="sc">gdb</span>.  The examples all come from functions defined on the
-<samp><span class="file">breakpoints.c</span></samp> file.
+<span class="file">breakpoints.c</span> file.
 
    <p>This example, from the <code>breakpoint_1</code> function, shows how to
 produce a table.
@@ -666,7 +664,7 @@ setting verbosity level is not yet implemented, and is always returned
 as zero.  So calling <code>ui_out_message</code> with a <var>verbosity</var>
 argument more than zero will cause the message to never be printed.</p>
 
-   <hr></div>
+   <p><hr></div>
 
    </body></html>
 

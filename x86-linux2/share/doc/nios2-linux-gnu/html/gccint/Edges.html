@@ -3,7 +3,7 @@
 <title>Edges - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Control-Flow.html#Control-Flow" title="Control Flow">
 <link rel="prev" href="Basic-Blocks.html#Basic-Blocks" title="Basic Blocks">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Edges"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Profile-information.html#Profile-information">Profile information</a>,
+<a name="Edges"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Profile-information.html#Profile-information">Profile information</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Basic-Blocks.html#Basic-Blocks">Basic Blocks</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Control-Flow.html#Control-Flow">Control Flow</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">12.2 Edges</h3>
@@ -186,7 +184,7 @@ series of jumps,
           
             goto *x;
             [ ... ]
-</pre>
+     </pre>
      <p class="noindent">factoring the computed jumps results in the following code sequence
 which has a much simpler flow graph:
 
@@ -201,7 +199,7 @@ which has a much simpler flow graph:
           
           y:
             goto *x;
-</pre>
+     </pre>
      <p>However, the classic problem with this transformation is that it has a
 runtime cost in there resulting code: An extra jump.  Therefore, the
 computed jumps are un-factored in the later passes of the compiler. 

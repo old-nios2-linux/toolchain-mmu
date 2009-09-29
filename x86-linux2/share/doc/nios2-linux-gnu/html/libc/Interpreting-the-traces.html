@@ -3,7 +3,7 @@
 <title>Interpreting the traces - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Allocation-Debugging.html#Allocation-Debugging" title="Allocation Debugging">
 <link rel="prev" href="Tips-for-the-Memory-Debugger.html#Tips-for-the-Memory-Debugger" title="Tips for the Memory Debugger">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Interpreting-the-traces"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Tips-for-the-Memory-Debugger.html#Tips-for-the-Memory-Debugger">Tips for the Memory Debugger</a>,
+<a name="Interpreting-the-traces"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Tips-for-the-Memory-Debugger.html#Tips-for-the-Memory-Debugger">Tips for the Memory Debugger</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Allocation-Debugging.html#Allocation-Debugging">Allocation Debugging</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">3.2.3.4 Interpreting the traces</h5>
@@ -58,7 +56,7 @@ the program which generated the trace.
      No memory leaks.
 </pre>
    <p>In this case the program <code>tst-mtrace</code> was run and it produced a
-trace file <samp><span class="file">log</span></samp>.  The message printed by <code>mtrace</code> shows there
+trace file <span class="file">log</span>.  The message printed by <code>mtrace</code> shows there
 are no problems with the code, all allocated memory was freed
 afterwards.
 
@@ -109,7 +107,7 @@ normally crashes.
    <p>The other situation which is much harder to detect are memory leaks.  As
 you can see in the output the <code>mtrace</code> function collects all this
 information and so can say that the program calls an allocation function
-from line 33 in the source file <samp><span class="file">/home/drepper/tst-mtrace.c</span></samp> four
+from line 33 in the source file <span class="file">/home/drepper/tst-mtrace.c</span> four
 times without freeing this memory before the program terminates. 
 Whether this is a real problem remains to be investigated.
 

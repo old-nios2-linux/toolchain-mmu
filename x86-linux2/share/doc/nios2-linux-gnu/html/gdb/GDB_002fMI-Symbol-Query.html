@@ -3,7 +3,7 @@
 <title>GDB/MI Symbol Query - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB_002fMI.html#GDB_002fMI" title="GDB/MI">
 <link rel="prev" href="GDB_002fMI-Tracepoint-Commands.html#GDB_002fMI-Tracepoint-Commands" title="GDB/MI Tracepoint Commands">
@@ -17,27 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="GDB%2fMI-Symbol-Query"></a>
-<a name="GDB_002fMI-Symbol-Query"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-File-Commands.html#GDB_002fMI-File-Commands">GDB/MI File Commands</a>,
+<a name="GDB_002fMI-Symbol-Query"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-File-Commands.html#GDB_002fMI-File-Commands">GDB/MI File Commands</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="GDB_002fMI-Tracepoint-Commands.html#GDB_002fMI-Tracepoint-Commands">GDB/MI Tracepoint Commands</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">25.15 <span class="sc">gdb/mi</span> Symbol Query Commands</h3>
 
 <h4 class="subheading">The <code>-symbol-info-address</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dinfo_002daddress-1454"></a>
+<p><a name="index-_002dsymbol_002dinfo_002daddress-1454"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -47,7 +44,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">info address</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">info address</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -55,7 +52,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h4 class="subheading">The <code>-symbol-info-file</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dinfo_002dfile-1455"></a>
+<p><a name="index-_002dsymbol_002dinfo_002dfile-1455"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -66,7 +63,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
 <p>There's no equivalent <span class="sc">gdb</span> command.  <code>gdbtk</code> has
-&lsquo;<samp><span class="samp">gdb_find_file</span></samp>&rsquo;.
+<span class="samp">gdb_find_file</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -74,7 +71,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h4 class="subheading">The <code>-symbol-info-function</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dinfo_002dfunction-1456"></a>
+<p><a name="index-_002dsymbol_002dinfo_002dfunction-1456"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -84,7 +81,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>&lsquo;<samp><span class="samp">gdb_get_function</span></samp>&rsquo; in <code>gdbtk</code>.
+<p><span class="samp">gdb_get_function</span> in <code>gdbtk</code>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -92,7 +89,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h4 class="subheading">The <code>-symbol-info-line</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dinfo_002dline-1457"></a>
+<p><a name="index-_002dsymbol_002dinfo_002dline-1457"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -102,8 +99,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">info line</span></samp>&rsquo;. 
-<code>gdbtk</code> has the &lsquo;<samp><span class="samp">gdb_get_line</span></samp>&rsquo; and &lsquo;<samp><span class="samp">gdb_get_file</span></samp>&rsquo; commands.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">info line</span>. 
+<code>gdbtk</code> has the <span class="samp">gdb_get_line</span> and <span class="samp">gdb_get_file</span> commands.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -111,7 +108,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h4 class="subheading">The <code>-symbol-info-symbol</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dinfo_002dsymbol-1458"></a>
+<p><a name="index-_002dsymbol_002dinfo_002dsymbol-1458"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -121,7 +118,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">info symbol</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">info symbol</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -129,7 +126,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h4 class="subheading">The <code>-symbol-list-functions</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dlist_002dfunctions-1459"></a>
+<p><a name="index-_002dsymbol_002dlist_002dfunctions-1459"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -139,8 +136,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>&lsquo;<samp><span class="samp">info functions</span></samp>&rsquo; in <span class="sc">gdb</span>, &lsquo;<samp><span class="samp">gdb_listfunc</span></samp>&rsquo; and
-&lsquo;<samp><span class="samp">gdb_search</span></samp>&rsquo; in <code>gdbtk</code>.
+<p><span class="samp">info functions</span> in <span class="sc">gdb</span>, <span class="samp">gdb_listfunc</span> and
+<span class="samp">gdb_search</span> in <code>gdbtk</code>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -148,7 +145,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h4 class="subheading">The <code>-symbol-list-lines</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dlist_002dlines-1460"></a>
+<p><a name="index-_002dsymbol_002dlist_002dlines-1460"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -171,7 +168,7 @@ ascending PC order.
 </pre>
 <h4 class="subheading">The <code>-symbol-list-types</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dlist_002dtypes-1461"></a>
+<p><a name="index-_002dsymbol_002dlist_002dtypes-1461"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -181,8 +178,8 @@ ascending PC order.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding commands are &lsquo;<samp><span class="samp">info types</span></samp>&rsquo; in <span class="sc">gdb</span>,
-&lsquo;<samp><span class="samp">gdb_search</span></samp>&rsquo; in <code>gdbtk</code>.
+<p>The corresponding commands are <span class="samp">info types</span> in <span class="sc">gdb</span>,
+<span class="samp">gdb_search</span> in <code>gdbtk</code>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -190,7 +187,7 @@ ascending PC order.
 
 <h4 class="subheading">The <code>-symbol-list-variables</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dlist_002dvariables-1462"></a>
+<p><a name="index-_002dsymbol_002dlist_002dvariables-1462"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -200,7 +197,7 @@ ascending PC order.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>&lsquo;<samp><span class="samp">info variables</span></samp>&rsquo; in <span class="sc">gdb</span>, &lsquo;<samp><span class="samp">gdb_search</span></samp>&rsquo; in <code>gdbtk</code>.
+<p><span class="samp">info variables</span> in <span class="sc">gdb</span>, <span class="samp">gdb_search</span> in <code>gdbtk</code>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -208,7 +205,7 @@ ascending PC order.
 
 <h4 class="subheading">The <code>-symbol-locate</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dlocate-1463"></a>
+<p><a name="index-_002dsymbol_002dlocate-1463"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -216,7 +213,7 @@ ascending PC order.
 </pre>
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>&lsquo;<samp><span class="samp">gdb_loc</span></samp>&rsquo; in <code>gdbtk</code>.
+<p><span class="samp">gdb_loc</span> in <code>gdbtk</code>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -224,7 +221,7 @@ ascending PC order.
 
 <h4 class="subheading">The <code>-symbol-type</code> Command</h4>
 
-<p><a name="index-g_t_002dsymbol_002dtype-1464"></a>
+<p><a name="index-_002dsymbol_002dtype-1464"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -234,13 +231,13 @@ ascending PC order.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">ptype</span></samp>&rsquo;, <code>gdbtk</code> has
-&lsquo;<samp><span class="samp">gdb_obj_variable</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">ptype</span>, <code>gdbtk</code> has
+<span class="samp">gdb_obj_variable</span>.
 
 <h5 class="subsubheading">Example</h5>
 
 <p>N.A.
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-   </body></html>
+</body></html>
 

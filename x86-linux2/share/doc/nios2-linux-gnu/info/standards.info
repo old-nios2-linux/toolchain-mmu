@@ -1,4 +1,5 @@
-This is standards.info, produced by makeinfo version 4.13 from /opt/nios2gcc4/obj/gdb-src-4.1-176-nios2-linux-gnu-i686-pc-linux-gnu/etc/standards.texi.
+This is standards.info, produced by makeinfo version 4.7 from
+/opt/nios2gcc4/obj/gdb-src-4.1-176-nios2-linux-gnu-i686-pc-linux-gnu/etc/standards.texi.
 
 START-INFO-DIR-ENTRY
 * Standards: (standards).        GNU coding standards.
@@ -1610,7 +1611,7 @@ meanings, so we can update the table.
      `-q' in Make.
 
 `quiet'
-     Used in many programs to inhibit the usual output.  *Note_* every
+     Used in many programs to inhibit the usual output.  *Note:* every
      program accepting `--quiet' should accept `--silent' as a synonym.
 
 `quiet-unshar'
@@ -1722,7 +1723,7 @@ meanings, so we can update the table.
      `-T' in `cat'.
 
 `silent'
-     Used in many programs to inhibit the usual output.  *Note_* every
+     Used in many programs to inhibit the usual output.  *Note:* every
      program accepting `--silent' should accept `--quiet' as a synonym.
 
 `size'
@@ -2789,7 +2790,7 @@ the functions, variables, options, and important concepts that are part
 of the program.  One combined Index should do for a short manual, but
 sometimes for a complex package it is better to use multiple indices.
 The Texinfo manual includes advice on preparing good index entries, see
-*note Making Index Entries: (texinfo)Index Entries, and see *note
+*Note Making Index Entries: (texinfo)Index Entries, and see *Note
 Defining the Entries of an Index: (texinfo)Indexing Commands.
 
    Don't use Unix man pages as a model for how to write GNU
@@ -3712,8 +3713,8 @@ directories:
 
 `lispdir'
      The directory for installing any Emacs Lisp files in this package.
-     By default, it should be `/usr/local/share/emacs/site-lisp', but it
-     should be written as `$(prefix)/share/emacs/site-lisp'.
+     By default, it should be `/usr/local/share/emacs/site-lisp', but
+     it should be written as `$(prefix)/share/emacs/site-lisp'.
 
      If you are using Autoconf, write the default as `@lispdir@'.  In
      order to make `@lispdir@' work, you need the following lines in
@@ -4516,19 +4517,20 @@ Appendix B GNU Free Documentation License
      H. Include an unaltered copy of this License.
      I. Preserve the section entitled "History", and its title, and add
      to    it an item stating at least the title, year, new authors, and
-       publisher of the Modified Version as given on the Title Page.  If
-       there is no section entitled "History" in the Document, create
-     one    stating the title, year, authors, and publisher of the
-     Document as    given on its Title Page, then add an item
+       publisher of the Modified Version as given on the Title Page.
+     If    there is no section entitled "History" in the Document,
+     create one    stating the title, year, authors, and publisher of
+     the Document as    given on its Title Page, then add an item
      describing the Modified    Version as stated in the previous
      sentence.
      J. Preserve the network location, if any, given in the Document for
-       public access to a Transparent copy of the Document, and likewise
-       the network locations given in the Document for previous versions
-       it was based on.  These may be placed in the "History" section.
-       You may omit a network location for a work that was published at
-       least four years before the Document itself, or if the original
-      publisher of the version it refers to gives permission.
+       public access to a Transparent copy of the Document, and
+     likewise    the network locations given in the Document for
+     previous versions    it was based on.  These may be placed in the
+     "History" section.     You may omit a network location for a work
+     that was published at    least four years before the Document
+     itself, or if the original    publisher of the version it refers
+     to gives permission.
      K. In any section entitled "Acknowledgements" or "Dedications",
      preserve the section's title, and preserve in the section all the
       substance and tone of each of the contributor acknowledgements
@@ -4861,68 +4863,68 @@ Index
 
 
 Tag Table:
-Node: Top761
-Node: Preface1461
-Node: Legal Issues3681
-Node: Reading Non-Free Code4145
-Node: Contributions5873
-Node: Trademarks8027
-Node: Design Advice9090
-Node: Source Language9674
-Node: Compatibility11686
-Node: Using Extensions13314
-Node: Standard C14890
-Node: Conditional Compilation17293
-Node: Program Behavior18592
-Node: Semantics19511
-Node: Libraries24204
-Node: Errors25449
-Node: User Interfaces27230
-Node: Graphical Interfaces28835
-Node: Command-Line Interfaces29870
-Node: Option Table35941
-Node: Memory Usage50950
-Node: File Usage51975
-Node: Writing C52723
-Node: Formatting53573
-Node: Comments57636
-Node: Syntactic Conventions60938
-Node: Names64350
-Node: System Portability66559
-Node: CPU Portability68944
-Node: System Functions72200
-Node: Internationalization77397
-Node: Mmap80550
-Node: Documentation81260
-Node: GNU Manuals82365
-Node: Doc Strings and Manuals87422
-Node: Manual Structure Details88975
-Node: License for Manuals90393
-Node: Manual Credits91367
-Node: Printed Manuals91760
-Node: NEWS File92446
-Node: Change Logs93124
-Node: Change Log Concepts93878
-Node: Style of Change Logs95742
-Node: Simple Changes97777
-Node: Conditional Changes99021
-Node: Indicating the Part Changed100443
-Node: Man Pages100970
-Node: Reading other Manuals102594
-Node: Managing Releases103385
-Node: Configuration104148
-Node: Makefile Conventions111053
-Node: Makefile Basics111859
-Node: Utilities in Makefiles115033
-Node: Command Variables117178
-Node: Directory Variables120755
-Node: Standard Targets131649
-Ref: Standard Targets-Footnote-1142889
-Node: Install Command Categories142989
-Node: Releases147571
-Node: References151659
-Node: Copying This Manual153944
-Node: GNU Free Documentation License154180
-Node: Index173869
+Node: Top760
+Node: Preface1460
+Node: Legal Issues3680
+Node: Reading Non-Free Code4144
+Node: Contributions5872
+Node: Trademarks8026
+Node: Design Advice9089
+Node: Source Language9673
+Node: Compatibility11685
+Node: Using Extensions13313
+Node: Standard C14889
+Node: Conditional Compilation17292
+Node: Program Behavior18591
+Node: Semantics19510
+Node: Libraries24203
+Node: Errors25448
+Node: User Interfaces27229
+Node: Graphical Interfaces28834
+Node: Command-Line Interfaces29869
+Node: Option Table35940
+Node: Memory Usage50949
+Node: File Usage51974
+Node: Writing C52722
+Node: Formatting53572
+Node: Comments57635
+Node: Syntactic Conventions60937
+Node: Names64349
+Node: System Portability66558
+Node: CPU Portability68943
+Node: System Functions72199
+Node: Internationalization77396
+Node: Mmap80549
+Node: Documentation81259
+Node: GNU Manuals82364
+Node: Doc Strings and Manuals87421
+Node: Manual Structure Details88974
+Node: License for Manuals90392
+Node: Manual Credits91366
+Node: Printed Manuals91759
+Node: NEWS File92445
+Node: Change Logs93123
+Node: Change Log Concepts93877
+Node: Style of Change Logs95741
+Node: Simple Changes97776
+Node: Conditional Changes99020
+Node: Indicating the Part Changed100442
+Node: Man Pages100969
+Node: Reading other Manuals102593
+Node: Managing Releases103384
+Node: Configuration104147
+Node: Makefile Conventions111052
+Node: Makefile Basics111858
+Node: Utilities in Makefiles115032
+Node: Command Variables117177
+Node: Directory Variables120754
+Node: Standard Targets131648
+Ref: Standard Targets-Footnote-1142888
+Node: Install Command Categories142988
+Node: Releases147570
+Node: References151658
+Node: Copying This Manual153943
+Node: GNU Free Documentation License154179
+Node: Index173880
 
 End Tag Table

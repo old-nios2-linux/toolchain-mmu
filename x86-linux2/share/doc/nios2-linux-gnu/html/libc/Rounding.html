@@ -3,7 +3,7 @@
 <title>Rounding - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Arithmetic.html#Arithmetic" title="Arithmetic">
 <link rel="prev" href="Floating-Point-Errors.html#Floating-Point-Errors" title="Floating Point Errors">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Rounding"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Control-Functions.html#Control-Functions">Control Functions</a>,
+<a name="Rounding"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Control-Functions.html#Control-Functions">Control Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Floating-Point-Errors.html#Floating-Point-Errors">Floating Point Errors</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">20.6 Rounding Modes</h3>
@@ -49,11 +47,11 @@ statistical bias and guarantees numeric stability: round-off errors in a
 lengthy calculation will remain smaller than half of <code>FLT_EPSILON</code>.
 
      <!-- @item Round toward @math{+@infinity{}} -->
-     <br><dt>Round toward plus Infinity.<dd>All results are rounded to the smallest representable value
+<br><dt>Round toward plus Infinity.<dd>All results are rounded to the smallest representable value
 which is greater than the result.
 
      <!-- @item Round toward @math{-@infinity{}} -->
-     <br><dt>Round toward minus Infinity.<dd>All results are rounded to the largest representable value which is less
+<br><dt>Round toward minus Infinity.<dd>All results are rounded to the largest representable value which is less
 than the result.
 
      <br><dt>Round toward zero.<dd>All results are rounded to the largest representable value whose
@@ -62,7 +60,7 @@ result is negative it is rounded up; if it is positive, it is rounded
 down. 
 </dl>
 
-<p class="noindent"><samp><span class="file">fenv.h</span></samp> defines constants which you can use to refer to the
+<p class="noindent"><span class="file">fenv.h</span> defines constants which you can use to refer to the
 various rounding modes.  Each one will be defined if and only if the FPU
 supports the corresponding rounding mode.
 
@@ -72,16 +70,16 @@ supports the corresponding rounding mode.
 <a name="index-FE_005fTONEAREST-2388"></a><dt><code>FE_TONEAREST</code><dd>Round to nearest.
 
      <!-- fenv.h -->
-     <!-- ISO -->
-     <p><a name="index-FE_005fUPWARD-2389"></a><br><dt><code>FE_UPWARD</code><dd>Round toward +&amp;infin;.
+<!-- ISO -->
+<p><a name="index-FE_005fUPWARD-2389"></a><br><dt><code>FE_UPWARD</code><dd>Round toward +&amp;infin;.
 
      <!-- fenv.h -->
-     <!-- ISO -->
-     <p><a name="index-FE_005fDOWNWARD-2390"></a><br><dt><code>FE_DOWNWARD</code><dd>Round toward -&amp;infin;.
+<!-- ISO -->
+<p><a name="index-FE_005fDOWNWARD-2390"></a><br><dt><code>FE_DOWNWARD</code><dd>Round toward -&amp;infin;.
 
      <!-- fenv.h -->
-     <!-- ISO -->
-     <p><a name="index-FE_005fTOWARDZERO-2391"></a><br><dt><code>FE_TOWARDZERO</code><dd>Round toward zero. 
+<!-- ISO -->
+<p><a name="index-FE_005fTOWARDZERO-2391"></a><br><dt><code>FE_TOWARDZERO</code><dd>Round toward zero. 
 </dl>
 
    <p>Underflow is an unusual case.  Normally, IEEE&nbsp;754<!-- /@w --> floating point

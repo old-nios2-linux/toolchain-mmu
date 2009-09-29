@@ -3,7 +3,7 @@
 <title>Command Line - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Overview.html#Overview" title="Overview">
 <link rel="prev" href="Object-Formats.html#Object-Formats" title="Object Formats">
@@ -17,36 +17,34 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Command-Line"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Input-Files.html#Input-Files">Input Files</a>,
+<a name="Command-Line"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Input-Files.html#Input-Files">Input Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Object-Formats.html#Object-Formats">Object Formats</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Overview.html#Overview">Overview</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">1.4 Command Line</h3>
 
 <p><a name="index-command-line-conventions-25"></a>
-After the program name <samp><span class="command">as</span></samp>, the command line may contain
+After the program name <span class="command">as</span>, the command line may contain
 options and file names.  Options may appear in any order, and may be
 before, after, or between file names.  The order of file names is
 significant.
 
-   <p><a name="index-standard-input_002c-as-input-file-26"></a><a name="index-g_t_002d_002d-27"></a><samp><span class="file">--</span></samp> (two hyphens) by itself names the standard input file
-explicitly, as one of the files for <samp><span class="command">as</span></samp> to assemble.
+   <p><a name="index-standard-input_002c-as-input-file-26"></a><a name="index-_002d_002d-27"></a><span class="file">--</span> (two hyphens) by itself names the standard input file
+explicitly, as one of the files for <span class="command">as</span> to assemble.
 
-   <p><a name="index-options_002c-command-line-28"></a>Except for &lsquo;<samp><span class="samp">--</span></samp>&rsquo; any command line argument that begins with a
-hyphen (&lsquo;<samp><span class="samp">-</span></samp>&rsquo;) is an option.  Each option changes the behavior of
-<samp><span class="command">as</span></samp>.  No option changes the way another option works.  An
-option is a &lsquo;<samp><span class="samp">-</span></samp>&rsquo; followed by one or more letters; the case of
+   <p><a name="index-options_002c-command-line-28"></a>Except for <span class="samp">--</span> any command line argument that begins with a
+hyphen (<span class="samp">-</span>) is an option.  Each option changes the behavior of
+<span class="command">as</span>.  No option changes the way another option works.  An
+option is a <span class="samp">-</span> followed by one or more letters; the case of
 the letter is important.   All options are optional.
 
    <p>Some options expect exactly one file name to follow them.  The file

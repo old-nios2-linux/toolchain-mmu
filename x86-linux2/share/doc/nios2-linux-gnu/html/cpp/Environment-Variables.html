@@ -3,7 +3,7 @@
 <title>Environment Variables - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Invocation.html#Invocation" title="Invocation">
 <link rel="next" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License" title="GNU Free Documentation License">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
--->
+man end-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,19 +40,17 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Environment-Variables"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">GNU Free Documentation License</a>,
+<a name="Environment-Variables"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">GNU Free Documentation License</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Invocation.html#Invocation">Invocation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">13 Environment Variables</h2>
@@ -64,8 +62,8 @@ operates.  You can use them to specify directories or prefixes to use
 when searching for include files, or to control dependency output.
 
    <p>Note that you can also specify places to search using options such as
-<samp><span class="option">-I</span></samp>, and control dependency output with options like
-<samp><span class="option">-M</span></samp> (see <a href="Invocation.html#Invocation">Invocation</a>).  These take precedence over
+<span class="option">-I</span>, and control dependency output with options like
+<span class="option">-M</span> (see <a href="Invocation.html#Invocation">Invocation</a>).  These take precedence over
 environment variables, which in turn take precedence over the
 configuration of GCC.
 
@@ -78,54 +76,54 @@ configuration of GCC.
 <!--  -->
 <!-- If this file is included with the flag ``cppmanual'' set, it is -->
 <!-- formatted for inclusion in the CPP manual; otherwise the main GCC manual. -->
-     <dl>
-<dt><samp><span class="env">CPATH</span></samp><a name="index-CPATH-198"></a><dt><samp><span class="env">C_INCLUDE_PATH</span></samp><a name="index-C_005fINCLUDE_005fPATH-199"></a><dt><samp><span class="env">CPLUS_INCLUDE_PATH</span></samp><a name="index-CPLUS_005fINCLUDE_005fPATH-200"></a><dt><samp><span class="env">OBJC_INCLUDE_PATH</span></samp><a name="index-OBJC_005fINCLUDE_005fPATH-201"></a><dd><!-- Commented out until ObjC++ is part of GCC: -->
+<dl>
+<dt><span class="env">CPATH</span><a name="index-CPATH-198"></a><dt><span class="env">C_INCLUDE_PATH</span><a name="index-C_005fINCLUDE_005fPATH-199"></a><dt><span class="env">CPLUS_INCLUDE_PATH</span><a name="index-CPLUS_005fINCLUDE_005fPATH-200"></a><dt><span class="env">OBJC_INCLUDE_PATH</span><a name="index-OBJC_005fINCLUDE_005fPATH-201"></a><dd><!-- Commented out until ObjC++ is part of GCC: -->
 <!-- @itemx OBJCPLUS_INCLUDE_PATH -->
 Each variable's value is a list of directories separated by a special
-character, much like <samp><span class="env">PATH</span></samp>, in which to look for header files. 
+character, much like <span class="env">PATH</span>, in which to look for header files. 
 The special character, <code>PATH_SEPARATOR</code>, is target-dependent and
 determined at GCC build time.  For Microsoft Windows-based targets it is a
 semicolon, and for almost all other targets it is a colon.
 
-     <p><samp><span class="env">CPATH</span></samp> specifies a list of directories to be searched as if
-specified with <samp><span class="option">-I</span></samp>, but after any paths given with <samp><span class="option">-I</span></samp>
+     <p><span class="env">CPATH</span> specifies a list of directories to be searched as if
+specified with <span class="option">-I</span>, but after any paths given with <span class="option">-I</span>
 options on the command line.  This environment variable is used
 regardless of which language is being preprocessed.
 
      <p>The remaining environment variables apply only when preprocessing the
 particular language indicated.  Each specifies a list of directories
-to be searched as if specified with <samp><span class="option">-isystem</span></samp>, but after any
-paths given with <samp><span class="option">-isystem</span></samp> options on the command line.
+to be searched as if specified with <span class="option">-isystem</span>, but after any
+paths given with <span class="option">-isystem</span> options on the command line.
 
      <p>In all these variables, an empty element instructs the compiler to
 search its current working directory.  Empty elements can appear at the
 beginning or end of a path.  For instance, if the value of
-<samp><span class="env">CPATH</span></samp> is <code>:/special/include</code>, that has the same
-effect as &lsquo;<samp><span class="samp">-I.&nbsp;-I/special/include<!-- /@w --></span></samp>&rsquo;.
+<span class="env">CPATH</span> is <code>:/special/include</code>, that has the same
+effect as <span class="samp">-I.&nbsp;-I/special/include<!-- /@w --></span>.
 
      <!-- man end -->
-     <p>See also <a href="Search-Path.html#Search-Path">Search Path</a>. 
+<p>See also <a href="Search-Path.html#Search-Path">Search Path</a>. 
 <!-- man begin ENVIRONMENT -->
 
-     <br><dt><samp><span class="env">DEPENDENCIES_OUTPUT</span></samp><a name="index-DEPENDENCIES_005fOUTPUT-202"></a><dd><a name="index-dependencies-for-make-as-output-203"></a>If this variable is set, its value specifies how to output
+     <br><dt><span class="env">DEPENDENCIES_OUTPUT</span><a name="index-DEPENDENCIES_005fOUTPUT-202"></a><dd><a name="index-dependencies-for-make-as-output-203"></a>If this variable is set, its value specifies how to output
 dependencies for Make based on the non-system header files processed
 by the compiler.  System header files are ignored in the dependency
 output.
 
-     <p>The value of <samp><span class="env">DEPENDENCIES_OUTPUT</span></samp> can be just a file name, in
+     <p>The value of <span class="env">DEPENDENCIES_OUTPUT</span> can be just a file name, in
 which case the Make rules are written to that file, guessing the target
 name from the source file name.  Or the value can have the form
-&lsquo;<samp><var>file</var> <var>target</var></samp>&rsquo;, in which case the rules are written to
+<var>file</var> <var>target</var>, in which case the rules are written to
 file <var>file</var> using <var>target</var> as the target name.
 
      <p>In other words, this environment variable is equivalent to combining
-the options <samp><span class="option">-MM</span></samp> and <samp><span class="option">-MF</span></samp>
+the options <span class="option">-MM</span> and <span class="option">-MF</span>
 (see <a href="Invocation.html#Invocation">Invocation</a>),
-with an optional <samp><span class="option">-MT</span></samp> switch too.
+with an optional <span class="option">-MT</span> switch too.
 
-     <br><dt><samp><span class="env">SUNPRO_DEPENDENCIES</span></samp><a name="index-SUNPRO_005fDEPENDENCIES-204"></a><dd><a name="index-dependencies-for-make-as-output-205"></a>This variable is the same as <samp><span class="env">DEPENDENCIES_OUTPUT</span></samp> (see above),
+     <br><dt><span class="env">SUNPRO_DEPENDENCIES</span><a name="index-SUNPRO_005fDEPENDENCIES-204"></a><dd><a name="index-dependencies-for-make-as-output-205"></a>This variable is the same as <span class="env">DEPENDENCIES_OUTPUT</span> (see above),
 except that system header files are not ignored, so it implies
-<samp><span class="option">-M</span></samp> rather than <samp><span class="option">-MM</span></samp>.  However, the dependence on the
+<span class="option">-M</span> rather than <span class="option">-MM</span>.  However, the dependence on the
 main input file is omitted. 
 See <a href="Invocation.html#Invocation">Invocation</a>. 
 </dl>
@@ -133,5 +131,5 @@ See <a href="Invocation.html#Invocation">Invocation</a>.
 
 <!-- Special handling for inclusion in the install manual. -->
 <!-- man begin DESCRIPTION -->
-   </body></html>
+</body></html>
 

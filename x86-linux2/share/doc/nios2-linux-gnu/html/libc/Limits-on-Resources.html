@@ -3,7 +3,7 @@
 <title>Limits on Resources - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Resource-Usage-And-Limitation.html#Resource-Usage-And-Limitation" title="Resource Usage And Limitation">
 <link rel="prev" href="Resource-Usage.html#Resource-Usage" title="Resource Usage">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Limits-on-Resources"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Priority.html#Priority">Priority</a>,
+<a name="Limits-on-Resources"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Priority.html#Priority">Priority</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Resource-Usage.html#Resource-Usage">Resource Usage</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Resource-Usage-And-Limitation.html#Resource-Usage-And-Limitation">Resource Usage And Limitation</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">22.2 Limiting Resource Usage</h3>
@@ -57,7 +55,7 @@ limit.
 
    <p><a name="index-sys_002fresource_002eh-2712"></a>The symbols for use with <code>getrlimit</code>, <code>setrlimit</code>,
 <code>getrlimit64</code>, and <code>setrlimit64</code> are defined in
-<samp><span class="file">sys/resource.h</span></samp>.
+<span class="file">sys/resource.h</span>.
 
 <!-- sys/resource.h -->
 <!-- BSD -->
@@ -144,7 +142,7 @@ and resource.  It has two fields:
 values.  For <code>setrlimit</code>, it specifies the new values. 
 </p></blockquote></div>
 
-   <p>For the LFS functions a similar type is defined in <samp><span class="file">sys/resource.h</span></samp>.
+   <p>For the LFS functions a similar type is defined in <span class="file">sys/resource.h</span>.
 
 <!-- sys/resource.h -->
 <!-- Unix98 -->
@@ -172,64 +170,64 @@ longer than this, it gets a signal: <code>SIGXCPU</code>.  The value is
 measured in seconds.  See <a href="Operation-Error-Signals.html#Operation-Error-Signals">Operation Error Signals</a>.
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>RLIMIT_FSIZE</code><dd><a name="index-RLIMIT_005fFSIZE-2720"></a>The maximum size of file the process can create.  Trying to write a
+<!-- BSD -->
+<br><dt><code>RLIMIT_FSIZE</code><dd><a name="index-RLIMIT_005fFSIZE-2720"></a>The maximum size of file the process can create.  Trying to write a
 larger file causes a signal: <code>SIGXFSZ</code>.  See <a href="Operation-Error-Signals.html#Operation-Error-Signals">Operation Error Signals</a>.
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>RLIMIT_DATA</code><dd><a name="index-RLIMIT_005fDATA-2721"></a>The maximum size of data memory for the process.  If the process tries
+<!-- BSD -->
+<br><dt><code>RLIMIT_DATA</code><dd><a name="index-RLIMIT_005fDATA-2721"></a>The maximum size of data memory for the process.  If the process tries
 to allocate data memory beyond this amount, the allocation function
 fails.
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>RLIMIT_STACK</code><dd><a name="index-RLIMIT_005fSTACK-2722"></a>The maximum stack size for the process.  If the process tries to extend
+<!-- BSD -->
+<br><dt><code>RLIMIT_STACK</code><dd><a name="index-RLIMIT_005fSTACK-2722"></a>The maximum stack size for the process.  If the process tries to extend
 its stack past this size, it gets a <code>SIGSEGV</code> signal. 
 See <a href="Program-Error-Signals.html#Program-Error-Signals">Program Error Signals</a>.
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>RLIMIT_CORE</code><dd><a name="index-RLIMIT_005fCORE-2723"></a>The maximum size core file that this process can create.  If the process
+<!-- BSD -->
+<br><dt><code>RLIMIT_CORE</code><dd><a name="index-RLIMIT_005fCORE-2723"></a>The maximum size core file that this process can create.  If the process
 terminates and would dump a core file larger than this, then no core
 file is created.  So setting this limit to zero prevents core files from
 ever being created.
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>RLIMIT_RSS</code><dd><a name="index-RLIMIT_005fRSS-2724"></a>The maximum amount of physical memory that this process should get. 
+<!-- BSD -->
+<br><dt><code>RLIMIT_RSS</code><dd><a name="index-RLIMIT_005fRSS-2724"></a>The maximum amount of physical memory that this process should get. 
 This parameter is a guide for the system's scheduler and memory
 allocator; the system may give the process more memory when there is a
 surplus.
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>RLIMIT_MEMLOCK</code><dd>The maximum amount of memory that can be locked into physical memory (so
+<!-- BSD -->
+<br><dt><code>RLIMIT_MEMLOCK</code><dd>The maximum amount of memory that can be locked into physical memory (so
 it will never be paged out).
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>RLIMIT_NPROC</code><dd>The maximum number of processes that can be created with the same user ID. 
+<!-- BSD -->
+<br><dt><code>RLIMIT_NPROC</code><dd>The maximum number of processes that can be created with the same user ID. 
 If you have reached the limit for your user ID, <code>fork</code> will fail
 with <code>EAGAIN</code>.  See <a href="Creating-a-Process.html#Creating-a-Process">Creating a Process</a>.
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>RLIMIT_NOFILE</code><dd><a name="index-RLIMIT_005fNOFILE-2725"></a><dt><code>RLIMIT_OFILE</code><dd><a name="index-RLIMIT_005fOFILE-2726"></a>The maximum number of files that the process can open.  If it tries to
+<!-- BSD -->
+<br><dt><code>RLIMIT_NOFILE</code><dd><a name="index-RLIMIT_005fNOFILE-2725"></a><dt><code>RLIMIT_OFILE</code><dd><a name="index-RLIMIT_005fOFILE-2726"></a>The maximum number of files that the process can open.  If it tries to
 open more files than this, its open attempt fails with <code>errno</code>
 <code>EMFILE</code>.  See <a href="Error-Codes.html#Error-Codes">Error Codes</a>.  Not all systems support this limit;
 GNU does, and 4.4 BSD does.
 
      <!-- sys/resource.h -->
-     <!-- Unix98 -->
-     <br><dt><code>RLIMIT_AS</code><dd><a name="index-RLIMIT_005fAS-2727"></a>The maximum size of total memory that this process should get.  If the
+<!-- Unix98 -->
+<br><dt><code>RLIMIT_AS</code><dd><a name="index-RLIMIT_005fAS-2727"></a>The maximum size of total memory that this process should get.  If the
 process tries to allocate more memory beyond this amount with, for
 example, <code>brk</code>, <code>malloc</code>, <code>mmap</code> or <code>sbrk</code>, the
 allocation function fails.
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>RLIM_NLIMITS</code><dd><a name="index-RLIM_005fNLIMITS-2728"></a>The number of different resource limits.  Any valid <var>resource</var>
+<!-- BSD -->
+<br><dt><code>RLIM_NLIMITS</code><dd><a name="index-RLIM_005fNLIMITS-2728"></a>The number of different resource limits.  Any valid <var>resource</var>
 operand must be less than <code>RLIM_NLIMITS</code>. 
 </dl>
 
@@ -244,7 +242,7 @@ the limit value in <code>setrlimit</code>.
    <p>The following are historical functions to do some of what the functions
 above do.  The functions above are better choices.
 
-   <p><code>ulimit</code> and the command symbols are declared in <samp><span class="file">ulimit.h</span></samp>. 
+   <p><code>ulimit</code> and the command symbols are declared in <span class="file">ulimit.h</span>. 
 <a name="index-ulimit_002eh-2730"></a>
 <!-- ulimit.h -->
 <!-- BSD -->
@@ -252,7 +250,7 @@ above do.  The functions above are better choices.
 <div class="defun">
 &mdash; Function: int <b>ulimit</b> (<var>int cmd, ...</var>)<var><a name="index-ulimit-2731"></a></var><br>
 <blockquote>
-        <p><code>ulimit</code> gets the current limit or sets the current and maximum
+<p><code>ulimit</code> gets the current limit or sets the current and maximum
 limit for a particular resource for the calling process according to the
 command <var>cmd</var>.a
 
@@ -286,7 +284,7 @@ the return value is zero.  When the function fails, the return value is
 
         </blockquote></div>
 
-   <p><code>vlimit</code> and its resource symbols are declared in <samp><span class="file">sys/vlimit.h</span></samp>. 
+   <p><code>vlimit</code> and its resource symbols are declared in <span class="file">sys/vlimit.h</span>. 
 <a name="index-sys_002fvlimit_002eh-2732"></a>
 <!-- sys/vlimit.h -->
 <!-- BSD -->
@@ -294,7 +292,7 @@ the return value is zero.  When the function fails, the return value is
 <div class="defun">
 &mdash; Function: int <b>vlimit</b> (<var>int resource, int limit</var>)<var><a name="index-vlimit-2733"></a></var><br>
 <blockquote>
-        <p><code>vlimit</code> sets the current limit for a resource for a process.
+<p><code>vlimit</code> sets the current limit for a resource for a process.
 
         <p><var>resource</var> identifies the resource:
 

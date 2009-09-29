@@ -3,7 +3,7 @@
 <title>Start of New Year Procedure - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Versions-and-Branches.html#Versions-and-Branches" title="Versions and Branches">
 <link rel="next" href="Releasing-GDB.html#Releasing-GDB" title="Releasing GDB">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Start-of-New-Year-Procedure"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Releasing-GDB.html#Releasing-GDB">Releasing GDB</a>,
+<a name="Start-of-New-Year-Procedure"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Releasing-GDB.html#Releasing-GDB">Releasing GDB</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Versions-and-Branches.html#Versions-and-Branches">Versions and Branches</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">17 Start of New Year Procedure</h2>
@@ -39,9 +37,9 @@ At the start of each new year, the following actions should be performed:
      <ul>
 <li>Rotate the ChangeLog file
 
-     <p>The current <samp><span class="file">ChangeLog</span></samp> file should be renamed into
-<samp><span class="file">ChangeLog-YYYY</span></samp> where YYYY is the year that has just passed. 
-A new <samp><span class="file">ChangeLog</span></samp> file should be created, and its contents should
+     <p>The current <span class="file">ChangeLog</span> file should be renamed into
+<span class="file">ChangeLog-YYYY</span> where YYYY is the year that has just passed. 
+A new <span class="file">ChangeLog</span> file should be created, and its contents should
 contain a reference to the previous ChangeLog.  The following should
 also be preserved at the end of the new ChangeLog, in order to provide
 the appropriate settings when editing this file with Emacs:
@@ -51,13 +49,13 @@ the appropriate settings when editing this file with Emacs:
           fill-column: 74
           version-control: never
           End:
-</pre>
-     <li>Add an entry for the newly created ChangeLog file (<samp><span class="file">ChangeLog-YYYY</span></samp>)
-in <samp><span class="file">gdb/config/djgpp/fnchange.lst</span></samp>.
+     </pre>
+     <li>Add an entry for the newly created ChangeLog file (<span class="file">ChangeLog-YYYY</span>)
+in <span class="file">gdb/config/djgpp/fnchange.lst</span>.
 
      <li>Update the copyright year in the startup message
 
-     <p>Update the copyright year in file <samp><span class="file">top.c</span></samp>, function
+     <p>Update the copyright year in file <span class="file">top.c</span>, function
 <code>print_gdb_version</code>. 
 </ul>
 

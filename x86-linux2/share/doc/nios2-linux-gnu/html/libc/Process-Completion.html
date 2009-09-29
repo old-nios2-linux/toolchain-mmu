@@ -3,7 +3,7 @@
 <title>Process Completion - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Processes.html#Processes" title="Processes">
 <link rel="prev" href="Executing-a-File.html#Executing-a-File" title="Executing a File">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Process-Completion"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Process-Completion-Status.html#Process-Completion-Status">Process Completion Status</a>,
+<a name="Process-Completion"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Process-Completion-Status.html#Process-Completion-Status">Process Completion Status</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Executing-a-File.html#Executing-a-File">Executing a File</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Processes.html#Processes">Processes</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">26.6 Process Completion</h3>
@@ -37,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Processes.html#Processes">Processes</a>
 <p><a name="index-process-completion-3177"></a><a name="index-waiting-for-completion-of-child-process-3178"></a><a name="index-testing-exit-status-of-child-process-3179"></a>
 The functions described in this section are used to wait for a child
 process to terminate or stop, and determine its status.  These functions
-are declared in the header file <samp><span class="file">sys/wait.h</span></samp>. 
+are declared in the header file <span class="file">sys/wait.h</span>. 
 <a name="index-sys_002fwait_002eh-3180"></a>
 <!-- sys/wait.h -->
 <!-- POSIX.1 -->
@@ -65,7 +63,7 @@ from the other eligible child processes, you need to call <code>waitpid</code>
 again.
 
         <p>The <var>options</var> argument is a bit mask.  Its value should be the
-bitwise OR (that is, the &lsquo;<samp><span class="samp">|</span></samp>&rsquo; operator) of zero or more of the
+bitwise OR (that is, the <span class="samp">|</span> operator) of zero or more of the
 <code>WNOHANG</code> and <code>WUNTRACED</code> flags.  You can use the
 <code>WNOHANG</code> flag to indicate that the parent process shouldn't wait;
 and the <code>WUNTRACED</code> flag to request status information from stopped
@@ -111,7 +109,7 @@ is not a child of the calling process.
 to the <code>waitpid</code> function.
 
 <!-- Extra blank lines make it look better. -->
-     <dl>
+<dl>
 <dt><code>WAIT_ANY</code><dd>
 This constant macro (whose value is <code>-1</code>) specifies that
 <code>waitpid</code> should return status information about any child process.
@@ -144,11 +142,11 @@ terminated.
 until any one child process terminates.  The call:
 
      <pre class="smallexample">          wait (&amp;status)
-</pre>
+     </pre>
         <p class="noindent">is exactly equivalent to:
 
      <pre class="smallexample">          waitpid (-1, &amp;status, 0)
-</pre>
+     </pre>
         <p>This function is a cancellation point in multi-threaded programs.  This
 is a problem if the thread allocates some resources (like memory, file
 descriptors, semaphores or whatever) at the time <code>wait</code> is

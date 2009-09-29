@@ -3,7 +3,7 @@
 <title>Mode Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Terminal-Modes.html#Terminal-Modes" title="Terminal Modes">
 <link rel="prev" href="Mode-Data-Types.html#Mode-Data-Types" title="Mode Data Types">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Mode-Functions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Setting-Modes.html#Setting-Modes">Setting Modes</a>,
+<a name="Mode-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Setting-Modes.html#Setting-Modes">Setting Modes</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Mode-Data-Types.html#Mode-Data-Types">Mode Data Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Terminal-Modes.html#Terminal-Modes">Terminal Modes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">17.4.2 Terminal Mode Functions</h4>
@@ -72,18 +70,18 @@ already queued.  It can be one of the following values:
 <dt><code>TCSANOW</code><dd><a name="index-TCSANOW-1864"></a>Make the change immediately.
 
           <!-- termios.h -->
-          <!-- POSIX.1 -->
-          <br><dt><code>TCSADRAIN</code><dd><a name="index-TCSADRAIN-1865"></a>Make the change after waiting until all queued output has been written. 
+<!-- POSIX.1 -->
+<br><dt><code>TCSADRAIN</code><dd><a name="index-TCSADRAIN-1865"></a>Make the change after waiting until all queued output has been written. 
 You should usually use this option when changing parameters that affect
 output.
 
           <!-- termios.h -->
-          <!-- POSIX.1 -->
-          <br><dt><code>TCSAFLUSH</code><dd><a name="index-TCSAFLUSH-1866"></a>This is like <code>TCSADRAIN</code>, but also discards any queued input.
+<!-- POSIX.1 -->
+<br><dt><code>TCSAFLUSH</code><dd><a name="index-TCSAFLUSH-1866"></a>This is like <code>TCSADRAIN</code>, but also discards any queued input.
 
           <!-- termios.h -->
-          <!-- BSD -->
-          <br><dt><code>TCSASOFT</code><dd><a name="index-TCSASOFT-1867"></a>This is a flag bit that you can add to any of the above alternatives. 
+<!-- BSD -->
+<br><dt><code>TCSASOFT</code><dd><a name="index-TCSASOFT-1867"></a>This is a flag bit that you can add to any of the above alternatives. 
 Its meaning is to inhibit alteration of the state of the terminal
 hardware.  It is a BSD extension; it is only supported on BSD systems
 and the GNU system.

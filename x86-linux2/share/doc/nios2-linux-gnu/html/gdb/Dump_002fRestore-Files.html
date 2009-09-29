@@ -3,7 +3,7 @@
 <title>Dump/Restore Files - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Memory-Region-Attributes.html#Memory-Region-Attributes" title="Memory Region Attributes">
@@ -17,20 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Dump%2fRestore-Files"></a>
-<a name="Dump_002fRestore-Files"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Core-File-Generation.html#Core-File-Generation">Core File Generation</a>,
+<a name="Dump_002fRestore-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Core-File-Generation.html#Core-File-Generation">Core File Generation</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Memory-Region-Attributes.html#Memory-Region-Attributes">Memory Region Attributes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">8.15 Copy Between Memory and a File</h3>
@@ -58,7 +55,7 @@ or the value of <var>expr</var>, to <var>filename</var> in the given format.
 </dl>
 
      <p><span class="sc">gdb</span> uses the same definitions of these formats as the
-<span class="sc">gnu</span> binary utilities, like &lsquo;<samp><span class="samp">objdump</span></samp>&rsquo; and &lsquo;<samp><span class="samp">objcopy</span></samp>&rsquo;.  If
+<span class="sc">gnu</span> binary utilities, like <span class="samp">objdump</span> and <span class="samp">objcopy</span>.  If
 <var>format</var> is omitted, <span class="sc">gdb</span> dumps the data in raw binary
 form.
 

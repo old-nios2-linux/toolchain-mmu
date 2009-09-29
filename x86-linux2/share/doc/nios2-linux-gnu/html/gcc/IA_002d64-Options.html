@@ -3,7 +3,7 @@
 <title>IA-64 Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="i386-and-x86_002d64-Options.html#i386-and-x86_002d64-Options" title="i386 and x86-64 Options">
@@ -38,26 +38,23 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="IA-64-Options"></a>
-<a name="IA_002d64-Options"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="M32C-Options.html#M32C-Options">M32C Options</a>,
+<a name="IA_002d64-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="M32C-Options.html#M32C-Options">M32C Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="i386-and-x86_002d64-Options.html#i386-and-x86_002d64-Options">i386 and x86-64 Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.17.16 IA-64 Options</h4>
 
 <p><a name="index-IA_002d64-Options-1077"></a>
-These are the &lsquo;<samp><span class="samp">-m</span></samp>&rsquo; options defined for the Intel IA-64 architecture.
+These are the <span class="samp">-m</span> options defined for the Intel IA-64 architecture.
 
      <dl>
 <dt><code>-mbig-endian</code><dd><a name="index-mbig_002dendian-1078"></a>Generate code for a big endian target.  This is the default for HP-UX.
@@ -79,7 +76,7 @@ is not position independent code, and violates the IA-64 ABI.
      <br><dt><code>-mvolatile-asm-stop</code><dt><code>-mno-volatile-asm-stop</code><dd><a name="index-mvolatile_002dasm_002dstop-1085"></a><a name="index-mno_002dvolatile_002dasm_002dstop-1086"></a>Generate (or don't) a stop bit immediately before and after volatile asm
 statements.
 
-     <br><dt><code>-mregister-names</code><dt><code>-mno-register-names</code><dd><a name="index-mregister_002dnames-1087"></a><a name="index-mno_002dregister_002dnames-1088"></a>Generate (or don't) &lsquo;<samp><span class="samp">in</span></samp>&rsquo;, &lsquo;<samp><span class="samp">loc</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">out</span></samp>&rsquo; register names for
+     <br><dt><code>-mregister-names</code><dt><code>-mno-register-names</code><dd><a name="index-mregister_002dnames-1087"></a><a name="index-mno_002dregister_002dnames-1088"></a>Generate (or don't) <span class="samp">in</span>, <span class="samp">loc</span>, and <span class="samp">out</span> register names for
 the stacked registers.  This may make assembler output more readable.
 
      <br><dt><code>-mno-sdata</code><dt><code>-msdata</code><dd><a name="index-mno_002dsdata-1089"></a><a name="index-msdata-1090"></a>Disable (or enable) optimizations that use the small data section.  This may
@@ -88,7 +85,7 @@ be useful for working around optimizer bugs.
      <br><dt><code>-mconstant-gp</code><dd><a name="index-mconstant_002dgp-1091"></a>Generate code that uses a single constant global pointer value.  This is
 useful when compiling kernel code.
 
-     <br><dt><code>-mauto-pic</code><dd><a name="index-mauto_002dpic-1092"></a>Generate code that is self-relocatable.  This implies <samp><span class="option">-mconstant-gp</span></samp>. 
+     <br><dt><code>-mauto-pic</code><dd><a name="index-mauto_002dpic-1092"></a>Generate code that is self-relocatable.  This implies <span class="option">-mconstant-gp</span>. 
 This is useful when compiling firmware code.
 
      <br><dt><code>-minline-float-divide-min-latency</code><dd><a name="index-minline_002dfloat_002ddivide_002dmin_002dlatency-1093"></a>Generate code for inline divides of floating point values

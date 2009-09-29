@@ -3,7 +3,7 @@
 <title>Create and Delete Tracepoints - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Set-Tracepoints.html#Set-Tracepoints" title="Set Tracepoints">
 <link rel="next" href="Enable-and-Disable-Tracepoints.html#Enable-and-Disable-Tracepoints" title="Enable and Disable Tracepoints">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Create-and-Delete-Tracepoints"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Enable-and-Disable-Tracepoints.html#Enable-and-Disable-Tracepoints">Enable and Disable Tracepoints</a>,
+<a name="Create-and-Delete-Tracepoints"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Enable-and-Disable-Tracepoints.html#Enable-and-Disable-Tracepoints">Enable and Disable Tracepoints</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Set-Tracepoints.html#Set-Tracepoints">Set Tracepoints</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">11.1.1 Create and Delete Tracepoints</h4>
@@ -56,10 +54,10 @@ running.
           (gdb) <b>trace *my_function</b> // EXACT start address of function
           
           (gdb) <b>trace *0x2117c4</b>    // an address
-</pre>
+     </pre>
      <p class="noindent">You can abbreviate <code>trace</code> as <code>tr</code>.
 
-     <p><a name="index-g_t_0024tpnum-559"></a><a name="index-last-tracepoint-number-560"></a><a name="index-recent-tracepoint-number-561"></a><a name="index-tracepoint-number-562"></a>The convenience variable <code>$tpnum</code> records the tracepoint number
+     <p><a name="index-_0024tpnum-559"></a><a name="index-last-tracepoint-number-560"></a><a name="index-recent-tracepoint-number-561"></a><a name="index-tracepoint-number-562"></a>The convenience variable <code>$tpnum</code> records the tracepoint number
 of the most recently set tracepoint.
 
      <p><a name="index-delete-tracepoint-563"></a><a name="index-tracepoint-deletion-564"></a><br><dt><code>delete tracepoint </code><span class="roman">[</span><var>num</var><span class="roman">]</span><dd>Permanently delete one or more tracepoints.  With no argument, the
@@ -70,7 +68,7 @@ default is to delete all tracepoints.
      <pre class="smallexample">          (gdb) <b>delete trace 1 2 3</b> // remove three tracepoints
           
           (gdb) <b>delete trace</b>       // remove all tracepoints
-</pre>
+     </pre>
      <p class="noindent">You can abbreviate this command as <code>del tr</code>. 
 </dl>
 

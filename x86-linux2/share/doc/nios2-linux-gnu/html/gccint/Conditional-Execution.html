@@ -3,7 +3,7 @@
 <title>Conditional Execution - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Machine-Desc.html#Machine-Desc" title="Machine Desc">
 <link rel="prev" href="Insn-Attributes.html#Insn-Attributes" title="Insn Attributes">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Conditional-Execution"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Constant-Definitions.html#Constant-Definitions">Constant Definitions</a>,
+<a name="Conditional-Execution"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Constant-Definitions.html#Constant-Definitions">Constant Definitions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Insn-Attributes.html#Insn-Attributes">Insn Attributes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Machine-Desc.html#Machine-Desc">Machine Desc</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">13.20 Conditional Execution</h3>
@@ -61,7 +59,7 @@ execution, or predication.  The hallmark of this feature is the
 ability to nullify most of the instructions in the instruction set. 
 When the instruction set is large and not entirely symmetric, it
 can be quite tedious to describe these forms directly in the
-<samp><span class="file">.md</span></samp> file.  An alternative is the <code>define_cond_exec</code> template.
+<span class="file">.md</span> file.  An alternative is the <code>define_cond_exec</code> template.
 
  <p><a name="index-define_005fcond_005fexec-1660"></a>
 <pre class="smallexample">     (define_cond_exec
@@ -79,8 +77,8 @@ alternative.
 pattern to match.
 
  <p><a name="index-current_005finsn_005fpredicate-1661"></a><var>output-template</var> is a string similar to the <code>define_insn</code>
-output template (see <a href="Output-Template.html#Output-Template">Output Template</a>), except that the &lsquo;<samp><span class="samp">*</span></samp>&rsquo;
-and &lsquo;<samp><span class="samp">@</span></samp>&rsquo; special cases do not apply.  This is only useful if the
+output template (see <a href="Output-Template.html#Output-Template">Output Template</a>), except that the <span class="samp">*</span>
+and <span class="samp">@</span> special cases do not apply.  This is only useful if the
 assembly text for the predicate is a simple prefix to the main insn. 
 In order to handle the general case, there is a global variable
 <code>current_insn_predicate</code> that will contain the entire predicate

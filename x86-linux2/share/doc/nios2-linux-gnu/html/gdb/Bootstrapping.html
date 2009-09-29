@@ -3,7 +3,7 @@
 <title>Bootstrapping - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Remote-Stub.html#Remote-Stub" title="Remote Stub">
 <link rel="prev" href="Stub-Contents.html#Stub-Contents" title="Stub Contents">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Bootstrapping"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Debug-Session.html#Debug-Session">Debug Session</a>,
+<a name="Bootstrapping"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Debug-Session.html#Debug-Session">Debug Session</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Stub-Contents.html#Stub-Contents">Stub Contents</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Remote-Stub.html#Remote-Stub">Remote Stub</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">18.4.2 What You Must Do for the Stub</h4>
@@ -53,7 +51,7 @@ different name is used to allow you to distinguish the two if you wish.
 
    <p><a name="index-control-C_002c-and-remote-debugging-925"></a><a name="index-interrupting-remote-targets-926"></a>If you want <span class="sc">gdb</span> to be able to stop your program while it is
 running, you need to use an interrupt-driven serial driver, and arrange
-for it to stop when it receives a <code>^C</code> (&lsquo;<samp><span class="samp">\003</span></samp>&rsquo;, the control-C
+for it to stop when it receives a <code>^C</code> (<span class="samp">\003</span>, the control-C
 character).  That is the character which <span class="sc">gdb</span> uses to tell the
 remote system to stop.
 

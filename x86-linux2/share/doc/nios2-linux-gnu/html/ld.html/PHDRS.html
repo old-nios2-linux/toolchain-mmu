@@ -3,7 +3,7 @@
 <title>PHDRS - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Scripts.html#Scripts" title="Scripts">
 <link rel="prev" href="MEMORY.html#MEMORY" title="MEMORY">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="PHDRS"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="VERSION.html#VERSION">VERSION</a>,
+<a name="PHDRS"></a>Next:&nbsp;<a rel="next" accesskey="n" href="VERSION.html#VERSION">VERSION</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="MEMORY.html#MEMORY">MEMORY</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Scripts.html#Scripts">Scripts</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">3.8 PHDRS Command</h3>
@@ -37,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Scripts.html#Scripts">Scripts</a>
 <p><a name="index-PHDRS-434"></a><a name="index-program-headers-435"></a><a name="index-ELF-program-headers-436"></a><a name="index-program-segments-437"></a><a name="index-segments_002c-ELF-438"></a>The ELF object file format uses <dfn>program headers</dfn>, also knows as
 <dfn>segments</dfn>.  The program headers describe how the program should be
 loaded into memory.  You can print them out by using the <code>objdump</code>
-program with the &lsquo;<samp><span class="samp">-p</span></samp>&rsquo; option.
+program with the <span class="samp">-p</span> option.
 
    <p>When you run an ELF program on a native ELF system, the system loader
 reads the program headers in order to figure out how to load the
@@ -73,17 +71,17 @@ must have a distinct name.
    <p>Certain program header types describe segments of memory which the
 system loader will load from the file.  In the linker script, you
 specify the contents of these segments by placing allocatable output
-sections in the segments.  You use the &lsquo;<samp><span class="samp">:</span><var>phdr</var></samp>&rsquo; output section
+sections in the segments.  You use the <span class="samp">:</span><var>phdr</var> output section
 attribute to place a section in a particular segment.  See <a href="Output-Section-Phdr.html#Output-Section-Phdr">Output Section Phdr</a>.
 
    <p>It is normal to put certain sections in more than one segment.  This
 merely implies that one segment of memory contains another.  You may
-repeat &lsquo;<samp><span class="samp">:</span><var>phdr</var></samp>&rsquo;, using it once for each segment which should
+repeat <span class="samp">:</span><var>phdr</var>, using it once for each segment which should
 contain the section.
 
-   <p>If you place a section in one or more segments using &lsquo;<samp><span class="samp">:</span><var>phdr</var></samp>&rsquo;,
+   <p>If you place a section in one or more segments using <span class="samp">:</span><var>phdr</var>,
 then the linker will place all subsequent allocatable sections which do
-not specify &lsquo;<samp><span class="samp">:</span><var>phdr</var></samp>&rsquo; in the same segments.  This is for
+not specify <span class="samp">:</span><var>phdr</var> in the same segments.  This is for
 convenience, since generally a whole set of contiguous sections will be
 placed in a single segment.  You can use <code>:NONE</code> to override the
 default segment and tell the linker to not put the section in any

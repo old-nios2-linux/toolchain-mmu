@@ -3,7 +3,7 @@
 <title>System V Number Conversion - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Arithmetic.html#Arithmetic" title="Arithmetic">
 <link rel="prev" href="Parsing-of-Numbers.html#Parsing-of-Numbers" title="Parsing of Numbers">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="System-V-Number-Conversion"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Parsing-of-Numbers.html#Parsing-of-Numbers">Parsing of Numbers</a>,
+<a name="System-V-Number-Conversion"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Parsing-of-Numbers.html#Parsing-of-Numbers">Parsing of Numbers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">20.12 Old-fashioned System V number-to-string functions</h3>
@@ -40,7 +38,7 @@ library also provides these functions and some natural extensions.
 from AT&amp;T Unix.  Therefore, unless these functions do precisely what you
 need, it is better to use <code>sprintf</code>, which is standard.
 
-   <p>All these functions are defined in <samp><span class="file">stdlib.h</span></samp>.
+   <p>All these functions are defined in <span class="file">stdlib.h</span>.
 
 <!-- stdlib.h -->
 <!-- SVID, Unix98 -->
@@ -91,8 +89,8 @@ to <code>fcvt</code>.
 <!-- SVID, Unix98 -->
 <div class="defun">
 &mdash; Function: char * <b>gcvt</b> (<var>double value, int ndigit, char *buf</var>)<var><a name="index-gcvt-2578"></a></var><br>
-<blockquote><p><code>gcvt</code> is functionally equivalent to &lsquo;<samp><span class="samp">sprintf(buf, "%*g",
-ndigit, value</span></samp>&rsquo;.  It is provided only for compatibility's sake.  It
+<blockquote><p><code>gcvt</code> is functionally equivalent to <span class="samp">sprintf(buf, "%*g",
+ndigit, value</span>.  It is provided only for compatibility's sake.  It
 returns <var>buf</var>.
 
         <p>If <var>ndigit</var> decimal digits would exceed the precision of a

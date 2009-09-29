@@ -3,7 +3,7 @@
 <title>Flow - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Overview.html#Overview" title="Overview">
 <link rel="next" href="Stabs-Format.html#Stabs-Format" title="Stabs Format">
@@ -16,28 +16,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Flow"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Stabs-Format.html#Stabs-Format">Stabs Format</a>,
+<a name="Flow"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Stabs-Format.html#Stabs-Format">Stabs Format</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Overview.html#Overview">Overview</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">1.1 Overview of Debugging Information Flow</h3>
 
-<p>The GNU C compiler compiles C source in a <samp><span class="file">.c</span></samp> file into assembly
-language in a <samp><span class="file">.s</span></samp> file, which the assembler translates into
-a <samp><span class="file">.o</span></samp> file, which the linker combines with other <samp><span class="file">.o</span></samp> files and
+<p>The GNU C compiler compiles C source in a <span class="file">.c</span> file into assembly
+language in a <span class="file">.s</span> file, which the assembler translates into
+a <span class="file">.o</span> file, which the linker combines with other <span class="file">.o</span> files and
 libraries to produce an executable file.
 
-   <p>With the &lsquo;<samp><span class="samp">-g</span></samp>&rsquo; option, GCC puts in the <samp><span class="file">.s</span></samp> file additional
+   <p>With the <span class="samp">-g</span> option, GCC puts in the <span class="file">.s</span> file additional
 debugging information, which is slightly transformed by the assembler
 and linker, and carried through into the final executable.  This
 debugging information describes features of the source file like line
@@ -53,7 +51,7 @@ ECOFF object file formats.
 
    <p>The assembler adds the information from stabs to the symbol information
 it places by default in the symbol table and the string table of the
-<samp><span class="file">.o</span></samp> file it is building.  The linker consolidates the <samp><span class="file">.o</span></samp>
+<span class="file">.o</span> file it is building.  The linker consolidates the <span class="file">.o</span>
 files into one executable file, with one symbol table and one string
 table.  Debuggers use the symbol and string tables in the executable as
 a source of debugging information about the program.

@@ -3,7 +3,7 @@
 <title>Objective-C and Objective-C++ Dialect Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GCC.html#Invoking-GCC" title="Invoking GCC">
 <link rel="prev" href="C_002b_002b-Dialect-Options.html#C_002b_002b-Dialect-Options" title="C++ Dialect Options">
@@ -38,20 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Objective-C-and-Objective-C++-Dialect-Options"></a>
-<a name="Objective_002dC-and-Objective_002dC_002b_002b-Dialect-Options"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Language-Independent-Options.html#Language-Independent-Options">Language Independent Options</a>,
+<a name="Objective_002dC-and-Objective_002dC_002b_002b-Dialect-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Language-Independent-Options.html#Language-Independent-Options">Language Independent Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="C_002b_002b-Dialect-Options.html#C_002b_002b-Dialect-Options">C++ Dialect Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-GCC.html#Invoking-GCC">Invoking GCC</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">3.6 Options Controlling Objective-C and Objective-C++ Dialects</h3>
@@ -66,14 +63,14 @@ For example, you might compile a file <code>some_class.m</code> like this:
 
 <pre class="smallexample">     gcc -g -fgnu-runtime -O -c some_class.m
 </pre>
- <p class="noindent">In this example, <samp><span class="option">-fgnu-runtime</span></samp> is an option meant only for
+ <p class="noindent">In this example, <span class="option">-fgnu-runtime</span> is an option meant only for
 Objective-C and Objective-C++ programs; you can use the other options with
 any language supported by GCC.
 
  <p>Note that since Objective-C is an extension of the C language, Objective-C
 compilations may also use options specific to the C front-end (e.g.,
-<samp><span class="option">-Wtraditional</span></samp>).  Similarly, Objective-C++ compilations may use
-C++-specific options (e.g., <samp><span class="option">-Wabi</span></samp>).
+<span class="option">-Wtraditional</span>).  Similarly, Objective-C++ compilations may use
+C++-specific options (e.g., <span class="option">-Wabi</span>).
 
  <p>Here is a list of options that are <em>only</em> for compiling Objective-C
 and Objective-C++ programs:
@@ -83,8 +80,8 @@ and Objective-C++ programs:
 literal string specified with the syntax <code>@"..."</code>.  The default
 class name is <code>NXConstantString</code> if the GNU runtime is being used, and
 <code>NSConstantString</code> if the NeXT runtime is being used (see below).  The
-<samp><span class="option">-fconstant-cfstrings</span></samp> option, if also present, will override the
-<samp><span class="option">-fconstant-string-class</span></samp> setting and cause <code>@"..."</code> literals
+<span class="option">-fconstant-cfstrings</span> option, if also present, will override the
+<span class="option">-fconstant-string-class</span> setting and cause <code>@"..."</code> literals
 to be laid out as constant CoreFoundation strings.
 
      <br><dt><code>-fgnu-runtime</code><dd><a name="index-fgnu_002druntime-173"></a>Generate object code compatible with the standard GNU Objective-C
@@ -153,7 +150,7 @@ available in conjunction with the NeXT runtime on Mac OS X 10.3 and later.
                 @throw expr;
               ...
             }
-</pre>
+     </pre>
      <p>The <code>@throw</code> statement may appear anywhere in an Objective-C or
 Objective-C++ program; when used inside of a <code>@catch</code> block, the
 <code>@throw</code> may appear without an argument (as shown above), in which case
@@ -190,13 +187,13 @@ from Objective-C and <code>catch</code> it in C++, or vice versa
 (i.e., <code>throw ... @catch</code>). 
 </ul>
 
-     <p>The <samp><span class="option">-fobjc-exceptions</span></samp> switch also enables the use of synchronization
+     <p>The <span class="option">-fobjc-exceptions</span> switch also enables the use of synchronization
 blocks for thread-safe execution:
 
      <pre class="smallexample">            @synchronized (ObjCClass *guard) {
               ...
             }
-</pre>
+     </pre>
      <p>Upon entering the <code>@synchronized</code> block, a thread of execution shall
 first check whether a lock has been placed on the corresponding <code>guard</code>
 object by another thread.  If it has, the current thread shall wait until
@@ -212,8 +209,8 @@ to be unlocked properly.
 
      <br><dt><code>-fobjc-gc</code><dd><a name="index-fobjc_002dgc-179"></a>Enable garbage collection (GC) in Objective-C and Objective-C++ programs.
 
-     <br><dt><code>-freplace-objc-classes</code><dd><a name="index-freplace_002dobjc_002dclasses-180"></a>Emit a special marker instructing <samp><span class="command">ld(1)</span></samp> not to statically link in
-the resulting object file, and allow <samp><span class="command">dyld(1)</span></samp> to load it in at
+     <br><dt><code>-freplace-objc-classes</code><dd><a name="index-freplace_002dobjc_002dclasses-180"></a>Emit a special marker instructing <span class="command">ld(1)</span> not to statically link in
+the resulting object file, and allow <span class="command">dyld(1)</span> to load it in at
 run time instead.  This is used in conjunction with the Fix-and-Continue
 debugging mode, where the object file in question may be recompiled and
 dynamically reloaded in the course of program execution, without the need
@@ -224,13 +221,13 @@ and later.
      <br><dt><code>-fzero-link</code><dd><a name="index-fzero_002dlink-181"></a>When compiling for the NeXT runtime, the compiler ordinarily replaces calls
 to <code>objc_getClass("...")</code> (when the name of the class is known at
 compile time) with static class references that get initialized at load time,
-which improves run-time performance.  Specifying the <samp><span class="option">-fzero-link</span></samp> flag
+which improves run-time performance.  Specifying the <span class="option">-fzero-link</span> flag
 suppresses this behavior and causes calls to <code>objc_getClass("...")</code>
 to be retained.  This is useful in Zero-Link debugging mode, since it allows
 for individual class implementations to be modified during program execution.
 
      <br><dt><code>-gen-decls</code><dd><a name="index-gen_002ddecls-182"></a>Dump interface declarations for all classes seen in the source file to a
-file named <samp><var>sourcename</var><span class="file">.decl</span></samp>.
+file named <var>sourcename</var><span class="file">.decl</span>.
 
      <br><dt><code>-Wassign-intercept</code><dd><a name="index-Wassign_002dintercept-183"></a>Warn whenever an Objective-C assignment is being intercepted by the
 garbage collector.
@@ -239,7 +236,7 @@ garbage collector.
 every method in the protocol that is not implemented by the class.  The
 default behavior is to issue a warning for every method not explicitly
 implemented in the class, even if a method implementation is inherited
-from the superclass.  If you use the <samp><span class="option">-Wno-protocol</span></samp> option, then
+from the superclass.  If you use the <span class="option">-Wno-protocol</span> option, then
 methods inherited from the superclass are considered to be implemented,
 and no warning is issued for them.
 
@@ -251,7 +248,7 @@ expression, and a corresponding method for that selector has been found
 during compilation.  Because these checks scan the method table only at
 the end of compilation, these warnings are not produced if the final
 stage of compilation is not reached, for example because an error is
-found during compilation, or because the <samp><span class="option">-fsyntax-only</span></samp> option is
+found during compilation, or because the <span class="option">-fsyntax-only</span> option is
 being used.
 
      <br><dt><code>-Wstrict-selector-match</code><dd><a name="index-Wstrict_002dselector_002dmatch-186"></a>Warn if multiple methods with differing argument and/or return types are
@@ -268,7 +265,7 @@ method with that name has been declared before the
 <code>@interface</code> or <code>@protocol</code> declaration, or implicitly in
 an <code>@implementation</code> section.  This option always performs its
 checks as soon as a <code>@selector(...)</code> expression is found,
-while <samp><span class="option">-Wselector</span></samp> only performs its checks in the final stage of
+while <span class="option">-Wselector</span> only performs its checks in the final stage of
 compilation.  This also enforces the coding style convention
 that methods and selectors must be declared before being used.
 

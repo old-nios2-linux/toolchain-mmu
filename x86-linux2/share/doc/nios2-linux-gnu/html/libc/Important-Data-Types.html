@@ -3,7 +3,7 @@
 <title>Important Data Types - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Language-Features.html#Language-Features" title="Language Features">
 <link rel="prev" href="Null-Pointer-Constant.html#Null-Pointer-Constant" title="Null Pointer Constant">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Important-Data-Types"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Data-Type-Measurements.html#Data-Type-Measurements">Data Type Measurements</a>,
+<a name="Important-Data-Types"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Data-Type-Measurements.html#Data-Type-Measurements">Data Type Measurements</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Null-Pointer-Constant.html#Null-Pointer-Constant">Null Pointer Constant</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Language-Features.html#Language-Features">Language Features</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">A.4 Important Data Types</h3>
@@ -39,7 +37,7 @@ precise data type varies from C compiler to C compiler.  Likewise, the
 data type of the result of <code>sizeof</code> also varies between compilers. 
 ISO defines standard aliases for these two types, so you can refer to
 them in a portable fashion.  They are defined in the header file
-<samp><span class="file">stddef.h</span></samp>. 
+<span class="file">stddef.h</span>. 
 <a name="index-stddef_002eh-3737"></a>
 <!-- stddef.h -->
 <!-- ISO -->
@@ -86,7 +84,7 @@ have type <code>size_t</code>, never declare its type in any other way.
 ISO&nbsp;C<!-- /@w --> generally used <code>unsigned int</code> for representing object sizes
 and <code>int</code> for pointer subtraction results.  They did not
 necessarily define either <code>size_t</code> or <code>ptrdiff_t</code>.  Unix
-systems did define <code>size_t</code>, in <samp><span class="file">sys/types.h</span></samp>, but the
+systems did define <code>size_t</code>, in <span class="file">sys/types.h</span>, but the
 definition was usually a signed type.
 
    </body></html>

@@ -3,7 +3,7 @@
 <title>Streams and Threads - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="I_002fO-on-Streams.html#I_002fO-on-Streams" title="I/O on Streams">
 <link rel="prev" href="Closing-Streams.html#Closing-Streams" title="Closing Streams">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Streams-and-Threads"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Streams-and-I18N.html#Streams-and-I18N">Streams and I18N</a>,
+<a name="Streams-and-Threads"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Streams-and-I18N.html#Streams-and-I18N">Streams and I18N</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Closing-Streams.html#Closing-Streams">Closing Streams</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="I_002fO-on-Streams.html#I_002fO-on-Streams">I/O on Streams</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">12.5 Streams and Threads</h3>
@@ -112,7 +110,7 @@ sometimes not possible):
    <p>Without the explicit locking it would be possible for another thread to
 use the stream <var>fp</var> after the <code>fputs</code> call return and before
 <code>fprintf</code> was called with the result that the number does not
-follow the word &lsquo;<samp><span class="samp">number</span></samp>&rsquo;.
+follow the word <span class="samp">number</span>.
 
    <p>From this description it might already be clear that the locking objects
 in streams are no simple mutexes.  Since locking the same stream twice
@@ -203,9 +201,9 @@ was introduced in Solaris and is available in the GNU C library as well.
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: int <b>__fsetlocking</b> (<var>FILE *stream, int type</var>)<var><a name="index-g_t_005f_005ffsetlocking-947"></a></var><br>
+&mdash; Function: int <b>__fsetlocking</b> (<var>FILE *stream, int type</var>)<var><a name="index-_005f_005ffsetlocking-947"></a></var><br>
 <blockquote>
-        <p>The <code>__fsetlocking</code> function can be used to select whether the
+<p>The <code>__fsetlocking</code> function can be used to select whether the
 stream operations will implicitly acquire the locking object of the
 stream <var>stream</var>.  By default this is done but it can be disabled and
 reinstated using this function.  There are three values defined for the
@@ -231,7 +229,7 @@ stream.  The return value will be <code>FSETLOCKING_INTERNAL</code> or
 the state of the stream before the call.
 
         <p>This function and the values for the <var>type</var> parameter are declared
-in <samp><span class="file">stdio_ext.h</span></samp>. 
+in <span class="file">stdio_ext.h</span>. 
 </p></blockquote></div>
 
    <p>This function is especially useful when program code has to be used

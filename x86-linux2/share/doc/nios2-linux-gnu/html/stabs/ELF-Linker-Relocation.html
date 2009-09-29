@@ -3,7 +3,7 @@
 <title>ELF Linker Relocation - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stab-Sections.html#Stab-Sections" title="Stab Sections">
 <link rel="prev" href="Stab-Section-Basics.html#Stab-Section-Basics" title="Stab Section Basics">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="ELF-Linker-Relocation"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Stab-Section-Basics.html#Stab-Section-Basics">Stab Section Basics</a>,
+<a name="ELF-Linker-Relocation"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Stab-Section-Basics.html#Stab-Section-Basics">Stab Section Basics</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stab-Sections.html#Stab-Sections">Stab Sections</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="appendixsec">F.2 Having the Linker Relocate Stabs in ELF</h3>
@@ -60,7 +58,7 @@ do this (to speed up linking), even though the correct way to avoid
 having the linker do these relocations is to have the compiler no longer
 output relocatable values.  Last I heard they had been talked out of the
 linker kludge.  See Sun point patch 101052-01 and Sun bug 1142109.  With
-the Sun compiler this affects &lsquo;<samp><span class="samp">S</span></samp>&rsquo; symbol descriptor stabs
+the Sun compiler this affects <span class="samp">S</span> symbol descriptor stabs
 (see <a href="Statics.html#Statics">Statics</a>) and functions (see <a href="Procedures.html#Procedures">Procedures</a>).  In the latter
 case, to adopt the clean solution (making the value of the stab relative
 to the start of the compilation unit), it would be necessary to invent a
@@ -70,11 +68,11 @@ the address from the ELF symbols.
 
    <p>Finding the correct <code>Bbss.bss</code>, etc., symbol is difficult, because
 the linker simply concatenates the <code>.stab</code> sections from each
-<samp><span class="file">.o</span></samp> file without including any information about which part of a
-<code>.stab</code> section comes from which <samp><span class="file">.o</span></samp> file.  The way GDB does
+<span class="file">.o</span> file without including any information about which part of a
+<code>.stab</code> section comes from which <span class="file">.o</span> file.  The way GDB does
 this is to look for an ELF <code>STT_FILE</code> symbol which has the same
 name as the last component of the file name from the <code>N_SO</code> symbol
-in the stabs (for example, if the file name is <samp><span class="file">../../gdb/main.c</span></samp>,
+in the stabs (for example, if the file name is <span class="file">../../gdb/main.c</span>,
 it looks for an ELF <code>STT_FILE</code> symbol named <code>main.c</code>).  This
 loses if different files have the same name (they could be in different
 directories, a library could have been copied from one system to

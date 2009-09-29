@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.13 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -1949,7 +1949,7 @@ and also the four hook functions stored in a structure of type
           cookie_io_functions_t IO-FUNCTIONS)
      This function actually creates the stream for communicating with
      the COOKIE using the functions in the IO-FUNCTIONS argument.  The
-     OPENTYPE argument is interpreted as for `fopen'; see *note Opening
+     OPENTYPE argument is interpreted as for `fopen'; see *Note Opening
      Streams::.  (But note that the "truncate on open" option is
      ignored.)  The new stream is fully buffered.
 
@@ -1969,7 +1969,7 @@ that a custom stream needs.
 
      ssize_t READER (void *COOKIE, char *BUFFER, size_t SIZE)
 
-   This is very similar to the `read' function; see *note I/O
+   This is very similar to the `read' function; see *Note I/O
 Primitives::.  Your function should transfer up to SIZE bytes into the
 BUFFER, and return the number of bytes read, or zero to indicate
 end-of-file.  You can return a value of `-1' to indicate an error.
@@ -1978,7 +1978,7 @@ end-of-file.  You can return a value of `-1' to indicate an error.
 
      ssize_t WRITER (void *COOKIE, const char *BUFFER, size_t SIZE)
 
-   This is very similar to the `write' function; see *note I/O
+   This is very similar to the `write' function; see *Note I/O
 Primitives::.  Your function should transfer up to SIZE bytes from the
 buffer, and return the number of bytes written.  You can return a value
 of `-1' to indicate an error.
@@ -1989,7 +1989,7 @@ cookie as:
      int SEEKER (void *COOKIE, off64_t *POSITION, int WHENCE)
 
    For this function, the POSITION and WHENCE arguments are interpreted
-as for `fgetpos'; see *note Portable Positioning::.
+as for `fgetpos'; see *Note Portable Positioning::.
 
    After doing the seek operation, your function should store the
 resulting file position relative to the beginning of the file in
@@ -2332,7 +2332,7 @@ File: libc.info,  Node: Low-Level I/O,  Next: File System Interface,  Prev: I/O 
 
 This chapter describes functions for performing low-level input/output
 operations on file descriptors.  These functions include the primitives
-for the higher-level I/O functions described in *note I/O on Streams::,
+for the higher-level I/O functions described in *Note I/O on Streams::,
 as well as functions for performing low-level control operations for
 which there are no equivalents on streams.
 
@@ -2654,7 +2654,7 @@ These functions are declared in the header file `unistd.h'.
           stopping the process by sending it a `SIGTTIN' signal isn't
           working.  This might happen if the signal is being blocked or
           ignored, or because the process group is orphaned.  *Note Job
-          Control::, for more information about job control, and *note
+          Control::, for more information about job control, and *Note
           Signal Handling::, for information about signals.
 
     `EINVAL'
@@ -2802,7 +2802,7 @@ These functions are declared in the header file `unistd.h'.
           This error is returned when you try to write to a pipe or
           FIFO that isn't open for reading by any process.  When this
           happens, a `SIGPIPE' signal is also sent to the process; see
-          *note Signal Handling::.
+          *Note Signal Handling::.
 
     `EINVAL'
           In some systems, when writing to a character or block device,
@@ -3089,7 +3089,7 @@ declared in the header file `stdio.h'.
      for file descriptor do not permit the access specified by
      `opentype'.  The GNU C library always checks for this.
 
-   For an example showing the use of the `fdopen' function, see *note
+   For an example showing the use of the `fdopen' function, see *Note
 Creating a Pipe::.
 
  -- Function: int fileno (FILE *STREAM)
@@ -3107,7 +3107,7 @@ Creating a Pipe::.
 
    There are also symbolic constants defined in `unistd.h' for the file
 descriptors belonging to the standard streams `stdin', `stdout', and
-`stderr'; see *note Standard Streams::.  
+`stderr'; see *Note Standard Streams::.  
 
 `STDIN_FILENO'
      This macro has value `0', which is the file descriptor for
@@ -3211,7 +3211,7 @@ were using, if it is a stream.
 file that doesn't support random access.  Thus, channels for reading or
 writing such files are always linked, never independent.  Append-type
 channels are also always linked.  For these channels, follow the rules
-for linked channels; see *note Linked Channels::.
+for linked channels; see *Note Linked Channels::.
 
 
 File: libc.info,  Node: Cleaning Streams,  Prev: Independent Channels,  Up: Stream/Descriptor Precautions
@@ -3727,7 +3727,7 @@ macros for manipulating these objects.
      The TIMEOUT specifies the maximum time to wait.  If you pass a
      null pointer for this argument, it means to block indefinitely
      until one of the file descriptors is ready.  Otherwise, you should
-     provide the time in `struct timeval' format; see *note
+     provide the time in `struct timeval' format; see *Note
      High-Resolution Calendar::.  Specify zero as the time (a `struct
      timeval' containing all zeros) if you want to find out which
      descriptors are ready without waiting if none are ready.
@@ -3747,7 +3747,7 @@ macros for manipulating these objects.
      for the full time specified.  If you want to be sure of waiting
      for a particular amount of time, you must check for `EINTR' and
      repeat the `select' with a newly calculated timeout based on the
-     current time.  See the example below.  See also *note Interrupted
+     current time.  See the example below.  See also *Note Interrupted
      Primitives::.
 
      If an error occurs, `select' returns `-1' and does not modify the
@@ -3808,7 +3808,7 @@ file descriptor, or until the timeout period expires.
      }
 
    There is another example showing the use of `select' to multiplex
-input from multiple sockets in *note Server Example::.
+input from multiple sockets in *Note Server Example::.
 
 
 File: libc.info,  Node: Synchronizing I/O,  Next: Asynchronous I/O,  Prev: Waiting for I/O,  Up: Low-Level I/O
@@ -4693,7 +4693,7 @@ like.  All of these operations are performed by the function `fcntl'.
 specifies which operation to perform.  The function and macros that name
 various flags that are used with it are declared in the header file
 `fcntl.h'.  Many of these flags are also used by the `open' function;
-see *note Opening and Closing Files::.  
+see *Note Opening and Closing Files::.  
 
  -- Function: int fcntl (int FILEDES, int COMMAND, ...)
      The `fcntl' function performs the operation specified by COMMAND
@@ -4855,7 +4855,7 @@ something like:
        }
 
    There is also a more detailed example showing how to implement
-redirection in the context of a pipeline of processes in *note
+redirection in the context of a pipeline of processes in *Note
 Launching Jobs::.
 
 
@@ -4911,7 +4911,7 @@ mask value.
 
  -- Macro: int FD_CLOEXEC
      This flag specifies that the file descriptor should be closed when
-     an `exec' function is invoked; see *note Executing a File::.  When
+     an `exec' function is invoked; see *Note Executing a File::.  When
      a file descriptor is allocated (as with `open' or `dup'), this bit
      is initially cleared on the new file descriptor, meaning that
      descriptor will survive into the new program after `exec'.
@@ -4950,7 +4950,7 @@ File: libc.info,  Node: File Status Flags,  Next: File Locks,  Prev: Descriptor 
 =======================
 
 "File status flags" are used to specify attributes of the opening of a
-file.  Unlike the file descriptor flags discussed in *note Descriptor
+file.  Unlike the file descriptor flags discussed in *Note Descriptor
 Flags::, the file status flags are shared by duplicated file descriptors
 resulting from a single opening of the file.  The file status flags are
 specified with the FLAGS argument to `open'; *note Opening and Closing
@@ -4959,14 +4959,14 @@ Files::.
    File status flags fall into three categories, which are described in
 the following sections.
 
-   * *note Access Modes::, specify what type of access is allowed to the
+   * *Note Access Modes::, specify what type of access is allowed to the
      file: reading, writing, or both.  They are set by `open' and are
      returned by `fcntl', but cannot be changed.
 
-   * *note Open-time Flags::, control details of what `open' will do.
+   * *Note Open-time Flags::, control details of what `open' will do.
      These flags are not preserved after the `open' call.
 
-   * *note Operating Modes::, affect how operations such as `read' and
+   * *Note Operating Modes::, affect how operations such as `read' and
      `write' are done.  They are set by `open', and can be fetched or
      changed with `fcntl'.
 
@@ -5495,7 +5495,7 @@ becomes possible on that file descriptor.  The process or process group
 to receive the signal can be selected by using the `F_SETOWN' command
 to the `fcntl' function.  If the file descriptor is a socket, this also
 selects the recipient of `SIGURG' signals that are delivered when
-out-of-band data arrives on that socket; see *note Out-of-Band Data::.
+out-of-band data arrives on that socket; see *Note Out-of-Band Data::.
 (`SIGURG' is sent in any situation where `select' would report the
 socket as having an "exceptional condition".  *Note Waiting for I/O::.)
 
@@ -5510,7 +5510,7 @@ signals are sent to the foreground process group of the terminal.
      that it should get information about the process or process group
      to which `SIGIO' signals are sent.  (For a terminal, this is
      actually the foreground process group ID, which you can get using
-     `tcgetpgrp'; see *note Terminal Access Functions::.)
+     `tcgetpgrp'; see *Note Terminal Access Functions::.)
 
      The return value is interpreted as a process ID; if negative, its
      absolute value is the process group ID.
@@ -5590,7 +5590,7 @@ on an unknown device.
 
    Most IOCTLs are OS-specific and/or only used in special system
 utilities, and are thus beyond the scope of this document.  For an
-example of the use of an IOCTL, see *note Out-of-Band Data::.
+example of the use of an IOCTL, see *Note Out-of-Band Data::.
 
    ---------- Footnotes ----------
 
@@ -5643,7 +5643,7 @@ resolution of relative file names (*note File Name Resolution::).
    When you log in and begin a new session, your working directory is
 initially set to the home directory associated with your login account
 in the system user database.  You can find any user's home directory
-using the `getpwuid' or `getpwnam' functions; see *note User Database::.
+using the `getpwuid' or `getpwnam' functions; see *Note User Database::.
 
    Users can change the working directory using shell commands like
 `cd'.  The functions described in this section are the primitives used
@@ -5782,7 +5782,7 @@ pass the `O_NOATIME' flag to `open'.
 these entries, represented as `struct dirent' objects.  The name of the
 file for each entry is stored in the `d_name' member of this structure.
 There are obvious parallels here to the stream facilities for ordinary
-files, described in *note I/O on Streams::.
+files, described in *Note I/O on Streams::.
 
 * Menu:
 
@@ -6114,8 +6114,8 @@ current working directory:
 
    The order in which files appear in a directory tends to be fairly
 random.  A more useful program would sort the entries (perhaps by
-alphabetizing them) before printing them; see *note Scanning Directory
-Content::, and *note Array Sort Function::.
+alphabetizing them) before printing them; see *Note Scanning Directory
+Content::, and *Note Array Sort Function::.
 
 
 File: libc.info,  Node: Random Access Directory,  Next: Scanning Directory Content,  Prev: Simple Directory Lister,  Up: Accessing Directories
@@ -6588,7 +6588,7 @@ cannot be done.
     `EMLINK'
           There are already too many links to the file named by OLDNAME.
           (The maximum number of links to a file is `LINK_MAX'; see
-          *note Limits for Files::.)
+          *Note Limits for Files::.)
 
     `ENOENT'
           The file named by OLDNAME doesn't exist.  You can't make a
@@ -7048,7 +7048,7 @@ File: libc.info,  Node: Attribute Meanings,  Next: Reading Attributes,  Up: File
 When you read the attributes of a file, they come back in a structure
 called `struct stat'.  This section describes the names of the
 attributes, their data types, and what they mean.  For the functions to
-read the attributes of a file, see *note Reading Attributes::.
+read the attributes of a file, see *Note Reading Attributes::.
 
    The header file `sys/stat.h' declares all the symbols defined in
 this section.  
@@ -7368,7 +7368,7 @@ The "file mode", stored in the `st_mode' field of the file attributes,
 contains two kinds of information: the file type code, and the access
 permission bits.  This section discusses only the type code, which you
 can use to tell whether the file is a directory, socket, symbolic link,
-and so on.  For details about access permissions see *note Permission
+and so on.  For details about access permissions see *Note Permission
 Bits::.
 
    There are two ways you can access the file type information in a file
@@ -7694,7 +7694,7 @@ File: libc.info,  Node: Access Permission,  Next: Setting Permissions,  Prev: Pe
 Recall that the operating system normally decides access permission for
 a file based on the effective user and group IDs of the process and its
 supplementary group IDs, together with the file's owner, group and
-permission bits.  These concepts are discussed in detail in *note
+permission bits.  These concepts are discussed in detail in *Note
 Process Persona::.
 
    If the effective user ID of the process matches the owner user ID of
@@ -7880,8 +7880,8 @@ real ID.
  -- Function: int access (const char *FILENAME, int HOW)
      The `access' function checks to see whether the file named by
      FILENAME can be accessed in the way specified by the HOW argument.
-     The HOW argument either can be the bitwise OR of the flags `R_OK',
-     `W_OK', `X_OK', or the existence test `F_OK'.
+     The HOW argument either can be the bitwise OR of the flags
+     `R_OK', `W_OK', `X_OK', or the existence test `F_OK'.
 
      This function uses the _real_ user and group IDs of the calling
      process, rather than the _effective_ IDs, to check for access
@@ -7932,12 +7932,12 @@ File: libc.info,  Node: File Times,  Next: File Size,  Prev: Testing File Access
 Each file has three time stamps associated with it:  its access time,
 its modification time, and its attribute modification time.  These
 correspond to the `st_atime', `st_mtime', and `st_ctime' members of the
-`stat' structure; see *note File Attributes::.
+`stat' structure; see *Note File Attributes::.
 
    All of these times are represented in calendar time format, as
 `time_t' objects.  This data type is defined in `time.h'.  For more
 information about representation and manipulation of time values, see
-*note Calendar Time::.  
+*Note Calendar Time::.  
 
    Reading from a file updates its access time attribute, and writing
 updates its modification time.  When a file is created, all three time
@@ -8012,7 +8012,7 @@ need to include the header file `utime.h' to use this facility.
 which extends its resolution.  These fields are called `st_atime_usec',
 `st_mtime_usec', and `st_ctime_usec'; each has a value between 0 and
 999,999, which indicates the time in microseconds.  They correspond to
-the `tv_usec' field of a `timeval' structure; see *note High-Resolution
+the `tv_usec' field of a `timeval' structure; see *Note High-Resolution
 Calendar::.
 
    The `utimes' function is like `utime', but also lets you specify the
@@ -8428,7 +8428,7 @@ replaced with six characters which make the whole string a unique file
 name.  Usually the template string is something like
 `/tmp/PREFIXXXXXXX', and each program uses a unique PREFIX.
 
-   *Note_* Because `mktemp' and `mkstemp' modify the template string,
+   *Note:* Because `mktemp' and `mkstemp' modify the template string,
 you _must not_ pass string constants to them.  String constants are
 normally in read-only storage, so your program would crash when
 `mktemp' or `mkstemp' tried to modify the string.  These functions are
@@ -8653,7 +8653,7 @@ flexibility as using the low-level functions directly.
 
  -- Function: FILE * popen (const char *COMMAND, const char *MODE)
      The `popen' function is closely related to the `system' function;
-     see *note Running a Command::.  It executes the shell command
+     see *Note Running a Command::.  It executes the shell command
      COMMAND as a subprocess.  However, instead of waiting for the
      command to complete, it creates a pipe to the subprocess and
      returns a stream that corresponds to that pipe.
@@ -8739,7 +8739,7 @@ writing, and vice versa.
  -- Function: int mkfifo (const char *FILENAME, mode_t MODE)
      The `mkfifo' function makes a FIFO special file with name
      FILENAME.  The MODE argument is used to set the file's
-     permissions; see *note Setting Permissions::.
+     permissions; see *Note Setting Permissions::.
 
      The normal, successful return value from `mkfifo' is `0'.  In the
      case of an error, `-1' is returned.  In addition to the usual file

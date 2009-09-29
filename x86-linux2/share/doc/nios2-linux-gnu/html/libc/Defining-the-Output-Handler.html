@@ -3,7 +3,7 @@
 <title>Defining the Output Handler - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Customizing-Printf.html#Customizing-Printf" title="Customizing Printf">
 <link rel="prev" href="Conversion-Specifier-Options.html#Conversion-Specifier-Options" title="Conversion Specifier Options">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Defining-the-Output-Handler"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Printf-Extension-Example.html#Printf-Extension-Example">Printf Extension Example</a>,
+<a name="Defining-the-Output-Handler"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Printf-Extension-Example.html#Printf-Extension-Example">Printf Extension Example</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Conversion-Specifier-Options.html#Conversion-Specifier-Options">Conversion Specifier Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Customizing-Printf.html#Customizing-Printf">Customizing Printf</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">12.13.3 Defining the Output Handler</h4>
@@ -65,7 +63,7 @@ a description of this data structure.
 <!-- (Passing a pointer here allows the function that calls your handler -->
 <!-- function to update its own @code{va_list} variable to account for the -->
 <!-- arguments that your handler processes.  @xref{Variadic Functions}.) -->
-   <p>The <var>args</var> is a vector of pointers to the arguments data. 
+<p>The <var>args</var> is a vector of pointers to the arguments data. 
 The number of arguments was determined by calling the argument
 information function provided by the user.
 
@@ -94,7 +92,7 @@ application, you must also define a function to pass as the
 conversion expects.  The function should also fill in no more than
 <var>n</var> elements of the <var>argtypes</var> array with information about the
 types of each of these arguments.  This information is encoded using the
-various &lsquo;<samp><span class="samp">PA_</span></samp>&rsquo; macros.  (You will notice that this is the same
+various <span class="samp">PA_</span> macros.  (You will notice that this is the same
 calling convention <code>parse_printf_format</code> itself uses.)
 
 <!-- printf.h -->

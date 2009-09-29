@@ -3,7 +3,7 @@
 <title>Costs - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Macros.html#Target-Macros" title="Target Macros">
 <link rel="prev" href="Condition-Code.html#Condition-Code" title="Condition Code">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Costs"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Scheduling.html#Scheduling">Scheduling</a>,
+<a name="Costs"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Scheduling.html#Scheduling">Scheduling</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Condition-Code.html#Condition-Code">Condition Code</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Macros.html#Target-Macros">Target Macros</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">14.15 Describing Relative Costs of Operations</h3>
@@ -76,7 +74,7 @@ hard registers, and if <code>REGISTER_MOVE_COST</code> applied to their
 classes returns a value of 2, reload does not check to ensure that the
 constraints of the insn are met.  Setting a cost of other than 2 will
 allow reload to verify that the constraints are met.  You should do this
-if the &lsquo;<samp><span class="samp">mov</span><var>m</var></samp>&rsquo; pattern's constraints do not allow such copying. 
+if the <span class="samp">mov</span><var>m</var> pattern's constraints do not allow such copying. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -270,7 +268,7 @@ function address than to call an address kept in a register.
 <div class="defun">
 &mdash; Macro: <b>RANGE_TEST_NON_SHORT_CIRCUIT</b><var><a name="index-RANGE_005fTEST_005fNON_005fSHORT_005fCIRCUIT-2196"></a></var><br>
 <blockquote><p>Define this macro if a non-short-circuit operation produced by
-&lsquo;<samp><span class="samp">fold_range_test ()</span></samp>&rsquo; is optimal.  This macro defaults to true if
+<span class="samp">fold_range_test ()</span> is optimal.  This macro defaults to true if
 <code>BRANCH_COST</code> is greater than or equal to the value 2. 
 </p></blockquote></div>
 

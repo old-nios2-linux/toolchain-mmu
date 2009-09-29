@@ -3,7 +3,7 @@
 <title>Simple Classes - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cplusplus.html#Cplusplus" title="Cplusplus">
 <link rel="prev" href="Basic-Cplusplus-Types.html#Basic-Cplusplus-Types" title="Basic Cplusplus Types">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Simple-Classes"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Class-Instance.html#Class-Instance">Class Instance</a>,
+<a name="Simple-Classes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Class-Instance.html#Class-Instance">Class Instance</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Basic-Cplusplus-Types.html#Basic-Cplusplus-Types">Basic Cplusplus Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cplusplus.html#Cplusplus">Cplusplus</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">8.4 Simple Class Definition</h3>
@@ -70,7 +68,7 @@ sometimes extended for member data.
 
    <p>The field part of a C<tt>++</tt> class stab representing a member function
 differs substantially from the field part of a C struct stab.  It
-still begins with &lsquo;<samp><span class="samp">name:</span></samp>&rsquo; but then goes on to define a new type number
+still begins with <span class="samp">name:</span> but then goes on to define a new type number
 for the member function, describe its return type, its argument types,
 its protection level, any qualifiers applied to the method definition,
 and whether the method is virtual or not.  If the method is virtual
@@ -81,14 +79,14 @@ method.
    <p>When the field name is a method name it is followed by two colons rather
 than one.  This is followed by a new type definition for the method. 
 This is a number followed by an equal sign and the type of the method. 
-Normally this will be a type declared using the &lsquo;<samp><span class="samp">#</span></samp>&rsquo; type
+Normally this will be a type declared using the <span class="samp">#</span> type
 descriptor; see <a href="Method-Type-Descriptor.html#Method-Type-Descriptor">Method Type Descriptor</a>; static member functions
-are declared using the &lsquo;<samp><span class="samp">f</span></samp>&rsquo; type descriptor instead; see
+are declared using the <span class="samp">f</span> type descriptor instead; see
 <a href="Function-Types.html#Function-Types">Function Types</a>.
 
    <p>The format of an overloaded operator method name differs from that of
-other methods.  It is &lsquo;<samp><span class="samp">op$::</span><var>operator-name</var><span class="samp">.</span></samp>&rsquo; where
-<var>operator-name</var> is the operator name such as &lsquo;<samp><span class="samp">+</span></samp>&rsquo; or &lsquo;<samp><span class="samp">+=</span></samp>&rsquo;. 
+other methods.  It is <span class="samp">op$::</span><var>operator-name</var><span class="samp">.</span> where
+<var>operator-name</var> is the operator name such as <span class="samp">+</span> or <span class="samp">+=</span>. 
 The name ends with a period, and any characters except the period can
 occur in the <var>operator-name</var> string.
 
@@ -96,13 +94,13 @@ occur in the <var>operator-name</var> string.
 method, preceded by a colon and ending with a semi-colon.  The types of
 the arguments are expressed in the same way argument types are expressed
 in C<tt>++</tt> name mangling.  In this example an <code>int</code> and a <code>char</code>
-map to &lsquo;<samp><span class="samp">ic</span></samp>&rsquo;.
+map to <span class="samp">ic</span>.
 
    <p>This is followed by a number, a letter, and an asterisk or period,
 followed by another semicolon.  The number indicates the protections
 that apply to the member function.  Here the 2 means public.  The
 letter encodes any qualifier applied to the method definition.  In
-this case, &lsquo;<samp><span class="samp">A</span></samp>&rsquo; means that it is a normal function definition.  The dot
+this case, <span class="samp">A</span> means that it is a normal function definition.  The dot
 shows that the method is not virtual.  The sections that follow
 elaborate further on these fields and describe the additional
 information present for virtual methods.

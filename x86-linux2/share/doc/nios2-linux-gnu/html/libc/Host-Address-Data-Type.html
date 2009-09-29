@@ -3,7 +3,7 @@
 <title>Host Address Data Type - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Host-Addresses.html#Host-Addresses" title="Host Addresses">
 <link rel="prev" href="Abstract-Host-Addresses.html#Abstract-Host-Addresses" title="Abstract Host Addresses">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Host-Address-Data-Type"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Host-Address-Functions.html#Host-Address-Functions">Host Address Functions</a>,
+<a name="Host-Address-Data-Type"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Host-Address-Functions.html#Host-Address-Functions">Host Address Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Abstract-Host-Addresses.html#Abstract-Host-Addresses">Abstract Host Addresses</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Host-Addresses.html#Host-Addresses">Host Addresses</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">16.6.2.2 Host Address Data Type</h5>
@@ -52,7 +50,7 @@ have 32 bits.  <code>uint32_t</code> is specified by Unix98 and guaranteed to ha
 structure of type <code>struct in6_addr</code>.
 
    <p>The following basic definitions for Internet addresses are declared in
-the header file <samp><span class="file">netinet/in.h</span></samp>:
+the header file <span class="file">netinet/in.h</span>:
 <a name="index-netinet_002fin_002eh-1692"></a>
 <!-- netinet/in.h -->
 <!-- BSD -->
@@ -70,7 +68,7 @@ the host address number as an <code>uint32_t</code>.
 &mdash; Macro: uint32_t <b>INADDR_LOOPBACK</b><var><a name="index-INADDR_005fLOOPBACK-1694"></a></var><br>
 <blockquote><p>You can use this constant to stand for &ldquo;the address of this machine,&rdquo;
 instead of finding its actual address.  It is the IPv4 Internet address
-&lsquo;<samp><span class="samp">127.0.0.1</span></samp>&rsquo;, which is usually called &lsquo;<samp><span class="samp">localhost</span></samp>&rsquo;.  This
+<span class="samp">127.0.0.1</span>, which is usually called <span class="samp">localhost</span>.  This
 special constant saves you the trouble of looking up the address of your
 own machine.  Also, the system usually implements <code>INADDR_LOOPBACK</code>
 specially, avoiding any network traffic for the case of one machine
@@ -113,7 +111,7 @@ data, which can be accessed (via a union) in a variety of ways.
 <!-- IPv6 basic API -->
 <div class="defun">
 &mdash; Constant: struct in6_addr <b>in6addr_loopback</b><var><a name="index-in6addr_005floopback-1699"></a></var><br>
-<blockquote><p>This constant is the IPv6 address &lsquo;<samp><span class="samp">::1</span></samp>&rsquo;, the loopback address.  See
+<blockquote><p>This constant is the IPv6 address <span class="samp">::1</span>, the loopback address.  See
 above for a description of what this means.  The macro
 <code>IN6ADDR_LOOPBACK_INIT</code> is provided to allow you to initialize your
 own variables to this value. 
@@ -123,7 +121,7 @@ own variables to this value.
 <!-- IPv6 basic API -->
 <div class="defun">
 &mdash; Constant: struct in6_addr <b>in6addr_any</b><var><a name="index-in6addr_005fany-1700"></a></var><br>
-<blockquote><p>This constant is the IPv6 address &lsquo;<samp><span class="samp">::</span></samp>&rsquo;, the unspecified address.  See
+<blockquote><p>This constant is the IPv6 address <span class="samp">::</span>, the unspecified address.  See
 above for a description of what this means.  The macro
 <code>IN6ADDR_ANY_INIT</code> is provided to allow you to initialize your
 own variables to this value. 

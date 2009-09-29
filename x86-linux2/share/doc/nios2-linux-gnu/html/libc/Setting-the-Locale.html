@@ -3,7 +3,7 @@
 <title>Setting the Locale - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Locales.html#Locales" title="Locales">
 <link rel="prev" href="Locale-Categories.html#Locale-Categories" title="Locale Categories">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Setting-the-Locale"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Standard-Locales.html#Standard-Locales">Standard Locales</a>,
+<a name="Setting-the-Locale"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Standard-Locales.html#Standard-Locales">Standard Locales</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Locale-Categories.html#Locale-Categories">Locale Categories</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Locales.html#Locales">Locales</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">7.4 How Programs Set the Locale</h3>
@@ -37,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Locales.html#Locales">Locales</a>
 <p>A C program inherits its locale environment variables when it starts up. 
 This happens automatically.  However, these variables do not
 automatically control the locale used by the library functions, because
-ISO&nbsp;C<!-- /@w --> says that all programs start by default in the standard &lsquo;<samp><span class="samp">C</span></samp>&rsquo;
+ISO&nbsp;C<!-- /@w --> says that all programs start by default in the standard <span class="samp">C</span>
 locale.  To use the locales specified by the environment, you must call
 <code>setlocale</code>.  Call it as follows:
 
@@ -49,7 +47,7 @@ environment variables.
    <p><a name="index-changing-the-locale-700"></a><a name="index-locale_002c-changing-701"></a>You can also use <code>setlocale</code> to specify a particular locale, for
 general use or for a specific category.
 
-   <p><a name="index-locale_002eh-702"></a>The symbols in this section are defined in the header file <samp><span class="file">locale.h</span></samp>.
+   <p><a name="index-locale_002eh-702"></a>The symbols in this section are defined in the header file <span class="file">locale.h</span>.
 
 <!-- locale.h -->
 <!-- ISO -->
@@ -61,7 +59,7 @@ provides can be created by running
 
         <p><a name="index-locale-704"></a>
      <pre class="smallexample">            locale -a
-</pre>
+     </pre>
         <p>If <var>category</var> is <code>LC_ALL</code>, this specifies the locale for all
 purposes.  The other possible values of <var>category</var> specify an
 single purpose (see <a href="Locale-Categories.html#Locale-Categories">Locale Categories</a>).
@@ -141,8 +139,8 @@ temporarily switch to a new locale.
 </pre>
    <p><strong>Portability Note:</strong> Some ISO&nbsp;C<!-- /@w --> systems may define additional
 locale categories, and future versions of the library will do so.  For
-portability, assume that any symbol beginning with &lsquo;<samp><span class="samp">LC_</span></samp>&rsquo; might be
-defined in <samp><span class="file">locale.h</span></samp>.
+portability, assume that any symbol beginning with <span class="samp">LC_</span> might be
+defined in <span class="file">locale.h</span>.
 
    </body></html>
 

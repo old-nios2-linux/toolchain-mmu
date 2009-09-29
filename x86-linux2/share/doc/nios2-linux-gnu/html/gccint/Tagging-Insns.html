@@ -3,7 +3,7 @@
 <title>Tagging Insns - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Insn-Attributes.html#Insn-Attributes" title="Insn Attributes">
 <link rel="prev" href="Expressions.html#Expressions" title="Expressions">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Tagging-Insns"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Attr-Example.html#Attr-Example">Attr Example</a>,
+<a name="Tagging-Insns"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Attr-Example.html#Attr-Example">Attr Example</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Expressions.html#Expressions">Expressions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Insn-Attributes.html#Insn-Attributes">Insn Attributes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">13.19.3 Assigning Attribute Values to Insns</h4>
@@ -75,7 +73,7 @@ attribute's value is to use a <code>set</code> expression whose first operand is
 second operand of the <code>set</code> is an attribute expression
 (see <a href="Expressions.html#Expressions">Expressions</a>) giving the value of the attribute.
 
- <p>When the attribute value depends on the &lsquo;<samp><span class="samp">alternative</span></samp>&rsquo; attribute
+ <p>When the attribute value depends on the <span class="samp">alternative</span> attribute
 (i.e., which is the applicable alternative in the constraint of the
 insn), the <code>set_attr_alternative</code> expression can be used.  It
 allows the specification of a vector of attribute expressions, one for
@@ -95,13 +93,13 @@ or a string containing a comma-separated list giving the values for
 succeeding alternatives.  The number of elements must match the number
 of alternatives in the constraint of the insn pattern.
 
-     <p>Note that it may be useful to specify &lsquo;<samp><span class="samp">*</span></samp>&rsquo; for some alternative, in
+     <p>Note that it may be useful to specify <span class="samp">*</span> for some alternative, in
 which case the attribute will assume its default value for insns matching
 that alternative.
 
      <p><a name="index-set_005fattr_005falternative-1603"></a><br><dt><code>(set_attr_alternative </code><var>name</var><code> [</code><var>value1</var> <var>value2</var><code> ...])</code><dd>Depending on the alternative of the insn, the value will be one of the
 specified values.  This is a shorthand for using a <code>cond</code> with
-tests on the &lsquo;<samp><span class="samp">alternative</span></samp>&rsquo; attribute.
+tests on the <span class="samp">alternative</span> attribute.
 
      <p><a name="index-attr-1604"></a><br><dt><code>(set (attr </code><var>name</var><code>) </code><var>value</var><code>)</code><dd>The first operand of this <code>set</code> must be the special RTL expression
 <code>attr</code>, whose sole operand is a string giving the name of the

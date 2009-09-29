@@ -3,7 +3,7 @@
 <title>Floating Point Classes - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Arithmetic.html#Arithmetic" title="Arithmetic">
 <link rel="prev" href="Floating-Point-Numbers.html#Floating-Point-Numbers" title="Floating Point Numbers">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Floating-Point-Classes"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Floating-Point-Errors.html#Floating-Point-Errors">Floating Point Errors</a>,
+<a name="Floating-Point-Classes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Floating-Point-Errors.html#Floating-Point-Errors">Floating Point Errors</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Floating-Point-Numbers.html#Floating-Point-Numbers">Floating Point Numbers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">20.4 Floating-Point Number Classification Functions</h3>
@@ -75,7 +73,7 @@ You should therefore use the specific macros whenever possible.
 minus infinity, and not NaN.  It is equivalent to
 
      <pre class="smallexample">          (fpclassify (x) != FP_NAN &amp;&amp; fpclassify (x) != FP_INFINITE)
-</pre>
+     </pre>
         <p><code>isfinite</code> is implemented as a macro which accepts any
 floating-point type. 
 </p></blockquote></div>
@@ -88,7 +86,7 @@ floating-point type.
 It is equivalent to
 
      <pre class="smallexample">          (fpclassify (x) == FP_NORMAL)
-</pre>
+     </pre>
         </blockquote></div>
 
 <!-- math.h -->
@@ -99,7 +97,7 @@ It is equivalent to
 to
 
      <pre class="smallexample">          (fpclassify (x) == FP_NAN)
-</pre>
+     </pre>
         </blockquote></div>
 
    <p>Another set of floating-point classification functions was provided by
@@ -113,11 +111,11 @@ not have to worry about the type of their argument.
 <div class="defun">
 &mdash; Function: int <b>isinf</b> (<var>double x</var>)<var><a name="index-isinf-2349"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- BSD -->
-   &mdash; Function: int <b>isinff</b> (<var>float x</var>)<var><a name="index-isinff-2350"></a></var><br>
+<!-- BSD -->
+&mdash; Function: int <b>isinff</b> (<var>float x</var>)<var><a name="index-isinff-2350"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- BSD -->
-   &mdash; Function: int <b>isinfl</b> (<var>long double x</var>)<var><a name="index-isinfl-2351"></a></var><br>
+<!-- BSD -->
+&mdash; Function: int <b>isinfl</b> (<var>long double x</var>)<var><a name="index-isinfl-2351"></a></var><br>
 <blockquote><p>This function returns <code>-1</code> if <var>x</var> represents negative infinity,
 <code>1</code> if <var>x</var> represents positive infinity, and <code>0</code> otherwise. 
 </p></blockquote></div>
@@ -127,11 +125,11 @@ not have to worry about the type of their argument.
 <div class="defun">
 &mdash; Function: int <b>isnan</b> (<var>double x</var>)<var><a name="index-isnan-2352"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- BSD -->
-   &mdash; Function: int <b>isnanf</b> (<var>float x</var>)<var><a name="index-isnanf-2353"></a></var><br>
+<!-- BSD -->
+&mdash; Function: int <b>isnanf</b> (<var>float x</var>)<var><a name="index-isnanf-2353"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- BSD -->
-   &mdash; Function: int <b>isnanl</b> (<var>long double x</var>)<var><a name="index-isnanl-2354"></a></var><br>
+<!-- BSD -->
+&mdash; Function: int <b>isnanl</b> (<var>long double x</var>)<var><a name="index-isnanl-2354"></a></var><br>
 <blockquote><p>This function returns a nonzero value if <var>x</var> is a &ldquo;not a number&rdquo;
 value, and zero otherwise.
 
@@ -141,7 +139,7 @@ routines behave identically.  However, if you really need to get the BSD
 function for some reason, you can write
 
      <pre class="smallexample">          (isnan) (x)
-</pre>
+     </pre>
         </blockquote></div>
 
 <!-- math.h -->
@@ -149,11 +147,11 @@ function for some reason, you can write
 <div class="defun">
 &mdash; Function: int <b>finite</b> (<var>double x</var>)<var><a name="index-finite-2355"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- BSD -->
-   &mdash; Function: int <b>finitef</b> (<var>float x</var>)<var><a name="index-finitef-2356"></a></var><br>
+<!-- BSD -->
+&mdash; Function: int <b>finitef</b> (<var>float x</var>)<var><a name="index-finitef-2356"></a></var><br>
 <blockquote><!-- math.h -->
-     <!-- BSD -->
-   &mdash; Function: int <b>finitel</b> (<var>long double x</var>)<var><a name="index-finitel-2357"></a></var><br>
+<!-- BSD -->
+&mdash; Function: int <b>finitel</b> (<var>long double x</var>)<var><a name="index-finitel-2357"></a></var><br>
 <blockquote><p>This function returns a nonzero value if <var>x</var> is finite or a &ldquo;not a
 number&rdquo; value, and zero otherwise. 
 </p></blockquote></div>

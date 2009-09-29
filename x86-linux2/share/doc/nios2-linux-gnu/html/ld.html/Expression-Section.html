@@ -3,7 +3,7 @@
 <title>Expression Section - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Expressions.html#Expressions" title="Expressions">
 <link rel="prev" href="Evaluation.html#Evaluation" title="Evaluation">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Expression-Section"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Builtin-Functions.html#Builtin-Functions">Builtin Functions</a>,
+<a name="Expression-Section"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Builtin-Functions.html#Builtin-Functions">Builtin Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Evaluation.html#Evaluation">Evaluation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Expressions.html#Expressions">Expressions</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.10.7 The Section of an Expression</h4>
@@ -44,7 +42,7 @@ an output section definition is relative to the base of the output
 section.  An expression which appears elsewhere will be absolute.
 
    <p>A symbol set to a relative expression will be relocatable if you request
-relocatable output using the &lsquo;<samp><span class="samp">-r</span></samp>&rsquo; option.  That means that a
+relocatable output using the <span class="samp">-r</span> option.  That means that a
 further link operation may change the value of the symbol.  The symbol's
 section will be the section of the relative expression.
 
@@ -55,14 +53,14 @@ will not have any particular associated section.
    <p>You can use the builtin function <code>ABSOLUTE</code> to force an expression
 to be absolute when it would otherwise be relative.  For example, to
 create an absolute symbol set to the address of the end of the output
-section &lsquo;<samp><span class="samp">.data</span></samp>&rsquo;:
+section <span class="samp">.data</span>:
 <pre class="smallexample">     SECTIONS
        {
          .data : { *(.data) _edata = ABSOLUTE(.); }
        }
 </pre>
-   <p class="noindent">If &lsquo;<samp><span class="samp">ABSOLUTE</span></samp>&rsquo; were not used, &lsquo;<samp><span class="samp">_edata</span></samp>&rsquo; would be relative to the
-&lsquo;<samp><span class="samp">.data</span></samp>&rsquo; section.
+   <p class="noindent">If <span class="samp">ABSOLUTE</span> were not used, <span class="samp">_edata</span> would be relative to the
+<span class="samp">.data</span> section.
 
    </body></html>
 

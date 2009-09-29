@@ -3,7 +3,7 @@
 <title>Type encoding - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Objective_002dC.html#Objective_002dC" title="Objective-C">
 <link rel="prev" href="Executing-code-before-main.html#Executing-code-before-main" title="Executing code before main">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Type-encoding"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Garbage-Collection.html#Garbage-Collection">Garbage Collection</a>,
+<a name="Type-encoding"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Garbage-Collection.html#Garbage-Collection">Garbage Collection</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Executing-code-before-main.html#Executing-code-before-main">Executing code before main</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Objective_002dC.html#Objective_002dC">Objective-C</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">7.2 Type encoding</h3>
@@ -62,7 +60,7 @@ about selectors and methods and about objects and classes.
  <p>The types are encoded in the following way:
 
 <!-- @sp 1 -->
- <p><table summary=""><tr align="left"><td valign="top" width="25%"><code>char</code>
+<p><table summary=""><tr align="left"><td valign="top" width="25%"><code>char</code>
 </td><td valign="top" width="75%"><code>c</code>
 <br></td></tr><tr align="left"><td valign="top" width="25%"><code>unsigned char</code>
 </td><td valign="top" width="75%"><code>C</code>
@@ -103,7 +101,7 @@ about selectors and methods and about objects and classes.
  <br></td></tr></table>
 
 <!-- @sp 1 -->
- <p>The encoding of bit-fields has changed to allow bit-fields to be properly
+<p>The encoding of bit-fields has changed to allow bit-fields to be properly
 handled by the runtime functions that compute sizes and alignments of
 types that contain bit-fields.  The previous encoding contained only the
 size of the bit-field.  Using only this information it is not possible to
@@ -119,14 +117,14 @@ bit closest to the beginning of the structure.
  <p>The non-atomic types are encoded as follows:
 
 <!-- @sp 1 -->
- <p><table summary=""><tr align="left"><td valign="top" width="20%">pointers
-</td><td valign="top" width="80%">&lsquo;<samp><span class="samp">^</span></samp>&rsquo; followed by the pointed type. 
+<p><table summary=""><tr align="left"><td valign="top" width="20%">pointers
+</td><td valign="top" width="80%"><span class="samp">^</span> followed by the pointed type. 
 <br></td></tr><tr align="left"><td valign="top" width="20%">arrays
-</td><td valign="top" width="80%">&lsquo;<samp><span class="samp">[</span></samp>&rsquo; followed by the number of elements in the array followed by the type of the elements followed by &lsquo;<samp><span class="samp">]</span></samp>&rsquo;
+</td><td valign="top" width="80%"><span class="samp">[</span> followed by the number of elements in the array followed by the type of the elements followed by <span class="samp">]</span>
 <br></td></tr><tr align="left"><td valign="top" width="20%">structures
-</td><td valign="top" width="80%">&lsquo;<samp><span class="samp">{</span></samp>&rsquo; followed by the name of the structure (or &lsquo;<samp><span class="samp">?</span></samp>&rsquo; if the structure is unnamed), the &lsquo;<samp><span class="samp">=</span></samp>&rsquo; sign, the type of the members and by &lsquo;<samp><span class="samp">}</span></samp>&rsquo;
+</td><td valign="top" width="80%"><span class="samp">{</span> followed by the name of the structure (or <span class="samp">?</span> if the structure is unnamed), the <span class="samp">=</span> sign, the type of the members and by <span class="samp">}</span>
 <br></td></tr><tr align="left"><td valign="top" width="20%">unions
-</td><td valign="top" width="80%">&lsquo;<samp><span class="samp">(</span></samp>&rsquo; followed by the name of the structure (or &lsquo;<samp><span class="samp">?</span></samp>&rsquo; if the union is unnamed), the &lsquo;<samp><span class="samp">=</span></samp>&rsquo; sign, the type of the members followed by &lsquo;<samp><span class="samp">)</span></samp>&rsquo;
+</td><td valign="top" width="80%"><span class="samp">(</span> followed by the name of the structure (or <span class="samp">?</span> if the union is unnamed), the <span class="samp">=</span> sign, the type of the members followed by <span class="samp">)</span>
  <br></td></tr></table>
 
  <p>Here are some types and their encodings, as they are generated by the

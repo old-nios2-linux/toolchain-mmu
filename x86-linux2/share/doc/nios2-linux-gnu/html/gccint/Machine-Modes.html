@@ -3,7 +3,7 @@
 <title>Machine Modes - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="RTL.html#RTL" title="RTL">
 <link rel="prev" href="Flags.html#Flags" title="Flags">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Machine-Modes"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Constants.html#Constants">Constants</a>,
+<a name="Machine-Modes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Constants.html#Constants">Constants</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Flags.html#Flags">Flags</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="RTL.html#RTL">RTL</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">11.6 Machine Modes</h3>
@@ -58,13 +56,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="RTL.html#RTL">RTL</a>
 <p><a name="index-machine-modes-794"></a>
 <a name="index-enum-machine_005fmode-795"></a>A machine mode describes a size of data object and the representation used
 for it.  In the C code, machine modes are represented by an enumeration
-type, <code>enum machine_mode</code>, defined in <samp><span class="file">machmode.def</span></samp>.  Each RTL
+type, <code>enum machine_mode</code>, defined in <span class="file">machmode.def</span>.  Each RTL
 expression has room for a machine mode and so do certain kinds of tree
 expressions (declarations and types, to be precise).
 
  <p>In debugging dumps and machine descriptions, the machine mode of an RTL
 expression is written after the expression code with a colon to separate
-them.  The letters &lsquo;<samp><span class="samp">mode</span></samp>&rsquo; which appear at the end of each machine mode
+them.  The letters <span class="samp">mode</span> which appear at the end of each machine mode
 name are omitted.  For example, <code>(reg:SI 38)</code> is a <code>reg</code>
 expression with machine mode <code>SImode</code>.  If the mode is
 <code>VOIDmode</code>, it is not written at all.
@@ -168,7 +166,7 @@ arrange for the C type <code>short int</code> to avoid using <code>HImode</code>
  <p><a name="index-mode-classes-827"></a>Very few explicit references to machine modes remain in the compiler and
 these few references will soon be removed.  Instead, the machine modes
 are divided into mode classes.  These are represented by the enumeration
-type <code>enum mode_class</code> defined in <samp><span class="file">machmode.h</span></samp>.  The possible
+type <code>enum mode_class</code> defined in <span class="file">machmode.h</span>.  The possible
 mode classes are:
 
      
@@ -194,7 +192,7 @@ mode classes are:
 (These are not currently implemented).
 
      <p><a name="index-MODE_005fCC-834"></a><br><dt><code>MODE_CC</code><dd>Modes representing condition code values.  These are <code>CCmode</code> plus
-any <code>CC_MODE</code> modes listed in the <samp><var>machine</var><span class="file">-modes.def</span></samp>. 
+any <code>CC_MODE</code> modes listed in the <var>machine</var><span class="file">-modes.def</span>. 
 See <a href="Jump-Patterns.html#Jump-Patterns">Jump Patterns</a>,
 also see <a href="Condition-Code.html#Condition-Code">Condition Code</a>.
 

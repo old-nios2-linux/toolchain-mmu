@@ -3,7 +3,7 @@
 <title>Using gettextized software - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Message-catalogs-with-gettext.html#Message-catalogs-with-gettext" title="Message catalogs with gettext">
 <link rel="prev" href="GUI-program-problems.html#GUI-program-problems" title="GUI program problems">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Using-gettextized-software"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="GUI-program-problems.html#GUI-program-problems">GUI program problems</a>,
+<a name="Using-gettextized-software"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="GUI-program-problems.html#GUI-program-problems">GUI program problems</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Message-catalogs-with-gettext.html#Message-catalogs-with-gettext">Message catalogs with gettext</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">8.2.1.6 User influence on <code>gettext</code></h5>
@@ -51,12 +49,12 @@ message catalog.  It is composed as follows:
 </pre>
    <p>The default value for <var>dir_name</var> is system specific.  It is computed
 from the value given as the prefix while configuring the C library. 
-This value normally is <samp><span class="file">/usr</span></samp> or <samp><span class="file">/</span></samp>.  For the former the
+This value normally is <span class="file">/usr</span> or <span class="file">/</span>.  For the former the
 complete <var>dir_name</var> is:
 
 <pre class="smallexample">     /usr/share/locale
 </pre>
-   <p>We can use <samp><span class="file">/usr/share</span></samp> since the <samp><span class="file">.mo</span></samp> files containing the
+   <p>We can use <span class="file">/usr/share</span> since the <span class="file">.mo</span> files containing the
 message catalogs are system independent, so all systems can use the same
 files.  If the program executed the <code>bindtextdomain</code> function for
 the message domain that is currently handled, the <code>dir_name</code>
@@ -128,7 +126,7 @@ of the <code>LC_CTYPE</code> locale (for the character set conversion).
 The <code>textdomain</code> call changes the default domain to
 <code>test-package</code>.  The <code>bindtextdomain</code> call specifies that
 the message catalogs for the domain <code>test-package</code> can be found
-below the directory <samp><span class="file">/usr/local/share/locale</span></samp>.
+below the directory <span class="file">/usr/local/share/locale</span>.
 
    <p>If now the user set in her/his environment the variable <code>LANGUAGE</code>
 to <code>de</code> the <code>gettext</code> function will try to use the
@@ -193,7 +191,7 @@ locale (e.g., <code>de</code> and <code>german</code>).  To be of help in this
 situation the locale implementation and also the <code>gettext</code>
 functions know about aliases.
 
-   <p>The file <samp><span class="file">/usr/share/locale/locale.alias</span></samp> (replace <samp><span class="file">/usr</span></samp> with
+   <p>The file <span class="file">/usr/share/locale/locale.alias</span> (replace <span class="file">/usr</span> with
 whatever prefix you used for configuring the C library) contains a
 mapping of alternative names to more regular names.  The system manager
 is free to add new entries to fill her/his own needs.  The selected

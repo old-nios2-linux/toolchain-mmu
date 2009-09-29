@@ -3,7 +3,7 @@
 <title>Requirements - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Installing-GDB.html#Installing-GDB" title="Installing GDB">
 <link rel="next" href="Running-Configure.html#Running-Configure" title="Running Configure">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Requirements"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Running-Configure.html#Running-Configure">Running Configure</a>,
+<a name="Requirements"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Running-Configure.html#Running-Configure">Running Configure</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Installing-GDB.html#Installing-GDB">Installing GDB</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">B.1 Requirements for Building <span class="sc">gdb</span></h3>
@@ -47,12 +45,13 @@ working C90 compiler, e.g. GCC.
 <h3 class="heading">Tools/Packages Optional for Building <span class="sc">gdb</span></h3>
 
      <dl>
-<dt>Expat<dd><a name="Expat"></a><span class="sc">gdb</span> can use the Expat XML parsing library.  This library may be
+<dt>Expat<dd><a name="Expat"></a>
+<span class="sc">gdb</span> can use the Expat XML parsing library.  This library may be
 included with your operating system distribution; if it is not, you
 can get the latest version from <a href="http://expat.sourceforge.net">http://expat.sourceforge.net</a>. 
-The <samp><span class="file">configure</span></samp> script will search for this library in several
+The <span class="file">configure</span> script will search for this library in several
 standard locations; if it is installed in an unusual path, you can
-use the <samp><span class="option">--with-libexpat-prefix</span></samp> option to specify its location.
+use the <span class="option">--with-libexpat-prefix</span> option to specify its location.
 
      <p>Expat is used for remote protocol memory maps (see <a href="Memory-Map-Format.html#Memory-Map-Format">Memory Map Format</a>)
 and for target descriptions (see <a href="Target-Descriptions.html#Target-Descriptions">Target Descriptions</a>).

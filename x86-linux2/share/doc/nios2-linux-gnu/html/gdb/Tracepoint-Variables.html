@@ -3,7 +3,7 @@
 <title>Tracepoint Variables - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Tracepoints.html#Tracepoints" title="Tracepoints">
 <link rel="prev" href="Analyze-Collected-Data.html#Analyze-Collected-Data" title="Analyze Collected Data">
@@ -16,35 +16,33 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Tracepoint-Variables"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Analyze-Collected-Data.html#Analyze-Collected-Data">Analyze Collected Data</a>,
+<a name="Tracepoint-Variables"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Analyze-Collected-Data.html#Analyze-Collected-Data">Analyze Collected Data</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Tracepoints.html#Tracepoints">Tracepoints</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">11.3 Convenience Variables for Tracepoints</h3>
 
 <p><a name="index-tracepoint-variables-593"></a><a name="index-convenience-variables-for-tracepoints-594"></a>
      
-<a name="index-g_t_0024trace_005fframe-595"></a>
+<a name="index-_0024trace_005fframe-595"></a>
 <dl><dt><code>(int) $trace_frame</code><dd>The current trace snapshot (a.k.a. <dfn>frame</dfn>) number, or -1 if no
 snapshot is selected.
 
-     <p><a name="index-g_t_0024tracepoint-596"></a><br><dt><code>(int) $tracepoint</code><dd>The tracepoint for the current trace snapshot.
+     <p><a name="index-_0024tracepoint-596"></a><br><dt><code>(int) $tracepoint</code><dd>The tracepoint for the current trace snapshot.
 
-     <p><a name="index-g_t_0024trace_005fline-597"></a><br><dt><code>(int) $trace_line</code><dd>The line number for the current trace snapshot.
+     <p><a name="index-_0024trace_005fline-597"></a><br><dt><code>(int) $trace_line</code><dd>The line number for the current trace snapshot.
 
-     <p><a name="index-g_t_0024trace_005ffile-598"></a><br><dt><code>(char []) $trace_file</code><dd>The source file for the current trace snapshot.
+     <p><a name="index-_0024trace_005ffile-598"></a><br><dt><code>(char []) $trace_file</code><dd>The source file for the current trace snapshot.
 
-     <p><a name="index-g_t_0024trace_005ffunc-599"></a><br><dt><code>(char []) $trace_func</code><dd>The name of the function containing <code>$tracepoint</code>. 
+     <p><a name="index-_0024trace_005ffunc-599"></a><br><dt><code>(char []) $trace_func</code><dd>The name of the function containing <code>$tracepoint</code>. 
 </dl>
 
    <p>Note: <code>$trace_file</code> is not suitable for use in <code>printf</code>,

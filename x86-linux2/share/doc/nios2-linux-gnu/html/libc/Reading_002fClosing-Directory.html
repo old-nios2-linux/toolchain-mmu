@@ -3,7 +3,7 @@
 <title>Reading/Closing Directory - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Accessing-Directories.html#Accessing-Directories" title="Accessing Directories">
 <link rel="prev" href="Opening-a-Directory.html#Opening-a-Directory" title="Opening a Directory">
@@ -17,27 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Reading%2fClosing-Directory"></a>
-<a name="Reading_002fClosing-Directory"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Simple-Directory-Lister.html#Simple-Directory-Lister">Simple Directory Lister</a>,
+<a name="Reading_002fClosing-Directory"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Simple-Directory-Lister.html#Simple-Directory-Lister">Simple Directory Lister</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Opening-a-Directory.html#Opening-a-Directory">Opening a Directory</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Accessing-Directories.html#Accessing-Directories">Accessing Directories</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.2.3 Reading and Closing a Directory Stream</h4>
 
 <p><a name="index-dirent_002eh-1415"></a>This section describes how to read directory entries from a directory
 stream, and how to close the stream when you are done with it.  All the
-symbols are declared in the header file <samp><span class="file">dirent.h</span></samp>.
+symbols are declared in the header file <span class="file">dirent.h</span>.
 
 <!-- dirent.h -->
 <!-- POSIX.1 -->
@@ -49,7 +46,7 @@ This structure is statically allocated and can be rewritten by a
 subsequent call.
 
         <p><strong>Portability Note:</strong> On some systems <code>readdir</code> may not
-return entries for <samp><span class="file">.</span></samp> and <samp><span class="file">..</span></samp>, even though these are always
+return entries for <span class="file">.</span> and <span class="file">..</span>, even though these are always
 valid file names in any directory.  See <a href="File-Name-Resolution.html#File-Name-Resolution">File Name Resolution</a>.
 
         <p>If there are no more entries in the directory or an error is detected,
@@ -106,7 +103,7 @@ Code to call <code>readdir_r</code> could look like this:
           
             if (readdir_r (dir, &amp;u.d, &amp;res) == 0)
               ...
-</pre>
+     </pre>
         </blockquote></div>
 
    <p>To support large filesystems on 32-bit machines there are LFS variants

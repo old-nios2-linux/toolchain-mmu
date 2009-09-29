@@ -3,7 +3,7 @@
 <title>Host Names - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Host-Addresses.html#Host-Addresses" title="Host Addresses">
 <link rel="prev" href="Host-Address-Functions.html#Host-Address-Functions" title="Host Address Functions">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Host-Names"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Host-Address-Functions.html#Host-Address-Functions">Host Address Functions</a>,
+<a name="Host-Names"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Host-Address-Functions.html#Host-Address-Functions">Host Address Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Host-Addresses.html#Host-Addresses">Host Addresses</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">16.6.2.4 Host Names</h5>
@@ -36,16 +34,16 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Host-Addresses.html#Host-Addresses">Hos
 Besides the standard numbers-and-dots notation for Internet addresses,
 you can also refer to a host by a symbolic name.  The advantage of a
 symbolic name is that it is usually easier to remember.  For example,
-the machine with Internet address &lsquo;<samp><span class="samp">158.121.106.19</span></samp>&rsquo; is also known as
-&lsquo;<samp><span class="samp">alpha.gnu.org</span></samp>&rsquo;; and other machines in the &lsquo;<samp><span class="samp">gnu.org</span></samp>&rsquo;
-domain can refer to it simply as &lsquo;<samp><span class="samp">alpha</span></samp>&rsquo;.
+the machine with Internet address <span class="samp">158.121.106.19</span> is also known as
+<span class="samp">alpha.gnu.org</span>; and other machines in the <span class="samp">gnu.org</span>
+domain can refer to it simply as <span class="samp">alpha</span>.
 
-   <p><a name="index-g_t_002fetc_002fhosts-1714"></a><a name="index-netdb_002eh-1715"></a>Internally, the system uses a database to keep track of the mapping
+   <p><a name="index-_002fetc_002fhosts-1714"></a><a name="index-netdb_002eh-1715"></a>Internally, the system uses a database to keep track of the mapping
 between host names and host numbers.  This database is usually either
-the file <samp><span class="file">/etc/hosts</span></samp> or an equivalent provided by a name server. 
+the file <span class="file">/etc/hosts</span> or an equivalent provided by a name server. 
 The functions and other symbols for accessing this database are declared
-in <samp><span class="file">netdb.h</span></samp>.  They are BSD features, defined unconditionally if
-you include <samp><span class="file">netdb.h</span></samp>.
+in <span class="file">netdb.h</span>.  They are BSD features, defined unconditionally if
+you include <span class="file">netdb.h</span>.
 
 <!-- netdb.h -->
 <!-- BSD -->
@@ -138,17 +136,17 @@ with other systems.)
 <dt><code>HOST_NOT_FOUND</code><dd><a name="index-HOST_005fNOT_005fFOUND-1721"></a>No such host is known in the database.
 
      <!-- netdb.h -->
-     <!-- BSD -->
-     <br><dt><code>TRY_AGAIN</code><dd><a name="index-TRY_005fAGAIN-1722"></a>This condition happens when the name server could not be contacted.  If
+<!-- BSD -->
+<br><dt><code>TRY_AGAIN</code><dd><a name="index-TRY_005fAGAIN-1722"></a>This condition happens when the name server could not be contacted.  If
 you try again later, you may succeed then.
 
      <!-- netdb.h -->
-     <!-- BSD -->
-     <br><dt><code>NO_RECOVERY</code><dd><a name="index-NO_005fRECOVERY-1723"></a>A non-recoverable error occurred.
+<!-- BSD -->
+<br><dt><code>NO_RECOVERY</code><dd><a name="index-NO_005fRECOVERY-1723"></a>A non-recoverable error occurred.
 
      <!-- netdb.h -->
-     <!-- BSD -->
-     <br><dt><code>NO_ADDRESS</code><dd><a name="index-NO_005fADDRESS-1724"></a>The host database contains an entry for the name, but it doesn't have an
+<!-- BSD -->
+<br><dt><code>NO_ADDRESS</code><dd><a name="index-NO_005fADDRESS-1724"></a>The host database contains an entry for the name, but it doesn't have an
 associated Internet address. 
 </dl>
 
@@ -204,7 +202,7 @@ Additional error information is not stored in the global variable
               return NULL;
             return hp;
           }
-</pre>
+     </pre>
         </blockquote></div>
 
 <!-- netdb.h -->
@@ -247,8 +245,8 @@ when using these functions because they are not reentrant.
 then call <code>gethostent</code> to read the entries.
 
      <!-- There was a rumor that this flag has different meaning if using the DNS, -->
-     <!-- but it appears this description is accurate in that case also. -->
-        <p>If the <var>stayopen</var> argument is nonzero, this sets a flag so that
+<!-- but it appears this description is accurate in that case also. -->
+<p>If the <var>stayopen</var> argument is nonzero, this sets a flag so that
 subsequent calls to <code>gethostbyname</code> or <code>gethostbyaddr</code> will
 not close the database (as they usually would).  This makes for more
 efficiency if you call those functions several times, by avoiding

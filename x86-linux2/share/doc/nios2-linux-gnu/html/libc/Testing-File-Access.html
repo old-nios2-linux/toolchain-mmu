@@ -3,7 +3,7 @@
 <title>Testing File Access - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-Attributes.html#File-Attributes" title="File Attributes">
 <link rel="prev" href="Setting-Permissions.html#Setting-Permissions" title="Setting Permissions">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Testing-File-Access"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="File-Times.html#File-Times">File Times</a>,
+<a name="Testing-File-Access"></a>Next:&nbsp;<a rel="next" accesskey="n" href="File-Times.html#File-Times">File Times</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Setting-Permissions.html#Setting-Permissions">Setting Permissions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-Attributes.html#File-Attributes">File Attributes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.9.8 Testing Permission to Access a File</h4>
@@ -40,7 +38,7 @@ devices even if this is not possible with the permissions granted to the
 user.  One possible solution is to set the setuid-bit of the program
 file.  If such a program is started the <em>effective</em> user ID of the
 process is changed to that of the owner of the program file.  So to
-allow write access to files like <samp><span class="file">/etc/passwd</span></samp>, which normally can
+allow write access to files like <span class="file">/etc/passwd</span>, which normally can
 be written only by the super-user, the modifying program will have to be
 owned by <code>root</code> and the setuid-bit must be set.
 
@@ -68,7 +66,7 @@ appropriate for the system you are using.
 A non-setuid program will always use the effective ID rather than the
 real ID.
 
-   <p><a name="index-unistd_002eh-1573"></a>The symbols in this section are declared in <samp><span class="file">unistd.h</span></samp>.
+   <p><a name="index-unistd_002eh-1573"></a>The symbols in this section are declared in <span class="file">unistd.h</span>.
 
 <!-- unistd.h -->
 <!-- POSIX.1 -->
@@ -102,7 +100,7 @@ this function:
 </dl>
         </p></blockquote></div>
 
-   <p>These macros are defined in the header file <samp><span class="file">unistd.h</span></samp> for use
+   <p>These macros are defined in the header file <span class="file">unistd.h</span> for use
 as the <var>how</var> argument to the <code>access</code> function.  The values
 are integer constants. 
 <a name="index-unistd_002eh-1575"></a>

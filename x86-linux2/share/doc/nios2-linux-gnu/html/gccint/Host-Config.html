@@ -3,7 +3,7 @@
 <title>Host Config - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Target-Macros.html#Target-Macros" title="Target Macros">
 <link rel="next" href="Fragments.html#Fragments" title="Fragments">
@@ -37,36 +37,34 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Host-Config"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Fragments.html#Fragments">Fragments</a>,
+<a name="Host-Config"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Fragments.html#Fragments">Fragments</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Target-Macros.html#Target-Macros">Target Macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">15 Host Configuration</h2>
 
 <p><a name="index-host-configuration-2624"></a>
 Most details about the machine and system on which the compiler is
-actually running are detected by the <samp><span class="command">configure</span></samp> script.  Some
-things are impossible for <samp><span class="command">configure</span></samp> to detect; these are
+actually running are detected by the <span class="command">configure</span> script.  Some
+things are impossible for <span class="command">configure</span> to detect; these are
 described in two ways, either by macros defined in a file named
-<samp><span class="file">xm-</span><var>machine</var><span class="file">.h</span></samp> or by hook functions in the file specified
-by the <var>out_host_hook_obj</var> variable in <samp><span class="file">config.gcc</span></samp>.  (The
+<span class="file">xm-</span><var>machine</var><span class="file">.h</span> or by hook functions in the file specified
+by the <var>out_host_hook_obj</var> variable in <span class="file">config.gcc</span>.  (The
 intention is that very few hosts will need a header file but nearly
 every fully supported host will need to override some hooks.)
 
  <p>If you need to define only a few macros, and they have simple
 definitions, consider using the <code>xm_defines</code> variable in your
-<samp><span class="file">config.gcc</span></samp> entry instead of creating a host configuration
+<span class="file">config.gcc</span> entry instead of creating a host configuration
 header.  See <a href="System-Config.html#System-Config">System Config</a>.
 
 <ul class="menu">

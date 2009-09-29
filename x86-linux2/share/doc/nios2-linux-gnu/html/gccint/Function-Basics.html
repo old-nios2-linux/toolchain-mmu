@@ -3,7 +3,7 @@
 <title>Function Basics - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions.html#Functions" title="Functions">
 <link rel="next" href="Function-Bodies.html#Function-Bodies" title="Function Bodies">
@@ -37,18 +37,16 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Function-Basics"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Function-Bodies.html#Function-Bodies">Function Bodies</a>,
+<a name="Function-Basics"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Function-Bodies.html#Function-Bodies">Function Bodies</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Functions.html#Functions">Functions</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">9.6.1 Function Basics</h4>
@@ -161,7 +159,7 @@ calculation is given by the following pseudo-code:
      <pre class="smallexample">          this += THUNK_DELTA
           if (THUNK_VCALL_OFFSET)
             this += (*((ptrdiff_t **) this))[THUNK_VCALL_OFFSET]
-</pre>
+     </pre>
      <p>Finally, the thunk should jump to the location given
 by <code>DECL_INITIAL</code>; this will always be an expression for the
 address of a function.
@@ -205,5 +203,5 @@ if of the form `<code>()</code>'.
 <!--  -->
 <!-- Function Bodies -->
 <!--  -->
- </body></html>
+</body></html>
 

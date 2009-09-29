@@ -3,7 +3,7 @@
 <title>Basic Scheduling Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Priority.html#Priority" title="Priority">
 <link rel="prev" href="Realtime-Scheduling.html#Realtime-Scheduling" title="Realtime Scheduling">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Basic-Scheduling-Functions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-Scheduling.html#Traditional-Scheduling">Traditional Scheduling</a>,
+<a name="Basic-Scheduling-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-Scheduling.html#Traditional-Scheduling">Traditional Scheduling</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Realtime-Scheduling.html#Realtime-Scheduling">Realtime Scheduling</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Priority.html#Priority">Priority</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">22.3.3 Basic Scheduling Functions</h4>
@@ -39,7 +37,7 @@ absolute priority and scheduling policy of a process.
 
    <p><strong>Portability Note:</strong>  On systems that have the functions in this
 section, the macro _POSIX_PRIORITY_SCHEDULING is defined in
-<samp><span class="file">&lt;unistd.h&gt;</span></samp>.
+<span class="file">&lt;unistd.h&gt;</span>.
 
    <p>For the case that the scheduling policy is traditional scheduling, more
 functions to fine tune the scheduling are in <a href="Traditional-Scheduling.html#Traditional-Scheduling">Traditional Scheduling</a>.
@@ -54,7 +52,7 @@ value, if any, is a parameter of the scheduling policy.  In the
 implementation, though, the priority value is king and the scheduling
 policy, if anything, only fine tunes the effect of that priority.
 
-   <p>The symbols in this section are declared by including file <samp><span class="file">sched.h</span></samp>.
+   <p>The symbols in this section are declared by including file <span class="file">sched.h</span>.
 
 <!-- sched.h -->
 <!-- POSIX -->
@@ -71,7 +69,7 @@ policy, if anything, only fine tunes the effect of that priority.
 <div class="defun">
 &mdash; Function: int <b>sched_setscheduler</b> (<var>pid_t pid, int policy, const struct sched_param *param</var>)<var><a name="index-sched_005fsetscheduler-2745"></a></var><br>
 <blockquote>
-        <p>This function sets both the absolute priority and the scheduling policy
+<p>This function sets both the absolute priority and the scheduling policy
 for a process.
 
         <p>It assigns the absolute priority value given by <var>param</var> and the
@@ -88,9 +86,9 @@ negative, <code>sched_setscheduler</code> keeps the existing scheduling policy.
 </dl>
 
      <!-- The Linux kernel code (in sched.c) actually reschedules the process, -->
-     <!-- but it puts it at the head of the run queue, so I'm not sure just what -->
-     <!-- the effect is, but it must be subtle. -->
-        <p>On success, the return value is <code>0</code>.  Otherwise, it is <code>-1</code>
+<!-- but it puts it at the head of the run queue, so I'm not sure just what -->
+<!-- the effect is, but it must be subtle. -->
+<p>On success, the return value is <code>0</code>.  Otherwise, it is <code>-1</code>
 and <code>ERRNO</code> is set accordingly.  The <code>errno</code> values specific
 to this function are:
 
@@ -131,7 +129,7 @@ tell you what the valid range is.
 <div class="defun">
 &mdash; Function: int <b>sched_getscheduler</b> (<var>pid_t pid</var>)<var><a name="index-sched_005fgetscheduler-2746"></a></var><br>
 <blockquote>
-        <p>This function returns the scheduling policy assigned to the process with
+<p>This function returns the scheduling policy assigned to the process with
 Process ID (pid) <var>pid</var>, or the calling process if <var>pid</var> is zero.
 
         <p>The return value is the scheduling policy.  See
@@ -161,20 +159,20 @@ absolute priority, use <code>sched_getparam</code>.
 <div class="defun">
 &mdash; Function: int <b>sched_setparam</b> (<var>pid_t pid, const struct sched_param *param</var>)<var><a name="index-sched_005fsetparam-2747"></a></var><br>
 <blockquote>
-        <p>This function sets a process' absolute priority.
+<p>This function sets a process' absolute priority.
 
         <p>It is functionally identical to <code>sched_setscheduler</code> with
 <var>policy</var> = <code>-1</code>.
 
      <!-- in fact, that's how it's implemented in Linux. -->
-        </blockquote></div>
+</blockquote></div>
 
 <!-- sched.h -->
 <!-- POSIX -->
 <div class="defun">
 &mdash; Function: int <b>sched_getparam</b> (<var>pid_t pid, const struct sched_param *param</var>)<var><a name="index-sched_005fgetparam-2748"></a></var><br>
 <blockquote>
-        <p>This function returns a process' absolute priority.
+<p>This function returns a process' absolute priority.
 
         <p><var>pid</var> is the Process ID (pid) of the process whose absolute priority
 you want to know.
@@ -200,7 +198,7 @@ to this function are:
 <div class="defun">
 &mdash; Function: int <b>sched_get_priority_min</b> (<var>int *policy</var>)<var>;<a name="index-sched_005fget_005fpriority_005fmin-2749"></a></var><br>
 <blockquote>
-        <p>This function returns the lowest absolute priority value that is
+<p>This function returns the lowest absolute priority value that is
 allowable for a process with scheduling policy <var>policy</var>.
 
         <p>On Linux, it is 0 for SCHED_OTHER and 1 for everything else.
@@ -220,7 +218,7 @@ to this function are:
 <div class="defun">
 &mdash; Function: int <b>sched_get_priority_max</b> (<var>int *policy</var>)<var>;<a name="index-sched_005fget_005fpriority_005fmax-2750"></a></var><br>
 <blockquote>
-        <p>This function returns the highest absolute priority value that is
+<p>This function returns the highest absolute priority value that is
 allowable for a process that with scheduling policy <var>policy</var>.
 
         <p>On Linux, it is 0 for SCHED_OTHER and 99 for everything else.
@@ -240,7 +238,7 @@ to this function are:
 <div class="defun">
 &mdash; Function: int <b>sched_rr_get_interval</b> (<var>pid_t pid, struct timespec *interval</var>)<var><a name="index-sched_005frr_005fget_005finterval-2751"></a></var><br>
 <blockquote>
-        <p>This function returns the length of the quantum (time slice) used with
+<p>This function returns the length of the quantum (time slice) used with
 the Round Robin scheduling policy, if it is used, for the process with
 Process ID <var>pid</var>.
 
@@ -265,7 +263,7 @@ function, so there are no specific <code>errno</code> values.
 <div class="defun">
 &mdash; Function: int <b>sched_yield</b> (<var>void</var>)<var><a name="index-sched_005fyield-2752"></a></var><br>
 <blockquote>
-        <p>This function voluntarily gives up the process' claim on the CPU.
+<p>This function voluntarily gives up the process' claim on the CPU.
 
         <p>Technically, <code>sched_yield</code> causes the calling process to be made
 immediately ready to run (as opposed to running, which is what it was

@@ -3,7 +3,7 @@
 <title>Stack Variables - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Variables.html#Variables" title="Variables">
 <link rel="next" href="Global-Variables.html#Global-Variables" title="Global Variables">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Stack-Variables"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Global-Variables.html#Global-Variables">Global Variables</a>,
+<a name="Stack-Variables"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Global-Variables.html#Global-Variables">Global Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Variables.html#Variables">Variables</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">4.1 Automatic Variables Allocated on the Stack</h3>
@@ -38,10 +36,10 @@ long as that function executes (C calls such variables
 
    <p><a name="index-N_005fLSYM_002c-for-stack-variables-25"></a><a name="index-C_005fLSYM-26"></a>Each variable allocated on the stack has a stab with the symbol
 descriptor omitted.  Since type information should begin with a digit,
-&lsquo;<samp><span class="samp">-</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">(</span></samp>&rsquo;, only those characters precluded from being used
+<span class="samp">-</span>, or <span class="samp">(</span>, only those characters precluded from being used
 for symbol descriptors.  However, the Acorn RISC machine (ARM) is said
 to get this wrong: it puts out a mere type definition here, without the
-preceding &lsquo;<samp><var>type-number</var><span class="samp">=</span></samp>&rsquo;.  This is a bad idea; there is no
+preceding <var>type-number</var><span class="samp">=</span>.  This is a bad idea; there is no
 guarantee that type descriptors are distinct from symbol descriptors. 
 Stabs for stack variables use the <code>N_LSYM</code> stab type, or
 <code>C_LSYM</code> for XCOFF.

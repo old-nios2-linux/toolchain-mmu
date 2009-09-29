@@ -3,7 +3,7 @@
 <title>Setting Permissions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-Attributes.html#File-Attributes" title="File Attributes">
 <link rel="prev" href="Access-Permission.html#Access-Permission" title="Access Permission">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Setting-Permissions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Testing-File-Access.html#Testing-File-Access">Testing File Access</a>,
+<a name="Setting-Permissions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Testing-File-Access.html#Testing-File-Access">Testing File Access</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Access-Permission.html#Access-Permission">Access Permission</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-Attributes.html#File-Attributes">File Attributes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.9.7 Assigning File Permissions</h4>
@@ -70,7 +68,7 @@ after opening the file, rather than changing the umask.  In fact,
 changing the umask is usually done only by shells.  They use the
 <code>umask</code> function.
 
-   <p>The functions in this section are declared in <samp><span class="file">sys/stat.h</span></samp>. 
+   <p>The functions in this section are declared in <span class="file">sys/stat.h</span>. 
 <a name="index-sys_002fstat_002eh-1565"></a>
 <!-- sys/stat.h -->
 <!-- POSIX.1 -->
@@ -91,7 +89,7 @@ without changing it permanently:
             umask (mask);
             return mask;
           }
-</pre>
+     </pre>
         <p class="noindent">However, it is better to use <code>getumask</code> if you just want to read
 the mask value, because it is reentrant (at least if you use the GNU
 operating system). 

@@ -3,7 +3,7 @@
 <title>Virtual Methods - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cplusplus.html#Cplusplus" title="Cplusplus">
 <link rel="prev" href="Method-Modifiers.html#Method-Modifiers" title="Method Modifiers">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Virtual-Methods"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Inheritance.html#Inheritance">Inheritance</a>,
+<a name="Virtual-Methods"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Inheritance.html#Inheritance">Inheritance</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Method-Modifiers.html#Method-Modifiers">Method Modifiers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cplusplus.html#Cplusplus">Cplusplus</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">8.11 Virtual Methods</h3>
@@ -49,16 +47,16 @@ description.  Consider the class definition below:
 </pre>
    <p>This results in the stab below describing class A.  It defines a new
 type (20) which is an 8 byte structure.  The first field of the class
-struct is &lsquo;<samp><span class="samp">Adat</span></samp>&rsquo;, an integer, starting at structure offset 0 and
+struct is <span class="samp">Adat</span>, an integer, starting at structure offset 0 and
 occupying 32 bits.
 
    <p>The second field in the class struct is not explicitly defined by the
 C<tt>++</tt> class definition but is implied by the fact that the class
 contains a virtual method.  This field is the vtable pointer.  The
-name of the vtable pointer field starts with &lsquo;<samp><span class="samp">$vf</span></samp>&rsquo; and continues with a
+name of the vtable pointer field starts with <span class="samp">$vf</span> and continues with a
 type reference to the class it is part of.  In this example the type
 reference for class A is 20 so the name of its vtable pointer field is
-&lsquo;<samp><span class="samp">$vf20</span></samp>&rsquo;, followed by the usual colon.
+<span class="samp">$vf20</span>, followed by the usual colon.
 
    <p>Next there is a type definition for the vtable pointer type (21). 
 This is in turn defined as a pointer to another new type (22).
@@ -74,7 +72,7 @@ in the field are not specified when the field is a vtable pointer.
    <p>Next is the method definition for the virtual member function <code>A_virt</code>. 
 Its description starts out using the same format as the non-virtual
 member functions described above, except instead of a dot after the
-&lsquo;<samp><span class="samp">A</span></samp>&rsquo; there is an asterisk, indicating that the function is virtual. 
+<span class="samp">A</span> there is an asterisk, indicating that the function is virtual. 
 Since is is virtual some addition information is appended to the end
 of the method description.
 
@@ -95,7 +93,7 @@ third marks the end of the struct definition.
 
    <p>For classes containing virtual functions the very last section of the
 string part of the stab holds a type reference to the first base
-class.  This is preceded by &lsquo;<samp><span class="samp">~%</span></samp>&rsquo; and followed by a final semi-colon.
+class.  This is preceded by <span class="samp">~%</span> and followed by a final semi-colon.
 
 <pre class="display">     .stabs "class_name(A):type_def(20)=sym_desc(struct)struct_bytes(8)
              field_name(Adat):type_ref(int),bit_offset(0),field_bits(32);

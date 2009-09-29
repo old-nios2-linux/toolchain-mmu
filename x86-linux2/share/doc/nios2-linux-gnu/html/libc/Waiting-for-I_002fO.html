@@ -3,7 +3,7 @@
 <title>Waiting for I/O - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="Memory_002dmapped-I_002fO.html#Memory_002dmapped-I_002fO" title="Memory-mapped I/O">
@@ -17,20 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Waiting-for-I%2fO"></a>
-<a name="Waiting-for-I_002fO"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Synchronizing-I_002fO.html#Synchronizing-I_002fO">Synchronizing I/O</a>,
+<a name="Waiting-for-I_002fO"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Synchronizing-I_002fO.html#Synchronizing-I_002fO">Synchronizing I/O</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Memory_002dmapped-I_002fO.html#Memory_002dmapped-I_002fO">Memory-mapped I/O</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">13.8 Waiting for Input or Output</h3>
@@ -53,7 +50,7 @@ inefficient.
    <p>A better solution is to use the <code>select</code> function.  This blocks the
 program until input or output is ready on a specified set of file
 descriptors, or until a timer expires, whichever comes first.  This
-facility is declared in the header file <samp><span class="file">sys/types.h</span></samp>. 
+facility is declared in the header file <span class="file">sys/types.h</span>. 
 <a name="index-sys_002ftypes_002eh-1273"></a>
 In the case of a server socket (see <a href="Listening.html#Listening">Listening</a>), we say that
 &ldquo;input&rdquo; is available when there are pending connections that could be

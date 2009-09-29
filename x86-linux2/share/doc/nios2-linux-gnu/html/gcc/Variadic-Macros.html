@@ -3,7 +3,7 @@
 <title>Variadic Macros - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Empty-Structures.html#Empty-Structures" title="Empty Structures">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Variadic-Macros"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Escaped-Newlines.html#Escaped-Newlines">Escaped Newlines</a>,
+<a name="Variadic-Macros"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Escaped-Newlines.html#Escaped-Newlines">Escaped Newlines</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Empty-Structures.html#Empty-Structures">Empty Structures</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.14 Macros with a Variable Number of Arguments.</h3>
@@ -63,7 +61,7 @@ example:
 
 <pre class="smallexample">     #define debug(format, ...) fprintf (stderr, format, __VA_ARGS__)
 </pre>
- <p>Here &lsquo;<samp><span class="samp">...</span></samp>&rsquo; is a <dfn>variable argument</dfn>.  In the invocation of
+ <p>Here <span class="samp">...</span> is a <dfn>variable argument</dfn>.  In the invocation of
 such a macro, it represents the zero or more tokens until the closing
 parenthesis that ends the invocation, including any commas.  This set of
 tokens replaces the identifier <code>__VA_ARGS__</code> in the macro body
@@ -94,11 +92,11 @@ the expansion of the macro still has the extra comma after the format
 string.
 
  <p>To help solve this problem, CPP behaves specially for variable arguments
-used with the token paste operator, &lsquo;<samp><span class="samp">##</span></samp>&rsquo;.  If instead you write
+used with the token paste operator, <span class="samp">##</span>.  If instead you write
 
 <pre class="smallexample">     #define debug(format, ...) fprintf (stderr, format, ## __VA_ARGS__)
 </pre>
- <p>and if the variable arguments are omitted or empty, the &lsquo;<samp><span class="samp">##</span></samp>&rsquo;
+ <p>and if the variable arguments are omitted or empty, the <span class="samp">##</span>
 operator causes the preprocessor to remove the comma before it.  If you
 do provide some variable arguments in your macro invocation, GNU CPP
 does not complain about the paste operation and instead places the

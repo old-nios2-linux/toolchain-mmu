@@ -3,7 +3,7 @@
 <title>FRV Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="DEC-Alpha_002fVMS-Options.html#DEC-Alpha_002fVMS-Options" title="DEC Alpha/VMS Options">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="FRV-Options"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="GNU_002fLinux-Options.html#GNU_002fLinux-Options">GNU/Linux Options</a>,
+<a name="FRV-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GNU_002fLinux-Options.html#GNU_002fLinux-Options">GNU/Linux Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="DEC-Alpha_002fVMS-Options.html#DEC-Alpha_002fVMS-Options">DEC Alpha/VMS Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.17.11 FRV Options</h4>
@@ -109,17 +107,17 @@ Do not use multiply and add/subtract instructions.
      <br><dt><code>-mfdpic</code><dd><a name="index-mfdpic-961"></a>
 Select the FDPIC ABI, that uses function descriptors to represent
 pointers to functions.  Without any PIC/PIE-related options, it
-implies <samp><span class="option">-fPIE</span></samp>.  With <samp><span class="option">-fpic</span></samp> or <samp><span class="option">-fpie</span></samp>, it
+implies <span class="option">-fPIE</span>.  With <span class="option">-fpic</span> or <span class="option">-fpie</span>, it
 assumes GOT entries and small data are within a 12-bit range from the
-GOT base address; with <samp><span class="option">-fPIC</span></samp> or <samp><span class="option">-fPIE</span></samp>, GOT offsets
+GOT base address; with <span class="option">-fPIC</span> or <span class="option">-fPIE</span>, GOT offsets
 are computed with 32 bits.
 
      <br><dt><code>-minline-plt</code><dd><a name="index-minline_002dplt-962"></a>
 Enable inlining of PLT entries in function calls to functions that are
-not known to bind locally.  It has no effect without <samp><span class="option">-mfdpic</span></samp>. 
+not known to bind locally.  It has no effect without <span class="option">-mfdpic</span>. 
 It's enabled by default if optimizing for speed and compiling for
-shared libraries (i.e., <samp><span class="option">-fPIC</span></samp> or <samp><span class="option">-fpic</span></samp>), or when an
-optimization option such as <samp><span class="option">-O3</span></samp> or above is present in the
+shared libraries (i.e., <span class="option">-fPIC</span> or <span class="option">-fpic</span>), or when an
+optimization option such as <span class="option">-O3</span> or above is present in the
 command line.
 
      <br><dt><code>-mTLS</code><dd><a name="index-TLS-963"></a>
@@ -131,23 +129,23 @@ Do not assume a large TLS segment when generating thread-local code.
      <br><dt><code>-mgprel-ro</code><dd><a name="index-mgprel_002dro-965"></a>
 Enable the use of <code>GPREL</code> relocations in the FDPIC ABI for data
 that is known to be in read-only sections.  It's enabled by default,
-except for <samp><span class="option">-fpic</span></samp> or <samp><span class="option">-fpie</span></samp>: even though it may help
+except for <span class="option">-fpic</span> or <span class="option">-fpie</span>: even though it may help
 make the global offset table smaller, it trades 1 instruction for 4. 
-With <samp><span class="option">-fPIC</span></samp> or <samp><span class="option">-fPIE</span></samp>, it trades 3 instructions for 4,
+With <span class="option">-fPIC</span> or <span class="option">-fPIE</span>, it trades 3 instructions for 4,
 one of which may be shared by multiple symbols, and it avoids the need
 for a GOT entry for the referenced symbol, so it's more likely to be a
-win.  If it is not, <samp><span class="option">-mno-gprel-ro</span></samp> can be used to disable it.
+win.  If it is not, <span class="option">-mno-gprel-ro</span> can be used to disable it.
 
      <br><dt><code>-multilib-library-pic</code><dd><a name="index-multilib_002dlibrary_002dpic-966"></a>
 Link with the (library, not FD) pic libraries.  It's implied by
-<samp><span class="option">-mlibrary-pic</span></samp>, as well as by <samp><span class="option">-fPIC</span></samp> and
-<samp><span class="option">-fpic</span></samp> without <samp><span class="option">-mfdpic</span></samp>.  You should never have to use
+<span class="option">-mlibrary-pic</span>, as well as by <span class="option">-fPIC</span> and
+<span class="option">-fpic</span> without <span class="option">-mfdpic</span>.  You should never have to use
 it explicitly.
 
      <br><dt><code>-mlinked-fp</code><dd><a name="index-mlinked_002dfp-967"></a>
 Follow the EABI requirement of always creating a frame pointer whenever
 a stack frame is allocated.  This option is enabled by default and can
-be disabled with <samp><span class="option">-mno-linked-fp</span></samp>.
+be disabled with <span class="option">-mno-linked-fp</span>.
 
      <br><dt><code>-mlong-calls</code><dd><a name="index-mlong_002dcalls-968"></a>
 Use indirect addressing to call functions outside the current
@@ -264,8 +262,8 @@ Cause gas to print out tomcat statistics.
 
      <br><dt><code>-mcpu=</code><var>cpu</var><dd><a name="index-mcpu-991"></a>
 Select the processor type for which to generate code.  Possible values are
-&lsquo;<samp><span class="samp">frv</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fr550</span></samp>&rsquo;, &lsquo;<samp><span class="samp">tomcat</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fr500</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fr450</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">fr405</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fr400</span></samp>&rsquo;, &lsquo;<samp><span class="samp">fr300</span></samp>&rsquo; and &lsquo;<samp><span class="samp">simple</span></samp>&rsquo;.
+<span class="samp">frv</span>, <span class="samp">fr550</span>, <span class="samp">tomcat</span>, <span class="samp">fr500</span>, <span class="samp">fr450</span>,
+<span class="samp">fr405</span>, <span class="samp">fr400</span>, <span class="samp">fr300</span> and <span class="samp">simple</span>.
 
  </dl>
 

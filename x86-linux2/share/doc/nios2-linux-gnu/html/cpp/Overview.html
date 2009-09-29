@@ -3,7 +3,7 @@
 <title>Overview - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="index.html#Top" title="Top">
 <link rel="next" href="Header-Files.html#Header-Files" title="Header Files">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
--->
+man end-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,19 +40,17 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Overview"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Header-Files.html#Header-Files">Header Files</a>,
+<a name="Overview"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Header-Files.html#Header-Files">Header Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="index.html#Top">Top</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">1 Overview</h2>
@@ -75,7 +73,7 @@ will be removed, and the Makefile will not work.
 
    <p>Having said that, you can often get away with using cpp on things which
 are not C.  Other Algol-ish programming languages are often safe
-(Pascal, Ada, etc.) So is assembly, with caution.  <samp><span class="option">-traditional-cpp</span></samp>
+(Pascal, Ada, etc.) So is assembly, with caution.  <span class="option">-traditional-cpp</span>
 mode preserves more white space, and is otherwise more permissive.  Many
 of the problems can be avoided by writing C or C++ style comments
 instead of native language comments, and keeping macros simple.
@@ -92,9 +90,9 @@ Standard C.  In its default mode, the GNU C preprocessor does not do a
 few things required by the standard.  These are features which are
 rarely, if ever, used, and may cause surprising changes to the meaning
 of a program which does not expect them.  To get strict ISO Standard C,
-you should use the <samp><span class="option">-std=c89</span></samp> or <samp><span class="option">-std=c99</span></samp> options, depending
+you should use the <span class="option">-std=c89</span> or <span class="option">-std=c99</span> options, depending
 on which version of the standard you want.  To get all the mandatory
-diagnostics, you must also use <samp><span class="option">-pedantic</span></samp>.  See <a href="Invocation.html#Invocation">Invocation</a>.
+diagnostics, you must also use <span class="option">-pedantic</span>.  See <a href="Invocation.html#Invocation">Invocation</a>.
 
    <p>This manual describes the behavior of the ISO preprocessor.  To
 minimize gratuitous differences, where the ISO preprocessor's
@@ -102,7 +100,7 @@ behavior does not conflict with traditional semantics, the
 traditional preprocessor should behave the same way.  The various
 differences that do exist are detailed in the section <a href="Traditional-Mode.html#Traditional-Mode">Traditional Mode</a>.
 
-   <p>For clarity, unless noted otherwise, references to &lsquo;<samp><span class="samp">CPP</span></samp>&rsquo; in this
+   <p>For clarity, unless noted otherwise, references to <span class="samp">CPP</span> in this
 manual refer to GNU CPP. 
 <!-- man end -->
 

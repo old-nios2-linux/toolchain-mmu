@@ -3,7 +3,7 @@
 <title>Frame Registers - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stack-and-Calling.html#Stack-and-Calling" title="Stack and Calling">
 <link rel="prev" href="Stack-Checking.html#Stack-Checking" title="Stack Checking">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Frame-Registers"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Elimination.html#Elimination">Elimination</a>,
+<a name="Frame-Registers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Elimination.html#Elimination">Elimination</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Stack-Checking.html#Stack-Checking">Stack Checking</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stack-and-Calling.html#Stack-and-Calling">Stack and Calling</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.9.4 Registers That Address the Stack Frame</h4>
@@ -176,7 +174,7 @@ registers that are not call-saved.
 <div class="defun">
 &mdash; Macro: <b>PRE_GCC3_DWARF_FRAME_REGISTERS</b><var><a name="index-PRE_005fGCC3_005fDWARF_005fFRAME_005fREGISTERS-1985"></a></var><br>
 <blockquote>
-      <p>This macro is similar to <code>DWARF_FRAME_REGISTERS</code>, but is provided
+<p>This macro is similar to <code>DWARF_FRAME_REGISTERS</code>, but is provided
 for backward compatibility in pre GCC 3.0 compiled code.
 
       <p>If this macro is not defined, it defaults to
@@ -186,7 +184,7 @@ for backward compatibility in pre GCC 3.0 compiled code.
 <div class="defun">
 &mdash; Macro: <b>DWARF_REG_TO_UNWIND_COLUMN</b> (<var>regno</var>)<var><a name="index-DWARF_005fREG_005fTO_005fUNWIND_005fCOLUMN-1986"></a></var><br>
 <blockquote>
-      <p>Define this macro if the target's representation for dwarf registers
+<p>Define this macro if the target's representation for dwarf registers
 is different than the internal representation for unwind column. 
 Given a dwarf register, this macro should return the internal unwind
 column number to use instead.
@@ -197,7 +195,7 @@ column number to use instead.
 <div class="defun">
 &mdash; Macro: <b>DWARF_FRAME_REGNUM</b> (<var>regno</var>)<var><a name="index-DWARF_005fFRAME_005fREGNUM-1987"></a></var><br>
 <blockquote>
-      <p>Define this macro if the target's representation for dwarf registers
+<p>Define this macro if the target's representation for dwarf registers
 used in .eh_frame or .debug_frame is different from that used in other
 debug info sections.  Given a GCC hard register number, this macro
 should return the .eh_frame register number.  The default is
@@ -208,7 +206,7 @@ should return the .eh_frame register number.  The default is
 <div class="defun">
 &mdash; Macro: <b>DWARF2_FRAME_REG_OUT</b> (<var>regno, for_eh</var>)<var><a name="index-DWARF2_005fFRAME_005fREG_005fOUT-1988"></a></var><br>
 <blockquote>
-      <p>Define this macro to map register numbers held in the call frame info
+<p>Define this macro to map register numbers held in the call frame info
 that GCC has collected using <code>DWARF_FRAME_REGNUM</code> to those that
 should be output in .debug_frame (<var>for_eh</var> is zero) and
 .eh_frame (<var>for_eh</var> is nonzero).  The default is to

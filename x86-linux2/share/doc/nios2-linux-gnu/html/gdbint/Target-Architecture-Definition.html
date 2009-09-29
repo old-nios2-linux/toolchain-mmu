@@ -3,7 +3,7 @@
 <title>Target Architecture Definition - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Host-Definition.html#Host-Definition" title="Host Definition">
 <link rel="next" href="Target-Descriptions.html#Target-Descriptions" title="Target Descriptions">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Target-Architecture-Definition"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Target-Descriptions.html#Target-Descriptions">Target Descriptions</a>,
+<a name="Target-Architecture-Definition"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Target-Descriptions.html#Target-Descriptions">Target Descriptions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Host-Definition.html#Host-Definition">Host Definition</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">9 Target Architecture Definition</h2>
@@ -39,7 +37,7 @@ with them.
 
    <p>The target architecture object is implemented as the C structure
 <code>struct gdbarch *</code>.  The structure, and its methods, are generated
-using the Bourne shell script <samp><span class="file">gdbarch.sh</span></samp>.
+using the Bourne shell script <span class="file">gdbarch.sh</span>.
 
 <h3 class="section">9.1 Operating System ABI Variant Handling</h3>
 
@@ -65,7 +63,7 @@ sections known to be used by several operating systems.
 selected OS ABI.  There may be only one handler for a given OS ABI
 for each BFD architecture.
 
-   <p>The following OS ABI variants are defined in <samp><span class="file">defs.h</span></samp>:
+   <p>The following OS ABI variants are defined in <span class="file">defs.h</span>:
 
      
 <a name="index-GDB_005fOSABI_005fUNINITIALIZED-217"></a>
@@ -354,11 +352,11 @@ a <span class="sc">gdb</span> user when printing type expressions.
 <blockquote><p>Returns the type flags needed to construct a pointer type whose size
 is <var>byte_size</var> and whose address class is <var>dwarf2_addr_class</var>. 
 This function is normally called from within a symbol reader.  See
-<samp><span class="file">dwarf2read.c</span></samp>. 
+<span class="file">dwarf2read.c</span>. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Macro: char <b>*ADDRESS_CLASS_TYPE_FLAGS_TO_NAME</b> (<var>int type_flags</var>)<var><a name="index-g_t_002aADDRESS_005fCLASS_005fTYPE_005fFLAGS_005fTO_005fNAME-263"></a></var><br>
+&mdash; Target Macro: char <b>*ADDRESS_CLASS_TYPE_FLAGS_TO_NAME</b> (<var>int type_flags</var>)<var><a name="index-_002aADDRESS_005fCLASS_005fTYPE_005fFLAGS_005fTO_005fNAME-263"></a></var><br>
 <blockquote><p>Given the type flags representing an address class qualifier, return
 its name. 
 </p></blockquote></div>
@@ -527,7 +525,7 @@ their <var>reg</var> and <var>type</var> arguments in different orders.
 
 <h3 class="section">9.7 Using Different Register and Memory Data Representations</h3>
 
-<p><a name="index-register-representation-274"></a><a name="index-memory-representation-275"></a><a name="index-representations_002c-register-and-memory-276"></a><a name="index-register-data-formats_002c-converting-277"></a><a name="index-g_t_0040code_007bstruct-value_007d_002c-converting-register-contents-to-278"></a>
+<p><a name="index-register-representation-274"></a><a name="index-memory-representation-275"></a><a name="index-representations_002c-register-and-memory-276"></a><a name="index-register-data-formats_002c-converting-277"></a><a name="index-_0040code_007bstruct-value_007d_002c-converting-register-contents-to-278"></a>
 <em>Maintainer's note: The way GDB manipulates registers is undergoing
 significant change.  Many of the macros and functions referred to in this
 section are likely to be subject to further revision.  See
@@ -597,7 +595,7 @@ the <code>CONVERT_REGISTER_P</code> macro returns a non-zero value.
 
 <div class="defun">
 &mdash; Target Macro: void <b>REGISTER_CONVERT_TO_TYPE</b> (<var>int regnum, struct type *type, char *buf</var>)<var><a name="index-REGISTER_005fCONVERT_005fTO_005fTYPE-282"></a></var><br>
-<blockquote><p>See <samp><span class="file">mips-tdep.c</span></samp>.  It does not do what you want. 
+<blockquote><p>See <span class="file">mips-tdep.c</span>.  It does not do what you want. 
 </p></blockquote></div>
 
 <h3 class="section">9.8 Frame Interpretation</h3>
@@ -683,7 +681,7 @@ longer than the shortest instruction of the architecture.
      <p><code>BIG_BREAKPOINT</code> and <code>LITTLE_BREAKPOINT</code> have been deprecated in
 favor of <code>BREAKPOINT_FROM_PC</code>.
 
-     <br><dt><code>BREAKPOINT_FROM_PC (</code><var>pcptr</var><code>, </code><var>lenptr</var><code>)</code><dd><a name="index-BREAKPOINT_005fFROM_005fPC-296"></a><a name="BREAKPOINT_005fFROM_005fPC"></a>Use the program counter to determine the
+     <br><dt><code>BREAKPOINT_FROM_PC (</code><var>pcptr</var><code>, </code><var>lenptr</var><code>)</code><dd><a name="index-BREAKPOINT_005fFROM_005fPC-296"></a><a name="BREAKPOINT_005fFROM_005fPC"></a> Use the program counter to determine the
 contents and size of a breakpoint instruction.  It returns a pointer to
 a string of bytes that encode a breakpoint instruction, stores the
 length of the string to <code>*</code><var>lenptr</var>, and adjusts the program
@@ -715,7 +713,7 @@ reason.
 address adjusted to account for architectural constraints on
 breakpoint placement.  This method is not needed by most targets.
 
-     <p>The FR-V target (see <samp><span class="file">frv-tdep.c</span></samp>) requires this method. 
+     <p>The FR-V target (see <span class="file">frv-tdep.c</span>) requires this method. 
 The FR-V is a VLIW architecture in which a number of RISC-like
 instructions are grouped (packed) together into an aggregate
 instruction or instruction bundle.  When the processor executes
@@ -741,7 +739,7 @@ the bundle, returning the address of the bundle.
 expectation, <span class="sc">gdb</span> prints a warning when an adjusted breakpoint
 is initially set and each time that that breakpoint is hit.
 
-     <br><dt><code>CALL_DUMMY_LOCATION</code><dd><a name="index-CALL_005fDUMMY_005fLOCATION-301"></a>See the file <samp><span class="file">inferior.h</span></samp>.
+     <br><dt><code>CALL_DUMMY_LOCATION</code><dd><a name="index-CALL_005fDUMMY_005fLOCATION-301"></a>See the file <span class="file">inferior.h</span>.
 
      <p>This method has been replaced by <code>push_dummy_code</code>
 (see <a href="push_005fdummy_005fcode.html#push_005fdummy_005fcode">push_dummy_code</a>).
@@ -766,7 +764,7 @@ program encounters a breakpoint.  This is often the number of bytes in
      <br><dt><code>DISABLE_UNSETTABLE_BREAK (</code><var>addr</var><code>)</code><dd><a name="index-DISABLE_005fUNSETTABLE_005fBREAK-306"></a>If defined, this should evaluate to 1 if <var>addr</var> is in a shared
 library in which breakpoints cannot be set and so should be disabled.
 
-     <br><dt><code>PRINT_FLOAT_INFO()</code><dd><a name="index-PRINT_005fFLOAT_005fINFO-307"></a>If defined, then the &lsquo;<samp><span class="samp">info float</span></samp>&rsquo; command will print information about
+     <br><dt><code>PRINT_FLOAT_INFO()</code><dd><a name="index-PRINT_005fFLOAT_005fINFO-307"></a>If defined, then the <span class="samp">info float</span> command will print information about
 the processor's floating point unit.
 
      <br><dt><code>print_registers_info (</code><var>gdbarch</var><code>, </code><var>frame</var><code>, </code><var>regnum</var><code>, </code><var>all</var><code>)</code><dd><a name="index-print_005fregisters_005finfo-308"></a>If defined, pretty print the value of the register <var>regnum</var> for the
@@ -777,10 +775,10 @@ registers (<var>all</var> is zero).
      <p>The default method prints one register per line, and if <var>all</var> is
 zero omits floating-point registers.
 
-     <br><dt><code>PRINT_VECTOR_INFO()</code><dd><a name="index-PRINT_005fVECTOR_005fINFO-309"></a>If defined, then the &lsquo;<samp><span class="samp">info vector</span></samp>&rsquo; command will call this function
+     <br><dt><code>PRINT_VECTOR_INFO()</code><dd><a name="index-PRINT_005fVECTOR_005fINFO-309"></a>If defined, then the <span class="samp">info vector</span> command will call this function
 to print information about the processor's vector unit.
 
-     <p>By default, the &lsquo;<samp><span class="samp">info vector</span></samp>&rsquo; command will print all vector
+     <p>By default, the <span class="samp">info vector</span> command will print all vector
 registers (the register's type having the vector attribute).
 
      <br><dt><code>DWARF_REG_TO_REGNUM</code><dd><a name="index-DWARF_005fREG_005fTO_005fREGNUM-310"></a>Convert DWARF register number into <span class="sc">gdb</span> regnum.  If not defined,
@@ -802,7 +800,8 @@ into <var>valbuf</var>.
      <p>This method has been deprecated in favour of <code>gdbarch_return_value</code>
 (see <a href="gdbarch_005freturn_005fvalue.html#gdbarch_005freturn_005fvalue">gdbarch_return_value</a>).
 
-     <br><dt><code>DEPRECATED_EXTRACT_STRUCT_VALUE_ADDRESS(</code><var>regbuf</var><code>)</code><dd><a name="index-DEPRECATED_005fEXTRACT_005fSTRUCT_005fVALUE_005fADDRESS-315"></a><a name="DEPRECATED_005fEXTRACT_005fSTRUCT_005fVALUE_005fADDRESS"></a>When defined, extract from the array <var>regbuf</var> (containing the raw
+     <br><dt><code>DEPRECATED_EXTRACT_STRUCT_VALUE_ADDRESS(</code><var>regbuf</var><code>)</code><dd><a name="index-DEPRECATED_005fEXTRACT_005fSTRUCT_005fVALUE_005fADDRESS-315"></a><a name="DEPRECATED_005fEXTRACT_005fSTRUCT_005fVALUE_005fADDRESS"></a>
+When defined, extract from the array <var>regbuf</var> (containing the raw
 register state) the <code>CORE_ADDR</code> at which a function should return
 its structure value.
 
@@ -820,7 +819,8 @@ is not defined.
 represented by <var>fi</var> does not have a stack frame associated with it. 
 Otherwise return 0.
 
-     <br><dt><code>frame_align (</code><var>address</var><code>)</code><dd><a name="frame_005falign"></a><a name="index-frame_005falign-319"></a>Define this to adjust <var>address</var> so that it meets the alignment
+     <br><dt><code>frame_align (</code><var>address</var><code>)</code><dd><a name="frame_005falign"></a>
+<a name="index-frame_005falign-319"></a>Define this to adjust <var>address</var> so that it meets the alignment
 requirements for the start of a new stack frame.  A stack frame's
 alignment requirements are typically stronger than a target processors
 stack alignment requirements (see <a href="DEPRECATED_005fSTACK_005fALIGN.html#DEPRECATED_005fSTACK_005fALIGN">DEPRECATED_STACK_ALIGN</a>).
@@ -856,10 +856,10 @@ stack.
 outermost frame, with no caller, and nonzero otherwise.  Most normal
 situations can be handled without defining this macro, including <code>NULL</code>
 chain pointers, dummy frames, and frames whose PC values are inside the
-startup file (e.g. <samp><span class="file">crt0.o</span></samp>), inside <code>main</code>, or inside
+startup file (e.g. <span class="file">crt0.o</span>), inside <code>main</code>, or inside
 <code>_start</code>.
 
-     <br><dt><code>DEPRECATED_FRAME_INIT_SAVED_REGS(</code><var>frame</var><code>)</code><dd><a name="index-DEPRECATED_005fFRAME_005fINIT_005fSAVED_005fREGS-323"></a>See <samp><span class="file">frame.h</span></samp>.  Determines the address of all registers in the
+     <br><dt><code>DEPRECATED_FRAME_INIT_SAVED_REGS(</code><var>frame</var><code>)</code><dd><a name="index-DEPRECATED_005fFRAME_005fINIT_005fSAVED_005fREGS-323"></a>See <span class="file">frame.h</span>.  Determines the address of all registers in the
 current stack frame storing each in <code>frame-&gt;saved_regs</code>.  Space for
 <code>frame-&gt;saved_regs</code> shall be allocated by
 <code>DEPRECATED_FRAME_INIT_SAVED_REGS</code> using
@@ -871,12 +871,12 @@ current stack frame storing each in <code>frame-&gt;saved_regs</code>.  Space fo
 are being passed.  If the number of arguments is not known, return
 <code>-1</code>.
 
-     <br><dt><code>DEPRECATED_FRAME_SAVED_PC(</code><var>frame</var><code>)</code><dd><a name="index-DEPRECATED_005fFRAME_005fSAVED_005fPC-325"></a><a name="DEPRECATED_005fFRAME_005fSAVED_005fPC"></a>Given <var>frame</var>, return the pc
+     <br><dt><code>DEPRECATED_FRAME_SAVED_PC(</code><var>frame</var><code>)</code><dd><a name="index-DEPRECATED_005fFRAME_005fSAVED_005fPC-325"></a><a name="DEPRECATED_005fFRAME_005fSAVED_005fPC"></a> Given <var>frame</var>, return the pc
 saved there.  This is the return address.
 
      <p>This method is deprecated. See <a href="unwind_005fpc.html#unwind_005fpc">unwind_pc</a>.
 
-     <br><dt><code>CORE_ADDR unwind_pc (struct frame_info *</code><var>this_frame</var><code>)</code><dd><a name="index-unwind_005fpc-326"></a><a name="unwind_005fpc"></a>Return the instruction address, in <var>this_frame</var>'s
+     <br><dt><code>CORE_ADDR unwind_pc (struct frame_info *</code><var>this_frame</var><code>)</code><dd><a name="index-unwind_005fpc-326"></a><a name="unwind_005fpc"></a> Return the instruction address, in <var>this_frame</var>'s
 caller, at which execution will resume after <var>this_frame</var> returns. 
 This is commonly referred to as the return address.
 
@@ -886,10 +886,10 @@ is typically no more than:
      <pre class="smallexample">          ULONGEST pc;
           frame_unwind_unsigned_register (this_frame, D10V_PC_REGNUM, &amp;pc);
           return d10v_make_iaddr (pc);
-</pre>
+     </pre>
      <p class="noindent">See <a href="DEPRECATED_005fFRAME_005fSAVED_005fPC.html#DEPRECATED_005fFRAME_005fSAVED_005fPC">DEPRECATED_FRAME_SAVED_PC</a>, which this method replaces.
 
-     <br><dt><code>CORE_ADDR unwind_sp (struct frame_info *</code><var>this_frame</var><code>)</code><dd><a name="index-unwind_005fsp-327"></a><a name="unwind_005fsp"></a>Return the frame's inner most stack address.  This is
+     <br><dt><code>CORE_ADDR unwind_sp (struct frame_info *</code><var>this_frame</var><code>)</code><dd><a name="index-unwind_005fsp-327"></a><a name="unwind_005fsp"></a> Return the frame's inner most stack address.  This is
 commonly referred to as the frame's <dfn>stack pointer</dfn>.
 
      <p>The implementation, which must be frame agnostic (work with any frame),
@@ -898,7 +898,7 @@ is typically no more than:
      <pre class="smallexample">          ULONGEST sp;
           frame_unwind_unsigned_register (this_frame, D10V_SP_REGNUM, &amp;sp);
           return d10v_make_daddr (sp);
-</pre>
+     </pre>
      <p class="noindent">See <a href="TARGET_005fREAD_005fSP.html#TARGET_005fREAD_005fSP">TARGET_READ_SP</a>, which this method replaces.
 
      <br><dt><code>FUNCTION_EPILOGUE_SIZE</code><dd><a name="index-FUNCTION_005fEPILOGUE_005fSIZE-328"></a>For some COFF targets, the <code>x_sym.x_misc.x_fsize</code> field of the
@@ -924,7 +924,7 @@ look for to detect that GCC compiled the file.  The default symbols
 are <code>gcc_compiled.</code> and <code>gcc2_compiled.</code>,
 respectively.  (Currently only defined for the Delta 68.)
 
-     <br><dt><span class="sc">gdb</span><code>_MULTI_ARCH</code><dd><a name="index-g_t_0040value_007bGDBN_007d_005fMULTI_005fARCH-332"></a>If defined and non-zero, enables support for multiple architectures
+     <br><dt><span class="sc">gdb</span><code>_MULTI_ARCH</code><dd><a name="index-_0040value_007bGDBN_007d_005fMULTI_005fARCH-332"></a>If defined and non-zero, enables support for multiple architectures
 within <span class="sc">gdb</span>.
 
      <p>This support can be enabled at two levels.  At level one, only
@@ -932,14 +932,14 @@ definitions for previously undefined macros are provided; at level two,
 a multi-arch definition of all architecture dependent macros will be
 defined.
 
-     <br><dt><span class="sc">gdb</span><code>_TARGET_IS_HPPA</code><dd><a name="index-g_t_0040value_007bGDBN_007d_005fTARGET_005fIS_005fHPPA-333"></a>This determines whether horrible kludge code in <samp><span class="file">dbxread.c</span></samp> and
-<samp><span class="file">partial-stab.h</span></samp> is used to mangle multiple-symbol-table files from
-HPPA's.  This should all be ripped out, and a scheme like <samp><span class="file">elfread.c</span></samp>
+     <br><dt><span class="sc">gdb</span><code>_TARGET_IS_HPPA</code><dd><a name="index-_0040value_007bGDBN_007d_005fTARGET_005fIS_005fHPPA-333"></a>This determines whether horrible kludge code in <span class="file">dbxread.c</span> and
+<span class="file">partial-stab.h</span> is used to mangle multiple-symbol-table files from
+HPPA's.  This should all be ripped out, and a scheme like <span class="file">elfread.c</span>
 used instead.
 
      <br><dt><code>GET_LONGJMP_TARGET</code><dd><a name="index-GET_005fLONGJMP_005fTARGET-334"></a>For most machines, this is a target-dependent parameter.  On the
 DECstation and the Iris, this is a native-dependent parameter, since
-the header file <samp><span class="file">setjmp.h</span></samp> is needed to define it.
+the header file <span class="file">setjmp.h</span> is needed to define it.
 
      <p>This macro determines the target PC address that <code>longjmp</code> will jump to,
 assuming that we have just stopped at a <code>longjmp</code> breakpoint.  It takes a
@@ -957,12 +957,12 @@ repenting at leisure.
      <br><dt><code>I386_USE_GENERIC_WATCHPOINTS</code><dd>An x86-based target can define this to use the generic x86 watchpoint
 support; see <a href="Algorithms.html#Algorithms">I386_USE_GENERIC_WATCHPOINTS</a>.
 
-     <br><dt><code>SYMBOLS_CAN_START_WITH_DOLLAR</code><dd><a name="index-SYMBOLS_005fCAN_005fSTART_005fWITH_005fDOLLAR-337"></a>Some systems have routines whose names start with &lsquo;<samp><span class="samp">$</span></samp>&rsquo;.  Giving this
+     <br><dt><code>SYMBOLS_CAN_START_WITH_DOLLAR</code><dd><a name="index-SYMBOLS_005fCAN_005fSTART_005fWITH_005fDOLLAR-337"></a>Some systems have routines whose names start with <span class="samp">$</span>.  Giving this
 macro a non-zero value tells <span class="sc">gdb</span>'s expression parser to check for such
-routines when parsing tokens that begin with &lsquo;<samp><span class="samp">$</span></samp>&rsquo;.
+routines when parsing tokens that begin with <span class="samp">$</span>.
 
      <p>On HP-UX, certain system routines (millicode) have names beginning with
-&lsquo;<samp><span class="samp">$</span></samp>&rsquo; or &lsquo;<samp><span class="samp">$$</span></samp>&rsquo;.  For example, <code>$$dyncall</code> is a millicode
+<span class="samp">$</span> or <span class="samp">$$</span>.  For example, <code>$$dyncall</code> is a millicode
 routine that handles inter-space procedure calls on PA-RISC.
 
      <br><dt><code>DEPRECATED_INIT_EXTRA_FRAME_INFO (</code><var>fromleaf</var><code>, </code><var>frame</var><code>)</code><dd><a name="index-DEPRECATED_005fINIT_005fEXTRA_005fFRAME_005fINFO-338"></a>If additional information about the frame is required this should be
@@ -1048,7 +1048,7 @@ group <var>reggroup</var>.
 <dt><code>float_reggroup</code><dd>Any register with a valid name and a floating-point type. 
 <br><dt><code>vector_reggroup</code><dd>Any register with a valid name and a vector type. 
 <br><dt><code>general_reggroup</code><dd>Any register with a valid name and a type other than vector or
-floating-point.  &lsquo;<samp><span class="samp">float_reggroup</span></samp>&rsquo;. 
+floating-point.  <span class="samp">float_reggroup</span>. 
 <br><dt><code>save_reggroup</code><dt><code>restore_reggroup</code><dt><code>all_reggroup</code><dd>Any register with a valid name. 
 </dl>
 
@@ -1079,7 +1079,7 @@ mechanism.  The macro <code>SOFTWARE_SINGLE_STEP</code> must also be defined.
 
      <br><dt><code>SOFTWARE_SINGLE_STEP(</code><var>signal</var><code>, </code><var>insert_breakpoints_p</var><code>)</code><dd><a name="index-SOFTWARE_005fSINGLE_005fSTEP-364"></a>A function that inserts or removes (depending on
 <var>insert_breakpoints_p</var>) breakpoints at each possible destinations of
-the next instruction. See <samp><span class="file">sparc-tdep.c</span></samp> and <samp><span class="file">rs6000-tdep.c</span></samp>
+the next instruction. See <span class="file">sparc-tdep.c</span> and <span class="file">rs6000-tdep.c</span>
 for examples.
 
      <br><dt><code>SOFUN_ADDRESS_MAYBE_MISSING</code><dd><a name="index-SOFUN_005fADDRESS_005fMAYBE_005fMISSING-365"></a>Somebody clever observed that, the more actual addresses you have in the
@@ -1122,7 +1122,7 @@ be the number (greater than or equal to zero) of that register.
      <br><dt><code>PARM_BOUNDARY</code><dd><a name="index-PARM_005fBOUNDARY-368"></a>If non-zero, round arguments to a boundary of this many bits before
 pushing them on the stack.
 
-     <br><dt><code>stabs_argument_has_addr (</code><var>gdbarch</var><code>, </code><var>type</var><code>)</code><dd><a name="index-stabs_005fargument_005fhas_005faddr-369"></a><a name="index-DEPRECATED_005fREG_005fSTRUCT_005fHAS_005fADDR-370"></a><a name="stabs_005fargument_005fhas_005faddr"></a>Define this to return nonzero if a
+     <br><dt><code>stabs_argument_has_addr (</code><var>gdbarch</var><code>, </code><var>type</var><code>)</code><dd><a name="index-stabs_005fargument_005fhas_005faddr-369"></a><a name="index-DEPRECATED_005fREG_005fSTRUCT_005fHAS_005fADDR-370"></a><a name="stabs_005fargument_005fhas_005faddr"></a> Define this to return nonzero if a
 function argument of type <var>type</var> is passed by reference instead of
 value.
 
@@ -1139,7 +1139,7 @@ definition is only used in generic code when parsing "$ps".)
      <br><dt><code>DEPRECATED_POP_FRAME</code><dd><a name="index-DEPRECATED_005fPOP_005fFRAME-374"></a><a name="index-frame_005fpop-375"></a>If defined, used by <code>frame_pop</code> to remove a stack frame.  This
 method has been superseded by generic code.
 
-     <br><dt><code>push_dummy_call (</code><var>gdbarch</var><code>, </code><var>function</var><code>, </code><var>regcache</var><code>, </code><var>pc_addr</var><code>, </code><var>nargs</var><code>, </code><var>args</var><code>, </code><var>sp</var><code>, </code><var>struct_return</var><code>, </code><var>struct_addr</var><code>)</code><dd><a name="index-push_005fdummy_005fcall-376"></a><a name="index-DEPRECATED_005fPUSH_005fARGUMENTS_002e-377"></a><a name="push_005fdummy_005fcall"></a>Define this to push the dummy frame's call to
+     <br><dt><code>push_dummy_call (</code><var>gdbarch</var><code>, </code><var>function</var><code>, </code><var>regcache</var><code>, </code><var>pc_addr</var><code>, </code><var>nargs</var><code>, </code><var>args</var><code>, </code><var>sp</var><code>, </code><var>struct_return</var><code>, </code><var>struct_addr</var><code>)</code><dd><a name="index-push_005fdummy_005fcall-376"></a><a name="index-DEPRECATED_005fPUSH_005fARGUMENTS_002e-377"></a><a name="push_005fdummy_005fcall"></a> Define this to push the dummy frame's call to
 the inferior function onto the stack.  In addition to pushing
 <var>nargs</var>, the code should push <var>struct_addr</var> (when
 <var>struct_return</var>), and the return address (<var>bp_addr</var>).
@@ -1151,7 +1151,7 @@ function descriptors, this contains the function descriptor value.
 
      <p>This method replaces <code>DEPRECATED_PUSH_ARGUMENTS</code>.
 
-     <br><dt><code>CORE_ADDR push_dummy_code (</code><var>gdbarch</var><code>, </code><var>sp</var><code>, </code><var>funaddr</var><code>, </code><var>using_gcc</var><code>, </code><var>args</var><code>, </code><var>nargs</var><code>, </code><var>value_type</var><code>, </code><var>real_pc</var><code>, </code><var>bp_addr</var><code>)</code><dd><a name="index-push_005fdummy_005fcode-378"></a><a name="push_005fdummy_005fcode"></a>Given a stack based call dummy, push the
+     <br><dt><code>CORE_ADDR push_dummy_code (</code><var>gdbarch</var><code>, </code><var>sp</var><code>, </code><var>funaddr</var><code>, </code><var>using_gcc</var><code>, </code><var>args</var><code>, </code><var>nargs</var><code>, </code><var>value_type</var><code>, </code><var>real_pc</var><code>, </code><var>bp_addr</var><code>)</code><dd><a name="index-push_005fdummy_005fcode-378"></a><a name="push_005fdummy_005fcode"></a> Given a stack based call dummy, push the
 instruction sequence (including space for a breakpoint) to which the
 called function should return.
 
@@ -1175,7 +1175,7 @@ given type will be passed by pointer rather than directly.
      <p>This method has been replaced by <code>stabs_argument_has_addr</code>
 (see <a href="stabs_005fargument_005fhas_005faddr.html#stabs_005fargument_005fhas_005faddr">stabs_argument_has_addr</a>).
 
-     <br><dt><code>SAVE_DUMMY_FRAME_TOS (</code><var>sp</var><code>)</code><dd><a name="index-SAVE_005fDUMMY_005fFRAME_005fTOS-381"></a><a name="SAVE_005fDUMMY_005fFRAME_005fTOS"></a>Used in &lsquo;<samp><span class="samp">call_function_by_hand</span></samp>&rsquo; to
+     <br><dt><code>SAVE_DUMMY_FRAME_TOS (</code><var>sp</var><code>)</code><dd><a name="index-SAVE_005fDUMMY_005fFRAME_005fTOS-381"></a><a name="SAVE_005fDUMMY_005fFRAME_005fTOS"></a> Used in <span class="samp">call_function_by_hand</span> to
 notify the target dependent code of the top-of-stack value that will be
 passed to the inferior code.  This is the value of the <code>SP</code>
 after both the dummy frame and space for parameters/results have been
@@ -1184,7 +1184,7 @@ allocated on the stack.  See <a href="unwind_005fdummy_005fid.html#unwind_005fdu
      <br><dt><code>SDB_REG_TO_REGNUM</code><dd><a name="index-SDB_005fREG_005fTO_005fREGNUM-382"></a>Define this to convert sdb register numbers into <span class="sc">gdb</span> regnums.  If not
 defined, no conversion will be done.
 
-     <br><dt><code>enum return_value_convention gdbarch_return_value (struct gdbarch *</code><var>gdbarch</var><code>, struct type *</code><var>valtype</var><code>, struct regcache *</code><var>regcache</var><code>, void *</code><var>readbuf</var><code>, const void *</code><var>writebuf</var><code>)</code><dd><a name="index-gdbarch_005freturn_005fvalue-383"></a><a name="gdbarch_005freturn_005fvalue"></a>Given a function with a return-value of
+     <br><dt><code>enum return_value_convention gdbarch_return_value (struct gdbarch *</code><var>gdbarch</var><code>, struct type *</code><var>valtype</var><code>, struct regcache *</code><var>regcache</var><code>, void *</code><var>readbuf</var><code>, const void *</code><var>writebuf</var><code>)</code><dd><a name="index-gdbarch_005freturn_005fvalue-383"></a><a name="gdbarch_005freturn_005fvalue"></a> Given a function with a return-value of
 type <var>rettype</var>, return which return-value convention that function
 would use.
 
@@ -1248,7 +1248,8 @@ there is no such register.
 declarations) into <span class="sc">gdb</span> regnums.  If not defined, no conversion will be
 done.
 
-     <br><dt><code>DEPRECATED_STACK_ALIGN (</code><var>addr</var><code>)</code><dd><a name="DEPRECATED_005fSTACK_005fALIGN"></a><a name="index-DEPRECATED_005fSTACK_005fALIGN-389"></a>Define this to increase <var>addr</var> so that it meets the alignment
+     <br><dt><code>DEPRECATED_STACK_ALIGN (</code><var>addr</var><code>)</code><dd><a name="DEPRECATED_005fSTACK_005fALIGN"></a>
+<a name="index-DEPRECATED_005fSTACK_005fALIGN-389"></a>Define this to increase <var>addr</var> so that it meets the alignment
 requirements for the processor's stack.
 
      <p>Unlike <a href="frame_005falign.html#frame_005falign">frame_align</a>, this function always adjusts <var>addr</var>
@@ -1307,7 +1308,8 @@ defaults to <code>2 * TARGET_DOUBLE_BIT</code>.
 
      <br><dt><code>TARGET_SHORT_BIT</code><dd><a name="index-TARGET_005fSHORT_005fBIT-404"></a>Number of bits in a short integer; defaults to <code>2 * TARGET_CHAR_BIT</code>.
 
-     <br><dt><code>TARGET_READ_PC</code><dd><a name="index-TARGET_005fREAD_005fPC-405"></a><dt><code>TARGET_WRITE_PC (</code><var>val</var><code>, </code><var>pid</var><code>)</code><dd><a name="index-TARGET_005fWRITE_005fPC-406"></a><a name="TARGET_005fWRITE_005fPC"></a><dt><code>TARGET_READ_SP</code><dd><a name="index-TARGET_005fREAD_005fSP-407"></a><dt><code>TARGET_READ_FP</code><dd><a name="index-TARGET_005fREAD_005fFP-408"></a><a name="index-read_005fpc-409"></a><a name="index-write_005fpc-410"></a><a name="index-read_005fsp-411"></a><a name="index-read_005ffp-412"></a><a name="TARGET_005fREAD_005fSP"></a>These change the behavior of <code>read_pc</code>,
+     <br><dt><code>TARGET_READ_PC</code><dd><a name="index-TARGET_005fREAD_005fPC-405"></a><dt><code>TARGET_WRITE_PC (</code><var>val</var><code>, </code><var>pid</var><code>)</code><dd><a name="index-TARGET_005fWRITE_005fPC-406"></a><a name="TARGET_005fWRITE_005fPC"></a>
+<dt><code>TARGET_READ_SP</code><dd><a name="index-TARGET_005fREAD_005fSP-407"></a><dt><code>TARGET_READ_FP</code><dd><a name="index-TARGET_005fREAD_005fFP-408"></a><a name="index-read_005fpc-409"></a><a name="index-write_005fpc-410"></a><a name="index-read_005fsp-411"></a><a name="index-read_005ffp-412"></a><a name="TARGET_005fREAD_005fSP"></a> These change the behavior of <code>read_pc</code>,
 <code>write_pc</code>, and <code>read_sp</code>.  For most targets, these may be
 left undefined.  <span class="sc">gdb</span> will call the read and write register
 functions with the relevant <code>_REGNUM</code> argument.
@@ -1335,10 +1337,10 @@ accessor function for the global pointer
 <code>deprecated_tm_print_insn</code>.  This usually points to a function in
 the <code>opcodes</code> library (see <a href="Support-Libraries.html#Support-Libraries">Opcodes</a>). 
 <var>info</var> is a structure (of type <code>disassemble_info</code>) defined in
-<samp><span class="file">include/dis-asm.h</span></samp> used to pass information to the instruction
+<span class="file">include/dis-asm.h</span> used to pass information to the instruction
 decoding routine.
 
-     <br><dt><code>struct frame_id unwind_dummy_id (struct frame_info *</code><var>frame</var><code>)</code><dd><a name="index-unwind_005fdummy_005fid-415"></a><a name="unwind_005fdummy_005fid"></a>Given <var>frame</var> return a <code>struct
+     <br><dt><code>struct frame_id unwind_dummy_id (struct frame_info *</code><var>frame</var><code>)</code><dd><a name="index-unwind_005fdummy_005fid-415"></a><a name="unwind_005fdummy_005fid"></a> Given <var>frame</var> return a <code>struct
 frame_id</code> that uniquely identifies an inferior function call's dummy
 frame.  The value returned must match the dummy frame stack value
 previously saved using <code>SAVE_DUMMY_FRAME_TOS</code>. 
@@ -1387,37 +1389,37 @@ allocate some memory in the inferior. The default value is "malloc".
 
      
 <a name="index-TDEPFILES-425"></a>
-<dl><dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/</span><var>ttt</var><span class="file">.mt</span></samp><dd>Contains a Makefile fragment specific to this target.  Specifies what
+<dl><dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/</span><var>ttt</var><span class="file">.mt</span><dd>Contains a Makefile fragment specific to this target.  Specifies what
 object files are needed for target <var>ttt</var>, by defining
-&lsquo;<samp><span class="samp">TDEPFILES=...</span></samp>&rsquo; and &lsquo;<samp><span class="samp">TDEPLIBS=...</span></samp>&rsquo;.  Also specifies
-the header file which describes <var>ttt</var>, by defining &lsquo;<samp><span class="samp">TM_FILE=
-tm-</span><var>ttt</var><span class="samp">.h</span></samp>&rsquo;.
+<span class="samp">TDEPFILES=...</span> and <span class="samp">TDEPLIBS=...</span>.  Also specifies
+the header file which describes <var>ttt</var>, by defining <span class="samp">TM_FILE=
+tm-</span><var>ttt</var><span class="samp">.h</span>.
 
-     <p>You can also define &lsquo;<samp><span class="samp">TM_CFLAGS</span></samp>&rsquo;, &lsquo;<samp><span class="samp">TM_CLIBS</span></samp>&rsquo;, &lsquo;<samp><span class="samp">TM_CDEPS</span></samp>&rsquo;,
+     <p>You can also define <span class="samp">TM_CFLAGS</span>, <span class="samp">TM_CLIBS</span>, <span class="samp">TM_CDEPS</span>,
 but these are now deprecated, replaced by autoconf, and may go away in
 future versions of <span class="sc">gdb</span>.
 
-     <br><dt><samp><span class="file">gdb/</span><var>ttt</var><span class="file">-tdep.c</span></samp><dd>Contains any miscellaneous code required for this target machine.  On
+     <br><dt><span class="file">gdb/</span><var>ttt</var><span class="file">-tdep.c</span><dd>Contains any miscellaneous code required for this target machine.  On
 some machines it doesn't exist at all.  Sometimes the macros in
-<samp><span class="file">tm-</span><var>ttt</var><span class="file">.h</span></samp> become very complicated, so they are implemented
+<span class="file">tm-</span><var>ttt</var><span class="file">.h</span> become very complicated, so they are implemented
 as functions here instead, and the macro is simply defined to call the
 function.  This is vastly preferable, since it is easier to understand
 and debug.
 
-     <br><dt><samp><span class="file">gdb/</span><var>arch</var><span class="file">-tdep.c</span></samp><dt><samp><span class="file">gdb/</span><var>arch</var><span class="file">-tdep.h</span></samp><dd>This often exists to describe the basic layout of the target machine's
+     <br><dt><span class="file">gdb/</span><var>arch</var><span class="file">-tdep.c</span><dt><span class="file">gdb/</span><var>arch</var><span class="file">-tdep.h</span><dd>This often exists to describe the basic layout of the target machine's
 processor chip (registers, stack, etc.).  If used, it is included by
-<samp><var>ttt</var><span class="file">-tdep.h</span></samp>.  It can be shared among many targets that use
+<var>ttt</var><span class="file">-tdep.h</span>.  It can be shared among many targets that use
 the same processor.
 
-     <br><dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/tm-</span><var>ttt</var><span class="file">.h</span></samp><dd>(<samp><span class="file">tm.h</span></samp> is a link to this file, created by <code>configure</code>).  Contains
+     <br><dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/tm-</span><var>ttt</var><span class="file">.h</span><dd>(<span class="file">tm.h</span> is a link to this file, created by <code>configure</code>).  Contains
 macro definitions about the target machine's registers, stack frame
 format and instructions.
 
      <p>New targets do not need this file and should not create it.
 
-     <br><dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/tm-</span><var>arch</var><span class="file">.h</span></samp><dd>This often exists to describe the basic layout of the target machine's
+     <br><dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/tm-</span><var>arch</var><span class="file">.h</span><dd>This often exists to describe the basic layout of the target machine's
 processor chip (registers, stack, etc.).  If used, it is included by
-<samp><span class="file">tm-</span><var>ttt</var><span class="file">.h</span></samp>.  It can be shared among many targets that use the
+<span class="file">tm-</span><var>ttt</var><span class="file">.h</span>.  It can be shared among many targets that use the
 same processor.
 
      <p>New targets do not need this file and should not create it.
@@ -1425,11 +1427,11 @@ same processor.
    </dl>
 
    <p>If you are adding a new operating system for an existing CPU chip, add a
-<samp><span class="file">config/tm-</span><var>os</var><span class="file">.h</span></samp> file that describes the operating system
+<span class="file">config/tm-</span><var>os</var><span class="file">.h</span> file that describes the operating system
 facilities that are unusual (extra symbol table info; the breakpoint
-instruction needed; etc.).  Then write a <samp><var>arch</var><span class="file">/tm-</span><var>os</var><span class="file">.h</span></samp>
-that just <code>#include</code>s <samp><span class="file">tm-</span><var>arch</var><span class="file">.h</span></samp> and
-<samp><span class="file">config/tm-</span><var>os</var><span class="file">.h</span></samp>.
+instruction needed; etc.).  Then write a <var>arch</var><span class="file">/tm-</span><var>os</var><span class="file">.h</span>
+that just <code>#include</code>s <span class="file">tm-</span><var>arch</var><span class="file">.h</span> and
+<span class="file">config/tm-</span><var>os</var><span class="file">.h</span>.
 
 <h3 class="section">9.13 Converting an existing Target Architecture to Multi-arch</h3>
 
@@ -1460,19 +1462,19 @@ encouraged to keep the patch size down.
    <p>Since each patch is well defined, and since each change has been tested
 and shows no regressions, the patches are considered <em>fairly</em>
 obvious.  Such patches, when submitted by developers listed in the
-<samp><span class="file">MAINTAINERS</span></samp> file, do not need approval.  Occasional steps in the
+<span class="file">MAINTAINERS</span> file, do not need approval.  Occasional steps in the
 process may be more complicated and less clear.  The developer is
 expected to use their judgment and is encouraged to seek advice as
 needed.
 
 <h4 class="subsection">9.13.1 Preparation</h4>
 
-<p>The first step is to establish control.  Build (with <samp><span class="option">-Werror</span></samp>
+<p>The first step is to establish control.  Build (with <span class="option">-Werror</span>
 enabled) and test the target so that there is a baseline against which
 the debugger can be compared.
 
    <p>At no stage can the test results regress or <span class="sc">gdb</span> stop compiling
-with <samp><span class="option">-Werror</span></samp>.
+with <span class="option">-Werror</span>.
 
 <h4 class="subsection">9.13.2 Add the multi-arch initialization code</h4>
 
@@ -1494,7 +1496,7 @@ the architecture:
             gdbarch = gdbarch_alloc (&amp;info, NULL);
             return gdbarch;
           }
-</pre>
+     </pre>
      <p class="noindent">
 
      <li>A per-architecture dump function to print any architecture specific
@@ -1505,7 +1507,7 @@ information:
           {
              ... code to print architecture specific info ...
           }
-</pre>
+     </pre>
      <li>A change to <code>_initialize_</code><var>arch</var><code>_tdep</code> to register this new
 architecture:
      <pre class="smallexample">          void
@@ -1513,9 +1515,9 @@ architecture:
           {
             gdbarch_register (bfd_arch_mips, mips_gdbarch_init,
                               mips_dump_tdep);
-</pre>
+     </pre>
      <li>Add the macro <code>GDB_MULTI_ARCH</code>, defined as 0 (zero), to the file<br>
-<samp><span class="file">config/</span><var>arch</var><span class="file">/tm-</span><var>arch</var><span class="file">.h</span></samp>.
+<span class="file">config/</span><var>arch</var><span class="file">/tm-</span><var>arch</var><span class="file">.h</span>.
 
    </ul>
 
@@ -1566,8 +1568,8 @@ architecture method) in small batches.
 
 <h4 class="subsection">9.13.8 Delete the TM file</h4>
 
-<p>The <samp><span class="file">tm-</span><var>arch</var><span class="file">.h</span></samp> can be deleted.  <samp><var>arch</var><span class="file">.mt</span></samp> and
-<samp><span class="file">configure.in</span></samp> updated.
+<p>The <span class="file">tm-</span><var>arch</var><span class="file">.h</span> can be deleted.  <var>arch</var><span class="file">.mt</span> and
+<span class="file">configure.in</span> updated.
 
    <div class="footnote">
 <hr>
@@ -1580,7 +1582,7 @@ full 32 bit instructions, which is what matters in this explanation.</p>
 above is from the original example and uses K&amp;R C.  <span class="sc">gdb</span>
 has since converted to ISO C but lets ignore that.</p>
 
-   <hr></div>
+   <p><hr></div>
 
    </body></html>
 

@@ -3,7 +3,7 @@
 <title>Subscripting - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Escaped-Newlines.html#Escaped-Newlines" title="Escaped Newlines">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Subscripting"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Pointer-Arith.html#Pointer-Arith">Pointer Arith</a>,
+<a name="Subscripting"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Pointer-Arith.html#Pointer-Arith">Pointer Arith</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Escaped-Newlines.html#Escaped-Newlines">Escaped Newlines</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.16 Non-Lvalue Arrays May Have Subscripts</h3>
@@ -58,7 +56,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Exten
 <p><a name="index-subscripting-1787"></a><a name="index-arrays_002c-non_002dlvalue-1788"></a>
 <a name="index-subscripting-and-function-values-1789"></a>In ISO C99, arrays that are not lvalues still decay to pointers, and
 may be subscripted, although they may not be modified or used after
-the next sequence point and the unary &lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo; operator may not be
+the next sequence point and the unary <span class="samp">&amp;</span> operator may not be
 applied to them.  As an extension, GCC allows such arrays to be
 subscripted in C89 mode, though otherwise they do not decay to
 pointers outside C99 mode.  For example,

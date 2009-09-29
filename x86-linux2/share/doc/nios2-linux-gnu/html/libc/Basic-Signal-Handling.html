@@ -3,7 +3,7 @@
 <title>Basic Signal Handling - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Signal-Actions.html#Signal-Actions" title="Signal Actions">
 <link rel="next" href="Advanced-Signal-Handling.html#Advanced-Signal-Handling" title="Advanced Signal Handling">
@@ -16,26 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Basic-Signal-Handling"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Advanced-Signal-Handling.html#Advanced-Signal-Handling">Advanced Signal Handling</a>,
+<a name="Basic-Signal-Handling"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Advanced-Signal-Handling.html#Advanced-Signal-Handling">Advanced Signal Handling</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Signal-Actions.html#Signal-Actions">Signal Actions</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">24.3.1 Basic Signal Handling</h4>
 
-<p><a name="index-g_t_0040code_007bsignal_007d-function-2906"></a>
+<p><a name="index-_0040code_007bsignal_007d-function-2906"></a>
 The <code>signal</code> function provides a simple interface for establishing
 an action for a particular signal.  The function and associated macros
-are declared in the header file <samp><span class="file">signal.h</span></samp>. 
+are declared in the header file <span class="file">signal.h</span>. 
 <a name="index-signal_002eh-2907"></a>
 <!-- signal.h -->
 <!-- GNU -->
@@ -47,7 +45,7 @@ integer argument specifying the signal number, and have return type
 <code>void</code>.  So, you should define handler functions like this:
 
      <pre class="smallexample">          void <var>handler</var> (int <code>signum</code>) { ... }
-</pre>
+     </pre>
         <p>The name <code>sighandler_t</code> for this data type is a GNU extension. 
 </p></blockquote></div>
 

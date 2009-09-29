@@ -3,7 +3,7 @@
 <title>C++ Attributes - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions" title="C++ Extensions">
 <link rel="prev" href="Bound-member-functions.html#Bound-member-functions" title="Bound member functions">
@@ -38,20 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="C++-Attributes"></a>
-<a name="C_002b_002b-Attributes"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Strong-Using.html#Strong-Using">Strong Using</a>,
+<a name="C_002b_002b-Attributes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Strong-Using.html#Strong-Using">Strong Using</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Bound-member-functions.html#Bound-member-functions">Bound member functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions">C++ Extensions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">6.7 C++-Specific Variable, Function, and Type Attributes</h3>
@@ -75,7 +72,7 @@ inclusive.  Lower numbers indicate a higher priority.
 
      <pre class="smallexample">          Some_Class  A  __attribute__ ((init_priority (2000)));
           Some_Class  B  __attribute__ ((init_priority (543)));
-</pre>
+     </pre>
      <p class="noindent">Note that the particular values of <var>priority</var> do not matter; only their
 relative ordering.
 

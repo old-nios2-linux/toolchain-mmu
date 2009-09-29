@@ -3,7 +3,7 @@
 <title>Heap Consistency Checking - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Unconstrained-Allocation.html#Unconstrained-Allocation" title="Unconstrained Allocation">
 <link rel="prev" href="Malloc-Tunable-Parameters.html#Malloc-Tunable-Parameters" title="Malloc Tunable Parameters">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Heap-Consistency-Checking"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Hooks-for-Malloc.html#Hooks-for-Malloc">Hooks for Malloc</a>,
+<a name="Heap-Consistency-Checking"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Hooks-for-Malloc.html#Hooks-for-Malloc">Hooks for Malloc</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Malloc-Tunable-Parameters.html#Malloc-Tunable-Parameters">Malloc Tunable Parameters</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Unconstrained-Allocation.html#Unconstrained-Allocation">Unconstrained Allocation</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">3.2.2.9 Heap Consistency Checking</h5>
@@ -37,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Unconstrained-Allocation.html#Unconstra
 <p><a name="index-heap-consistency-checking-278"></a><a name="index-consistency-checking_002c-of-heap-279"></a>
 You can ask <code>malloc</code> to check the consistency of dynamic memory by
 using the <code>mcheck</code> function.  This function is a GNU extension,
-declared in <samp><span class="file">mcheck.h</span></samp>. 
+declared in <span class="file">mcheck.h</span>. 
 <a name="index-mcheck_002eh-280"></a>
 <!-- mcheck.h -->
 <!-- GNU -->
@@ -61,7 +59,7 @@ case.  The function returns <code>-1</code> if you call it too late, and
 <code>0</code> otherwise (when it is successful).
 
         <p>The easiest way to arrange to call <code>mcheck</code> early enough is to use
-the option &lsquo;<samp><span class="samp">-lmcheck</span></samp>&rsquo; when you link your program; then you don't
+the option <span class="samp">-lmcheck</span> when you link your program; then you don't
 need to modify your program source at all.  Alternatively you might use
 a debugger to insert a call to <code>mcheck</code> whenever the program is
 started, for example these gdb commands will automatically call <code>mcheck</code>
@@ -76,7 +74,7 @@ whenever the program starts:
           &gt;continue
           &gt;end
           (gdb) ...
-</pre>
+     </pre>
         <p>This will however only work if no initialization function of any object
 involved calls any of the <code>malloc</code> functions since <code>mcheck</code>
 must be called before the first such function.
@@ -134,13 +132,13 @@ it could possibly be exploited since diverging from the normal programs
 behavior it now writes something to the standard error descriptor. 
 Therefore the use of <code>MALLOC_CHECK_</code> is disabled by default for
 SUID and SGID binaries.  It can be enabled again by the system
-administrator by adding a file <samp><span class="file">/etc/suid-debug</span></samp> (the content is
+administrator by adding a file <span class="file">/etc/suid-debug</span> (the content is
 not important it could be empty).
 
    <p>So, what's the difference between using <code>MALLOC_CHECK_</code> and linking
-with &lsquo;<samp><span class="samp">-lmcheck</span></samp>&rsquo;?  <code>MALLOC_CHECK_</code> is orthogonal with respect to
-&lsquo;<samp><span class="samp">-lmcheck</span></samp>&rsquo;.  &lsquo;<samp><span class="samp">-lmcheck</span></samp>&rsquo; has been added for backward
-compatibility.  Both <code>MALLOC_CHECK_</code> and &lsquo;<samp><span class="samp">-lmcheck</span></samp>&rsquo; should
+with <span class="samp">-lmcheck</span>?  <code>MALLOC_CHECK_</code> is orthogonal with respect to
+<span class="samp">-lmcheck</span>.  <span class="samp">-lmcheck</span> has been added for backward
+compatibility.  Both <code>MALLOC_CHECK_</code> and <span class="samp">-lmcheck</span> should
 uncover the same bugs - but using <code>MALLOC_CHECK_</code> you don't need to
 recompile your application.
 

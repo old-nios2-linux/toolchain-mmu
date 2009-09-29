@@ -3,7 +3,7 @@
 <title>Advantages of Alloca - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Variable-Size-Automatic.html#Variable-Size-Automatic" title="Variable Size Automatic">
 <link rel="prev" href="Alloca-Example.html#Alloca-Example" title="Alloca Example">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Advantages-of-Alloca"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Disadvantages-of-Alloca.html#Disadvantages-of-Alloca">Disadvantages of Alloca</a>,
+<a name="Advantages-of-Alloca"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Disadvantages-of-Alloca.html#Disadvantages-of-Alloca">Disadvantages of Alloca</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Alloca-Example.html#Alloca-Example">Alloca Example</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Variable-Size-Automatic.html#Variable-Size-Automatic">Variable Size Automatic</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">3.2.5.2 Advantages of <code>alloca</code></h5>
@@ -64,7 +62,7 @@ subroutine:
             stpcpy (stpcpy (name, str1), str2);
             return open_or_report_error (name, flags, mode);
           }
-</pre>
+     </pre>
      <p class="noindent">Because of the way <code>alloca</code> works, the memory it allocates is
 freed even when an error occurs, with no special effort required.
 

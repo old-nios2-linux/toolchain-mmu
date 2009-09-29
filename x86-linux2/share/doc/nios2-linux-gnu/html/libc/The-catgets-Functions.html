@@ -3,7 +3,7 @@
 <title>The catgets Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Message-catalogs-a-la-X_002fOpen.html#Message-catalogs-a-la-X_002fOpen" title="Message catalogs a la X/Open">
 <link rel="next" href="The-message-catalog-files.html#The-message-catalog-files" title="The message catalog files">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="The-catgets-Functions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="The-message-catalog-files.html#The-message-catalog-files">The message catalog files</a>,
+<a name="The-catgets-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="The-message-catalog-files.html#The-message-catalog-files">The message catalog files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Message-catalogs-a-la-X_002fOpen.html#Message-catalogs-a-la-X_002fOpen">Message catalogs a la X/Open</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">8.1.1 The <code>catgets</code> function family</h4>
@@ -65,7 +63,7 @@ Instead it is a format string (similar to <code>printf</code>'s).  An example
 is
 
      <pre class="smallexample">          /usr/share/locale/%L/%N:/usr/share/locale/%L/LC_MESSAGES/%N
-</pre>
+     </pre>
         <p>First one can see that more than one directory can be specified (with
 the usual syntax of separating them by colons).  The next things to
 observe are the format string, <code>%L</code> and <code>%N</code> in this case. 
@@ -106,7 +104,7 @@ If the <code>NLSPATH</code> environment variable is not set, the default value
 is
 
      <pre class="smallexample">          <var>prefix</var>/share/locale/%L/%N:<var>prefix</var>/share/locale/%L/LC_MESSAGES/%N
-</pre>
+     </pre>
         <p class="noindent">where <var>prefix</var> is given to <code>configure</code> while installing the GNU
 C Library (this value is in many cases <code>/usr</code> or the empty string).
 
@@ -124,7 +122,7 @@ to all other platforms providing the <code>catgets</code> interface.
 environment are examined (see <a href="Standard-Environment.html#Standard-Environment">Standard Environment</a>).  Which
 variables are examined is decided by the <var>flag</var> parameter of
 <code>catopen</code>.  If the value is <code>NL_CAT_LOCALE</code> (which is defined
-in <samp><span class="file">nl_types.h</span></samp>) then the <code>catopen</code> function use the name of
+in <span class="file">nl_types.h</span>) then the <code>catopen</code> function use the name of
 the locale currently selected for the <code>LC_MESSAGES</code> category.
 
         <p>If <var>flag</var> is zero the <code>LANG</code> environment variable is examined. 
@@ -148,7 +146,7 @@ translation actually happened must look like this:
                 /* Something went wrong.  */
               }
           }
-</pre>
+     </pre>
         <p class="noindent">When an error occurred the global variable <var>errno</var> is set to
 
           <dl>

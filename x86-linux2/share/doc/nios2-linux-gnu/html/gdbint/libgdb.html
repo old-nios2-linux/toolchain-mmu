@@ -3,7 +3,7 @@
 <title>libgdb - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="User-Interface.html#User-Interface" title="User Interface">
 <link rel="next" href="Symbol-Handling.html#Symbol-Handling" title="Symbol Handling">
@@ -16,41 +16,39 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="libgdb"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Symbol-Handling.html#Symbol-Handling">Symbol Handling</a>,
+<a name="libgdb"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Symbol-Handling.html#Symbol-Handling">Symbol Handling</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="User-Interface.html#User-Interface">User Interface</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">5 libgdb</h2>
 
 <h3 class="section">5.1 libgdb 1.0</h3>
 
-<p><a name="index-g_t_0040code_007blibgdb_007d-117"></a><code>libgdb</code> 1.0 was an abortive project of years ago.  The theory was
+<p><a name="index-_0040code_007blibgdb_007d-117"></a><code>libgdb</code> 1.0 was an abortive project of years ago.  The theory was
 to provide an API to <span class="sc">gdb</span>'s functionality.
 
 <h3 class="section">5.2 libgdb 2.0</h3>
 
-<p><a name="index-g_t_0040code_007blibgdb_007d-118"></a><code>libgdb</code> 2.0 is an ongoing effort to update <span class="sc">gdb</span> so that is
+<p><a name="index-_0040code_007blibgdb_007d-118"></a><code>libgdb</code> 2.0 is an ongoing effort to update <span class="sc">gdb</span> so that is
 better able to support graphical and other environments.
 
    <p>Since <code>libgdb</code> development is on-going, its architecture is still
 evolving.  The following components have so far been identified:
 
      <ul>
-<li>Observer - <samp><span class="file">gdb-events.h</span></samp>. 
-<li>Builder - <samp><span class="file">ui-out.h</span></samp>
-<li>Event Loop - <samp><span class="file">event-loop.h</span></samp>
-<li>Library - <samp><span class="file">gdb.h</span></samp>
+<li>Observer - <span class="file">gdb-events.h</span>. 
+<li>Builder - <span class="file">ui-out.h</span>
+<li>Event Loop - <span class="file">event-loop.h</span>
+<li>Library - <span class="file">gdb.h</span>
 </ul>
 
    <p>The model that ties these components together is described below.
@@ -60,10 +58,10 @@ evolving.  The following components have so far been identified:
 <p>A client of <code>libgdb</code> interacts with the library in two ways.
 
      <ul>
-<li>As an observer (using <samp><span class="file">gdb-events</span></samp>) receiving notifications from
+<li>As an observer (using <span class="file">gdb-events</span>) receiving notifications from
 <code>libgdb</code> of any internal state changes (break point changes, run
 state, etc). 
-<li>As a client querying <code>libgdb</code> (using the <samp><span class="file">ui-out</span></samp> builder) to
+<li>As a client querying <code>libgdb</code> (using the <span class="file">ui-out</span> builder) to
 obtain various status values from <span class="sc">gdb</span>. 
 </ul>
 
@@ -71,7 +69,7 @@ obtain various status values from <span class="sc">gdb</span>.
 the existing <span class="sc">gdb</span> CLI), those clients must co-operate when
 controlling <code>libgdb</code>.  In particular, a client must ensure that
 <code>libgdb</code> is idle (i.e. no other client is using <code>libgdb</code>)
-before responding to a <samp><span class="file">gdb-event</span></samp> by making a query.
+before responding to a <span class="file">gdb-event</span> by making a query.
 
 <h3 class="section">5.4 CLI support</h3>
 
@@ -106,24 +104,24 @@ client's custom builder).
 
 <h3 class="section">5.5 <code>libgdb</code> components</h3>
 
-<h4 class="subheading">Observer - <samp><span class="file">gdb-events.h</span></samp></h4>
+<h4 class="subheading">Observer - <span class="file">gdb-events.h</span></h4>
 
-<p><samp><span class="file">gdb-events</span></samp> provides the client with a very raw mechanism that can
+<p><span class="file">gdb-events</span> provides the client with a very raw mechanism that can
 be used to implement an observer.  At present it only allows for one
 observer and that observer must, internally, handle the need to delay
 the processing of any event notifications until after <code>libgdb</code> has
 finished the current command.
 
-<h4 class="subheading">Builder - <samp><span class="file">ui-out.h</span></samp></h4>
+<h4 class="subheading">Builder - <span class="file">ui-out.h</span></h4>
 
-<p><samp><span class="file">ui-out</span></samp> provides the infrastructure necessary for a client to
+<p><span class="file">ui-out</span> provides the infrastructure necessary for a client to
 create a builder.  That builder is then passed down to <code>libgdb</code>
 when doing any queries.
 
-<h4 class="subheading">Event Loop - <samp><span class="file">event-loop.h</span></samp></h4>
+<h4 class="subheading">Event Loop - <span class="file">event-loop.h</span></h4>
 
 <!-- There could be an entire section on the event-loop -->
-<p><samp><span class="file">event-loop</span></samp>, currently non-re-entrant, provides a simple event
+<p><span class="file">event-loop</span>, currently non-re-entrant, provides a simple event
 loop.  A client would need to either plug its self into this loop or,
 implement a new event-loop that GDB would use.
 
@@ -131,9 +129,9 @@ implement a new event-loop that GDB would use.
 <span class="sc">gdb</span> can better handle the problem of some commands blocking
 instead of returning.
 
-<h4 class="subheading">Library - <samp><span class="file">gdb.h</span></samp></h4>
+<h4 class="subheading">Library - <span class="file">gdb.h</span></h4>
 
-<p><samp><span class="file">libgdb</span></samp> is the most obvious component of this system.  It provides
+<p><span class="file">libgdb</span> is the most obvious component of this system.  It provides
 the query interface.  Each function is parameterized by a <code>ui-out</code>
 builder.  The result of the query is constructed using that builder
 before the query function returns.

@@ -3,7 +3,7 @@
 <title>Coding - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Support-Libraries.html#Support-Libraries" title="Support Libraries">
 <link rel="next" href="Porting-GDB.html#Porting-GDB" title="Porting GDB">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Coding"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Porting-GDB.html#Porting-GDB">Porting GDB</a>,
+<a name="Coding"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Porting-GDB.html#Porting-GDB">Porting GDB</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Support-Libraries.html#Support-Libraries">Support Libraries</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">14 Coding</h2>
@@ -122,7 +120,7 @@ that they &ldquo;should not be called when cleanups are not in place&rdquo;.  Th
 means that any actions you need to reverse in the case of an error or
 interruption must be on the cleanup chain before you call these
 functions, since they might never return to your code (they
-&lsquo;<samp><span class="samp">longjmp</span></samp>&rsquo; instead).
+<span class="samp">longjmp</span> instead).
 
 <h3 class="section">14.2 Per-architecture module data</h3>
 
@@ -159,7 +157,7 @@ identify the per-architecture data-pointer added for that module.
    <p>The per-architecture data-pointer is accessed using the function:
 
 <div class="defun">
-&mdash; Function: void <b>*gdbarch_data</b> (<var>struct gdbarch *gdbarch, struct gdbarch_data *data_handle</var>)<var><a name="index-g_t_002agdbarch_005fdata-472"></a></var><br>
+&mdash; Function: void <b>*gdbarch_data</b> (<var>struct gdbarch *gdbarch, struct gdbarch_data *data_handle</var>)<var><a name="index-_002agdbarch_005fdata-472"></a></var><br>
 <blockquote><p>Given the architecture <var>arch</var> and module data handle
 <var>data_handle</var> (returned by <code>gdbarch_data_register_pre_init</code>
 or <code>gdbarch_data_register_post_init</code>), this function returns the
@@ -248,7 +246,7 @@ print warnings are a good example.
 
 <p><a name="index-coding-standards-475"></a>
 <span class="sc">gdb</span> follows the GNU coding standards, as described in
-<samp><span class="file">etc/standards.texi</span></samp>.  This file is also available for anonymous
+<span class="file">etc/standards.texi</span>.  This file is also available for anonymous
 FTP from GNU archive sites.  <span class="sc">gdb</span> takes a strict interpretation
 of the standard; in general, when the GNU standard recommends a practice
 but does not require it, <span class="sc">gdb</span> requires it.
@@ -304,9 +302,9 @@ errors.</em>
 
 <p><a name="index-compiler-warnings-476"></a>
 With few exceptions, developers should avoid the configuration option
-&lsquo;<samp><span class="samp">--disable-werror</span></samp>&rsquo; when building <span class="sc">gdb</span>.  The exceptions
-are listed in the file <samp><span class="file">gdb/MAINTAINERS</span></samp>.  The default, when
-building with <span class="sc">gcc</span>, is &lsquo;<samp><span class="samp">--enable-werror</span></samp>&rsquo;.
+<span class="samp">--disable-werror</span> when building <span class="sc">gdb</span>.  The exceptions
+are listed in the file <span class="file">gdb/MAINTAINERS</span>.  The default, when
+building with <span class="sc">gcc</span>, is <span class="samp">--enable-werror</span>.
 
    <p>This option causes <span class="sc">gdb</span> (when built using GCC) to be compiled
 with a carefully selected list of compiler warning flags.  Any warnings
@@ -315,34 +313,34 @@ from those flags are treated as errors.
    <p>The current list of warning flags includes:
 
      <dl>
-<dt>&lsquo;<samp><span class="samp">-Wall</span></samp>&rsquo;<dd>Recommended <span class="sc">gcc</span> warnings.
+<dt><span class="samp">-Wall</span><dd>Recommended <span class="sc">gcc</span> warnings.
 
-     <br><dt>&lsquo;<samp><span class="samp">-Wdeclaration-after-statement</span></samp>&rsquo;<dd>
+     <br><dt><span class="samp">-Wdeclaration-after-statement</span><dd>
 <span class="sc">gcc</span> 3.x (and later) and <span class="sc">c99</span> allow declarations mixed with
 code, but <span class="sc">gcc</span> 2.x and <span class="sc">c89</span> do not.
 
-     <br><dt>&lsquo;<samp><span class="samp">-Wpointer-arith</span></samp>&rsquo;
-<br><dt>&lsquo;<samp><span class="samp">-Wformat-nonliteral</span></samp>&rsquo;<dd>Non-literal format strings, with a few exceptions, are bugs - they
+     <br><dt><span class="samp">-Wpointer-arith</span>
+<br><dt><span class="samp">-Wformat-nonliteral</span><dd>Non-literal format strings, with a few exceptions, are bugs - they
 might contain unintended user-supplied format specifiers. 
 Since <span class="sc">gdb</span> uses the <code>format printf</code> attribute on all
 <code>printf</code> like functions this checks not just <code>printf</code> calls
 but also calls to functions such as <code>fprintf_unfiltered</code>.
 
-     <br><dt>&lsquo;<samp><span class="samp">-Wno-pointer-sign</span></samp>&rsquo;<dd>In version 4.0, GCC began warning about pointer argument passing or
+     <br><dt><span class="samp">-Wno-pointer-sign</span><dd>In version 4.0, GCC began warning about pointer argument passing or
 assignment even when the source and destination differed only in
 signedness.  However, most <span class="sc">gdb</span> code doesn't distinguish
 carefully between <code>char</code> and <code>unsigned char</code>.  In early 2006
 the <span class="sc">gdb</span> developers decided correcting these warnings wasn't
 worth the time it would take.
 
-     <br><dt>&lsquo;<samp><span class="samp">-Wno-unused-parameter</span></samp>&rsquo;<dd>Due to the way that <span class="sc">gdb</span> is implemented many functions have
+     <br><dt><span class="samp">-Wno-unused-parameter</span><dd>Due to the way that <span class="sc">gdb</span> is implemented many functions have
 unused parameters.  Consequently this warning is avoided.  The macro
 <code>ATTRIBUTE_UNUSED</code> is not used as it leads to false negatives &mdash;
 it is not an error to have <code>ATTRIBUTE_UNUSED</code> on a parameter that
 is being used.
 
-     <br><dt>&lsquo;<samp><span class="samp">-Wno-unused</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">-Wno-switch</span></samp>&rsquo;<dt>&lsquo;<samp><span class="samp">-Wno-char-subscripts</span></samp>&rsquo;<dd>These are warnings which might be useful for <span class="sc">gdb</span>, but are
-currently too noisy to enable with &lsquo;<samp><span class="samp">-Werror</span></samp>&rsquo;.
+     <br><dt><span class="samp">-Wno-unused</span><dt><span class="samp">-Wno-switch</span><dt><span class="samp">-Wno-char-subscripts</span><dd>These are warnings which might be useful for <span class="sc">gdb</span>, but are
+currently too noisy to enable with <span class="samp">-Werror</span>.
 
    </dl>
 
@@ -363,7 +361,7 @@ function definition should have its name in column zero.
      }
 </pre>
    <p><em>Pragmatics: This simplifies scripting.  Function definitions can
-be found using &lsquo;</em><samp><span class="samp">^function-name</span></samp><em>&rsquo;.</em>
+be found using </em><span class="samp">^function-name</span><em>.</em>
 
    <p>There must be a space between a function or macro name and the opening
 parenthesis of its argument list (except for macro definitions, as
@@ -428,8 +426,8 @@ are just as hard to understand as a single thousand-line function.
 protected with parentheses.)
 
    <p><a name="index-types-481"></a>
-Declarations like &lsquo;<samp><span class="samp">struct foo *</span></samp>&rsquo; should be used in preference to
-declarations like &lsquo;<samp><span class="samp">typedef struct foo { ... } *foo_ptr</span></samp>&rsquo;.
+Declarations like <span class="samp">struct foo *</span> should be used in preference to
+declarations like <span class="samp">typedef struct foo { ... } *foo_ptr</span>.
 
 <h4 class="subsection">14.4.7 Function Prototypes</h4>
 
@@ -441,7 +439,7 @@ function definition.
 
    <p>All external functions should have a declaration in a header file that
 callers include, except for <code>_initialize_*</code> functions, which must
-be external so that <samp><span class="file">init.c</span></samp> construction works, but shouldn't be
+be external so that <span class="file">init.c</span> construction works, but shouldn't be
 visible to random source files.
 
    <p>Where a source file needs a forward declaration of a static function,
@@ -474,53 +472,53 @@ unique.  These requirements apply to both source and generated files.
 
    <p><em>Pragmatics: The core of </em><span class="sc">gdb</span><em> must be buildable on many
 platforms including DJGPP and MacOS/HFS.  Every time an unfriendly file
-is introduced to the build process both </em><samp><span class="file">Makefile.in</span></samp><em> and
-</em><samp><span class="file">configure.in</span></samp><em> need to be modified accordingly.  Compare the
-convoluted conversion process needed to transform </em><samp><span class="file">COPYING</span></samp><em> into
-</em><samp><span class="file">copying.c</span></samp><em> with the conversion needed to transform
-</em><samp><span class="file">version.in</span></samp><em> into </em><samp><span class="file">version.c</span></samp><em>.</em>
+is introduced to the build process both </em><span class="file">Makefile.in</span><em> and
+</em><span class="file">configure.in</span><em> need to be modified accordingly.  Compare the
+convoluted conversion process needed to transform </em><span class="file">COPYING</span><em> into
+</em><span class="file">copying.c</span><em> with the conversion needed to transform
+</em><span class="file">version.in</span><em> into </em><span class="file">version.c</span><em>.</em>
 
    <p>Any file non 8.3 compliant file (that is not used when building the core
-of <span class="sc">gdb</span>) must be added to <samp><span class="file">gdb/config/djgpp/fnchange.lst</span></samp>.
+of <span class="sc">gdb</span>) must be added to <span class="file">gdb/config/djgpp/fnchange.lst</span>.
 
    <p><em>Pragmatics: This is clearly a compromise.</em>
 
    <p>When <span class="sc">gdb</span> has a local version of a system header file (ex
-<samp><span class="file">string.h</span></samp>) the file name based on the POSIX header prefixed with
-<samp><span class="file">gdb_</span></samp> (<samp><span class="file">gdb_string.h</span></samp>).  These headers should be relatively
-independent: they should use only macros defined by <samp><span class="file">configure</span></samp>,
+<span class="file">string.h</span>) the file name based on the POSIX header prefixed with
+<span class="file">gdb_</span> (<span class="file">gdb_string.h</span>).  These headers should be relatively
+independent: they should use only macros defined by <span class="file">configure</span>,
 the compiler, or the host; they should include only system headers; they
 should refer only to system types.  They may be shared between multiple
 programs, e.g. <span class="sc">gdb</span> and <span class="sc">gdbserver</span>.
 
-   <p>For other files &lsquo;<samp><span class="samp">-</span></samp>&rsquo; is used as the separator.
+   <p>For other files <span class="samp">-</span> is used as the separator.
 
 <h4 class="subsection">14.4.10 Include Files</h4>
 
-<p>A <samp><span class="file">.c</span></samp> file should include <samp><span class="file">defs.h</span></samp> first.
+<p>A <span class="file">.c</span> file should include <span class="file">defs.h</span> first.
 
-   <p>A <samp><span class="file">.c</span></samp> file should directly include the <code>.h</code> file of every
+   <p>A <span class="file">.c</span> file should directly include the <code>.h</code> file of every
 declaration and/or definition it directly refers to.  It cannot rely on
 indirect inclusion.
 
-   <p>A <samp><span class="file">.h</span></samp> file should directly include the <code>.h</code> file of every
+   <p>A <span class="file">.h</span> file should directly include the <code>.h</code> file of every
 declaration and/or definition it directly refers to.  It cannot rely on
-indirect inclusion.  Exception: The file <samp><span class="file">defs.h</span></samp> does not need to
+indirect inclusion.  Exception: The file <span class="file">defs.h</span> does not need to
 be directly included.
 
    <p>An external declaration should only appear in one include file.
 
    <p>An external declaration should never appear in a <code>.c</code> file. 
 Exception: a declaration for the <code>_initialize</code> function that
-pacifies <samp><span class="option">-Wmissing-declaration</span></samp>.
+pacifies <span class="option">-Wmissing-declaration</span>.
 
    <p>A <code>typedef</code> definition should only appear in one include file.
 
-   <p>An opaque <code>struct</code> declaration can appear in multiple <samp><span class="file">.h</span></samp>
-files.  Where possible, a <samp><span class="file">.h</span></samp> file should use an opaque
+   <p>An opaque <code>struct</code> declaration can appear in multiple <span class="file">.h</span>
+files.  Where possible, a <span class="file">.h</span> file should use an opaque
 <code>struct</code> declaration instead of an include.
 
-   <p>All <samp><span class="file">.h</span></samp> files should be wrapped in:
+   <p>All <span class="file">.h</span> files should be wrapped in:
 
 <pre class="smallexample">     #ifndef INCLUDE_FILE_NAME_H
      #define INCLUDE_FILE_NAME_H
@@ -537,7 +535,7 @@ trouble.
    <p><a name="index-assumptions-about-targets-484"></a>You can't assume the byte order of anything that comes from a target
 (including <var>value</var>s, object files, and instructions).  Such things
 must be byte-swapped using <code>SWAP_TARGET_AND_HOST</code> in
-<span class="sc">gdb</span>, or one of the swap routines defined in <samp><span class="file">bfd.h</span></samp>,
+<span class="sc">gdb</span>, or one of the swap routines defined in <span class="file">bfd.h</span>,
 such as <code>bfd_get_32</code>.
 
    <p>You can't assume that you know what interface is being used to talk to
@@ -571,7 +569,7 @@ target interfaces, or hosts, is not acceptable in generic code.
    <p><a name="index-portable-file-name-handling-487"></a><a name="index-file-names_002c-portability-488"></a>One particularly notorious area where system dependencies tend to
 creep in is handling of file names.  The mainline <span class="sc">gdb</span> code
 assumes Posix semantics of file names: absolute file names begin with
-a forward slash <samp><span class="file">/</span></samp>, slashes are used to separate leading
+a forward slash <span class="file">/</span>, slashes are used to separate leading
 directories, case-sensitive file names.  These assumptions are not
 necessarily true on non-Posix systems such as MS-Windows.  To avoid
 system-dependent code where you need to take apart or construct a file
@@ -585,14 +583,14 @@ symbol to write conditional code which should only be compiled for
 such hosts.
 
      <p><a name="index-IS_005fDIR_005fSEPARATOR-490"></a><br><dt><code>IS_DIR_SEPARATOR (</code><var>c</var><code>)</code><dd>Evaluates to a non-zero value if <var>c</var> is a directory separator
-character.  On Unix and GNU/Linux systems, only a slash <samp><span class="file">/</span></samp> is
-such a character, but on Windows, both <samp><span class="file">/</span></samp> and <samp><span class="file">\</span></samp> will
+character.  On Unix and GNU/Linux systems, only a slash <span class="file">/</span> is
+such a character, but on Windows, both <span class="file">/</span> and <span class="file">\</span> will
 pass.
 
      <p><a name="index-IS_005fABSOLUTE_005fPATH-491"></a><br><dt><code>IS_ABSOLUTE_PATH (</code><var>file</var><code>)</code><dd>Evaluates to a non-zero value if <var>file</var> is an absolute file name. 
 For Unix and GNU/Linux hosts, a name which begins with a slash
-<samp><span class="file">/</span></samp> is absolute.  On DOS and Windows, <samp><span class="file">d:/foo</span></samp> and
-<samp><span class="file">x:\bar</span></samp> are also absolute file names.
+<span class="file">/</span> is absolute.  On DOS and Windows, <span class="file">d:/foo</span> and
+<span class="file">x:\bar</span> are also absolute file names.
 
      <p><a name="index-FILENAME_005fCMP-492"></a><br><dt><code>FILENAME_CMP (</code><var>f1</var><code>, </code><var>f2</var><code>)</code><dd>Calls a function which compares file names <var>f1</var> and <var>f2</var> as
 appropriate for the underlying host filesystem.  For Posix systems,
@@ -601,7 +599,7 @@ will call <code>strcasecmp</code> instead.
 
      <p><a name="index-DIRNAME_005fSEPARATOR-493"></a><br><dt><code>DIRNAME_SEPARATOR</code><dd>Evaluates to a character which separates directories in
 <code>PATH</code>-style lists, typically held in environment variables. 
-This character is &lsquo;<samp><span class="samp">:</span></samp>&rsquo; on Unix, &lsquo;<samp><span class="samp">;</span></samp>&rsquo; on DOS and Windows.
+This character is <span class="samp">:</span> on Unix, <span class="samp">;</span> on DOS and Windows.
 
      <p><a name="index-SLASH_005fSTRING-494"></a><br><dt><code>SLASH_STRING</code><dd>This evaluates to a constant string you should use to produce an
 absolute filename from leading directories and the file's basename. 
@@ -632,15 +630,15 @@ formats, or <span class="sc">gdb</span>'s access to multiple source languages.
 
    <p>Please avoid duplicating code.  For example, in <span class="sc">gdb</span> 3.x all
 the code interfacing between <code>ptrace</code> and the rest of
-<span class="sc">gdb</span> was duplicated in <samp><span class="file">*-dep.c</span></samp>, and so changing
+<span class="sc">gdb</span> was duplicated in <span class="file">*-dep.c</span>, and so changing
 something was very painful.  In <span class="sc">gdb</span> 4.x, these have all been
-consolidated into <samp><span class="file">infptrace.c</span></samp>.  <samp><span class="file">infptrace.c</span></samp> can deal
+consolidated into <span class="file">infptrace.c</span>.  <span class="file">infptrace.c</span> can deal
 with variations between systems the same way any system-independent
 file would (hooks, <code>#if defined</code>, etc.), and machines which are
-radically different don't need to use <samp><span class="file">infptrace.c</span></samp> at all.
+radically different don't need to use <span class="file">infptrace.c</span> at all.
 
-   <p>All debugging code must be controllable using the &lsquo;<samp><span class="samp">set debug
-</span><var>module</var></samp>&rsquo; command.  Do not use <code>printf</code> to print trace
+   <p>All debugging code must be controllable using the <span class="samp">set debug
+</span><var>module</var> command.  Do not use <code>printf</code> to print trace
 messages.  Use <code>fprintf_unfiltered(gdb_stdlog, ...</code>.  Do not use
 <code>#ifdef DEBUG</code>.
 

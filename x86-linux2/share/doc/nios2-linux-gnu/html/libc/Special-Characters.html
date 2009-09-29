@@ -3,7 +3,7 @@
 <title>Special Characters - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Terminal-Modes.html#Terminal-Modes" title="Terminal Modes">
 <link rel="prev" href="Line-Speed.html#Line-Speed" title="Line Speed">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Special-Characters"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Noncanonical-Input.html#Noncanonical-Input">Noncanonical Input</a>,
+<a name="Special-Characters"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Noncanonical-Input.html#Noncanonical-Input">Noncanonical Input</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Line-Speed.html#Line-Speed">Line Speed</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Terminal-Modes.html#Terminal-Modes">Terminal Modes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">17.4.9 Special Characters</h4>
@@ -48,9 +46,9 @@ element specifies the character for a particular role.  Each element has
 a symbolic constant that stands for the index of that element&mdash;for
 example, <code>VINTR</code> is the index of the element that specifies the INTR
 character, so storing <code>'='</code> in <var>termios</var><code>.c_cc[VINTR]</code>
-specifies &lsquo;<samp><span class="samp">=</span></samp>&rsquo; as the INTR character.
+specifies <span class="samp">=</span> as the INTR character.
 
-   <p><a name="index-g_t_005fPOSIX_005fVDISABLE-1955"></a>On some systems, you can disable a particular special character function
+   <p><a name="index-_005fPOSIX_005fVDISABLE-1955"></a>On some systems, you can disable a particular special character function
 by specifying the value <code>_POSIX_VDISABLE</code> for that role.  This
 value is unequal to any possible character code.  See <a href="Options-for-Files.html#Options-for-Files">Options for Files</a>, for more information about how to tell whether the operating
 system you are using supports <code>_POSIX_VDISABLE</code>.

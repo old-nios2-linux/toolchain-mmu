@@ -3,7 +3,7 @@
 <title>Stabs Format - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Overview.html#Overview" title="Overview">
 <link rel="prev" href="Flow.html#Flow" title="Flow">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Stabs-Format"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="String-Field.html#String-Field">String Field</a>,
+<a name="Stabs-Format"></a>Next:&nbsp;<a rel="next" accesskey="n" href="String-Field.html#String-Field">String Field</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Flow.html#Flow">Flow</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Overview.html#Overview">Overview</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">1.2 Overview of Stab Format</h3>
@@ -51,7 +49,7 @@ directives such as <code>.file</code> and <code>.bi</code>) instead of
 </pre>
    <!-- what is the correct term for "current file location"?  My AIX -->
 <!-- assembler manual calls it "the value of the current location counter". -->
-   <p>For <code>.stabn</code> and <code>.stabd</code>, there is no <var>string</var> (the
+<p>For <code>.stabn</code> and <code>.stabd</code>, there is no <var>string</var> (the
 <code>n_strx</code> field is zero; see <a href="Symbol-Tables.html#Symbol-Tables">Symbol Tables</a>).  For
 <code>.stabd</code>, the <var>value</var> field is implicit and has the value of
 the current file location.  For <code>.stabx</code>, the <var>sdb-type</var> field

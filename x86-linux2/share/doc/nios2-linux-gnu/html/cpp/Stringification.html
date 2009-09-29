@@ -3,7 +3,7 @@
 <title>Stringification - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Macros.html#Macros" title="Macros">
 <link rel="prev" href="Macro-Arguments.html#Macro-Arguments" title="Macro Arguments">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
--->
+man end-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,28 +41,26 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Stringification"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Concatenation.html#Concatenation">Concatenation</a>,
+<a name="Stringification"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Concatenation.html#Concatenation">Concatenation</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Macro-Arguments.html#Macro-Arguments">Macro Arguments</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Macros.html#Macros">Macros</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">3.4 Stringification</h3>
 
-<p><a name="index-stringification-49"></a><a name="index-g_t_0040samp_007b_0023_007d-operator-50"></a>
+<p><a name="index-stringification-49"></a><a name="index-_0040samp_007b_0023_007d-operator-50"></a>
 Sometimes you may want to convert a macro argument into a string
 constant.  Parameters are not replaced inside string constants, but you
-can use the &lsquo;<samp><span class="samp">#</span></samp>&rsquo; preprocessing operator instead.  When a macro
-parameter is used with a leading &lsquo;<samp><span class="samp">#</span></samp>&rsquo;, the preprocessor replaces it
+can use the <span class="samp">#</span> preprocessing operator instead.  When a macro
+parameter is used with a leading <span class="samp">#</span>, the preprocessor replaces it
 with the literal text of the actual argument, converted to a string
 constant.  Unlike normal parameter replacement, the argument is not
 macro-expanded first.  This is called <dfn>stringification</dfn>.
@@ -100,7 +98,7 @@ surrounding embedded string constants, and all backslashes within string and
 character constants, in order to get a valid C string constant with the
 proper contents.  Thus, stringifying <code>p&nbsp;=&nbsp;"foo\n";<!-- /@w --></code> results in
 <tt>"p&nbsp;=&nbsp;\"foo\\n\";"<!-- /@w --></tt>.  However, backslashes that are not inside string
-or character constants are not duplicated: &lsquo;<samp><span class="samp">\n</span></samp>&rsquo; by itself
+or character constants are not duplicated: <span class="samp">\n</span> by itself
 stringifies to <tt>"\n"</tt>.
 
    <p>All leading and trailing whitespace in text being stringified is

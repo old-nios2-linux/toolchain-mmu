@@ -3,7 +3,7 @@
 <title>Breakpoints - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stopping.html#Stopping" title="Stopping">
 <link rel="next" href="Continuing-and-Stepping.html#Continuing-and-Stepping" title="Continuing and Stepping">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Breakpoints"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Continuing-and-Stepping.html#Continuing-and-Stepping">Continuing and Stepping</a>,
+<a name="Breakpoints"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Continuing-and-Stepping.html#Continuing-and-Stepping">Continuing and Stepping</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stopping.html#Stopping">Stopping</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.1 Breakpoints, Watchpoints, and Catchpoints</h3>
@@ -49,7 +47,7 @@ call).
    <p><a name="index-watchpoints-178"></a><a name="index-data-breakpoints-179"></a><a name="index-memory-tracing-180"></a><a name="index-breakpoint-on-memory-address-181"></a><a name="index-breakpoint-on-variable-modification-182"></a>A <dfn>watchpoint</dfn> is a special breakpoint that stops your program
 when the value of an expression changes.  The expression may be a value
 of a variable, or it could involve values of one or more variables
-combined by operators, such as &lsquo;<samp><span class="samp">a + b</span></samp>&rsquo;.  This is sometimes called
+combined by operators, such as <span class="samp">a + b</span>.  This is sometimes called
 <dfn>data breakpoints</dfn>.  You must use a different command to set
 watchpoints (see <a href="Set-Watchpoints.html#Set-Watchpoints">Setting Watchpoints</a>), but aside
 from that, you can manage a watchpoint like any other breakpoint: you
@@ -76,8 +74,8 @@ enable it again.
 
    <p><a name="index-breakpoint-ranges-187"></a><a name="index-ranges-of-breakpoints-188"></a>Some <span class="sc">gdb</span> commands accept a range of breakpoints on which to
 operate.  A breakpoint range is either a single breakpoint number, like
-&lsquo;<samp><span class="samp">5</span></samp>&rsquo;, or two such numbers, in increasing order, separated by a
-hyphen, like &lsquo;<samp><span class="samp">5-7</span></samp>&rsquo;.  When a breakpoint range is given to a command,
+<span class="samp">5</span>, or two such numbers, in increasing order, separated by a
+hyphen, like <span class="samp">5-7</span>.  When a breakpoint range is given to a command,
 all breakpoints in that range are operated on.
 
 <ul class="menu">

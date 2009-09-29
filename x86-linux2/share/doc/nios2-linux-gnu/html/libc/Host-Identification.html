@@ -3,7 +3,7 @@
 <title>Host Identification - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Management.html#System-Management" title="System Management">
 <link rel="next" href="Platform-Type.html#Platform-Type" title="Platform Type">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Host-Identification"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Platform-Type.html#Platform-Type">Platform Type</a>,
+<a name="Host-Identification"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Platform-Type.html#Platform-Type">Platform Type</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Management.html#System-Management">System Management</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">30.1 Host Identification</h3>
@@ -39,7 +37,7 @@ development of the Internet.
 
    <p>Every Unix system (also known as a host) has a host name, whether it's
 connected to a network or not.  In its simplest form, as used before
-computer networks were an issue, it's just a word like &lsquo;<samp><span class="samp">chicken</span></samp>&rsquo;. 
+computer networks were an issue, it's just a word like <span class="samp">chicken</span>. 
 <a name="index-host-name-3429"></a>
 But any system attached to the Internet or any network like it conforms
 to a more rigorous naming convention as part of the Domain Name System
@@ -59,8 +57,8 @@ host names as &ldquo;domain names.&rdquo;
 Domain Name) and consists of the hostname, then a period, then the
 domain name.  The domain name itself usually has multiple components
 separated by periods.  So for example, a system's hostname may be
-&lsquo;<samp><span class="samp">chicken</span></samp>&rsquo; and its domain name might be &lsquo;<samp><span class="samp">ai.mit.edu</span></samp>&rsquo;, so
-its FQDN (which is its host name) is &lsquo;<samp><span class="samp">chicken.ai.mit.edu</span></samp>&rsquo;. 
+<span class="samp">chicken</span> and its domain name might be <span class="samp">ai.mit.edu</span>, so
+its FQDN (which is its host name) is <span class="samp">chicken.ai.mit.edu</span>. 
 <a name="index-FQDN-3434"></a>
 Adding to the confusion, though, is that DNS is not the only name space
 in which a computer needs to be known.  Another name space is the
@@ -77,7 +75,7 @@ canonical FQDN.
 
    <p>For more information on DNS host naming, See <a href="Host-Names.html#Host-Names">Host Names</a>.
 
-   <p><a name="index-hostname-3439"></a><a name="index-hostid-3440"></a><a name="index-unistd_002eh-3441"></a>Prototypes for these functions appear in <samp><span class="file">unistd.h</span></samp>.
+   <p><a name="index-hostname-3439"></a><a name="index-hostid-3440"></a><a name="index-unistd_002eh-3441"></a>Prototypes for these functions appear in <span class="file">unistd.h</span>.
 
    <p>The programs <code>hostname</code>, <code>hostid</code>, and <code>domainname</code> work
 by calling these functions.
@@ -101,7 +99,7 @@ enough; then you can try again with a larger array.  The following
 </dl>
 
         <p><a name="index-sys_002fparam_002eh-3443"></a>On some systems, there is a symbol for the maximum possible host name
-length: <code>MAXHOSTNAMELEN</code>.  It is defined in <samp><span class="file">sys/param.h</span></samp>. 
+length: <code>MAXHOSTNAMELEN</code>.  It is defined in <span class="file">sys/param.h</span>. 
 But you can't count on this to exist, so it is cleaner to handle
 failure and try again.
 
@@ -122,7 +120,7 @@ privileged processes are permitted to do this.
         <p>Usually <code>sethostname</code> gets called just once, at system boot time. 
 Often, the program that calls it sets it to the value it finds in the
 file <code>/etc/hostname</code>. 
-<a name="index-g_t_002fetc_002fhostname-3445"></a>
+<a name="index-_002fetc_002fhostname-3445"></a>
 Be sure to set the host name to the full host name, not just the DNS
 hostname (see above).
 
@@ -189,7 +187,7 @@ it happens just once, at system boot time.
         <p>The proper way to establish the primary IP address of a system
 is to configure the IP address resolver to associate that IP address with
 the system's host name as returned by <code>gethostname</code>.  For example,
-put a record for the system in <samp><span class="file">/etc/hosts</span></samp>.
+put a record for the system in <span class="file">/etc/hosts</span>.
 
         <p>See <code>gethostid</code> above for more information on host ids.
 

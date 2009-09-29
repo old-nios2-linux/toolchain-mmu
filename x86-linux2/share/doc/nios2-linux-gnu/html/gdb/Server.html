@@ -3,7 +3,7 @@
 <title>Server - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Remote-Debugging.html#Remote-Debugging" title="Remote Debugging">
 <link rel="prev" href="Connecting.html#Connecting" title="Connecting">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Server"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Remote-Configuration.html#Remote-Configuration">Remote Configuration</a>,
+<a name="Server"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Remote-Configuration.html#Remote-Configuration">Remote Configuration</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Connecting.html#Connecting">Connecting</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Remote-Debugging.html#Remote-Debugging">Remote Debugging</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">18.2 Using the <code>gdbserver</code> Program</h3>
@@ -67,26 +65,26 @@ the name of your program; and the arguments for your program.  The usual
 syntax is:
 
      <pre class="smallexample">          target&gt; gdbserver <var>comm</var> <var>program</var> [ <var>args</var> ... ]
-</pre>
+     </pre>
      <p><var>comm</var> is either a device name (to use a serial line) or a TCP
 hostname and portnumber.  For example, to debug Emacs with the argument
-&lsquo;<samp><span class="samp">foo.txt</span></samp>&rsquo; and communicate with <span class="sc">gdb</span> over the serial port
-<samp><span class="file">/dev/com1</span></samp>:
+<span class="samp">foo.txt</span> and communicate with <span class="sc">gdb</span> over the serial port
+<span class="file">/dev/com1</span>:
 
      <pre class="smallexample">          target&gt; gdbserver /dev/com1 emacs foo.txt
-</pre>
+     </pre>
      <p><code>gdbserver</code> waits passively for the host <span class="sc">gdb</span> to communicate
 with it.
 
      <p>To use a TCP connection instead of a serial line:
 
      <pre class="smallexample">          target&gt; gdbserver host:2345 emacs foo.txt
-</pre>
+     </pre>
      <p>The only difference from the previous example is the first argument,
 specifying that you are communicating with the host <span class="sc">gdb</span> via
-TCP.  The &lsquo;<samp><span class="samp">host:2345</span></samp>&rsquo; argument means that <code>gdbserver</code> is to
-expect a TCP connection from machine &lsquo;<samp><span class="samp">host</span></samp>&rsquo; to local TCP port 2345. 
-(Currently, the &lsquo;<samp><span class="samp">host</span></samp>&rsquo; part is ignored.)  You can choose any number
+TCP.  The <span class="samp">host:2345</span> argument means that <code>gdbserver</code> is to
+expect a TCP connection from machine <span class="samp">host</span> to local TCP port 2345. 
+(Currently, the <span class="samp">host</span> part is ignored.)  You can choose any number
 you want for the port number as long as it does not conflict with any
 TCP ports already in use on the target system (for example, <code>23</code> is
 reserved for <code>telnet</code>).<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>  You must use the same port number with the host <span class="sc">gdb</span>
@@ -96,7 +94,7 @@ reserved for <code>telnet</code>).<a rel="footnote" href="#fn-1" name="fnd-1"><s
 This is accomplished via the <code>--attach</code> argument.  The syntax is:
 
      <pre class="smallexample">          target&gt; gdbserver <var>comm</var> --attach <var>pid</var>
-</pre>
+     </pre>
      <p><var>pid</var> is the process ID of a currently running process.  It isn't necessary
 to point <code>gdbserver</code> at a binary for the running process.
 
@@ -104,7 +102,7 @@ to point <code>gdbserver</code> at a binary for the running process.
 <code>pidof</code> utility:
 
      <pre class="smallexample">          target&gt; gdbserver <var>comm</var> --attach `pidof <var>program</var>`
-</pre>
+     </pre>
      <p>In case more than one copy of <var>program</var> is running, or <var>program</var>
 has multiple threads, most versions of <code>pidof</code> support the
 <code>-s</code> option to only return the first process ID.
@@ -126,7 +124,7 @@ programs.
 For TCP connections, you must start up <code>gdbserver</code> prior to using
 the <code>target remote</code> command.  Otherwise you may get an error whose
 text depends on the host system, but which usually looks something like
-&lsquo;<samp><span class="samp">Connection refused</span></samp>&rsquo;.  You don't need to use the <code>load</code>
+<span class="samp">Connection refused</span>.  You don't need to use the <code>load</code>
 command in <span class="sc">gdb</span> when using <code>gdbserver</code>, since the program is
 already on the target.
 
@@ -156,7 +154,7 @@ protocol (see <a href="Remote-Protocol.html#Remote-Protocol">Remote Protocol</a>
 conflicts with another service, <code>gdbserver</code> prints an error message
 and exits.</p>
 
-   <hr></div>
+   <p><hr></div>
 
    </body></html>
 

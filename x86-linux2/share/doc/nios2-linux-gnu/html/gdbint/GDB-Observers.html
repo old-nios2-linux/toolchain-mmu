@@ -3,7 +3,7 @@
 <title>GDB Observers - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Hints.html#Hints" title="Hints">
 <link rel="next" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License" title="GNU Free Documentation License">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="GDB-Observers"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">GNU Free Documentation License</a>,
+<a name="GDB-Observers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">GNU Free Documentation License</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Hints.html#Hints">Hints</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="appendix">Appendix A <span class="sc">gdb</span> Currently available observers</h2>
@@ -42,7 +40,7 @@ The entity being observed is called the <dfn>subject</dfn>.  To receive
 notifications, the observer attaches a callback to the subject. 
 One subject can have several observers.
 
-   <p><samp><span class="file">observer.c</span></samp> implements an internal generic low-level event
+   <p><span class="file">observer.c</span> implements an internal generic low-level event
 notification mechanism.  This generic event notification mechanism is
 then re-used to implement the exported high-level notification
 management routines for all possible notifications.
@@ -68,12 +66,12 @@ or detach routines during a notification.
 
 <h3 class="section">A.2 Debugging</h3>
 
-<p>Observer notifications can be traced using the command &lsquo;<samp><span class="samp">set debug
-observer 1</span></samp>&rsquo; (see <a href="../gdb/Debugging-Output.html#Debugging-Output">Optional messages about internal happenings</a>).
+<p>Observer notifications can be traced using the command <span class="samp">set debug
+observer 1</span> (see <a href="../gdb/Debugging-Output.html#Debugging-Output">Optional messages about internal happenings (Debugging with <var>GDBN</var>)</a>).
 
 <h3 class="section">A.3 <code>normal_stop</code> Notifications</h3>
 
-<p><a name="index-g_t_0040code_007bnormal_005fstop_007d-observer-512"></a><a name="index-notification-about-inferior-execution-stop-513"></a>
+<p><a name="index-_0040code_007bnormal_005fstop_007d-observer-512"></a><a name="index-notification-about-inferior-execution-stop-513"></a>
 <span class="sc">gdb</span> notifies all <code>normal_stop</code> observers when the
 inferior execution has just stopped, the associated messages and
 annotations have been printed, and the control is about to be returned
@@ -127,9 +125,9 @@ for instance).
 
 <div class="defun">
 &mdash; Function: void <b>inferior_created</b> (<var>struct target_ops *objfile, int from_tty</var>)<var><a name="index-inferior_005fcreated-520"></a></var><br>
-<blockquote><p><span class="sc">gdb</span> has just connected to an inferior.  For &lsquo;<samp><span class="samp">run</span></samp>&rsquo;,
+<blockquote><p><span class="sc">gdb</span> has just connected to an inferior.  For <span class="samp">run</span>,
 <span class="sc">gdb</span> calls this observer while the inferior is still stopped
-at the entry-point instruction.  For &lsquo;<samp><span class="samp">attach</span></samp>&rsquo; and &lsquo;<samp><span class="samp">core</span></samp>&rsquo;,
+at the entry-point instruction.  For <span class="samp">attach</span> and <span class="samp">core</span>,
 <span class="sc">gdb</span> calls this observer immediately after connecting to the
 inferior, and before any information on the inferior has been printed. 
 </p></blockquote></div>

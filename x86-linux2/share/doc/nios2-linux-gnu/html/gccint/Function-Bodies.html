@@ -3,7 +3,7 @@
 <title>Function Bodies - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions.html#Functions" title="Functions">
 <link rel="prev" href="Function-Basics.html#Function-Basics" title="Function Basics">
@@ -37,18 +37,16 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Function-Bodies"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Function-Basics.html#Function-Basics">Function Basics</a>,
+<a name="Function-Bodies"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Function-Basics.html#Function-Basics">Function Basics</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Functions.html#Functions">Functions</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">9.6.2 Function Bodies</h4>
@@ -122,7 +120,7 @@ several statements chained together.
 Used to represent an inline assembly statement.  For an inline assembly
 statement like:
      <pre class="smallexample">          asm ("mov x, y");
-</pre>
+     </pre>
      <p>The <code>ASM_STRING</code> macro will return a <code>STRING_CST</code> node for
 <code>"mov x, y"</code>.  If the original statement made use of the
 extended-assembly syntax, then <code>ASM_OUTPUTS</code>,
@@ -130,7 +128,7 @@ extended-assembly syntax, then <code>ASM_OUTPUTS</code>,
 and clobbers for the statement, represented as <code>STRING_CST</code> nodes. 
 The extended-assembly syntax looks like:
      <pre class="smallexample">          asm ("fsinx %1,%0" : "=f" (result) : "f" (angle));
-</pre>
+     </pre>
      <p>The first string is the <code>ASM_STRING</code>, containing the instruction
 template.  The next two strings are the output and inputs, respectively;
 this statement has no clobbers.  As this example indicates, &ldquo;plain&rdquo;
@@ -161,7 +159,7 @@ the same type as the condition expression in the switch statement.
 statement is a range of case labels.  Such statements originate with the
 extension that allows users to write things of the form:
      <pre class="smallexample">          case 2 ... 5:
-</pre>
+     </pre>
      <p>The first value will be <code>CASE_LOW</code>, while the second will be
 <code>CASE_HIGH</code>.
 
@@ -243,7 +241,7 @@ evaluated, the statement should be executed.  Then, the
 This representation is used to handle C++ code like this:
 
      <pre class="smallexample">          if (int i = 7) ...
-</pre>
+     </pre>
      <p>where there is a new local variable (or variables) declared within the
 condition.
 
@@ -261,7 +259,7 @@ the <code>LABEL_DECL</code> with <code>DECL_NAME</code>.
 If the function uses the G++ &ldquo;named return value&rdquo; extension, meaning
 that the function has been defined like:
      <pre class="smallexample">          S f(int) return s {...}
-</pre>
+     </pre>
      <p>then there will be a <code>RETURN_INIT</code>.  There is never a named
 returned value for a constructor.  The first argument to the
 <code>RETURN_INIT</code> is the name of the object returned; the second
@@ -276,7 +274,7 @@ Used to represent a <code>return</code> statement.  The <code>RETURN_EXPR</code>
 the expression returned; it will be <code>NULL_TREE</code> if the statement
 was just
      <pre class="smallexample">          return;
-</pre>
+     </pre>
      <br><dt><code>SUBOBJECT</code><dd>
 In a constructor, these nodes are used to mark the point at which a
 subobject of <code>this</code> is fully constructed.  If, after this point, an
@@ -324,5 +322,5 @@ condition.
 <!--  -->
 <!-- Attributes -->
 <!--  -->
- </body></html>
+</body></html>
 

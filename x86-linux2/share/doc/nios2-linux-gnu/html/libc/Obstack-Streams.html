@@ -3,7 +3,7 @@
 <title>Obstack Streams - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Other-Kinds-of-Streams.html#Other-Kinds-of-Streams" title="Other Kinds of Streams">
 <link rel="prev" href="String-Streams.html#String-Streams" title="String Streams">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Obstack-Streams"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Custom-Streams.html#Custom-Streams">Custom Streams</a>,
+<a name="Obstack-Streams"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Custom-Streams.html#Custom-Streams">Custom Streams</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="String-Streams.html#String-Streams">String Streams</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Other-Kinds-of-Streams.html#Other-Kinds-of-Streams">Other Kinds of Streams</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">12.21.2 Obstack Streams</h4>
@@ -64,7 +62,7 @@ and <code>obstack_finish</code>.
 in bytes by calling <code>obstack_object_size</code> (see <a href="Status-of-an-Obstack.html#Status-of-an-Obstack">Status of an Obstack</a>), or you can null-terminate the object like this:
 
      <pre class="smallexample">          obstack_1grow (<var>obstack</var>, 0);
-</pre>
+     </pre>
         <p>Whichever one you do, you must do it <em>before</em> calling
 <code>obstack_finish</code>.  (You can do both if you wish.) 
 </p></blockquote></div>

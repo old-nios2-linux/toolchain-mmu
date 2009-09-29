@@ -3,7 +3,7 @@
 <title>Advanced gettext functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Message-catalogs-with-gettext.html#Message-catalogs-with-gettext" title="Message catalogs with gettext">
 <link rel="prev" href="Locating-gettext-catalog.html#Locating-gettext-catalog" title="Locating gettext catalog">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Advanced-gettext-functions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Charset-conversion-in-gettext.html#Charset-conversion-in-gettext">Charset conversion in gettext</a>,
+<a name="Advanced-gettext-functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Charset-conversion-in-gettext.html#Charset-conversion-in-gettext">Charset conversion in gettext</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Locating-gettext-catalog.html#Locating-gettext-catalog">Locating gettext catalog</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Message-catalogs-with-gettext.html#Message-catalogs-with-gettext">Message catalogs with gettext</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">8.2.1.3 Additional functions for more complicated situations</h5>
@@ -116,7 +114,7 @@ otherwise <code>msgid2</code>.
         <p>An example for the us of this function is:
 
      <pre class="smallexample">            printf (ngettext ("%d file removed", "%d files removed", n), n);
-</pre>
+     </pre>
         <p>Please note that the numeric value <var>n</var> has to be passed to the
 <code>printf</code> function as well.  It is not sufficient to pass it only to
 <code>ngettext</code>. 
@@ -188,7 +186,7 @@ between the singular and plural form.  An appropriate header entry
 would look like this:
 
      <pre class="smallexample">          Plural-Forms: nplurals=1; plural=0;
-</pre>
+     </pre>
      <p class="noindent">Languages with this property include:
 
           <dl>
@@ -201,7 +199,7 @@ would look like this:
 is using.  A header entry would look like this:
 
      <pre class="smallexample">          Plural-Forms: nplurals=2; plural=n != 1;
-</pre>
+     </pre>
      <p>(Note: this uses the feature of C expressions that boolean expressions
 have to value zero or one.)
 
@@ -219,7 +217,7 @@ have to value zero or one.)
      <br><dt>Two forms, singular used for zero and one<dd>Exceptional case in the language family.  The header entry would be:
 
      <pre class="smallexample">          Plural-Forms: nplurals=2; plural=n&gt;1;
-</pre>
+     </pre>
      <p class="noindent">Languages with this property include:
 
           <dl>
@@ -229,7 +227,7 @@ have to value zero or one.)
      <br><dt>Three forms, special case for zero<dd>The header entry would be:
 
      <pre class="smallexample">          Plural-Forms: nplurals=3; plural=n%10==1 &amp;&amp; n%100!=11 ? 0 : n != 0 ? 1 : 2;
-</pre>
+     </pre>
      <p class="noindent">Languages with this property include:
 
           <dl>
@@ -239,7 +237,7 @@ have to value zero or one.)
      <br><dt>Three forms, special cases for one and two<dd>The header entry would be:
 
      <pre class="smallexample">          Plural-Forms: nplurals=3; plural=n==1 ? 0 : n==2 ? 1 : 2;
-</pre>
+     </pre>
      <p class="noindent">Languages with this property include:
 
           <dl>
@@ -251,7 +249,7 @@ have to value zero or one.)
      <pre class="smallexample">          Plural-Forms: nplurals=3; \
               plural=n%10==1 &amp;&amp; n%100!=11 ? 0 : \
                      n%10&gt;=2 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2;
-</pre>
+     </pre>
      <p class="noindent">Languages with this property include:
 
           <dl>
@@ -262,7 +260,7 @@ have to value zero or one.)
 
      <pre class="smallexample">          Plural-Forms: nplurals=3; \
               plural=n%100/10==1 ? 2 : n%10==1 ? 0 : (n+9)%10&gt;3 ? 2 : 1;
-</pre>
+     </pre>
      <p class="noindent">Languages with this property include:
 
           <dl>
@@ -273,7 +271,7 @@ have to value zero or one.)
 
      <pre class="smallexample">          Plural-Forms: nplurals=3; \
               plural=(n==1) ? 1 : (n&gt;=2 &amp;&amp; n&lt;=4) ? 2 : 0;
-</pre>
+     </pre>
      <p class="noindent">Languages with this property include:
 
           <dl>
@@ -285,7 +283,7 @@ have to value zero or one.)
      <pre class="smallexample">          Plural-Forms: nplurals=3; \
               plural=n==1 ? 0 : \
                      n%10&gt;=2 &amp;&amp; n%10&lt;=4 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2;
-</pre>
+     </pre>
      <p class="noindent">Languages with this property include:
 
           <dl>
@@ -296,7 +294,7 @@ have to value zero or one.)
 
      <pre class="smallexample">          Plural-Forms: nplurals=4; \
               plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;
-</pre>
+     </pre>
      <p class="noindent">Languages with this property include:
 
           <dl>
@@ -309,7 +307,7 @@ have to value zero or one.)
 <h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> Additions are welcome.  Send appropriate information to
 <a href="mailto:bug-glibc-manual@gnu.org">bug-glibc-manual@gnu.org</a>.</p>
 
-   <hr></div>
+   <p><hr></div>
 
    </body></html>
 

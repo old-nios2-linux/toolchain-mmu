@@ -3,7 +3,7 @@
 <title>Bug Criteria - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Bugs.html#Bugs" title="Bugs">
 <link rel="next" href="Bug-Reporting.html#Bug-Reporting" title="Bug Reporting">
@@ -37,18 +37,16 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Bug-Criteria"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Bug-Reporting.html#Bug-Reporting">Bug Reporting</a>,
+<a name="Bug-Criteria"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Bug-Reporting.html#Bug-Reporting">Bug Reporting</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Bugs.html#Bugs">Bugs</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">11.1 Have You Found a Bug?</h3>
@@ -74,8 +72,8 @@ execute the input source code, that is a compiler bug.
 program whose behavior is undefined, which happened by chance to give
 the desired results with another C or C++ compiler.
 
-     <p>For example, in many nonoptimizing compilers, you can write &lsquo;<samp><span class="samp">x;</span></samp>&rsquo;
-at the end of a function instead of &lsquo;<samp><span class="samp">return x;</span></samp>&rsquo;, with the same
+     <p>For example, in many nonoptimizing compilers, you can write <span class="samp">x;</span>
+at the end of a function instead of <span class="samp">return x;</span>, with the same
 results.  But the value of the function is undefined if <code>return</code>
 is omitted; it is not a bug when GCC produces different results.
 

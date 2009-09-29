@@ -3,7 +3,7 @@
 <title>Alpha Built-in Functions - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Builtins.html#Target-Builtins" title="Target Builtins">
 <link rel="next" href="Altera-Nios-II-Built_002din-Functions.html#Altera-Nios-II-Built_002din-Functions" title="Altera Nios II Built-in Functions">
@@ -37,19 +37,16 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Alpha-Built-in-Functions"></a>
-<a name="Alpha-Built_002din-Functions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Altera-Nios-II-Built_002din-Functions.html#Altera-Nios-II-Built_002din-Functions">Altera Nios II Built-in Functions</a>,
+<a name="Alpha-Built_002din-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Altera-Nios-II-Built_002din-Functions.html#Altera-Nios-II-Built_002din-Functions">Altera Nios II Built-in Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Builtins.html#Target-Builtins">Target Builtins</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">5.47.1 Alpha Built-in Functions</h4>
@@ -89,8 +86,8 @@ all generate the machine instruction that is part of the name.
      long __builtin_alpha_zap (long, long)
      long __builtin_alpha_zapnot (long, long)
 </pre>
- <p>The following built-in functions are always with <samp><span class="option">-mmax</span></samp>
-or <samp><span class="option">-mcpu=</span><var>cpu</var></samp> where <var>cpu</var> is <code>pca56</code> or
+ <p>The following built-in functions are always with <span class="option">-mmax</span>
+or <span class="option">-mcpu=</span><var>cpu</var> where <var>cpu</var> is <code>pca56</code> or
 later.  They all generate the machine instruction that is part
 of the name.
 
@@ -108,8 +105,8 @@ of the name.
      long __builtin_alpha_maxsw4 (long, long)
      long __builtin_alpha_perr (long, long)
 </pre>
- <p>The following built-in functions are always with <samp><span class="option">-mcix</span></samp>
-or <samp><span class="option">-mcpu=</span><var>cpu</var></samp> where <var>cpu</var> is <code>ev67</code> or
+ <p>The following built-in functions are always with <span class="option">-mcix</span>
+or <span class="option">-mcpu=</span><var>cpu</var> where <var>cpu</var> is <code>ev67</code> or
 later.  They all generate the machine instruction that is part
 of the name.
 
@@ -119,7 +116,7 @@ of the name.
 </pre>
  <p>The following builtins are available on systems that use the OSF/1
 PALcode.  Normally they invoke the <code>rduniq</code> and <code>wruniq</code>
-PAL calls, but when invoked with <samp><span class="option">-mtls-kernel</span></samp>, they invoke
+PAL calls, but when invoked with <span class="option">-mtls-kernel</span>, they invoke
 <code>rdval</code> and <code>wrval</code>.
 
 <pre class="smallexample">     void *__builtin_thread_pointer (void)

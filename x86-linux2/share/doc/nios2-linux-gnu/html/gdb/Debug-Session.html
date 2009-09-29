@@ -3,7 +3,7 @@
 <title>Debug Session - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Remote-Stub.html#Remote-Stub" title="Remote Stub">
 <link rel="prev" href="Bootstrapping.html#Bootstrapping" title="Bootstrapping">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Debug-Session"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Bootstrapping.html#Bootstrapping">Bootstrapping</a>,
+<a name="Debug-Session"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Bootstrapping.html#Bootstrapping">Bootstrapping</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Remote-Stub.html#Remote-Stub">Remote Stub</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">18.4.3 Putting it All Together</h4>
@@ -40,17 +38,17 @@ steps.
 (see <a href="Bootstrapping.html#Bootstrapping">What You Must Do for the Stub</a>):
      <pre class="display">          <code>getDebugChar</code>, <code>putDebugChar</code>,
           <code>flush_i_cache</code>, <code>memset</code>, <code>exceptionHandler</code>.
-</pre>
+     </pre>
      <li>Insert these lines near the top of your program:
 
      <pre class="smallexample">          set_debug_traps();
           breakpoint();
-</pre>
+     </pre>
      <li>For the 680x0 stub only, you need to provide a variable called
 <code>exceptionHook</code>.  Normally you just use:
 
      <pre class="smallexample">          void (*exceptionHook)() = 0;
-</pre>
+     </pre>
      <p class="noindent">but if before calling <code>set_debug_traps</code>, you set it to point to a
 function in your program, that function is called when
 <span class="sc">gdb</span> continues after stopping on a trap (for example, bus

@@ -3,7 +3,7 @@
 <title>H8/300 Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="GNU_002fLinux-Options.html#GNU_002fLinux-Options" title="GNU/Linux Options">
@@ -38,45 +38,42 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="H8%2f300-Options"></a>
-<a name="H8_002f300-Options"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="HPPA-Options.html#HPPA-Options">HPPA Options</a>,
+<a name="H8_002f300-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="HPPA-Options.html#HPPA-Options">HPPA Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="GNU_002fLinux-Options.html#GNU_002fLinux-Options">GNU/Linux Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.17.13 H8/300 Options</h4>
 
-<p>These &lsquo;<samp><span class="samp">-m</span></samp>&rsquo; options are defined for the H8/300 implementations:
+<p>These <span class="samp">-m</span> options are defined for the H8/300 implementations:
 
      <dl>
 <dt><code>-mrelax</code><dd><a name="index-mrelax-994"></a>Shorten some address references at link time, when possible; uses the
-linker option <samp><span class="option">-relax</span></samp>.  See <a href="../ld/H8_002f300.html#H8_002f300"><code>ld</code> and the H8/300</a>, for a fuller description.
+linker option <span class="option">-relax</span>.  See <a href="../ld/H8_002f300.html#H8_002f300"><code>ld</code> and the H8/300 (Using ld)</a>, for a fuller description.
 
      <br><dt><code>-mh</code><dd><a name="index-mh-995"></a>Generate code for the H8/300H.
 
      <br><dt><code>-ms</code><dd><a name="index-ms-996"></a>Generate code for the H8S.
 
      <br><dt><code>-mn</code><dd><a name="index-mn-997"></a>Generate code for the H8S and H8/300H in the normal mode.  This switch
-must be used either with <samp><span class="option">-mh</span></samp> or <samp><span class="option">-ms</span></samp>.
+must be used either with <span class="option">-mh</span> or <span class="option">-ms</span>.
 
-     <br><dt><code>-ms2600</code><dd><a name="index-ms2600-998"></a>Generate code for the H8S/2600.  This switch must be used with <samp><span class="option">-ms</span></samp>.
+     <br><dt><code>-ms2600</code><dd><a name="index-ms2600-998"></a>Generate code for the H8S/2600.  This switch must be used with <span class="option">-ms</span>.
 
      <br><dt><code>-mint32</code><dd><a name="index-mint32-999"></a>Make <code>int</code> data 32 bits by default.
 
      <br><dt><code>-malign-300</code><dd><a name="index-malign_002d300-1000"></a>On the H8/300H and H8S, use the same alignment rules as for the H8/300. 
 The default for the H8/300H and H8S is to align longs and floats on 4
 byte boundaries. 
-<samp><span class="option">-malign-300</span></samp> causes them to be aligned on 2 byte boundaries. 
+<span class="option">-malign-300</span> causes them to be aligned on 2 byte boundaries. 
 This option has no effect on the H8/300. 
 </dl>
 

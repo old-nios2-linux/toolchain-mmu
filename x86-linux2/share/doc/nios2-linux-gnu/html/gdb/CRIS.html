@@ -3,7 +3,7 @@
 <title>CRIS - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Embedded-Processors.html#Embedded-Processors" title="Embedded Processors">
 <link rel="prev" href="AVR.html#AVR" title="AVR">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="CRIS"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Super_002dH.html#Super_002dH">Super-H</a>,
+<a name="CRIS"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Super_002dH.html#Super_002dH">Super-H</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="AVR.html#AVR">AVR</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Embedded-Processors.html#Embedded-Processors">Embedded Processors</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">19.3.12 CRIS</h4>
@@ -39,21 +37,21 @@ When configured for debugging CRIS, <span class="sc">gdb</span> provides the
 following CRIS-specific commands:
 
      <dl>
-<dt><code>set cris-version </code><var>ver</var><dd><a name="index-CRIS-version-1158"></a>Set the current CRIS version to <var>ver</var>, either &lsquo;<samp><span class="samp">10</span></samp>&rsquo; or &lsquo;<samp><span class="samp">32</span></samp>&rsquo;. 
+<dt><code>set cris-version </code><var>ver</var><dd><a name="index-CRIS-version-1158"></a>Set the current CRIS version to <var>ver</var>, either <span class="samp">10</span> or <span class="samp">32</span>. 
 The CRIS version affects register names and sizes.  This command is useful in
 case autodetection of the CRIS version fails.
 
      <br><dt><code>show cris-version</code><dd>Show the current CRIS version.
 
-     <br><dt><code>set cris-dwarf2-cfi</code><dd><a name="index-DWARF_002d2-CFI-and-CRIS-1159"></a>Set the usage of DWARF-2 CFI for CRIS debugging.  The default is &lsquo;<samp><span class="samp">on</span></samp>&rsquo;. 
-Change to &lsquo;<samp><span class="samp">off</span></samp>&rsquo; when using <code>gcc-cris</code> whose version is below
+     <br><dt><code>set cris-dwarf2-cfi</code><dd><a name="index-DWARF_002d2-CFI-and-CRIS-1159"></a>Set the usage of DWARF-2 CFI for CRIS debugging.  The default is <span class="samp">on</span>. 
+Change to <span class="samp">off</span> when using <code>gcc-cris</code> whose version is below
 <code>R59</code>.
 
      <br><dt><code>show cris-dwarf2-cfi</code><dd>Show the current state of using DWARF-2 CFI.
 
      <br><dt><code>set cris-mode </code><var>mode</var><dd><a name="index-CRIS-mode-1160"></a>Set the current CRIS mode to <var>mode</var>.  It should only be changed when
 debugging in guru mode, in which case it should be set to
-&lsquo;<samp><span class="samp">guru</span></samp>&rsquo; (the default is &lsquo;<samp><span class="samp">normal</span></samp>&rsquo;).
+<span class="samp">guru</span> (the default is <span class="samp">normal</span>).
 
      <br><dt><code>show cris-mode</code><dd>Show the current CRIS mode. 
 </dl>

@@ -3,7 +3,7 @@
 <title>Working with Directory Trees - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-System-Interface.html#File-System-Interface" title="File System Interface">
 <link rel="prev" href="Accessing-Directories.html#Accessing-Directories" title="Accessing Directories">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Working-with-Directory-Trees"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Hard-Links.html#Hard-Links">Hard Links</a>,
+<a name="Working-with-Directory-Trees"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Hard-Links.html#Hard-Links">Hard Links</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Accessing-Directories.html#Accessing-Directories">Accessing Directories</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-System-Interface.html#File-System-Interface">File System Interface</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">14.3 Working with Directory Trees</h3>
@@ -42,7 +40,7 @@ useful to process whole hierarchies of directories and their contained
 files.  The X/Open specification defines two functions to do this.  The
 simpler form is derived from an early definition in System&nbsp;V<!-- /@w --> systems
 and therefore this function is available on SVID-derived systems.  The
-prototypes and required definitions can be found in the <samp><span class="file">ftw.h</span></samp>
+prototypes and required definitions can be found in the <span class="file">ftw.h</span>
 header.
 
    <p>There are four functions in this family: <code>ftw</code>, <code>nftw</code> and
@@ -53,10 +51,10 @@ function of the appropriate type.
 <!-- ftw.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Data Type: <b>__ftw_func_t</b><var><a name="index-g_t_005f_005fftw_005ffunc_005ft-1434"></a></var><br>
+&mdash; Data Type: <b>__ftw_func_t</b><var><a name="index-_005f_005fftw_005ffunc_005ft-1434"></a></var><br>
 <blockquote>
-     <pre class="smallexample">          int (*) (const char *, const struct stat *, int)
-</pre>
+<pre class="smallexample">          int (*) (const char *, const struct stat *, int)
+     </pre>
         <p>The type of callback functions given to the <code>ftw</code> function.  The
 first parameter points to the file name, the second parameter to an
 object of type <code>struct stat</code> which is filled in for the file named
@@ -87,15 +85,15 @@ type is in fact <code>__ftw64_func_t</code> since this mode changes
 </p></blockquote></div>
 
    <p>For the LFS interface and for use in the function <code>ftw64</code>, the
-header <samp><span class="file">ftw.h</span></samp> defines another function type.
+header <span class="file">ftw.h</span> defines another function type.
 
 <!-- ftw.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Data Type: <b>__ftw64_func_t</b><var><a name="index-g_t_005f_005fftw64_005ffunc_005ft-1440"></a></var><br>
+&mdash; Data Type: <b>__ftw64_func_t</b><var><a name="index-_005f_005fftw64_005ffunc_005ft-1440"></a></var><br>
 <blockquote>
-     <pre class="smallexample">          int (*) (const char *, const struct stat64 *, int)
-</pre>
+<pre class="smallexample">          int (*) (const char *, const struct stat64 *, int)
+     </pre>
         <p>This type is used just like <code>__ftw_func_t</code> for the callback
 function, but this time is called from <code>ftw64</code>.  The second
 parameter to the function is a pointer to a variable of type
@@ -105,10 +103,10 @@ parameter to the function is a pointer to a variable of type
 <!-- ftw.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Data Type: <b>__nftw_func_t</b><var><a name="index-g_t_005f_005fnftw_005ffunc_005ft-1441"></a></var><br>
+&mdash; Data Type: <b>__nftw_func_t</b><var><a name="index-_005f_005fnftw_005ffunc_005ft-1441"></a></var><br>
 <blockquote>
-     <pre class="smallexample">          int (*) (const char *, const struct stat *, int, struct FTW *)
-</pre>
+<pre class="smallexample">          int (*) (const char *, const struct stat *, int, struct FTW *)
+     </pre>
         <p><a name="index-FTW_005fDP-1442"></a><a name="index-FTW_005fSLN-1443"></a>The first three arguments are the same as for the <code>__ftw_func_t</code>
 type.  However for the third argument some additional values are defined
 to allow finer differentiation:
@@ -134,10 +132,10 @@ available which has to be used with the <code>nftw64</code> function.
 <!-- ftw.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Data Type: <b>__nftw64_func_t</b><var><a name="index-g_t_005f_005fnftw64_005ffunc_005ft-1444"></a></var><br>
+&mdash; Data Type: <b>__nftw64_func_t</b><var><a name="index-_005f_005fnftw64_005ffunc_005ft-1444"></a></var><br>
 <blockquote>
-     <pre class="smallexample">          int (*) (const char *, const struct stat64 *, int, struct FTW *)
-</pre>
+<pre class="smallexample">          int (*) (const char *, const struct stat64 *, int, struct FTW *)
+     </pre>
         <p>This type is used just like <code>__nftw_func_t</code> for the callback
 function, but this time is called from <code>nftw64</code>.  The second
 parameter to the function is this time a pointer to a variable of type

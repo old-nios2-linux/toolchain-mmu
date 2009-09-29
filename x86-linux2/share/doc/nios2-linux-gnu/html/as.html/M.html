@@ -3,7 +3,7 @@
 <title>M - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking.html#Invoking" title="Invoking">
 <link rel="prev" href="listing.html#listing" title="listing">
@@ -17,31 +17,29 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="M"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="MD.html#MD">MD</a>,
+<a name="M"></a>Next:&nbsp;<a rel="next" accesskey="n" href="MD.html#MD">MD</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="listing.html#listing">listing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Invoking.html#Invoking">Invoking</a>
-<hr>
+<hr><br>
 </div>
 
-<h3 class="section">2.9 Assemble in MRI Compatibility Mode: <samp><span class="option">-M</span></samp></h3>
+<h3 class="section">2.9 Assemble in MRI Compatibility Mode: <span class="option">-M</span></h3>
 
-<p><a name="index-g_t_002dM-78"></a><a name="index-MRI-compatibility-mode-79"></a>The <samp><span class="option">-M</span></samp> or <samp><span class="option">--mri</span></samp> option selects MRI compatibility mode.  This
-changes the syntax and pseudo-op handling of <samp><span class="command">as</span></samp> to make it
+<p><a name="index-_002dM-78"></a><a name="index-MRI-compatibility-mode-79"></a>The <span class="option">-M</span> or <span class="option">--mri</span> option selects MRI compatibility mode.  This
+changes the syntax and pseudo-op handling of <span class="command">as</span> to make it
 compatible with the <code>ASM68K</code> or the <code>ASM960</code> (depending upon the
 configured target) assembler from Microtec Research.  The exact nature of the
 MRI syntax will not be documented here; see the MRI manuals for more
 information.  Note in particular that the handling of macros and macro
 arguments is somewhat different.  The purpose of this option is to permit
-assembling existing MRI assembler code using <samp><span class="command">as</span></samp>.
+assembling existing MRI assembler code using <span class="command">as</span>.
 
    <p>The MRI compatibility is not complete.  Certain operations of the MRI assembler
 depend upon its object file format, and can not be supported using other object
@@ -52,7 +50,7 @@ individually.  These are:
 <li>global symbols in common section
 
      <p>The m68k MRI assembler supports common sections which are merged by the linker. 
-Other object file formats do not support this.  <samp><span class="command">as</span></samp> handles
+Other object file formats do not support this.  <span class="command">as</span> handles
 common sections by treating them as a single common symbol.  It permits local
 symbols to be defined within a common section, but it can not support global
 symbols, since it has no way to describe them.
@@ -67,7 +65,7 @@ are not support by other object file formats.
 
      <p>The MRI <code>END</code> pseudo-op permits the specification of a start address. 
 This is not supported by other object file formats.  The start address may
-instead be specified using the <samp><span class="option">-e</span></samp> option to the linker, or in a linker
+instead be specified using the <span class="option">-e</span> option to the linker, or in a linker
 script.
 
      <li><code>IDNT</code>, <code>.ident</code> and <code>NAME</code> pseudo-ops
@@ -78,14 +76,14 @@ name to the output file.  This is not supported by other object file formats.
      <li><code>ORG</code> pseudo-op
 
      <p>The m68k MRI <code>ORG</code> pseudo-op begins an absolute section at a given
-address.  This differs from the usual <samp><span class="command">as</span></samp> <code>.org</code> pseudo-op,
+address.  This differs from the usual <span class="command">as</span> <code>.org</code> pseudo-op,
 which changes the location within the current section.  Absolute sections are
 not supported by other object file formats.  The address of a section may be
 assigned within a linker script. 
 </ul>
 
    <p>There are some other features of the MRI assembler which are not supported by
-<samp><span class="command">as</span></samp>, typically either because they are difficult or because they
+<span class="command">as</span>, typically either because they are difficult or because they
 seem of little consequence.  Some of these may be supported in future releases.
 
      <ul>
@@ -109,7 +107,7 @@ and <code>DCB.P</code> pseudo-ops are not supported.
      <li><code>OPT</code> branch control options
 
      <p>The m68k <code>OPT</code> branch control options&mdash;<code>B</code>, <code>BRS</code>, <code>BRB</code>,
-<code>BRL</code>, and <code>BRW</code>&mdash;are ignored.  <samp><span class="command">as</span></samp> automatically
+<code>BRL</code>, and <code>BRW</code>&mdash;are ignored.  <span class="command">as</span> automatically
 relaxes all branches, whether forward or backward, to an appropriate size, so
 these options serve no purpose.
 

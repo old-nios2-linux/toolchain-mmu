@@ -3,7 +3,7 @@
 <title>Labels - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Symbols.html#Symbols" title="Symbols">
 <link rel="next" href="Setting-Symbols.html#Setting-Symbols" title="Setting Symbols">
@@ -16,24 +16,22 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Labels"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Setting-Symbols.html#Setting-Symbols">Setting Symbols</a>,
+<a name="Labels"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Setting-Symbols.html#Setting-Symbols">Setting Symbols</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Symbols.html#Symbols">Symbols</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.1 Labels</h3>
 
 <p><a name="index-labels-209"></a>A <dfn>label</dfn> is written as a symbol immediately followed by a colon
-&lsquo;<samp><span class="samp">:</span></samp>&rsquo;.  The symbol then represents the current value of the
+<span class="samp">:</span>.  The symbol then represents the current value of the
 active location counter, and is, for example, a suitable instruction
 operand.  You are warned if you use the same symbol to represent two
 different locations: the first definition overrides any other
@@ -41,7 +39,7 @@ definitions.
 
    <p>On the HPPA, the usual form for a label need not be immediately followed by a
 colon, but instead must start in column zero.  Only one label may be defined on
-a single line.  To work around this, the HPPA version of <samp><span class="command">as</span></samp> also
+a single line.  To work around this, the HPPA version of <span class="command">as</span> also
 provides a special directive <code>.label</code> for defining labels more flexibly.
 
    </body></html>

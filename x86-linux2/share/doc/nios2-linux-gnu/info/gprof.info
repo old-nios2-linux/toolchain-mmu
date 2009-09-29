@@ -1,4 +1,5 @@
-This is gprof.info, produced by makeinfo version 4.13 from /opt/nios2gcc4/obj/binutils-src-4.1-176-nios2-linux-gnu-i686-pc-linux-gnu/gprof/gprof.texi.
+This is gprof.info, produced by makeinfo version 4.7 from
+/opt/nios2gcc4/obj/binutils-src-4.1-176-nios2-linux-gnu-i686-pc-linux-gnu/gprof/gprof.texi.
 
 START-INFO-DIR-ENTRY
 * gprof: (gprof).                Profiling your program's execution
@@ -2123,19 +2124,20 @@ Appendix A GNU Free Documentation License
      H. Include an unaltered copy of this License.
      I. Preserve the section entitled "History", and its title, and add
      to    it an item stating at least the title, year, new authors, and
-       publisher of the Modified Version as given on the Title Page.  If
-       there is no section entitled "History" in the Document, create
-     one    stating the title, year, authors, and publisher of the
-     Document as    given on its Title Page, then add an item
+       publisher of the Modified Version as given on the Title Page.
+     If    there is no section entitled "History" in the Document,
+     create one    stating the title, year, authors, and publisher of
+     the Document as    given on its Title Page, then add an item
      describing the Modified    Version as stated in the previous
      sentence.
      J. Preserve the network location, if any, given in the Document for
-       public access to a Transparent copy of the Document, and likewise
-       the network locations given in the Document for previous versions
-       it was based on.  These may be placed in the "History" section.
-       You may omit a network location for a work that was published at
-       least four years before the Document itself, or if the original
-      publisher of the version it refers to gives permission.
+       public access to a Transparent copy of the Document, and
+     likewise    the network locations given in the Document for
+     previous versions    it was based on.  These may be placed in the
+     "History" section.     You may omit a network location for a work
+     that was published at    least four years before the Document
+     itself, or if the original    publisher of the version it refers
+     to gives permission.
      K. In any section entitled "Acknowledgements" or "Dedications",
      preserve the section's title, and preserve in the section all the
       substance and tone of each of the contributor acknowledgements
@@ -2307,35 +2309,35 @@ permit their use in free software.
 
 
 Tag Table:
-Node: Top794
-Node: Introduction2108
-Node: Compiling4600
-Node: Executing8775
-Node: Invoking11563
-Node: Output Options12978
-Node: Analysis Options20067
-Node: Miscellaneous Options23288
-Node: Deprecated Options24543
-Node: Symspecs26622
-Node: Output28448
-Node: Flat Profile29488
-Node: Call Graph34441
-Node: Primary37673
-Node: Callers40261
-Node: Subroutines42378
-Node: Cycles44219
-Node: Line-by-line50996
-Node: Annotated Source54729
-Node: Inaccuracy57589
-Node: Sampling Error57847
-Node: Assumptions60417
-Node: How do I?61887
-Node: Incompatibilities63705
-Node: Details65199
-Node: Implementation65592
-Node: File Format71489
-Node: Internals75779
-Node: Debugging84274
-Node: GNU Free Documentation License85875
+Node: Top793
+Node: Introduction2107
+Node: Compiling4599
+Node: Executing8774
+Node: Invoking11562
+Node: Output Options12977
+Node: Analysis Options20066
+Node: Miscellaneous Options23287
+Node: Deprecated Options24542
+Node: Symspecs26621
+Node: Output28447
+Node: Flat Profile29487
+Node: Call Graph34440
+Node: Primary37672
+Node: Callers40260
+Node: Subroutines42377
+Node: Cycles44218
+Node: Line-by-line50995
+Node: Annotated Source54728
+Node: Inaccuracy57588
+Node: Sampling Error57846
+Node: Assumptions60416
+Node: How do I?61886
+Node: Incompatibilities63704
+Node: Details65198
+Node: Implementation65591
+Node: File Format71488
+Node: Internals75778
+Node: Debugging84273
+Node: GNU Free Documentation License85874
 
 End Tag Table

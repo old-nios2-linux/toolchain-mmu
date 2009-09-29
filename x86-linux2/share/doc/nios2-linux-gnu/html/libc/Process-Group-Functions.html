@@ -3,7 +3,7 @@
 <title>Process Group Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Functions-for-Job-Control.html#Functions-for-Job-Control" title="Functions for Job Control">
 <link rel="prev" href="Identifying-the-Terminal.html#Identifying-the-Terminal" title="Identifying the Terminal">
@@ -17,26 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Process-Group-Functions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Terminal-Access-Functions.html#Terminal-Access-Functions">Terminal Access Functions</a>,
+<a name="Process-Group-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Terminal-Access-Functions.html#Terminal-Access-Functions">Terminal Access Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Identifying-the-Terminal.html#Identifying-the-Terminal">Identifying the Terminal</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Functions-for-Job-Control.html#Functions-for-Job-Control">Functions for Job Control</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">27.7.2 Process Group Functions</h4>
 
 <p>Here are descriptions of the functions for manipulating process groups. 
-Your program should include the header files <samp><span class="file">sys/types.h</span></samp> and
-<samp><span class="file">unistd.h</span></samp> to use these functions. 
+Your program should include the header files <span class="file">sys/types.h</span> and
+<span class="file">unistd.h</span> to use these functions. 
 <a name="index-unistd_002eh-3231"></a><a name="index-sys_002ftypes_002eh-3232"></a>
 <!-- unistd.h -->
 <!-- POSIX.1 -->
@@ -67,7 +65,7 @@ already another process group around that has the same process group ID.
 <div class="defun">
 &mdash; Function: pid_t <b>getsid</b> (<var>pid_t pid</var>)<var><a name="index-getsid-3234"></a></var><br>
 <blockquote>
-        <p>The <code>getsid</code> function returns the process group ID of the session
+<p>The <code>getsid</code> function returns the process group ID of the session
 leader of the specified process.  If a <var>pid</var> is <code>0</code>, the
 process group ID of the session leader of the current process is
 returned.
@@ -90,10 +88,10 @@ have selected (see <a href="Feature-Test-Macros.html#Feature-Test-Macros">Featur
 you get.  Specifically, you get the BSD version if you define
 <code>_BSD_SOURCE</code>; otherwise, you get the POSIX version if you define
 <code>_POSIX_SOURCE</code> or <code>_GNU_SOURCE</code>.  Programs written for old
-BSD systems will not include <samp><span class="file">unistd.h</span></samp>, which defines
+BSD systems will not include <span class="file">unistd.h</span>, which defines
 <code>getpgrp</code> specially under <code>_BSD_SOURCE</code>.  You must link such
 programs with the <code>-lbsd-compat</code> option to get the BSD definition. 
-<a name="index-g_t_002dlbsd_002dcompat-3235"></a><a name="index-bsd_002dcompat-3236"></a><a name="index-BSD-compatibility-library-3237"></a>
+<a name="index-_002dlbsd_002dcompat-3235"></a><a name="index-bsd_002dcompat-3236"></a><a name="index-BSD-compatibility-library-3237"></a>
 <!-- unistd.h -->
 <!-- POSIX.1 -->
 
@@ -117,7 +115,7 @@ argument to get information about the calling process.
 <div class="defun">
 &mdash; System V Function: int <b>getpgid</b> (<var>pid_t pid</var>)<var><a name="index-getpgid-3240"></a></var><br>
 <blockquote>
-        <p><code>getpgid</code> is the same as the BSD function <code>getpgrp</code>.  It
+<p><code>getpgid</code> is the same as the BSD function <code>getpgrp</code>.  It
 returns the process group ID of the process <var>pid</var>.  You can supply a
 value of <code>0</code> for the <var>pid</var> argument to get information about
 the calling process.

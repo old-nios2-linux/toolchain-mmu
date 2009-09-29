@@ -3,7 +3,7 @@
 <title>GDB/MI Stack Manipulation - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB_002fMI.html#GDB_002fMI" title="GDB/MI">
 <link rel="prev" href="GDB_002fMI-Program-Execution.html#GDB_002fMI-Program-Execution" title="GDB/MI Program Execution">
@@ -17,27 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="GDB%2fMI-Stack-Manipulation"></a>
-<a name="GDB_002fMI-Stack-Manipulation"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Variable-Objects.html#GDB_002fMI-Variable-Objects">GDB/MI Variable Objects</a>,
+<a name="GDB_002fMI-Stack-Manipulation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Variable-Objects.html#GDB_002fMI-Variable-Objects">GDB/MI Variable Objects</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="GDB_002fMI-Program-Execution.html#GDB_002fMI-Program-Execution">GDB/MI Program Execution</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">25.11 <span class="sc">gdb/mi</span> Stack Manipulation Commands</h3>
 
 <h4 class="subheading">The <code>-stack-info-frame</code> Command</h4>
 
-<p><a name="index-g_t_002dstack_002dinfo_002dframe-1426"></a>
+<p><a name="index-_002dstack_002dinfo_002dframe-1426"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -47,7 +44,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">info frame</span></samp>&rsquo; or &lsquo;<samp><span class="samp">frame</span></samp>&rsquo;
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">info frame</span> or <span class="samp">frame</span>
 (without arguments).
 
 <h5 class="subsubheading">Example</h5>
@@ -61,7 +58,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 </pre>
 <h4 class="subheading">The <code>-stack-info-depth</code> Command</h4>
 
-<p><a name="index-g_t_002dstack_002dinfo_002ddepth-1427"></a>
+<p><a name="index-_002dstack_002dinfo_002ddepth-1427"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -97,7 +94,7 @@ is specified, do not count beyond <var>max-depth</var> frames.
 </pre>
    <h4 class="subheading">The <code>-stack-list-arguments</code> Command</h4>
 
-<p><a name="index-g_t_002dstack_002dlist_002darguments-1428"></a>
+<p><a name="index-_002dstack_002dlist_002darguments-1428"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -120,8 +117,8 @@ means that both names and values of the arguments are printed.
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
 <p><span class="sc">gdb</span> does not have an equivalent command.  <code>gdbtk</code> has a
-&lsquo;<samp><span class="samp">gdb_get_args</span></samp>&rsquo; command which partially overlaps with the
-functionality of &lsquo;<samp><span class="samp">-stack-list-arguments</span></samp>&rsquo;.
+<span class="samp">gdb_get_args</span> command which partially overlaps with the
+functionality of <span class="samp">-stack-list-arguments</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -181,7 +178,7 @@ functionality of &lsquo;<samp><span class="samp">-stack-list-arguments</span></s
 <!-- @subheading -stack-list-exception-handlers -->
 <h4 class="subheading">The <code>-stack-list-frames</code> Command</h4>
 
-<p><a name="index-g_t_002dstack_002dlist_002dframes-1429"></a>
+<p><a name="index-_002dstack_002dlist_002dframes-1429"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -191,11 +188,11 @@ functionality of &lsquo;<samp><span class="samp">-stack-list-arguments</span></s
 following info:
 
      <dl>
-<dt>&lsquo;<samp><var>level</var></samp>&rsquo;<dd>The frame number, 0 being the topmost frame, i.e., the innermost function. 
-<br><dt>&lsquo;<samp><var>addr</var></samp>&rsquo;<dd>The <code>$pc</code> value for that frame. 
-<br><dt>&lsquo;<samp><var>func</var></samp>&rsquo;<dd>Function name. 
-<br><dt>&lsquo;<samp><var>file</var></samp>&rsquo;<dd>File name of the source file where the function lives. 
-<br><dt>&lsquo;<samp><var>line</var></samp>&rsquo;<dd>Line number corresponding to the <code>$pc</code>. 
+<dt><var>level</var><dd>The frame number, 0 being the topmost frame, i.e., the innermost function. 
+<br><dt><var>addr</var><dd>The <code>$pc</code> value for that frame. 
+<br><dt><var>func</var><dd>Function name. 
+<br><dt><var>file</var><dd>File name of the source file where the function lives. 
+<br><dt><var>line</var><dd>Line number corresponding to the <code>$pc</code>. 
 </dl>
 
    <p>If invoked without arguments, this command prints a backtrace for the
@@ -208,7 +205,7 @@ actual number of frames, in which case only existing frames will be returned.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> commands are &lsquo;<samp><span class="samp">backtrace</span></samp>&rsquo; and &lsquo;<samp><span class="samp">where</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> commands are <span class="samp">backtrace</span> and <span class="samp">where</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -267,7 +264,7 @@ actual number of frames, in which case only existing frames will be returned.
 </pre>
    <h4 class="subheading">The <code>-stack-list-locals</code> Command</h4>
 
-<p><a name="index-g_t_002dstack_002dlist_002dlocals-1430"></a>
+<p><a name="index-_002dstack_002dlist_002dlocals-1430"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -285,7 +282,7 @@ more detail.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>&lsquo;<samp><span class="samp">info locals</span></samp>&rsquo; in <span class="sc">gdb</span>, &lsquo;<samp><span class="samp">gdb_get_locals</span></samp>&rsquo; in <code>gdbtk</code>.
+<p><span class="samp">info locals</span> in <span class="sc">gdb</span>, <span class="samp">gdb_get_locals</span> in <code>gdbtk</code>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -303,7 +300,7 @@ more detail.
 </pre>
 <h4 class="subheading">The <code>-stack-select-frame</code> Command</h4>
 
-<p><a name="index-g_t_002dstack_002dselect_002dframe-1431"></a>
+<p><a name="index-_002dstack_002dselect_002dframe-1431"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -314,8 +311,8 @@ the stack.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> commands are &lsquo;<samp><span class="samp">frame</span></samp>&rsquo;, &lsquo;<samp><span class="samp">up</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">down</span></samp>&rsquo;, &lsquo;<samp><span class="samp">select-frame</span></samp>&rsquo;, &lsquo;<samp><span class="samp">up-silent</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">down-silent</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> commands are <span class="samp">frame</span>, <span class="samp">up</span>,
+<span class="samp">down</span>, <span class="samp">select-frame</span>, <span class="samp">up-silent</span>, and <span class="samp">down-silent</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -325,5 +322,5 @@ the stack.
      (gdb)
 </pre>
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-   </body></html>
+</body></html>
 

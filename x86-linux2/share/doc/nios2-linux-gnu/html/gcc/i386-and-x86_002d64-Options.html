@@ -3,7 +3,7 @@
 <title>i386 and x86-64 Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="HPPA-Options.html#HPPA-Options" title="HPPA Options">
@@ -38,26 +38,23 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="i386-and-x86-64-Options"></a>
-<a name="i386-and-x86_002d64-Options"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="IA_002d64-Options.html#IA_002d64-Options">IA-64 Options</a>,
+<a name="i386-and-x86_002d64-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="IA_002d64-Options.html#IA_002d64-Options">IA-64 Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="HPPA-Options.html#HPPA-Options">HPPA Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.17.15 Intel 386 and AMD x86-64 Options</h4>
 
 <p><a name="index-i386-Options-1027"></a><a name="index-x86_002d64-Options-1028"></a><a name="index-Intel-386-Options-1029"></a><a name="index-AMD-x86_002d64-Options-1030"></a>
-These &lsquo;<samp><span class="samp">-m</span></samp>&rsquo; options are defined for the i386 and x86-64 family of
+These <span class="samp">-m</span> options are defined for the i386 and x86-64 family of
 computers:
 
      <dl>
@@ -67,8 +64,8 @@ for the ABI and the set of available instructions.  The choices for
           <dl>
 <dt><em>generic</em><dd>Produce code optimized for the most common IA32/AMD64/EM64T processors. 
 If you know the CPU on which your code will run, then you should use
-the corresponding <samp><span class="option">-mtune</span></samp> option instead of
-<samp><span class="option">-mtune=generic</span></samp>.  But, if you do not know exactly what CPU users
+the corresponding <span class="option">-mtune</span> option instead of
+<span class="option">-mtune=generic</span>.  But, if you do not know exactly what CPU users
 of your application will have, then you should use this option.
 
           <p>As new processors are deployed in the marketplace, the behavior of this
@@ -76,10 +73,10 @@ option will change.  Therefore, if you upgrade to a newer version of
 GCC, the code generated option will change to reflect the processors
 that were most common when that version of GCC was released.
 
-          <p>There is no <samp><span class="option">-march=generic</span></samp> option because <samp><span class="option">-march</span></samp>
+          <p>There is no <span class="option">-march=generic</span> option because <span class="option">-march</span>
 indicates the instruction set the compiler can use, and there is no
 generic instruction set applicable to all processors.  In contrast,
-<samp><span class="option">-mtune</span></samp> indicates the processor (or, in this case, collection of
+<span class="option">-mtune</span> indicates the processor (or, in this case, collection of
 processors) for which the code is optimized. 
 <br><dt><em>i386</em><dd>Original Intel's i386 CPU. 
 <br><dt><em>i486</em><dd>Intel's i486 CPU.  (No scheduling is implemented for this chip.) 
@@ -118,32 +115,32 @@ implemented for this chip.)
 
      <p>While picking a specific <var>cpu-type</var> will schedule things appropriately
 for that particular chip, the compiler will not generate any code that
-does not run on the i386 without the <samp><span class="option">-march=</span><var>cpu-type</var></samp> option
+does not run on the i386 without the <span class="option">-march=</span><var>cpu-type</var> option
 being used.
 
      <br><dt><code>-march=</code><var>cpu-type</var><dd><a name="index-march-1032"></a>Generate instructions for the machine type <var>cpu-type</var>.  The choices
-for <var>cpu-type</var> are the same as for <samp><span class="option">-mtune</span></samp>.  Moreover,
-specifying <samp><span class="option">-march=</span><var>cpu-type</var></samp> implies <samp><span class="option">-mtune=</span><var>cpu-type</var></samp>.
+for <var>cpu-type</var> are the same as for <span class="option">-mtune</span>.  Moreover,
+specifying <span class="option">-march=</span><var>cpu-type</var> implies <span class="option">-mtune=</span><var>cpu-type</var>.
 
-     <br><dt><code>-mcpu=</code><var>cpu-type</var><dd><a name="index-mcpu-1033"></a>A deprecated synonym for <samp><span class="option">-mtune</span></samp>.
+     <br><dt><code>-mcpu=</code><var>cpu-type</var><dd><a name="index-mcpu-1033"></a>A deprecated synonym for <span class="option">-mtune</span>.
 
-     <br><dt><code>-m386</code><dt><code>-m486</code><dt><code>-mpentium</code><dt><code>-mpentiumpro</code><dd><a name="index-m386-1034"></a><a name="index-m486-1035"></a><a name="index-mpentium-1036"></a><a name="index-mpentiumpro-1037"></a>These options are synonyms for <samp><span class="option">-mtune=i386</span></samp>, <samp><span class="option">-mtune=i486</span></samp>,
-<samp><span class="option">-mtune=pentium</span></samp>, and <samp><span class="option">-mtune=pentiumpro</span></samp> respectively. 
+     <br><dt><code>-m386</code><dt><code>-m486</code><dt><code>-mpentium</code><dt><code>-mpentiumpro</code><dd><a name="index-m386-1034"></a><a name="index-m486-1035"></a><a name="index-mpentium-1036"></a><a name="index-mpentiumpro-1037"></a>These options are synonyms for <span class="option">-mtune=i386</span>, <span class="option">-mtune=i486</span>,
+<span class="option">-mtune=pentium</span>, and <span class="option">-mtune=pentiumpro</span> respectively. 
 These synonyms are deprecated.
 
      <br><dt><code>-mfpmath=</code><var>unit</var><dd><a name="index-march-1038"></a>Generate floating point arithmetics for selected unit <var>unit</var>.  The choices
 for <var>unit</var> are:
 
           <dl>
-<dt>&lsquo;<samp><span class="samp">387</span></samp>&rsquo;<dd>Use the standard 387 floating point coprocessor present majority of chips and
+<dt><span class="samp">387</span><dd>Use the standard 387 floating point coprocessor present majority of chips and
 emulated otherwise.  Code compiled with this option will run almost everywhere. 
 The temporary results are computed in 80bit precision instead of precision
 specified by the type resulting in slightly different results compared to most
-of other chips.  See <samp><span class="option">-ffloat-store</span></samp> for more detailed description.
+of other chips.  See <span class="option">-ffloat-store</span> for more detailed description.
 
           <p>This is the default choice for i386 compiler.
 
-          <br><dt>&lsquo;<samp><span class="samp">sse</span></samp>&rsquo;<dd>Use scalar floating point instructions present in the SSE instruction set. 
+          <br><dt><span class="samp">sse</span><dd>Use scalar floating point instructions present in the SSE instruction set. 
 This instruction set is supported by Pentium3 and newer chips, in the AMD line
 by Athlon-4, Athlon-xp and Athlon-mp chips.  The earlier version of SSE
 instruction set supports only single precision arithmetics, thus the double and
@@ -151,8 +148,8 @@ extended precision arithmetics is still done using 387.  Later version, present
 only in Pentium4 and the future AMD x86-64 chips supports double precision
 arithmetics too.
 
-          <p>For the i386 compiler, you need to use <samp><span class="option">-march=</span><var>cpu-type</var></samp>, <samp><span class="option">-msse</span></samp>
-or <samp><span class="option">-msse2</span></samp> switches to enable SSE extensions and make this option
+          <p>For the i386 compiler, you need to use <span class="option">-march=</span><var>cpu-type</var>, <span class="option">-msse</span>
+or <span class="option">-msse2</span> switches to enable SSE extensions and make this option
 effective.  For the x86-64 compiler, these extensions are enabled by default.
 
           <p>The resulting code should be considerably faster in the majority of cases and avoid
@@ -161,7 +158,7 @@ code that expects temporaries to be 80bit.
 
           <p>This is the default choice for the x86-64 compiler.
 
-          <br><dt>&lsquo;<samp><span class="samp">sse,387</span></samp>&rsquo;<dd>Attempt to utilize both instruction sets at once.  This effectively double the
+          <br><dt><span class="samp">sse,387</span><dd>Attempt to utilize both instruction sets at once.  This effectively double the
 amount of available registers and on chips with separate execution units for
 387 and SSE the execution resources too.  Use this option with care, as it is
 still experimental, because the GCC register allocator does not model separate
@@ -169,8 +166,8 @@ functional units well resulting in instable performance.
 </dl>
 
      <br><dt><code>-masm=</code><var>dialect</var><dd><a name="index-masm_003d_0040var_007bdialect_007d-1039"></a>Output asm instructions using selected <var>dialect</var>.  Supported
-choices are &lsquo;<samp><span class="samp">intel</span></samp>&rsquo; or &lsquo;<samp><span class="samp">att</span></samp>&rsquo; (the default one).  Darwin does
-not support &lsquo;<samp><span class="samp">intel</span></samp>&rsquo;.
+choices are <span class="samp">intel</span> or <span class="samp">att</span> (the default one).  Darwin does
+not support <span class="samp">intel</span>.
 
      <br><dt><code>-mieee-fp</code><dt><code>-mno-ieee-fp</code><dd><a name="index-mieee_002dfp-1040"></a><a name="index-mno_002dieee_002dfp-1041"></a>Control whether or not the compiler uses IEEE floating point
 comparisons.  These handle correctly the case where the result of a
@@ -185,7 +182,7 @@ cross-compilation.
 
      <p>On machines where a function returns floating point results in the 80387
 register stack, some floating point opcodes may be emitted even if
-<samp><span class="option">-msoft-float</span></samp> is used.
+<span class="option">-msoft-float</span> is used.
 
      <br><dt><code>-mno-fp-ret-in-387</code><dd><a name="index-mno_002dfp_002dret_002din_002d387-1043"></a>Do not use the FPU registers for return values of functions.
 
@@ -194,27 +191,27 @@ register stack, some floating point opcodes may be emitted even if
 is no FPU.  The idea is that the operating system should emulate
 an FPU.
 
-     <p>The option <samp><span class="option">-mno-fp-ret-in-387</span></samp> causes such values to be returned
+     <p>The option <span class="option">-mno-fp-ret-in-387</span> causes such values to be returned
 in ordinary CPU registers instead.
 
      <br><dt><code>-mno-fancy-math-387</code><dd><a name="index-mno_002dfancy_002dmath_002d387-1044"></a>Some 387 emulators do not support the <code>sin</code>, <code>cos</code> and
 <code>sqrt</code> instructions for the 387.  Specify this option to avoid
 generating those instructions.  This option is the default on FreeBSD,
-OpenBSD and NetBSD.  This option is overridden when <samp><span class="option">-march</span></samp>
+OpenBSD and NetBSD.  This option is overridden when <span class="option">-march</span>
 indicates that the target cpu will always have an FPU and so the
 instruction will not need emulation.  As of revision 2.6.1, these
 instructions are not generated unless you also use the
-<samp><span class="option">-funsafe-math-optimizations</span></samp> switch.
+<span class="option">-funsafe-math-optimizations</span> switch.
 
      <br><dt><code>-malign-double</code><dt><code>-mno-align-double</code><dd><a name="index-malign_002ddouble-1045"></a><a name="index-mno_002dalign_002ddouble-1046"></a>Control whether GCC aligns <code>double</code>, <code>long double</code>, and
 <code>long long</code> variables on a two word boundary or a one word
 boundary.  Aligning <code>double</code> variables on a two word boundary will
-produce code that runs somewhat faster on a &lsquo;<samp><span class="samp">Pentium</span></samp>&rsquo; at the
+produce code that runs somewhat faster on a <span class="samp">Pentium</span> at the
 expense of more memory.
 
-     <p>On x86-64, <samp><span class="option">-malign-double</span></samp> is enabled by default.
+     <p>On x86-64, <span class="option">-malign-double</span> is enabled by default.
 
-     <p><strong>Warning:</strong> if you use the <samp><span class="option">-malign-double</span></samp> switch,
+     <p><strong>Warning:</strong> if you use the <span class="option">-malign-double</span> switch,
 structures containing the above types will be aligned differently than
 the published application binary interface specifications for the 386
 and will not be binary compatible with structures in code compiled
@@ -222,16 +219,16 @@ without that switch.
 
      <br><dt><code>-m96bit-long-double</code><dt><code>-m128bit-long-double</code><dd><a name="index-m96bit_002dlong_002ddouble-1047"></a><a name="index-m128bit_002dlong_002ddouble-1048"></a>These switches control the size of <code>long double</code> type.  The i386
 application binary interface specifies the size to be 96 bits,
-so <samp><span class="option">-m96bit-long-double</span></samp> is the default in 32 bit mode.
+so <span class="option">-m96bit-long-double</span> is the default in 32 bit mode.
 
      <p>Modern architectures (Pentium and newer) would prefer <code>long double</code>
 to be aligned to an 8 or 16 byte boundary.  In arrays or structures
 conforming to the ABI, this would not be possible.  So specifying a
-<samp><span class="option">-m128bit-long-double</span></samp> will align <code>long double</code>
+<span class="option">-m128bit-long-double</span> will align <code>long double</code>
 to a 16 byte boundary by padding the <code>long double</code> with an additional
 32 bit zero.
 
-     <p>In the x86-64 compiler, <samp><span class="option">-m128bit-long-double</span></samp> is the default choice as
+     <p>In the x86-64 compiler, <span class="option">-m128bit-long-double</span> is the default choice as
 its ABI specifies that <code>long double</code> is to be aligned on 16 byte boundary.
 
      <p>Notice that neither of these options enable any extra precision over the x87
@@ -243,12 +240,12 @@ their size as well as function calling convention for function taking
 <code>long double</code> will be modified.  Hence they will not be binary
 compatible with arrays or structures in code compiled without that switch.
 
-     <br><dt><code>-mmlarge-data-threshold=</code><var>number</var><dd><a name="index-mlarge_002ddata_002dthreshold_003d_0040var_007bnumber_007d-1049"></a>When <samp><span class="option">-mcmodel=medium</span></samp> is specified, the data greater than
+     <br><dt><code>-mmlarge-data-threshold=</code><var>number</var><dd><a name="index-mlarge_002ddata_002dthreshold_003d_0040var_007bnumber_007d-1049"></a>When <span class="option">-mcmodel=medium</span> is specified, the data greater than
 <var>threshold</var> are placed in large data section.  This value must be the
 same across all object linked into the binary and defaults to 65535.
 
      <br><dt><code>-msvr3-shlib</code><dt><code>-mno-svr3-shlib</code><dd><a name="index-msvr3_002dshlib-1050"></a><a name="index-mno_002dsvr3_002dshlib-1051"></a>Control whether GCC places uninitialized local variables into the
-<code>bss</code> or <code>data</code> segments.  <samp><span class="option">-msvr3-shlib</span></samp> places them
+<code>bss</code> or <code>data</code> segments.  <span class="option">-msvr3-shlib</span> places them
 into <code>bss</code>.  These options are meaningful only on System V Release 3.
 
      <br><dt><code>-mrtd</code><dd><a name="index-mrtd-1052"></a>Use a different function-calling convention, in which functions that
@@ -258,9 +255,9 @@ instruction in the caller since there is no need to pop the arguments
 there.
 
      <p>You can specify that an individual function is called with this calling
-sequence with the function attribute &lsquo;<samp><span class="samp">stdcall</span></samp>&rsquo;.  You can also
-override the <samp><span class="option">-mrtd</span></samp> option by using the function attribute
-&lsquo;<samp><span class="samp">cdecl</span></samp>&rsquo;.  See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>.
+sequence with the function attribute <span class="samp">stdcall</span>.  You can also
+override the <span class="option">-mrtd</span> option by using the function attribute
+<span class="samp">cdecl</span>.  See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>.
 
      <p><strong>Warning:</strong> this calling convention is incompatible with the one
 normally used on Unix, so you cannot use it if you need to call
@@ -278,7 +275,7 @@ harmlessly ignored.)
      <br><dt><code>-mregparm=</code><var>num</var><dd><a name="index-mregparm-1053"></a>Control how many registers are used to pass integer arguments.  By
 default, no registers are used to pass arguments, and at most 3
 registers can be used.  You can control this behavior for a specific
-function by using the function attribute &lsquo;<samp><span class="samp">regparm</span></samp>&rsquo;. 
+function by using the function attribute <span class="samp">regparm</span>. 
 See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>.
 
      <p><strong>Warning:</strong> if you use this switch, and
@@ -288,7 +285,7 @@ startup modules.
 
      <br><dt><code>-msseregparm</code><dd><a name="index-msseregparm-1054"></a>Use SSE register passing conventions for float and double arguments
 and return values.  You can control this behavior for a specific
-function by using the function attribute &lsquo;<samp><span class="samp">sseregparm</span></samp>&rsquo;. 
+function by using the function attribute <span class="samp">sseregparm</span>. 
 See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>.
 
      <p><strong>Warning:</strong> if you use this switch then you must build all
@@ -296,11 +293,11 @@ modules with the same value, including any libraries.  This includes
 the system libraries and startup modules.
 
      <br><dt><code>-mpreferred-stack-boundary=</code><var>num</var><dd><a name="index-mpreferred_002dstack_002dboundary-1055"></a>Attempt to keep the stack boundary aligned to a 2 raised to <var>num</var>
-byte boundary.  If <samp><span class="option">-mpreferred-stack-boundary</span></samp> is not specified,
+byte boundary.  If <span class="option">-mpreferred-stack-boundary</span> is not specified,
 the default is 4 (16 bytes or 128 bits).
 
      <p>On Pentium and PentiumPro, <code>double</code> and <code>long double</code> values
-should be aligned to an 8 byte boundary (see <samp><span class="option">-malign-double</span></samp>) or
+should be aligned to an 8 byte boundary (see <span class="option">-malign-double</span>) or
 suffer significant run time performance penalties.  On Pentium III, the
 Streaming SIMD Extension (SSE) data type <code>__m128</code> may not work
 properly if it is not 16 byte aligned.
@@ -316,7 +313,7 @@ libraries that use callbacks always use the default setting.
      <p>This extra alignment does consume extra stack space, and generally
 increases code size.  Code that is sensitive to stack space usage, such
 as embedded systems and operating system kernels, may want to reduce the
-preferred alignment to <samp><span class="option">-mpreferred-stack-boundary=2</span></samp>.
+preferred alignment to <span class="option">-mpreferred-stack-boundary=2</span>.
 
      <br><dt><code>-mmmx</code><dt><code>-mno-mmx</code><br><dt><code>-msse</code><dt><code>-mno-sse</code><br><dt><code>-msse2</code><dt><code>-mno-sse2</code><br><dt><code>-msse3</code><dt><code>-mno-sse3</code><br><dt><code>-m3dnow</code><dt><code>-mno-3dnow</code><dd><a name="index-mmmx-1056"></a><a name="index-mno_002dmmx-1057"></a><a name="index-msse-1058"></a><a name="index-mno_002dsse-1059"></a><a name="index-m3dnow-1060"></a><a name="index-mno_002d3dnow-1061"></a>These switches enable or disable the use of instructions in the MMX,
 SSE, SSE2 or 3DNow! extended instruction sets.  These extensions are
@@ -324,10 +321,10 @@ also available as built-in functions: see <a href="X86-Built_002din-Functions.ht
 for details of the functions enabled and disabled by these switches.
 
      <p>To have SSE/SSE2 instructions generated automatically from floating-point
-code (as opposed to 387 instructions), see <samp><span class="option">-mfpmath=sse</span></samp>.
+code (as opposed to 387 instructions), see <span class="option">-mfpmath=sse</span>.
 
      <p>These options will enable GCC to use these extended instructions in
-generated code, even without <samp><span class="option">-mfpmath=sse</span></samp>.  Applications which
+generated code, even without <span class="option">-mfpmath=sse</span>.  Applications which
 perform runtime CPU detection must compile separate files for each
 supported architecture, using the appropriate flags.  In particular,
 the file containing the CPU detection code should be compiled without
@@ -342,13 +339,13 @@ improved scheduling and reduced dependencies.
 computed in the function prologue.  This is faster on most modern CPUs
 because of reduced dependencies, improved scheduling and reduced stack usage
 when preferred stack boundary is not equal to 2.  The drawback is a notable
-increase in code size.  This switch implies <samp><span class="option">-mno-push-args</span></samp>.
+increase in code size.  This switch implies <span class="option">-mno-push-args</span>.
 
-     <br><dt><code>-mthreads</code><dd><a name="index-mthreads-1065"></a>Support thread-safe exception handling on &lsquo;<samp><span class="samp">Mingw32</span></samp>&rsquo;.  Code that relies
+     <br><dt><code>-mthreads</code><dd><a name="index-mthreads-1065"></a>Support thread-safe exception handling on <span class="samp">Mingw32</span>.  Code that relies
 on thread-safe exception handling must compile and link all code with the
-<samp><span class="option">-mthreads</span></samp> option.  When compiling, <samp><span class="option">-mthreads</span></samp> defines
-<samp><span class="option">-D_MT</span></samp>; when linking, it links in a special thread helper library
-<samp><span class="option">-lmingwthrd</span></samp> which cleans up per thread exception handling data.
+<span class="option">-mthreads</span> option.  When compiling, <span class="option">-mthreads</span> defines
+<span class="option">-D_MT</span>; when linking, it links in a special thread helper library
+<span class="option">-lmingwthrd</span> which cleans up per thread exception handling data.
 
      <br><dt><code>-mno-align-stringops</code><dd><a name="index-mno_002dalign_002dstringops-1066"></a>Do not align destination of inlined string operations.  This switch reduces
 code size and improves performance in case the destination is already aligned,
@@ -362,7 +359,7 @@ and memset for short lengths.
      <br><dt><code>-momit-leaf-frame-pointer</code><dd><a name="index-momit_002dleaf_002dframe_002dpointer-1068"></a>Don't keep the frame pointer in a register for leaf functions.  This
 avoids the instructions to save, set up and restore frame pointers and
 makes an extra register available in leaf functions.  The option
-<samp><span class="option">-fomit-frame-pointer</span></samp> removes the frame pointer for all functions
+<span class="option">-fomit-frame-pointer</span> removes the frame pointer for all functions
 which might make debugging harder.
 
      <br><dt><code>-mtls-direct-seg-refs</code><dt><code>-mno-tls-direct-seg-refs</code><dd><a name="index-mtls_002ddirect_002dseg_002drefs-1069"></a>Controls whether TLS variables may be accessed with offsets from the
@@ -374,7 +371,7 @@ segment to cover the entire TLS area.
      <p>For systems that use GNU libc, the default is on. 
 </dl>
 
- <p>These &lsquo;<samp><span class="samp">-m</span></samp>&rsquo; switches are supported in addition to the above
+ <p>These <span class="samp">-m</span> switches are supported in addition to the above
 on AMD x86-64 processors in 64-bit environments.
 
      <dl>
@@ -388,7 +385,7 @@ to 64 bits and generates code for AMD's x86-64 architecture.
 by the x86-64 ABI, it is a 128-byte area beyond the location of the
 stack pointer that will not be modified by signal or interrupt handlers
 and therefore can be used for temporary data without adjusting the stack
-pointer.  The flag <samp><span class="option">-mno-red-zone</span></samp> disables this red zone.
+pointer.  The flag <span class="option">-mno-red-zone</span> disables this red zone.
 
      <br><dt><code>-mcmodel=small</code><dd><a name="index-mcmodel_003dsmall-1073"></a>Generate code for the small code model: the program and its symbols must
 be linked in the lower 2 GB of the address space.  Pointers are 64 bits. 

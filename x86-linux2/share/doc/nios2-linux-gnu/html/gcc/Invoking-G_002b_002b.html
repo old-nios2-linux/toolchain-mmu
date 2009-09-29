@@ -3,7 +3,7 @@
 <title>Invoking G++ - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GCC.html#Invoking-GCC" title="Invoking GCC">
 <link rel="prev" href="Overall-Options.html#Overall-Options" title="Overall Options">
@@ -38,41 +38,38 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Invoking-G++"></a>
-<a name="Invoking-G_002b_002b"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="C-Dialect-Options.html#C-Dialect-Options">C Dialect Options</a>,
+<a name="Invoking-G_002b_002b"></a>Next:&nbsp;<a rel="next" accesskey="n" href="C-Dialect-Options.html#C-Dialect-Options">C Dialect Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Overall-Options.html#Overall-Options">Overall Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-GCC.html#Invoking-GCC">Invoking GCC</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">3.3 Compiling C++ Programs</h3>
 
-<p><a name="index-suffixes-for-C_002b_002b-source-86"></a><a name="index-C_002b_002b-source-file-suffixes-87"></a>C++ source files conventionally use one of the suffixes &lsquo;<samp><span class="samp">.C</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">.cc</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.cpp</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.CPP</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.c++</span></samp>&rsquo;, &lsquo;<samp><span class="samp">.cp</span></samp>&rsquo;, or
-&lsquo;<samp><span class="samp">.cxx</span></samp>&rsquo;; C++ header files often use &lsquo;<samp><span class="samp">.hh</span></samp>&rsquo; or &lsquo;<samp><span class="samp">.H</span></samp>&rsquo;; and
-preprocessed C++ files use the suffix &lsquo;<samp><span class="samp">.ii</span></samp>&rsquo;.  GCC recognizes
+<p><a name="index-suffixes-for-C_002b_002b-source-86"></a><a name="index-C_002b_002b-source-file-suffixes-87"></a>C++ source files conventionally use one of the suffixes <span class="samp">.C</span>,
+<span class="samp">.cc</span>, <span class="samp">.cpp</span>, <span class="samp">.CPP</span>, <span class="samp">.c++</span>, <span class="samp">.cp</span>, or
+<span class="samp">.cxx</span>; C++ header files often use <span class="samp">.hh</span> or <span class="samp">.H</span>; and
+preprocessed C++ files use the suffix <span class="samp">.ii</span>.  GCC recognizes
 files with these names and compiles them as C++ programs even if you
 call the compiler the same way as for compiling C programs (usually
-with the name <samp><span class="command">gcc</span></samp>).
+with the name <span class="command">gcc</span>).
 
  <p><a name="index-g_002b_002b-88"></a><a name="index-c_002b_002b-89"></a>However, C++ programs often require class libraries as well as a
 compiler that understands the C++ language&mdash;and under some
 circumstances, you might want to compile programs or header files from
 standard input, or otherwise without a suffix that flags them as C++
 programs.  You might also like to precompile a C header file with a
-&lsquo;<samp><span class="samp">.h</span></samp>&rsquo; extension to be used in C++ compilations.  <samp><span class="command">g++</span></samp> is a
+<span class="samp">.h</span> extension to be used in C++ compilations.  <span class="command">g++</span> is a
 program that calls GCC with the default language set to C++, and
 automatically specifies linking against the C++ library.  On many
-systems, <samp><span class="command">g++</span></samp> is also installed with the name <samp><span class="command">c++</span></samp>.
+systems, <span class="command">g++</span> is also installed with the name <span class="command">c++</span>.
 
  <p><a name="index-invoking-_0040command_007bg_002b_002b_007d-90"></a>When you compile C++ programs, you may specify many of the same
 command-line options that you use for compiling programs in any

@@ -3,7 +3,7 @@
 <title>Substitutions - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mode-Macros.html#Mode-Macros" title="Mode Macros">
 <link rel="prev" href="Defining-Mode-Macros.html#Defining-Mode-Macros" title="Defining Mode Macros">
@@ -38,25 +38,23 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Substitutions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Examples.html#Examples">Examples</a>,
+<a name="Substitutions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Examples.html#Examples">Examples</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Defining-Mode-Macros.html#Defining-Mode-Macros">Defining Mode Macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mode-Macros.html#Mode-Macros">Mode Macros</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">13.22.1.2 Substitution in Mode Macros</h5>
 
 <p><a name="index-define_005fmode_005fattr-1667"></a>
-If an <samp><span class="file">.md</span></samp> file construct uses mode macros, each version of the
+If an <span class="file">.md</span> file construct uses mode macros, each version of the
 construct will often need slightly different strings or modes.  For
 example:
 
@@ -90,7 +88,7 @@ mode attribute.  If the attribute is defined for <var>mode</var>, the whole
 <code>&lt;...&gt;</code> sequence will be replaced by the appropriate attribute
 value.
 
- <p>For example, suppose an <samp><span class="file">.md</span></samp> file has:
+ <p>For example, suppose an <span class="file">.md</span> file has:
 
 <pre class="smallexample">     (define_mode_macro P [(SI "Pmode == SImode") (DI "Pmode == DImode")])
      (define_mode_attr load [(SI "lw") (DI "ld")])

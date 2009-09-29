@@ -3,7 +3,7 @@
 <title>The Print Command with Objective-C - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Objective_002dC.html#Objective_002dC" title="Objective-C">
 <link rel="prev" href="Method-Names-in-Commands.html#Method-Names-in-Commands" title="Method Names in Commands">
@@ -16,19 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="The-Print-Command-with-Objective-C"></a>
-<a name="The-Print-Command-with-Objective_002dC"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Method-Names-in-Commands.html#Method-Names-in-Commands">Method Names in Commands</a>,
+<a name="The-Print-Command-with-Objective_002dC"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Method-Names-in-Commands.html#Method-Names-in-Commands">Method Names in Commands</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Objective_002dC.html#Objective_002dC">Objective-C</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">13.4.2.2 The Print Command With Objective-C</h5>
@@ -38,7 +35,7 @@ The print command has also been extended to accept methods.  For example:
 
 <pre class="smallexample">     print -[<var>object</var> hash]
 </pre>
-   <p><a name="index-print-an-Objective_002dC-object-description-671"></a><a name="index-g_t_0040code_007b_005fNSPrintForDebugger_007d_002c-and-printing-Objective_002dC-objects-672"></a>will tell <span class="sc">gdb</span> to send the <code>hash</code> message to <var>object</var>
+   <p><a name="index-print-an-Objective_002dC-object-description-671"></a><a name="index-_0040code_007b_005fNSPrintForDebugger_007d_002c-and-printing-Objective_002dC-objects-672"></a>will tell <span class="sc">gdb</span> to send the <code>hash</code> message to <var>object</var>
 and print the result.  Also, an additional command has been added,
 <code>print-object</code> or <code>po</code> for short, which is meant to print
 the description of an object.  However, this command may only work

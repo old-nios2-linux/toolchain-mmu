@@ -3,7 +3,7 @@
 <title>Builtin Type Descriptors - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Builtin-Types.html#Builtin-Types" title="Builtin Types">
 <link rel="prev" href="Traditional-Builtin-Types.html#Traditional-Builtin-Types" title="Traditional Builtin Types">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Builtin-Type-Descriptors"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Negative-Type-Numbers.html#Negative-Type-Numbers">Negative Type Numbers</a>,
+<a name="Builtin-Type-Descriptors"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Negative-Type-Numbers.html#Negative-Type-Numbers">Negative Type Numbers</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Traditional-Builtin-Types.html#Traditional-Builtin-Types">Traditional Builtin Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Builtin-Types.html#Builtin-Types">Builtin Types</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">5.1.2 Defining Builtin Types Using Builtin Type Descriptors</h4>
@@ -40,8 +38,8 @@ These are the type descriptors to define builtin types:
      <dl>
 <!-- FIXME: clean up description of width and offset, once we figure out -->
 <!-- what they mean -->
-<dt><code>b </code><var>signed</var> <var>char-flag</var> <var>width</var><code> ; </code><var>offset</var><code> ; </code><var>nbits</var><code> ;</code><dd>Define an integral type.  <var>signed</var> is &lsquo;<samp><span class="samp">u</span></samp>&rsquo; for unsigned or
-&lsquo;<samp><span class="samp">s</span></samp>&rsquo; for signed.  <var>char-flag</var> is &lsquo;<samp><span class="samp">c</span></samp>&rsquo; which indicates this
+<dt><code>b </code><var>signed</var> <var>char-flag</var> <var>width</var><code> ; </code><var>offset</var><code> ; </code><var>nbits</var><code> ;</code><dd>Define an integral type.  <var>signed</var> is <span class="samp">u</span> for unsigned or
+<span class="samp">s</span> for signed.  <var>char-flag</var> is <span class="samp">c</span> which indicates this
 is a character type, or is omitted.  I assume this is to distinguish an
 integral type from a character type of the same size, for example it
 might make sense to set it for the C type <code>wchar_t</code> so the debugger
@@ -53,11 +51,11 @@ objects stored in larger ones, for example a <code>short</code> in an
 type.  <var>offset</var> seems to always be zero.  <var>nbits</var> is the number
 of bits in the type.
 
-     <p>Note that type descriptor &lsquo;<samp><span class="samp">b</span></samp>&rsquo; used for builtin types conflicts with
+     <p>Note that type descriptor <span class="samp">b</span> used for builtin types conflicts with
 its use for Pascal space types (see <a href="Miscellaneous-Types.html#Miscellaneous-Types">Miscellaneous Types</a>); they can
 be distinguished because the character following the type descriptor
-will be a digit, &lsquo;<samp><span class="samp">(</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">-</span></samp>&rsquo; for a Pascal space type, or
-&lsquo;<samp><span class="samp">u</span></samp>&rsquo; or &lsquo;<samp><span class="samp">s</span></samp>&rsquo; for a builtin type.
+will be a digit, <span class="samp">(</span>, or <span class="samp">-</span> for a Pascal space type, or
+<span class="samp">u</span> or <span class="samp">s</span> for a builtin type.
 
      <br><dt><code>w</code><dd>Documented by AIX to define a wide character type, but their compiler
 actually uses negative type numbers (see <a href="Negative-Type-Numbers.html#Negative-Type-Numbers">Negative Type Numbers</a>).

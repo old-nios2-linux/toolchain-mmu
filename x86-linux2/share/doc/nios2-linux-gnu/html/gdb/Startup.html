@@ -3,7 +3,7 @@
 <title>Startup - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GDB.html#Invoking-GDB" title="Invoking GDB">
 <link rel="prev" href="Mode-Options.html#Mode-Options" title="Mode Options">
@@ -16,23 +16,21 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Startup"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Mode-Options.html#Mode-Options">Mode Options</a>,
+<a name="Startup"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Mode-Options.html#Mode-Options">Mode Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-GDB.html#Invoking-GDB">Invoking GDB</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">2.1.3 What <span class="sc">gdb</span> Does During Startup</h4>
 
-<p><a name="index-g_t_0040value_007bGDBN_007d-startup-49"></a>
+<p><a name="index-_0040value_007bGDBN_007d-startup-49"></a>
 Here's the description of what <span class="sc">gdb</span> does during session startup:
 
      <ol type=1 start=1>
@@ -51,7 +49,7 @@ init file, one generic in your home directory, and another, specific
 to the program you are debugging, in the directory where you invoke
 <span class="sc">gdb</span>.
 
-     <li>Reads command files specified by the &lsquo;<samp><span class="samp">-x</span></samp>&rsquo; option.  See <a href="Command-Files.html#Command-Files">Command Files</a>, for more details about <span class="sc">gdb</span> command files.
+     <li>Reads command files specified by the <span class="samp">-x</span> option.  See <a href="Command-Files.html#Command-Files">Command Files</a>, for more details about <span class="sc">gdb</span> command files.
 
      <li>Reads the command history recorded in the <dfn>history file</dfn>. 
 See <a href="Command-History.html#Command-History">Command History</a>, for more details about the command history and the
@@ -59,16 +57,16 @@ files where <span class="sc">gdb</span> records it.
         </ol>
 
    <p>Init files use the same syntax as <dfn>command files</dfn> (see <a href="Command-Files.html#Command-Files">Command Files</a>) and are processed by <span class="sc">gdb</span> in the same way.  The init
-file in your home directory can set options (such as &lsquo;<samp><span class="samp">set
-complaints</span></samp>&rsquo;) that affect subsequent processing of command line options
-and operands.  Init files are not executed if you use the &lsquo;<samp><span class="samp">-nx</span></samp>&rsquo;
+file in your home directory can set options (such as <span class="samp">set
+complaints</span>) that affect subsequent processing of command line options
+and operands.  Init files are not executed if you use the <span class="samp">-nx</span>
 option (see <a href="Mode-Options.html#Mode-Options">Choosing Modes</a>).
 
-   <p><a name="index-init-file-name-51"></a><a name="index-g_t_0040file_007b_002egdbinit_007d-52"></a><a name="index-g_t_0040file_007bgdb_002eini_007d-53"></a>The <span class="sc">gdb</span> init files are normally called <samp><span class="file">.gdbinit</span></samp>. 
-The DJGPP port of <span class="sc">gdb</span> uses the name <samp><span class="file">gdb.ini</span></samp>, due to
+   <p><a name="index-init-file-name-51"></a><a name="index-_0040file_007b_002egdbinit_007d-52"></a><a name="index-_0040file_007bgdb_002eini_007d-53"></a>The <span class="sc">gdb</span> init files are normally called <span class="file">.gdbinit</span>. 
+The DJGPP port of <span class="sc">gdb</span> uses the name <span class="file">gdb.ini</span>, due to
 the limitations of file names imposed by DOS filesystems.  The Windows
 ports of <span class="sc">gdb</span> use the standard name, but if they find a
-<samp><span class="file">gdb.ini</span></samp> file, they warn you about that and suggest to rename
+<span class="file">gdb.ini</span> file, they warn you about that and suggest to rename
 the file to the standard name.
 
    <div class="footnote">
@@ -77,7 +75,7 @@ the file to the standard name.
 DOS/Windows systems, the home directory is the one pointed to by the
 <code>HOME</code> environment variable.</p>
 
-   <hr></div>
+   <p><hr></div>
 
    </body></html>
 

@@ -3,7 +3,7 @@
 <title>Inline Functions - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Optimized-Code.html#Optimized-Code" title="Optimized Code">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -15,17 +15,15 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Inline-Functions"></a>
 <p>
-Up:&nbsp;<a rel="up" accesskey="u" href="Optimized-Code.html#Optimized-Code">Optimized Code</a>
-<hr>
+<a name="Inline-Functions"></a>Up:&nbsp;<a rel="up" accesskey="u" href="Optimized-Code.html#Optimized-Code">Optimized Code</a>
+<hr><br>
 </div>
 
 <h3 class="section">9.1 Inline Functions</h3>
@@ -45,8 +43,8 @@ record information about inlining in the debug information &mdash;
 <span class="sc">gcc</span> using the <span class="sc">dwarf 2</span> format does this, and several
 other compilers do also.  <span class="sc">gdb</span> only supports inlined functions
 when using <span class="sc">dwarf 2</span>.  Versions of <span class="sc">gcc</span> before 4.1
-do not emit two required attributes (&lsquo;<samp><span class="samp">DW_AT_call_file</span></samp>&rsquo; and
-&lsquo;<samp><span class="samp">DW_AT_call_line</span></samp>&rsquo;); <span class="sc">gdb</span> does not display inlined
+do not emit two required attributes (<span class="samp">DW_AT_call_file</span> and
+<span class="samp">DW_AT_call_line</span>); <span class="sc">gdb</span> does not display inlined
 function calls with earlier versions of <span class="sc">gcc</span>.  It instead
 displays the arguments and local variables of inlined functions as
 local variables in the caller.

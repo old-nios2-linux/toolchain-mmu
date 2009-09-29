@@ -3,7 +3,7 @@
 <title>Machine Code - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Source.html#Source" title="Source">
 <link rel="prev" href="Source-Path.html#Source-Path" title="Source Path">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Machine-Code"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Source-Path.html#Source-Path">Source Path</a>,
+<a name="Machine-Code"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Source-Path.html#Source-Path">Source Path</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Source.html#Source">Source</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">7.5 Source and Machine Code</h3>
@@ -61,8 +59,8 @@ the object code for the first line of function
 <pre class="smallexample">     (gdb) info line *0x63ff
      Line 926 of "builtin.c" starts at pc 0x63e4 and ends at 0x6404.
 </pre>
-   <p><a name="index-g_t_0040code_007b_0024_005f_007d-and-_0040code_007binfo-line_007d-374"></a><a name="index-g_t_0040code_007bx_007d-command_002c-default-address-375"></a><a name="index-x_0040r_007b_0028examine_0029_002c-and_007d-info-line-376"></a>After <code>info line</code>, the default address for the <code>x</code> command
-is changed to the starting address of the line, so that &lsquo;<samp><span class="samp">x/i</span></samp>&rsquo; is
+   <p><a name="index-_0040code_007b_0024_005f_007d-and-_0040code_007binfo-line_007d-374"></a><a name="index-_0040code_007bx_007d-command_002c-default-address-375"></a><a name="index-x_0040r_007b_0028examine_0029_002c-and_007d-info-line-376"></a>After <code>info line</code>, the default address for the <code>x</code> command
+is changed to the starting address of the line, so that <span class="samp">x/i</span> is
 sufficient to begin examining the machine code (see <a href="Memory.html#Memory">Examining Memory</a>).  Also, this address is saved as the value of the
 convenience variable <code>$_</code> (see <a href="Convenience-Vars.html#Convenience-Vars">Convenience Variables</a>).
 

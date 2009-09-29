@@ -3,7 +3,7 @@
 <title>Elapsed Time - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Date-and-Time.html#Date-and-Time" title="Date and Time">
 <link rel="prev" href="Time-Basics.html#Time-Basics" title="Time Basics">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Elapsed-Time"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Processor-And-CPU-Time.html#Processor-And-CPU-Time">Processor And CPU Time</a>,
+<a name="Elapsed-Time"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Processor-And-CPU-Time.html#Processor-And-CPU-Time">Processor And CPU Time</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Time-Basics.html#Time-Basics">Time Basics</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Date-and-Time.html#Date-and-Time">Date and Time</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">21.2 Elapsed Time</h3>
@@ -37,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Date-and-Time.html#Date-and-Time">Date 
 <p><a name="index-elapsed-time-2596"></a>
 One way to represent an elapsed time is with a simple arithmetic data
 type, as with the following function to compute the elapsed time between
-two calendar times.  This function is declared in <samp><span class="file">time.h</span></samp>.
+two calendar times.  This function is declared in <span class="file">time.h</span>.
 
 <!-- time.h -->
 <!-- ISO -->
@@ -64,7 +62,7 @@ one, is in nanoseconds.
 <div class="defun">
 &mdash; Data Type: <b>struct timeval</b><var><a name="index-struct-timeval-2598"></a></var><br>
 <blockquote><p><a name="index-timeval-2599"></a>The <code>struct timeval</code> structure represents an elapsed time.  It is
-declared in <samp><span class="file">sys/time.h</span></samp> and has the following members:
+declared in <span class="file">sys/time.h</span> and has the following members:
 
           <dl>
 <dt><code>long int tv_sec</code><dd>This represents the number of whole seconds of elapsed time.
@@ -81,7 +79,7 @@ million.
 <div class="defun">
 &mdash; Data Type: <b>struct timespec</b><var><a name="index-struct-timespec-2600"></a></var><br>
 <blockquote><p><a name="index-timespec-2601"></a>The <code>struct timespec</code> structure represents an elapsed time.  It is
-declared in <samp><span class="file">time.h</span></samp> and has the following members:
+declared in <span class="file">time.h</span> and has the following members:
 
           <dl>
 <dt><code>long int tv_sec</code><dd>This represents the number of whole seconds of elapsed time.

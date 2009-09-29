@@ -3,7 +3,7 @@
 <title>Opening Streams - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="I_002fO-on-Streams.html#I_002fO-on-Streams" title="I/O on Streams">
 <link rel="prev" href="Standard-Streams.html#Standard-Streams" title="Standard Streams">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Opening-Streams"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Closing-Streams.html#Closing-Streams">Closing Streams</a>,
+<a name="Opening-Streams"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Closing-Streams.html#Closing-Streams">Closing Streams</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Standard-Streams.html#Standard-Streams">Standard Streams</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="I_002fO-on-Streams.html#I_002fO-on-Streams">I/O on Streams</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">12.3 Opening Streams</h3>
@@ -39,7 +37,7 @@ establishes a connection between the stream and a file.  This may
 involve creating a new file.
 
    <p><a name="index-stdio_002eh-927"></a>Everything described in this section is declared in the header file
-<samp><span class="file">stdio.h</span></samp>.
+<span class="file">stdio.h</span>.
 
 <!-- stdio.h -->
 <!-- ISO -->
@@ -53,30 +51,30 @@ opened and specifies attributes of the resulting stream.  It must begin
 with one of the following sequences of characters:
 
           <dl>
-<dt>&lsquo;<samp><span class="samp">r</span></samp>&rsquo;<dd>Open an existing file for reading only.
+<dt><span class="samp">r</span><dd>Open an existing file for reading only.
 
-          <br><dt>&lsquo;<samp><span class="samp">w</span></samp>&rsquo;<dd>Open the file for writing only.  If the file already exists, it is
+          <br><dt><span class="samp">w</span><dd>Open the file for writing only.  If the file already exists, it is
 truncated to zero length.  Otherwise a new file is created.
 
-          <br><dt>&lsquo;<samp><span class="samp">a</span></samp>&rsquo;<dd>Open a file for append access; that is, writing at the end of file only. 
+          <br><dt><span class="samp">a</span><dd>Open a file for append access; that is, writing at the end of file only. 
 If the file already exists, its initial contents are unchanged and
 output to the stream is appended to the end of the file. 
 Otherwise, a new, empty file is created.
 
-          <br><dt>&lsquo;<samp><span class="samp">r+</span></samp>&rsquo;<dd>Open an existing file for both reading and writing.  The initial contents
+          <br><dt><span class="samp">r+</span><dd>Open an existing file for both reading and writing.  The initial contents
 of the file are unchanged and the initial file position is at the
 beginning of the file.
 
-          <br><dt>&lsquo;<samp><span class="samp">w+</span></samp>&rsquo;<dd>Open a file for both reading and writing.  If the file already exists, it
+          <br><dt><span class="samp">w+</span><dd>Open a file for both reading and writing.  If the file already exists, it
 is truncated to zero length.  Otherwise, a new file is created.
 
-          <br><dt>&lsquo;<samp><span class="samp">a+</span></samp>&rsquo;<dd>Open or create file for both reading and appending.  If the file exists,
+          <br><dt><span class="samp">a+</span><dd>Open or create file for both reading and appending.  If the file exists,
 its initial contents are unchanged.  Otherwise, a new file is created. 
 The initial file position for reading is at the beginning of the file,
 but output is always appended to the end of the file. 
 </dl>
 
-        <p>As you can see, &lsquo;<samp><span class="samp">+</span></samp>&rsquo; requests a stream that can do both input and
+        <p>As you can see, <span class="samp">+</span> requests a stream that can do both input and
 output.  The ISO standard says that when using such a stream, you must
 call <code>fflush</code> (see <a href="Stream-Buffering.html#Stream-Buffering">Stream Buffering</a>) or a file positioning
 function such as <code>fseek</code> (see <a href="File-Positioning.html#File-Positioning">File Positioning</a>) when switching
@@ -86,20 +84,20 @@ limitation; you can do arbitrary reading and writing operations on a
 stream in whatever order.
 
         <p>Additional characters may appear after these to specify flags for the
-call.  Always put the mode (&lsquo;<samp><span class="samp">r</span></samp>&rsquo;, &lsquo;<samp><span class="samp">w+</span></samp>&rsquo;, etc.) first; that is
+call.  Always put the mode (<span class="samp">r</span>, <span class="samp">w+</span>, etc.) first; that is
 the only part you are guaranteed will be understood by all systems.
 
         <p>The GNU C library defines one additional character for use in
-<var>opentype</var>: the character &lsquo;<samp><span class="samp">x</span></samp>&rsquo; insists on creating a new
+<var>opentype</var>: the character <span class="samp">x</span> insists on creating a new
 file&mdash;if a file <var>filename</var> already exists, <code>fopen</code> fails
-rather than opening it.  If you use &lsquo;<samp><span class="samp">x</span></samp>&rsquo; you are guaranteed that
+rather than opening it.  If you use <span class="samp">x</span> you are guaranteed that
 you will not clobber an existing file.  This is equivalent to the
 <code>O_EXCL</code> option to the <code>open</code> function (see <a href="Opening-and-Closing-Files.html#Opening-and-Closing-Files">Opening and Closing Files</a>).
 
-        <p>The character &lsquo;<samp><span class="samp">b</span></samp>&rsquo; in <var>opentype</var> has a standard meaning; it
+        <p>The character <span class="samp">b</span> in <var>opentype</var> has a standard meaning; it
 requests a binary stream rather than a text stream.  But this makes no
 difference in POSIX systems (including the GNU system).  If both
-&lsquo;<samp><span class="samp">+</span></samp>&rsquo; and &lsquo;<samp><span class="samp">b</span></samp>&rsquo; are specified, they can appear in either order. 
+<span class="samp">+</span> and <span class="samp">b</span> are specified, they can appear in either order. 
 See <a href="Binary-Streams.html#Binary-Streams">Binary Streams</a>.
 
         <p><a name="index-stream-orientation-929"></a><a name="index-orientation_002c-stream-930"></a>If the <var>opentype</var> string contains the sequence
@@ -215,23 +213,23 @@ descriptor and these functions are also available in the GNU C library.
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: int <b>__freadable</b> (<var>FILE *stream</var>)<var><a name="index-g_t_005f_005ffreadable-935"></a></var><br>
+&mdash; Function: int <b>__freadable</b> (<var>FILE *stream</var>)<var><a name="index-_005f_005ffreadable-935"></a></var><br>
 <blockquote><p>The <code>__freadable</code> function determines whether the stream
 <var>stream</var> was opened to allow reading.  In this case the return value
 is nonzero.  For write-only streams the function returns zero.
 
-        <p>This function is declared in <samp><span class="file">stdio_ext.h</span></samp>. 
+        <p>This function is declared in <span class="file">stdio_ext.h</span>. 
 </p></blockquote></div>
 
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: int <b>__fwritable</b> (<var>FILE *stream</var>)<var><a name="index-g_t_005f_005ffwritable-936"></a></var><br>
+&mdash; Function: int <b>__fwritable</b> (<var>FILE *stream</var>)<var><a name="index-_005f_005ffwritable-936"></a></var><br>
 <blockquote><p>The <code>__fwritable</code> function determines whether the stream
 <var>stream</var> was opened to allow writing.  In this case the return value
 is nonzero.  For read-only streams the function returns zero.
 
-        <p>This function is declared in <samp><span class="file">stdio_ext.h</span></samp>. 
+        <p>This function is declared in <span class="file">stdio_ext.h</span>. 
 </p></blockquote></div>
 
    <p>For slightly different kind of problems there are two more functions. 
@@ -240,7 +238,7 @@ They provide even finer-grained information.
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: int <b>__freading</b> (<var>FILE *stream</var>)<var><a name="index-g_t_005f_005ffreading-937"></a></var><br>
+&mdash; Function: int <b>__freading</b> (<var>FILE *stream</var>)<var><a name="index-_005f_005ffreading-937"></a></var><br>
 <blockquote><p>The <code>__freading</code> function determines whether the stream
 <var>stream</var> was last read from or whether it is opened read-only.  In
 this case the return value is nonzero, otherwise it is zero. 
@@ -248,18 +246,18 @@ Determining whether a stream opened for reading and writing was last
 used for writing allows to draw conclusions about the content about the
 buffer, among other things.
 
-        <p>This function is declared in <samp><span class="file">stdio_ext.h</span></samp>. 
+        <p>This function is declared in <span class="file">stdio_ext.h</span>. 
 </p></blockquote></div>
 
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: int <b>__fwriting</b> (<var>FILE *stream</var>)<var><a name="index-g_t_005f_005ffwriting-938"></a></var><br>
+&mdash; Function: int <b>__fwriting</b> (<var>FILE *stream</var>)<var><a name="index-_005f_005ffwriting-938"></a></var><br>
 <blockquote><p>The <code>__fwriting</code> function determines whether the stream
 <var>stream</var> was last written to or whether it is opened write-only.  In
 this case the return value is nonzero, otherwise it is zero.
 
-        <p>This function is declared in <samp><span class="file">stdio_ext.h</span></samp>. 
+        <p>This function is declared in <span class="file">stdio_ext.h</span>. 
 </p></blockquote></div>
 
    </body></html>

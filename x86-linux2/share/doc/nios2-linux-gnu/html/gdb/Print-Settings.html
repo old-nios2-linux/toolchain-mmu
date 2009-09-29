@@ -3,7 +3,7 @@
 <title>Print Settings - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Auto-Display.html#Auto-Display" title="Auto Display">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Print-Settings"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Value-History.html#Value-History">Value History</a>,
+<a name="Print-Settings"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Value-History.html#Value-History">Value History</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Auto-Display.html#Auto-Display">Auto Display</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">8.7 Print Settings</h3>
@@ -51,7 +49,7 @@ is <code>on</code>.  For example, this is what a stack frame display looks like 
           #0  set_quotes (lq=0x34c78 "&lt;&lt;", rq=0x34c88 "&gt;&gt;")
               at input.c:530
           530         if (lquote != def_lquote)
-</pre>
+     </pre>
      <br><dt><code>set print address off</code><dd>Do not print addresses when displaying their contents.  For example,
 this is the same stack frame displayed with <code>set print address off</code>:
 
@@ -59,8 +57,8 @@ this is the same stack frame displayed with <code>set print address off</code>:
           (gdb) f
           #0  set_quotes (lq="&lt;&lt;", rq="&gt;&gt;") at input.c:530
           530         if (lquote != def_lquote)
-</pre>
-     <p>You can use &lsquo;<samp><span class="samp">set print address off</span></samp>&rsquo; to eliminate all machine
+     </pre>
+     <p>You can use <span class="samp">set print address off</span> to eliminate all machine
 dependent displays from the <span class="sc">gdb</span> interface.  For example, with
 <code>print address off</code>, you should get the same text for backtraces on
 all machines&mdash;whether or not they involve pointer arguments.
@@ -72,7 +70,7 @@ all machines&mdash;whether or not they involve pointer arguments.
 closest earlier symbol plus an offset.  If that symbol does not uniquely
 identify the address (for example, it is a name whose scope is a single
 source file), you may need to clarify.  One way to do this is with
-<code>info line</code>, for example &lsquo;<samp><span class="samp">info line *0x4537</span></samp>&rsquo;.  Alternately,
+<code>info line</code>, for example <span class="samp">info line *0x4537</span>.  Alternately,
 you can set <span class="sc">gdb</span> to print the source file and line number when
 it prints a symbolic address:
 
@@ -105,18 +103,18 @@ symbolic address.
 </dl>
 
    <p><a name="index-wild-pointer_002c-interpreting-437"></a><a name="index-pointer_002c-finding-referent-438"></a>If you have a pointer and you are not sure where it points, try
-&lsquo;<samp><span class="samp">set print symbol-filename on</span></samp>&rsquo;.  Then you can determine the name
+<span class="samp">set print symbol-filename on</span>.  Then you can determine the name
 and source file location of the variable where it points, using
-&lsquo;<samp><span class="samp">p/a </span><var>pointer</var></samp>&rsquo;.  This interprets the address in symbolic form. 
+<span class="samp">p/a </span><var>pointer</var>.  This interprets the address in symbolic form. 
 For example, here <span class="sc">gdb</span> shows that a variable <code>ptt</code> points
-at another variable <code>t</code>, defined in <samp><span class="file">hi2.c</span></samp>:
+at another variable <code>t</code>, defined in <span class="file">hi2.c</span>:
 
 <pre class="smallexample">     (gdb) set print symbol-filename on
      (gdb) p/a ptt
      $4 = 0xe008 &lt;t in hi2.c&gt;
 </pre>
    <blockquote>
-<em>Warning:</em> For pointers that point to a local variable, &lsquo;<samp><span class="samp">p/a</span></samp>&rsquo;
+<em>Warning:</em> For pointers that point to a local variable, <span class="samp">p/a</span>
 does not show the symbol name and filename of the referent, even with
 the appropriate <code>set print</code> options turned on. 
 </blockquote>
@@ -162,7 +160,7 @@ be individually printed.  The default threshold is 10.
      <br><dt><code>show print repeats</code><dd>Display the current threshold for printing repeated identical
 elements.
 
-     <br><dt><code>set print null-stop</code><dd><a name="index-g_t_0040sc_007bnull_007d-elements-in-arrays-444"></a>Cause <span class="sc">gdb</span> to stop printing the characters of an array when the first
+     <br><dt><code>set print null-stop</code><dd><a name="index-_0040sc_007bnull_007d-elements-in-arrays-444"></a>Cause <span class="sc">gdb</span> to stop printing the characters of an array when the first
 <span class="sc">null</span> is encountered.  This is useful when large arrays actually
 contain only short strings. 
 The default is off.
@@ -181,12 +179,12 @@ per line, like this:
             },
             meat = 0x54 "Pork"
           }
-</pre>
+     </pre>
      <br><dt><code>set print pretty off</code><dd>Cause <span class="sc">gdb</span> to print structures in a compact format, like this:
 
      <pre class="smallexample">          $1 = {next = 0x0, flags = {sweet = 1, sour = 1}, \
           meat = 0x54 "Pork"}
-</pre>
+     </pre>
      <p class="noindent">This is the default format.
 
      <br><dt><code>show print pretty</code><dd>Show which format <span class="sc">gdb</span> is using to print structures.
@@ -228,15 +226,15 @@ structures and other unions.
           };
           
           struct thing foo = {Tree, {Acorn}};
-</pre>
-     <p class="noindent">with <code>set print union on</code> in effect &lsquo;<samp><span class="samp">p foo</span></samp>&rsquo; would print
+     </pre>
+     <p class="noindent">with <code>set print union on</code> in effect <span class="samp">p foo</span> would print
 
      <pre class="smallexample">          $1 = {it = Tree, form = {tree = Acorn, bug = Cocoon}}
-</pre>
+     </pre>
      <p class="noindent">and with <code>set print union off</code> in effect it would print
 
      <pre class="smallexample">          $1 = {it = Tree, form = {...}}
-</pre>
+     </pre>
      <p class="noindent"><code>set print union</code> affects programs written in C-like languages
 and in Pascal. 
 </dl>
@@ -303,7 +301,7 @@ virtual function table.  This is the default setting.
      <br><dt><code>show print pascal_static-members</code><dd>Show whether Pascal static members are printed or not.
 
      <!-- These don't work with HP ANSI C++ yet. -->
-     <br><dt><code>set print vtbl</code><dt><code>set print vtbl on</code><dd><a name="index-pretty-print-C_0040t_007b_002b_002b_007d-virtual-function-tables-459"></a><a name="index-virtual-functions-_0028C_0040t_007b_002b_002b_007d_0029-display-460"></a><a name="index-VTBL-display-461"></a>Pretty print C<tt>++</tt> virtual function tables.  The default is off. 
+<br><dt><code>set print vtbl</code><dt><code>set print vtbl on</code><dd><a name="index-pretty-print-C_0040t_007b_002b_002b_007d-virtual-function-tables-459"></a><a name="index-virtual-functions-_0028C_0040t_007b_002b_002b_007d_0029-display-460"></a><a name="index-VTBL-display-461"></a>Pretty print C<tt>++</tt> virtual function tables.  The default is off. 
 (The <code>vtbl</code> commands do not work on programs compiled with the HP
 ANSI C<tt>++</tt> compiler (<code>aCC</code>).)
 

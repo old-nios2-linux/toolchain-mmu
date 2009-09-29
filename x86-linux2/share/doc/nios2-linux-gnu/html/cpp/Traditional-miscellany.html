@@ -3,7 +3,7 @@
 <title>Traditional miscellany - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Traditional-Mode.html#Traditional-Mode" title="Traditional Mode">
 <link rel="prev" href="Traditional-macros.html#Traditional-macros" title="Traditional macros">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
--->
+man end-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,19 +41,17 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Traditional-miscellany"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-warnings.html#Traditional-warnings">Traditional warnings</a>,
+<a name="Traditional-miscellany"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-warnings.html#Traditional-warnings">Traditional warnings</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Traditional-macros.html#Traditional-macros">Traditional macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Traditional-Mode.html#Traditional-Mode">Traditional Mode</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">10.3 Traditional miscellany</h3>
@@ -63,15 +61,15 @@ preprocessor.
 
      <ul>
 <li>Preprocessing directives are recognized only when their leading
-&lsquo;<samp><span class="samp">#</span></samp>&rsquo; appears in the first column.  There can be no whitespace
-between the beginning of the line and the &lsquo;<samp><span class="samp">#</span></samp>&rsquo;, but whitespace can
-follow the &lsquo;<samp><span class="samp">#</span></samp>&rsquo;.
+<span class="samp">#</span> appears in the first column.  There can be no whitespace
+between the beginning of the line and the <span class="samp">#</span>, but whitespace can
+follow the <span class="samp">#</span>.
 
-     <li>A true traditional C preprocessor does not recognize &lsquo;<samp><span class="samp">#error</span></samp>&rsquo; or
-&lsquo;<samp><span class="samp">#pragma</span></samp>&rsquo;, and may not recognize &lsquo;<samp><span class="samp">#elif</span></samp>&rsquo;.  CPP supports all
+     <li>A true traditional C preprocessor does not recognize <span class="samp">#error</span> or
+<span class="samp">#pragma</span>, and may not recognize <span class="samp">#elif</span>.  CPP supports all
 the directives in traditional mode that it supports in ISO mode,
 including extensions, with the exception that the effects of
-&lsquo;<samp><span class="samp">#pragma GCC poison</span></samp>&rsquo; are undefined.
+<span class="samp">#pragma GCC poison</span> are undefined.
 
      <li>__STDC__ is not defined.
 

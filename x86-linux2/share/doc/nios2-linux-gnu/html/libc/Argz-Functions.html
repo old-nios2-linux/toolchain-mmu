@@ -3,7 +3,7 @@
 <title>Argz Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Argz-and-Envz-Vectors.html#Argz-and-Envz-Vectors" title="Argz and Envz Vectors">
 <link rel="next" href="Envz-Functions.html#Envz-Functions" title="Envz Functions">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Argz-Functions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Envz-Functions.html#Envz-Functions">Envz Functions</a>,
+<a name="Argz-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Envz-Functions.html#Envz-Functions">Envz Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Argz-and-Envz-Vectors.html#Argz-and-Envz-Vectors">Argz and Envz Vectors</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">5.12.1 Argz Functions</h4>
@@ -50,7 +48,7 @@ See <a href="Unconstrained-Allocation.html#Unconstrained-Allocation">Unconstrain
 <code>error_t</code>, and return <code>0</code> for success, and <code>ENOMEM</code> if an
 allocation error occurs.
 
-   <p><a name="index-argz_002eh-590"></a>These functions are declared in the standard include file <samp><span class="file">argz.h</span></samp>.
+   <p><a name="index-argz_002eh-590"></a>These functions are declared in the standard include file <span class="file">argz.h</span>.
 
 <!-- argz.h -->
 <!-- GNU -->
@@ -180,7 +178,7 @@ is <code>0</code>, the first element of <var>argz</var> is returned.
      <pre class="smallexample">              char *entry = 0;
               while ((entry = argz_next (<var>argz</var>, <var>argz_len</var>, entry)))
                 <var>action</var>;
-</pre>
+     </pre>
         <p>(the double parentheses are necessary to make some C compilers shut up
 about what they consider a questionable <code>while</code>-test) and:
 
@@ -189,7 +187,7 @@ about what they consider a questionable <code>while</code>-test) and:
                    entry;
                    entry = argz_next (<var>argz</var>, <var>argz_len</var>, entry))
                 <var>action</var>;
-</pre>
+     </pre>
         <p>Note that the latter depends on <var>argz</var> having a value of <code>0</code> if
 it is empty (rather than a pointer to an empty block of memory); this
 invariant is maintained for argz vectors created by the functions here. 

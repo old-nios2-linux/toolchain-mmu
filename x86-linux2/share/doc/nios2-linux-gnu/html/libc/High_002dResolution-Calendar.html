@@ -3,7 +3,7 @@
 <title>High-Resolution Calendar - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Calendar-Time.html#Calendar-Time" title="Calendar Time">
 <link rel="prev" href="Simple-Calendar-Time.html#Simple-Calendar-Time" title="Simple Calendar Time">
@@ -17,20 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="High-Resolution-Calendar"></a>
-<a name="High_002dResolution-Calendar"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Broken_002ddown-Time.html#Broken_002ddown-Time">Broken-down Time</a>,
+<a name="High_002dResolution-Calendar"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Broken_002ddown-Time.html#Broken_002ddown-Time">Broken-down Time</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Simple-Calendar-Time.html#Simple-Calendar-Time">Simple Calendar Time</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Calendar-Time.html#Calendar-Time">Calendar Time</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">21.4.2 High-Resolution Calendar</h4>
@@ -41,7 +38,7 @@ resolution of only one second.  Some applications need more precision.
    <p>So, the GNU C library also contains functions which are capable of
 representing calendar times to a higher resolution than one second.  The
 functions and the associated data types described in this section are
-declared in <samp><span class="file">sys/time.h</span></samp>. 
+declared in <span class="file">sys/time.h</span>. 
 <a name="index-sys_002ftime_002eh-2627"></a>
 <!-- sys/time.h -->
 <!-- BSD -->
@@ -159,14 +156,14 @@ following <code>errno</code> error condition is defined for this function:
    <p><strong>Portability Note:</strong>  The <code>gettimeofday</code>, <code>settimeofday</code>,
 and <code>adjtime</code> functions are derived from BSD.
 
-   <p>Symbols for the following function are declared in <samp><span class="file">sys/timex.h</span></samp>.
+   <p>Symbols for the following function are declared in <span class="file">sys/timex.h</span>.
 
 <!-- sys/timex.h -->
 <!-- GNU -->
 <div class="defun">
 &mdash; Function: int <b>adjtimex</b> (<var>struct timex *timex</var>)<var><a name="index-adjtimex-2632"></a></var><br>
 <blockquote>
-        <p><code>adjtimex</code> is functionally identical to <code>ntp_adjtime</code>. 
+<p><code>adjtimex</code> is functionally identical to <code>ntp_adjtime</code>. 
 See <a href="High-Accuracy-Clock.html#High-Accuracy-Clock">High Accuracy Clock</a>.
 
         <p>This function is present only with a Linux kernel.

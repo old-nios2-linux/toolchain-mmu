@@ -3,7 +3,7 @@
 <title>Gcov Intro - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Gcov.html#Gcov" title="Gcov">
 <link rel="next" href="Invoking-Gcov.html#Invoking-Gcov" title="Invoking Gcov">
@@ -37,34 +37,32 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Gcov-Intro"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Invoking-Gcov.html#Invoking-Gcov">Invoking Gcov</a>,
+<a name="Gcov-Intro"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Invoking-Gcov.html#Invoking-Gcov">Invoking Gcov</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Gcov.html#Gcov">Gcov</a>
-<hr>
+<hr><br>
 </div>
 
-<h3 class="section">9.1 Introduction to <samp><span class="command">gcov</span></samp></h3>
+<h3 class="section">9.1 Introduction to <span class="command">gcov</span></h3>
 
 <!-- man begin DESCRIPTION -->
-<p><samp><span class="command">gcov</span></samp> is a test coverage program.  Use it in concert with GCC
+<p><span class="command">gcov</span> is a test coverage program.  Use it in concert with GCC
 to analyze your programs to help create more efficient, faster running
 code and to discover untested parts of your program.  You can use
-<samp><span class="command">gcov</span></samp> as a profiling tool to help discover where your
+<span class="command">gcov</span> as a profiling tool to help discover where your
 optimization efforts will best affect your code.  You can also use
-<samp><span class="command">gcov</span></samp> along with the other profiling tool, <samp><span class="command">gprof</span></samp>, to
+<span class="command">gcov</span> along with the other profiling tool, <span class="command">gprof</span>, to
 assess which parts of your code use the greatest amount of computing
 time.
 
  <p>Profiling tools help you analyze your code's performance.  Using a
-profiler such as <samp><span class="command">gcov</span></samp> or <samp><span class="command">gprof</span></samp>, you can find out some
+profiler such as <span class="command">gcov</span> or <span class="command">gprof</span>, you can find out some
 basic performance statistics, such as:
 
      <ul>
@@ -77,7 +75,7 @@ basic performance statistics, such as:
 
  <p>Once you know these things about how your code works when compiled, you
 can look at each module to see which modules should be optimized. 
-<samp><span class="command">gcov</span></samp> helps you determine where to work on optimization.
+<span class="command">gcov</span> helps you determine where to work on optimization.
 
  <p>Software developers also use coverage testing in concert with
 testsuites, to make sure software is actually good enough for a release. 
@@ -88,10 +86,10 @@ to be added to the testsuites to create both better testing and a better
 final product.
 
  <p>You should compile your code without optimization if you plan to use
-<samp><span class="command">gcov</span></samp> because the optimization, by combining some lines of code
+<span class="command">gcov</span> because the optimization, by combining some lines of code
 into one function, may not give you as much information as you need to
 look for `hot spots' where the code is using a great deal of computer
-time.  Likewise, because <samp><span class="command">gcov</span></samp> accumulates statistics by line (at
+time.  Likewise, because <span class="command">gcov</span> accumulates statistics by line (at
 the lowest resolution), it works best with a programming style that
 places only one statement on each line.  If you use complicated macros
 that expand to loops or to other control structures, the statistics are
@@ -99,16 +97,16 @@ less helpful&mdash;they only report on the line where the macro call
 appears.  If your complex macros behave like functions, you can replace
 them with inline functions to solve this problem.
 
- <p><samp><span class="command">gcov</span></samp> creates a logfile called <samp><var>sourcefile</var><span class="file">.gcov</span></samp> which
-indicates how many times each line of a source file <samp><var>sourcefile</var><span class="file">.c</span></samp>
-has executed.  You can use these logfiles along with <samp><span class="command">gprof</span></samp> to aid
-in fine-tuning the performance of your programs.  <samp><span class="command">gprof</span></samp> gives
+ <p><span class="command">gcov</span> creates a logfile called <var>sourcefile</var><span class="file">.gcov</span> which
+indicates how many times each line of a source file <var>sourcefile</var><span class="file">.c</span>
+has executed.  You can use these logfiles along with <span class="command">gprof</span> to aid
+in fine-tuning the performance of your programs.  <span class="command">gprof</span> gives
 timing information you can use along with the information you get from
-<samp><span class="command">gcov</span></samp>.
+<span class="command">gcov</span>.
 
- <p><samp><span class="command">gcov</span></samp> works only on code compiled with GCC.  It is not
+ <p><span class="command">gcov</span> works only on code compiled with GCC.  It is not
 compatible with any other profiling or test coverage mechanism.
 
 <!-- man end -->
- </body></html>
+</body></html>
 

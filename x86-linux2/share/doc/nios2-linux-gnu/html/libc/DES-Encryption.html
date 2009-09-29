@@ -3,7 +3,7 @@
 <title>DES Encryption - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cryptographic-Functions.html#Cryptographic-Functions" title="Cryptographic Functions">
 <link rel="prev" href="crypt.html#crypt" title="crypt">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="DES-Encryption"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="crypt.html#crypt">crypt</a>,
+<a name="DES-Encryption"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="crypt.html#crypt">crypt</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cryptographic-Functions.html#Cryptographic-Functions">Cryptographic Functions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">32.4 DES Encryption</h3>
@@ -64,7 +62,7 @@ specifies the unused bits.
 <div class="defun">
 &mdash; Function: void <b>setkey</b> (<var>const char *key</var>)<var><a name="index-setkey-3678"></a></var><br>
 <blockquote>
-        <p>The <code>setkey</code> function sets an internal data structure to be an
+<p>The <code>setkey</code> function sets an internal data structure to be an
 expanded form of <var>key</var>.  <var>key</var> is specified as an array of 64
 bits each stored in a <code>char</code>, the first bit is <code>key[0]</code> and
 the 64th bit is <code>key[63]</code>.  The <var>key</var> should have the correct
@@ -76,7 +74,7 @@ parity.
 <div class="defun">
 &mdash; Function: void <b>encrypt</b> (<var>char *block, int edflag</var>)<var><a name="index-encrypt-3679"></a></var><br>
 <blockquote>
-        <p>The <code>encrypt</code> function encrypts <var>block</var> if
+<p>The <code>encrypt</code> function encrypts <var>block</var> if
 <var>edflag</var> is 0, otherwise it decrypts <var>block</var>, using a key
 previously set by <code>setkey</code>.  The result is
 placed in <var>block</var>.
@@ -90,10 +88,10 @@ stored in a <code>char</code>, but there are no parity bits in <var>block</var>.
 <div class="defun">
 &mdash; Function: void <b>setkey_r</b> (<var>const char *key, struct crypt_data * data</var>)<var><a name="index-setkey_005fr-3680"></a></var><br>
 <blockquote><!-- crypt.h -->
-     <!-- GNU -->
-   &mdash; Function: void <b>encrypt_r</b> (<var>char *block, int edflag, struct crypt_data * data</var>)<var><a name="index-encrypt_005fr-3681"></a></var><br>
+<!-- GNU -->
+&mdash; Function: void <b>encrypt_r</b> (<var>char *block, int edflag, struct crypt_data * data</var>)<var><a name="index-encrypt_005fr-3681"></a></var><br>
 <blockquote>
-        <p>These are reentrant versions of <code>setkey</code> and <code>encrypt</code>.  The
+<p>These are reentrant versions of <code>setkey</code> and <code>encrypt</code>.  The
 only difference is the extra parameter, which stores the expanded
 version of <var>key</var>.  Before calling <code>setkey_r</code> the first time,
 <code>data-&gt;initialized</code> must be cleared to zero. 
@@ -101,14 +99,14 @@ version of <var>key</var>.  Before calling <code>setkey_r</code> the first time,
 
    <p>The <code>setkey_r</code> and <code>encrypt_r</code> functions are GNU extensions. 
 <code>setkey</code>, <code>encrypt</code>, <code>setkey_r</code>, and <code>encrypt_r</code> are
-defined in <samp><span class="file">crypt.h</span></samp>.
+defined in <span class="file">crypt.h</span>.
 
 <!-- rpc/des_crypt.h -->
 <!-- SUNRPC -->
 <div class="defun">
 &mdash; Function: int <b>ecb_crypt</b> (<var>char *key, char *blocks, unsigned len, unsigned mode</var>)<var><a name="index-ecb_005fcrypt-3682"></a></var><br>
 <blockquote>
-        <p>The function <code>ecb_crypt</code> encrypts or decrypts one or more blocks
+<p>The function <code>ecb_crypt</code> encrypts or decrypts one or more blocks
 using DES.  Each block is encrypted independently.
 
         <p>The <var>blocks</var> and the <var>key</var> are stored packed in 8-bit bytes, so
@@ -132,19 +130,19 @@ multiple of 8 (so that there is a whole number of blocks to encrypt).
 <var>blocks</var> is to be encrypted.
 
           <!-- rpc/des_crypt.h -->
-          <!-- SUNRPC -->
-          <br><dt><code>DES_DECRYPT</code><a name="index-DES_005fDECRYPT-3684"></a><dd>This constant, used in the <var>mode</var> parameter, specifies that
+<!-- SUNRPC -->
+<br><dt><code>DES_DECRYPT</code><a name="index-DES_005fDECRYPT-3684"></a><dd>This constant, used in the <var>mode</var> parameter, specifies that
 <var>blocks</var> is to be decrypted.
 
           <!-- rpc/des_crypt.h -->
-          <!-- SUNRPC -->
-          <br><dt><code>DES_HW</code><a name="index-DES_005fHW-3685"></a><dd>This constant, used in the <var>mode</var> parameter, asks to use a hardware
+<!-- SUNRPC -->
+<br><dt><code>DES_HW</code><a name="index-DES_005fHW-3685"></a><dd>This constant, used in the <var>mode</var> parameter, asks to use a hardware
 device.  If no hardware device is available, encryption happens anyway,
 but in software.
 
           <!-- rpc/des_crypt.h -->
-          <!-- SUNRPC -->
-          <br><dt><code>DES_SW</code><a name="index-DES_005fSW-3686"></a><dd>This constant, used in the <var>mode</var> parameter, specifies that no
+<!-- SUNRPC -->
+<br><dt><code>DES_SW</code><a name="index-DES_005fSW-3686"></a><dd>This constant, used in the <var>mode</var> parameter, specifies that no
 hardware device is to be used. 
 </dl>
 
@@ -156,16 +154,16 @@ hardware device is to be used.
 <dt><code>DESERR_NONE</code><a name="index-DESERR_005fNONE-3687"></a><dd>The encryption succeeded.
 
           <!-- rpc/des_crypt.h -->
-          <!-- SUNRPC -->
-          <br><dt><code>DESERR_NOHWDEVICE</code><a name="index-DESERR_005fNOHWDEVICE-3688"></a><dd>The encryption succeeded, but there was no hardware device available.
+<!-- SUNRPC -->
+<br><dt><code>DESERR_NOHWDEVICE</code><a name="index-DESERR_005fNOHWDEVICE-3688"></a><dd>The encryption succeeded, but there was no hardware device available.
 
           <!-- rpc/des_crypt.h -->
-          <!-- SUNRPC -->
-          <br><dt><code>DESERR_HWERROR</code><a name="index-DESERR_005fHWERROR-3689"></a><dd>The encryption failed because of a hardware problem.
+<!-- SUNRPC -->
+<br><dt><code>DESERR_HWERROR</code><a name="index-DESERR_005fHWERROR-3689"></a><dd>The encryption failed because of a hardware problem.
 
           <!-- rpc/des_crypt.h -->
-          <!-- SUNRPC -->
-          <br><dt><code>DESERR_BADPARAM</code><a name="index-DESERR_005fBADPARAM-3690"></a><dd>The encryption failed because of a bad parameter, for instance <var>len</var>
+<!-- SUNRPC -->
+<br><dt><code>DESERR_BADPARAM</code><a name="index-DESERR_005fBADPARAM-3690"></a><dd>The encryption failed because of a bad parameter, for instance <var>len</var>
 is not a multiple of 8 or <var>len</var> is larger than <code>DES_MAXDATA</code>. 
 </dl>
         </p></blockquote></div>
@@ -183,7 +181,7 @@ is not a multiple of 8 or <var>len</var> is larger than <code>DES_MAXDATA</code>
 <div class="defun">
 &mdash; Function: int <b>cbc_crypt</b> (<var>char *key, char *blocks, unsigned len, unsigned mode, char *ivec</var>)<var><a name="index-cbc_005fcrypt-3692"></a></var><br>
 <blockquote>
-        <p>The function <code>cbc_crypt</code> encrypts or decrypts one or more blocks
+<p>The function <code>cbc_crypt</code> encrypts or decrypts one or more blocks
 using DES in Cipher Block Chaining mode.
 
         <p>For encryption in CBC mode, each block is exclusive-ored with <var>ivec</var>
@@ -210,14 +208,14 @@ bytes.
 <div class="defun">
 &mdash; Function: void <b>des_setparity</b> (<var>char *key</var>)<var><a name="index-des_005fsetparity-3693"></a></var><br>
 <blockquote>
-        <p>The function <code>des_setparity</code> changes the 64-bit <var>key</var>, stored
+<p>The function <code>des_setparity</code> changes the 64-bit <var>key</var>, stored
 packed in 8-bit bytes, to have odd parity by altering the low bits of
 each byte. 
 </p></blockquote></div>
 
    <p>The <code>ecb_crypt</code>, <code>cbc_crypt</code>, and <code>des_setparity</code>
 functions and their accompanying macros are all defined in the header
-<samp><span class="file">rpc/des_crypt.h</span></samp>.
+<span class="file">rpc/des_crypt.h</span>.
 
    </body></html>
 

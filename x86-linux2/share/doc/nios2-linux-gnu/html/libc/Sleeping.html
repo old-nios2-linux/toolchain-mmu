@@ -3,7 +3,7 @@
 <title>Sleeping - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Date-and-Time.html#Date-and-Time" title="Date and Time">
 <link rel="prev" href="Setting-an-Alarm.html#Setting-an-Alarm" title="Setting an Alarm">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Sleeping"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Setting-an-Alarm.html#Setting-an-Alarm">Setting an Alarm</a>,
+<a name="Sleeping"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Setting-an-Alarm.html#Setting-an-Alarm">Setting an Alarm</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Date-and-Time.html#Date-and-Time">Date and Time</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">21.6 Sleeping</h3>
@@ -52,7 +50,7 @@ is delivered, whichever happens first.
 it returns a value of zero.  If it returns because of delivery of a
 signal, its return value is the remaining time in the sleep interval.
 
-        <p>The <code>sleep</code> function is declared in <samp><span class="file">unistd.h</span></samp>. 
+        <p>The <code>sleep</code> function is declared in <span class="file">unistd.h</span>. 
 </p></blockquote></div>
 
    <p>Resist the temptation to implement a sleep for a fixed amount of time by
@@ -128,7 +126,7 @@ until the program ends.  To avoid this calls to <code>nanosleep</code> should
 be protected using cancellation handlers. 
 <!-- ref pthread_cleanup_push / pthread_cleanup_pop -->
 
-        <p>The <code>nanosleep</code> function is declared in <samp><span class="file">time.h</span></samp>. 
+        <p>The <code>nanosleep</code> function is declared in <span class="file">time.h</span>. 
 </p></blockquote></div>
 
    </body></html>

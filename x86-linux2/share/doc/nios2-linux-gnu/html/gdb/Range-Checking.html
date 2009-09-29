@@ -3,7 +3,7 @@
 <title>Range Checking - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Checks.html#Checks" title="Checks">
 <link rel="prev" href="Type-Checking.html#Type-Checking" title="Type Checking">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Range-Checking"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Type-Checking.html#Type-Checking">Type Checking</a>,
+<a name="Range-Checking"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Type-Checking.html#Type-Checking">Type Checking</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Checks.html#Checks">Checks</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">13.3.2 An Overview of Range Checking</h4>
@@ -50,7 +48,7 @@ error.  In many implementations of C, mathematical overflow causes the
 result to &ldquo;wrap around&rdquo; to lower values&mdash;for example, if <var>m</var> is
 the largest integer value, and <var>s</var> is the smallest, then
 
-<pre class="smallexample">     <var>m</var> + 1 &rArr; <var>s</var>
+<pre class="smallexample">     <var>m</var> + 1 =&gt; <var>s</var>
 </pre>
    <p>This, too, is specific to individual languages, and in some cases
 specific to individual compilers or machines.  See <a href="Supported-Languages.html#Supported-Languages">Supported Languages</a>, for further details on specific languages.

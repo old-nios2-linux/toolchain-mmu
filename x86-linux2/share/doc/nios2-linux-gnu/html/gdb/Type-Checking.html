@@ -3,7 +3,7 @@
 <title>Type Checking - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Checks.html#Checks" title="Checks">
 <link rel="next" href="Range-Checking.html#Range-Checking" title="Range Checking">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Type-Checking"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Range-Checking.html#Range-Checking">Range Checking</a>,
+<a name="Type-Checking"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Range-Checking.html#Range-Checking">Range Checking</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Checks.html#Checks">Checks</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">13.3.1 An Overview of Type Checking</h4>
@@ -37,7 +35,7 @@ arguments to operators and functions have to be of the correct type,
 otherwise an error occurs.  These checks prevent type mismatch
 errors from ever causing any run-time problems.  For example,
 
-<pre class="smallexample">     1 + 2 &rArr; 3
+<pre class="smallexample">     1 + 2 =&gt; 3
 <br>but<br>
      error--&gt; 1 + 2.3
 </pre>

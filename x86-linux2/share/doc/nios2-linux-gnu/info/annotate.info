@@ -1,4 +1,4 @@
-This is annotate.info, produced by makeinfo version 4.13 from
+This is annotate.info, produced by makeinfo version 4.7 from
 /opt/nios2gcc4/obj/gdb-src-4.1-176-nios2-linux-gnu-i686-pc-linux-gnu/gdb/doc/annotate.texinfo.
 
 INFO-DIR-SECTION Software development
@@ -1089,20 +1089,20 @@ permit their use in free software.
 
 
 Tag Table:
-Node: Top825
-Node: Annotations Overview1924
-Node: Limitations3723
-Node: Migrating to GDB/MI6308
-Node: Server Prefix6691
-Node: Value Annotations7337
-Node: Frame Annotations10507
-Node: Displays14406
-Node: Prompting15437
-Node: Errors16940
-Node: Breakpoint Info17830
-Node: Invalidation19055
-Node: Annotations for Running19534
-Node: Source Annotations21047
-Node: GNU Free Documentation License22004
+Node: Top824
+Node: Annotations Overview1923
+Node: Limitations3722
+Node: Migrating to GDB/MI6307
+Node: Server Prefix6690
+Node: Value Annotations7336
+Node: Frame Annotations10506
+Node: Displays14405
+Node: Prompting15436
+Node: Errors16939
+Node: Breakpoint Info17829
+Node: Invalidation19054
+Node: Annotations for Running19533
+Node: Source Annotations21046
+Node: GNU Free Documentation License22003
 
 End Tag Table

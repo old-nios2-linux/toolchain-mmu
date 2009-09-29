@@ -3,7 +3,7 @@
 <title>Getting Started - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Hints.html#Hints" title="Hints">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -15,17 +15,15 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Getting-Started"></a>
 <p>
-Up:&nbsp;<a rel="up" accesskey="u" href="Hints.html#Hints">Hints</a>
-<hr>
+<a name="Getting-Started"></a>Up:&nbsp;<a rel="up" accesskey="u" href="Hints.html#Hints">Hints</a>
+<hr><br>
 </div>
 
 <h3 class="section">20.1 Getting Started</h3>
@@ -56,8 +54,8 @@ also documents all the available macros.
 <!-- Conditionals}) -->
 
    <p>Start with the header files.  Once you have some idea of how
-<span class="sc">gdb</span>'s internal symbol tables are stored (see <samp><span class="file">symtab.h</span></samp>,
-<samp><span class="file">gdbtypes.h</span></samp>), you will find it much easier to understand the
+<span class="sc">gdb</span>'s internal symbol tables are stored (see <span class="file">symtab.h</span>,
+<span class="file">gdbtypes.h</span>), you will find it much easier to understand the
 code which uses and creates those symbol tables.
 
    <p>You may wish to process the information you are getting somehow, to
@@ -91,17 +89,17 @@ rather than worrying about all its details.
 a command which invokes that feature.  Suppose you want to know how
 single-stepping works.  As a <span class="sc">gdb</span> user, you know that the
 <code>step</code> command invokes single-stepping.  The command is invoked
-via command tables (see <samp><span class="file">command.h</span></samp>); by convention the function
+via command tables (see <span class="file">command.h</span>); by convention the function
 which actually performs the command is formed by taking the name of
-the command and adding &lsquo;<samp><span class="samp">_command</span></samp>&rsquo;, or in the case of an
-<code>info</code> subcommand, &lsquo;<samp><span class="samp">_info</span></samp>&rsquo;.  For example, the <code>step</code>
+the command and adding <span class="samp">_command</span>, or in the case of an
+<code>info</code> subcommand, <span class="samp">_info</span>.  For example, the <code>step</code>
 command invokes the <code>step_command</code> function and the <code>info
 display</code> command invokes <code>display_info</code>.  When this convention is
 not followed, you might have to use <code>grep</code> or <kbd>M-x
 tags-search</kbd> in emacs, or run <span class="sc">gdb</span> on itself and set a
 breakpoint in <code>execute_command</code>.
 
-   <p><a name="index-g_t_0040code_007bbug_002dgdb_007d-mailing-list-506"></a>If all of the above fail, it may be appropriate to ask for information
+   <p><a name="index-_0040code_007bbug_002dgdb_007d-mailing-list-506"></a>If all of the above fail, it may be appropriate to ask for information
 on <code>bug-gdb</code>.  But <em>never</em> post a generic question like &ldquo;I was
 wondering if anyone could give me some tips about understanding
 <span class="sc">gdb</span>&rdquo;&mdash;if we had some magic secret we would put it in this manual. 

@@ -3,7 +3,7 @@
 <title>Attach - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Running.html#Running" title="Running">
 <link rel="prev" href="Input_002fOutput.html#Input_002fOutput" title="Input/Output">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Attach"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Kill-Process.html#Kill-Process">Kill Process</a>,
+<a name="Attach"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Kill-Process.html#Kill-Process">Kill Process</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Input_002fOutput.html#Input_002fOutput">Input/Output</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Running.html#Running">Running</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">4.7 Debugging an Already-running Process</h3>
@@ -40,7 +38,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Running.html#Running">Running</a>
 outside <span class="sc">gdb</span>.  (<code>info files</code> shows your active
 targets.)  The command takes as argument a process ID.  The usual way to
 find out the <var>process-id</var> of a Unix process is with the <code>ps</code> utility,
-or with the &lsquo;<samp><span class="samp">jobs -l</span></samp>&rsquo; shell command.
+or with the <span class="samp">jobs -l</span> shell command.
 
      <p><code>attach</code> does not repeat if you press &lt;RET&gt; a second time after
 executing the command. 

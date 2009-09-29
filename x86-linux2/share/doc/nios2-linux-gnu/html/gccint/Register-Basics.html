@@ -3,7 +3,7 @@
 <title>Register Basics - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Registers.html#Registers" title="Registers">
 <link rel="next" href="Allocation-Order.html#Allocation-Order" title="Allocation Order">
@@ -37,18 +37,16 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Register-Basics"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Allocation-Order.html#Allocation-Order">Allocation Order</a>,
+<a name="Register-Basics"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Allocation-Order.html#Allocation-Order">Allocation Order</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Registers.html#Registers">Registers</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.7.1 Basic Characteristics of Registers</h4>
@@ -81,8 +79,8 @@ register <var>n</var> is fixed, 0 otherwise.
       <p>The table initialized from this macro, and the table initialized by
 the following one, may be overridden at run time either automatically,
 by the actions of the macro <code>CONDITIONAL_REGISTER_USAGE</code>, or by
-the user with the command options <samp><span class="option">-ffixed-</span><var>reg</var></samp>,
-<samp><span class="option">-fcall-used-</span><var>reg</var></samp> and <samp><span class="option">-fcall-saved-</span><var>reg</var></samp>. 
+the user with the command options <span class="option">-ffixed-</span><var>reg</var>,
+<span class="option">-fcall-used-</span><var>reg</var> and <span class="option">-fcall-saved-</span><var>reg</var>. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -131,8 +129,8 @@ called, <code>fixed_regs</code>, <code>call_used_regs</code>,
 <code>reg_class_contents</code>, and <code>reg_names</code> have been initialized
 from <code>FIXED_REGISTERS</code>, <code>CALL_USED_REGISTERS</code>,
 <code>REG_CLASS_CONTENTS</code>, and <code>REGISTER_NAMES</code>, respectively. 
-<code>global_regs</code> has been cleared, and any <samp><span class="option">-ffixed-</span><var>reg</var></samp>,
-<samp><span class="option">-fcall-used-</span><var>reg</var></samp> and <samp><span class="option">-fcall-saved-</span><var>reg</var></samp>
+<code>global_regs</code> has been cleared, and any <span class="option">-ffixed-</span><var>reg</var>,
+<span class="option">-fcall-used-</span><var>reg</var> and <span class="option">-fcall-saved-</span><var>reg</var>
 command options have been applied.
 
       <p>You need not define this macro if it has no work to do.

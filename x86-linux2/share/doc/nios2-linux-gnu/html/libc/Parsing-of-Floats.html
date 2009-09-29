@@ -3,7 +3,7 @@
 <title>Parsing of Floats - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Parsing-of-Numbers.html#Parsing-of-Numbers" title="Parsing of Numbers">
 <link rel="prev" href="Parsing-of-Integers.html#Parsing-of-Integers" title="Parsing of Integers">
@@ -16,24 +16,22 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Parsing-of-Floats"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Parsing-of-Integers.html#Parsing-of-Integers">Parsing of Integers</a>,
+<a name="Parsing-of-Floats"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Parsing-of-Integers.html#Parsing-of-Integers">Parsing of Integers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Parsing-of-Numbers.html#Parsing-of-Numbers">Parsing of Numbers</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">20.11.2 Parsing of Floats</h4>
 
-<p><a name="index-stdlib_002eh-2568"></a>The &lsquo;<samp><span class="samp">str</span></samp>&rsquo; functions are declared in <samp><span class="file">stdlib.h</span></samp> and those
-beginning with &lsquo;<samp><span class="samp">wcs</span></samp>&rsquo; are declared in <samp><span class="file">wchar.h</span></samp>.  One might
+<p><a name="index-stdlib_002eh-2568"></a>The <span class="samp">str</span> functions are declared in <span class="file">stdlib.h</span> and those
+beginning with <span class="samp">wcs</span> are declared in <span class="file">wchar.h</span>.  One might
 wonder about the use of <code>restrict</code> in the prototypes of the
 functions in this section.  It is seemingly useless but the ISO&nbsp;C<!-- /@w -->
 standard uses it (for the functions defined there) so we have to do it
@@ -54,28 +52,28 @@ value of type <code>double</code>.
 are whitespace is determined by the <code>isspace</code> function
 (see <a href="Classification-of-Characters.html#Classification-of-Characters">Classification of Characters</a>).  These are discarded.
 
-          <li>An optional plus or minus sign (&lsquo;<samp><span class="samp">+</span></samp>&rsquo; or &lsquo;<samp><span class="samp">-</span></samp>&rsquo;).
+          <li>An optional plus or minus sign (<span class="samp">+</span> or <span class="samp">-</span>).
 
           <li>A floating point number in decimal or hexadecimal format.  The
 decimal format is:
                <ul>
 <li>A nonempty sequence of digits optionally containing a decimal-point
-character&mdash;normally &lsquo;<samp><span class="samp">.</span></samp>&rsquo;, but it depends on the locale
+character&mdash;normally <span class="samp">.</span>, but it depends on the locale
 (see <a href="General-Numeric.html#General-Numeric">General Numeric</a>).
 
-               <li>An optional exponent part, consisting of a character &lsquo;<samp><span class="samp">e</span></samp>&rsquo; or
-&lsquo;<samp><span class="samp">E</span></samp>&rsquo;, an optional sign, and a sequence of digits.
+               <li>An optional exponent part, consisting of a character <span class="samp">e</span> or
+<span class="samp">E</span>, an optional sign, and a sequence of digits.
 
           </ul>
 
           <p>The hexadecimal format is as follows:
                <ul>
 <li>A 0x or 0X followed by a nonempty sequence of hexadecimal digits
-optionally containing a decimal-point character&mdash;normally &lsquo;<samp><span class="samp">.</span></samp>&rsquo;, but
+optionally containing a decimal-point character&mdash;normally <span class="samp">.</span>, but
 it depends on the locale (see <a href="General-Numeric.html#General-Numeric">General Numeric</a>).
 
-               <li>An optional binary-exponent part, consisting of a character &lsquo;<samp><span class="samp">p</span></samp>&rsquo; or
-&lsquo;<samp><span class="samp">P</span></samp>&rsquo;, an optional sign, and a sequence of digits.
+               <li>An optional binary-exponent part, consisting of a character <span class="samp">p</span> or
+<span class="samp">P</span>, an optional sign, and a sequence of digits.
 
           </ul>
 
@@ -118,8 +116,8 @@ examining <var>errno</var> and <var>tailptr</var>.
 <div class="defun">
 &mdash; Function: float <b>strtof</b> (<var>const char *string, char **tailptr</var>)<var><a name="index-strtof-2570"></a></var><br>
 <blockquote><!-- stdlib.h -->
-     <!-- ISO -->
-   &mdash; Function: long double <b>strtold</b> (<var>const char *string, char **tailptr</var>)<var><a name="index-strtold-2571"></a></var><br>
+<!-- ISO -->
+&mdash; Function: long double <b>strtold</b> (<var>const char *string, char **tailptr</var>)<var><a name="index-strtold-2571"></a></var><br>
 <blockquote><p>These functions are analogous to <code>strtod</code>, but return <code>float</code>
 and <code>long double</code> values respectively.  They report errors in the
 same way as <code>strtod</code>.  <code>strtof</code> can be substantially faster
@@ -135,11 +133,11 @@ double</code> is a separate type).
 <div class="defun">
 &mdash; Function: double <b>wcstod</b> (<var>const wchar_t *restrict string, wchar_t **restrict tailptr</var>)<var><a name="index-wcstod-2572"></a></var><br>
 <blockquote><!-- stdlib.h -->
-     <!-- ISO -->
-   &mdash; Function: float <b>wcstof</b> (<var>const wchar_t *string, wchar_t **tailptr</var>)<var><a name="index-wcstof-2573"></a></var><br>
+<!-- ISO -->
+&mdash; Function: float <b>wcstof</b> (<var>const wchar_t *string, wchar_t **tailptr</var>)<var><a name="index-wcstof-2573"></a></var><br>
 <blockquote><!-- stdlib.h -->
-     <!-- ISO -->
-   &mdash; Function: long double <b>wcstold</b> (<var>const wchar_t *string, wchar_t **tailptr</var>)<var><a name="index-wcstold-2574"></a></var><br>
+<!-- ISO -->
+&mdash; Function: long double <b>wcstold</b> (<var>const wchar_t *string, wchar_t **tailptr</var>)<var><a name="index-wcstold-2574"></a></var><br>
 <blockquote><p>The <code>wcstod</code>, <code>wcstof</code>, and <code>wcstol</code> functions are
 equivalent in nearly all aspect to the <code>strtod</code>, <code>strtof</code>, and
 <code>strtold</code> functions but it handles wide character string.
@@ -158,7 +156,7 @@ is provided mostly for compatibility with existing code; using
 <code>strtod</code> is more robust. 
 </p></blockquote></div>
 
-   <p>The GNU C library also provides &lsquo;<samp><span class="samp">_l</span></samp>&rsquo; versions of these functions,
+   <p>The GNU C library also provides <span class="samp">_l</span> versions of these functions,
 which take an additional argument, the locale to use in conversion. 
 See <a href="Parsing-of-Integers.html#Parsing-of-Integers">Parsing of Integers</a>.
 

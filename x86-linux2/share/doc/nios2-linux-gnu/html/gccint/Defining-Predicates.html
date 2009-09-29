@@ -3,7 +3,7 @@
 <title>Defining Predicates - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Predicates.html#Predicates" title="Predicates">
 <link rel="prev" href="Machine_002dIndependent-Predicates.html#Machine_002dIndependent-Predicates" title="Machine-Independent Predicates">
@@ -37,18 +37,16 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Defining-Predicates"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Machine_002dIndependent-Predicates.html#Machine_002dIndependent-Predicates">Machine-Independent Predicates</a>,
+<a name="Defining-Predicates"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Machine_002dIndependent-Predicates.html#Machine_002dIndependent-Predicates">Machine-Independent Predicates</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Predicates.html#Predicates">Predicates</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">13.7.2 Defining Machine-Specific Predicates</h4>
@@ -72,7 +70,7 @@ the following RTL codes:
 <dt><code>MATCH_OPERAND</code><dd>When written inside a predicate expression, a <code>MATCH_OPERAND</code>
 expression evaluates to true if the predicate it names would allow
 <var>op</var>.  The operand number and constraint are ignored.  Due to
-limitations in <samp><span class="command">genrecog</span></samp>, you can only refer to generic
+limitations in <span class="command">genrecog</span>, you can only refer to generic
 predicates and predicates that have already been defined.
 
           <br><dt><code>MATCH_CODE</code><dd>This expression has one operand, a string constant containing a
@@ -85,25 +83,25 @@ available with those names in the C expression.  The <code>MATCH_TEST</code>
 evaluates to true if the C expression evaluates to a nonzero value. 
 <code>MATCH_TEST</code> expressions must not have side effects.
 
-          <br><dt><code>AND</code><dt><code>IOR</code><dt><code>NOT</code><dt><code>IF_THEN_ELSE</code><dd>The basic &lsquo;<samp><span class="samp">MATCH_</span></samp>&rsquo; expressions can be combined using these
+          <br><dt><code>AND</code><dt><code>IOR</code><dt><code>NOT</code><dt><code>IF_THEN_ELSE</code><dd>The basic <span class="samp">MATCH_</span> expressions can be combined using these
 logical operators, which have the semantics of the C operators
-&lsquo;<samp><span class="samp">&amp;&amp;</span></samp>&rsquo;, &lsquo;<samp><span class="samp">||</span></samp>&rsquo;, &lsquo;<samp><span class="samp">!</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">?&nbsp;:<!-- /@w --></span></samp>&rsquo; respectively. 
+<span class="samp">&amp;&amp;</span>, <span class="samp">||</span>, <span class="samp">!</span>, and <span class="samp">?&nbsp;:<!-- /@w --></span> respectively. 
 </dl>
 
      <li>An optional block of C code, which should execute
-&lsquo;<samp><span class="samp">return&nbsp;true<!-- /@w --></span></samp>&rsquo; if the predicate is found to match and
-&lsquo;<samp><span class="samp">return&nbsp;false<!-- /@w --></span></samp>&rsquo; if it does not.  It must not have any side
+<span class="samp">return&nbsp;true<!-- /@w --></span> if the predicate is found to match and
+<span class="samp">return&nbsp;false<!-- /@w --></span> if it does not.  It must not have any side
 effects.  The predicate arguments, <var>op</var> and <var>mode</var>, are
 available with those names.
 
      <p>If a code block is present in a predicate definition, then the RTL
 expression must evaluate to true <em>and</em> the code block must
-execute &lsquo;<samp><span class="samp">return&nbsp;true<!-- /@w --></span></samp>&rsquo; for the predicate to allow the operand. 
+execute <span class="samp">return&nbsp;true<!-- /@w --></span> for the predicate to allow the operand. 
 The RTL expression is evaluated first; do not re-check anything in the
 code block that was checked in the RTL expression. 
 </ul>
 
- <p>The program <samp><span class="command">genrecog</span></samp> scans <code>define_predicate</code> and
+ <p>The program <span class="command">genrecog</span> scans <code>define_predicate</code> and
 <code>define_special_predicate</code> expressions to determine which RTX
 codes are possibly allowed.  You should always make this explicit in
 the RTL predicate expression, using <code>MATCH_OPERAND</code> and
@@ -146,15 +144,15 @@ provide, use a <code>MATCH_OPERAND</code> subexpression to call
 
  <p>Predicates written with <code>define_special_predicate</code> do not get any
 automatic mode checks, and are treated as having special mode handling
-by <samp><span class="command">genrecog</span></samp>.
+by <span class="command">genrecog</span>.
 
- <p>The program <samp><span class="command">genpreds</span></samp> is responsible for generating code to
+ <p>The program <span class="command">genpreds</span> is responsible for generating code to
 test predicates.  It also writes a header file containing function
 declarations for all machine-specific predicates.  It is not necessary
-to declare these predicates in <samp><var>cpu</var><span class="file">-protos.h</span></samp>.
+to declare these predicates in <var>cpu</var><span class="file">-protos.h</span>.
 
 <!-- Most of this node appears by itself (in a different place) even -->
 <!-- when the INTERNALS flag is clear.  Passages that require the internals -->
 <!-- manual's context are conditionalized to appear only in the internals manual. -->
- </body></html>
+</body></html>
 

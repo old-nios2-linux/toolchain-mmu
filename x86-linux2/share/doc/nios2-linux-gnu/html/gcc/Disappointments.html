@@ -3,7 +3,7 @@
 <title>Disappointments - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Trouble.html#Trouble" title="Trouble">
 <link rel="prev" href="Standard-Libraries.html#Standard-Libraries" title="Standard Libraries">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Disappointments"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="C_002b_002b-Misunderstandings.html#C_002b_002b-Misunderstandings">C++ Misunderstandings</a>,
+<a name="Disappointments"></a>Next:&nbsp;<a rel="next" accesskey="n" href="C_002b_002b-Misunderstandings.html#C_002b_002b-Misunderstandings">C++ Misunderstandings</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Standard-Libraries.html#Standard-Libraries">Standard Libraries</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Trouble.html#Trouble">Trouble</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">10.7 Disappointments and Misunderstandings</h3>
@@ -80,7 +78,7 @@ like this:
           
           int foo (struct mumble *x)
           { ... }
-</pre>
+     </pre>
      <p>This code really is erroneous, because the scope of <code>struct
 mumble</code> in the prototype is limited to the argument list containing it. 
 It does not refer to the <code>struct mumble</code> defined with file scope
@@ -113,8 +111,8 @@ files for the problem cases that we know about.
 
      <p>If new system header files are installed, nothing automatically arranges
 to update the corrected header files.  They can be updated using the
-<samp><span class="command">mkheaders</span></samp> script installed in
-<samp><var>libexecdir</var><span class="file">/gcc/</span><var>target</var><span class="file">/</span><var>version</var><span class="file">/install-tools/</span></samp>.
+<span class="command">mkheaders</span> script installed in
+<var>libexecdir</var><span class="file">/gcc/</span><var>target</var><span class="file">/</span><var>version</var><span class="file">/install-tools/</span>.
 
      <li><a name="index-floating-point-precision-2580"></a>On 68000 and x86 systems, for instance, you can get paradoxical results
 if you test the precise values of floating point numbers.  For example,
@@ -124,7 +122,7 @@ hold a few more bits of precision than fit in a <code>double</code> in memory.
 Compiled code moves values between memory and floating point registers
 at its convenience, and moving them into memory truncates them.
 
-     <p><a name="index-ffloat_002dstore-2581"></a>You can partially avoid this problem by using the <samp><span class="option">-ffloat-store</span></samp>
+     <p><a name="index-ffloat_002dstore-2581"></a>You can partially avoid this problem by using the <span class="option">-ffloat-store</span>
 option (see <a href="Optimize-Options.html#Optimize-Options">Optimize Options</a>).
 
      <li>On AIX and other platforms without weak symbol support, templates

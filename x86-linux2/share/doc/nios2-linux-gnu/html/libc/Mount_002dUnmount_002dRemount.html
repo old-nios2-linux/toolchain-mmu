@@ -3,7 +3,7 @@
 <title>Mount-Unmount-Remount - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Filesystem-Handling.html#Filesystem-Handling" title="Filesystem Handling">
 <link rel="prev" href="Mount-Information.html#Mount-Information" title="Mount Information">
@@ -16,19 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Mount-Unmount-Remount"></a>
-<a name="Mount_002dUnmount_002dRemount"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Mount-Information.html#Mount-Information">Mount Information</a>,
+<a name="Mount_002dUnmount_002dRemount"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Mount-Information.html#Mount-Information">Mount Information</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Filesystem-Handling.html#Filesystem-Handling">Filesystem Handling</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">30.3.2 Mount, Unmount, Remount</h4>
@@ -38,17 +35,17 @@ remounting filesystems.
 
    <p>Only the superuser can mount, unmount, or remount a filesystem.
 
-   <p>These functions do not access the <samp><span class="file">fstab</span></samp> and <samp><span class="file">mtab</span></samp> files.  You
+   <p>These functions do not access the <span class="file">fstab</span> and <span class="file">mtab</span> files.  You
 should maintain and use these separately.  See <a href="Mount-Information.html#Mount-Information">Mount Information</a>.
 
-   <p>The symbols in this section are declared in <samp><span class="file">sys/mount.h</span></samp>.
+   <p>The symbols in this section are declared in <span class="file">sys/mount.h</span>.
 
 <!-- sys/mount.h -->
 <!-- SVID, BSD -->
 <div class="defun">
 &mdash; Function: int <b>mount</b> (<var>const char *special_file, const char *dir, const char *fstype, unsigned long int options, const void *data</var>)<var><a name="index-mount-3490"></a></var><br>
 <blockquote>
-        <p><code>mount</code> mounts or remounts a filesystem.  The two operations are
+<p><code>mount</code> mounts or remounts a filesystem.  The two operations are
 quite different and are merged rather unnaturally into this one function. 
 The <code>MS_REMOUNT</code> option, explained below, determines whether
 <code>mount</code> mounts or remounts.
@@ -74,7 +71,7 @@ unmounting and mounting again.
 and can be thought of as the name of a filesystem driver.  The
 acceptable values are system dependent.  On a system with a Linux kernel
 and the <code>proc</code> filesystem, the list of possible values is in the
-file <samp><span class="file">filesystems</span></samp> in the <code>proc</code> filesystem (e.g. type
+file <span class="file">filesystems</span> in the <code>proc</code> filesystem (e.g. type
 <kbd>cat /proc/filesystems</kbd> to see the list).  With a Linux kernel, the
 types of filesystems that <code>mount</code> can mount, and their type names,
 depends on what filesystem drivers are configured into the kernel or
@@ -84,8 +81,8 @@ loaded as loadable kernel modules.  An example of a common value for
         <p>For a remount, <code>mount</code> ignores <var>fstype</var>.
 
      <!-- This is traditionally called "rwflag" for historical reasons. -->
-     <!-- No point in confusing people today, though. -->
-        <p><var>options</var> specifies a variety of options that apply until the
+<!-- No point in confusing people today, though. -->
+<p><var>options</var> specifies a variety of options that apply until the
 filesystem is unmounted or remounted.  The precise meaning of an option
 depends on the filesystem and with some filesystems, an option may have
 no effect at all.  Furthermore, for some filesystems, some of these
@@ -145,8 +142,8 @@ the files are accessed while the filesystem is mounted.
 when the directories are accessed while the filesystem in mounted.
 
           <!-- there is also S_QUOTA Linux fs.h (mount.h still uses its former name -->
-          <!-- S_WRITE), but I can't see what it does.  Turns on quotas, I guess. -->
-        </dl>
+<!-- S_WRITE), but I can't see what it does.  Turns on quotas, I guess. -->
+</dl>
 
         <p>Any bits not covered by the above masks should be set off; otherwise,
 results are undefined.
@@ -161,9 +158,9 @@ entirely by the filesystem driver in the kernel.
           mount("/dev/hdb", "/cdrom", MS_MGC_VAL | MS_RDONLY | MS_NOSUID, "");
           
           mount("/dev/hda2", "/mnt", MS_MGC_VAL | MS_REMOUNT, "");
-</pre>
+     </pre>
         <p>Appropriate arguments for <code>mount</code> are conventionally recorded in
-the <samp><span class="file">fstab</span></samp> table.  See <a href="Mount-Information.html#Mount-Information">Mount Information</a>.
+the <span class="file">fstab</span> table.  See <a href="Mount-Information.html#Mount-Information">Mount Information</a>.
 
         <p>The return value is zero if the mount or remount is successful.  Otherwise,
 it is <code>-1</code> and <code>errno</code> is set appropriately.  The values of
@@ -218,7 +215,7 @@ not one that uses a device.
 <div class="defun">
 &mdash; Function: int <b>umount2</b> (<var>const char *file, int flags</var>)<var><a name="index-umount2-3491"></a></var><br>
 <blockquote>
-        <p><code>umount2</code> unmounts a filesystem.
+<p><code>umount2</code> unmounts a filesystem.
 
         <p>You can identify the filesystem to unmount either by the device special
 file that contains the filesystem or by the mount point.  The effect is
@@ -245,7 +242,7 @@ is undefined.
           umount2("/mnt", MNT_FORCE);
           
           umount2("/dev/hdd1", 0);
-</pre>
+     </pre>
         <p>After the filesystem is unmounted, the directory that was the mount point
 is visible, as are any files in it.
 
@@ -274,7 +271,7 @@ point nor a device special file of a currently mounted filesystem.
 <div class="defun">
 &mdash; Function: int <b>umount</b> (<var>const char *file</var>)<var><a name="index-umount-3492"></a></var><br>
 <blockquote>
-        <p><code>umount</code> does the same thing as <code>umount2</code> with <var>flags</var> set
+<p><code>umount</code> does the same thing as <code>umount2</code> with <var>flags</var> set
 to zeroes.  It is more widely available than <code>umount2</code> but since it
 lacks the possibility to forcefully unmount a filesystem is deprecated
 when <code>umount2</code> is also available. 

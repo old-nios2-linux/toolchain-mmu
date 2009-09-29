@@ -3,7 +3,7 @@
 <title>Dependent Patterns - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Machine-Desc.html#Machine-Desc" title="Machine Desc">
 <link rel="prev" href="Pattern-Ordering.html#Pattern-Ordering" title="Pattern Ordering">
@@ -38,26 +38,24 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Dependent-Patterns"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Jump-Patterns.html#Jump-Patterns">Jump Patterns</a>,
+<a name="Dependent-Patterns"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Jump-Patterns.html#Jump-Patterns">Jump Patterns</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Pattern-Ordering.html#Pattern-Ordering">Pattern Ordering</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Machine-Desc.html#Machine-Desc">Machine Desc</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">13.11 Interdependence of Patterns</h3>
 
 <p><a name="index-Dependent-Patterns-1514"></a><a name="index-Interdependence-of-Patterns-1515"></a>
 Every machine description must have a named pattern for each of the
-conditional branch names &lsquo;<samp><span class="samp">b</span><var>cond</var></samp>&rsquo;.  The recognition template
+conditional branch names <span class="samp">b</span><var>cond</var>.  The recognition template
 must always have the form
 
 <pre class="smallexample">     (set (pc)

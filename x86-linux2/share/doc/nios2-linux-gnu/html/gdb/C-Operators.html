@@ -3,7 +3,7 @@
 <title>C Operators - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C.html#C" title="C">
 <link rel="next" href="C-Constants.html#C-Constants" title="C Constants">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="C-Operators"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="C-Constants.html#C-Constants">C Constants</a>,
+<a name="C-Operators"></a>Next:&nbsp;<a rel="next" accesskey="n" href="C-Constants.html#C-Constants">C Constants</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C.html#C">C</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">13.4.1.1 C and C<tt>++</tt> Operators</h5>
@@ -111,10 +109,10 @@ operation takes place.
 
      <br><dt><code>&amp;</code><dd>Address operator.  Defined on variables.  Same precedence as <code>++</code>.
 
-     <p>For debugging C<tt>++</tt>, <span class="sc">gdb</span> implements a use of &lsquo;<samp><span class="samp">&amp;</span></samp>&rsquo; beyond what is
-allowed in the C<tt>++</tt> language itself: you can use &lsquo;<samp><span class="samp">&amp;(&amp;</span><var>ref</var><span class="samp">)</span></samp>&rsquo;
-(or, if you prefer, simply &lsquo;<samp><span class="samp">&amp;&amp;</span><var>ref</var></samp>&rsquo;) to examine the address
-where a C<tt>++</tt> reference variable (declared with &lsquo;<samp><span class="samp">&amp;</span><var>ref</var></samp>&rsquo;) is
+     <p>For debugging C<tt>++</tt>, <span class="sc">gdb</span> implements a use of <span class="samp">&amp;</span> beyond what is
+allowed in the C<tt>++</tt> language itself: you can use <span class="samp">&amp;(&amp;</span><var>ref</var><span class="samp">)</span>
+(or, if you prefer, simply <span class="samp">&amp;&amp;</span><var>ref</var>) to examine the address
+where a C<tt>++</tt> reference variable (declared with <span class="samp">&amp;</span><var>ref</var>) is
 stored.
 
      <br><dt><code>-</code><dd>Negative.  Defined on integral and floating-point types.  Same

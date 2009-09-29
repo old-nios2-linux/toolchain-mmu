@@ -3,7 +3,7 @@
 <title>Obstacks Data Alignment - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Obstacks.html#Obstacks" title="Obstacks">
 <link rel="prev" href="Status-of-an-Obstack.html#Status-of-an-Obstack" title="Status of an Obstack">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Obstacks-Data-Alignment"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Obstack-Chunks.html#Obstack-Chunks">Obstack Chunks</a>,
+<a name="Obstacks-Data-Alignment"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Obstack-Chunks.html#Obstack-Chunks">Obstack Chunks</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Status-of-an-Obstack.html#Status-of-an-Obstack">Status of an Obstack</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Obstacks.html#Obstacks">Obstacks</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">3.2.4.9 Alignment of Data in Obstacks</h5>
@@ -61,7 +59,7 @@ on any multiple of 1 (that is, no alignment is required).
 so you can alter the mask by assignment.  For example, this statement:
 
      <pre class="smallexample">          obstack_alignment_mask (obstack_ptr) = 0;
-</pre>
+     </pre>
         <p class="noindent">has the effect of turning off alignment processing in the specified obstack. 
 </p></blockquote></div>
 

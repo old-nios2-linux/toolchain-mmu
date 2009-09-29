@@ -3,7 +3,7 @@
 <title>Overview of Syslog - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Syslog.html#Syslog" title="Syslog">
 <link rel="next" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages" title="Submitting Syslog Messages">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Overview-of-Syslog"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages">Submitting Syslog Messages</a>,
+<a name="Overview-of-Syslog"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages">Submitting Syslog Messages</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Syslog.html#Syslog">Syslog</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">18.1 Overview of Syslog</h3>
@@ -49,8 +47,8 @@ monthly reports.
    <p>To deal with these messages, most Unix systems have a facility called
 "Syslog."  It is generally based on a daemon called &ldquo;Syslogd&rdquo;
 Syslogd listens for messages on a Unix domain socket named
-<samp><span class="file">/dev/log</span></samp>.  Based on classification information in the messages
-and its configuration file (usually <samp><span class="file">/etc/syslog.conf</span></samp>), Syslogd
+<span class="file">/dev/log</span>.  Based on classification information in the messages
+and its configuration file (usually <span class="file">/etc/syslog.conf</span>), Syslogd
 routes them in various ways.  Some of the popular routings are:
 
      <ul>
@@ -65,7 +63,7 @@ routes them in various ways.  Some of the popular routings are:
 <code>syslog</code> UDP port as well as the local socket for messages.
 
    <p>Syslog can handle messages from the kernel itself.  But the kernel
-doesn't write to <samp><span class="file">/dev/log</span></samp>; rather, another daemon (sometimes
+doesn't write to <span class="file">/dev/log</span>; rather, another daemon (sometimes
 called &ldquo;Klogd&rdquo;) extracts messages from the kernel and passes them on to
 Syslog as any other process would (and it properly identifies them as
 messages from the kernel).
@@ -108,7 +106,7 @@ the kernel is zero, and that makes priority and facility/priority the
 same value).
 
    <p>The GNU C library provides functions to submit messages to Syslog.  They
-do it by writing to the <samp><span class="file">/dev/log</span></samp> socket.  See <a href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages">Submitting Syslog Messages</a>.
+do it by writing to the <span class="file">/dev/log</span> socket.  See <a href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages">Submitting Syslog Messages</a>.
 
    <p>The GNU C library functions only work to submit messages to the Syslog
 facility on the same system.  To submit a message to the Syslog facility

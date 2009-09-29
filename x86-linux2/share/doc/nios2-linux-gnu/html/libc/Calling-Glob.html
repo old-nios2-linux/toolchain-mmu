@@ -3,7 +3,7 @@
 <title>Calling Glob - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Globbing.html#Globbing" title="Globbing">
 <link rel="next" href="Flags-for-Globbing.html#Flags-for-Globbing" title="Flags for Globbing">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Calling-Glob"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Flags-for-Globbing.html#Flags-for-Globbing">Flags for Globbing</a>,
+<a name="Calling-Glob"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Flags-for-Globbing.html#Flags-for-Globbing">Flags for Globbing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Globbing.html#Globbing">Globbing</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">10.2.1 Calling <code>glob</code></h4>
@@ -102,7 +100,7 @@ is set in the flag parameter.  The type of this field is <code>int&nbsp;(*)&nbsp
 </dl>
         </p></blockquote></div>
 
-   <p>For use in the <code>glob64</code> function <samp><span class="file">glob.h</span></samp> contains another
+   <p>For use in the <code>glob64</code> function <span class="file">glob.h</span> contains another
 definition for a very similar type.  <code>glob64_t</code> differs from
 <code>glob_t</code> only in the types of the members <code>gl_readdir</code>,
 <code>gl_stat</code>, and <code>gl_lstat</code>.
@@ -211,15 +209,15 @@ value.
 for an explanation of the <code>GLOB_ERR</code> flag and <var>errfunc</var>.
 
           <!-- glob.h -->
-          <!-- POSIX.2 -->
-          <br><dt><code>GLOB_NOMATCH</code><a name="index-GLOB_005fNOMATCH-856"></a><dd>The pattern didn't match any existing files.  If you use the
+<!-- POSIX.2 -->
+<br><dt><code>GLOB_NOMATCH</code><a name="index-GLOB_005fNOMATCH-856"></a><dd>The pattern didn't match any existing files.  If you use the
 <code>GLOB_NOCHECK</code> flag, then you never get this error code, because
 that flag tells <code>glob</code> to <em>pretend</em> that the pattern matched
 at least one file.
 
           <!-- glob.h -->
-          <!-- POSIX.2 -->
-          <br><dt><code>GLOB_NOSPACE</code><a name="index-GLOB_005fNOSPACE-857"></a><dd>It was impossible to allocate memory to hold the result. 
+<!-- POSIX.2 -->
+<br><dt><code>GLOB_NOSPACE</code><a name="index-GLOB_005fNOSPACE-857"></a><dd>It was impossible to allocate memory to hold the result. 
 </dl>
 
         <p>In the event of an error, <code>glob</code> stores information in

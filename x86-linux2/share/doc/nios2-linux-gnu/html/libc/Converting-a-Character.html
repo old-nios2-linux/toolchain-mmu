@@ -3,7 +3,7 @@
 <title>Converting a Character - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Restartable-multibyte-conversion.html#Restartable-multibyte-conversion" title="Restartable multibyte conversion">
 <link rel="prev" href="Keeping-the-state.html#Keeping-the-state" title="Keeping the state">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Converting-a-Character"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Converting-Strings.html#Converting-Strings">Converting Strings</a>,
+<a name="Converting-a-Character"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Converting-Strings.html#Converting-Strings">Converting Strings</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Keeping-the-state.html#Keeping-the-state">Keeping the state</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Restartable-multibyte-conversion.html#Restartable-multibyte-conversion">Restartable multibyte conversion</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">6.3.3 Converting Single Characters</h4>
@@ -61,7 +59,7 @@ which the state information is taken, and the function also does not use
 any static state.
 
         <p><a name="index-wchar_002eh-644"></a>The <code>btowc</code> function was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w -->
-and is declared in <samp><span class="file">wchar.h</span></samp>. 
+and is declared in <span class="file">wchar.h</span>. 
 </p></blockquote></div>
 
    <p>Despite the limitation that the single byte value always is interpreted
@@ -107,7 +105,7 @@ value of this function is this character.  Otherwise the return value is
 <code>EOF</code>.
 
         <p><a name="index-wchar_002eh-646"></a><code>wctob</code> was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w --> and
-is declared in <samp><span class="file">wchar.h</span></samp>. 
+is declared in <span class="file">wchar.h</span>. 
 </p></blockquote></div>
 
    <p>There are more general functions to convert single character from
@@ -153,7 +151,7 @@ a valid multibyte character, no value is stored, the global variable
 <code>(size_t) -1</code>.  The conversion state is afterwards undefined.
 
         <p><a name="index-wchar_002eh-649"></a><code>mbrtowc</code> was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w --> and
-is declared in <samp><span class="file">wchar.h</span></samp>. 
+is declared in <span class="file">wchar.h</span>. 
 </p></blockquote></div>
 
    <p>Use of <code>mbrtowc</code> is straightforward.  A function that copies a
@@ -229,7 +227,7 @@ object pointed to by <var>ps</var>.  If <var>ps</var> is a null pointer, a state
 object local to <code>mbrlen</code> is used.
 
         <p><a name="index-wchar_002eh-651"></a><code>mbrlen</code> was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w --> and
-is declared in <samp><span class="file">wchar.h</span></samp>. 
+is declared in <span class="file">wchar.h</span>. 
 </p></blockquote></div>
 
    <p>The attentive reader now will note that <code>mbrlen</code> can be implemented
@@ -297,7 +295,7 @@ object) to the initial state.  This can also be achieved by a call like
 this:
 
      <pre class="smallexample">          wcrtombs (temp_buf, L'\0', ps)
-</pre>
+     </pre>
         <p class="noindent">since, if <var>s</var> is a null pointer, <code>wcrtomb</code> performs as if it
 writes into an internal buffer, which is guaranteed to be large enough.
 
@@ -326,7 +324,7 @@ character.  So the caller has to make sure that there is enough space
 available, otherwise buffer overruns can occur.
 
         <p><a name="index-wchar_002eh-653"></a><code>wcrtomb</code> was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w --> and is
-declared in <samp><span class="file">wchar.h</span></samp>. 
+declared in <span class="file">wchar.h</span>. 
 </p></blockquote></div>
 
    <p>Using <code>wcrtomb</code> is as easy as using <code>mbrtowc</code>.  The following

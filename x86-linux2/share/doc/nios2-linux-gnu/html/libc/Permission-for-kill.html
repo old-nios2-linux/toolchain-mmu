@@ -3,7 +3,7 @@
 <title>Permission for kill - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Generating-Signals.html#Generating-Signals" title="Generating Signals">
 <link rel="prev" href="Signaling-Another-Process.html#Signaling-Another-Process" title="Signaling Another Process">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Permission-for-kill"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Kill-Example.html#Kill-Example">Kill Example</a>,
+<a name="Permission-for-kill"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Kill-Example.html#Kill-Example">Kill Example</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Signaling-Another-Process.html#Signaling-Another-Process">Signaling Another Process</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Generating-Signals.html#Generating-Signals">Generating Signals</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">24.6.3 Permission for using <code>kill</code></h4>
@@ -50,7 +48,7 @@ discussed in detail in <a href="Process-Persona.html#Process-Persona">Process Pe
 
    <p>Generally, for a process to be able to send a signal to another process,
 either the sending process must belong to a privileged user (like
-&lsquo;<samp><span class="samp">root</span></samp>&rsquo;), or the real or effective user ID of the sending process
+<span class="samp">root</span>), or the real or effective user ID of the sending process
 must match the real or effective user ID of the receiving process.  If
 the receiving process has changed its effective user ID from the
 set-user-ID mode bit on its process image file, then the owner of the

@@ -3,7 +3,7 @@
 <title>Search Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="String-and-Array-Utilities.html#String-and-Array-Utilities" title="String and Array Utilities">
 <link rel="prev" href="Collation-Functions.html#Collation-Functions" title="Collation Functions">
@@ -17,26 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Search-Functions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Finding-Tokens-in-a-String.html#Finding-Tokens-in-a-String">Finding Tokens in a String</a>,
+<a name="Search-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Finding-Tokens-in-a-String.html#Finding-Tokens-in-a-String">Finding Tokens in a String</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Collation-Functions.html#Collation-Functions">Collation Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-and-Array-Utilities">String and Array Utilities</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.7 Search Functions</h3>
 
 <p>This section describes library functions which perform various kinds
 of searching operations on strings and arrays.  These functions are
-declared in the header file <samp><span class="file">string.h</span></samp>. 
+declared in the header file <span class="file">string.h</span>. 
 <a name="index-string_002eh-541"></a><a name="index-search-functions-_0028for-strings_0029-542"></a><a name="index-string-search-functions-543"></a>
 <!-- string.h -->
 <!-- ISO -->
@@ -81,7 +79,7 @@ pointer to the located byte.
 string.  Since all strings are terminated by a null byte a call like
 
      <pre class="smallexample">             rawmemchr (str, '\0')
-</pre>
+     </pre>
         <p class="noindent">will never go beyond the end of the string.
 
         <p>This function is a GNU extension. 
@@ -109,10 +107,10 @@ character, or a null pointer if no match was found.
 
         <p>For example,
      <pre class="smallexample">          strchr ("hello, world", 'l')
-              &rArr; "llo, world"
+              =&gt; "llo, world"
           strchr ("hello, world", '?')
-              &rArr; NULL
-</pre>
+              =&gt; NULL
+     </pre>
         <p>The terminating null character is considered to be part of the string,
 so you can use this function get a pointer to the end of a string by
 specifying a null character as the value of the <var>c</var> argument.  It
@@ -188,8 +186,8 @@ from the front).
 
         <p>For example,
      <pre class="smallexample">          strrchr ("hello, world", 'l')
-              &rArr; "ld"
-</pre>
+              =&gt; "ld"
+     </pre>
         </blockquote></div>
 
 <!-- wchar.h -->
@@ -213,10 +211,10 @@ character of the substring, or a null pointer if no match was found.  If
 
         <p>For example,
      <pre class="smallexample">          strstr ("hello, world", "l")
-              &rArr; "llo, world"
+              =&gt; "llo, world"
           strstr ("hello, world", "wo")
-              &rArr; "world"
-</pre>
+              =&gt; "world"
+     </pre>
         </blockquote></div>
 
 <!-- wchar.h -->
@@ -249,10 +247,10 @@ uppercase and lowercase characters are related.
 
         <p>For example,
      <pre class="smallexample">          strcasestr ("hello, world", "L")
-              &rArr; "llo, world"
+              =&gt; "llo, world"
           strcasestr ("hello, World", "wo")
-              &rArr; "World"
-</pre>
+              =&gt; "World"
+     </pre>
         </blockquote></div>
 
 <!-- string.h -->
@@ -278,8 +276,8 @@ of the characters in <var>skipset</var> is not important.
 
         <p>For example,
      <pre class="smallexample">          strspn ("hello, world", "abcdefghijklmnopqrstuvwxyz")
-              &rArr; 5
-</pre>
+              =&gt; 5
+     </pre>
         <p>Note that &ldquo;character&rdquo; is here used in the sense of byte.  In a string
 using a multibyte character encoding (abstract) character consisting of
 more than one byte are not treated as an entity.  Each byte is treated
@@ -309,8 +307,8 @@ that is a member of the set <var>stopset</var>.)
 
         <p>For example,
      <pre class="smallexample">          strcspn ("hello, world", " \t\n,.;!?")
-              &rArr; 5
-</pre>
+              =&gt; 5
+     </pre>
         <p>Note that &ldquo;character&rdquo; is here used in the sense of byte.  In a string
 using a multibyte character encoding (abstract) character consisting of
 more than one byte are not treated as an entity.  Each byte is treated
@@ -340,13 +338,13 @@ length of the initial substring.  It returns a null pointer if no such
 character from <var>stopset</var> is found.
 
      <!-- @group  Invalid outside the example. -->
-        <p>For example,
+<p>For example,
 
      <pre class="smallexample">          strpbrk ("hello, world", " \t\n,.;!?")
-              &rArr; ", world"
-</pre>
+              =&gt; ", world"
+     </pre>
         <!-- @end group -->
-        <p>Note that &ldquo;character&rdquo; is here used in the sense of byte.  In a string
+<p>Note that &ldquo;character&rdquo; is here used in the sense of byte.  In a string
 using a multibyte character encoding (abstract) character consisting of
 more than one byte are not treated as an entity.  Each byte is treated
 separately.  The function is not locale-dependent. 

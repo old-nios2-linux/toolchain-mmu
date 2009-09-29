@@ -3,7 +3,7 @@
 <title>Thread Stops - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stopping.html#Stopping" title="Stopping">
 <link rel="prev" href="Signals.html#Signals" title="Signals">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Thread-Stops"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Signals.html#Signals">Signals</a>,
+<a name="Thread-Stops"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Signals.html#Signals">Signals</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stopping.html#Stopping">Stopping</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.4 Stopping and Starting Multi-thread Programs</h3>
@@ -42,22 +40,22 @@ breakpoints on all threads, or on a particular thread.
 <dl><dt><code>break </code><var>linespec</var><code> thread </code><var>threadno</var><dt><code>break </code><var>linespec</var><code> thread </code><var>threadno</var><code> if ...</code><dd><var>linespec</var> specifies source lines; there are several ways of
 writing them, but the effect is always to specify some source line.
 
-     <p>Use the qualifier &lsquo;<samp><span class="samp">thread </span><var>threadno</var></samp>&rsquo; with a breakpoint command
+     <p>Use the qualifier <span class="samp">thread </span><var>threadno</var> with a breakpoint command
 to specify that you only want <span class="sc">gdb</span> to stop the program when a
 particular thread reaches this breakpoint.  <var>threadno</var> is one of the
 numeric thread identifiers assigned by <span class="sc">gdb</span>, shown in the first
-column of the &lsquo;<samp><span class="samp">info threads</span></samp>&rsquo; display.
+column of the <span class="samp">info threads</span> display.
 
-     <p>If you do not specify &lsquo;<samp><span class="samp">thread </span><var>threadno</var></samp>&rsquo; when you set a
+     <p>If you do not specify <span class="samp">thread </span><var>threadno</var> when you set a
 breakpoint, the breakpoint applies to <em>all</em> threads of your
 program.
 
      <p>You can use the <code>thread</code> qualifier on conditional breakpoints as
-well; in this case, place &lsquo;<samp><span class="samp">thread </span><var>threadno</var></samp>&rsquo; before the
+well; in this case, place <span class="samp">thread </span><var>threadno</var> before the
 breakpoint condition, like this:
 
      <pre class="smallexample">          (gdb) break frik.c:13 thread 28 if bartab &gt; lim
-</pre>
+     </pre>
      </dl>
 
    <p><a name="index-stopped-threads-289"></a><a name="index-threads_002c-stopped-290"></a>Whenever your program stops under <span class="sc">gdb</span> for any reason,
@@ -127,9 +125,9 @@ current thread may run when the inferior is resumed.  The <code>step</code>
 mode optimizes for single-stepping.  It stops other threads from
 &ldquo;seizing the prompt&rdquo; by preempting the current thread while you are
 stepping.  Other threads will only rarely (or never) get a chance to run
-when you step.  They are more likely to run when you &lsquo;<samp><span class="samp">next</span></samp>&rsquo; over a
+when you step.  They are more likely to run when you <span class="samp">next</span> over a
 function call, and they are completely free to run when you use commands
-like &lsquo;<samp><span class="samp">continue</span></samp>&rsquo;, &lsquo;<samp><span class="samp">until</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">finish</span></samp>&rsquo;.  However, unless another
+like <span class="samp">continue</span>, <span class="samp">until</span>, or <span class="samp">finish</span>.  However, unless another
 thread hits a breakpoint during its timeslice, they will never steal the
 <span class="sc">gdb</span> prompt away from the thread that you are debugging.
 

@@ -3,7 +3,7 @@
 <title>Expression trees - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Trees.html#Trees" title="Trees">
 <link rel="prev" href="Attributes.html#Attributes" title="Attributes">
@@ -37,18 +37,16 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Expression-trees"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Attributes.html#Attributes">Attributes</a>,
+<a name="Expression-trees"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Attributes.html#Attributes">Attributes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Trees.html#Trees">Trees</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">9.8 Expressions</h3>
@@ -99,7 +97,7 @@ constants is obtained with <code>TREE_TYPE</code>; they are not always of type
 given by
      <pre class="smallexample">          ((TREE_INT_CST_HIGH (e) &lt;&lt; HOST_BITS_PER_WIDE_INT)
           + TREE_INST_CST_LOW (e))
-</pre>
+     </pre>
      <p class="noindent">HOST_BITS_PER_WIDE_INT is at least thirty-two on all platforms.  Both
 <code>TREE_INT_CST_HIGH</code> and <code>TREE_INT_CST_LOW</code> return a
 <code>HOST_WIDE_INT</code>.  The value of an <code>INTEGER_CST</code> is interpreted
@@ -167,7 +165,7 @@ given:
      <pre class="smallexample">          struct B { int i; };
           struct D : public B {};
           int D::*dp = &amp;D::i;
-</pre>
+     </pre>
      <p class="noindent">The <code>PTRMEM_CST_CLASS</code> for <code>&amp;D::i</code> is <code>D</code>, even though
 the <code>DECL_CONTEXT</code> for the <code>PTRMEM_CST_MEMBER</code> is <code>B</code>,
 since <code>B::i</code> is a member of <code>B</code>, not <code>D</code>.
@@ -238,7 +236,7 @@ floating-point value.  The single operand will have integral type, while
 the complete expression will have a floating-point type.
 
      <p>FIXME: How is the operand supposed to be rounded?  Is this dependent on
-<samp><span class="option">-mieee</span></samp>?
+<span class="option">-mieee</span>?
 
      <br><dt><code>COMPLEX_EXPR</code><dd>These nodes are used to represent complex numbers constructed from two
 expressions of the same (integer or real) type.  The first operand is the
@@ -365,7 +363,7 @@ does not appear in the address.  Address of the <code>TARGET_MEM_REF</code>
 is determined in the following way.
 
      <pre class="smallexample">          &amp;TMR_SYMBOL + TMR_BASE + TMR_INDEX * TMR_STEP + TMR_OFFSET
-</pre>
+     </pre>
      <p>The sixth argument is the reference to the original memory access, which
 is preserved for the purposes of the RTL alias analysis.  The seventh
 argument is a tag representing the results of tree level alias analysis.
@@ -409,10 +407,10 @@ operand; the right-hand side is the second operand.  The left-hand side
 will be a <code>VAR_DECL</code>, <code>INDIRECT_REF</code>, <code>COMPONENT_REF</code>, or
 other lvalue.
 
-     <p>These nodes are used to represent not only assignment with &lsquo;<samp><span class="samp">=</span></samp>&rsquo; but
-also compound assignments (like &lsquo;<samp><span class="samp">+=</span></samp>&rsquo;), by reduction to &lsquo;<samp><span class="samp">=</span></samp>&rsquo;
-assignment.  In other words, the representation for &lsquo;<samp><span class="samp">i += 3</span></samp>&rsquo; looks
-just like that for &lsquo;<samp><span class="samp">i = i + 3</span></samp>&rsquo;.
+     <p>These nodes are used to represent not only assignment with <span class="samp">=</span> but
+also compound assignments (like <span class="samp">+=</span>), by reduction to <span class="samp">=</span>
+assignment.  In other words, the representation for <span class="samp">i += 3</span> looks
+just like that for <span class="samp">i = i + 3</span>.
 
      <br><dt><code>INIT_EXPR</code><dd>These nodes are just like <code>MODIFY_EXPR</code>, but are used only when a
 variable is initialized, rather than assigned to subsequently.  This
@@ -468,7 +466,7 @@ sites.
      <br><dt><code>STMT_EXPR</code><dd>These nodes are used to represent GCC's statement-expression extension. 
 The statement-expression extension allows code like this:
      <pre class="smallexample">          int f() { return ({ int j; j = 3; j + 7; }); }
-</pre>
+     </pre>
      <p>In other words, an sequence of statements may occur where a single
 expression would normally appear.  The <code>STMT_EXPR</code> node represents
 such an expression.  The <code>STMT_EXPR_STMT</code> gives the statement
@@ -477,10 +475,10 @@ of the last sub-statement in the body.  More precisely, the value is the
 value computed by the last statement nested inside <code>BIND_EXPR</code>,
 <code>TRY_FINALLY_EXPR</code>, or <code>TRY_CATCH_EXPR</code>.  For example, in:
      <pre class="smallexample">          ({ 3; })
-</pre>
+     </pre>
      <p>the value is <code>3</code> while in:
      <pre class="smallexample">          ({ if (x) { 3; } })
-</pre>
+     </pre>
      <p>there is no value.  If the <code>STMT_EXPR</code> does not yield a value,
 it's type will be <code>void</code>.
 
@@ -604,5 +602,5 @@ its sole argument yields the representation for <code>ap</code>.
 <!--  -->
 <!-- Tree SSA -->
 <!--  -->
- </body></html>
+</body></html>
 

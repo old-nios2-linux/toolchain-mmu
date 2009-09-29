@@ -3,7 +3,7 @@
 <title>Infinity and NaN - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Floating-Point-Errors.html#Floating-Point-Errors" title="Floating Point Errors">
 <link rel="prev" href="FP-Exceptions.html#FP-Exceptions" title="FP Exceptions">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Infinity-and-NaN"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Status-bit-operations.html#Status-bit-operations">Status bit operations</a>,
+<a name="Infinity-and-NaN"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Status-bit-operations.html#Status-bit-operations">Status bit operations</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="FP-Exceptions.html#FP-Exceptions">FP Exceptions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Floating-Point-Errors.html#Floating-Point-Errors">Floating Point Errors</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">20.5.2 Infinity and NaN</h4>
@@ -67,7 +65,7 @@ is with the <code>isnan</code> function (see <a href="Floating-Point-Classes.htm
 addition, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, and <code>&gt;=</code> will raise an
 exception when applied to NaNs.
 
-   <p><samp><span class="file">math.h</span></samp> defines macros that allow you to explicitly set a variable
+   <p><span class="file">math.h</span> defines macros that allow you to explicitly set a variable
 to infinity or NaN.
 
 <!-- math.h -->
@@ -94,10 +92,10 @@ macro is a GNU extension, available only on machines that support the
 &ldquo;not a number&rdquo; value&mdash;that is to say, on all machines that support
 IEEE floating point.
 
-        <p>You can use &lsquo;<samp><span class="samp">#ifdef NAN</span></samp>&rsquo; to test whether the machine supports
+        <p>You can use <span class="samp">#ifdef NAN</span> to test whether the machine supports
 NaN.  (Of course, you must arrange for GNU extensions to be visible,
 such as by defining <code>_GNU_SOURCE</code>, and then you must include
-<samp><span class="file">math.h</span></samp>.) 
+<span class="file">math.h</span>.) 
 </p></blockquote></div>
 
    <p>IEEE&nbsp;754<!-- /@w --> also allows for another unusual value: negative zero.  This

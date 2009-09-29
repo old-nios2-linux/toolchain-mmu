@@ -3,7 +3,7 @@
 <title>Error Messages - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Error-Reporting.html#Error-Reporting" title="Error Reporting">
 <link rel="prev" href="Error-Codes.html#Error-Codes" title="Error Codes">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Error-Messages"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Error-Codes.html#Error-Codes">Error Codes</a>,
+<a name="Error-Messages"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Error-Codes.html#Error-Codes">Error Codes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Error-Reporting.html#Error-Reporting">Error Reporting</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">2.3 Error Messages</h3>
@@ -54,7 +52,7 @@ you make subsequent calls to <code>strerror</code>, the string might be
 overwritten.  (But it's guaranteed that no library function ever calls
 <code>strerror</code> behind your back.)
 
-        <p>The function <code>strerror</code> is declared in <samp><span class="file">string.h</span></samp>. 
+        <p>The function <code>strerror</code> is declared in <span class="file">string.h</span>. 
 </p></blockquote></div>
 
 <!-- string.h -->
@@ -76,7 +74,7 @@ there is no way to guarantee the string returned by <code>strerror</code>
 really belongs to the last call of the current thread.
 
         <p>This function <code>strerror_r</code> is a GNU extension and it is declared in
-<samp><span class="file">string.h</span></samp>. 
+<span class="file">string.h</span>. 
 </p></blockquote></div>
 
 <!-- stdio.h -->
@@ -96,7 +94,7 @@ prefixes its output with this string.  It adds a colon and a space
 character to separate the <var>message</var> from the error string corresponding
 to <code>errno</code>.
 
-        <p>The function <code>perror</code> is declared in <samp><span class="file">stdio.h</span></samp>. 
+        <p>The function <code>perror</code> is declared in <span class="file">stdio.h</span>. 
 </p></blockquote></div>
 
    <p><code>strerror</code> and <code>perror</code> produce the exact same message for any
@@ -187,7 +185,7 @@ programs which read some input files should should provide information
 about the input file name and the line number in case an error is
 encountered while reading the file.  For these occasions there are two
 functions available which are widely used throughout the GNU project. 
-These functions are declared in <samp><span class="file">error.h</span></samp>.
+These functions are declared in <span class="file">error.h</span>.
 
 <!-- error.h -->
 <!-- GNU -->
@@ -230,7 +228,7 @@ incremented by one to keep track of the number of errors reported.
 <div class="defun">
 &mdash; Function: void <b>error_at_line</b> (<var>int status, int errnum, const char *fname, unsigned int lineno, const char *format, <small class="dots">...</small></var>)<var><a name="index-error_005fat_005fline-218"></a></var><br>
 <blockquote>
-        <p>The <code>error_at_line</code> function is very similar to the <code>error</code>
+<p>The <code>error_at_line</code> function is very similar to the <code>error</code>
 function.  The only difference are the additional parameters <var>fname</var>
 and <var>lineno</var>.  The handling of the other parameters is identical to
 that of <code>error</code> except that between the program name and the string
@@ -328,7 +326,7 @@ like this:
 choice and enable the programmer to write applications which follow the
 GNU coding standard.  The GNU libc additionally contains functions which
 are used in BSD for the same purpose.  These functions are declared in
-<samp><span class="file">err.h</span></samp>.  It is generally advised to not use these functions.  They
+<span class="file">err.h</span>.  It is generally advised to not use these functions.  They
 are included only for compatibility.
 
 <!-- err.h -->
@@ -337,7 +335,7 @@ are included only for compatibility.
 &mdash; Function: void <b>warn</b> (<var>const char *format, <small class="dots">...</small></var>)<var><a name="index-warn-222"></a></var><br>
 <blockquote><p>The <code>warn</code> function is roughly equivalent to a call like
      <pre class="smallexample">            error (0, errno, format, <span class="roman">the parameters</span>)
-</pre>
+     </pre>
         <p class="noindent">except that the global variables <code>error</code> respects and modifies
 are not used. 
 </p></blockquote></div>
@@ -357,7 +355,7 @@ in as an value of type <code>va_list</code>.
 &mdash; Function: void <b>warnx</b> (<var>const char *format, <small class="dots">...</small></var>)<var><a name="index-warnx-224"></a></var><br>
 <blockquote><p>The <code>warnx</code> function is roughly equivalent to a call like
      <pre class="smallexample">            error (0, 0, format, <span class="roman">the parameters</span>)
-</pre>
+     </pre>
         <p class="noindent">except that the global variables <code>error</code> respects and modifies
 are not used.  The difference to <code>warn</code> is that no error number
 string is printed. 
@@ -378,7 +376,7 @@ in as an value of type <code>va_list</code>.
 &mdash; Function: void <b>err</b> (<var>int status, const char *format, <small class="dots">...</small></var>)<var><a name="index-err-226"></a></var><br>
 <blockquote><p>The <code>err</code> function is roughly equivalent to a call like
      <pre class="smallexample">            error (status, errno, format, <span class="roman">the parameters</span>)
-</pre>
+     </pre>
         <p class="noindent">except that the global variables <code>error</code> respects and modifies
 are not used and that the program is exited even if <var>status</var> is zero. 
 </p></blockquote></div>
@@ -398,7 +396,7 @@ in as an value of type <code>va_list</code>.
 &mdash; Function: void <b>errx</b> (<var>int status, const char *format, <small class="dots">...</small></var>)<var><a name="index-errx-228"></a></var><br>
 <blockquote><p>The <code>errx</code> function is roughly equivalent to a call like
      <pre class="smallexample">            error (status, 0, format, <span class="roman">the parameters</span>)
-</pre>
+     </pre>
         <p class="noindent">except that the global variables <code>error</code> respects and modifies
 are not used and that the program is exited even if <var>status</var>
 is zero.  The difference to <code>err</code> is that no error number

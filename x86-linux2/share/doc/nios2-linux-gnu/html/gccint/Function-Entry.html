@@ -3,7 +3,7 @@
 <title>Function Entry - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stack-and-Calling.html#Stack-and-Calling" title="Stack and Calling">
 <link rel="prev" href="Caller-Saves.html#Caller-Saves" title="Caller Saves">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Function-Entry"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Profiling.html#Profiling">Profiling</a>,
+<a name="Function-Entry"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Profiling.html#Profiling">Profiling</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Caller-Saves.html#Caller-Saves">Caller Saves</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stack-and-Calling.html#Stack-and-Calling">Stack and Calling</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.9.11 Function Entry and Exit</h4>
@@ -131,14 +129,14 @@ registers to restore are determined from <code>regs_ever_live</code> and
 
       <p>On some machines, there is a single instruction that does all the work
 of returning from the function.  On these machines, give that
-instruction the name &lsquo;<samp><span class="samp">return</span></samp>&rsquo; and do not define the macro
+instruction the name <span class="samp">return</span> and do not define the macro
 <code>TARGET_ASM_FUNCTION_EPILOGUE</code> at all.
 
-      <p>Do not define a pattern named &lsquo;<samp><span class="samp">return</span></samp>&rsquo; if you want the
+      <p>Do not define a pattern named <span class="samp">return</span> if you want the
 <code>TARGET_ASM_FUNCTION_EPILOGUE</code> to be used.  If you want the target
 switches to control whether return instructions or epilogues are used,
-define a &lsquo;<samp><span class="samp">return</span></samp>&rsquo; pattern with a validity condition that tests the
-target switches appropriately.  If the &lsquo;<samp><span class="samp">return</span></samp>&rsquo; pattern's validity
+define a <span class="samp">return</span> pattern with a validity condition that tests the
+target switches appropriately.  If the <span class="samp">return</span> pattern's validity
 condition is false, epilogues will be used.
 
       <p>On machines where functions may or may not have frame-pointers, the
@@ -155,7 +153,7 @@ function.  See <a href="Leaf-Functions.html#Leaf-Functions">Leaf Functions</a>.
 
       <p>On some machines, some functions pop their arguments on exit while
 others leave that for the caller to do.  For example, the 68020 when
-given <samp><span class="option">-mrtd</span></samp> pops arguments in functions that take a fixed
+given <span class="option">-mrtd</span> pops arguments in functions that take a fixed
 number of arguments.
 
       <p><a name="index-current_005ffunction_005fpops_005fargs-2063"></a>Your definition of the macro <code>RETURN_POPS_ARGS</code> decides which
@@ -190,7 +188,7 @@ boundary, to contain the local variables of the function.  On some machines,
 this region and the save area may occur in the opposite order, with the
 save area closer to the top of the stack.
 
-     <li><a name="index-g_t_0040code_007bACCUMULATE_005fOUTGOING_005fARGS_007d-and-stack-frames-2065"></a>Optionally, when <code>ACCUMULATE_OUTGOING_ARGS</code> is defined, a region of
+     <li><a name="index-_0040code_007bACCUMULATE_005fOUTGOING_005fARGS_007d-and-stack-frames-2065"></a>Optionally, when <code>ACCUMULATE_OUTGOING_ARGS</code> is defined, a region of
 <code>current_function_outgoing_args_size</code> bytes to be used for outgoing
 argument lists of the function.  See <a href="Stack-Arguments.html#Stack-Arguments">Stack Arguments</a>. 
 </ul>
@@ -212,7 +210,7 @@ compiler knows this regardless of <code>EXIT_IGNORE_STACK</code>.
 <div class="defun">
 &mdash; Macro: <b>EPILOGUE_USES</b> (<var>regno</var>)<var><a name="index-EPILOGUE_005fUSES-2067"></a></var><br>
 <blockquote><p>Define this macro as a C expression that is nonzero for registers that are
-used by the epilogue or the &lsquo;<samp><span class="samp">return</span></samp>&rsquo; pattern.  The stack and frame
+used by the epilogue or the <span class="samp">return</span> pattern.  The stack and frame
 pointer registers are already be assumed to be used as needed. 
 </p></blockquote></div>
 
@@ -269,7 +267,7 @@ the real function.
 contains the incoming first argument.  Assume that this argument
 contains a pointer, and is the one used to pass the <code>this</code> pointer
 in C++.  This is the incoming argument <em>before</em> the function prologue,
-e.g. &lsquo;<samp><span class="samp">%o0</span></samp>&rsquo; on a sparc.  The addition must preserve the values of
+e.g. <span class="samp">%o0</span> on a sparc.  The addition must preserve the values of
 all other incoming arguments.
 
       <p>Then, if <var>vcall_offset</var> is nonzero, an additional adjustment should be
@@ -277,11 +275,11 @@ made after adding <code>delta</code>.  In particular, if <var>p</var> is the
 adjusted pointer, the following adjustment should be made:
 
      <pre class="smallexample">          p += (*((ptrdiff_t **)p))[vcall_offset/sizeof(ptrdiff_t)]
-</pre>
+     </pre>
       <p>After the additions, emit code to jump to <var>function</var>, which is a
 <code>FUNCTION_DECL</code>.  This is a direct pure jump, not a call, and does
 not touch the return address.  Hence returning from <var>FUNCTION</var> will
-return to whoever called the current &lsquo;<samp><span class="samp">thunk</span></samp>&rsquo;.
+return to whoever called the current <span class="samp">thunk</span>.
 
       <p>The effect must be as if <var>function</var> had been called directly with
 the adjusted first argument.  This macro is responsible for emitting all

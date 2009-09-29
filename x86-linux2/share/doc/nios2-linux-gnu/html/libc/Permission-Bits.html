@@ -3,7 +3,7 @@
 <title>Permission Bits - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-Attributes.html#File-Attributes" title="File Attributes">
 <link rel="prev" href="File-Owner.html#File-Owner" title="File Owner">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Permission-Bits"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Access-Permission.html#Access-Permission">Access Permission</a>,
+<a name="Permission-Bits"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Access-Permission.html#Access-Permission">Access Permission</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="File-Owner.html#File-Owner">File Owner</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-Attributes.html#File-Attributes">File Attributes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.9.5 The Mode Bits for Access Permission</h4>
@@ -41,7 +39,7 @@ permission bits, which control who can read or write the file.
 See <a href="Testing-File-Type.html#Testing-File-Type">Testing File Type</a>, for information about the file type code.
 
    <p>All of the symbols listed in this section are defined in the header file
-<samp><span class="file">sys/stat.h</span></samp>. 
+<span class="file">sys/stat.h</span>. 
 <a name="index-sys_002fstat_002eh-1537"></a>
 <a name="index-file-permission-bits-1538"></a>These symbolic constants are defined for the file mode bits that control
 access permission for the file:
@@ -56,65 +54,65 @@ is 0400.  <code>S_IREAD</code> is an obsolete synonym provided for BSD
 compatibility.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IWUSR</code><dd><a name="index-S_005fIWUSR-1541"></a><!-- sys/stat.h -->
+<!-- POSIX.1 -->
+<br><dt><code>S_IWUSR</code><dd><a name="index-S_005fIWUSR-1541"></a><!-- sys/stat.h -->
 <!-- BSD -->
 <dt><code>S_IWRITE</code><dd><a name="index-S_005fIWRITE-1542"></a>Write permission bit for the owner of the file.  Usually 0200. 
 <code>S_IWRITE</code><!-- /@w --> is an obsolete synonym provided for BSD compatibility.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IXUSR</code><dd><a name="index-S_005fIXUSR-1543"></a><!-- sys/stat.h -->
+<!-- POSIX.1 -->
+<br><dt><code>S_IXUSR</code><dd><a name="index-S_005fIXUSR-1543"></a><!-- sys/stat.h -->
 <!-- BSD -->
 <dt><code>S_IEXEC</code><dd><a name="index-S_005fIEXEC-1544"></a>Execute (for ordinary files) or search (for directories) permission bit
 for the owner of the file.  Usually 0100.  <code>S_IEXEC</code> is an obsolete
 synonym provided for BSD compatibility.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IRWXU</code><dd><a name="index-S_005fIRWXU-1545"></a>This is equivalent to &lsquo;<samp><span class="samp">(S_IRUSR | S_IWUSR | S_IXUSR)</span></samp>&rsquo;.
+<!-- POSIX.1 -->
+<br><dt><code>S_IRWXU</code><dd><a name="index-S_005fIRWXU-1545"></a>This is equivalent to <span class="samp">(S_IRUSR | S_IWUSR | S_IXUSR)</span>.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IRGRP</code><dd><a name="index-S_005fIRGRP-1546"></a>Read permission bit for the group owner of the file.  Usually 040.
+<!-- POSIX.1 -->
+<br><dt><code>S_IRGRP</code><dd><a name="index-S_005fIRGRP-1546"></a>Read permission bit for the group owner of the file.  Usually 040.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IWGRP</code><dd><a name="index-S_005fIWGRP-1547"></a>Write permission bit for the group owner of the file.  Usually 020.
+<!-- POSIX.1 -->
+<br><dt><code>S_IWGRP</code><dd><a name="index-S_005fIWGRP-1547"></a>Write permission bit for the group owner of the file.  Usually 020.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IXGRP</code><dd><a name="index-S_005fIXGRP-1548"></a>Execute or search permission bit for the group owner of the file. 
+<!-- POSIX.1 -->
+<br><dt><code>S_IXGRP</code><dd><a name="index-S_005fIXGRP-1548"></a>Execute or search permission bit for the group owner of the file. 
 Usually 010.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IRWXG</code><dd><a name="index-S_005fIRWXG-1549"></a>This is equivalent to &lsquo;<samp><span class="samp">(S_IRGRP | S_IWGRP | S_IXGRP)</span></samp>&rsquo;.
+<!-- POSIX.1 -->
+<br><dt><code>S_IRWXG</code><dd><a name="index-S_005fIRWXG-1549"></a>This is equivalent to <span class="samp">(S_IRGRP | S_IWGRP | S_IXGRP)</span>.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IROTH</code><dd><a name="index-S_005fIROTH-1550"></a>Read permission bit for other users.  Usually 04.
+<!-- POSIX.1 -->
+<br><dt><code>S_IROTH</code><dd><a name="index-S_005fIROTH-1550"></a>Read permission bit for other users.  Usually 04.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IWOTH</code><dd><a name="index-S_005fIWOTH-1551"></a>Write permission bit for other users.  Usually 02.
+<!-- POSIX.1 -->
+<br><dt><code>S_IWOTH</code><dd><a name="index-S_005fIWOTH-1551"></a>Write permission bit for other users.  Usually 02.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IXOTH</code><dd><a name="index-S_005fIXOTH-1552"></a>Execute or search permission bit for other users.  Usually 01.
+<!-- POSIX.1 -->
+<br><dt><code>S_IXOTH</code><dd><a name="index-S_005fIXOTH-1552"></a>Execute or search permission bit for other users.  Usually 01.
 
      <!-- sys/stat.h -->
-     <!-- POSIX.1 -->
-     <br><dt><code>S_IRWXO</code><dd><a name="index-S_005fIRWXO-1553"></a>This is equivalent to &lsquo;<samp><span class="samp">(S_IROTH | S_IWOTH | S_IXOTH)</span></samp>&rsquo;.
+<!-- POSIX.1 -->
+<br><dt><code>S_IRWXO</code><dd><a name="index-S_005fIRWXO-1553"></a>This is equivalent to <span class="samp">(S_IROTH | S_IWOTH | S_IXOTH)</span>.
 
      <!-- sys/stat.h -->
-     <!-- POSIX -->
-     <br><dt><code>S_ISUID</code><dd><a name="index-S_005fISUID-1554"></a>This is the set-user-ID on execute bit, usually 04000. 
+<!-- POSIX -->
+<br><dt><code>S_ISUID</code><dd><a name="index-S_005fISUID-1554"></a>This is the set-user-ID on execute bit, usually 04000. 
 See <a href="How-Change-Persona.html#How-Change-Persona">How Change Persona</a>.
 
      <!-- sys/stat.h -->
-     <!-- POSIX -->
-     <br><dt><code>S_ISGID</code><dd><a name="index-S_005fISGID-1555"></a>This is the set-group-ID on execute bit, usually 02000. 
+<!-- POSIX -->
+<br><dt><code>S_ISGID</code><dd><a name="index-S_005fISGID-1555"></a>This is the set-group-ID on execute bit, usually 02000. 
 See <a href="How-Change-Persona.html#How-Change-Persona">How Change Persona</a>.
 
      <p><a name="index-sticky-bit-1556"></a><!-- sys/stat.h -->
@@ -129,7 +127,7 @@ applies&mdash;you must have both write permission for the directory and own
 the file you want to delete.  The one exception is that the owner of the
 directory can delete any file in the directory, no matter who owns it
 (provided the owner has given himself write permission for the
-directory).  This is commonly used for the <samp><span class="file">/tmp</span></samp> directory, where
+directory).  This is commonly used for the <span class="file">/tmp</span> directory, where
 anyone may create files but not delete files created by other users.
 
      <p>Originally the sticky bit on an executable file modified the swapping

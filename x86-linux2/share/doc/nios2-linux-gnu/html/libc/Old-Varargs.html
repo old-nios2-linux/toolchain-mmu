@@ -3,7 +3,7 @@
 <title>Old Varargs - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="How-Variadic.html#How-Variadic" title="How Variadic">
 <link rel="prev" href="Argument-Macros.html#Argument-Macros" title="Argument Macros">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Old-Varargs"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Argument-Macros.html#Argument-Macros">Argument Macros</a>,
+<a name="Old-Varargs"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Argument-Macros.html#Argument-Macros">Argument Macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="How-Variadic.html#How-Variadic">How Variadic</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">A.2.3.1 Old-Style Variadic Functions</h5>
@@ -36,9 +34,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="How-Variadic.html#How-Variadic">How Var
 writing variadic functions.  The GNU C compiler still supports it;
 currently, it is more portable than the ISO&nbsp;C<!-- /@w --> facility, since support
 for ISO&nbsp;C<!-- /@w --> is still not universal.  The header file which defines the
-old-fashioned variadic facility is called <samp><span class="file">varargs.h</span></samp>.
+old-fashioned variadic facility is called <span class="file">varargs.h</span>.
 
-   <p>Using <samp><span class="file">varargs.h</span></samp> is almost the same as using <samp><span class="file">stdarg.h</span></samp>. 
+   <p>Using <span class="file">varargs.h</span> is almost the same as using <span class="file">stdarg.h</span>. 
 There is no difference in how you call a variadic function;
 see <a href="Calling-Variadics.html#Calling-Variadics">Calling Variadics</a>.  The only difference is in how you define
 them.  First of all, you must use old-style non-prototype syntax, like
@@ -77,16 +75,16 @@ function.
 <!-- Unix -->
 <div class="defun">
 &mdash; Macro: void <b>va_start</b> (<var>va_list ap</var>)<var><a name="index-va_005fstart-3734"></a></var><br>
-<blockquote><p>This macro, as defined in <samp><span class="file">varargs.h</span></samp>, initializes the argument
+<blockquote><p>This macro, as defined in <span class="file">varargs.h</span>, initializes the argument
 pointer variable <var>ap</var> to point to the first argument of the current
 function. 
 </p></blockquote></div>
 
    <p>The other argument macros, <code>va_arg</code> and <code>va_end</code>, are the same
-in <samp><span class="file">varargs.h</span></samp> as in <samp><span class="file">stdarg.h</span></samp>; see <a href="Argument-Macros.html#Argument-Macros">Argument Macros</a>, for
+in <span class="file">varargs.h</span> as in <span class="file">stdarg.h</span>; see <a href="Argument-Macros.html#Argument-Macros">Argument Macros</a>, for
 details.
 
-   <p>It does not work to include both <samp><span class="file">varargs.h</span></samp> and <samp><span class="file">stdarg.h</span></samp> in
+   <p>It does not work to include both <span class="file">varargs.h</span> and <span class="file">stdarg.h</span> in
 the same compilation; they define <code>va_start</code> in conflicting ways.
 
    </body></html>

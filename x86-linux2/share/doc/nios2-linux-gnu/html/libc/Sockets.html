@@ -3,7 +3,7 @@
 <title>Sockets - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Pipes-and-FIFOs.html#Pipes-and-FIFOs" title="Pipes and FIFOs">
 <link rel="next" href="Low_002dLevel-Terminal-Interface.html#Low_002dLevel-Terminal-Interface" title="Low-Level Terminal Interface">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Sockets"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Low_002dLevel-Terminal-Interface.html#Low_002dLevel-Terminal-Interface">Low-Level Terminal Interface</a>,
+<a name="Sockets"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Low_002dLevel-Terminal-Interface.html#Low_002dLevel-Terminal-Interface">Low-Level Terminal Interface</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Pipes-and-FIFOs.html#Pipes-and-FIFOs">Pipes and FIFOs</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <!-- %MENU% A more complicated IPC mechanism, with networking support -->
@@ -46,7 +44,7 @@ machines; <code>telnet</code>, <code>rlogin</code>, <code>ftp</code>, <code>talk
 other familiar network programs use sockets.
 
    <p>Not all operating systems support sockets.  In the GNU library, the
-header file <samp><span class="file">sys/socket.h</span></samp> exists regardless of the operating
+header file <span class="file">sys/socket.h</span> exists regardless of the operating
 system, and the socket functions always exist, but if the system does
 not really support sockets these functions always fail.
 

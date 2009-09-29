@@ -3,7 +3,7 @@
 <title>Files - The GNU C Preprocessor Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Preprocessor Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Guard-Macros.html#Guard-Macros" title="Guard Macros">
 <link rel="next" href="Concept-Index.html#Concept-Index" title="Concept Index">
@@ -16,26 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Files"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Concept-Index.html#Concept-Index">Concept Index</a>,
+<a name="Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Concept-Index.html#Concept-Index">Concept Index</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Guard-Macros.html#Guard-Macros">Guard Macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="unnumbered">File Handling</h2>
 
 <p><a name="index-files-21"></a>
 Fairly obviously, the file handling code of cpplib resides in the file
-<samp><span class="file">files.c</span></samp>.  It takes care of the details of file searching,
+<span class="file">files.c</span>.  It takes care of the details of file searching,
 opening, reading and caching, for both the main source file and all the
 headers it recursively includes.
 
@@ -54,10 +52,10 @@ filesystem queries whilst searching for the correct file.
    <p>For each file we try to open, we store the constructed path in a splay
 tree.  This path first undergoes simplification by the function
 <code>_cpp_simplify_pathname</code>.  For example,
-<samp><span class="file">/usr/include/bits/../foo.h</span></samp> is simplified to
-<samp><span class="file">/usr/include/foo.h</span></samp> before we enter it in the splay tree and try
+<span class="file">/usr/include/bits/../foo.h</span> is simplified to
+<span class="file">/usr/include/foo.h</span> before we enter it in the splay tree and try
 to <code>open ()</code> the file.  CPP will then find subsequent uses of
-<samp><span class="file">foo.h</span></samp>, even as <samp><span class="file">/usr/include/foo.h</span></samp>, in the splay tree and
+<span class="file">foo.h</span>, even as <span class="file">/usr/include/foo.h</span>, in the splay tree and
 save system calls.
 
    <p>Further, it is likely the file contents have also been cached, saving a
@@ -81,8 +79,8 @@ directory on a per-file basis is handled by the function
 
    <p>Note that a header included with a directory component, such as
 <code>#include "mydir/foo.h"</code> and opened as
-<samp><span class="file">/usr/local/include/mydir/foo.h</span></samp>, will have the complete path minus
-the basename &lsquo;<samp><span class="samp">foo.h</span></samp>&rsquo; as the current directory.
+<span class="file">/usr/local/include/mydir/foo.h</span>, will have the complete path minus
+the basename <span class="samp">foo.h</span> as the current directory.
 
    <p>Enough information is stored in the splay tree that CPP can immediately
 tell whether it can skip the header file because of the multiple include
@@ -93,7 +91,7 @@ is with the obsolete <code>#import</code> directive.
    <p>For the benefit of MS-DOS filesystems with an 8.3 filename limitation,
 CPP offers the ability to treat various include file names as aliases
 for the real header files with shorter names.  The map from one to the
-other is found in a special file called &lsquo;<samp><span class="samp">header.gcc</span></samp>&rsquo;, stored in the
+other is found in a special file called <span class="samp">header.gcc</span>, stored in the
 command line (or system) include directories to which the mapping
 applies.  This may be higher up the directory tree than the full path to
 the file minus the base name.

@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.13 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -2903,7 +2903,7 @@ with the GNU C library; we support them for BSD compatibility only.
      This function returns the next pseudo-random number in the
      sequence.  The value returned ranges from `0' to `RAND_MAX'.
 
-     *Note_* Temporarily this function was defined to return a
+     *Note:* Temporarily this function was defined to return a
      `int32_t' value to indicate that the return value always contains
      32 bits even if `long int' is wider.  The standard demands it
      differently.  Users must always be aware of the 32-bit limitation,
@@ -3455,7 +3455,7 @@ that there are no macros for unsigned integer minima.  These are always
 zero.  
 
    There are similar macros for use with C's built in integer types
-which should come with your C compiler.  These are described in *note
+which should come with your C compiler.  These are described in *Note
 Data Type Measurements::.
 
    Don't forget you can use the C `sizeof' function with any of these
@@ -3557,7 +3557,7 @@ value `R.quot*DENOMINATOR + R.rem' equals NUMERATOR.
      (This is identical to `div_t' except that the components are of
      type `intmax_t' rather than `int'.)
 
-     See *note Integers:: for a description of the `intmax_t' type.
+     See *Note Integers:: for a description of the `intmax_t' type.
 
 
  -- Function: imaxdiv_t imaxdiv (intmax_t NUMERATOR, intmax_t
@@ -3566,7 +3566,7 @@ value `R.quot*DENOMINATOR + R.rem' equals NUMERATOR.
      arguments are of type `intmax_t' and the result is returned as a
      structure of type `imaxdiv_t'.
 
-     See *note Integers:: for a description of the `intmax_t' type.
+     See *Note Integers:: for a description of the `intmax_t' type.
 
      The `imaxdiv' function was added in ISO C99.
 
@@ -3687,7 +3687,7 @@ macros, you do not have to worry about the type of their argument.
      This function returns a nonzero value if X is a "not a number"
      value, and zero otherwise.
 
-     *Note_* The `isnan' macro defined by ISO C99 overrides the BSD
+     *Note:* The `isnan' macro defined by ISO C99 overrides the BSD
      function.  This is normally not a problem, because the two
      routines behave identically.  However, if you really need to get
      the BSD function for some reason, you can write
@@ -3771,7 +3771,7 @@ The exceptions defined in IEEE 754 are:
 
        8. Comparison via predicates involving < or >, when one or other
           of the operands is NaN.  You can prevent this exception by
-          using the unordered comparison functions instead; see *note
+          using the unordered comparison functions instead; see *Note
           FP Comparison Functions::.
 
      If the exception does not trap, the result of the operation is NaN.
@@ -3838,7 +3838,7 @@ that produce infinity or NaN:
      sqrt (-1) = NaN
 
    When a calculation produces any of these values, an exception also
-occurs; see *note FP Exceptions::.
+occurs; see *Note FP Exceptions::.
 
    The basic operations and math functions all accept infinity and NaN
 and produce sensible output.  Infinities propagate through calculations
@@ -4139,9 +4139,9 @@ File: libc.info,  Node: Control Functions,  Next: Arithmetic Functions,  Prev: R
 IEEE 754 floating-point implementations allow the programmer to decide
 whether traps will occur for each of the exceptions, by setting bits in
 the "control word".  In C, traps result in the program receiving the
-`SIGFPE' signal; see *note Signal Handling::.
+`SIGFPE' signal; see *Note Signal Handling::.
 
-   *Note_* IEEE 754 says that trap handlers are given details of the
+   *Note:* IEEE 754 says that trap handlers are given details of the
 exceptional situation, and can set the result value.  C signals do not
 provide any mechanism to pass this information back and forth.
 Trapping exceptions in C is therefore not very useful.
@@ -4220,7 +4220,7 @@ occur, you can use the following two functions.
  -- Function: int feenableexcept (int EXCEPTS)
      This functions enables traps for each of the exceptions as
      indicated by the parameter EXCEPT.  The individual excepetions are
-     described in *note Status bit operations::.  Only the specified
+     described in *Note Status bit operations::.  Only the specified
      exceptions are enabled, the status of the other exceptions is not
      changed.
 
@@ -4230,7 +4230,7 @@ occur, you can use the following two functions.
  -- Function: int fedisableexcept (int EXCEPTS)
      This functions disables traps for each of the exceptions as
      indicated by the parameter EXCEPT.  The individual excepetions are
-     described in *note Status bit operations::.  Only the specified
+     described in *Note Status bit operations::.  Only the specified
      exceptions are disabled, the status of the other exceptions is not
      changed.
 
@@ -4290,7 +4290,7 @@ declared in `math.h'.  `cabs', `cabsf' and `cabsl' are declared in
 
      `llabs' and `imaxdiv' are new to ISO C99.
 
-     See *note Integers:: for a description of the `intmax_t' type.
+     See *Note Integers:: for a description of the `intmax_t' type.
 
 
  -- Function: double fabs (double NUMBER)
@@ -4311,7 +4311,7 @@ declared in `math.h'.  `cabs', `cabsf' and `cabsl' are declared in
      This function should always be used instead of the direct formula
      because it takes special care to avoid losing precision.  It may
      also take advantage of hardware support for this operation. See
-     `hypot' in *note Exponents and Logarithms::.
+     `hypot' in *Note Exponents and Logarithms::.
 
 
 File: libc.info,  Node: Normalization Functions,  Next: Rounding Functions,  Prev: Absolute Value,  Up: Arithmetic Functions
@@ -4321,7 +4321,7 @@ File: libc.info,  Node: Normalization Functions,  Next: Rounding Functions,  Pre
 
 The functions described in this section are primarily provided as a way
 to efficiently perform certain low-level manipulations on floating point
-numbers that are represented internally using a binary radix; see *note
+numbers that are represented internally using a binary radix; see *Note
 Floating Point Concepts::.  These functions are required to have
 equivalent behavior even if the representation does not use a radix of
 2, but of course they are unlikely to be particularly efficient in
@@ -4657,7 +4657,7 @@ macros are guaranteed to evaluate their arguments only once.
 machines that don't, the macros can be very slow.  Therefore, you should
 not use these functions when NaN is not a concern.
 
-   *Note_* There are no macros `isequal' or `isunequal'.  They are
+   *Note:* There are no macros `isequal' or `isunequal'.  They are
 unnecessary, because the `==' and `!=' operators do _not_ throw an
 exception if one or both of the operands are NaN.
 
@@ -4824,7 +4824,7 @@ File: libc.info,  Node: Parsing of Numbers,  Next: System V Number Conversion,  
 
 This section describes functions for "reading" integer and
 floating-point numbers from a string.  It may be more convenient in some
-cases to use `sscanf' or one of the related functions; see *note
+cases to use `sscanf' or one of the related functions; see *Note
 Formatted Input::.  But often you can make a program more robust by
 finding the tokens in the string by hand, then converting the numbers
 one by one.
@@ -4999,7 +4999,7 @@ defined there) so we have to do it as well.
      for the sign of the value.  It also sets `errno' to `ERANGE' to
      indicate there was overflow.
 
-     See *note Integers:: for a description of the `intmax_t' type.  The
+     See *Note Integers:: for a description of the `intmax_t' type.  The
      `strtoimax' function was introduced in ISO C99.
 
  -- Function: intmax_t wcstoimax (const wchar_t *restrict STRING,
@@ -5014,7 +5014,7 @@ defined there) so we have to do it as well.
      The `strtoumax' function is related to `strtoimax' the same way
      that `strtoul' is related to `strtol'.
 
-     See *note Integers:: for a description of the `intmax_t' type.  The
+     See *Note Integers:: for a description of the `intmax_t' type.  The
      `strtoumax' function was introduced in ISO C99.
 
  -- Function: uintmax_t wcstoumax (const wchar_t *restrict STRING,
@@ -5145,7 +5145,7 @@ defined there) so we have to do it as well.
 
      If the string has valid syntax for a floating-point number but the
      value is outside the range of a `double', `strtod' will signal
-     overflow or underflow as described in *note Math Error Reporting::.
+     overflow or underflow as described in *Note Math Error Reporting::.
 
      `strtod' recognizes four special input strings.  The strings
      `"inf"' and `"infinity"' are converted to oo, or to the largest
@@ -5599,7 +5599,7 @@ CPU time.  *Note Time Basics::.  You should include the header file
           This is the sum of the `tms_utime' values and the `tms_cutime'
           values of all terminated child processes of the calling
           process, whose status has been reported to the parent process
-          by `wait' or `waitpid'; see *note Process Completion::.  In
+          by `wait' or `waitpid'; see *Note Process Completion::.  In
           other words, it represents the total processor time used in
           executing the instructions of all the terminated child
           processes of the calling process, excluding child processes
@@ -5622,7 +5622,7 @@ CPU time.  *Note Time Basics::.  You should include the header file
      you get from `clock()'.  `times' returns `(clock_t)(-1)' to
      indicate failure.
 
-   *Portability Note:* The `clock' function described in *note CPU
+   *Portability Note:* The `clock' function described in *Note CPU
 Time:: is specified by the ISO C standard.  The `times' function is a
 feature of POSIX.1.  In the GNU system, the CPU time is defined to be
 equivalent to the sum of the `tms_utime' and `tms_stime' fields
@@ -5752,7 +5752,7 @@ declared in `sys/time.h'.
           the year.
 
      The `struct timezone' type is obsolete and should never be used.
-     Instead, use the facilities described in *note Time Zone
+     Instead, use the facilities described in *Note Time Zone
      Functions::.
 
  -- Function: int gettimeofday (struct timeval *TP, struct timezone
@@ -5772,7 +5772,7 @@ declared in `sys/time.h'.
           information, and TZP is not a null pointer.  The GNU
           operating system does not support using `struct timezone' to
           represent time zone information; that is an obsolete feature
-          of 4.3 BSD.  Instead, use the facilities described in *note
+          of 4.3 BSD.  Instead, use the facilities described in *Note
           Time Zone Functions::.
 
  -- Function: int settimeofday (const struct timeval *TP, const struct
@@ -6044,8 +6044,8 @@ File: libc.info,  Node: High Accuracy Clock,  Next: Formatting Calendar Time,  P
 
 The `ntp_gettime' and `ntp_adjtime' functions provide an interface to
 monitor and manipulate the system clock to maintain high accuracy time.
-For example, you can fine tune the speed of the clock or synchronize it
-with another time source.
+For example, you can fine tune the speed of the clock or synchronize
+it with another time source.
 
    A typical use of these functions is by a server implementing the
 Network Time Protocol to synchronize the clocks of multiple systems and
@@ -6059,7 +6059,7 @@ high precision clocks.
     `struct timeval time'
           This is the current calendar time, expressed as the elapsed
           time since the epoch.  The `struct timeval' data type is
-          described in *note Elapsed Time::.
+          described in *Note Elapsed Time::.
 
     `long int maxerror'
           This is the maximum error, measured in microseconds.  Unless
@@ -6611,7 +6611,7 @@ strings.  These functions are declared in the header file `time.h'.
      `tzset'.  So the contents of the environment variable `TZ' is
      examined before any output is produced.
 
-     For an example of `strftime', see *note Time Functions Example::.
+     For an example of `strftime', see *Note Time Functions Example::.
 
  -- Function: size_t wcsftime (wchar_t *S, size_t SIZE, const wchar_t
           *TEMPLATE, const struct tm *BROKENTIME)
@@ -6858,7 +6858,7 @@ is defined and implemented in terms of calls to `strptime'.
 
           Leading zeroes are permitted but not required.
 
-          *Note_* The Unix specification says the upper bound on this
+          *Note:* The Unix specification says the upper bound on this
           value is `61', a result of a decision to allow double leap
           seconds.  You will not see the value `61' because no minute
           has more than one leap second, but the myth persists.
@@ -7225,7 +7225,7 @@ File: libc.info,  Node: TZ Variable,  Next: Time Zone Functions,  Prev: Parsing 
 
 In POSIX systems, a user can specify the time zone by means of the `TZ'
 environment variable.  For information about how to set environment
-variables, see *note Environment Variables::.  The functions for
+variables, see *Note Environment Variables::.  The functions for
 accessing the time zone are declared in `time.h'.  
 
    You should not normally need to set `TZ'.  If the system is
@@ -7514,7 +7514,7 @@ for setting the real-time timer.
           This is the period between now and the first timer interrupt.
           If zero, the alarm is disabled.
 
-     The `struct timeval' data type is described in *note Elapsed
+     The `struct timeval' data type is described in *Note Elapsed
      Time::.
 
  -- Function: int setitimer (int WHICH, struct itimerval *NEW, struct
@@ -7578,7 +7578,7 @@ this:
          return old.it_value.tv_sec;
      }
 
-   There is an example showing the use of the `alarm' function in *note
+   There is an example showing the use of the `alarm' function in *Note
 Handler Returns::.
 
    If you simply want your process to wait for a given number of

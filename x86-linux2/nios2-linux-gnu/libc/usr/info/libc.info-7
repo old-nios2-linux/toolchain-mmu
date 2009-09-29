@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.13 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -1771,21 +1771,21 @@ about processes that are running or "ready to run," which means they are
 ready to execute instructions right now.  When a process blocks to wait
 for something like I/O, its absolute priority is irrelevant.
 
-   *Note_*  The term "runnable" is a synonym for "ready to run."
+   *Note:*  The term "runnable" is a synonym for "ready to run."
 
    When two processes are running or ready to run and both have the same
 absolute priority, it's more interesting.  In that case, who gets the
 CPU is determined by the scheduling policy.  If the processes have
 absolute priority 0, the traditional scheduling policy described in
-*note Traditional Scheduling:: applies.  Otherwise, the policies
-described in *note Realtime Scheduling:: apply.
+*Note Traditional Scheduling:: applies.  Otherwise, the policies
+described in *Note Realtime Scheduling:: apply.
 
    You normally give an absolute priority above 0 only to a process that
 can be trusted not to hog the CPU.  Such processes are designed to block
 (or terminate) after relatively short CPU runs.
 
    A process begins life with the same absolute priority as its parent
-process.  Functions described in *note Basic Scheduling Functions:: can
+process.  Functions described in *Note Basic Scheduling Functions:: can
 change it.
 
    Only a privileged process can change a process' absolute priority to
@@ -1842,7 +1842,7 @@ privileged process constantly monitors the process' CPU usage and raises
 its absolute priority when the process isn't getting its entitled share
 and lowers it when the process is exceeding it.
 
-   *Note_*  The absolute priority is sometimes called the "static
+   *Note:*  The absolute priority is sometimes called the "static
 priority."  We don't use that term in this manual because it misses the
 most important feature of the absolute priority:  its absoluteness.
 
@@ -1855,11 +1855,11 @@ File: libc.info,  Node: Realtime Scheduling,  Next: Basic Scheduling Functions, 
 Whenever two processes with the same absolute priority are ready to run,
 the kernel has a decision to make, because only one can run at a time.
 If the processes have absolute priority 0, the kernel makes this
-decision as described in *note Traditional Scheduling::.  Otherwise,
+decision as described in *Note Traditional Scheduling::.  Otherwise,
 the decision is as described in this section.
 
    If two processes are ready to run but have different absolute
-priorities, the decision is much simpler, and is described in *note
+priorities, the decision is much simpler, and is described in *Note
 Absolute Priority::.
 
    Each process has a scheduling policy.  For processes with absolute
@@ -1916,7 +1916,7 @@ with the Linux kernel, the round robin time slice is a thousand times
 shorter than its typical time slice for traditional scheduling.
 
    A process begins life with the same scheduling policy as its parent
-process.  Functions described in *note Basic Scheduling Functions:: can
+process.  Functions described in *Note Basic Scheduling Functions:: can
 change it.
 
    Only a privileged process can set the scheduling policy of a process
@@ -1936,7 +1936,7 @@ section, the macro _POSIX_PRIORITY_SCHEDULING is defined in
 `<unistd.h>'.
 
    For the case that the scheduling policy is traditional scheduling,
-more functions to fine tune the scheduling are in *note Traditional
+more functions to fine tune the scheduling are in *Note Traditional
 Scheduling::.
 
    Don't try to make too much out of the naming and structure of these
@@ -2157,7 +2157,7 @@ File: libc.info,  Node: Traditional Scheduling Intro,  Next: Traditional Schedul
 22.3.4.1 Introduction To Traditional Scheduling
 ...............................................
 
-Long before there was absolute priority (See *note Absolute Priority::),
+Long before there was absolute priority (See *Note Absolute Priority::),
 Unix systems were scheduling the CPU using this system.  When Posix came
 in like the Romans and imposed absolute priorities to accommodate the
 needs of realtime processing, it left the indigenous Absolute Priority
@@ -2871,13 +2871,13 @@ File: libc.info,  Node: Non-Local Exits and Signals,  Next: System V contexts,  
 ================================
 
 In BSD Unix systems, `setjmp' and `longjmp' also save and restore the
-set of blocked signals; see *note Blocking Signals::.  However, the
+set of blocked signals; see *Note Blocking Signals::.  However, the
 POSIX.1 standard requires `setjmp' and `longjmp' not to change the set
 of blocked signals, and provides an additional pair of functions
 (`sigsetjmp' and `siglongjmp') to get the BSD behavior.
 
    The behavior of `setjmp' and `longjmp' in the GNU library is
-controlled by feature test macros; see *note Feature Test Macros::.  The
+controlled by feature test macros; see *Note Feature Test Macros::.  The
 default in the GNU system is the POSIX.1 behavior rather than the BSD
 behavior.
 
@@ -3307,7 +3307,7 @@ of the events that can cause (or "generate", or "raise") a signal:
 
    Each of these kinds of events (excepting explicit calls to `kill'
 and `raise') generates its own particular kind of signal.  The various
-kinds of signals are listed and described in detail in *note Standard
+kinds of signals are listed and described in detail in *Note Standard
 Signals::.
 
 
@@ -3397,7 +3397,7 @@ default action is to do nothing.
    When a signal terminates a process, its parent process can determine
 the cause of termination by examining the termination status code
 reported by the `wait' or `waitpid' functions.  (This is discussed in
-more detail in *note Process Completion::.)  The information it can get
+more detail in *Note Process Completion::.)  The information it can get
 includes the fact that termination was due to a signal and the kind of
 signal involved.  If a program you run from a shell is terminated by a
 signal, the shell typically prints some kind of error message.
@@ -3678,14 +3678,14 @@ process to terminate.
  -- Macro: int SIGHUP
      The `SIGHUP' ("hang-up") signal is used to report that the user's
      terminal is disconnected, perhaps because a network or telephone
-     connection was broken.  For more information about this, see *note
+     connection was broken.  For more information about this, see *Note
      Control Modes::.
 
      This signal is also used to report the termination of the
      controlling process on a terminal to jobs associated with that
      session; this termination effectively disconnects all processes in
      the session from the controlling terminal.  For more information,
-     see *note Termination Internals::.
+     see *Note Termination Internals::.
 
 
 File: libc.info,  Node: Alarm Signals,  Next: Asynchronous I/O Signals,  Prev: Termination Signals,  Up: Standard Signals
@@ -3805,7 +3805,7 @@ understand how job control works.  *Note Job Control::.
 
      This signal is generated when the user types the SUSP character
      (normally `C-z').  For more information about terminal driver
-     support, see *note Special Characters::.
+     support, see *Note Special Characters::.
    
  -- Macro: int SIGTTIN
      A process cannot read from the user's terminal while it is running
@@ -3813,7 +3813,7 @@ understand how job control works.  *Note Job Control::.
      read from the terminal, all of the processes in the job are sent a
      `SIGTTIN' signal.  The default action for this signal is to stop
      the process.  For more information about how this interacts with
-     the terminal driver, see *note Access to the Terminal::.
+     the terminal driver, see *Note Access to the Terminal::.
    
  -- Macro: int SIGTTOU
      This is similar to `SIGTTIN', but is generated when a process in a
@@ -3864,7 +3864,7 @@ them is to cause the process to terminate.
      `SIGPIPE' signal.  If `SIGPIPE' is blocked, handled or ignored,
      the offending call fails with `EPIPE' instead.
 
-     Pipes and FIFO special files are discussed in more detail in *note
+     Pipes and FIFO special files are discussed in more detail in *Note
      Pipes and FIFOs::.
 
      Another cause of `SIGPIPE' is when you try to output to a socket
@@ -3908,7 +3908,7 @@ something.
      program that receives the signal.
 
      There is an example showing the use of `SIGUSR1' and `SIGUSR2' in
-     *note Signaling Another Process::.
+     *Note Signaling Another Process::.
 
      The default action is to terminate the process.
 
@@ -3958,7 +3958,7 @@ handler in the same process.
 
  -- Function: void psignal (int SIGNUM, const char *MESSAGE)
      This function prints a message describing the signal SIGNUM to the
-     standard error output stream `stderr'; see *note Standard
+     standard error output stream `stderr'; see *Note Standard
      Streams::.
 
      If you call `psignal' with a MESSAGE that is either a null pointer
@@ -4037,7 +4037,7 @@ declared in the header file `signal.h'.
     `SIG_DFL'
           `SIG_DFL' specifies the default action for the particular
           signal.  The default actions for various kinds of signals are
-          stated in *note Standard Signals::.
+          stated in *Note Standard Signals::.
 
     `SIG_IGN'
           `SIG_IGN' specifies that the signal should be ignored.
@@ -4059,7 +4059,7 @@ declared in the header file `signal.h'.
           specify running this handler as the way to deliver the signal.
 
           For more information about defining signal handler functions,
-          see *note Defining Handlers::.
+          see *Note Defining Handlers::.
 
      If you set the action for a signal to `SIG_IGN', or if you set it
      to `SIG_DFL' and the default action is to ignore that signal, then
@@ -4172,7 +4172,7 @@ control when the signal is generated and how the handler is invoked.
 
     `sigset_t sa_mask'
           This specifies a set of signals to be blocked while the
-          handler runs.  Blocking is explained in *note Blocking for
+          handler runs.  Blocking is explained in *Note Blocking for
           Handler::.  Note that the signal that was delivered is
           automatically blocked by default before its handler is
           started; this is true regardless of the value in `sa_mask'.
@@ -4181,7 +4181,7 @@ control when the signal is generated and how the handler is invoked.
 
     `int sa_flags'
           This specifies various flags which can affect the behavior of
-          the signal.  These are described in more detail in *note
+          the signal.  These are described in more detail in *Note
           Flags for Sigaction::.
 
  -- Function: int sigaction (int SIGNUM, const struct sigaction
@@ -4252,7 +4252,7 @@ File: libc.info,  Node: Sigaction Function Example,  Next: Flags for Sigaction, 
 24.3.4 `sigaction' Function Example
 -----------------------------------
 
-In *note Basic Signal Handling::, we gave an example of establishing a
+In *Note Basic Signal Handling::, we gave an example of establishing a
 simple handler for termination signals using `signal'.  Here is an
 equivalent example using `sigaction':
 
@@ -4292,7 +4292,7 @@ equivalent example using `sigaction':
 
    The program just loads the `new_action' structure with the desired
 parameters and passes it in the `sigaction' call.  The usage of
-`sigemptyset' is described later; see *note Blocking Signals::.
+`sigemptyset' is described later; see *Note Blocking Signals::.
 
    As in the example using `signal', we avoid handling signals
 previously set to be ignored.  Here we can avoid altering the signal
@@ -4470,7 +4470,7 @@ Error Signals::.
    Handlers that return normally must modify some global variable in
 order to have any effect.  Typically, the variable is one that is
 examined periodically by the program during normal operation.  Its data
-type should be `sig_atomic_t' for reasons described in *note Atomic
+type should be `sig_atomic_t' for reasons described in *Note Atomic
 Data Access::.
 
    Here is a simple example of such a program.  It executes the body of
@@ -4638,7 +4638,7 @@ automatically blocked until the handler returns.  That means that if two
 signals of the same kind arrive close together, the second one will be
 held until the first has been handled.  (The handler can explicitly
 unblock the signal using `sigprocmask', if you want to allow more
-signals of this type to arrive; see *note Process Signal Mask::.)
+signals of this type to arrive; see *Note Process Signal Mask::.)
 
    However, your handler can still be interrupted by delivery of another
 kind of signal.  To avoid this, you can use the `sa_mask' member of the
@@ -5230,14 +5230,14 @@ might want to send signals between processes are:
    * Two processes need to synchronize while working together.
 
    This section assumes that you know a little bit about how processes
-work.  For more information on this subject, see *note Processes::.
+work.  For more information on this subject, see *Note Processes::.
 
    The `kill' function is declared in `signal.h'.  
 
  -- Function: int kill (pid_t PID, int SIGNUM)
      The `kill' function sends the signal SIGNUM to the process or
      process group specified by PID.  Besides the signals listed in
-     *note Standard Signals::, SIGNUM can also have a value of zero to
+     *Note Standard Signals::, SIGNUM can also have a value of zero to
      check the validity of the PID.
 
      The PID specifies the process or process group to receive the
@@ -5312,7 +5312,7 @@ send a signal.  The `su' program does this.
 
    Whether a process has permission to send a signal to another process
 is determined by the user IDs of the two processes.  This concept is
-discussed in detail in *note Process Persona::.
+discussed in detail in *Note Process Persona::.
 
    Generally, for a process to be able to send a signal to another
 process, either the sending process must belong to a privileged user
@@ -5406,7 +5406,7 @@ using the `kill' function.
 
    This example uses a busy wait, which is bad, because it wastes CPU
 cycles that other programs could otherwise use.  It is better to ask the
-system to wait until the signal arrives.  See the example in *note
+system to wait until the signal arrives.  See the example in *Note
 Waiting for a Signal::.
 
 
@@ -5744,7 +5744,7 @@ You can find out which signals are pending at any time by calling
      in SET.  If there is a pending signal that is blocked from
      delivery, then that signal is a member of the returned set.  (You
      can test whether a particular signal is a member of this set using
-     `sigismember'; see *note Signal Sets::.)
+     `sigismember'; see *Note Signal Sets::.)
 
      The return value is `0' if successful, and `-1' on failure.
 
@@ -8116,9 +8116,9 @@ Parsers::, the two parts of `doc' are separated by a vertical-tab
 character (`'\v'', or `'\013'').  By convention, the documentation
 before the options is a short string stating what the program does, and
 after any options it is longer, describing the behavior in more detail.
-All documentation strings are automatically filled for output, although
-newlines may be included to force a line break at a particular point.
-In addition, documentation strings are passed to the `gettext'
+All documentation strings are automatically filled for output,
+although newlines may be included to force a line break at a particular
+point.  In addition, documentation strings are passed to the `gettext'
 function, for possible translation into the current locale.
 
      /* Argp example #4 - a program with somewhat more complicated options */
@@ -8478,7 +8478,7 @@ File: libc.info,  Node: Environment Variables,  Next: System Calls,  Prev: Progr
 
 When a program is executed, it receives information about the context in
 which it was invoked in two ways.  The first mechanism uses the ARGV
-and ARGC arguments to its `main' function, and is discussed in *note
+and ARGC arguments to its `main' function, and is discussed in *Note
 Program Arguments::.  The second mechanism uses "environment variables"
 and is discussed in this section.
 
@@ -8834,7 +8834,7 @@ process or shell.
    A program can also terminate normally by calling the `exit' function.
 
    In addition, programs can be terminated by signals; this is
-discussed in more detail in *note Signal Handling::.  The `abort'
+discussed in more detail in *Note Signal Handling::.  The `abort'
 function causes a signal that kills the program.
 
 * Menu:
@@ -8876,8 +8876,8 @@ and the value that `main' returns is used as the argument to `exit'.
      information in a file, or unlocking locks in shared data bases.
 
   2. All open streams are closed, writing out any buffered output data.
-     See *note Closing Streams::.  In addition, temporary files opened
-     with the `tmpfile' function are removed; see *note Temporary
+     See *Note Closing Streams::.  In addition, temporary files opened
+     with the `tmpfile' function are removed; see *Note Temporary
      Files::.
 
   3. `_exit' is called, terminating the program.  *Note Termination

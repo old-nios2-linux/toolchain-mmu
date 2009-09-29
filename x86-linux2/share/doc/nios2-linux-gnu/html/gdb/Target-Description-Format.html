@@ -3,7 +3,7 @@
 <title>Target Description Format - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Descriptions.html#Target-Descriptions" title="Target Descriptions">
 <link rel="prev" href="Retrieving-Descriptions.html#Retrieving-Descriptions" title="Retrieving Descriptions">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Target-Description-Format"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Predefined-Target-Types.html#Predefined-Target-Types">Predefined Target Types</a>,
+<a name="Target-Description-Format"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Predefined-Target-Types.html#Predefined-Target-Types">Predefined Target Types</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Retrieving-Descriptions.html#Retrieving-Descriptions">Retrieving Descriptions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Descriptions.html#Target-Descriptions">Target Descriptions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">F.2 Target Description Format</h3>
@@ -37,8 +35,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Target-Descriptions.html#Target-Descrip
 <p><a name="index-target-descriptions_002c-XML-format-1840"></a>
 A target description annex is an <a href="http://www.w3.org/XML/">XML</a>
 document which complies with the Document Type Definition provided in
-the <span class="sc">gdb</span> sources in <samp><span class="file">gdb/features/gdb-target.dtd</span></samp>.  This
-means you can use generally available tools like <samp><span class="command">xmllint</span></samp> to
+the <span class="sc">gdb</span> sources in <span class="file">gdb/features/gdb-target.dtd</span>.  This
+means you can use generally available tools like <span class="command">xmllint</span> to
 check that your feature descriptions are well-formed and valid. 
 However, to help people unfamiliar with XML write descriptions for
 their targets, we also describe the grammar here.
@@ -72,15 +70,15 @@ are explained further below.
 breaks, under the usual common-sense rules.  The XML version
 declaration and document type declaration can generally be omitted
 (<span class="sc">gdb</span> does not require them), but specifying them may be
-useful for XML validation tools.  The &lsquo;<samp><span class="samp">version</span></samp>&rsquo; attribute for
-&lsquo;<samp><span class="samp">&lt;target&gt;</span></samp>&rsquo; may also be omitted, but we recommend
+useful for XML validation tools.  The <span class="samp">version</span> attribute for
+<span class="samp">&lt;target&gt;</span> may also be omitted, but we recommend
 including it; if future versions of <span class="sc">gdb</span> use an incompatible
-revision of <samp><span class="file">gdb-target.dtd</span></samp>, they will detect and report
+revision of <span class="file">gdb-target.dtd</span>, they will detect and report
 the version mismatch.
 
 <h4 class="subsection">F.2.1 Inclusion</h4>
 
-<p><a name="index-target-descriptions_002c-inclusion-1841"></a><a name="index-XInclude-1842"></a><a name="index-g_t_003cxi_003ainclude_003e-1843"></a>
+<p><a name="index-target-descriptions_002c-inclusion-1841"></a><a name="index-XInclude-1842"></a><a name="index-_003cxi_003ainclude_003e-1843"></a>
 It can sometimes be valuable to split a target description up into
 several different annexes, either for organizational purposes, or to
 share files between different possible target descriptions.  You can
@@ -92,7 +90,7 @@ the target description with an inclusion directive of the form:
    <p class="noindent">When <span class="sc">gdb</span> encounters an element of this form, it will retrieve
 the named XML <var>document</var>, and replace the inclusion directive with
 the contents of that document.  If the current description was read
-using &lsquo;<samp><span class="samp">qXfer</span></samp>&rsquo;, then so will be the included document;
+using <span class="samp">qXfer</span>, then so will be the included document;
 <var>document</var> will be interpreted as the name of an annex.  If the
 current description was read from a file, <span class="sc">gdb</span> will look for
 <var>document</var> as a file in the same directory where it found the
@@ -100,8 +98,8 @@ original description.
 
 <h4 class="subsection">F.2.2 Architecture</h4>
 
-<p><a name="index-g_t_003carchitecture_003e-1844"></a>
-An &lsquo;<samp><span class="samp">&lt;architecture&gt;</span></samp>&rsquo; element has this form:
+<p><a name="index-_003carchitecture_003e-1844"></a>
+An <span class="samp">&lt;architecture&gt;</span> element has this form:
 
 <pre class="smallexample">       &lt;architecture&gt;<var>arch</var>&lt;/architecture&gt;
 </pre>
@@ -110,10 +108,10 @@ accepted by <code>set architecture</code> (see <a href="Targets.html#Targets">Sp
 
 <h4 class="subsection">F.2.3 Features</h4>
 
-<p><a name="index-g_t_003cfeature_003e-1845"></a>
-Each &lsquo;<samp><span class="samp">&lt;feature&gt;</span></samp>&rsquo; describes some logical portion of the target
+<p><a name="index-_003cfeature_003e-1845"></a>
+Each <span class="samp">&lt;feature&gt;</span> describes some logical portion of the target
 system.  Features are currently used to describe available CPU
-registers and the types of their contents.  A &lsquo;<samp><span class="samp">&lt;feature&gt;</span></samp>&rsquo; element
+registers and the types of their contents.  A <span class="samp">&lt;feature&gt;</span> element
 has this form:
 
 <pre class="smallexample">     &lt;feature name="<var>name</var>"&gt;
@@ -133,20 +131,20 @@ interpret.  The default interpretation is a two's complement integer,
 but other types can be requested by name in the register description. 
 Some predefined types are provided by <span class="sc">gdb</span> (see <a href="Predefined-Target-Types.html#Predefined-Target-Types">Predefined Target Types</a>), and the description can define additional composite types.
 
-   <p>Each type element must have an &lsquo;<samp><span class="samp">id</span></samp>&rsquo; attribute, which gives
-a unique (within the containing &lsquo;<samp><span class="samp">&lt;feature&gt;</span></samp>&rsquo;) name to the type. 
+   <p>Each type element must have an <span class="samp">id</span> attribute, which gives
+a unique (within the containing <span class="samp">&lt;feature&gt;</span>) name to the type. 
 Types must be defined before they are used.
 
-   <p><a name="index-g_t_003cvector_003e-1846"></a>Some targets offer vector registers, which can be treated as arrays
-of scalar elements.  These types are written as &lsquo;<samp><span class="samp">&lt;vector&gt;</span></samp>&rsquo; elements,
+   <p><a name="index-_003cvector_003e-1846"></a>Some targets offer vector registers, which can be treated as arrays
+of scalar elements.  These types are written as <span class="samp">&lt;vector&gt;</span> elements,
 specifying the array element type, <var>type</var>, and the number of elements,
 <var>count</var>:
 
 <pre class="smallexample">     &lt;vector id="<var>id</var>" type="<var>type</var>" count="<var>count</var>"/&gt;
 </pre>
-   <p><a name="index-g_t_003cunion_003e-1847"></a>If a register's value is usefully viewed in multiple ways, define it
+   <p><a name="index-_003cunion_003e-1847"></a>If a register's value is usefully viewed in multiple ways, define it
 with a union type containing the useful representations.  The
-&lsquo;<samp><span class="samp">&lt;union&gt;</span></samp>&rsquo; element contains one or more &lsquo;<samp><span class="samp">&lt;field&gt;</span></samp>&rsquo; elements,
+<span class="samp">&lt;union&gt;</span> element contains one or more <span class="samp">&lt;field&gt;</span> elements,
 each of which has a <var>name</var> and a <var>type</var>:
 
 <pre class="smallexample">     &lt;union id="<var>id</var>"&gt;
@@ -156,7 +154,7 @@ each of which has a <var>name</var> and a <var>type</var>:
 </pre>
    <h4 class="subsection">F.2.5 Registers</h4>
 
-<p><a name="index-g_t_003creg_003e-1848"></a>
+<p><a name="index-_003creg_003e-1848"></a>
 Each register is represented as an element with this form:
 
 <pre class="smallexample">     &lt;reg name="<var>name</var>"

@@ -3,7 +3,7 @@
 <title>Closing Streams - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="I_002fO-on-Streams.html#I_002fO-on-Streams" title="I/O on Streams">
 <link rel="prev" href="Opening-Streams.html#Opening-Streams" title="Opening Streams">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Closing-Streams"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Streams-and-Threads.html#Streams-and-Threads">Streams and Threads</a>,
+<a name="Closing-Streams"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Streams-and-Threads.html#Streams-and-Threads">Streams and Threads</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Opening-Streams.html#Opening-Streams">Opening Streams</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="I_002fO-on-Streams.html#I_002fO-on-Streams">I/O on Streams</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">12.4 Closing Streams</h3>
@@ -55,7 +53,7 @@ output, it might get an error because the disk is full.  Even if you
 know the buffer is empty, errors can still occur when closing a file if
 you are using NFS.
 
-        <p>The function <code>fclose</code> is declared in <samp><span class="file">stdio.h</span></samp>. 
+        <p>The function <code>fclose</code> is declared in <span class="file">stdio.h</span>. 
 </p></blockquote></div>
 
    <p>To close all streams currently available the GNU C Library provides
@@ -77,7 +75,7 @@ stream should be closed separately so that problems with individual
 streams can be identified.  It is also problematic since the standard
 streams (see <a href="Standard-Streams.html#Standard-Streams">Standard Streams</a>) will also be closed.
 
-        <p>The function <code>fcloseall</code> is declared in <samp><span class="file">stdio.h</span></samp>. 
+        <p>The function <code>fcloseall</code> is declared in <span class="file">stdio.h</span>. 
 </p></blockquote></div>
 
    <p>If the <code>main</code> function to your program returns, or if you call the

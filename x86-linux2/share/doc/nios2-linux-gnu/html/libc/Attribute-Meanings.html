@@ -3,7 +3,7 @@
 <title>Attribute Meanings - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-Attributes.html#File-Attributes" title="File Attributes">
 <link rel="next" href="Reading-Attributes.html#Reading-Attributes" title="Reading Attributes">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Attribute-Meanings"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Reading-Attributes.html#Reading-Attributes">Reading Attributes</a>,
+<a name="Attribute-Meanings"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Reading-Attributes.html#Reading-Attributes">Reading Attributes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-Attributes.html#File-Attributes">File Attributes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.9.1 The meaning of the File Attributes</h4>
@@ -38,7 +36,7 @@ called <code>struct stat</code>.  This section describes the names of the
 attributes, their data types, and what they mean.  For the functions
 to read the attributes of a file, see <a href="Reading-Attributes.html#Reading-Attributes">Reading Attributes</a>.
 
-   <p>The header file <samp><span class="file">sys/stat.h</span></samp> declares all the symbols defined
+   <p>The header file <span class="file">sys/stat.h</span> declares all the symbols defined
 in this section. 
 <a name="index-sys_002fstat_002eh-1493"></a>
 <!-- sys/stat.h -->
@@ -94,7 +92,7 @@ See <a href="File-Times.html#File-Times">File Times</a>.
 attributes of the file.  See <a href="File-Times.html#File-Times">File Times</a>.
 
           <!-- !!! st_rdev -->
-          <br><dt><code>blkcnt_t st_blocks</code><dd>This is the amount of disk space that the file occupies, measured in
+<br><dt><code>blkcnt_t st_blocks</code><dd>This is the amount of disk space that the file occupies, measured in
 units of 512-byte blocks.
 
           <p>The number of disk blocks is not strictly proportional to the size of
@@ -107,7 +105,7 @@ disk.
 value with <code>st_size</code>, like this:
 
           <pre class="smallexample">               (st.st_blocks * 512 &lt; st.st_size)
-</pre>
+          </pre>
           <p>This test is not perfect because a file that is just slightly sparse
 might not be detected as sparse at all.  For practical applications,
 this is not a problem.
@@ -176,7 +174,7 @@ See <a href="File-Times.html#File-Times">File Times</a>.
 attributes of the file.  See <a href="File-Times.html#File-Times">File Times</a>.
 
           <!-- !!! st_rdev -->
-          <br><dt><code>blkcnt64_t st_blocks</code><dd>This is the amount of disk space that the file occupies, measured in
+<br><dt><code>blkcnt64_t st_blocks</code><dd>This is the amount of disk space that the file occupies, measured in
 units of 512-byte blocks.
 
           <br><dt><code>unsigned int st_blksize</code><dd>The optimal block size for reading of writing this file, in bytes.  You
@@ -188,7 +186,7 @@ writing the file.  (This is unrelated to <code>st_blocks</code>.)
    <p>Some of the file attributes have special data type names which exist
 specifically for those attributes.  (They are all aliases for well-known
 integer types that you know and love.)  These typedef names are defined
-in the header file <samp><span class="file">sys/types.h</span></samp> as well as in <samp><span class="file">sys/stat.h</span></samp>. 
+in the header file <span class="file">sys/types.h</span> as well as in <span class="file">sys/stat.h</span>. 
 Here is a list of them.
 
 <!-- sys/types.h -->

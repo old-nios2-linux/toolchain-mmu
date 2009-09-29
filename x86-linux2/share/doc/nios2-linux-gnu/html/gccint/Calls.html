@@ -3,7 +3,7 @@
 <title>Calls - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="RTL.html#RTL" title="RTL">
 <link rel="prev" href="Insns.html#Insns" title="Insns">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Calls"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Sharing.html#Sharing">Sharing</a>,
+<a name="Calls"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Sharing.html#Sharing">Sharing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Insns.html#Insns">Insns</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="RTL.html#RTL">RTL</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">11.19 RTL Representation of Function-Call Insns</h3>
@@ -60,7 +58,7 @@ Insns that call subroutines have the RTL expression code <code>call_insn</code>.
 These insns must satisfy special rules, and their bodies must use a special
 RTL expression code, <code>call</code>.
 
- <p><a name="index-g_t_0040code_007bcall_007d-usage-1136"></a>A <code>call</code> expression has two operands, as follows:
+ <p><a name="index-_0040code_007bcall_007d-usage-1136"></a>A <code>call</code> expression has two operands, as follows:
 
 <pre class="smallexample">     (call (mem:<var>fm</var> <var>addr</var>) <var>nbytes</var>)
 </pre>
@@ -74,7 +72,7 @@ subroutine.
 shown above is the entire body of the insn, except that the insn might
 also contain <code>use</code> or <code>clobber</code> expressions.
 
- <p><a name="index-g_t_0040code_007bBLKmode_007d_002c-and-function-return-values-1137"></a>For a subroutine that returns a value whose mode is not <code>BLKmode</code>,
+ <p><a name="index-_0040code_007bBLKmode_007d_002c-and-function-return-values-1137"></a>For a subroutine that returns a value whose mode is not <code>BLKmode</code>,
 the value is returned in a hard register.  If this register's number is
 <var>r</var>, then the body of the call insn looks like this:
 

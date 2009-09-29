@@ -3,7 +3,7 @@
 <title>Socket Concepts - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Sockets.html#Sockets" title="Sockets">
 <link rel="next" href="Communication-Styles.html#Communication-Styles" title="Communication Styles">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Socket-Concepts"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Communication-Styles.html#Communication-Styles">Communication Styles</a>,
+<a name="Socket-Concepts"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Communication-Styles.html#Communication-Styles">Communication Styles</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Sockets.html#Sockets">Sockets</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">16.1 Socket Concepts</h3>
@@ -66,8 +64,8 @@ name (&ldquo;address&rdquo;) is meaningful only in the context of a particular
 namespace.  In fact, even the data type to use for a socket name may
 depend on the namespace.  Namespaces are also called &ldquo;domains&rdquo;, but we
 avoid that word as it can be confused with other usage of the same
-term.  Each namespace has a symbolic name that starts with &lsquo;<samp><span class="samp">PF_</span></samp>&rsquo;. 
-A corresponding symbolic name starting with &lsquo;<samp><span class="samp">AF_</span></samp>&rsquo; designates the
+term.  Each namespace has a symbolic name that starts with <span class="samp">PF_</span>. 
+A corresponding symbolic name starting with <span class="samp">AF_</span> designates the
 address format for that namespace.
 
    <p><a name="index-network-protocol-1642"></a><a name="index-protocol-_0028of-socket_0029-1643"></a><a name="index-socket-protocol-1644"></a><a name="index-protocol-family-1645"></a>Finally you must choose the <dfn>protocol</dfn> to carry out the
@@ -75,7 +73,7 @@ communication.  The protocol determines what low-level mechanism is used
 to transmit and receive data.  Each protocol is valid for a particular
 namespace and communication style; a namespace is sometimes called a
 <dfn>protocol family</dfn> because of this, which is why the namespace names
-start with &lsquo;<samp><span class="samp">PF_</span></samp>&rsquo;.
+start with <span class="samp">PF_</span>.
 
    <p>The rules of a protocol apply to the data passing between two programs,
 perhaps on different computers; most of these rules are handled by the

@@ -3,7 +3,7 @@
 <title>Assertions - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Obsolete-Features.html#Obsolete-Features" title="Obsolete Features">
 <link rel="next" href="Obsolete-once_002donly-headers.html#Obsolete-once_002donly-headers" title="Obsolete once-only headers">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
--->
+man end-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,18 +40,16 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Assertions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Obsolete-once_002donly-headers.html#Obsolete-once_002donly-headers">Obsolete once-only headers</a>,
+<a name="Assertions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Obsolete-once_002donly-headers.html#Obsolete-once_002donly-headers">Obsolete once-only headers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Obsolete-Features.html#Obsolete-Features">Obsolete Features</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">11.3.1 Assertions</h4>
@@ -82,7 +80,7 @@ redefinition.)  Thus, <code>(x + y)</code> is different from <code>(x+y)</code> 
 equivalent to <code>(&nbsp;x&nbsp;+&nbsp;y&nbsp;)<!-- /@w --></code>.  Parentheses do not nest inside an
 answer.
 
-   <p><a name="index-testing-predicates-112"></a>To test an assertion, you write it in an &lsquo;<samp><span class="samp">#if</span></samp>&rsquo;.  For example, this
+   <p><a name="index-testing-predicates-112"></a>To test an assertion, you write it in an <span class="samp">#if</span>.  For example, this
 conditional succeeds if either <code>vax</code> or <code>ns16000</code> has been
 asserted as an answer for <code>machine</code>.
 
@@ -93,8 +91,8 @@ omitting the answer in the conditional:
 
 <pre class="smallexample">     #if #machine
 </pre>
-   <p><a name="index-g_t_0023assert-113"></a>Assertions are made with the &lsquo;<samp><span class="samp">#assert</span></samp>&rsquo; directive.  Its sole
-argument is the assertion to make, without the leading &lsquo;<samp><span class="samp">#</span></samp>&rsquo; that
+   <p><a name="index-_0023assert-113"></a>Assertions are made with the <span class="samp">#assert</span> directive.  Its sole
+argument is the assertion to make, without the leading <span class="samp">#</span> that
 identifies assertions in conditionals.
 
 <pre class="smallexample">     #assert <var>predicate</var> (<var>answer</var>)
@@ -104,15 +102,15 @@ answers.  Subsequent assertions do not override previous ones for the
 same predicate.  All the answers for any given predicate are
 simultaneously true.
 
-   <p><a name="index-assertions_002c-canceling-114"></a><a name="index-g_t_0023unassert-115"></a>Assertions can be canceled with the &lsquo;<samp><span class="samp">#unassert</span></samp>&rsquo; directive.  It
-has the same syntax as &lsquo;<samp><span class="samp">#assert</span></samp>&rsquo;.  In that form it cancels only the
-answer which was specified on the &lsquo;<samp><span class="samp">#unassert</span></samp>&rsquo; line; other answers
+   <p><a name="index-assertions_002c-canceling-114"></a><a name="index-_0023unassert-115"></a>Assertions can be canceled with the <span class="samp">#unassert</span> directive.  It
+has the same syntax as <span class="samp">#assert</span>.  In that form it cancels only the
+answer which was specified on the <span class="samp">#unassert</span> line; other answers
 for that predicate remain true.  You can cancel an entire predicate by
 leaving out the answer:
 
 <pre class="smallexample">     #unassert <var>predicate</var>
 </pre>
-   <p class="noindent">In either form, if no such assertion has been made, &lsquo;<samp><span class="samp">#unassert</span></samp>&rsquo; has
+   <p class="noindent">In either form, if no such assertion has been made, <span class="samp">#unassert</span> has
 no effect.
 
    <p>You can also make or cancel assertions using command line options. 

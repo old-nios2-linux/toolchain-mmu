@@ -3,7 +3,7 @@
 <title>HPPA Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="H8_002f300-Options.html#H8_002f300-Options" title="H8/300 Options">
@@ -38,36 +38,34 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="HPPA-Options"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="i386-and-x86_002d64-Options.html#i386-and-x86_002d64-Options">i386 and x86-64 Options</a>,
+<a name="HPPA-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="i386-and-x86_002d64-Options.html#i386-and-x86_002d64-Options">i386 and x86-64 Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="H8_002f300-Options.html#H8_002f300-Options">H8/300 Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.17.14 HPPA Options</h4>
 
 <p><a name="index-HPPA-Options-1001"></a>
-These &lsquo;<samp><span class="samp">-m</span></samp>&rsquo; options are defined for the HPPA family of computers:
+These <span class="samp">-m</span> options are defined for the HPPA family of computers:
 
      <dl>
 <dt><code>-march=</code><var>architecture-type</var><dd><a name="index-march-1002"></a>Generate code for the specified architecture.  The choices for
-<var>architecture-type</var> are &lsquo;<samp><span class="samp">1.0</span></samp>&rsquo; for PA 1.0, &lsquo;<samp><span class="samp">1.1</span></samp>&rsquo; for PA
-1.1, and &lsquo;<samp><span class="samp">2.0</span></samp>&rsquo; for PA 2.0 processors.  Refer to
-<samp><span class="file">/usr/lib/sched.models</span></samp> on an HP-UX system to determine the proper
+<var>architecture-type</var> are <span class="samp">1.0</span> for PA 1.0, <span class="samp">1.1</span> for PA
+1.1, and <span class="samp">2.0</span> for PA 2.0 processors.  Refer to
+<span class="file">/usr/lib/sched.models</span> on an HP-UX system to determine the proper
 architecture option for your machine.  Code compiled for lower numbered
 architectures will run on higher numbered architectures, but not the
 other way around.
 
-     <br><dt><code>-mpa-risc-1-0</code><dt><code>-mpa-risc-1-1</code><dt><code>-mpa-risc-2-0</code><dd><a name="index-mpa_002drisc_002d1_002d0-1003"></a><a name="index-mpa_002drisc_002d1_002d1-1004"></a><a name="index-mpa_002drisc_002d2_002d0-1005"></a>Synonyms for <samp><span class="option">-march=1.0</span></samp>, <samp><span class="option">-march=1.1</span></samp>, and <samp><span class="option">-march=2.0</span></samp> respectively.
+     <br><dt><code>-mpa-risc-1-0</code><dt><code>-mpa-risc-1-1</code><dt><code>-mpa-risc-2-0</code><dd><a name="index-mpa_002drisc_002d1_002d0-1003"></a><a name="index-mpa_002drisc_002d1_002d1-1004"></a><a name="index-mpa_002drisc_002d2_002d0-1005"></a>Synonyms for <span class="option">-march=1.0</span>, <span class="option">-march=1.1</span>, and <span class="option">-march=2.0</span> respectively.
 
      <br><dt><code>-mbig-switch</code><dd><a name="index-mbig_002dswitch-1006"></a>Generate code suitable for big switch tables.  Use this option only if
 the assembler/linker complain about out of range branches within a switch
@@ -103,7 +101,7 @@ two registers separated by a dash.  Multiple register ranges can be
 specified separated by a comma.
 
      <br><dt><code>-mlong-load-store</code><dd><a name="index-mlong_002dload_002dstore-1013"></a>Generate 3-instruction load and store sequences as sometimes required by
-the HP-UX 10 linker.  This is equivalent to the &lsquo;<samp><span class="samp">+k</span></samp>&rsquo; option to
+the HP-UX 10 linker.  This is equivalent to the <span class="samp">+k</span> option to
 the HP compilers.
 
      <br><dt><code>-mportable-runtime</code><dd><a name="index-mportable_002druntime-1014"></a>Use the portable calling conventions proposed by HP for ELF systems.
@@ -111,11 +109,11 @@ the HP compilers.
      <br><dt><code>-mgas</code><dd><a name="index-mgas-1015"></a>Enable the use of assembler directives only GAS understands.
 
      <br><dt><code>-mschedule=</code><var>cpu-type</var><dd><a name="index-mschedule-1016"></a>Schedule code according to the constraints for the machine type
-<var>cpu-type</var>.  The choices for <var>cpu-type</var> are &lsquo;<samp><span class="samp">700</span></samp>&rsquo;
-&lsquo;<samp><span class="samp">7100</span></samp>&rsquo;, &lsquo;<samp><span class="samp">7100LC</span></samp>&rsquo;, &lsquo;<samp><span class="samp">7200</span></samp>&rsquo;, &lsquo;<samp><span class="samp">7300</span></samp>&rsquo; and &lsquo;<samp><span class="samp">8000</span></samp>&rsquo;.  Refer
-to <samp><span class="file">/usr/lib/sched.models</span></samp> on an HP-UX system to determine the
+<var>cpu-type</var>.  The choices for <var>cpu-type</var> are <span class="samp">700</span>
+<span class="samp">7100</span>, <span class="samp">7100LC</span>, <span class="samp">7200</span>, <span class="samp">7300</span> and <span class="samp">8000</span>.  Refer
+to <span class="file">/usr/lib/sched.models</span> on an HP-UX system to determine the
 proper scheduling option for your machine.  The default scheduling is
-&lsquo;<samp><span class="samp">8000</span></samp>&rsquo;.
+<span class="samp">8000</span>.
 
      <br><dt><code>-mlinker-opt</code><dd><a name="index-mlinker_002dopt-1017"></a>Enable the optimization pass in the HP-UX linker.  Note this makes symbolic
 debugging impossible.  It also triggers a bug in the HP-UX 8 and HP-UX 9
@@ -126,40 +124,40 @@ linkers in which they give bogus error messages when linking some programs.
 targets.  Normally the facilities of the machine's usual C compiler are
 used, but this cannot be done directly in cross-compilation.  You must make
 your own arrangements to provide suitable library functions for
-cross-compilation.  The embedded target &lsquo;<samp><span class="samp">hppa1.1-*-pro</span></samp>&rsquo;
+cross-compilation.  The embedded target <span class="samp">hppa1.1-*-pro</span>
 does provide software floating point support.
 
-     <p><samp><span class="option">-msoft-float</span></samp> changes the calling convention in the output file;
+     <p><span class="option">-msoft-float</span> changes the calling convention in the output file;
 therefore, it is only useful if you compile <em>all</em> of a program with
-this option.  In particular, you need to compile <samp><span class="file">libgcc.a</span></samp>, the
-library that comes with GCC, with <samp><span class="option">-msoft-float</span></samp> in order for
+this option.  In particular, you need to compile <span class="file">libgcc.a</span>, the
+library that comes with GCC, with <span class="option">-msoft-float</span> in order for
 this to work.
 
      <br><dt><code>-msio</code><dd><a name="index-msio-1019"></a>Generate the predefine, <code>_SIO</code>, for server IO.  The default is
-<samp><span class="option">-mwsio</span></samp>.  This generates the predefines, <code>__hp9000s700</code>,
+<span class="option">-mwsio</span>.  This generates the predefines, <code>__hp9000s700</code>,
 <code>__hp9000s700__</code> and <code>_WSIO</code>, for workstation IO.  These
 options are available under HP-UX and HI-UX.
 
-     <br><dt><code>-mgnu-ld</code><dd><a name="index-gnu_002dld-1020"></a>Use GNU ld specific options.  This passes <samp><span class="option">-shared</span></samp> to ld when
+     <br><dt><code>-mgnu-ld</code><dd><a name="index-gnu_002dld-1020"></a>Use GNU ld specific options.  This passes <span class="option">-shared</span> to ld when
 building a shared library.  It is the default when GCC is configured,
 explicitly or implicitly, with the GNU linker.  This option does not
 have any affect on which ld is called, it only changes what parameters
 are passed to that ld.  The ld that is called is determined by the
-<samp><span class="option">--with-ld</span></samp> configure option, GCC's program search path, and
-finally by the user's <samp><span class="env">PATH</span></samp>.  The linker used by GCC can be printed
-using &lsquo;<samp><span class="samp">which `gcc -print-prog-name=ld`</span></samp>&rsquo;.  This option is only available
-on the 64 bit HP-UX GCC, i.e. configured with &lsquo;<samp><span class="samp">hppa*64*-*-hpux*</span></samp>&rsquo;.
+<span class="option">--with-ld</span> configure option, GCC's program search path, and
+finally by the user's <span class="env">PATH</span>.  The linker used by GCC can be printed
+using <span class="samp">which `gcc -print-prog-name=ld`</span>.  This option is only available
+on the 64 bit HP-UX GCC, i.e. configured with <span class="samp">hppa*64*-*-hpux*</span>.
 
-     <br><dt><code>-mhp-ld</code><dd><a name="index-hp_002dld-1021"></a>Use HP ld specific options.  This passes <samp><span class="option">-b</span></samp> to ld when building
-a shared library and passes <samp><span class="option">+Accept TypeMismatch</span></samp> to ld on all
+     <br><dt><code>-mhp-ld</code><dd><a name="index-hp_002dld-1021"></a>Use HP ld specific options.  This passes <span class="option">-b</span> to ld when building
+a shared library and passes <span class="option">+Accept TypeMismatch</span> to ld on all
 links.  It is the default when GCC is configured, explicitly or
 implicitly, with the HP linker.  This option does not have any affect on
 which ld is called, it only changes what parameters are passed to that
-ld.  The ld that is called is determined by the <samp><span class="option">--with-ld</span></samp>
+ld.  The ld that is called is determined by the <span class="option">--with-ld</span>
 configure option, GCC's program search path, and finally by the user's
-<samp><span class="env">PATH</span></samp>.  The linker used by GCC can be printed using &lsquo;<samp><span class="samp">which
-`gcc -print-prog-name=ld`</span></samp>&rsquo;.  This option is only available on the 64 bit
-HP-UX GCC, i.e. configured with &lsquo;<samp><span class="samp">hppa*64*-*-hpux*</span></samp>&rsquo;.
+<span class="env">PATH</span>.  The linker used by GCC can be printed using <span class="samp">which
+`gcc -print-prog-name=ld`</span>.  This option is only available on the 64 bit
+HP-UX GCC, i.e. configured with <span class="samp">hppa*64*-*-hpux*</span>.
 
      <br><dt><code>-mlong-calls</code><dd><a name="index-mno_002dlong_002dcalls-1022"></a>Generate code that uses long call sequences.  This ensures that a call
 is always able to reach linker generated stubs.  The default is to generate
@@ -171,8 +169,8 @@ PA 2.0 and PA 1.X architectures.  Sibcalls are always limited at
 240,000 bytes.
 
      <p>Distances are measured from the beginning of functions when using the
-<samp><span class="option">-ffunction-sections</span></samp> option, or when using the <samp><span class="option">-mgas</span></samp>
-and <samp><span class="option">-mno-portable-runtime</span></samp> options together under HP-UX with
+<span class="option">-ffunction-sections</span> option, or when using the <span class="option">-mgas</span>
+and <span class="option">-mno-portable-runtime</span> options together under HP-UX with
 the SOM linker.
 
      <p>It is normally not desirable to use this option as it will degrade
@@ -187,19 +185,19 @@ However, an indirect call is used on 32-bit ELF systems in pic code
 and it is quite long.
 
      <br><dt><code>-munix=</code><var>unix-std</var><dd><a name="index-march-1023"></a>Generate compiler predefines and select a startfile for the specified
-UNIX standard.  The choices for <var>unix-std</var> are &lsquo;<samp><span class="samp">93</span></samp>&rsquo;, &lsquo;<samp><span class="samp">95</span></samp>&rsquo;
-and &lsquo;<samp><span class="samp">98</span></samp>&rsquo;.  &lsquo;<samp><span class="samp">93</span></samp>&rsquo; is supported on all HP-UX versions.  &lsquo;<samp><span class="samp">95</span></samp>&rsquo;
-is available on HP-UX 10.10 and later.  &lsquo;<samp><span class="samp">98</span></samp>&rsquo; is available on HP-UX
-11.11 and later.  The default values are &lsquo;<samp><span class="samp">93</span></samp>&rsquo; for HP-UX 10.00,
-&lsquo;<samp><span class="samp">95</span></samp>&rsquo; for HP-UX 10.10 though to 11.00, and &lsquo;<samp><span class="samp">98</span></samp>&rsquo; for HP-UX 11.11
+UNIX standard.  The choices for <var>unix-std</var> are <span class="samp">93</span>, <span class="samp">95</span>
+and <span class="samp">98</span>.  <span class="samp">93</span> is supported on all HP-UX versions.  <span class="samp">95</span>
+is available on HP-UX 10.10 and later.  <span class="samp">98</span> is available on HP-UX
+11.11 and later.  The default values are <span class="samp">93</span> for HP-UX 10.00,
+<span class="samp">95</span> for HP-UX 10.10 though to 11.00, and <span class="samp">98</span> for HP-UX 11.11
 and later.
 
-     <p><samp><span class="option">-munix=93</span></samp> provides the same predefines as GCC 3.3 and 3.4. 
-<samp><span class="option">-munix=95</span></samp> provides additional predefines for <code>XOPEN_UNIX</code>
-and <code>_XOPEN_SOURCE_EXTENDED</code>, and the startfile <samp><span class="file">unix95.o</span></samp>. 
-<samp><span class="option">-munix=98</span></samp> provides additional predefines for <code>_XOPEN_UNIX</code>,
+     <p><span class="option">-munix=93</span> provides the same predefines as GCC 3.3 and 3.4. 
+<span class="option">-munix=95</span> provides additional predefines for <code>XOPEN_UNIX</code>
+and <code>_XOPEN_SOURCE_EXTENDED</code>, and the startfile <span class="file">unix95.o</span>. 
+<span class="option">-munix=98</span> provides additional predefines for <code>_XOPEN_UNIX</code>,
 <code>_XOPEN_SOURCE_EXTENDED</code>, <code>_INCLUDE__STDC_A1_SOURCE</code> and
-<code>_INCLUDE_XOPEN_SOURCE_500</code>, and the startfile <samp><span class="file">unix98.o</span></samp>.
+<code>_INCLUDE_XOPEN_SOURCE_500</code>, and the startfile <span class="file">unix98.o</span>.
 
      <p>It is <em>important</em> to note that this option changes the interfaces
 for various library routines.  It also affects the operational behavior
@@ -211,18 +209,18 @@ standard must test, set and restore the variable <var>__xpg4_extended_mask</var>
 as appropriate.  Most GNU software doesn't provide this capability.
 
      <br><dt><code>-nolibdld</code><dd><a name="index-nolibdld-1024"></a>Suppress the generation of link options to search libdld.sl when the
-<samp><span class="option">-static</span></samp> option is specified on HP-UX 10 and later.
+<span class="option">-static</span> option is specified on HP-UX 10 and later.
 
      <br><dt><code>-static</code><dd><a name="index-static-1025"></a>The HP-UX implementation of setlocale in libc has a dependency on
 libdld.sl.  There isn't an archive version of libdld.sl.  Thus,
-when the <samp><span class="option">-static</span></samp> option is specified, special link options
+when the <span class="option">-static</span> option is specified, special link options
 are needed to resolve this dependency.
 
      <p>On HP-UX 10 and later, the GCC driver adds the necessary options to
-link with libdld.sl when the <samp><span class="option">-static</span></samp> option is specified. 
+link with libdld.sl when the <span class="option">-static</span> option is specified. 
 This causes the resulting binary to be dynamic.  On the 64-bit port,
 the linkers generate dynamic binaries by default in any case.  The
-<samp><span class="option">-nolibdld</span></samp> option can be used to prevent the GCC driver from
+<span class="option">-nolibdld</span> option can be used to prevent the GCC driver from
 adding these link options.
 
      <br><dt><code>-threads</code><dd><a name="index-threads-1026"></a>Add support for multithreading with the <dfn>dce thread</dfn> library

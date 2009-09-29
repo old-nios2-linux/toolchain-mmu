@@ -3,7 +3,7 @@
 <title>Predicates - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Machine-Desc.html#Machine-Desc" title="Machine Desc">
 <link rel="prev" href="Output-Statement.html#Output-Statement" title="Output Statement">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Predicates"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Constraints.html#Constraints">Constraints</a>,
+<a name="Predicates"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Constraints.html#Constraints">Constraints</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Output-Statement.html#Output-Statement">Output Statement</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Machine-Desc.html#Machine-Desc">Machine Desc</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">13.7 Predicates</h3>
@@ -62,8 +60,8 @@ surrounding instruction pattern will be used for that combination of
 operands.  GCC has a number of machine-independent predicates, and you
 can define machine-specific predicates as needed.  By convention,
 predicates used with <code>match_operand</code> have names that end in
-&lsquo;<samp><span class="samp">_operand</span></samp>&rsquo;, and those used with <code>match_operator</code> have names
-that end in &lsquo;<samp><span class="samp">_operator</span></samp>&rsquo;.
+<span class="samp">_operand</span>, and those used with <code>match_operator</code> have names
+that end in <span class="samp">_operator</span>.
 
  <p>All predicates are Boolean functions (in the mathematical sense) of
 two arguments: the RTL expression that is being considered at that
@@ -94,7 +92,7 @@ integer <code>CONST_DOUBLE</code> check that the value stored in the
 constant will fit in the requested mode.
 
  <p>Predicates with this behavior are called <dfn>normal</dfn>. 
-<samp><span class="command">genrecog</span></samp> can optimize the instruction recognizer based on
+<span class="command">genrecog</span> can optimize the instruction recognizer based on
 knowledge of how normal predicates treat modes.  It can also diagnose
 certain kinds of common errors in the use of normal predicates; for
 instance, it is almost always an error to use a normal predicate
@@ -103,7 +101,7 @@ without specifying a mode.
  <p>Predicates that do something different with their <var>mode</var> argument
 are called <dfn>special</dfn>.  The generic predicates
 <code>address_operand</code> and <code>pmode_register_operand</code> are special
-predicates.  <samp><span class="command">genrecog</span></samp> does not do any optimizations or
+predicates.  <span class="command">genrecog</span> does not do any optimizations or
 diagnosis when special predicates are used.
 
 <ul class="menu">

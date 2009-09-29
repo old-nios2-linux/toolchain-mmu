@@ -3,7 +3,7 @@
 <title>Socket Pairs - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Open_002fClose-Sockets.html#Open_002fClose-Sockets" title="Open/Close Sockets">
 <link rel="prev" href="Closing-a-Socket.html#Closing-a-Socket" title="Closing a Socket">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Socket-Pairs"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Closing-a-Socket.html#Closing-a-Socket">Closing a Socket</a>,
+<a name="Socket-Pairs"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Closing-a-Socket.html#Closing-a-Socket">Closing a Socket</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Open_002fClose-Sockets.html#Open_002fClose-Sockets">Open/Close Sockets</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">16.8.3 Socket Pairs</h4>
@@ -36,7 +34,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Open_002fClose-Sockets.html#Open_002fCl
 <a name="index-sys_002fsocket_002eh-1785"></a>A <dfn>socket pair</dfn> consists of a pair of connected (but unnamed)
 sockets.  It is very similar to a pipe and is used in much the same
 way.  Socket pairs are created with the <code>socketpair</code> function,
-declared in <samp><span class="file">sys/socket.h</span></samp>.  A socket pair is much like a pipe; the
+declared in <span class="file">sys/socket.h</span>.  A socket pair is much like a pipe; the
 main difference is that the socket pair is bidirectional, whereas the
 pipe has one input-only end and one output-only end (see <a href="Pipes-and-FIFOs.html#Pipes-and-FIFOs">Pipes and FIFOs</a>).
 

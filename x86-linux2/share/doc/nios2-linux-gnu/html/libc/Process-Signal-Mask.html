@@ -3,7 +3,7 @@
 <title>Process Signal Mask - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Blocking-Signals.html#Blocking-Signals" title="Blocking Signals">
 <link rel="prev" href="Signal-Sets.html#Signal-Sets" title="Signal Sets">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Process-Signal-Mask"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Testing-for-Delivery.html#Testing-for-Delivery">Testing for Delivery</a>,
+<a name="Process-Signal-Mask"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Testing-for-Delivery.html#Testing-for-Delivery">Testing for Delivery</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Signal-Sets.html#Signal-Sets">Signal Sets</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Blocking-Signals.html#Blocking-Signals">Blocking Signals</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">24.7.3 Process Signal Mask</h4>
@@ -41,7 +39,7 @@ create a new process (see <a href="Creating-a-Process.html#Creating-a-Process">C
 parent's mask.  You can block or unblock signals with total flexibility
 by modifying the signal mask.
 
-   <p>The prototype for the <code>sigprocmask</code> function is in <samp><span class="file">signal.h</span></samp>. 
+   <p>The prototype for the <code>sigprocmask</code> function is in <span class="file">signal.h</span>. 
 <a name="index-signal_002eh-2966"></a>
 Note that you must not use <code>sigprocmask</code> in multi-threaded processes,
 because each thread has its own signal mask and there is no single process
@@ -65,12 +63,12 @@ other words, the new mask is the union of the existing mask and
 <var>set</var>.
 
           <!-- signal.h -->
-          <!-- POSIX.1 -->
-          <p><a name="index-SIG_005fUNBLOCK-2969"></a><br><dt><code>SIG_UNBLOCK</code><dd>Unblock the signals in <var>set</var>&mdash;remove them from the existing mask.
+<!-- POSIX.1 -->
+<p><a name="index-SIG_005fUNBLOCK-2969"></a><br><dt><code>SIG_UNBLOCK</code><dd>Unblock the signals in <var>set</var>&mdash;remove them from the existing mask.
 
           <!-- signal.h -->
-          <!-- POSIX.1 -->
-          <p><a name="index-SIG_005fSETMASK-2970"></a><br><dt><code>SIG_SETMASK</code><dd>Use <var>set</var> for the mask; ignore the previous value of the mask. 
+<!-- POSIX.1 -->
+<p><a name="index-SIG_005fSETMASK-2970"></a><br><dt><code>SIG_SETMASK</code><dd>Use <var>set</var> for the mask; ignore the previous value of the mask. 
 </dl>
 
         <p>The last argument, <var>oldset</var>, is used to return information about the

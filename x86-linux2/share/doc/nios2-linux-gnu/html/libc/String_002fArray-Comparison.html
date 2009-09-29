@@ -3,7 +3,7 @@
 <title>String/Array Comparison - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="String-and-Array-Utilities.html#String-and-Array-Utilities" title="String and Array Utilities">
 <link rel="prev" href="Copying-and-Concatenation.html#Copying-and-Concatenation" title="Copying and Concatenation">
@@ -17,20 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="String%2fArray-Comparison"></a>
-<a name="String_002fArray-Comparison"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Collation-Functions.html#Collation-Functions">Collation Functions</a>,
+<a name="String_002fArray-Comparison"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Collation-Functions.html#Collation-Functions">Collation Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Copying-and-Concatenation.html#Copying-and-Concatenation">Copying and Concatenation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-and-Array-Utilities">String and Array Utilities</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.5 String/Array Comparison</h3>
@@ -50,9 +47,9 @@ second, while a positive value indicates that the first string is
 &ldquo;greater&rdquo;.
 
    <p>The most common use of these functions is to check only for equality. 
-This is canonically done with an expression like &lsquo;<samp><span class="samp">!&nbsp;strcmp&nbsp;(s1,&nbsp;s2)</span></samp>&rsquo;<!-- /@w -->.
+This is canonically done with an expression like <span class="samp">!&nbsp;strcmp&nbsp;(s1,&nbsp;s2)</span><!-- /@w -->.
 
-   <p>All of these functions are declared in the header file <samp><span class="file">string.h</span></samp>. 
+   <p>All of these functions are declared in the header file <span class="file">string.h</span>. 
 <a name="index-string_002eh-519"></a>
 <!-- string.h -->
 <!-- ISO -->
@@ -144,7 +141,7 @@ strings are written in into account.  To get that one has to use
 <div class="defun">
 &mdash; Function: int <b>wcscmp</b> (<var>const wchar_t *ws1, const wchar_t *ws2</var>)<var><a name="index-wcscmp-523"></a></var><br>
 <blockquote>
-        <p>The <code>wcscmp</code> function compares the wide character string <var>ws1</var>
+<p>The <code>wcscmp</code> function compares the wide character string <var>ws1</var>
 against <var>ws2</var>.  The value returned is smaller than or larger than zero
 depending on whether the first differing wide character is <var>ws1</var> is
 smaller or larger than the corresponding character in <var>ws2</var>.
@@ -236,17 +233,17 @@ instead, then the glyphs are associated with different numeric codes,
 and the return values and ordering may differ.)
 
 <pre class="smallexample">     strcmp ("hello", "hello")
-         &rArr; 0    /* <span class="roman">These two strings are the same.</span> */
+         =&gt; 0    /* <span class="roman">These two strings are the same.</span> */
      strcmp ("hello", "Hello")
-         &rArr; 32   /* <span class="roman">Comparisons are case-sensitive.</span> */
+         =&gt; 32   /* <span class="roman">Comparisons are case-sensitive.</span> */
      strcmp ("hello", "world")
-         &rArr; -15  /* <span class="roman">The character </span><code>'h'</code><span class="roman"> comes before </span><code>'w'</code><span class="roman">.</span> */
+         =&gt; -15  /* <span class="roman">The character </span><code>'h'</code><span class="roman"> comes before </span><code>'w'</code><span class="roman">.</span> */
      strcmp ("hello", "hello, world")
-         &rArr; -44  /* <span class="roman">Comparing a null character against a comma.</span> */
+         =&gt; -44  /* <span class="roman">Comparing a null character against a comma.</span> */
      strncmp ("hello", "hello, world", 5)
-         &rArr; 0    /* <span class="roman">The initial 5 characters are the same.</span> */
+         =&gt; 0    /* <span class="roman">The initial 5 characters are the same.</span> */
      strncmp ("hello, world", "hello, stupid world!!!", 5)
-         &rArr; 0    /* <span class="roman">The initial 5 characters are the same.</span> */
+         =&gt; 0    /* <span class="roman">The initial 5 characters are the same.</span> */
 </pre>
    <!-- string.h -->
 <!-- GNU -->
@@ -278,16 +275,16 @@ than the other one; else the comparison behaves normally.
 </ul>
 
      <pre class="smallexample">          strverscmp ("no digit", "no digit")
-              &rArr; 0    /* <span class="roman">same behavior as strcmp.</span> */
+              =&gt; 0    /* <span class="roman">same behavior as strcmp.</span> */
           strverscmp ("item#99", "item#100")
-              &rArr; &lt;0   /* <span class="roman">same prefix, but 99 &lt; 100.</span> */
+              =&gt; &lt;0   /* <span class="roman">same prefix, but 99 &lt; 100.</span> */
           strverscmp ("alpha1", "alpha001")
-              &rArr; &gt;0   /* <span class="roman">fractional part inferior to integral one.</span> */
+              =&gt; &gt;0   /* <span class="roman">fractional part inferior to integral one.</span> */
           strverscmp ("part1_f012", "part1_f01")
-              &rArr; &gt;0   /* <span class="roman">two fractional parts.</span> */
+              =&gt; &gt;0   /* <span class="roman">two fractional parts.</span> */
           strverscmp ("foo.009", "foo.0")
-              &rArr; &lt;0   /* <span class="roman">idem, but with leading zeroes only.</span> */
-</pre>
+              =&gt; &lt;0   /* <span class="roman">idem, but with leading zeroes only.</span> */
+     </pre>
         <p>This function is especially useful when dealing with filename sorting,
 because filenames frequently hold indices/version numbers.
 

@@ -3,7 +3,7 @@
 <title>Name Service Switch - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Job-Control.html#Job-Control" title="Job Control">
 <link rel="next" href="Users-and-Groups.html#Users-and-Groups" title="Users and Groups">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Name-Service-Switch"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Users-and-Groups.html#Users-and-Groups">Users and Groups</a>,
+<a name="Name-Service-Switch"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Users-and-Groups.html#Users-and-Groups">Users and Groups</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Job-Control.html#Job-Control">Job Control</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">28 System Databases and Name Service Switch</h2>
@@ -37,10 +35,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <p><a name="index-Name-Service-Switch-3248"></a><a name="index-NSS-3249"></a><a name="index-databases-3250"></a>
 Various functions in the C Library need to be configured to work
 correctly in the local environment.  Traditionally, this was done by
-using files (e.g., <samp><span class="file">/etc/passwd</span></samp>), but other nameservices (like the
+using files (e.g., <span class="file">/etc/passwd</span>), but other nameservices (like the
 Network Information Service (NIS) and the Domain Name Service (DNS))
 became popular, and were hacked into the C library, usually with a fixed
-search order (see <a href="../jargon/frobnicate.html#frobnicate">frobnicate</a>).
+search order (see <a href="../jargon/frobnicate.html#frobnicate">frobnicate (The Jargon File)</a>).
 
    <p>The GNU C Library contains a cleaner solution of this problem.  It is
 designed after a method used by Sun Microsystems in the C library of

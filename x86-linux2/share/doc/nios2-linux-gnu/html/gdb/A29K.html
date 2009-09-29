@@ -3,7 +3,7 @@
 <title>A29K - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Architectures.html#Architectures" title="Architectures">
 <link rel="prev" href="i386.html#i386" title="i386">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="A29K"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Alpha.html#Alpha">Alpha</a>,
+<a name="A29K"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Alpha.html#Alpha">Alpha</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="i386.html#i386">i386</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Architectures.html#Architectures">Architectures</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">19.4.2 A29K</h4>
@@ -45,7 +43,7 @@ stack is &ldquo;large enough&rdquo;.  This may result in <span class="sc">gdb</s
 memory locations that do not exist.  If necessary, you can get around
 this problem by specifying the ending address of the register stack with
 the <code>set rstack_high_address</code> command.  The argument should be an
-address, which you probably want to precede with &lsquo;<samp><span class="samp">0x</span></samp>&rsquo; to specify in
+address, which you probably want to precede with <span class="samp">0x</span> to specify in
 hexadecimal.
 
      <p><a name="index-show-rstack_005fhigh_005faddress-1170"></a><br><dt><code>show rstack_high_address</code><dd>Display the current limit of the register stack, on AMD 29000 family

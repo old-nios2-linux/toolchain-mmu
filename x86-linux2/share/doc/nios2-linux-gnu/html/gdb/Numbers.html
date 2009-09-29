@@ -3,7 +3,7 @@
 <title>Numbers - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Controlling-GDB.html#Controlling-GDB" title="Controlling GDB">
 <link rel="prev" href="Screen-Size.html#Screen-Size" title="Screen Size">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Numbers"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="ABI.html#ABI">ABI</a>,
+<a name="Numbers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="ABI.html#ABI">ABI</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Screen-Size.html#Screen-Size">Screen Size</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Controlling-GDB.html#Controlling-GDB">Controlling GDB</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">20.5 Numbers</h3>
@@ -37,9 +35,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Controlling-GDB.html#Controlling-GDB">C
 <p><a name="index-number-representation-1226"></a><a name="index-entering-numbers-1227"></a>
 You can always enter numbers in octal, decimal, or hexadecimal in
 <span class="sc">gdb</span> by the usual conventions: octal numbers begin with
-&lsquo;<samp><span class="samp">0</span></samp>&rsquo;, decimal numbers end with &lsquo;<samp><span class="samp">.</span></samp>&rsquo;, and hexadecimal numbers
-begin with &lsquo;<samp><span class="samp">0x</span></samp>&rsquo;.  Numbers that neither begin with &lsquo;<samp><span class="samp">0</span></samp>&rsquo; or
-&lsquo;<samp><span class="samp">0x</span></samp>&rsquo;, nor end with a &lsquo;<samp><span class="samp">.</span></samp>&rsquo; are, by default, entered in base
+<span class="samp">0</span>, decimal numbers end with <span class="samp">.</span>, and hexadecimal numbers
+begin with <span class="samp">0x</span>.  Numbers that neither begin with <span class="samp">0</span> or
+<span class="samp">0x</span>, nor end with a <span class="samp">.</span> are, by default, entered in base
 10; likewise, the default display for numbers&mdash;when no particular
 format is specified&mdash;is base 10.  You can change the default base for
 both input and output with the commands described below.
@@ -54,12 +52,12 @@ example, any of
      <pre class="smallexample">          set input-radix 012
           set input-radix 10.
           set input-radix 0xa
-</pre>
-     <p class="noindent">sets the input base to decimal.  On the other hand, &lsquo;<samp><span class="samp">set input-radix 10</span></samp>&rsquo;
+     </pre>
+     <p class="noindent">sets the input base to decimal.  On the other hand, <span class="samp">set input-radix 10</span>
 leaves the input radix unchanged, no matter what it was, since
-&lsquo;<samp><span class="samp">10</span></samp>&rsquo;, being without any leading or trailing signs of its base, is
+<span class="samp">10</span>, being without any leading or trailing signs of its base, is
 interpreted in the current radix.  Thus, if the current radix is 16,
-&lsquo;<samp><span class="samp">10</span></samp>&rsquo; is interpreted in hex, i.e. as 16 decimal, which doesn't
+<span class="samp">10</span> is interpreted in hex, i.e. as 16 decimal, which doesn't
 change the radix.
 
      <p><a name="index-set-output_002dradix-1229"></a><br><dt><code>set output-radix </code><var>base</var><dd>Set the default base for numeric display.  Supported choices

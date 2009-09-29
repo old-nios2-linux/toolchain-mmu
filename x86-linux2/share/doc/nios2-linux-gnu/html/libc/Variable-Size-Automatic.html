@@ -3,7 +3,7 @@
 <title>Variable Size Automatic - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Memory-Allocation.html#Memory-Allocation" title="Memory Allocation">
 <link rel="prev" href="Obstacks.html#Obstacks" title="Obstacks">
@@ -16,23 +16,21 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Variable-Size-Automatic"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Obstacks.html#Obstacks">Obstacks</a>,
+<a name="Variable-Size-Automatic"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Obstacks.html#Obstacks">Obstacks</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Memory-Allocation.html#Memory-Allocation">Memory Allocation</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.2.5 Automatic Storage with Variable Size</h4>
 
-<p><a name="index-automatic-freeing-340"></a><a name="index-g_t_0040code_007balloca_007d-function-341"></a><a name="index-automatic-storage-with-variable-size-342"></a>
+<p><a name="index-automatic-freeing-340"></a><a name="index-_0040code_007balloca_007d-function-341"></a><a name="index-automatic-storage-with-variable-size-342"></a>
 The function <code>alloca</code> supports a kind of half-dynamic allocation in
 which blocks are allocated dynamically but freed automatically.
 
@@ -42,7 +40,7 @@ all the blocks are freed when you exit the function that <code>alloca</code> was
 called from, just as if they were automatic variables declared in that
 function.  There is no way to free the space explicitly.
 
-   <p>The prototype for <code>alloca</code> is in <samp><span class="file">stdlib.h</span></samp>.  This function is
+   <p>The prototype for <code>alloca</code> is in <span class="file">stdlib.h</span>.  This function is
 a BSD extension. 
 <a name="index-stdlib_002eh-343"></a>
 <!-- stdlib.h -->

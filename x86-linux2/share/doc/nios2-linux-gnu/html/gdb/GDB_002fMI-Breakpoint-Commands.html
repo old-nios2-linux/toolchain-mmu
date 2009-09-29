@@ -3,7 +3,7 @@
 <title>GDB/MI Breakpoint Commands - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB_002fMI.html#GDB_002fMI" title="GDB/MI">
 <link rel="prev" href="GDB_002fMI-Command-Description-Format.html#GDB_002fMI-Command-Description-Format" title="GDB/MI Command Description Format">
@@ -17,30 +17,27 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="GDB%2fMI-Breakpoint-Commands"></a>
-<a name="GDB_002fMI-Breakpoint-Commands"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Program-Context.html#GDB_002fMI-Program-Context">GDB/MI Program Context</a>,
+<a name="GDB_002fMI-Breakpoint-Commands"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Program-Context.html#GDB_002fMI-Program-Context">GDB/MI Program Context</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="GDB_002fMI-Command-Description-Format.html#GDB_002fMI-Command-Description-Format">GDB/MI Command Description Format</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">25.7 <span class="sc">gdb/mi</span> Breakpoint Commands</h3>
 
-<p><a name="index-breakpoint-commands-for-_0040sc_007bgdb_002fmi_007d-1395"></a><a name="index-g_t_0040sc_007bgdb_002fmi_007d_002c-breakpoint-commands-1396"></a>This section documents <span class="sc">gdb/mi</span> commands for manipulating
+<p><a name="index-breakpoint-commands-for-_0040sc_007bgdb_002fmi_007d-1395"></a><a name="index-_0040sc_007bgdb_002fmi_007d_002c-breakpoint-commands-1396"></a>This section documents <span class="sc">gdb/mi</span> commands for manipulating
 breakpoints.
 
 <h4 class="subheading">The <code>-break-after</code> Command</h4>
 
-<p><a name="index-g_t_002dbreak_002dafter-1397"></a>
+<p><a name="index-_002dbreak_002dafter-1397"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -48,12 +45,12 @@ breakpoints.
 </pre>
    <p>The breakpoint number <var>number</var> is not in effect until it has been
 hit <var>count</var> times.  To see how this is reflected in the output of
-the &lsquo;<samp><span class="samp">-break-list</span></samp>&rsquo; command, see the description of the
-&lsquo;<samp><span class="samp">-break-list</span></samp>&rsquo; command below.
+the <span class="samp">-break-list</span> command, see the description of the
+<span class="samp">-break-list</span> command below.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">ignore</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">ignore</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -81,7 +78,7 @@ the &lsquo;<samp><span class="samp">-break-list</span></samp>&rsquo; command, se
 </pre>
 <h4 class="subheading">The <code>-break-condition</code> Command</h4>
 
-<p><a name="index-g_t_002dbreak_002dcondition-1398"></a>
+<p><a name="index-_002dbreak_002dcondition-1398"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -89,12 +86,12 @@ the &lsquo;<samp><span class="samp">-break-list</span></samp>&rsquo; command, se
 </pre>
    <p>Breakpoint <var>number</var> will stop the program only if the condition in
 <var>expr</var> is true.  The condition becomes part of the
-&lsquo;<samp><span class="samp">-break-list</span></samp>&rsquo; output (see the description of the &lsquo;<samp><span class="samp">-break-list</span></samp>&rsquo;
+<span class="samp">-break-list</span> output (see the description of the <span class="samp">-break-list</span>
 command below).
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">condition</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">condition</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -117,7 +114,7 @@ command below).
 </pre>
 <h4 class="subheading">The <code>-break-delete</code> Command</h4>
 
-<p><a name="index-g_t_002dbreak_002ddelete-1399"></a>
+<p><a name="index-_002dbreak_002ddelete-1399"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -128,7 +125,7 @@ list.  This is obviously reflected in the breakpoint list.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">delete</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">delete</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -149,18 +146,18 @@ list.  This is obviously reflected in the breakpoint list.
 </pre>
 <h4 class="subheading">The <code>-break-disable</code> Command</h4>
 
-<p><a name="index-g_t_002dbreak_002ddisable-1400"></a>
+<p><a name="index-_002dbreak_002ddisable-1400"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -break-disable ( <var>breakpoint</var> )+
 </pre>
-   <p>Disable the named <var>breakpoint</var>(s).  The field &lsquo;<samp><span class="samp">enabled</span></samp>&rsquo; in the
-break list is now set to &lsquo;<samp><span class="samp">n</span></samp>&rsquo; for the named <var>breakpoint</var>(s).
+   <p>Disable the named <var>breakpoint</var>(s).  The field <span class="samp">enabled</span> in the
+break list is now set to <span class="samp">n</span> for the named <var>breakpoint</var>(s).
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">disable</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">disable</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -183,7 +180,7 @@ break list is now set to &lsquo;<samp><span class="samp">n</span></samp>&rsquo; 
 </pre>
 <h4 class="subheading">The <code>-break-enable</code> Command</h4>
 
-<p><a name="index-g_t_002dbreak_002denable-1401"></a>
+<p><a name="index-_002dbreak_002denable-1401"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -193,7 +190,7 @@ break list is now set to &lsquo;<samp><span class="samp">n</span></samp>&rsquo; 
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">enable</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">enable</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -216,18 +213,18 @@ break list is now set to &lsquo;<samp><span class="samp">n</span></samp>&rsquo; 
 </pre>
 <h4 class="subheading">The <code>-break-info</code> Command</h4>
 
-<p><a name="index-g_t_002dbreak_002dinfo-1402"></a>
+<p><a name="index-_002dbreak_002dinfo-1402"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -break-info <var>breakpoint</var>
 </pre>
 <!-- REDUNDANT??? -->
-   <p>Get information about a single breakpoint.
+<p>Get information about a single breakpoint.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">info break </span><var>breakpoint</var></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">info break </span><var>breakpoint</var>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -235,7 +232,7 @@ break list is now set to &lsquo;<samp><span class="samp">n</span></samp>&rsquo; 
 
 <h4 class="subheading">The <code>-break-insert</code> Command</h4>
 
-<p><a name="index-g_t_002dbreak_002dinsert-1403"></a>
+<p><a name="index-_002dbreak_002dinsert-1403"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -258,11 +255,11 @@ break list is now set to &lsquo;<samp><span class="samp">n</span></samp>&rsquo; 
    <p>The possible optional parameters of this command are:
 
      <dl>
-<dt>&lsquo;<samp><span class="samp">-t</span></samp>&rsquo;<dd>Insert a temporary breakpoint. 
-<br><dt>&lsquo;<samp><span class="samp">-h</span></samp>&rsquo;<dd>Insert a hardware breakpoint. 
-<br><dt>&lsquo;<samp><span class="samp">-c </span><var>condition</var></samp>&rsquo;<dd>Make the breakpoint conditional on <var>condition</var>. 
-<br><dt>&lsquo;<samp><span class="samp">-i </span><var>ignore-count</var></samp>&rsquo;<dd>Initialize the <var>ignore-count</var>. 
-<br><dt>&lsquo;<samp><span class="samp">-r</span></samp>&rsquo;<dd>Insert a regular breakpoint in all the functions whose names match the
+<dt><span class="samp">-t</span><dd>Insert a temporary breakpoint. 
+<br><dt><span class="samp">-h</span><dd>Insert a hardware breakpoint. 
+<br><dt><span class="samp">-c </span><var>condition</var><dd>Make the breakpoint conditional on <var>condition</var>. 
+<br><dt><span class="samp">-i </span><var>ignore-count</var><dd>Initialize the <var>ignore-count</var>. 
+<br><dt><span class="samp">-r</span><dd>Insert a regular breakpoint in all the functions whose names match the
 given regular expression.  Other flags are not applicable to regular
 expressions. 
 </dl>
@@ -289,8 +286,8 @@ which use the same output).
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> commands are &lsquo;<samp><span class="samp">break</span></samp>&rsquo;, &lsquo;<samp><span class="samp">tbreak</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">hbreak</span></samp>&rsquo;, &lsquo;<samp><span class="samp">thbreak</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">rbreak</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> commands are <span class="samp">break</span>, <span class="samp">tbreak</span>,
+<span class="samp">hbreak</span>, <span class="samp">thbreak</span>, and <span class="samp">rbreak</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -326,7 +323,7 @@ which use the same output).
 </pre>
 <h4 class="subheading">The <code>-break-list</code> Command</h4>
 
-<p><a name="index-g_t_002dbreak_002dlist-1404"></a>
+<p><a name="index-_002dbreak_002dlist-1404"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -335,15 +332,15 @@ which use the same output).
    <p>Displays the list of inserted breakpoints, showing the following fields:
 
      <dl>
-<dt>&lsquo;<samp><span class="samp">Number</span></samp>&rsquo;<dd>number of the breakpoint
-<br><dt>&lsquo;<samp><span class="samp">Type</span></samp>&rsquo;<dd>type of the breakpoint: &lsquo;<samp><span class="samp">breakpoint</span></samp>&rsquo; or &lsquo;<samp><span class="samp">watchpoint</span></samp>&rsquo;
-<br><dt>&lsquo;<samp><span class="samp">Disposition</span></samp>&rsquo;<dd>should the breakpoint be deleted or disabled when it is hit: &lsquo;<samp><span class="samp">keep</span></samp>&rsquo;
-or &lsquo;<samp><span class="samp">nokeep</span></samp>&rsquo;
-<br><dt>&lsquo;<samp><span class="samp">Enabled</span></samp>&rsquo;<dd>is the breakpoint enabled or no: &lsquo;<samp><span class="samp">y</span></samp>&rsquo; or &lsquo;<samp><span class="samp">n</span></samp>&rsquo;
-<br><dt>&lsquo;<samp><span class="samp">Address</span></samp>&rsquo;<dd>memory location at which the breakpoint is set
-<br><dt>&lsquo;<samp><span class="samp">What</span></samp>&rsquo;<dd>logical location of the breakpoint, expressed by function name, file
+<dt><span class="samp">Number</span><dd>number of the breakpoint
+<br><dt><span class="samp">Type</span><dd>type of the breakpoint: <span class="samp">breakpoint</span> or <span class="samp">watchpoint</span>
+<br><dt><span class="samp">Disposition</span><dd>should the breakpoint be deleted or disabled when it is hit: <span class="samp">keep</span>
+or <span class="samp">nokeep</span>
+<br><dt><span class="samp">Enabled</span><dd>is the breakpoint enabled or no: <span class="samp">y</span> or <span class="samp">n</span>
+<br><dt><span class="samp">Address</span><dd>memory location at which the breakpoint is set
+<br><dt><span class="samp">What</span><dd>logical location of the breakpoint, expressed by function name, file
 name, line number
-<br><dt>&lsquo;<samp><span class="samp">Times</span></samp>&rsquo;<dd>number of times the breakpoint has been hit
+<br><dt><span class="samp">Times</span><dd>number of times the breakpoint has been hit
 </dl>
 
    <p>If there are no breakpoints or watchpoints, the <code>BreakpointTable</code>
@@ -351,7 +348,7 @@ name, line number
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is &lsquo;<samp><span class="samp">info break</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">info break</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -387,28 +384,28 @@ name, line number
 </pre>
    <h4 class="subheading">The <code>-break-watch</code> Command</h4>
 
-<p><a name="index-g_t_002dbreak_002dwatch-1405"></a>
+<p><a name="index-_002dbreak_002dwatch-1405"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -break-watch [ -a | -r ]
 </pre>
-   <p>Create a watchpoint.  With the &lsquo;<samp><span class="samp">-a</span></samp>&rsquo; option it will create an
+   <p>Create a watchpoint.  With the <span class="samp">-a</span> option it will create an
 <dfn>access</dfn> watchpoint, i.e., a watchpoint that triggers either on a
-read from or on a write to the memory location.  With the &lsquo;<samp><span class="samp">-r</span></samp>&rsquo;
+read from or on a write to the memory location.  With the <span class="samp">-r</span>
 option, the watchpoint created is a <dfn>read</dfn> watchpoint, i.e., it will
 trigger only when the memory location is accessed for reading.  Without
 either of the options, the watchpoint created is a regular watchpoint,
 i.e., it will trigger when the memory location is accessed for writing. 
 See <a href="Set-Watchpoints.html#Set-Watchpoints">Setting Watchpoints</a>.
 
-   <p>Note that &lsquo;<samp><span class="samp">-break-list</span></samp>&rsquo; will report a single list of watchpoints and
+   <p>Note that <span class="samp">-break-list</span> will report a single list of watchpoints and
 breakpoints inserted.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> commands are &lsquo;<samp><span class="samp">watch</span></samp>&rsquo;, &lsquo;<samp><span class="samp">awatch</span></samp>&rsquo;, and
-&lsquo;<samp><span class="samp">rwatch</span></samp>&rsquo;.
+<p>The corresponding <span class="sc">gdb</span> commands are <span class="samp">watch</span>, <span class="samp">awatch</span>, and
+<span class="samp">rwatch</span>.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -525,5 +522,5 @@ deleted.
      (gdb)
 </pre>
    <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-   </body></html>
+</body></html>
 

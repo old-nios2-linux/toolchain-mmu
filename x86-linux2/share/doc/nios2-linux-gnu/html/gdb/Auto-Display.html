@@ -3,7 +3,7 @@
 <title>Auto Display - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Memory.html#Memory" title="Memory">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Auto-Display"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Print-Settings.html#Print-Settings">Print Settings</a>,
+<a name="Auto-Display"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Print-Settings.html#Print-Settings">Print Settings</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Memory.html#Memory">Memory</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">8.6 Automatic Display</h3>
@@ -50,7 +48,7 @@ displays you request manually using <code>x</code> or <code>print</code>, you ca
 specify the output format you prefer; in fact, <code>display</code> decides
 whether to use <code>print</code> or <code>x</code> depending on how elaborate your
 format specification is&mdash;it uses <code>x</code> if you specify a unit size,
-or one of the two formats (&lsquo;<samp><span class="samp">i</span></samp>&rsquo; and &lsquo;<samp><span class="samp">s</span></samp>&rsquo;) that are only
+or one of the two formats (<span class="samp">i</span> and <span class="samp">s</span>) that are only
 supported by <code>x</code>; otherwise it uses <code>print</code>.
 
      
@@ -65,14 +63,14 @@ count, add the expression <var>expr</var> to the auto-display list but
 arrange to display it each time in the specified format <var>fmt</var>. 
 See <a href="Output-Formats.html#Output-Formats">Output Formats</a>.
 
-     <br><dt><code>display/</code><var>fmt</var> <var>addr</var><dd>For <var>fmt</var> &lsquo;<samp><span class="samp">i</span></samp>&rsquo; or &lsquo;<samp><span class="samp">s</span></samp>&rsquo;, or including a unit-size or a
+     <br><dt><code>display/</code><var>fmt</var> <var>addr</var><dd>For <var>fmt</var> <span class="samp">i</span> or <span class="samp">s</span>, or including a unit-size or a
 number of units, add the expression <var>addr</var> as a memory address to
 be examined each time your program stops.  Examining means in effect
-doing &lsquo;<samp><span class="samp">x/</span><var>fmt</var> <var>addr</var></samp>&rsquo;.  See <a href="Memory.html#Memory">Examining Memory</a>. 
+doing <span class="samp">x/</span><var>fmt</var> <var>addr</var>.  See <a href="Memory.html#Memory">Examining Memory</a>. 
 </dl>
 
-   <p>For example, &lsquo;<samp><span class="samp">display/i $pc</span></samp>&rsquo; can be helpful, to see the machine
-instruction about to be executed each time execution stops (&lsquo;<samp><span class="samp">$pc</span></samp>&rsquo;
+   <p>For example, <span class="samp">display/i $pc</span> can be helpful, to see the machine
+instruction about to be executed each time execution stops (<span class="samp">$pc</span>
 is a common name for the program counter; see <a href="Registers.html#Registers">Registers</a>).
 
      
@@ -81,7 +79,7 @@ is a common name for the program counter; see <a href="Registers.html#Registers"
 <dl><dt><code>undisplay </code><var>dnums</var><code>...</code><dt><code>delete display </code><var>dnums</var><code>...</code><dd>Remove item numbers <var>dnums</var> from the list of expressions to display.
 
      <p><code>undisplay</code> does not repeat if you press &lt;RET&gt; after using it. 
-(Otherwise you would just get the error &lsquo;<samp><span class="samp">No display number ...</span></samp>&rsquo;.)
+(Otherwise you would just get the error <span class="samp">No display number ...</span>.)
 
      <p><a name="index-disable-display-425"></a><br><dt><code>disable display </code><var>dnums</var><code>...</code><dd>Disable the display of item numbers <var>dnums</var>.  A disabled display
 item is not printed automatically, but is not forgotten.  It may be

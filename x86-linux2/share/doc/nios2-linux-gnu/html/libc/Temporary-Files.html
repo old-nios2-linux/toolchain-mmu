@@ -3,7 +3,7 @@
 <title>Temporary Files - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-System-Interface.html#File-System-Interface" title="File System Interface">
 <link rel="prev" href="Making-Special-Files.html#Making-Special-Files" title="Making Special Files">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Temporary-Files"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Making-Special-Files.html#Making-Special-Files">Making Special Files</a>,
+<a name="Temporary-Files"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Making-Special-Files.html#Making-Special-Files">Making Special Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-System-Interface.html#File-System-Interface">File System Interface</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">14.11 Temporary Files</h3>
@@ -43,7 +41,7 @@ their file names will look like.  Important for multi-threaded programs
 is that <code>tempnam</code> is reentrant, while <code>tmpnam</code> is not since it
 returns a pointer to a static buffer.
 
-   <p>These facilities are declared in the header file <samp><span class="file">stdio.h</span></samp>. 
+   <p>These facilities are declared in the header file <span class="file">stdio.h</span>. 
 <a name="index-stdio_002eh-1599"></a>
 <!-- stdio.h -->
 <!-- ISO -->
@@ -167,7 +165,7 @@ reasons this only happens if the program is not SUID or SGID enabled.
 
           <li>The value of the <code>P_tmpdir</code> macro.
 
-          <li>The directory <samp><span class="file">/tmp</span></samp>. 
+          <li>The directory <span class="file">/tmp</span>. 
 </ul>
 
         <p>This function is defined for SVID compatibility.
@@ -192,16 +190,16 @@ opening the file you should use the <code>O_EXCL</code> flag.  Using
    <p>Older Unix systems did not have the functions just described.  Instead
 they used <code>mktemp</code> and <code>mkstemp</code>.  Both of these functions
 work by modifying a file name template string you pass.  The last six
-characters of this string must be &lsquo;<samp><span class="samp">XXXXXX</span></samp>&rsquo;.  These six &lsquo;<samp><span class="samp">X</span></samp>&rsquo;s
+characters of this string must be <span class="samp">XXXXXX</span>.  These six <span class="samp">X</span>s
 are replaced with six characters which make the whole string a unique
 file name.  Usually the template string is something like
-&lsquo;<samp><span class="samp">/tmp/</span><var>prefix</var><span class="samp">XXXXXX</span></samp>&rsquo;, and each program uses a unique <var>prefix</var>.
+<span class="samp">/tmp/</span><var>prefix</var><span class="samp">XXXXXX</span>, and each program uses a unique <var>prefix</var>.
 
    <p><strong>Note:</strong> Because <code>mktemp</code> and <code>mkstemp</code> modify the
 template string, you <em>must not</em> pass string constants to them. 
 String constants are normally in read-only storage, so your program
 would crash when <code>mktemp</code> or <code>mkstemp</code> tried to modify the
-string.  These functions are declared in the header file <samp><span class="file">stdlib.h</span></samp>. 
+string.  These functions are declared in the header file <span class="file">stdlib.h</span>. 
 <a name="index-stdlib_002eh-1609"></a>
 <!-- stdlib.h -->
 <!-- Unix -->
@@ -212,7 +210,7 @@ string.  These functions are declared in the header file <samp><span class="file
 <var>template</var> as described above.  If successful, it returns
 <var>template</var> as modified.  If <code>mktemp</code> cannot find a unique file
 name, it makes <var>template</var> an empty string and returns that.  If
-<var>template</var> does not end with &lsquo;<samp><span class="samp">XXXXXX</span></samp>&rsquo;, <code>mktemp</code> returns a
+<var>template</var> does not end with <span class="samp">XXXXXX</span>, <code>mktemp</code> returns a
 null pointer.
 
         <p><strong>Warning:</strong> Between the time the pathname is constructed and the
@@ -233,7 +231,7 @@ opening the file you should use the <code>O_EXCL</code> flag.  Using
 <var>template</var> in place and returns a file descriptor for that file open
 for reading and writing.  If <code>mkstemp</code> cannot create a
 uniquely-named file, it returns <code>-1</code>.  If <var>template</var> does not
-end with &lsquo;<samp><span class="samp">XXXXXX</span></samp>&rsquo;, <code>mkstemp</code> returns <code>-1</code> and does not
+end with <span class="samp">XXXXXX</span>, <code>mkstemp</code> returns <code>-1</code> and does not
 modify <var>template</var>.
 
         <p>The file is opened using mode <code>0600</code>.  If the file is meant to be
@@ -254,11 +252,11 @@ new file and get an error if the file already exists.
 it succeeds, it overwrites <var>template</var> with the name of the
 directory, and returns <var>template</var>.  As with <code>mktemp</code> and
 <code>mkstemp</code>, <var>template</var> should be a string ending with
-&lsquo;<samp><span class="samp">XXXXXX</span></samp>&rsquo;.
+<span class="samp">XXXXXX</span>.
 
         <p>If <code>mkdtemp</code> cannot create an uniquely named directory, it returns
 <code>NULL</code> and sets <var>errno</var> appropriately.  If <var>template</var> does
-not end with &lsquo;<samp><span class="samp">XXXXXX</span></samp>&rsquo;, <code>mkdtemp</code> returns <code>NULL</code> and does
+not end with <span class="samp">XXXXXX</span>, <code>mkdtemp</code> returns <code>NULL</code> and does
 not modify <var>template</var>.  <var>errno</var> will be set to <code>EINVAL</code> in
 this case.
 

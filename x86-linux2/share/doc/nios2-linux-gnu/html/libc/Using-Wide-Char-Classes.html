@@ -3,7 +3,7 @@
 <title>Using Wide Char Classes - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Character-Handling.html#Character-Handling" title="Character Handling">
 <link rel="prev" href="Classification-of-Wide-Characters.html#Classification-of-Wide-Characters" title="Classification of Wide Characters">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Using-Wide-Char-Classes"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Wide-Character-Case-Conversion.html#Wide-Character-Case-Conversion">Wide Character Case Conversion</a>,
+<a name="Using-Wide-Char-Classes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Wide-Character-Case-Conversion.html#Wide-Character-Case-Conversion">Wide Character Case Conversion</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Classification-of-Wide-Characters.html#Classification-of-Wide-Characters">Classification of Wide Characters</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Character-Handling.html#Character-Handling">Character Handling</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">4.4 Notes on using the wide character classes</h3>
@@ -37,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Character-Handling.html#Character-Handl
 <p>The first note is probably not astonishing but still occasionally a
 cause of problems.  The <code>isw</code><var>XXX</var> functions can be implemented
 using macros and in fact, the GNU C library does this.  They are still
-available as real functions but when the <samp><span class="file">wctype.h</span></samp> header is
+available as real functions but when the <span class="file">wctype.h</span> header is
 included the macros will be used.  This is the same as the
 <code>char</code> type versions of these functions.
 

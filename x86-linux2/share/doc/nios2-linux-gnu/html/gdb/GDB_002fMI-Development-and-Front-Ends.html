@@ -3,7 +3,7 @@
 <title>GDB/MI Development and Front Ends - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB_002fMI.html#GDB_002fMI" title="GDB/MI">
 <link rel="prev" href="GDB_002fMI-Compatibility-with-CLI.html#GDB_002fMI-Compatibility-with-CLI" title="GDB/MI Compatibility with CLI">
@@ -17,25 +17,22 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="GDB%2fMI-Development-and-Front-Ends"></a>
-<a name="GDB_002fMI-Development-and-Front-Ends"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Output-Records.html#GDB_002fMI-Output-Records">GDB/MI Output Records</a>,
+<a name="GDB_002fMI-Development-and-Front-Ends"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Output-Records.html#GDB_002fMI-Output-Records">GDB/MI Output Records</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="GDB_002fMI-Compatibility-with-CLI.html#GDB_002fMI-Compatibility-with-CLI">GDB/MI Compatibility with CLI</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">25.3 <span class="sc">gdb/mi</span> Development and Front Ends</h3>
 
-<p><a name="index-g_t_0040sc_007bgdb_002fmi_007d-development-1381"></a>
+<p><a name="index-_0040sc_007bgdb_002fmi_007d-development-1381"></a>
 The application which takes the MI output and presents the state of the
 program being debugged to the user is called a <dfn>front end</dfn>.
 
@@ -56,13 +53,13 @@ parse MI output in a way that can handle them:
      <li>New fields may be added to the output of any MI command.
 
      <li>The range of values for fields with specified values, e.g.,
-<code>in_scope</code> (see <a href="_002dvar_002dupdate.html#g_t_002dvar_002dupdate">-var-update</a>) may be extended.
+<code>in_scope</code> (see <a href="_002dvar_002dupdate.html#_002dvar_002dupdate">-var-update</a>) may be extended.
 
      <!-- The format of field's content e.g type prefix, may change so parse it -->
-     <!-- at your own risk.  Yes, in general? -->
-     <!-- The order of fields may change?  Shouldn't really matter but it might -->
-     <!-- resolve inconsistencies. -->
-   </ul>
+<!-- at your own risk.  Yes, in general? -->
+<!-- The order of fields may change?  Shouldn't really matter but it might -->
+<!-- resolve inconsistencies. -->
+</ul>
 
    <p>If the changes are likely to break front ends, the MI version level
 will be increased by one.  This will allow the front end to parse the
@@ -72,7 +69,7 @@ responsibility of the front end to work with the new one.
 
 <!-- Starting with mi3, add a new command -mi-version that prints the MI -->
 <!-- version? -->
-   <p>The best way to avoid unexpected changes in MI that might break your front
+<p>The best way to avoid unexpected changes in MI that might break your front
 end is to make your project known to <span class="sc">gdb</span> developers and
 follow development on <a href="mailto:gdb@sourceware.org">gdb@sourceware.org</a> and
 <a href="mailto:gdb-patches@sourceware.org">gdb-patches@sourceware.org</a>.  There is also the mailing list

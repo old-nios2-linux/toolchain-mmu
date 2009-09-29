@@ -3,7 +3,7 @@
 <title>setlogmask - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages" title="Submitting Syslog Messages">
 <link rel="prev" href="closelog.html#closelog" title="closelog">
@@ -17,32 +17,30 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="setlogmask"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Syslog-Example.html#Syslog-Example">Syslog Example</a>,
+<a name="setlogmask"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Syslog-Example.html#Syslog-Example">Syslog Example</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="closelog.html#closelog">closelog</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages">Submitting Syslog Messages</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">18.2.4 setlogmask</h4>
 
 <p>The symbols referred to in this section are declared in the file
-<samp><span class="file">syslog.h</span></samp>.
+<span class="file">syslog.h</span>.
 
 <!-- syslog.h -->
 <!-- BSD -->
 <div class="defun">
 &mdash; Function: int <b>setlogmask</b> (<var>int mask</var>)<var><a name="index-setlogmask-2064"></a></var><br>
 <blockquote>
-        <p><code>setlogmask</code> sets a mask (the &ldquo;logmask&rdquo;) that determines which
+<p><code>setlogmask</code> sets a mask (the &ldquo;logmask&rdquo;) that determines which
 future <code>syslog</code> calls shall be ignored.  If a program has not
 called <code>setlogmask</code>, <code>syslog</code> doesn't ignore any calls.  You
 can use <code>setlogmask</code> to specify that messages of particular
@@ -66,16 +64,16 @@ described in <a href="syslog_003b-vsyslog.html#syslog_003b-vsyslog">syslog; vsys
 an appropriate <var>mask</var> value, as in this example:
 
      <pre class="smallexample">          LOG_MASK(LOG_EMERG) | LOG_MASK(LOG_ERROR)
-</pre>
+     </pre>
         <p>or
 
      <pre class="smallexample">          ~(LOG_MASK(LOG_INFO))
-</pre>
+     </pre>
         <p>There is also a <code>LOG_UPTO</code> macro, which generates a mask with the bits
 on for a certain priority and all priorities above it:
 
      <pre class="smallexample">          LOG_UPTO(LOG_ERROR)
-</pre>
+     </pre>
         <p>The unfortunate naming of the macro is due to the fact that internally,
 higher numbers are used for lower message priorities.
 

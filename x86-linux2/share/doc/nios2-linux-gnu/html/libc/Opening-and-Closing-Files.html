@@ -3,7 +3,7 @@
 <title>Opening and Closing Files - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="next" href="I_002fO-Primitives.html#I_002fO-Primitives" title="I/O Primitives">
@@ -16,26 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Opening-and-Closing-Files"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="I_002fO-Primitives.html#I_002fO-Primitives">I/O Primitives</a>,
+<a name="Opening-and-Closing-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="I_002fO-Primitives.html#I_002fO-Primitives">I/O Primitives</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">13.1 Opening and Closing Files</h3>
 
 <p><a name="index-opening-a-file-descriptor-1196"></a><a name="index-closing-a-file-descriptor-1197"></a>This section describes the primitives for opening and closing files
 using file descriptors.  The <code>open</code> and <code>creat</code> functions are
-declared in the header file <samp><span class="file">fcntl.h</span></samp>, while <code>close</code> is
-declared in <samp><span class="file">unistd.h</span></samp>. 
+declared in the header file <span class="file">fcntl.h</span>, while <code>close</code> is
+declared in <span class="file">unistd.h</span>. 
 <a name="index-unistd_002eh-1198"></a><a name="index-fcntl_002eh-1199"></a>
 <!-- fcntl.h -->
 <!-- POSIX.1 -->
@@ -50,7 +48,7 @@ to supply the argument in any case.
 
         <p>The <var>flags</var> argument controls how the file is to be opened.  This is
 a bit mask; you create the value by the bitwise OR of the appropriate
-parameters (using the &lsquo;<samp><span class="samp">|</span></samp>&rsquo; operator in C). 
+parameters (using the <span class="samp">|</span> operator in C). 
 See <a href="File-Status-Flags.html#File-Status-Flags">File Status Flags</a>, for the parameters available.
 
         <p>The normal return value from <code>open</code> is a non-negative integer file
@@ -93,7 +91,7 @@ or <code>O_CREAT</code> is set and the file does not already exist.
 </dl>
 
      <!-- !!! umask -->
-        <p>If on a 32 bit machine the sources are translated with
+<p>If on a 32 bit machine the sources are translated with
 <code>_FILE_OFFSET_BITS == 64</code> the function <code>open</code> returns a file
 descriptor opened in the large file mode which enables the file handling
 functions to use files up to 2^63 bytes in size and offset from
@@ -134,11 +132,11 @@ replaces the old API.
 <blockquote><p>This function is obsolete.  The call:
 
      <pre class="smallexample">          creat (<var>filename</var>, <var>mode</var>)
-</pre>
+     </pre>
         <p class="noindent">is equivalent to:
 
      <pre class="smallexample">          open (<var>filename</var>, O_WRONLY | O_CREAT | O_TRUNC, <var>mode</var>)
-</pre>
+     </pre>
         <p>If on a 32 bit machine the sources are translated with
 <code>_FILE_OFFSET_BITS == 64</code> the function <code>creat</code> returns a file
 descriptor opened in the large file mode which enables the file handling
@@ -201,7 +199,7 @@ See <a href="Interrupted-Primitives.html#Interrupted-Primitives">Interrupted Pri
 Here is an example of how to handle <code>EINTR</code> properly:
 
           <pre class="smallexample">               TEMP_FAILURE_RETRY (close (desc));
-</pre>
+          </pre>
           <br><dt><code>ENOSPC</code><dt><code>EIO</code><dt><code>EDQUOT</code><dd>When the file is accessed by NFS, these errors from <code>write</code> can sometimes
 not be detected until <code>close</code>.  See <a href="I_002fO-Primitives.html#I_002fO-Primitives">I/O Primitives</a>, for details
 on their meaning. 

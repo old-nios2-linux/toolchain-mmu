@@ -3,7 +3,7 @@
 <title>Argument Macros - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="How-Variadic.html#How-Variadic" title="How Variadic">
 <link rel="prev" href="Calling-Variadics.html#Calling-Variadics" title="Calling Variadics">
@@ -17,25 +17,23 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Argument-Macros"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Old-Varargs.html#Old-Varargs">Old Varargs</a>,
+<a name="Argument-Macros"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Old-Varargs.html#Old-Varargs">Old Varargs</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Calling-Variadics.html#Calling-Variadics">Calling Variadics</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="How-Variadic.html#How-Variadic">How Variadic</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">A.2.2.5 Argument Access Macros</h5>
 
 <p>Here are descriptions of the macros used to retrieve variable arguments. 
-These macros are defined in the header file <samp><span class="file">stdarg.h</span></samp>. 
+These macros are defined in the header file <span class="file">stdarg.h</span>. 
 <a name="index-stdarg_002eh-3725"></a>
 <!-- stdarg.h -->
 <!-- ISO -->
@@ -54,7 +52,7 @@ to the first of the optional arguments of the current function;
 <var>last-required</var> must be the last required argument to the function.
 
         <p>See <a href="Old-Varargs.html#Old-Varargs">Old Varargs</a>, for an alternate definition of <code>va_start</code>
-found in the header file <samp><span class="file">varargs.h</span></samp>. 
+found in the header file <span class="file">varargs.h</span>. 
 </p></blockquote></div>
 
 <!-- stdarg.h -->
@@ -96,7 +94,7 @@ of the same type.
 <!-- stdarg.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Macro: void <b>__va_copy</b> (<var>va_list dest, va_list src</var>)<var><a name="index-g_t_005f_005fva_005fcopy-3730"></a></var><br>
+&mdash; Macro: void <b>__va_copy</b> (<var>va_list dest, va_list src</var>)<var><a name="index-_005f_005fva_005fcopy-3730"></a></var><br>
 <blockquote><p>The <code>__va_copy</code> macro allows copying of objects of type
 <code>va_list</code> even if this is not an integral type.  The argument pointer
 in <var>dest</var> is initialized to point to the same argument as the

@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.13 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -2594,8 +2594,8 @@ header file `search.h'.
 
      For the data in each tree node the function FREEFCT is called.
      The pointer to the data is passed as the argument to the function.
-     If no such work is necessary FREEFCT must point to a function doing
-     nothing.  It is called in any case.
+     If no such work is necessary FREEFCT must point to a function
+     doing nothing.  It is called in any case.
 
      This function is a GNU extension and not covered by the System V or
      X/Open specifications.
@@ -2960,7 +2960,7 @@ only in the types of the members `gl_readdir', `gl_stat', and
      current directory.  It puts the result in a newly allocated
      vector, and stores the size and address of this vector into
      `*VECTOR-PTR'.  The argument FLAGS is a combination of bit flags;
-     see *note Flags for Globbing::, for details of the flags.
+     see *Note Flags for Globbing::, for details of the flags.
 
      The result of globbing is a sequence of file names.  The function
      `glob' allocates a string for each resulting word, then allocates
@@ -3136,8 +3136,8 @@ available in modern shell implementations.
      the filesystem the `glob' implementation uses the user-supplied
      functions specified in the structure pointed to by PGLOB
      parameter.  For more information about the functions refer to the
-     sections about directory handling see *note Accessing
-     Directories::, and *note Reading Attributes::.
+     sections about directory handling see *Note Accessing
+     Directories::, and *Note Reading Attributes::.
 
 `GLOB_BRACE'
      If this flag is given the handling of braces in the pattern is
@@ -3327,7 +3327,7 @@ expression into it by calling `regcomp'.
      `regcomp' returns `0' if it succeeds in compiling the regular
      expression; otherwise, it returns a nonzero error code (see the
      table below).  You can use `regerror' to produce an error message
-     string describing the reason for a nonzero value; see *note Regexp
+     string describing the reason for a nonzero value; see *Note Regexp
      Cleanup::.
 
 
@@ -3409,7 +3409,7 @@ File: libc.info,  Node: Matching POSIX Regexps,  Next: Regexp Subexpressions,  P
 10.3.3 Matching a Compiled POSIX Regular Expression
 ---------------------------------------------------
 
-Once you have compiled a regular expression, as described in *note
+Once you have compiled a regular expression, as described in *Note
 POSIX Regexp Compilation::, you can match it against strings using
 `regexec'.  A match anywhere inside the string counts as success,
 unless the regular expression contains anchor characters (`^' or `$').
@@ -3424,7 +3424,7 @@ unless the regular expression contains anchor characters (`^' or `$').
      otherwise, it returns a nonzero value.  See the table below for
      what nonzero values mean.  You can use `regerror' to produce an
      error message string describing the reason for a nonzero value;
-     see *note Regexp Cleanup::.
+     see *Note Regexp Cleanup::.
 
      The argument EFLAGS is a word of bit flags that enable various
      options.
@@ -3719,7 +3719,7 @@ fills in the structure's fields to tell you about the results.
      Perform word expansion on the string WORDS, putting the result in
      a newly allocated vector, and store the size and address of this
      vector into `*WORD-VECTOR-PTR'.  The argument FLAGS is a
-     combination of bit flags; see *note Flags for Wordexp::, for
+     combination of bit flags; see *Note Flags for Wordexp::, for
      details of the flags.
 
      You shouldn't use any of the characters `|&;<>' in the string
@@ -4020,23 +4020,23 @@ appropriate!
    This chapter introduces concepts and terminology relating to input
 and output.  Other chapters relating to the GNU I/O facilities are:
 
-   * *note I/O on Streams::, which covers the high-level functions that
+   * *Note I/O on Streams::, which covers the high-level functions that
      operate on streams, including formatted input and output.
 
-   * *note Low-Level I/O::, which covers the basic I/O and control
+   * *Note Low-Level I/O::, which covers the basic I/O and control
      functions on file descriptors.
 
-   * *note File System Interface::, which covers functions for
+   * *Note File System Interface::, which covers functions for
      operating on directories and for manipulating file attributes such
      as access modes and ownership.
 
-   * *note Pipes and FIFOs::, which includes information on the basic
+   * *Note Pipes and FIFOs::, which includes information on the basic
      interprocess communication facilities.
 
-   * *note Sockets::, which covers a more complicated interprocess
+   * *Note Sockets::, which covers a more complicated interprocess
      communication facility with support for networking.
 
-   * *note Low-Level Terminal Interface::, which covers functions for
+   * *Note Low-Level Terminal Interface::, which covers functions for
      changing how input and output to terminals or other serial devices
      are processed.
 
@@ -4139,9 +4139,9 @@ File: libc.info,  Node: File Position,  Prev: Streams and File Descriptors,  Up:
 
 One of the attributes of an open file is its "file position" that keeps
 track of where in the file the next character is to be read or written.
-In the GNU system, and all POSIX.1 systems, the file position is simply
-an integer representing the number of bytes from the beginning of the
-file.
+In the GNU system, and all POSIX.1 systems, the file position is
+simply an integer representing the number of bytes from the beginning
+of the file.
 
    The file position is normally set to the beginning of the file when
 it is opened, and each time a character is read or written, the file
@@ -4232,7 +4232,7 @@ the POSIX terminology in their names, such as `PATH_MAX'.  These macros
 are defined by the POSIX standard, so we cannot change their names.
 
    You can find more detailed information about operations on
-directories in *note File System Interface::.
+directories in *Note File System Interface::.
 
 
 File: libc.info,  Node: File Name Resolution,  Next: File Name Errors,  Prev: Directories,  Up: File Names
@@ -4351,7 +4351,7 @@ File: libc.info,  Node: File Name Portability,  Prev: File Name Errors,  Up: Fil
 11.2.4 Portability of File Names
 --------------------------------
 
-The rules for the syntax of file names discussed in *note File Names::,
+The rules for the syntax of file names discussed in *Note File Names::,
 are the rules normally used by the GNU system and by other POSIX
 systems.  However, other operating systems may use other conventions.
 
@@ -4393,7 +4393,7 @@ File: libc.info,  Node: I/O on Streams,  Next: Low-Level I/O,  Prev: I/O Overvie
 **************************
 
 This chapter describes the functions for creating streams and performing
-input and output operations on them.  As discussed in *note I/O
+input and output operations on them.  As discussed in *Note I/O
 Overview::, a stream is a fairly abstract, high-level concept
 representing a communications channel to a file, device, or process.
 
@@ -4448,7 +4448,7 @@ in the technical sense.
      connection to the associated file, including such things as the
      file position indicator and buffering information.  Each stream
      also has error and end-of-file status indicators that can be
-     tested with the `ferror' and `feof' functions; see *note EOF and
+     tested with the `ferror' and `feof' functions; see *Note EOF and
      Errors::.
 
    `FILE' objects are allocated and managed internally by the
@@ -4485,7 +4485,7 @@ the process.
    In the GNU system, you can specify what files or processes
 correspond to these streams using the pipe and redirection facilities
 provided by the shell.  (The primitives shells use to implement these
-facilities are described in *note File System Interface::.)  Most other
+facilities are described in *Note File System Interface::.)  Most other
 operating systems provide similar mechanisms, but the details of how to
 use them can vary.
 
@@ -4765,7 +4765,7 @@ manner, such as by calling the `abort' function (*note Aborting a
 Program::) or from a fatal signal (*note Signal Handling::), open
 streams might not be closed properly.  Buffered output might not be
 flushed and files may be incomplete.  For more information on buffering
-of streams, see *note Stream Buffering::.
+of streams, see *Note Stream Buffering::.
 
 
 File: libc.info,  Node: Streams and Threads,  Next: Streams and I18N,  Prev: Closing Streams,  Up: I/O on Streams
@@ -5803,8 +5803,8 @@ initial `%' character followed in sequence by:
 
      The PARAM-NO parts of the format must be integers in the range of
      1 to the maximum number of arguments present to the function call.
-     Some implementations limit this number to a certainly upper bound.
-     The exact limit can be retrieved by the following constant.
+     Some implementations limit this number to a certainly upper
+     bound.  The exact limit can be retrieved by the following constant.
 
       -- Macro: NL_ARGMAX
           The value of `NL_ARGMAX' is the maximum value allowed for the
@@ -6732,7 +6732,7 @@ with the code for the basic type using inclusive-or.
      This is a synonym for `PA_FLAG_LONG_LONG', used by convention with
      a base type of `PA_DOUBLE' to indicate a type of `long double'.
 
-   For an example of using these facilities, see *note Example of
+   For an example of using these facilities, see *Note Example of
 Parsing::.
 
 
@@ -6819,10 +6819,10 @@ for `printf' template strings, to teach `printf' clever ways to print
 the important data structures of your program.
 
    The way you do this is by registering the conversion with the
-function `register_printf_function'; see *note Registering New
+function `register_printf_function'; see *Note Registering New
 Conversions::.  One of the arguments you pass to this function is a
 pointer to a handler function that produces the actual output; see
-*note Defining the Output Handler::, for information on how to write
+*Note Defining the Output Handler::, for information on how to write
 this function.
 
    You can also install a function that just returns information about
@@ -7276,8 +7276,8 @@ from a matching error.
    If you are trying to read input that doesn't match a single, fixed
 pattern, you may be better off using a tool such as Flex to generate a
 lexical scanner, or Bison to generate a parser, rather than using
-`scanf'.  For more information about these tools, see *note Top:
-(flex.info)Top, and *note Top: (bison.info)Top.
+`scanf'.  For more information about these tools, see *Note Top:
+(flex.info)Top, and *Note Top: (bison.info)Top.
 
 
 File: libc.info,  Node: Input Conversion Syntax,  Next: Table of Input Conversions,  Prev: Formatted Input Basics,  Up: Formatted Input
@@ -7735,7 +7735,7 @@ in.
    The `%n' conversion produces the number of characters read so far by
 this call.  The corresponding argument should be of type `int *'.  This
 conversion works in the same way as the `%n' conversion for `printf';
-see *note Other Output Conversions::, for an example.
+see *Note Other Output Conversions::, for an example.
 
    The `%n' conversion is the only mechanism for determining the
 success of literal matches or conversions with suppressed assignments.
@@ -7928,7 +7928,7 @@ descriptors.  For example, all of the functions that perform output to a
 stream--such as `fputc', `printf', and `fflush'--are implemented in
 terms of `write', and all of the `errno' error conditions defined for
 `write' are meaningful for these functions.  For more information about
-the descriptor-level I/O functions, see *note Low-Level I/O::.
+the descriptor-level I/O functions, see *Note Low-Level I/O::.
 
 
 File: libc.info,  Node: Error Recovery,  Next: Binary Streams,  Prev: EOF and Errors,  Up: I/O on Streams
@@ -7991,7 +7991,7 @@ to such systems.
    When you open a stream, you can specify either a "text stream" or a
 "binary stream".  You indicate that you want a binary stream by
 specifying the `b' modifier in the OPENTYPE argument to `fopen'; see
-*note Opening Streams::.  Without this option, `fopen' opens the file
+*Note Opening Streams::.  Without this option, `fopen' opens the file
 as a text stream.
 
    Text and binary streams differ in several ways:
@@ -8321,7 +8321,7 @@ you intended it to, or displays some other unexpected behavior.
 transmitted between the stream and the file or device, and _not_ with
 how things like echoing, flow control, and the like are handled on
 specific classes of devices.  For information on common control
-operations on terminal devices, see *note Low-Level Terminal
+operations on terminal devices, see *Note Low-Level Terminal
 Interface::.
 
    You can bypass the stream buffering facilities altogether by using
@@ -8363,7 +8363,7 @@ messages ending in a newline will appear immediately--which is usually
 what you want.  Output that doesn't end in a newline might or might not
 show up immediately, so if you want them to appear immediately, you
 should flush buffered output explicitly with `fflush', as described in
-*note Flushing Buffers::.
+*Note Flushing Buffers::.
 
 
 File: libc.info,  Node: Flushing Buffers,  Next: Controlling Buffering,  Prev: Buffering Concepts,  Up: Stream Buffering
@@ -8580,11 +8580,11 @@ streams that do not necessarily correspond to an open file.
    One such type of stream takes input from or writes output to a
 string.  These kinds of streams are used internally to implement the
 `sprintf' and `sscanf' functions.  You can also create such a stream
-explicitly, using the functions described in *note String Streams::.
+explicitly, using the functions described in *Note String Streams::.
 
    More generally, you can define streams that do input/output to
 arbitrary objects using functions supplied by your program.  This
-protocol is discussed in *note Custom Streams::.
+protocol is discussed in *Note Custom Streams::.
 
    *Portability Note:* The facilities described in this section are
 specific to GNU.  Other systems or C implementations might or might not

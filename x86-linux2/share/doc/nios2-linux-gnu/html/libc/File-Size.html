@@ -3,7 +3,7 @@
 <title>File Size - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-Attributes.html#File-Attributes" title="File Attributes">
 <link rel="prev" href="File-Times.html#File-Times" title="File Times">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="File-Size"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="File-Times.html#File-Times">File Times</a>,
+<a name="File-Size"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="File-Times.html#File-Times">File Times</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-Attributes.html#File-Attributes">File Attributes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.9.10 File Size</h4>
@@ -57,7 +55,7 @@ succeed, without actually accomplishing anything.
 <div class="defun">
 &mdash; Function: int <b>truncate</b> (<var>const char *filename, off_t length</var>)<var><a name="index-truncate-1591"></a></var><br>
 <blockquote>
-        <p>The <code>truncate</code> function changes the size of <var>filename</var> to
+<p>The <code>truncate</code> function changes the size of <var>filename</var> to
 <var>length</var>.  If <var>length</var> is shorter than the previous length, data
 at the end will be lost.  The file must be writable by the user to
 perform this operation.
@@ -109,7 +107,7 @@ bits machines, which allows the handling of files with sizes up to
 <div class="defun">
 &mdash; Function: int <b>ftruncate</b> (<var>int fd, off_t length</var>)<var><a name="index-ftruncate-1593"></a></var><br>
 <blockquote>
-        <p>This is like <code>truncate</code>, but it works on a file descriptor <var>fd</var>
+<p>This is like <code>truncate</code>, but it works on a file descriptor <var>fd</var>
 for an opened file instead of a file name to identify the object.  The
 file must be opened for writing to successfully carry out the operation.
 
@@ -154,9 +152,9 @@ following errors may occur:
           <br><dt><code>EINTR</code><dd>The operation was interrupted by a signal.
 
           <!-- ENOENT is also possible on Linux - however it only occurs if the file -->
-          <!-- descriptor has a `file' structure but no `inode' structure.  I'm not -->
-          <!-- sure how such an fd could be created.  Perhaps it's a bug. -->
-        </dl>
+<!-- descriptor has a `file' structure but no `inode' structure.  I'm not -->
+<!-- sure how such an fd could be created.  Perhaps it's a bug. -->
+</dl>
 
         </blockquote></div>
 

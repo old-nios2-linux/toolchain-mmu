@@ -3,7 +3,7 @@
 <title>Argument Prescan - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Macro-Pitfalls.html#Macro-Pitfalls" title="Macro Pitfalls">
 <link rel="prev" href="Self_002dReferential-Macros.html#Self_002dReferential-Macros" title="Self-Referential Macros">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
--->
+man end-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,19 +41,17 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Argument-Prescan"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Newlines-in-Arguments.html#Newlines-in-Arguments">Newlines in Arguments</a>,
+<a name="Argument-Prescan"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Newlines-in-Arguments.html#Newlines-in-Arguments">Newlines in Arguments</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Self_002dReferential-Macros.html#Self_002dReferential-Macros">Self-Referential Macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Macro-Pitfalls.html#Macro-Pitfalls">Macro Pitfalls</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.10.6 Argument Prescan</h4>
@@ -110,7 +108,7 @@ instance, if you have
           #define XAFTERX(x) AFTERX(x)
           #define TABLESIZE 1024
           #define BUFSIZE TABLESIZE
-</pre>
+     </pre>
      <p>then <code>AFTERX(BUFSIZE)</code> expands to <code>X_BUFSIZE</code>, and
 <code>XAFTERX(BUFSIZE)</code> expands to <code>X_1024</code>.  (Not to
 <code>X_TABLESIZE</code>.  Prescan always does a complete expansion.)
@@ -123,7 +121,7 @@ wrong number of arguments.  Here is an example:
      <pre class="smallexample">          #define foo  a,b
           #define bar(x) lose(x)
           #define lose(x) (1 + (x))
-</pre>
+     </pre>
      <p>We would like <code>bar(foo)</code> to turn into <code>(1 + (foo))</code>, which
 would then turn into <code>(1 + (a,b))</code>.  Instead, <code>bar(foo)</code>
 expands into <code>lose(a,b)</code>, and you get an error because <code>lose</code>
@@ -134,7 +132,7 @@ arithmetic operations:
      <pre class="smallexample">          #define foo (a,b)
      <br>or<br>
           #define bar(x) lose((x))
-</pre>
+     </pre>
      <p>The extra pair of parentheses prevents the comma in <code>foo</code>'s
 definition from being interpreted as an argument separator.
 

@@ -3,7 +3,7 @@
 <title>Asm Labels - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Constraints.html#Constraints" title="Constraints">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Asm-Labels"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Explicit-Reg-Vars.html#Explicit-Reg-Vars">Explicit Reg Vars</a>,
+<a name="Asm-Labels"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Explicit-Reg-Vars.html#Explicit-Reg-Vars">Explicit Reg Vars</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Constraints.html#Constraints">Constraints</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.36 Controlling Names Used in Assembler Code</h3>
@@ -63,8 +61,8 @@ keyword after the declarator as follows:
 <pre class="smallexample">     int foo asm ("myfoo") = 2;
 </pre>
  <p class="noindent">This specifies that the name to be used for the variable <code>foo</code> in
-the assembler code should be &lsquo;<samp><span class="samp">myfoo</span></samp>&rsquo; rather than the usual
-&lsquo;<samp><span class="samp">_foo</span></samp>&rsquo;.
+the assembler code should be <span class="samp">myfoo</span> rather than the usual
+<span class="samp">_foo</span>.
 
  <p>On systems where an underscore is normally prepended to the name of a C
 function or variable, this feature allows you to define names for the

@@ -3,7 +3,7 @@
 <title>Driver - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Macros.html#Target-Macros" title="Target Macros">
 <link rel="prev" href="Target-Structure.html#Target-Structure" title="Target Structure">
@@ -38,22 +38,20 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Driver"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Run_002dtime-Target.html#Run_002dtime-Target">Run-time Target</a>,
+<a name="Driver"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Run_002dtime-Target.html#Run_002dtime-Target">Run-time Target</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Target-Structure.html#Target-Structure">Target Structure</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Macros.html#Target-Macros">Target Macros</a>
-<hr>
+<hr><br>
 </div>
 
-<h3 class="section">14.2 Controlling the Compilation Driver, <samp><span class="file">gcc</span></samp></h3>
+<h3 class="section">14.2 Controlling the Compilation Driver, <span class="file">gcc</span></h3>
 
 <p><a name="index-driver-1678"></a><a name="index-controlling-the-compilation-driver-1679"></a>
 <!-- prevent bad page break with this line -->
@@ -61,7 +59,7 @@ You can control the compilation driver.
 
 <div class="defun">
 &mdash; Macro: <b>SWITCH_TAKES_ARG</b> (<var>char</var>)<var><a name="index-SWITCH_005fTAKES_005fARG-1680"></a></var><br>
-<blockquote><p>A C expression which determines whether the option <samp><span class="option">-</span><var>char</var></samp>
+<blockquote><p>A C expression which determines whether the option <span class="option">-</span><var>char</var>
 takes arguments.  The value should be the number of arguments that
 option takes&ndash;zero, for many options.
 
@@ -75,7 +73,7 @@ additional options.
 
 <div class="defun">
 &mdash; Macro: <b>WORD_SWITCH_TAKES_ARG</b> (<var>name</var>)<var><a name="index-WORD_005fSWITCH_005fTAKES_005fARG-1681"></a></var><br>
-<blockquote><p>A C expression which determines whether the option <samp><span class="option">-</span><var>name</var></samp>
+<blockquote><p>A C expression which determines whether the option <span class="option">-</span><var>name</var>
 takes arguments.  The value should be the number of arguments that
 option takes&ndash;zero, for many options.  This macro rather than
 <code>SWITCH_TAKES_ARG</code> is used for multi-character option names.
@@ -90,7 +88,7 @@ additional options.
 
 <div class="defun">
 &mdash; Macro: <b>SWITCH_CURTAILS_COMPILATION</b> (<var>char</var>)<var><a name="index-SWITCH_005fCURTAILS_005fCOMPILATION-1682"></a></var><br>
-<blockquote><p>A C expression which determines whether the option <samp><span class="option">-</span><var>char</var></samp>
+<blockquote><p>A C expression which determines whether the option <span class="option">-</span><var>char</var>
 stops compilation before the generation of an executable.  The value is
 boolean, nonzero if the option does stop an executable from being
 generated, zero otherwise.
@@ -115,7 +113,7 @@ the linker needs a space between the option and its argument.
 <div class="defun">
 &mdash; Macro: <b>TARGET_OPTION_TRANSLATE_TABLE</b><var><a name="index-TARGET_005fOPTION_005fTRANSLATE_005fTABLE-1684"></a></var><br>
 <blockquote><p>If defined, a list of pairs of strings, the first of which is a
-potential command line target to the <samp><span class="file">gcc</span></samp> driver program, and the
+potential command line target to the <span class="file">gcc</span> driver program, and the
 second of which is a space-separated (tabs and other whitespace are not
 supported) list of options with which to replace the first option.  The
 target defining this list is responsible for assuring that the results
@@ -123,13 +121,13 @@ are valid.  Replacement options may not be the <code>--opt</code> style, they
 must be the <code>-opt</code> style.  It is the intention of this macro to
 provide a mechanism for substitution that affects the multilibs chosen,
 such as one option that enables many options, some of which select
-multilibs.  Example nonsensical definition, where <samp><span class="option">-malt-abi</span></samp>,
-<samp><span class="option">-EB</span></samp>, and <samp><span class="option">-mspoo</span></samp> cause different multilibs to be chosen:
+multilibs.  Example nonsensical definition, where <span class="option">-malt-abi</span>,
+<span class="option">-EB</span>, and <span class="option">-mspoo</span> cause different multilibs to be chosen:
 
      <pre class="smallexample">          #define TARGET_OPTION_TRANSLATE_TABLE \
           { "-fast",   "-march=fast-foo -malt-abi -I/usr/fast-foo" }, \
           { "-compat", "-EB -malign=4 -mspoo" }
-</pre>
+     </pre>
       </blockquote></div>
 
 <div class="defun">
@@ -138,11 +136,11 @@ multilibs.  Example nonsensical definition, where <samp><span class="option">-ma
 initializer for an array of strings, with no surrounding braces.
 
       <p>The driver applies these specs to its own command line between loading
-default <samp><span class="file">specs</span></samp> files (but not command-line specified ones) and
+default <span class="file">specs</span> files (but not command-line specified ones) and
 choosing the multilib directory or running any subcommands.  It
 applies them in the order given, so each spec can depend on the
 options added by earlier ones.  It is also possible to remove options
-using &lsquo;<samp><span class="samp">%&lt;</span><var>option</var></samp>&rsquo; in the usual way.
+using <span class="samp">%&lt;</span><var>option</var> in the usual way.
 
       <p>This macro can be useful when a port has several interdependent target
 options.  It provides a way of standardizing the command line so
@@ -154,18 +152,18 @@ that the other specs are easier to write.
 <div class="defun">
 &mdash; Macro: <b>OPTION_DEFAULT_SPECS</b><var><a name="index-OPTION_005fDEFAULT_005fSPECS-1686"></a></var><br>
 <blockquote><p>A list of specs used to support configure-time default options (i.e. 
-<samp><span class="option">--with</span></samp> options) in the driver.  It should be a suitable initializer
+<span class="option">--with</span> options) in the driver.  It should be a suitable initializer
 for an array of structures, each containing two strings, without the
 outermost pair of surrounding braces.
 
       <p>The first item in the pair is the name of the default.  This must match
-the code in <samp><span class="file">config.gcc</span></samp> for the target.  The second item is a spec
+the code in <span class="file">config.gcc</span> for the target.  The second item is a spec
 to apply if a default with this name was specified.  The string
-&lsquo;<samp><span class="samp">%(VALUE)</span></samp>&rsquo; in the spec will be replaced by the value of the default
+<span class="samp">%(VALUE)</span> in the spec will be replaced by the value of the default
 everywhere it occurs.
 
       <p>The driver will apply these specs to its own command line between loading
-default <samp><span class="file">specs</span></samp> files and processing <code>DRIVER_SELF_SPECS</code>, using
+default <span class="file">specs</span> files and processing <code>DRIVER_SELF_SPECS</code>, using
 the same mechanism as <code>DRIVER_SELF_SPECS</code>.
 
       <p>Do not define this macro if it does not need to do anything. 
@@ -215,7 +213,7 @@ CC1_SPEC in CC1PLUS_SPEC.
 <blockquote><p>A C string constant that tells the GCC driver program options to
 pass to the assembler.  It can also specify how to translate options
 you give to GCC into options for GCC to pass to the assembler. 
-See the file <samp><span class="file">sun3.h</span></samp> for an example of this.
+See the file <span class="file">sun3.h</span> for an example of this.
 
       <p>Do not define this macro if it does not need to do anything. 
 </p></blockquote></div>
@@ -224,7 +222,7 @@ See the file <samp><span class="file">sun3.h</span></samp> for an example of thi
 &mdash; Macro: <b>ASM_FINAL_SPEC</b><var><a name="index-ASM_005fFINAL_005fSPEC-1692"></a></var><br>
 <blockquote><p>A C string constant that tells the GCC driver program how to
 run any programs which cleanup after the normal assembler. 
-Normally, this is not needed.  See the file <samp><span class="file">mips.h</span></samp> for
+Normally, this is not needed.  See the file <span class="file">mips.h</span> for
 an example of this.
 
       <p>Do not define this macro if it does not need to do anything. 
@@ -233,15 +231,15 @@ an example of this.
 <div class="defun">
 &mdash; Macro: <b>AS_NEEDS_DASH_FOR_PIPED_INPUT</b><var><a name="index-AS_005fNEEDS_005fDASH_005fFOR_005fPIPED_005fINPUT-1693"></a></var><br>
 <blockquote><p>Define this macro, with no value, if the driver should give the assembler
-an argument consisting of a single dash, <samp><span class="option">-</span></samp>, to instruct it to
+an argument consisting of a single dash, <span class="option">-</span>, to instruct it to
 read from its standard input (which will be a pipe connected to the
 output of the compiler proper).  This argument is given after any
-<samp><span class="option">-o</span></samp> option specifying the name of the output file.
+<span class="option">-o</span> option specifying the name of the output file.
 
       <p>If you do not define this macro, the assembler is assumed to read its
 standard input if given no non-option arguments.  If your assembler
-cannot read standard input at all, use a &lsquo;<samp><span class="samp">%{pipe:%e}</span></samp>&rsquo; construct;
-see <samp><span class="file">mips.h</span></samp> for instance. 
+cannot read standard input at all, use a <span class="samp">%{pipe:%e}</span> construct;
+see <span class="file">mips.h</span> for instance. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -260,30 +258,30 @@ between the two is that <code>LIB_SPEC</code> is used at the end of the
 command given to the linker.
 
       <p>If this macro is not defined, a default is provided that
-loads the standard C library from the usual place.  See <samp><span class="file">gcc.c</span></samp>. 
+loads the standard C library from the usual place.  See <span class="file">gcc.c</span>. 
 </p></blockquote></div>
 
 <div class="defun">
 &mdash; Macro: <b>LIBGCC_SPEC</b><var><a name="index-LIBGCC_005fSPEC-1696"></a></var><br>
 <blockquote><p>Another C string constant that tells the GCC driver program
-how and when to place a reference to <samp><span class="file">libgcc.a</span></samp> into the
+how and when to place a reference to <span class="file">libgcc.a</span> into the
 linker command line.  This constant is placed both before and after
 the value of <code>LIB_SPEC</code>.
 
       <p>If this macro is not defined, the GCC driver provides a default that
-passes the string <samp><span class="option">-lgcc</span></samp> to the linker. 
+passes the string <span class="option">-lgcc</span> to the linker. 
 </p></blockquote></div>
 
 <div class="defun">
 &mdash; Macro: <b>REAL_LIBGCC_SPEC</b><var><a name="index-REAL_005fLIBGCC_005fSPEC-1697"></a></var><br>
 <blockquote><p>By default, if <code>ENABLE_SHARED_LIBGCC</code> is defined, the
 <code>LIBGCC_SPEC</code> is not directly used by the driver program but is
-instead modified to refer to different versions of <samp><span class="file">libgcc.a</span></samp>
-depending on the values of the command line flags <samp><span class="option">-static</span></samp>,
-<samp><span class="option">-shared</span></samp>, <samp><span class="option">-static-libgcc</span></samp>, and <samp><span class="option">-shared-libgcc</span></samp>.  On
+instead modified to refer to different versions of <span class="file">libgcc.a</span>
+depending on the values of the command line flags <span class="option">-static</span>,
+<span class="option">-shared</span>, <span class="option">-static-libgcc</span>, and <span class="option">-shared-libgcc</span>.  On
 targets where these modifications are inappropriate, define
 <code>REAL_LIBGCC_SPEC</code> instead.  <code>REAL_LIBGCC_SPEC</code> tells the
-driver how to place a reference to <samp><span class="file">libgcc</span></samp> on the link command
+driver how to place a reference to <span class="file">libgcc</span> on the link command
 line, but, unlike <code>LIBGCC_SPEC</code>, it is used unmodified. 
 </p></blockquote></div>
 
@@ -311,7 +309,7 @@ difference between the two is that <code>STARTFILE_SPEC</code> is used at
 the very beginning of the command given to the linker.
 
       <p>If this macro is not defined, a default is provided that loads the
-standard C startup file from the usual place.  See <samp><span class="file">gcc.c</span></samp>. 
+standard C startup file from the usual place.  See <span class="file">gcc.c</span>. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -331,7 +329,7 @@ models, such as AIX 4.3.  On such platforms, define
 <code>THREAD_MODEL_SPEC</code> such that it evaluates to a string without
 blanks that names one of the recognized thread models.  <code>%*</code>, the
 default value of this macro, will expand to the value of
-<code>thread_file</code> set in <samp><span class="file">config.gcc</span></samp>. 
+<code>thread_file</code> set in <span class="file">config.gcc</span>. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -352,7 +350,7 @@ usr/include, et al, within sysroot+headers_suffix.
 <div class="defun">
 &mdash; Macro: <b>EXTRA_SPECS</b><var><a name="index-EXTRA_005fSPECS-1705"></a></var><br>
 <blockquote><p>Define this macro to provide additional specifications to put in the
-<samp><span class="file">specs</span></samp> file that can be used in various specifications like
+<span class="file">specs</span> file that can be used in various specifications like
 <code>CC1_SPEC</code>.
 
       <p>The definition should be an initializer for an array of structures,
@@ -371,14 +369,14 @@ define either <code>_CALL_SYSV</code> when the System V calling sequence is
 used or <code>_CALL_AIX</code> when the older AIX-based calling sequence is
 used.
 
-      <p>The <samp><span class="file">config/rs6000/rs6000.h</span></samp> target file defines:
+      <p>The <span class="file">config/rs6000/rs6000.h</span> target file defines:
 
      <pre class="smallexample">          #define EXTRA_SPECS \
             { "cpp_sysv_default", CPP_SYSV_DEFAULT },
           
           #define CPP_SYS_DEFAULT ""
-</pre>
-      <p>The <samp><span class="file">config/rs6000/sysv.h</span></samp> target file defines:
+     </pre>
+      <p>The <span class="file">config/rs6000/sysv.h</span> target file defines:
      <pre class="smallexample">          #undef CPP_SPEC
           #define CPP_SPEC \
           "%{posix: -D_POSIX_SOURCE } \
@@ -388,20 +386,20 @@ used.
           
           #undef CPP_SYSV_DEFAULT
           #define CPP_SYSV_DEFAULT "-D_CALL_SYSV"
-</pre>
-      <p>while the <samp><span class="file">config/rs6000/eabiaix.h</span></samp> target file defines
+     </pre>
+      <p>while the <span class="file">config/rs6000/eabiaix.h</span> target file defines
 <code>CPP_SYSV_DEFAULT</code> as:
 
      <pre class="smallexample">          #undef CPP_SYSV_DEFAULT
           #define CPP_SYSV_DEFAULT "-D_CALL_AIX"
-</pre>
+     </pre>
       </blockquote></div>
 
 <div class="defun">
 &mdash; Macro: <b>LINK_LIBGCC_SPECIAL_1</b><var><a name="index-LINK_005fLIBGCC_005fSPECIAL_005f1-1706"></a></var><br>
 <blockquote><p>Define this macro if the driver program should find the library
-<samp><span class="file">libgcc.a</span></samp>.  If you do not define this macro, the driver program will pass
-the argument <samp><span class="option">-lgcc</span></samp> to tell the linker to do the search. 
+<span class="file">libgcc.a</span>.  If you do not define this macro, the driver program will pass
+the argument <span class="option">-lgcc</span> to tell the linker to do the search. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -414,7 +412,7 @@ By default this is <code>%G %L %G</code>.
 &mdash; Macro: <b>LINK_COMMAND_SPEC</b><var><a name="index-LINK_005fCOMMAND_005fSPEC-1708"></a></var><br>
 <blockquote><p>A C string constant giving the complete command line need to execute the
 linker.  When you do this, you will need to update your port each time a
-change is made to the link command line within <samp><span class="file">gcc.c</span></samp>.  Therefore,
+change is made to the link command line within <span class="file">gcc.c</span>.  Therefore,
 define this macro only if you need to completely redefine the command
 line for invoking the linker and there is no other way to accomplish
 the effect you need.  Overriding this macro may be avoidable by overriding
@@ -423,7 +421,7 @@ the effect you need.  Overriding this macro may be avoidable by overriding
 
 <div class="defun">
 &mdash; Macro: <b>LINK_ELIMINATE_DUPLICATE_LDIRECTORIES</b><var><a name="index-LINK_005fELIMINATE_005fDUPLICATE_005fLDIRECTORIES-1709"></a></var><br>
-<blockquote><p>A nonzero value causes <samp><span class="command">collect2</span></samp> to remove duplicate <samp><span class="option">-L</span><var>directory</var></samp> search
+<blockquote><p>A nonzero value causes <span class="command">collect2</span> to remove duplicate <span class="option">-L</span><var>directory</var> search
 directories from linking commands.  Do not give it a nonzero value if
 removing duplicate search directories changes the linker's semantics. 
 </p></blockquote></div>
@@ -443,8 +441,8 @@ See <a href="Target-Fragment.html#Target-Fragment">Target Fragment</a>.
 
 <div class="defun">
 &mdash; Macro: <b>RELATIVE_PREFIX_NOT_LINKDIR</b><var><a name="index-RELATIVE_005fPREFIX_005fNOT_005fLINKDIR-1711"></a></var><br>
-<blockquote><p>Define this macro to tell <samp><span class="command">gcc</span></samp> that it should only translate
-a <samp><span class="option">-B</span></samp> prefix into a <samp><span class="option">-L</span></samp> linker option if the prefix
+<blockquote><p>Define this macro to tell <span class="command">gcc</span> that it should only translate
+a <span class="option">-B</span> prefix into a <span class="option">-L</span> linker option if the prefix
 indicates an absolute file name. 
 </p></blockquote></div>
 
@@ -452,16 +450,16 @@ indicates an absolute file name.
 &mdash; Macro: <b>MD_EXEC_PREFIX</b><var><a name="index-MD_005fEXEC_005fPREFIX-1712"></a></var><br>
 <blockquote><p>If defined, this macro is an additional prefix to try after
 <code>STANDARD_EXEC_PREFIX</code>.  <code>MD_EXEC_PREFIX</code> is not searched
-when the <samp><span class="option">-b</span></samp> option is used, or the compiler is built as a cross
+when the <span class="option">-b</span> option is used, or the compiler is built as a cross
 compiler.  If you define <code>MD_EXEC_PREFIX</code>, then be sure to add it
-to the list of directories used to find the assembler in <samp><span class="file">configure.in</span></samp>. 
+to the list of directories used to find the assembler in <span class="file">configure.in</span>. 
 </p></blockquote></div>
 
 <div class="defun">
 &mdash; Macro: <b>STANDARD_STARTFILE_PREFIX</b><var><a name="index-STANDARD_005fSTARTFILE_005fPREFIX-1713"></a></var><br>
 <blockquote><p>Define this macro as a C string constant if you wish to override the
 standard choice of <code>libdir</code> as the default prefix to
-try when searching for startup files such as <samp><span class="file">crt0.o</span></samp>. 
+try when searching for startup files such as <span class="file">crt0.o</span>. 
 <code>STANDARD_STARTFILE_PREFIX</code> is not searched when the compiler
 is built as a cross compiler. 
 </p></blockquote></div>
@@ -470,7 +468,7 @@ is built as a cross compiler.
 &mdash; Macro: <b>STANDARD_STARTFILE_PREFIX_1</b><var><a name="index-STANDARD_005fSTARTFILE_005fPREFIX_005f1-1714"></a></var><br>
 <blockquote><p>Define this macro as a C string constant if you wish to override the
 standard choice of <code>/lib</code> as a prefix to try after the default prefix
-when searching for startup files such as <samp><span class="file">crt0.o</span></samp>. 
+when searching for startup files such as <span class="file">crt0.o</span>. 
 <code>STANDARD_STARTFILE_PREFIX_1</code> is not searched when the compiler
 is built as a cross compiler. 
 </p></blockquote></div>
@@ -479,7 +477,7 @@ is built as a cross compiler.
 &mdash; Macro: <b>STANDARD_STARTFILE_PREFIX_2</b><var><a name="index-STANDARD_005fSTARTFILE_005fPREFIX_005f2-1715"></a></var><br>
 <blockquote><p>Define this macro as a C string constant if you wish to override the
 standard choice of <code>/lib</code> as yet another prefix to try after the
-default prefix when searching for startup files such as <samp><span class="file">crt0.o</span></samp>. 
+default prefix when searching for startup files such as <span class="file">crt0.o</span>. 
 <code>STANDARD_STARTFILE_PREFIX_2</code> is not searched when the compiler
 is built as a cross compiler. 
 </p></blockquote></div>
@@ -488,14 +486,14 @@ is built as a cross compiler.
 &mdash; Macro: <b>MD_STARTFILE_PREFIX</b><var><a name="index-MD_005fSTARTFILE_005fPREFIX-1716"></a></var><br>
 <blockquote><p>If defined, this macro supplies an additional prefix to try after the
 standard prefixes.  <code>MD_EXEC_PREFIX</code> is not searched when the
-<samp><span class="option">-b</span></samp> option is used, or when the compiler is built as a cross
+<span class="option">-b</span> option is used, or when the compiler is built as a cross
 compiler. 
 </p></blockquote></div>
 
 <div class="defun">
 &mdash; Macro: <b>MD_STARTFILE_PREFIX_1</b><var><a name="index-MD_005fSTARTFILE_005fPREFIX_005f1-1717"></a></var><br>
 <blockquote><p>If defined, this macro supplies yet another prefix to try after the
-standard prefixes.  It is not searched when the <samp><span class="option">-b</span></samp> option is
+standard prefixes.  It is not searched when the <span class="option">-b</span> option is
 used, or when the compiler is built as a cross compiler. 
 </p></blockquote></div>
 
@@ -510,11 +508,11 @@ initialize the necessary environment variables.
 <div class="defun">
 &mdash; Macro: <b>LOCAL_INCLUDE_DIR</b><var><a name="index-LOCAL_005fINCLUDE_005fDIR-1719"></a></var><br>
 <blockquote><p>Define this macro as a C string constant if you wish to override the
-standard choice of <samp><span class="file">/usr/local/include</span></samp> as the default prefix to
+standard choice of <span class="file">/usr/local/include</span> as the default prefix to
 try when searching for local header files.  <code>LOCAL_INCLUDE_DIR</code>
 comes before <code>SYSTEM_INCLUDE_DIR</code> in the search order.
 
-      <p>Cross compilers do not search either <samp><span class="file">/usr/local/include</span></samp> or its
+      <p>Cross compilers do not search either <span class="file">/usr/local/include</span> or its
 replacement. 
 </p></blockquote></div>
 
@@ -532,15 +530,15 @@ dash), one of the enumeration codes <code>ADD</code> or <code>DELETE</code> to
 indicate whether the string should be inserted or deleted, and the string
 to be inserted or deleted (a string constant).
 
-      <p>For example, on a machine where &lsquo;<samp><span class="samp">64</span></samp>&rsquo; at the end of the
-configuration name denotes a 64-bit target and you want the <samp><span class="option">-32</span></samp>
-and <samp><span class="option">-64</span></samp> switches to select between 32- and 64-bit targets, you would
+      <p>For example, on a machine where <span class="samp">64</span> at the end of the
+configuration name denotes a 64-bit target and you want the <span class="option">-32</span>
+and <span class="option">-64</span> switches to select between 32- and 64-bit targets, you would
 code
 
      <pre class="smallexample">          #define MODIFY_TARGET_NAME \
             { { "-32", DELETE, "64"}, \
                {"-64", ADD, "64"}}
-</pre>
+     </pre>
       </blockquote></div>
 
 <div class="defun">
@@ -557,11 +555,11 @@ specified.
 <div class="defun">
 &mdash; Macro: <b>STANDARD_INCLUDE_DIR</b><var><a name="index-STANDARD_005fINCLUDE_005fDIR-1722"></a></var><br>
 <blockquote><p>Define this macro as a C string constant if you wish to override the
-standard choice of <samp><span class="file">/usr/include</span></samp> as the default prefix to
+standard choice of <span class="file">/usr/include</span> as the default prefix to
 try when searching for header files.
 
       <p>Cross compilers ignore this macro and do not search either
-<samp><span class="file">/usr/include</span></samp> or its replacement. 
+<span class="file">/usr/include</span> or its replacement. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -578,7 +576,7 @@ for include files.  For a native compiler, the default search path
 usually consists of <code>GCC_INCLUDE_DIR</code>, <code>LOCAL_INCLUDE_DIR</code>,
 <code>SYSTEM_INCLUDE_DIR</code>, <code>GPLUSPLUS_INCLUDE_DIR</code>, and
 <code>STANDARD_INCLUDE_DIR</code>.  In addition, <code>GPLUSPLUS_INCLUDE_DIR</code>
-and <code>GCC_INCLUDE_DIR</code> are defined automatically by <samp><span class="file">Makefile</span></samp>,
+and <code>GCC_INCLUDE_DIR</code> are defined automatically by <span class="file">Makefile</span>,
 and specify private search areas for GCC.  The directory
 <code>GPLUSPLUS_INCLUDE_DIR</code> is used only for C++ programs.
 
@@ -587,13 +585,13 @@ Each array element should have four elements: the directory name (a
 string constant), the component name (also a string constant), a flag
 for C++-only directories,
 and a flag showing that the includes in the directory don't need to be
-wrapped in <code>extern &lsquo;</code><samp><span class="samp">C</span></samp><code>&rsquo;</code> when compiling C++.  Mark the end of
+wrapped in <code>extern </code><span class="samp">C</span> when compiling C++.  Mark the end of
 the array with a null element.
 
       <p>The component name denotes what GNU package the include file is part of,
-if any, in all uppercase letters.  For example, it might be &lsquo;<samp><span class="samp">GCC</span></samp>&rsquo;
-or &lsquo;<samp><span class="samp">BINUTILS</span></samp>&rsquo;.  If the package is part of a vendor-supplied
-operating system, code the component name as &lsquo;<samp><span class="samp">0</span></samp>&rsquo;.
+if any, in all uppercase letters.  For example, it might be <span class="samp">GCC</span>
+or <span class="samp">BINUTILS</span>.  If the package is part of a vendor-supplied
+operating system, code the component name as <span class="samp">0</span>.
 
       <p>For example, here is the definition used for VAX/VMS:
 
@@ -605,13 +603,13 @@ operating system, code the component name as &lsquo;<samp><span class="samp">0</
             { ".", 0, 0, 0},                      \
             { 0, 0, 0, 0}                         \
           }
-</pre>
+     </pre>
       </blockquote></div>
 
  <p>Here is the order of prefixes tried for exec files:
 
      <ol type=1 start=1>
-<li>Any prefixes specified by the user with <samp><span class="option">-B</span></samp>.
+<li>Any prefixes specified by the user with <span class="option">-B</span>.
 
      <li>The environment variable <code>GCC_EXEC_PREFIX</code>, if any.
 
@@ -619,7 +617,7 @@ operating system, code the component name as &lsquo;<samp><span class="samp">0</
 
      <li>The macro <code>STANDARD_EXEC_PREFIX</code>.
 
-     <li><samp><span class="file">/usr/lib/gcc/</span></samp>.
+     <li><span class="file">/usr/lib/gcc/</span>.
 
      <li>The macro <code>MD_EXEC_PREFIX</code>, if any.
       </ol>
@@ -627,7 +625,7 @@ operating system, code the component name as &lsquo;<samp><span class="samp">0</
  <p>Here is the order of prefixes tried for startfiles:
 
      <ol type=1 start=1>
-<li>Any prefixes specified by the user with <samp><span class="option">-B</span></samp>.
+<li>Any prefixes specified by the user with <span class="option">-B</span>.
 
      <li>The environment variable <code>GCC_EXEC_PREFIX</code>, if any.
 
@@ -636,7 +634,7 @@ operating system, code the component name as &lsquo;<samp><span class="samp">0</
 
      <li>The macro <code>STANDARD_EXEC_PREFIX</code>.
 
-     <li><samp><span class="file">/usr/lib/gcc/</span></samp>.
+     <li><span class="file">/usr/lib/gcc/</span>.
 
      <li>The macro <code>MD_EXEC_PREFIX</code>, if any.
 
@@ -644,9 +642,9 @@ operating system, code the component name as &lsquo;<samp><span class="samp">0</
 
      <li>The macro <code>STANDARD_STARTFILE_PREFIX</code>.
 
-     <li><samp><span class="file">/lib/</span></samp>.
+     <li><span class="file">/lib/</span>.
 
-     <li><samp><span class="file">/usr/lib/</span></samp>.
+     <li><span class="file">/usr/lib/</span>.
       </ol>
 
  </body></html>

@@ -3,7 +3,7 @@
 <title>Overall Structure - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Requirements.html#Requirements" title="Requirements">
 <link rel="next" href="Algorithms.html#Algorithms" title="Algorithms">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Overall-Structure"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Algorithms.html#Algorithms">Algorithms</a>,
+<a name="Overall-Structure"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Algorithms.html#Algorithms">Algorithms</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Requirements.html#Requirements">Requirements</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">2 Overall Structure</h2>
@@ -107,44 +105,44 @@ have to include all three kinds of information.
 
 <h3 class="section">2.4 Source Tree Structure</h3>
 
-<p><a name="index-g_t_0040value_007bGDBN_007d-source-tree-structure-4"></a>
+<p><a name="index-_0040value_007bGDBN_007d-source-tree-structure-4"></a>
 The <span class="sc">gdb</span> source directory has a mostly flat structure&mdash;there
 are only a few subdirectories.  A file's name usually gives a hint as
-to what it does; for example, <samp><span class="file">stabsread.c</span></samp> reads stabs,
-<samp><span class="file">dwarf2read.c</span></samp> reads <span class="sc">DWARF 2</span>, etc.
+to what it does; for example, <span class="file">stabsread.c</span> reads stabs,
+<span class="file">dwarf2read.c</span> reads <span class="sc">DWARF 2</span>, etc.
 
    <p>Files that are related to some common task have names that share
-common substrings.  For example, <samp><span class="file">*-thread.c</span></samp> files deal with
-debugging threads on various platforms; <samp><span class="file">*read.c</span></samp> files deal with
-reading various kinds of symbol and object files; <samp><span class="file">inf*.c</span></samp> files
+common substrings.  For example, <span class="file">*-thread.c</span> files deal with
+debugging threads on various platforms; <span class="file">*read.c</span> files deal with
+reading various kinds of symbol and object files; <span class="file">inf*.c</span> files
 deal with direct control of the <dfn>inferior program</dfn> (<span class="sc">gdb</span>
 parlance for the program being debugged).
 
-   <p>There are several dozens of files in the <samp><span class="file">*-tdep.c</span></samp> family. 
-&lsquo;<samp><span class="samp">tdep</span></samp>&rsquo; stands for <dfn>target-dependent code</dfn>&mdash;each of these
+   <p>There are several dozens of files in the <span class="file">*-tdep.c</span> family. 
+<span class="samp">tdep</span> stands for <dfn>target-dependent code</dfn>&mdash;each of these
 files implements debug support for a specific target architecture
 (sparc, mips, etc).  Usually, only one of these will be used in a
 specific <span class="sc">gdb</span> configuration (sometimes two, closely related).
 
-   <p>Similarly, there are many <samp><span class="file">*-nat.c</span></samp> files, each one for native
-debugging on a specific system (e.g., <samp><span class="file">sparc-linux-nat.c</span></samp> is for
+   <p>Similarly, there are many <span class="file">*-nat.c</span> files, each one for native
+debugging on a specific system (e.g., <span class="file">sparc-linux-nat.c</span> is for
 native debugging of Sparc machines running the Linux kernel).
 
    <p>The few subdirectories of the source tree are:
 
      <dl>
-<dt><samp><span class="file">cli</span></samp><dd>Code that implements <dfn>CLI</dfn>, the <span class="sc">gdb</span> Command-Line
+<dt><span class="file">cli</span><dd>Code that implements <dfn>CLI</dfn>, the <span class="sc">gdb</span> Command-Line
 Interpreter.  See <a href="User-Interface.html#User-Interface">Command Interpreter</a>.
 
-     <br><dt><samp><span class="file">gdbserver</span></samp><dd>Code for the <span class="sc">gdb</span> remote server.
+     <br><dt><span class="file">gdbserver</span><dd>Code for the <span class="sc">gdb</span> remote server.
 
-     <br><dt><samp><span class="file">gdbtk</span></samp><dd>Code for Insight, the <span class="sc">gdb</span> TK-based GUI front-end.
+     <br><dt><span class="file">gdbtk</span><dd>Code for Insight, the <span class="sc">gdb</span> TK-based GUI front-end.
 
-     <br><dt><samp><span class="file">mi</span></samp><dd>The <dfn>GDB/MI</dfn>, the <span class="sc">gdb</span> Machine Interface interpreter.
+     <br><dt><span class="file">mi</span><dd>The <dfn>GDB/MI</dfn>, the <span class="sc">gdb</span> Machine Interface interpreter.
 
-     <br><dt><samp><span class="file">signals</span></samp><dd>Target signal translation code.
+     <br><dt><span class="file">signals</span><dd>Target signal translation code.
 
-     <br><dt><samp><span class="file">tui</span></samp><dd>Code for <dfn>TUI</dfn>, the <span class="sc">gdb</span> Text-mode full-screen User
+     <br><dt><span class="file">tui</span><dd>Code for <dfn>TUI</dfn>, the <span class="sc">gdb</span> Text-mode full-screen User
 Interface.  See <a href="User-Interface.html#User-Interface">TUI</a>. 
 </dl>
 

@@ -3,7 +3,7 @@
 <title>Out-of-Band Data - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Connections.html#Connections" title="Connections">
 <link rel="prev" href="Server-Example.html#Server-Example" title="Server Example">
@@ -16,19 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Out-of-Band-Data"></a>
-<a name="Out_002dof_002dBand-Data"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Server-Example.html#Server-Example">Server Example</a>,
+<a name="Out_002dof_002dBand-Data"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Server-Example.html#Server-Example">Server Example</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Connections.html#Connections">Connections</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">16.9.8 Out-of-Band Data</h4>
@@ -76,7 +73,7 @@ the socket's read pointer has reached the &ldquo;mark&rdquo;.
 
 <!-- Posix  1.g specifies sockatmark for this ioctl.  sockatmark is not -->
 <!-- implemented yet. -->
-   <p>Here's a function to discard any ordinary data preceding the
+<p>Here's a function to discard any ordinary data preceding the
 out-of-band mark:
 
 <pre class="smallexample">     int

@@ -3,7 +3,7 @@
 <title>Help - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Commands.html#Commands" title="Commands">
 <link rel="prev" href="Completion.html#Completion" title="Completion">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Help"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Completion.html#Completion">Completion</a>,
+<a name="Help"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Completion.html#Completion">Completion</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Commands.html#Commands">Commands</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">3.3 Getting Help</h3>
@@ -64,9 +62,9 @@ display a short list of named classes of commands:
           documentation.
           Command name abbreviations are allowed if unambiguous.
           (gdb)
-</pre>
+     </pre>
      <!-- the above line break eliminates huge line overfull... -->
-     <br><dt><code>help </code><var>class</var><dd>Using one of the general help classes as an argument, you can get a
+<br><dt><code>help </code><var>class</var><dd>Using one of the general help classes as an argument, you can get a
 list of the individual commands in that class.  For example, here is the
 help display for the class <code>status</code>:
 
@@ -86,7 +84,7 @@ help display for the class <code>status</code>:
           documentation.
           Command name abbreviations are allowed if unambiguous.
           (gdb)
-</pre>
+     </pre>
      <br><dt><code>help </code><var>command</var><dd>With a command name as <code>help</code> argument, <span class="sc">gdb</span> displays a
 short paragraph on how to use that command.
 
@@ -95,7 +93,7 @@ commands, and their documentation, for the regular expression specified in
 <var>args</var>. It prints out all matches found. For example:
 
      <pre class="smallexample">          apropos reload
-</pre>
+     </pre>
      <p class="noindent">results in:
 
      <pre class="smallexample">          <!-- @group -->
@@ -104,20 +102,20 @@ commands, and their documentation, for the regular expression specified in
           show symbol-reloading -- Show dynamic symbol table reloading
                                   multiple times in one run
           <!-- @end group -->
-</pre>
+     </pre>
      <p><a name="index-complete-83"></a><br><dt><code>complete </code><var>args</var><dd>The <code>complete </code><var>args</var> command lists all the possible completions
 for the beginning of a command.  Use <var>args</var> to specify the beginning of the
 command you want completed.  For example:
 
      <pre class="smallexample">          complete i
-</pre>
+     </pre>
      <p class="noindent">results in:
 
      <pre class="smallexample">          if
           ignore
           info
           inspect
-</pre>
+     </pre>
      <p class="noindent">This is intended for use by <span class="sc">gnu</span> Emacs. 
 </dl>
 
@@ -129,7 +127,7 @@ under <code>info</code> and under <code>show</code> in the Index point to
 all the sub-commands.  See <a href="GDB-Index.html#GDB-Index">GDB Index</a>.
 
 <!-- @group -->
-     
+
 <a name="index-info-84"></a>
 <a name="index-i-_0040r_007b_0028_0040code_007binfo_007d_0029_007d-85"></a>
 <dl><dt><code>info</code><dd>This command (abbreviated <code>i</code>) is for describing the state of your
@@ -164,7 +162,7 @@ exceptional in lacking corresponding <code>set</code> commands:
 
      
 <a name="index-show-version-89"></a>
-<a name="index-g_t_0040value_007bGDBN_007d-version-number-90"></a>
+<a name="index-_0040value_007bGDBN_007d-version-number-90"></a>
 <dl><dt><code>show version</code><dd>Show what version of <span class="sc">gdb</span> is running.  You should include this
 information in <span class="sc">gdb</span> bug-reports.  If multiple versions of
 <span class="sc">gdb</span> are in use at your site, you may need to determine which

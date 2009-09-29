@@ -3,7 +3,7 @@
 <title>MIPS Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="MCore-Options.html#MCore-Options" title="MCore Options">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="MIPS-Options"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="MMIX-Options.html#MMIX-Options">MMIX Options</a>,
+<a name="MIPS-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="MMIX-Options.html#MMIX-Options">MMIX Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="MCore-Options.html#MCore-Options">MCore Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">3.17.22 MIPS Options</h4>
@@ -59,79 +57,79 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options"
      <dl>
 <dt><code>-EB</code><dd><a name="index-EB-1216"></a>Generate big-endian code.
 
-     <br><dt><code>-EL</code><dd><a name="index-EL-1217"></a>Generate little-endian code.  This is the default for &lsquo;<samp><span class="samp">mips*el-*-*</span></samp>&rsquo;
+     <br><dt><code>-EL</code><dd><a name="index-EL-1217"></a>Generate little-endian code.  This is the default for <span class="samp">mips*el-*-*</span>
 configurations.
 
      <br><dt><code>-march=</code><var>arch</var><dd><a name="index-march-1218"></a>Generate code that will run on <var>arch</var>, which can be the name of a
 generic MIPS ISA, or the name of a particular processor. 
 The ISA names are:
-&lsquo;<samp><span class="samp">mips1</span></samp>&rsquo;, &lsquo;<samp><span class="samp">mips2</span></samp>&rsquo;, &lsquo;<samp><span class="samp">mips3</span></samp>&rsquo;, &lsquo;<samp><span class="samp">mips4</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">mips32</span></samp>&rsquo;, &lsquo;<samp><span class="samp">mips32r2</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">mips64</span></samp>&rsquo;. 
+<span class="samp">mips1</span>, <span class="samp">mips2</span>, <span class="samp">mips3</span>, <span class="samp">mips4</span>,
+<span class="samp">mips32</span>, <span class="samp">mips32r2</span>, and <span class="samp">mips64</span>. 
 The processor names are:
-&lsquo;<samp><span class="samp">4kc</span></samp>&rsquo;, &lsquo;<samp><span class="samp">4km</span></samp>&rsquo;, &lsquo;<samp><span class="samp">4kp</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">5kc</span></samp>&rsquo;, &lsquo;<samp><span class="samp">5kf</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">20kc</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">24k</span></samp>&rsquo;, &lsquo;<samp><span class="samp">24kc</span></samp>&rsquo;, &lsquo;<samp><span class="samp">24kf</span></samp>&rsquo;, &lsquo;<samp><span class="samp">24kx</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">74kc</span></samp>&rsquo;, &lsquo;<samp><span class="samp">74kf</span></samp>&rsquo;, &lsquo;<samp><span class="samp">74kx</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">m4k</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">orion</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">r2000</span></samp>&rsquo;, &lsquo;<samp><span class="samp">r3000</span></samp>&rsquo;, &lsquo;<samp><span class="samp">r3900</span></samp>&rsquo;, &lsquo;<samp><span class="samp">r4000</span></samp>&rsquo;, &lsquo;<samp><span class="samp">r4400</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">r4600</span></samp>&rsquo;, &lsquo;<samp><span class="samp">r4650</span></samp>&rsquo;, &lsquo;<samp><span class="samp">r6000</span></samp>&rsquo;, &lsquo;<samp><span class="samp">r8000</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">rm7000</span></samp>&rsquo;, &lsquo;<samp><span class="samp">rm9000</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">sb1</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">sr71000</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">vr4100</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vr4111</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vr4120</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vr4130</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vr4300</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">vr5000</span></samp>&rsquo;, &lsquo;<samp><span class="samp">vr5400</span></samp>&rsquo; and &lsquo;<samp><span class="samp">vr5500</span></samp>&rsquo;. 
-The special value &lsquo;<samp><span class="samp">from-abi</span></samp>&rsquo; selects the
+<span class="samp">4kc</span>, <span class="samp">4km</span>, <span class="samp">4kp</span>,
+<span class="samp">5kc</span>, <span class="samp">5kf</span>,
+<span class="samp">20kc</span>,
+<span class="samp">24k</span>, <span class="samp">24kc</span>, <span class="samp">24kf</span>, <span class="samp">24kx</span>,
+<span class="samp">74kc</span>, <span class="samp">74kf</span>, <span class="samp">74kx</span>,
+<span class="samp">m4k</span>,
+<span class="samp">orion</span>,
+<span class="samp">r2000</span>, <span class="samp">r3000</span>, <span class="samp">r3900</span>, <span class="samp">r4000</span>, <span class="samp">r4400</span>,
+<span class="samp">r4600</span>, <span class="samp">r4650</span>, <span class="samp">r6000</span>, <span class="samp">r8000</span>,
+<span class="samp">rm7000</span>, <span class="samp">rm9000</span>,
+<span class="samp">sb1</span>,
+<span class="samp">sr71000</span>,
+<span class="samp">vr4100</span>, <span class="samp">vr4111</span>, <span class="samp">vr4120</span>, <span class="samp">vr4130</span>, <span class="samp">vr4300</span>,
+<span class="samp">vr5000</span>, <span class="samp">vr5400</span> and <span class="samp">vr5500</span>. 
+The special value <span class="samp">from-abi</span> selects the
 most compatible architecture for the selected ABI (that is,
-&lsquo;<samp><span class="samp">mips1</span></samp>&rsquo; for 32-bit ABIs and &lsquo;<samp><span class="samp">mips3</span></samp>&rsquo; for 64-bit ABIs).
+<span class="samp">mips1</span> for 32-bit ABIs and <span class="samp">mips3</span> for 64-bit ABIs).
 
-     <p>In processor names, a final &lsquo;<samp><span class="samp">000</span></samp>&rsquo; can be abbreviated as &lsquo;<samp><span class="samp">k</span></samp>&rsquo;
-(for example, &lsquo;<samp><span class="samp">-march=r2k</span></samp>&rsquo;).  Prefixes are optional, and
-&lsquo;<samp><span class="samp">vr</span></samp>&rsquo; may be written &lsquo;<samp><span class="samp">r</span></samp>&rsquo;.
+     <p>In processor names, a final <span class="samp">000</span> can be abbreviated as <span class="samp">k</span>
+(for example, <span class="samp">-march=r2k</span>).  Prefixes are optional, and
+<span class="samp">vr</span> may be written <span class="samp">r</span>.
 
      <p>GCC defines two macros based on the value of this option.  The first
-is &lsquo;<samp><span class="samp">_MIPS_ARCH</span></samp>&rsquo;, which gives the name of target architecture, as
-a string.  The second has the form &lsquo;<samp><span class="samp">_MIPS_ARCH_</span><var>foo</var></samp>&rsquo;,
-where <var>foo</var> is the capitalized value of &lsquo;<samp><span class="samp">_MIPS_ARCH</span></samp>&rsquo;. 
-For example, &lsquo;<samp><span class="samp">-march=r2000</span></samp>&rsquo; will set &lsquo;<samp><span class="samp">_MIPS_ARCH</span></samp>&rsquo;
-to &lsquo;<samp><span class="samp">"r2000"</span></samp>&rsquo; and define the macro &lsquo;<samp><span class="samp">_MIPS_ARCH_R2000</span></samp>&rsquo;.
+is <span class="samp">_MIPS_ARCH</span>, which gives the name of target architecture, as
+a string.  The second has the form <span class="samp">_MIPS_ARCH_</span><var>foo</var>,
+where <var>foo</var> is the capitalized value of <span class="samp">_MIPS_ARCH</span>. 
+For example, <span class="samp">-march=r2000</span> will set <span class="samp">_MIPS_ARCH</span>
+to <span class="samp">"r2000"</span> and define the macro <span class="samp">_MIPS_ARCH_R2000</span>.
 
-     <p>Note that the &lsquo;<samp><span class="samp">_MIPS_ARCH</span></samp>&rsquo; macro uses the processor names given
+     <p>Note that the <span class="samp">_MIPS_ARCH</span> macro uses the processor names given
 above.  In other words, it will have the full prefix and will not
-abbreviate &lsquo;<samp><span class="samp">000</span></samp>&rsquo; as &lsquo;<samp><span class="samp">k</span></samp>&rsquo;.  In the case of &lsquo;<samp><span class="samp">from-abi</span></samp>&rsquo;,
-the macro names the resolved architecture (either &lsquo;<samp><span class="samp">"mips1"</span></samp>&rsquo; or
-&lsquo;<samp><span class="samp">"mips3"</span></samp>&rsquo;).  It names the default architecture when no
-<samp><span class="option">-march</span></samp> option is given.
+abbreviate <span class="samp">000</span> as <span class="samp">k</span>.  In the case of <span class="samp">from-abi</span>,
+the macro names the resolved architecture (either <span class="samp">"mips1"</span> or
+<span class="samp">"mips3"</span>).  It names the default architecture when no
+<span class="option">-march</span> option is given.
 
      <br><dt><code>-mtune=</code><var>arch</var><dd><a name="index-mtune-1219"></a>Optimize for <var>arch</var>.  Among other things, this option controls
 the way instructions are scheduled, and the perceived cost of arithmetic
 operations.  The list of <var>arch</var> values is the same as for
-<samp><span class="option">-march</span></samp>.
+<span class="option">-march</span>.
 
      <p>When this option is not used, GCC will optimize for the processor
-specified by <samp><span class="option">-march</span></samp>.  By using <samp><span class="option">-march</span></samp> and
-<samp><span class="option">-mtune</span></samp> together, it is possible to generate code that will
+specified by <span class="option">-march</span>.  By using <span class="option">-march</span> and
+<span class="option">-mtune</span> together, it is possible to generate code that will
 run on a family of processors, but optimize the code for one
 particular member of that family.
 
-     <p>&lsquo;<samp><span class="samp">-mtune</span></samp>&rsquo; defines the macros &lsquo;<samp><span class="samp">_MIPS_TUNE</span></samp>&rsquo; and
-&lsquo;<samp><span class="samp">_MIPS_TUNE_</span><var>foo</var></samp>&rsquo;, which work in the same way as the
-&lsquo;<samp><span class="samp">-march</span></samp>&rsquo; ones described above.
+     <p><span class="samp">-mtune</span> defines the macros <span class="samp">_MIPS_TUNE</span> and
+<span class="samp">_MIPS_TUNE_</span><var>foo</var>, which work in the same way as the
+<span class="samp">-march</span> ones described above.
 
-     <br><dt><code>-mips1</code><dd><a name="index-mips1-1220"></a>Equivalent to &lsquo;<samp><span class="samp">-march=mips1</span></samp>&rsquo;.
+     <br><dt><code>-mips1</code><dd><a name="index-mips1-1220"></a>Equivalent to <span class="samp">-march=mips1</span>.
 
-     <br><dt><code>-mips2</code><dd><a name="index-mips2-1221"></a>Equivalent to &lsquo;<samp><span class="samp">-march=mips2</span></samp>&rsquo;.
+     <br><dt><code>-mips2</code><dd><a name="index-mips2-1221"></a>Equivalent to <span class="samp">-march=mips2</span>.
 
-     <br><dt><code>-mips3</code><dd><a name="index-mips3-1222"></a>Equivalent to &lsquo;<samp><span class="samp">-march=mips3</span></samp>&rsquo;.
+     <br><dt><code>-mips3</code><dd><a name="index-mips3-1222"></a>Equivalent to <span class="samp">-march=mips3</span>.
 
-     <br><dt><code>-mips4</code><dd><a name="index-mips4-1223"></a>Equivalent to &lsquo;<samp><span class="samp">-march=mips4</span></samp>&rsquo;.
+     <br><dt><code>-mips4</code><dd><a name="index-mips4-1223"></a>Equivalent to <span class="samp">-march=mips4</span>.
 
-     <br><dt><code>-mips32</code><dd><a name="index-mips32-1224"></a>Equivalent to &lsquo;<samp><span class="samp">-march=mips32</span></samp>&rsquo;.
+     <br><dt><code>-mips32</code><dd><a name="index-mips32-1224"></a>Equivalent to <span class="samp">-march=mips32</span>.
 
-     <br><dt><code>-mips32r2</code><dd><a name="index-mips32r2-1225"></a>Equivalent to &lsquo;<samp><span class="samp">-march=mips32r2</span></samp>&rsquo;.
+     <br><dt><code>-mips32r2</code><dd><a name="index-mips32r2-1225"></a>Equivalent to <span class="samp">-march=mips32r2</span>.
 
-     <br><dt><code>-mips64</code><dd><a name="index-mips64-1226"></a>Equivalent to &lsquo;<samp><span class="samp">-march=mips64</span></samp>&rsquo;.
+     <br><dt><code>-mips64</code><dd><a name="index-mips64-1226"></a>Equivalent to <span class="samp">-march=mips64</span>.
 
      <br><dt><code>-mips16</code><dt><code>-mno-mips16</code><dd><a name="index-mips16-1227"></a><a name="index-mno_002dmips16-1228"></a>Generate (do not generate) MIPS16 code.  If GCC is targetting a
 MIPS32 or MIPS64 architecture, it will make use of the MIPS16e ASE.
@@ -140,13 +138,13 @@ MIPS32 or MIPS64 architecture, it will make use of the MIPS16e ASE.
 
      <p>Note that the EABI has a 32-bit and a 64-bit variant.  GCC normally
 generates 64-bit code when you select a 64-bit architecture, but you
-can use <samp><span class="option">-mgp32</span></samp> to get 32-bit code instead.
+can use <span class="option">-mgp32</span> to get 32-bit code instead.
 
      <p>For information about the O64 ABI, see
 <a href="http://gcc.gnu.org/projects/mipso64-abi.html">http://gcc.gnu.org/projects/mipso64-abi.html</a><!-- /@w -->.
 
      <br><dt><code>-mabicalls</code><dt><code>-mno-abicalls</code><dd><a name="index-mabicalls-1234"></a><a name="index-mno_002dabicalls-1235"></a>Generate (do not generate) SVR4-style position-independent code. 
-<samp><span class="option">-mabicalls</span></samp> is the default for SVR4-based systems.
+<span class="option">-mabicalls</span> is the default for SVR4-based systems.
 
      <br><dt><code>-mxgot</code><dt><code>-mno-xgot</code><dd><a name="index-mxgot-1236"></a><a name="index-mno_002dxgot-1237"></a>Lift (do not lift) the usual restrictions on the size of the global
 offset table.
@@ -158,14 +156,14 @@ to report an error such as:
 
      <p><a name="index-relocation-truncated-to-fit-_0028MIPS_0029-1238"></a>
      <pre class="smallexample">          relocation truncated to fit: R_MIPS_GOT16 foobar
-</pre>
-     <p>If this happens, you should recompile your code with <samp><span class="option">-mxgot</span></samp>. 
+     </pre>
+     <p>If this happens, you should recompile your code with <span class="option">-mxgot</span>. 
 It should then work with very large GOTs, although it will also be
 less efficient, since it will take three instructions to fetch the
 value of a global symbol.
 
      <p>Note that some linkers can create multiple GOTs.  If you have such a
-linker, you should only need to use <samp><span class="option">-mxgot</span></samp> when a single object
+linker, you should only need to use <span class="option">-mxgot</span> when a single object
 file accesses more than 64k's worth of GOT entries.  Very few do.
 
      <p>These options have no effect unless GCC is generating position
@@ -198,9 +196,9 @@ when generating 64-bit code and requires hardware floating-point
 support to be enabled.
 
      <dt><code>-mips3d</code><dt><code>-mno-mips3d</code><dd><a name="index-mips3d-1251"></a><a name="index-mno_002dmips3d-1252"></a>Use (do not use) the MIPS-3D ASE.  See <a href="MIPS_002d3D-Built_002din-Functions.html#MIPS_002d3D-Built_002din-Functions">MIPS-3D Built-in Functions</a>. 
-The option <samp><span class="option">-mips3d</span></samp> implies <samp><span class="option">-mpaired-single</span></samp>.
+The option <span class="option">-mips3d</span> implies <span class="option">-mpaired-single</span>.
 
-     <br><dt><code>-mlong64</code><dd><a name="index-mlong64-1253"></a>Force <code>long</code> types to be 64 bits wide.  See <samp><span class="option">-mlong32</span></samp> for
+     <br><dt><code>-mlong64</code><dd><a name="index-mlong64-1253"></a>Force <code>long</code> types to be 64 bits wide.  See <span class="option">-mlong32</span> for
 an explanation of the default and the way that the pointer size is
 determined.
 
@@ -214,14 +212,14 @@ or the same size as integer registers, whichever is smaller.
 
      <br><dt><code>-msym32</code><dt><code>-mno-sym32</code><dd><a name="index-msym32-1255"></a><a name="index-mno_002dsym32-1256"></a>Assume (do not assume) that all symbols have 32-bit values, regardless
 of the selected ABI.  This option is useful in combination with
-<samp><span class="option">-mabi=64</span></samp> and <samp><span class="option">-mno-abicalls</span></samp> because it allows GCC
+<span class="option">-mabi=64</span> and <span class="option">-mno-abicalls</span> because it allows GCC
 to generate shorter and faster references to symbolic addresses.
 
      <br><dt><code>-G </code><var>num</var><dd><a name="index-G-1257"></a><a name="index-smaller-data-references-_0028MIPS_0029-1258"></a><a name="index-gp_002drelative-references-_0028MIPS_0029-1259"></a>Put global and static items less than or equal to <var>num</var> bytes into
 the small data or bss section instead of the normal data or bss section. 
 This allows the data to be accessed using a single instruction.
 
-     <p>All modules should be compiled with the same <samp><span class="option">-G </span><var>num</var></samp>
+     <p>All modules should be compiled with the same <span class="option">-G </span><var>num</var>
 value.
 
      <br><dt><code>-membedded-data</code><dt><code>-mno-embedded-data</code><dd><a name="index-membedded_002ddata-1260"></a><a name="index-mno_002dembedded_002ddata-1261"></a>Allocate variables to the read-only data section first if possible, then
@@ -230,37 +228,37 @@ slightly slower code than the default, but reduces the amount of RAM required
 when executing, and thus may be preferred for some embedded systems.
 
      <br><dt><code>-muninit-const-in-rodata</code><dt><code>-mno-uninit-const-in-rodata</code><dd><a name="index-muninit_002dconst_002din_002drodata-1262"></a><a name="index-mno_002duninit_002dconst_002din_002drodata-1263"></a>Put uninitialized <code>const</code> variables in the read-only data section. 
-This option is only meaningful in conjunction with <samp><span class="option">-membedded-data</span></samp>.
+This option is only meaningful in conjunction with <span class="option">-membedded-data</span>.
 
      <br><dt><code>-msplit-addresses</code><dt><code>-mno-split-addresses</code><dd><a name="index-msplit_002daddresses-1264"></a><a name="index-mno_002dsplit_002daddresses-1265"></a>Enable (disable) use of the <code>%hi()</code> and <code>%lo()</code> assembler
 relocation operators.  This option has been superseded by
-<samp><span class="option">-mexplicit-relocs</span></samp> but is retained for backwards compatibility.
+<span class="option">-mexplicit-relocs</span> but is retained for backwards compatibility.
 
      <br><dt><code>-mexplicit-relocs</code><dt><code>-mno-explicit-relocs</code><dd><a name="index-mexplicit_002drelocs-1266"></a><a name="index-mno_002dexplicit_002drelocs-1267"></a>Use (do not use) assembler relocation operators when dealing with symbolic
-addresses.  The alternative, selected by <samp><span class="option">-mno-explicit-relocs</span></samp>,
+addresses.  The alternative, selected by <span class="option">-mno-explicit-relocs</span>,
 is to use assembler macros instead.
 
-     <p><samp><span class="option">-mexplicit-relocs</span></samp> is the default if GCC was configured
+     <p><span class="option">-mexplicit-relocs</span> is the default if GCC was configured
 to use an assembler that supports relocation operators.
 
      <br><dt><code>-mcheck-zero-division</code><dt><code>-mno-check-zero-division</code><dd><a name="index-mcheck_002dzero_002ddivision-1268"></a><a name="index-mno_002dcheck_002dzero_002ddivision-1269"></a>Trap (do not trap) on integer division by zero.  The default is
-<samp><span class="option">-mcheck-zero-division</span></samp>.
+<span class="option">-mcheck-zero-division</span>.
 
      <br><dt><code>-mdivide-traps</code><dt><code>-mdivide-breaks</code><dd><a name="index-mdivide_002dtraps-1270"></a><a name="index-mdivide_002dbreaks-1271"></a>MIPS systems check for division by zero by generating either a
 conditional trap or a break instruction.  Using traps results in
 smaller code, but is only supported on MIPS II and later.  Also, some
 versions of the Linux kernel have a bug that prevents trap from
-generating the proper signal (<code>SIGFPE</code>).  Use <samp><span class="option">-mdivide-traps</span></samp> to
+generating the proper signal (<code>SIGFPE</code>).  Use <span class="option">-mdivide-traps</span> to
 allow conditional traps on architectures that support them and
-<samp><span class="option">-mdivide-breaks</span></samp> to force the use of breaks.
+<span class="option">-mdivide-breaks</span> to force the use of breaks.
 
-     <p>The default is usually <samp><span class="option">-mdivide-traps</span></samp>, but this can be
-overridden at configure time using <samp><span class="option">--with-divide=breaks</span></samp>. 
+     <p>The default is usually <span class="option">-mdivide-traps</span>, but this can be
+overridden at configure time using <span class="option">--with-divide=breaks</span>. 
 Divide-by-zero checks can be completely disabled using
-<samp><span class="option">-mno-check-zero-division</span></samp>.
+<span class="option">-mno-check-zero-division</span>.
 
      <br><dt><code>-mmemcpy</code><dt><code>-mno-memcpy</code><dd><a name="index-mmemcpy-1272"></a><a name="index-mno_002dmemcpy-1273"></a>Force (do not force) the use of <code>memcpy()</code> for non-trivial block
-moves.  The default is <samp><span class="option">-mno-memcpy</span></samp>, which allows GCC to inline
+moves.  The default is <span class="option">-mno-memcpy</span>, which allows GCC to inline
 most constant-sized copies.
 
      <br><dt><code>-mlong-calls</code><dt><code>-mno-long-calls</code><dd><a name="index-mlong_002dcalls-1274"></a><a name="index-mno_002dlong_002dcalls-1275"></a>Disable (do not disable) use of the <code>jal</code> instruction.  Calling
@@ -268,14 +266,14 @@ functions using <code>jal</code> is more efficient but requires the caller
 and callee to be in the same 256 megabyte segment.
 
      <p>This option has no effect on abicalls code.  The default is
-<samp><span class="option">-mno-long-calls</span></samp>.
+<span class="option">-mno-long-calls</span>.
 
      <br><dt><code>-mmad</code><dt><code>-mno-mad</code><dd><a name="index-mmad-1276"></a><a name="index-mno_002dmad-1277"></a>Enable (disable) use of the <code>mad</code>, <code>madu</code> and <code>mul</code>
 instructions, as provided by the R4650 ISA.
 
      <br><dt><code>-mfused-madd</code><dt><code>-mno-fused-madd</code><dd><a name="index-mfused_002dmadd-1278"></a><a name="index-mno_002dfused_002dmadd-1279"></a>Enable (disable) use of the floating point multiply-accumulate
 instructions, when they are available.  The default is
-<samp><span class="option">-mfused-madd</span></samp>.
+<span class="option">-mfused-madd</span>.
 
      <p>When multiply-accumulate instructions are used, the intermediate
 product is calculated to infinite precision and is not subject to
@@ -283,7 +281,7 @@ the FCSR Flush to Zero bit.  This may be undesirable in some
 circumstances.
 
      <br><dt><code>-nocpp</code><dd><a name="index-nocpp-1280"></a>Tell the MIPS assembler to not run its preprocessor over user
-assembler files (with a &lsquo;<samp><span class="samp">.s</span></samp>&rsquo; suffix) when assembling them.
+assembler files (with a <span class="samp">.s</span> suffix) when assembling them.
 
      <br><dt><code>-mfix-r4000</code><dt><code>-mno-fix-r4000</code><dd><a name="index-mfix_002dr4000-1281"></a><a name="index-mno_002dfix_002dr4000-1282"></a>Work around certain R4000 CPU errata:
           <ul>
@@ -308,7 +306,7 @@ immediately after starting an integer division.
 of the operands is negative. 
 </ul>
      The workarounds for the division errata rely on special functions in
-<samp><span class="file">libgcc.a</span></samp>.  At present, these functions are only provided by
+<span class="file">libgcc.a</span>.  At present, these functions are only provided by
 the <code>mips64vr*-elf</code> configurations.
 
      <p>Other VR4120 errata require a nop to be inserted between certain pairs of
@@ -330,7 +328,7 @@ arguments as the common <code>_flush_func()</code>, that is, the address of the
 memory range for which the cache is being flushed, the size of the
 memory range, and the number 3 (to flush both caches).  The default
 depends on the target GCC was configured for, but commonly is either
-&lsquo;<samp><span class="samp">_flush_func</span></samp>&rsquo; or &lsquo;<samp><span class="samp">__cpu_flush</span></samp>&rsquo;.
+<span class="samp">_flush_func</span> or <span class="samp">__cpu_flush</span>.
 
      <br><dt><code>-mbranch-likely</code><dt><code>-mno-branch-likely</code><dd><a name="index-mbranch_002dlikely-1289"></a><a name="index-mno_002dbranch_002dlikely-1290"></a>Enable or disable use of Branch Likely instructions, regardless of the
 default for the selected architecture.  By default, Branch Likely
@@ -355,7 +353,7 @@ thinks should execute in parallel.
 
      <p>This option only has an effect when optimizing for the VR4130. 
 It normally makes code faster, but at the expense of making it bigger. 
-It is enabled by default at optimization level <samp><span class="option">-O3</span></samp>. 
+It is enabled by default at optimization level <span class="option">-O3</span>. 
 </dl>
 
  </body></html>

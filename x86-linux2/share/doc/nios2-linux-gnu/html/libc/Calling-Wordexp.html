@@ -3,7 +3,7 @@
 <title>Calling Wordexp - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Word-Expansion.html#Word-Expansion" title="Word Expansion">
 <link rel="prev" href="Expansion-Stages.html#Expansion-Stages" title="Expansion Stages">
@@ -17,25 +17,23 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Calling-Wordexp"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Flags-for-Wordexp.html#Flags-for-Wordexp">Flags for Wordexp</a>,
+<a name="Calling-Wordexp"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Flags-for-Wordexp.html#Flags-for-Wordexp">Flags for Wordexp</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Expansion-Stages.html#Expansion-Stages">Expansion Stages</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Word-Expansion.html#Word-Expansion">Word Expansion</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">10.4.2 Calling <code>wordexp</code></h4>
 
 <p>All the functions, constants and data types for word expansion are
-declared in the header file <samp><span class="file">wordexp.h</span></samp>.
+declared in the header file <span class="file">wordexp.h</span>.
 
    <p>Word expansion produces a vector of words (strings).  To return this
 vector, <code>wordexp</code> uses a special data type, <code>wordexp_t</code>, which
@@ -79,11 +77,11 @@ into <code>*</code><var>word-vector-ptr</var>.  The argument <var>flags</var> is
 combination of bit flags; see <a href="Flags-for-Wordexp.html#Flags-for-Wordexp">Flags for Wordexp</a>, for details of
 the flags.
 
-        <p>You shouldn't use any of the characters &lsquo;<samp><span class="samp">|&amp;;&lt;&gt;</span></samp>&rsquo; in the string
+        <p>You shouldn't use any of the characters <span class="samp">|&amp;;&lt;&gt;</span> in the string
 <var>words</var> unless they are quoted; likewise for newline.  If you use
 these characters unquoted, you will get the <code>WRDE_BADCHAR</code> error
 code.  Don't use parentheses or braces unless they are quoted or part of
-a word expansion construct.  If you use quotation characters &lsquo;<samp><span class="samp">'"`</span></samp>&rsquo;,
+a word expansion construct.  If you use quotation characters <span class="samp">'"`</span>,
 they should come in pairs that balance.
 
         <p>The results of word expansion are a sequence of words.  The function
@@ -103,27 +101,27 @@ of these error codes:
 <!-- wordexp.h -->
 <!-- POSIX.2 -->
 <dt><code>WRDE_BADCHAR</code><dd>The input string <var>words</var> contains an unquoted invalid character such
-as &lsquo;<samp><span class="samp">|</span></samp>&rsquo;.
+as <span class="samp">|</span>.
 
           <!-- wordexp.h -->
-          <!-- POSIX.2 -->
-          <br><dt><code>WRDE_BADVAL</code><dd>The input string refers to an undefined shell variable, and you used the flag
+<!-- POSIX.2 -->
+<br><dt><code>WRDE_BADVAL</code><dd>The input string refers to an undefined shell variable, and you used the flag
 <code>WRDE_UNDEF</code> to forbid such references.
 
           <!-- wordexp.h -->
-          <!-- POSIX.2 -->
-          <br><dt><code>WRDE_CMDSUB</code><dd>The input string uses command substitution, and you used the flag
+<!-- POSIX.2 -->
+<br><dt><code>WRDE_CMDSUB</code><dd>The input string uses command substitution, and you used the flag
 <code>WRDE_NOCMD</code> to forbid command substitution.
 
           <!-- wordexp.h -->
-          <!-- POSIX.2 -->
-          <br><dt><code>WRDE_NOSPACE</code><dd>It was impossible to allocate memory to hold the result.  In this case,
+<!-- POSIX.2 -->
+<br><dt><code>WRDE_NOSPACE</code><dd>It was impossible to allocate memory to hold the result.  In this case,
 <code>wordexp</code> can store part of the results&mdash;as much as it could
 allocate room for.
 
           <!-- wordexp.h -->
-          <!-- POSIX.2 -->
-          <br><dt><code>WRDE_SYNTAX</code><dd>There was a syntax error in the input string.  For example, an unmatched
+<!-- POSIX.2 -->
+<br><dt><code>WRDE_SYNTAX</code><dd>There was a syntax error in the input string.  For example, an unmatched
 quoting character is a syntax error. 
 </dl>
         </p></blockquote></div>

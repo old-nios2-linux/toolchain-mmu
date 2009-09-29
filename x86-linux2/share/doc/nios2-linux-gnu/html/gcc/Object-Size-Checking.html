@@ -3,7 +3,7 @@
 <title>Object Size Checking - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Atomic-Builtins.html#Atomic-Builtins" title="Atomic Builtins">
@@ -38,29 +38,27 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Object-Size-Checking"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Other-Builtins.html#Other-Builtins">Other Builtins</a>,
+<a name="Object-Size-Checking"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Other-Builtins.html#Other-Builtins">Other Builtins</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Atomic-Builtins.html#Atomic-Builtins">Atomic Builtins</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.45 Object Size Checking Builtins</h3>
 
-<p><a name="index-g_t_005f_005fbuiltin_005fobject_005fsize-2044"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fmemcpy_005fchk-2045"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fmempcpy_005fchk-2046"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fmemmove_005fchk-2047"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fmemset_005fchk-2048"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fstrcpy_005fchk-2049"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fstpcpy_005fchk-2050"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fstrncpy_005fchk-2051"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fstrcat_005fchk-2052"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fstrncat_005fchk-2053"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fsprintf_005fchk-2054"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fsnprintf_005fchk-2055"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fvsprintf_005fchk-2056"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fvsnprintf_005fchk-2057"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fprintf_005fchk-2058"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fvprintf_005fchk-2059"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005ffprintf_005fchk-2060"></a><a name="index-g_t_005f_005fbuiltin_005f_005f_005fvfprintf_005fchk-2061"></a>
+<p><a name="index-_005f_005fbuiltin_005fobject_005fsize-2044"></a><a name="index-_005f_005fbuiltin_005f_005f_005fmemcpy_005fchk-2045"></a><a name="index-_005f_005fbuiltin_005f_005f_005fmempcpy_005fchk-2046"></a><a name="index-_005f_005fbuiltin_005f_005f_005fmemmove_005fchk-2047"></a><a name="index-_005f_005fbuiltin_005f_005f_005fmemset_005fchk-2048"></a><a name="index-_005f_005fbuiltin_005f_005f_005fstrcpy_005fchk-2049"></a><a name="index-_005f_005fbuiltin_005f_005f_005fstpcpy_005fchk-2050"></a><a name="index-_005f_005fbuiltin_005f_005f_005fstrncpy_005fchk-2051"></a><a name="index-_005f_005fbuiltin_005f_005f_005fstrcat_005fchk-2052"></a><a name="index-_005f_005fbuiltin_005f_005f_005fstrncat_005fchk-2053"></a><a name="index-_005f_005fbuiltin_005f_005f_005fsprintf_005fchk-2054"></a><a name="index-_005f_005fbuiltin_005f_005f_005fsnprintf_005fchk-2055"></a><a name="index-_005f_005fbuiltin_005f_005f_005fvsprintf_005fchk-2056"></a><a name="index-_005f_005fbuiltin_005f_005f_005fvsnprintf_005fchk-2057"></a><a name="index-_005f_005fbuiltin_005f_005f_005fprintf_005fchk-2058"></a><a name="index-_005f_005fbuiltin_005f_005f_005fvprintf_005fchk-2059"></a><a name="index-_005f_005fbuiltin_005f_005f_005ffprintf_005fchk-2060"></a><a name="index-_005f_005fbuiltin_005f_005f_005fvfprintf_005fchk-2061"></a>
 GCC implements a limited buffer overflow protection mechanism
 that can prevent some buffer overflow attacks.
 
 <div class="defun">
-&mdash; Built-in Function: size_t <b>__builtin_object_size</b> (<var>void * ptr, int type</var>)<var><a name="index-g_t_005f_005fbuiltin_005fobject_005fsize-2062"></a></var><br>
+&mdash; Built-in Function: size_t <b>__builtin_object_size</b> (<var>void * ptr, int type</var>)<var><a name="index-_005f_005fbuiltin_005fobject_005fsize-2062"></a></var><br>
 <blockquote><p>is a built-in construct that returns a constant number of bytes from
 <var>ptr</var> to the end of the object <var>ptr</var> pointer points to
 (if known at compile time).  <code>__builtin_object_size</code> never evaluates
@@ -92,7 +90,7 @@ is computed.
           	== (char *) (&amp;var + 1) - (char *) &amp;var.b);
           /* The subobject q points to is var.b.  */
           assert (__builtin_object_size (q, 1) == sizeof (var.b));
-</pre>
+     </pre>
       </blockquote></div>
 
  <p>There are built-in functions added for many common string operation

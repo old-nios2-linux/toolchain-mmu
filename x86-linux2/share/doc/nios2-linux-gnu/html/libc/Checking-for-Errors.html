@@ -3,7 +3,7 @@
 <title>Checking for Errors - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Error-Reporting.html#Error-Reporting" title="Error Reporting">
 <link rel="next" href="Error-Codes.html#Error-Codes" title="Error Codes">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Checking-for-Errors"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Error-Codes.html#Error-Codes">Error Codes</a>,
+<a name="Checking-for-Errors"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Error-Codes.html#Error-Codes">Error Codes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Error-Reporting.html#Error-Reporting">Error Reporting</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">2.1 Checking for Errors</h3>
@@ -38,7 +36,7 @@ constant such as <code>EOF</code> that is defined for that purpose.  But this
 return value tells you only that an error has occurred.  To find out
 what kind of error it was, you need to look at the error code stored in the
 variable <code>errno</code>.  This variable is declared in the header file
-<samp><span class="file">errno.h</span></samp>. 
+<span class="file">errno.h</span>. 
 <a name="index-errno_002eh-59"></a>
 <!-- errno.h -->
 <!-- ISO -->
@@ -84,7 +82,7 @@ to zero before calling the function, and then check its value afterward.
 </p></blockquote></div>
 
    <p><a name="index-errno_002eh-61"></a>All the error codes have symbolic names; they are macros defined in
-<samp><span class="file">errno.h</span></samp>.  The names start with &lsquo;<samp><span class="samp">E</span></samp>&rsquo; and an upper-case
+<span class="file">errno.h</span>.  The names start with <span class="samp">E</span> and an upper-case
 letter or digit; you should consider names of this form to be
 reserved names.  See <a href="Reserved-Names.html#Reserved-Names">Reserved Names</a>.
 

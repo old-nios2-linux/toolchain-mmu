@@ -3,7 +3,7 @@
 <title>String Field - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Overview.html#Overview" title="Overview">
 <link rel="prev" href="Stabs-Format.html#Stabs-Format" title="Stabs Format">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="String-Field"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="C-Example.html#C-Example">C Example</a>,
+<a name="String-Field"></a>Next:&nbsp;<a rel="next" accesskey="n" href="C-Example.html#C-Example">C Example</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Stabs-Format.html#Stabs-Format">Stabs Format</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Overview.html#Overview">Overview</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">1.3 The String Field</h3>
@@ -47,29 +45,29 @@ deal more complex.
    <p><var>name</var> is the name of the symbol represented by the stab; it can
 contain a pair of colons (see <a href="Nested-Symbols.html#Nested-Symbols">Nested Symbols</a>).  <var>name</var> can be
 omitted, which means the stab represents an unnamed object.  For
-example, &lsquo;<samp><span class="samp">:t10=*2</span></samp>&rsquo; defines type 10 as a pointer to type 2, but does
+example, <span class="samp">:t10=*2</span> defines type 10 as a pointer to type 2, but does
 not give the type a name.  Omitting the <var>name</var> field is supported by
 AIX dbx and GDB after about version 4.8, but not other debuggers.  GCC
 sometimes uses a single space as the name instead of omitting the name
 altogether; apparently that is supported by most debuggers.
 
-   <p>The <var>symbol-descriptor</var> following the &lsquo;<samp><span class="samp">:</span></samp>&rsquo; is an alphabetic
+   <p>The <var>symbol-descriptor</var> following the <span class="samp">:</span> is an alphabetic
 character that tells more specifically what kind of symbol the stab
 represents. If the <var>symbol-descriptor</var> is omitted, but type
 information follows, then the stab represents a local variable.  For a
-list of symbol descriptors, see <a href="Symbol-Descriptors.html#Symbol-Descriptors">Symbol Descriptors</a>.  The &lsquo;<samp><span class="samp">c</span></samp>&rsquo;
+list of symbol descriptors, see <a href="Symbol-Descriptors.html#Symbol-Descriptors">Symbol Descriptors</a>.  The <span class="samp">c</span>
 symbol descriptor is an exception in that it is not followed by type
 information.  See <a href="Constants.html#Constants">Constants</a>.
 
    <p><var>type-information</var> is either a <var>type-number</var>, or
-&lsquo;<samp><var>type-number</var><span class="samp">=</span></samp>&rsquo;.  A <var>type-number</var> alone is a type
+<var>type-number</var><span class="samp">=</span>.  A <var>type-number</var> alone is a type
 reference, referring directly to a type that has already been defined.
 
-   <p>The &lsquo;<samp><var>type-number</var><span class="samp">=</span></samp>&rsquo; form is a type definition, where the
+   <p>The <var>type-number</var><span class="samp">=</span> form is a type definition, where the
 number represents a new type which is about to be defined.  The type
 definition may refer to other types by number, and those type numbers
-may be followed by &lsquo;<samp><span class="samp">=</span></samp>&rsquo; and nested definitions.  Also, the Lucid
-compiler will repeat &lsquo;<samp><var>type-number</var><span class="samp">=</span></samp>&rsquo; more than once if it
+may be followed by <span class="samp">=</span> and nested definitions.  Also, the Lucid
+compiler will repeat <var>type-number</var><span class="samp">=</span> more than once if it
 wants to define several type numbers at once.
 
    <p>In a type definition, if the character that follows the equals sign is
@@ -77,7 +75,7 @@ non-numeric then it is a <var>type-descriptor</var>, and tells what kind of
 type is about to be defined.  Any other values following the
 <var>type-descriptor</var> vary, depending on the <var>type-descriptor</var>. 
 See <a href="Type-Descriptors.html#Type-Descriptors">Type Descriptors</a>, for a list of <var>type-descriptor</var> values.  If
-a number follows the &lsquo;<samp><span class="samp">=</span></samp>&rsquo; then the number is a <var>type-reference</var>. 
+a number follows the <span class="samp">=</span> then the number is a <var>type-reference</var>. 
 For a full description of types, <a href="Types.html#Types">Types</a>.
 
    <p>A <var>type-number</var> is often a single number.  The GNU and Sun tools
@@ -90,14 +88,14 @@ next, and so on.  The <var>filetype-number</var> is a number starting with
 (Separating the file number and the type number permits the
 <code>N_BINCL</code> optimization to succeed more often; see <a href="Include-Files.html#Include-Files">Include Files</a>).
 
-   <p>There is an AIX extension for type attributes.  Following the &lsquo;<samp><span class="samp">=</span></samp>&rsquo;
-are any number of type attributes.  Each one starts with &lsquo;<samp><span class="samp">@</span></samp>&rsquo; and
-ends with &lsquo;<samp><span class="samp">;</span></samp>&rsquo;.  Debuggers, including AIX's dbx and GDB 4.10, skip
+   <p>There is an AIX extension for type attributes.  Following the <span class="samp">=</span>
+are any number of type attributes.  Each one starts with <span class="samp">@</span> and
+ends with <span class="samp">;</span>.  Debuggers, including AIX's dbx and GDB 4.10, skip
 any type attributes they do not recognize.  GDB 4.9 and other versions
 of dbx may not do this.  Because of a conflict with C<tt>++</tt>
 (see <a href="Cplusplus.html#Cplusplus">Cplusplus</a>), new attributes should not be defined which begin
-with a digit, &lsquo;<samp><span class="samp">(</span></samp>&rsquo;, or &lsquo;<samp><span class="samp">-</span></samp>&rsquo;; GDB may be unable to distinguish
-those from the C<tt>++</tt> type descriptor &lsquo;<samp><span class="samp">@</span></samp>&rsquo;.  The attributes are:
+with a digit, <span class="samp">(</span>, or <span class="samp">-</span>; GDB may be unable to distinguish
+those from the C<tt>++</tt> type descriptor <span class="samp">@</span>.  The attributes are:
 
      <dl>
 <dt><code>a</code><var>boundary</var><dd><var>boundary</var> is an integer specifying the alignment.  I assume it
@@ -136,7 +134,7 @@ this may be written as a double backslash, depending on the assembler).
 Removing the backslashes and concatenating the string fields of each
 stab produces the original, long string.  Just to be incompatible (or so
 they don't have to worry about what the assembler does with
-backslashes), AIX can use &lsquo;<samp><span class="samp">?</span></samp>&rsquo; instead of backslash.
+backslashes), AIX can use <span class="samp">?</span> instead of backslash.
 
    </body></html>
 

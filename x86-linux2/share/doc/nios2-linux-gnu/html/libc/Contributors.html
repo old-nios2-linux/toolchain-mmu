@@ -3,7 +3,7 @@
 <title>Contributors - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Maintenance.html#Maintenance" title="Maintenance">
 <link rel="next" href="Free-Manuals.html#Free-Manuals" title="Free Manuals">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Contributors"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Free-Manuals.html#Free-Manuals">Free Manuals</a>,
+<a name="Contributors"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Free-Manuals.html#Free-Manuals">Free Manuals</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Maintenance.html#Maintenance">Maintenance</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <!-- %MENU% Who wrote what parts of the GNU C library -->
@@ -54,7 +52,7 @@ Wolfram&nbsp;Gloger<!-- /@w -->, and Doug&nbsp;Lea<!-- /@w -->.
      <li>Fast implementations of many of the string functions (<code>memcpy</code>,
 <code>strlen</code>, etc.) were written by Torbj&ouml;rn Granlund.
 
-     <li>The <samp><span class="file">tar.h</span></samp> header file was written by David J. MacKenzie.
+     <li>The <span class="file">tar.h</span> header file was written by David J. MacKenzie.
 
      <li>The port to the MIPS DECStation running Ultrix 4
 (<code>mips-dec-ultrix4</code>)
@@ -94,12 +92,12 @@ GNU MP, which was contributed by Torbj&ouml;rn Granlund.
      <li>The internationalization support in the library, and the support
 programs <code>locale</code> and <code>localedef</code>, were written by Ulrich
 Drepper.  Ulrich Drepper adapted the support code for message catalogs
-(<samp><span class="file">libintl.h</span></samp>, etc.) from the GNU <code>gettext</code> package, which he
+(<span class="file">libintl.h</span>, etc.) from the GNU <code>gettext</code> package, which he
 also wrote.  He also contributed the <code>catgets</code> support and the
 entire suite of multi-byte and wide-character support functions
-(<samp><span class="file">wctype.h</span></samp>, <samp><span class="file">wchar.h</span></samp>, etc.).
+(<span class="file">wctype.h</span>, <span class="file">wchar.h</span>, etc.).
 
-     <li>The implementations of the <samp><span class="file">nsswitch.conf</span></samp> mechanism and the files
+     <li>The implementations of the <span class="file">nsswitch.conf</span> mechanism and the files
 and DNS backends for it were designed and written by Ulrich Drepper and
 Roland McGrath, based on a backend interface defined by Peter Eriksson.
 
@@ -129,7 +127,7 @@ interfaces.
      <li>Stephen R. van den Berg contributed a highly-optimized <code>strstr</code> function.
 
      <li>Ulrich Drepper contributed the <code>hsearch</code> and <code>drand48</code>
-families of functions; reentrant &lsquo;<samp><span class="samp">...</span><code>_r</code></samp>&rsquo; versions of the
+families of functions; reentrant <span class="samp">...</span><code>_r</code> versions of the
 <code>random</code> family; System V shared memory and IPC support code; and
 several highly-optimized string functions for i<var>x</var>86 processors.
 
@@ -159,10 +157,10 @@ securelevel 0, 1 and 2.
 
      <li>Mark Kettenis provided a Hesiod NSS module.
 
-     <li>The Internet-related code (most of the <samp><span class="file">inet</span></samp> subdirectory) and
+     <li>The Internet-related code (most of the <span class="file">inet</span> subdirectory) and
 several other miscellaneous functions and header files have been
 included from 4.4 BSD with little or no modification.  The copying
-permission notice for this code can be found in the file <samp><span class="file">LICENSES</span></samp>
+permission notice for this code can be found in the file <span class="file">LICENSES</span>
 in the source distribution.
 
      <li>The random number generation functions <code>random</code>, <code>srandom</code>,
@@ -175,27 +173,27 @@ but the functional code is Berkeley's.
 
      <li>The DNS resolver code is taken directly from BIND 4.9.5, which
 includes copyrighted code from UC Berkeley and from Digital Equipment
-Corporation.  See the file <samp><span class="file">LICENSES</span></samp> for the text of the DEC license.
+Corporation.  See the file <span class="file">LICENSES</span> for the text of the DEC license.
 
      <li>The code to support Sun RPC is taken verbatim from Sun's
-<span class="sc">rpcsrc-4.0</span><!-- /@w --> distribution; see the file <samp><span class="file">LICENSES</span></samp> for the
+<span class="sc">rpcsrc-4.0</span><!-- /@w --> distribution; see the file <span class="file">LICENSES</span> for the
 text of the license.
 
      <li>Some of the support code for Mach is taken from Mach 3.0 by CMU;
 the file if_ppp.h is also copyright by CMU, but under a different license;
-see the file <samp><span class="file">LICENSES</span></samp> for the text of the licenses.
+see the file <span class="file">LICENSES</span> for the text of the licenses.
 
      <li>Many of the IA64 math functions are taken from a collection of
 &ldquo;Highly Optimized Mathematical Functions for Itanium&rdquo; that Intel
-makes available under a free license; see the file <samp><span class="file">LICENSES</span></samp> for
+makes available under a free license; see the file <span class="file">LICENSES</span> for
 details.
 
      <li>The <code>getaddrinfo</code> and <code>getnameinfo</code> functions and supporting
-code were written by Craig Metz; see the file <samp><span class="file">LICENSES</span></samp> for
+code were written by Craig Metz; see the file <span class="file">LICENSES</span> for
 details on their licensing.
 
      <li>Many of the IEEE 64-bit double precision math functions
-(in the <samp><span class="file">sysdeps/ieee754/dbl-64</span></samp> subdirectory) come
+(in the <span class="file">sysdeps/ieee754/dbl-64</span> subdirectory) come
 from the IBM Accurate Mathematical Library, contributed by IBM.
 
    </ul>

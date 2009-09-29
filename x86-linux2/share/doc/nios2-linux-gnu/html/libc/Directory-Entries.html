@@ -3,7 +3,7 @@
 <title>Directory Entries - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Accessing-Directories.html#Accessing-Directories" title="Accessing Directories">
 <link rel="next" href="Opening-a-Directory.html#Opening-a-Directory" title="Opening a Directory">
@@ -16,25 +16,23 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Directory-Entries"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Opening-a-Directory.html#Opening-a-Directory">Opening a Directory</a>,
+<a name="Directory-Entries"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Opening-a-Directory.html#Opening-a-Directory">Opening a Directory</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Accessing-Directories.html#Accessing-Directories">Accessing Directories</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.2.1 Format of a Directory Entry</h4>
 
 <p><a name="index-dirent_002eh-1399"></a>This section describes what you find in a single directory entry, as you
 might obtain it from a directory stream.  All the symbols are declared
-in the header file <samp><span class="file">dirent.h</span></samp>.
+in the header file <span class="file">dirent.h</span>.
 
 <!-- dirent.h -->
 <!-- POSIX.1 -->
@@ -83,17 +81,17 @@ value is DT_UNKNOWN.  These two macros convert between <code>d_type</code>
 values and <code>st_mode</code> values:
 
           <!-- dirent.h -->
-          <!-- BSD -->
-          <div class="defun">
+<!-- BSD -->
+<div class="defun">
 &mdash; Function: int <b>IFTODT</b> (<var>mode_t mode</var>)<var><a name="index-IFTODT-1408"></a></var><br>
-<blockquote>      <p>This returns the <code>d_type</code> value corresponding to <var>mode</var>. 
+<blockquote><p>This returns the <code>d_type</code> value corresponding to <var>mode</var>. 
 </p></blockquote></div>
 
           <!-- dirent.h -->
-          <!-- BSD -->
-          <div class="defun">
+<!-- BSD -->
+<div class="defun">
 &mdash; Function: mode_t <b>DTTOIF</b> (<var>int dtype</var>)<var><a name="index-DTTOIF-1409"></a></var><br>
-<blockquote>      <p>This returns the <code>st_mode</code> value corresponding to <var>dtype</var>. 
+<blockquote><p>This returns the <code>st_mode</code> value corresponding to <var>dtype</var>. 
 </p></blockquote></div>
           </dl>
 

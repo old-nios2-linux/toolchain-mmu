@@ -3,7 +3,7 @@
 <title>High Accuracy Clock - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Calendar-Time.html#Calendar-Time" title="Calendar Time">
 <link rel="prev" href="Broken_002ddown-Time.html#Broken_002ddown-Time" title="Broken-down Time">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="High-Accuracy-Clock"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Formatting-Calendar-Time.html#Formatting-Calendar-Time">Formatting Calendar Time</a>,
+<a name="High-Accuracy-Clock"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Formatting-Calendar-Time.html#Formatting-Calendar-Time">Formatting Calendar Time</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Broken_002ddown-Time.html#Broken_002ddown-Time">Broken-down Time</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Calendar-Time.html#Calendar-Time">Calendar Time</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">21.4.4 High Accuracy Clock</h4>
@@ -45,7 +43,7 @@ or synchronize it with another time source.
 Time Protocol to synchronize the clocks of multiple systems and high
 precision clocks.
 
-   <p>These functions are declared in <samp><span class="file">sys/timex.h</span></samp>.
+   <p>These functions are declared in <span class="file">sys/timex.h</span>.
 
    <p><a name="index-struct-ntptimeval-2649"></a>
 
@@ -185,12 +183,12 @@ to select what settings to update.  You can set <code>offset</code>,
         <p>Only the superuser can update settings.
 
      <!-- On Linux, ntp_adjtime() also does the adjtime() function if you set -->
-     <!-- modes = ADJ_OFFSET_SINGLESHOT (in fact, that is how GNU libc implements -->
-     <!-- adjtime()).  But this should be considered an internal function because -->
-     <!-- it's so inconsistent with the rest of what ntp_adjtime() does and is -->
-     <!-- forced in an ugly way into the struct timex.  So we don't document it -->
-     <!-- and instead document adjtime() as the way to achieve the function. -->
-        <p>The return value is <code>0</code> on success and other values on failure.  The
+<!-- modes = ADJ_OFFSET_SINGLESHOT (in fact, that is how GNU libc implements -->
+<!-- adjtime()).  But this should be considered an internal function because -->
+<!-- it's so inconsistent with the rest of what ntp_adjtime() does and is -->
+<!-- forced in an ugly way into the struct timex.  So we don't document it -->
+<!-- and instead document adjtime() as the way to achieve the function. -->
+<p>The return value is <code>0</code> on success and other values on failure.  The
 following <code>errno</code> error conditions are defined for this function:
 
           <dl>

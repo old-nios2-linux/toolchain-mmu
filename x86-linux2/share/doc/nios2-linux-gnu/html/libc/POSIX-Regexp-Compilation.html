@@ -3,7 +3,7 @@
 <title>POSIX Regexp Compilation - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Regular-Expressions.html#Regular-Expressions" title="Regular Expressions">
 <link rel="next" href="Flags-for-POSIX-Regexps.html#Flags-for-POSIX-Regexps" title="Flags for POSIX Regexps">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="POSIX-Regexp-Compilation"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Flags-for-POSIX-Regexps.html#Flags-for-POSIX-Regexps">Flags for POSIX Regexps</a>,
+<a name="POSIX-Regexp-Compilation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Flags-for-POSIX-Regexps.html#Flags-for-POSIX-Regexps">Flags for POSIX Regexps</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Regular-Expressions.html#Regular-Expressions">Regular Expressions</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">10.3.1 POSIX Regular Expression Compilation</h4>
@@ -101,57 +99,57 @@ describing the reason for a nonzero value; see <a href="Regexp-Cleanup.html#Rege
      <dl>
 <!-- regex.h -->
 <!-- POSIX.2 -->
-<dt><code>REG_BADBR</code><dd>There was an invalid &lsquo;<samp><span class="samp">\{...\}</span></samp>&rsquo; construct in the regular
-expression.  A valid &lsquo;<samp><span class="samp">\{...\}</span></samp>&rsquo; construct must contain either
+<dt><code>REG_BADBR</code><dd>There was an invalid <span class="samp">\{...\}</span> construct in the regular
+expression.  A valid <span class="samp">\{...\}</span> construct must contain either
 a single number, or two numbers in increasing order separated by a
 comma.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_BADPAT</code><dd>There was a syntax error in the regular expression.
+<!-- POSIX.2 -->
+<br><dt><code>REG_BADPAT</code><dd>There was a syntax error in the regular expression.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_BADRPT</code><dd>A repetition operator such as &lsquo;<samp><span class="samp">?</span></samp>&rsquo; or &lsquo;<samp><span class="samp">*</span></samp>&rsquo; appeared in a bad
+<!-- POSIX.2 -->
+<br><dt><code>REG_BADRPT</code><dd>A repetition operator such as <span class="samp">?</span> or <span class="samp">*</span> appeared in a bad
 position (with no preceding subexpression to act on).
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_ECOLLATE</code><dd>The regular expression referred to an invalid collating element (one not
+<!-- POSIX.2 -->
+<br><dt><code>REG_ECOLLATE</code><dd>The regular expression referred to an invalid collating element (one not
 defined in the current locale for string collation).  See <a href="Locale-Categories.html#Locale-Categories">Locale Categories</a>.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_ECTYPE</code><dd>The regular expression referred to an invalid character class name.
+<!-- POSIX.2 -->
+<br><dt><code>REG_ECTYPE</code><dd>The regular expression referred to an invalid character class name.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_EESCAPE</code><dd>The regular expression ended with &lsquo;<samp><span class="samp">\</span></samp>&rsquo;.
+<!-- POSIX.2 -->
+<br><dt><code>REG_EESCAPE</code><dd>The regular expression ended with <span class="samp">\</span>.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_ESUBREG</code><dd>There was an invalid number in the &lsquo;<samp><span class="samp">\</span><var>digit</var></samp>&rsquo; construct.
+<!-- POSIX.2 -->
+<br><dt><code>REG_ESUBREG</code><dd>There was an invalid number in the <span class="samp">\</span><var>digit</var> construct.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_EBRACK</code><dd>There were unbalanced square brackets in the regular expression.
+<!-- POSIX.2 -->
+<br><dt><code>REG_EBRACK</code><dd>There were unbalanced square brackets in the regular expression.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_EPAREN</code><dd>An extended regular expression had unbalanced parentheses,
-or a basic regular expression had unbalanced &lsquo;<samp><span class="samp">\(</span></samp>&rsquo; and &lsquo;<samp><span class="samp">\)</span></samp>&rsquo;.
+<!-- POSIX.2 -->
+<br><dt><code>REG_EPAREN</code><dd>An extended regular expression had unbalanced parentheses,
+or a basic regular expression had unbalanced <span class="samp">\(</span> and <span class="samp">\)</span>.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_EBRACE</code><dd>The regular expression had unbalanced &lsquo;<samp><span class="samp">\{</span></samp>&rsquo; and &lsquo;<samp><span class="samp">\}</span></samp>&rsquo;.
+<!-- POSIX.2 -->
+<br><dt><code>REG_EBRACE</code><dd>The regular expression had unbalanced <span class="samp">\{</span> and <span class="samp">\}</span>.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_ERANGE</code><dd>One of the endpoints in a range expression was invalid.
+<!-- POSIX.2 -->
+<br><dt><code>REG_ERANGE</code><dd>One of the endpoints in a range expression was invalid.
 
      <!-- regex.h -->
-     <!-- POSIX.2 -->
-     <br><dt><code>REG_ESPACE</code><dd><code>regcomp</code> ran out of memory. 
+<!-- POSIX.2 -->
+<br><dt><code>REG_ESPACE</code><dd><code>regcomp</code> ran out of memory. 
 </dl>
 
    </body></html>

@@ -3,7 +3,7 @@
 <title>Abstract Host Addresses - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Host-Addresses.html#Host-Addresses" title="Host Addresses">
 <link rel="next" href="Host-Address-Data-Type.html#Host-Address-Data-Type" title="Host Address Data Type">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Abstract-Host-Addresses"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Host-Address-Data-Type.html#Host-Address-Data-Type">Host Address Data Type</a>,
+<a name="Abstract-Host-Addresses"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Host-Address-Data-Type.html#Host-Address-Data-Type">Host Address Data Type</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Host-Addresses.html#Host-Addresses">Host Addresses</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">16.6.2.1 Internet Host Addresses</h5>
@@ -66,7 +64,7 @@ to all hosts in that network.  These uses are obsolete now but for
 compatibility reasons you shouldn't use network 0 and host number 0.
 
    <p>The Class A network 127 is reserved for loopback; you can always use
-the Internet address &lsquo;<samp><span class="samp">127.0.0.1</span></samp>&rsquo; to refer to the host machine.
+the Internet address <span class="samp">127.0.0.1</span> to refer to the host machine.
 
    <p>Since a single machine can be a member of multiple networks, it can
 have multiple Internet host addresses.  However, there is never
@@ -74,7 +72,7 @@ supposed to be more than one machine with the same host address.
 
 <!-- !!! this section could document the IN_CLASS* macros in <netinet/in.h>. -->
 <!-- No, it shouldn't since they're obsolete. -->
-   <p><a name="index-standard-dot-notation_002c-for-Internet-addresses-1690"></a><a name="index-dot-notation_002c-for-Internet-addresses-1691"></a>There are four forms of the <dfn>standard numbers-and-dots notation</dfn>
+<p><a name="index-standard-dot-notation_002c-for-Internet-addresses-1690"></a><a name="index-dot-notation_002c-for-Internet-addresses-1691"></a>There are four forms of the <dfn>standard numbers-and-dots notation</dfn>
 for Internet addresses:
 
      <dl>
@@ -94,8 +92,8 @@ number.
 </dl>
 
    <p>Within each part of the address, the usual C conventions for specifying
-the radix apply.  In other words, a leading &lsquo;<samp><span class="samp">0x</span></samp>&rsquo; or &lsquo;<samp><span class="samp">0X</span></samp>&rsquo; implies
-hexadecimal radix; a leading &lsquo;<samp><span class="samp">0</span></samp>&rsquo; implies octal; and otherwise decimal
+the radix apply.  In other words, a leading <span class="samp">0x</span> or <span class="samp">0X</span> implies
+hexadecimal radix; a leading <span class="samp">0</span> implies octal; and otherwise decimal
 radix is assumed.
 
 <h5 class="subsubheading">Classless Addresses</h5>
@@ -108,11 +106,11 @@ host part.  The network part is contiguous from the left, with the
 remaining bits representing the host.  As a consequence, the netmask can
 simply be specified as the number of set bits.  Classes A, B and C are
 just special cases of this general rule.  For example, class A addresses
-have a netmask of &lsquo;<samp><span class="samp">255.0.0.0</span></samp>&rsquo; or a prefix length of 8.
+have a netmask of <span class="samp">255.0.0.0</span> or a prefix length of 8.
 
    <p>Classless IPv4 network addresses are written in numbers-and-dots
 notation with the prefix length appended and a slash as separator.  For
-example the class A network 10 is written as &lsquo;<samp><span class="samp">10.0.0.0/8</span></samp>&rsquo;.
+example the class A network 10 is written as <span class="samp">10.0.0.0/8</span>.
 
 <h5 class="subsubheading">IPv6 Addresses</h5>
 
@@ -120,7 +118,7 @@ example the class A network 10 is written as &lsquo;<samp><span class="samp">10.
 address is usually written as eight 16-bit hexadecimal numbers that are
 separated by colons.  Two colons are used to abbreviate strings of
 consecutive zeros.  For example, the IPv6 loopback address
-&lsquo;<samp><span class="samp">0:0:0:0:0:0:0:1</span></samp>&rsquo; can just be written as &lsquo;<samp><span class="samp">::1</span></samp>&rsquo;.
+<span class="samp">0:0:0:0:0:0:0:1</span> can just be written as <span class="samp">::1</span>.
 
    </body></html>
 

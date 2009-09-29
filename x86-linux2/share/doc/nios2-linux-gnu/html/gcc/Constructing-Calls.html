@@ -3,7 +3,7 @@
 <title>Constructing Calls - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Nested-Functions.html#Nested-Functions" title="Nested Functions">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Constructing-Calls"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Typeof.html#Typeof">Typeof</a>,
+<a name="Constructing-Calls"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Typeof.html#Typeof">Typeof</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Nested-Functions.html#Nested-Functions">Nested Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.5 Constructing Function Calls</h3>
@@ -72,7 +70,7 @@ is, therefore, not recommended to use them outside very simple
 functions acting as mere forwarders for their arguments.
 
 <div class="defun">
-&mdash; Built-in Function: void * <b>__builtin_apply_args</b> ()<var><a name="index-g_t_005f_005fbuiltin_005fapply_005fargs-1737"></a></var><br>
+&mdash; Built-in Function: void * <b>__builtin_apply_args</b> ()<var><a name="index-_005f_005fbuiltin_005fapply_005fargs-1737"></a></var><br>
 <blockquote><p>This built-in function returns a pointer to data
 describing how to perform a call with the same arguments as were passed
 to the current function.
@@ -84,7 +82,7 @@ address of that block.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void * <b>__builtin_apply</b> (<var>void </var>(<var>*function</var>)()<var>, void *arguments, size_t size</var>)<var><a name="index-g_t_005f_005fbuiltin_005fapply-1738"></a></var><br>
+&mdash; Built-in Function: void * <b>__builtin_apply</b> (<var>void </var>(<var>*function</var>)()<var>, void *arguments, size_t size</var>)<var><a name="index-_005f_005fbuiltin_005fapply-1738"></a></var><br>
 <blockquote><p>This built-in function invokes <var>function</var>
 with a copy of the parameters described by <var>arguments</var>
 and <var>size</var>.
@@ -104,7 +102,7 @@ area.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Built-in Function: void <b>__builtin_return</b> (<var>void *result</var>)<var><a name="index-g_t_005f_005fbuiltin_005freturn-1739"></a></var><br>
+&mdash; Built-in Function: void <b>__builtin_return</b> (<var>void *result</var>)<var><a name="index-_005f_005fbuiltin_005freturn-1739"></a></var><br>
 <blockquote><p>This built-in function returns the value described by <var>result</var> from
 the containing function.  You should specify, for <var>result</var>, a value
 returned by <code>__builtin_apply</code>. 

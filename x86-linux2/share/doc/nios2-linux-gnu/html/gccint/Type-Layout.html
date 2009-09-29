@@ -3,7 +3,7 @@
 <title>Type Layout - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Macros.html#Target-Macros" title="Target Macros">
 <link rel="prev" href="Storage-Layout.html#Storage-Layout" title="Storage Layout">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Type-Layout"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Registers.html#Registers">Registers</a>,
+<a name="Type-Layout"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Registers.html#Registers">Registers</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Storage-Layout.html#Storage-Layout">Storage Layout</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Macros.html#Target-Macros">Target Macros</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">14.6 Layout of Source Language Data Types</h3>
@@ -134,7 +132,7 @@ words.
 <div class="defun">
 &mdash; Macro: <b>LIBGCC2_LONG_DOUBLE_TYPE_SIZE</b><var><a name="index-LIBGCC2_005fLONG_005fDOUBLE_005fTYPE_005fSIZE-1811"></a></var><br>
 <blockquote><p>Define this macro if <code>LONG_DOUBLE_TYPE_SIZE</code> is not constant or
-if you want routines in <samp><span class="file">libgcc2.a</span></samp> for a size other than
+if you want routines in <span class="file">libgcc2.a</span> for a size other than
 <code>LONG_DOUBLE_TYPE_SIZE</code>.  If you don't define this, the
 default is <code>LONG_DOUBLE_TYPE_SIZE</code>. 
 </p></blockquote></div>
@@ -143,7 +141,7 @@ default is <code>LONG_DOUBLE_TYPE_SIZE</code>.
 &mdash; Macro: <b>LIBGCC2_HAS_DF_MODE</b><var><a name="index-LIBGCC2_005fHAS_005fDF_005fMODE-1812"></a></var><br>
 <blockquote><p>Define this macro if neither <code>LIBGCC2_DOUBLE_TYPE_SIZE</code> nor
 <code>LIBGCC2_LONG_DOUBLE_TYPE_SIZE</code> is
-<code>DFmode</code> but you want <code>DFmode</code> routines in <samp><span class="file">libgcc2.a</span></samp>
+<code>DFmode</code> but you want <code>DFmode</code> routines in <span class="file">libgcc2.a</span>
 anyway.  If you don't define this and either <code>LIBGCC2_DOUBLE_TYPE_SIZE</code>
 or <code>LIBGCC2_LONG_DOUBLE_TYPE_SIZE</code> is 64 then the default is 1,
 otherwise it is 0. 
@@ -152,7 +150,7 @@ otherwise it is 0.
 <div class="defun">
 &mdash; Macro: <b>LIBGCC2_HAS_XF_MODE</b><var><a name="index-LIBGCC2_005fHAS_005fXF_005fMODE-1813"></a></var><br>
 <blockquote><p>Define this macro if <code>LIBGCC2_LONG_DOUBLE_TYPE_SIZE</code> is not
-<code>XFmode</code> but you want <code>XFmode</code> routines in <samp><span class="file">libgcc2.a</span></samp>
+<code>XFmode</code> but you want <code>XFmode</code> routines in <span class="file">libgcc2.a</span>
 anyway.  If you don't define this and <code>LIBGCC2_LONG_DOUBLE_TYPE_SIZE</code>
 is 80 then the default is 1, otherwise it is 0. 
 </p></blockquote></div>
@@ -160,7 +158,7 @@ is 80 then the default is 1, otherwise it is 0.
 <div class="defun">
 &mdash; Macro: <b>LIBGCC2_HAS_TF_MODE</b><var><a name="index-LIBGCC2_005fHAS_005fTF_005fMODE-1814"></a></var><br>
 <blockquote><p>Define this macro if <code>LIBGCC2_LONG_DOUBLE_TYPE_SIZE</code> is not
-<code>TFmode</code> but you want <code>TFmode</code> routines in <samp><span class="file">libgcc2.a</span></samp>
+<code>TFmode</code> but you want <code>TFmode</code> routines in <span class="file">libgcc2.a</span>
 anyway.  If you don't define this and <code>LIBGCC2_LONG_DOUBLE_TYPE_SIZE</code>
 is 128 then the default is 1, otherwise it is 0. 
 </p></blockquote></div>
@@ -172,7 +170,7 @@ is 128 then the default is 1, otherwise it is 0.
 &mdash; Macro: <b>TF_SIZE</b><var><a name="index-TF_005fSIZE-1818"></a></var><br>
 <blockquote><p>Define these macros to be the size in bits of the mantissa of
 <code>SFmode</code>, <code>DFmode</code>, <code>XFmode</code> and <code>TFmode</code> values,
-if the defaults in <samp><span class="file">libgcc2.h</span></samp> are inappropriate.  By default,
+if the defaults in <span class="file">libgcc2.h</span> are inappropriate.  By default,
 <code>FLT_MANT_DIG</code> is used for <code>SF_SIZE</code>, <code>LDBL_MANT_DIG</code>
 for <code>XF_SIZE</code> and <code>TF_SIZE</code>, and <code>DBL_MANT_DIG</code> or
 <code>LDBL_MANT_DIG</code> for <code>DF_SIZE</code> according to whether
@@ -182,7 +180,7 @@ for <code>XF_SIZE</code> and <code>TF_SIZE</code>, and <code>DBL_MANT_DIG</code>
 
 <div class="defun">
 &mdash; Macro: <b>TARGET_FLT_EVAL_METHOD</b><var><a name="index-TARGET_005fFLT_005fEVAL_005fMETHOD-1819"></a></var><br>
-<blockquote><p>A C expression for the value for <code>FLT_EVAL_METHOD</code> in <samp><span class="file">float.h</span></samp>,
+<blockquote><p>A C expression for the value for <code>FLT_EVAL_METHOD</code> in <span class="file">float.h</span>,
 assuming, if applicable, that the floating-point control word is in its
 default state.  If you do not define this macro the value of
 <code>FLT_EVAL_METHOD</code> will be zero. 
@@ -201,8 +199,8 @@ is the default.
 &mdash; Macro: <b>DEFAULT_SIGNED_CHAR</b><var><a name="index-DEFAULT_005fSIGNED_005fCHAR-1821"></a></var><br>
 <blockquote><p>An expression whose value is 1 or 0, according to whether the type
 <code>char</code> should be signed or unsigned by default.  The user can
-always override this default with the options <samp><span class="option">-fsigned-char</span></samp>
-and <samp><span class="option">-funsigned-char</span></samp>. 
+always override this default with the options <span class="option">-fsigned-char</span>
+and <span class="option">-funsigned-char</span>. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -225,7 +223,7 @@ contents of the string.
 spaces, and write first any length keyword, then <code>unsigned</code> if
 appropriate, and finally <code>int</code>.  The string must exactly match one
 of the data type names defined in the function
-<code>init_decl_processing</code> in the file <samp><span class="file">c-decl.c</span></samp>.  You may not
+<code>init_decl_processing</code> in the file <span class="file">c-decl.c</span>.  You may not
 omit <code>int</code> or change the order&mdash;that would cause the compiler to
 crash on startup.
 
@@ -308,7 +306,7 @@ that looks like:
               };
               ptrdiff_t delta;
             };
-</pre>
+     </pre>
       <p class="noindent">The C++ compiler must use one bit to indicate whether the function that
 will be called through a pointer-to-member-function is virtual. 
 Normally, we assume that the low-order bit of a function pointer must

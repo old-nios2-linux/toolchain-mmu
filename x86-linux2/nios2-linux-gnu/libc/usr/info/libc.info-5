@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.13 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -1799,7 +1799,7 @@ in `sys/socket.h'.
      It operates over a connection with a particular remote socket and
      transmits data reliably as a stream of bytes.
 
-     Use of this style is covered in detail in *note Connections::.
+     Use of this style is covered in detail in *Note Connections::.
 
  -- Macro: int SOCK_DGRAM
      The `SOCK_DGRAM' style is used for sending individually-addressed
@@ -1858,7 +1858,7 @@ protocols look at the client's socket address and only bypass password
 checking if it is less than `IPPORT_RESERVED' (*note Ports::).
 
    The details of socket addresses vary depending on what namespace you
-are using.  *Note Local Namespace::, or *note Internet Namespace::, for
+are using.  *Note Local Namespace::, or *Note Internet Namespace::, for
 specific information.
 
    Regardless of the namespace, you use the same functions `bind' and
@@ -1961,7 +1961,7 @@ File: libc.info,  Node: Setting Address,  Next: Reading Address,  Prev: Address 
 
 Use the `bind' function to assign an address to a socket.  The
 prototype for `bind' is in the header file `sys/socket.h'.  For
-examples of use, see *note Local Socket Example::, or see *note Inet
+examples of use, see *Note Local Socket Example::, or see *Note Inet
 Example::.
 
  -- Function: int bind (int SOCKET, struct sockaddr *ADDR, socklen_t
@@ -1995,7 +1995,7 @@ Example::.
           You do not have permission to access the requested address.
           (In the Internet domain, only the super-user is allowed to
           specify a port number in the range 0 through
-          `IPPORT_RESERVED' minus one; see *note Ports::.)
+          `IPPORT_RESERVED' minus one; see *Note Ports::.)
 
      Additional conditions may be possible depending on the particular
      namespace of the socket.
@@ -2149,7 +2149,7 @@ number if you want it to have one.
 
    After you close a socket in the local namespace, you should delete
 the file name from the file system.  Use `unlink' or `remove' to do
-this; see *note Deleting Files::.
+this; see *Note Deleting Files::.
 
    The local namespace supports just one protocol for any communication
 style; it is protocol number `0'.
@@ -2293,7 +2293,7 @@ components:
 
    * The address of the machine you want to connect to.  Internet
      addresses can be specified in several ways; these are discussed in
-     *note Internet Address Formats::, *note Host Addresses:: and *note
+     *Note Internet Address Formats::, *Note Host Addresses:: and *Note
      Host Names::.
 
    * A port number for that machine.  *Note Ports::.
@@ -2341,7 +2341,7 @@ namespace are defined in the header file `netinet/in.h'.
 
     `struct in_addr sin_addr'
           This is the Internet address of the host machine.  *Note Host
-          Addresses::, and *note Host Names::, for how to get a value
+          Addresses::, and *Note Host Names::, for how to get a value
           to store here.
 
     `unsigned short int sin_port'
@@ -2362,7 +2362,7 @@ Internet namespace socket address.
 
     `struct in6_addr sin6_addr'
           This is the IPv6 address of the host machine.  *Note Host
-          Addresses::, and *note Host Names::, for how to get a value
+          Addresses::, and *Note Host Names::, for how to get a value
           to store here.
 
     `uint32_t sin6_flowinfo'
@@ -2717,7 +2717,7 @@ include `netdb.h'.
 block of memory `h_length' bytes long.  But in other contexts there is
 an implicit assumption that you can convert IPv4 addresses to a `struct
 in_addr' or an `uint32_t'.  Host addresses in a `struct hostent'
-structure are always given in network byte order; see *note Byte
+structure are always given in network byte order; see *Note Byte
 Order::.
 
    You can use `gethostbyname', `gethostbyname2' or `gethostbyaddr' to
@@ -2883,7 +2883,7 @@ to 65,535.
    Port numbers less than `IPPORT_RESERVED' are reserved for standard
 servers, such as `finger' and `telnet'.  There is a database that keeps
 track of these, and you can use the `getservbyname' function to map a
-service name onto a port number; see *note Services Database::.
+service name onto a port number; see *Note Services Database::.
 
    If you write a server that is not one of the standard ones defined in
 the database, you must choose a port number for it.  Use a number
@@ -2939,7 +2939,7 @@ services database.
 
     `int s_port'
           This is the port number for the service.  Port numbers are
-          given in network byte order; see *note Byte Order::.
+          given in network byte order; see *Note Byte Order::.
 
     `char *s_proto'
           This is the name of the protocol to use with this service.
@@ -3064,8 +3064,8 @@ protocol").  You should nearly always use the default.
 number.  The network protocols that a host knows about are stored in a
 database.  This is usually either derived from the file
 `/etc/protocols', or it may be an equivalent provided by a name server.
-You look up the protocol number associated with a named protocol in the
-database using the `getprotobyname' function.
+You look up the protocol number associated with a named protocol in
+the database using the `getprotobyname' function.
 
    Here are detailed descriptions of the utilities for accessing the
 protocols database.  These are declared in `netdb.h'.  
@@ -3237,7 +3237,7 @@ in `sys/socket.h'.
 
  -- Function: int socket (int NAMESPACE, int STYLE, int PROTOCOL)
      This function creates a socket and specifies communication style
-     STYLE, which should be one of the socket styles listed in *note
+     STYLE, which should be one of the socket styles listed in *Note
      Communication Styles::.  The NAMESPACE argument specifies the
      namespace; it must be `PF_LOCAL' (*note Local Namespace::) or
      `PF_INET' (*note Internet Namespace::).  PROTOCOL designates the
@@ -3269,8 +3269,8 @@ in `sys/socket.h'.
      read and write operations.  However, like pipes, sockets do not
      support file positioning operations.
 
-   For examples of how to call the `socket' function, see *note Local
-Socket Example::, or *note Inet Example::.
+   For examples of how to call the `socket' function, see *Note Local
+Socket Example::, or *Note Inet Example::.
 
 
 File: libc.info,  Node: Closing a Socket,  Next: Socket Pairs,  Prev: Creating a Socket,  Up: Open/Close Sockets
@@ -3279,11 +3279,11 @@ File: libc.info,  Node: Closing a Socket,  Next: Socket Pairs,  Prev: Creating a
 -----------------------
 
 When you have finished using a socket, you can simply close its file
-descriptor with `close'; see *note Opening and Closing Files::.  If
+descriptor with `close'; see *Note Opening and Closing Files::.  If
 there is still data waiting to be transmitted over the connection,
 normally `close' tries to complete this transmission.  You can control
 this behavior using the `SO_LINGER' socket option to specify a timeout
-period; see *note Socket Options::.
+period; see *Note Socket Options::.
 
    You can also shut down only reception or transmission on a
 connection by calling `shutdown', which is declared in `sys/socket.h'.
@@ -3338,7 +3338,7 @@ input-only end and one output-only end (*note Pipes and FIFOs::).
 
      The NAMESPACE, STYLE and PROTOCOL arguments are interpreted as for
      the `socket' function.  STYLE should be one of the communication
-     styles listed in *note Communication Styles::.  The NAMESPACE
+     styles listed in *Note Communication Styles::.  The NAMESPACE
      argument specifies the namespace, which must be `AF_LOCAL' (*note
      Local Namespace::); PROTOCOL specifies the communications
      protocol, but zero is the only meaningful value.
@@ -3656,14 +3656,14 @@ File: libc.info,  Node: Sending Data,  Next: Receiving Data,  Up: Transferring D
 
 The `send' function is declared in the header file `sys/socket.h'.  If
 your FLAGS argument is zero, you can just as well use `write' instead
-of `send'; see *note I/O Primitives::.  If the socket was connected but
+of `send'; see *Note I/O Primitives::.  If the socket was connected but
 the connection has broken, you get a `SIGPIPE' signal for any use of
 `send' or `write' (*note Miscellaneous Signals::).
 
  -- Function: int send (int SOCKET, void *BUFFER, size_t SIZE, int
           FLAGS)
      The `send' function is like `write', but with the additional flags
-     FLAGS.  The possible values of FLAGS are described in *note Socket
+     FLAGS.  The possible values of FLAGS are described in *Note Socket
      Data Options::.
 
      This function returns the number of bytes transmitted, or `-1' on
@@ -3722,12 +3722,12 @@ File: libc.info,  Node: Receiving Data,  Next: Socket Data Options,  Prev: Sendi
 
 The `recv' function is declared in the header file `sys/socket.h'.  If
 your FLAGS argument is zero, you can just as well use `read' instead of
-`recv'; see *note I/O Primitives::.
+`recv'; see *Note I/O Primitives::.
 
  -- Function: int recv (int SOCKET, void *BUFFER, size_t SIZE, int
           FLAGS)
      The `recv' function is like `read', but with the additional flags
-     FLAGS.  The possible values of FLAGS are described in *note Socket
+     FLAGS.  The possible values of FLAGS are described in *Note Socket
      Data Options::.
 
      If nonblocking mode is set for SOCKET, and no data are available to
@@ -3798,7 +3798,7 @@ particularly interesting once it has connected to the server; it just
 sends a text string to the server and exits.
 
    This program uses `init_sockaddr' to set up the socket address; see
-*note Inet Example::.
+*Note Inet Example::.
 
      #include <stdio.h>
      #include <errno.h>
@@ -3880,7 +3880,7 @@ client when it detects an end-of-file condition (resulting from the
 client shutting down its end of the connection).
 
    This program uses `make_socket' to set up the socket address; see
-*note Inet Example::.
+*Note Inet Example::.
 
      #include <stdio.h>
      #include <errno.h>
@@ -4007,8 +4007,8 @@ data; they read only ordinary data.
    When a socket finds that out-of-band data are on their way, it sends
 a `SIGURG' signal to the owner process or process group of the socket.
 You can specify the owner using the `F_SETOWN' command to the `fcntl'
-function; see *note Interrupt Input::.  You must also establish a
-handler for this signal, as described in *note Signal Handling::, in
+function; see *Note Interrupt Input::.  You must also establish a
+handler for this signal, as described in *Note Signal Handling::, in
 order to take appropriate action such as reading the out-of-band data.
 
    Alternatively, you can test for pending out-of-band data, or wait
@@ -4198,7 +4198,7 @@ packet there.  You can cancel the default destination by calling
      LENGTH arguments.  The SIZE argument specifies the number of bytes
      to be transmitted.
 
-     The FLAGS are interpreted the same way as for `send'; see *note
+     The FLAGS are interpreted the same way as for `send'; see *Note
      Socket Data Options::.
 
      The return value and error conditions are also the same as for
@@ -4267,7 +4267,7 @@ File: libc.info,  Node: Datagram Example,  Next: Example Receiver,  Prev: Receiv
 
 Here is a set of example programs that send messages over a datagram
 stream in the local namespace.  Both the client and server programs use
-the `make_named_socket' function that was presented in *note Local
+the `make_named_socket' function that was presented in *Note Local
 Socket Example::, to create and name their sockets.
 
    First, here is the server program.  It sits in a loop waiting for
@@ -4618,7 +4618,7 @@ header file `sys/socket.h'.
 `SO_LINGER'
      This option specifies what should happen when the socket of a type
      that promises reliable delivery still has untransmitted messages
-     when it is closed; see *note Closing a Socket::.  The value has
+     when it is closed; see *Note Closing a Socket::.  The value has
      type `struct linger'.
 
       -- Data Type: struct linger
@@ -4657,7 +4657,7 @@ header file `sys/socket.h'.
      the socket's communication style.  `SO_TYPE' is the historical
      name, and `SO_STYLE' is the preferred name in GNU.  The value has
      type `int' and its value designates a communication style; see
-     *note Communication Styles::.
+     *Note Communication Styles::.
 
 `SO_ERROR'
      This option can be used with `getsockopt' only.  It is used to
@@ -4694,7 +4694,7 @@ functions to access this database, which are declared in `netdb.h'.
 
     `unsigned long int n_net'
           This is the network number.  Network numbers are returned in
-          host byte order; see *note Byte Order::.
+          host byte order; see *Note Byte Order::.
 
    Use the `getnetbyname' or `getnetbyaddr' functions to search the
 networks database for information about a specific network.  The
@@ -4783,7 +4783,7 @@ header file `unistd.h'.
 
    If a file descriptor is associated with a terminal, you can get its
 associated file name using the `ttyname' function.  See also the
-`ctermid' function, described in *note Identifying the Terminal::.
+`ctermid' function, described in *Note Identifying the Terminal::.
 
  -- Function: char * ttyname (int FILEDES)
      If the file descriptor FILEDES is associated with a terminal
@@ -4828,7 +4828,7 @@ by I/O streams (*note I/O on Streams::).
 from the terminal but not yet read by any process.
 
    The size of the input queue is described by the `MAX_INPUT' and
-`_POSIX_MAX_INPUT' parameters; see *note Limits for Files::.  You are
+`_POSIX_MAX_INPUT' parameters; see *Note Limits for Files::.  You are
 guaranteed a queue size of at least `MAX_INPUT', but the queue might be
 larger, and might even dynamically change size.  If input flow control
 is enabled by setting the `IXOFF' input mode bit (*note Input Modes::),
@@ -4903,7 +4903,7 @@ constants are all declared in the header file `termios.h'.
 
    Don't confuse terminal attributes with file attributes.  A device
 special file which is associated with a terminal has file attributes as
-described in *note File Attributes::.  These are unrelated to the
+described in *Note File Attributes::.  These are unrelated to the
 attributes of the terminal device itself, which are discussed in this
 section.
 
@@ -4939,24 +4939,24 @@ functions `tcgetattr' and `tcsetattr' to read and set the attributes.
      structure includes at least the following members:
 
     `tcflag_t c_iflag'
-          A bit mask specifying flags for input modes; see *note Input
+          A bit mask specifying flags for input modes; see *Note Input
           Modes::.
 
     `tcflag_t c_oflag'
-          A bit mask specifying flags for output modes; see *note
+          A bit mask specifying flags for output modes; see *Note
           Output Modes::.
 
     `tcflag_t c_cflag'
-          A bit mask specifying flags for control modes; see *note
+          A bit mask specifying flags for control modes; see *Note
           Control Modes::.
 
     `tcflag_t c_lflag'
-          A bit mask specifying flags for local modes; see *note Local
+          A bit mask specifying flags for local modes; see *Note Local
           Modes::.
 
     `cc_t c_cc[NCCS]'
           An array specifying which characters are associated with
-          various control functions; see *note Special Characters::.
+          various control functions; see *Note Special Characters::.
 
      The `struct termios' structure also contains members which encode
      input and output transmission speeds, but the representation is
@@ -5149,7 +5149,7 @@ rest untouched (*note Setting Modes::).
 
      Parity checking on input processing is independent of whether
      parity detection and generation on the underlying terminal
-     hardware is enabled; see *note Control Modes::.  For example, you
+     hardware is enabled; see *Note Control Modes::.  For example, you
      could clear the `INPCK' input mode flag and set the `PARENB'
      control mode flag to ignore parity errors on input, but still
      generate parity on output.
@@ -5317,7 +5317,7 @@ leave the rest untouched (*note Setting Modes::).
      If this bit is not set and a modem disconnect is detected, a
      `SIGHUP' signal is sent to the controlling process group for the
      terminal (if it has one).  Normally, this causes the process to
-     exit; see *note Signal Handling::.  Reading from the terminal
+     exit; see *Note Signal Handling::.  Reading from the terminal
      after a disconnect causes an end-of-file condition, and writing
      causes an `EIO' error to be returned.  The terminal device must be
      closed and reopened to clear the condition.  
@@ -5404,7 +5404,7 @@ File: libc.info,  Node: Local Modes,  Next: Line Speed,  Prev: Control Modes,  U
 This section describes the flags for the `c_lflag' member of the
 `struct termios' structure.  These flags generally control higher-level
 aspects of input processing than the input modes flags described in
-*note Input Modes::, such as echoing, signals, and the choice of
+*Note Input Modes::, such as echoing, signals, and the choice of
 canonical or noncanonical input.
 
    The `c_lflag' member itself is an integer, and you change the flags
@@ -6045,7 +6045,7 @@ File: libc.info,  Node: BSD Terminal Modes,  Next: Line Control,  Prev: Terminal
 =======================
 
 The usual way to get and set terminal modes is with the functions
-described in *note Terminal Modes::.  However, on some systems you can
+described in *Note Terminal Modes::.  However, on some systems you can
 use the BSD-derived functions in this section to do some of the same
 thing.  On many systems, these functions do not exist.  Even with the
 GNU C library, the functions simply fail with `errno' = `ENOSYS' with
@@ -6197,7 +6197,7 @@ operation is performed and no signal is sent.  *Note Job Control::.
           Transmit a START character.
 
      For more information about the STOP and START characters, see
-     *note Special Characters::.
+     *Note Special Characters::.
 
      The return value is normally zero.  In the event of an error, a
      value of -1 is returned.  The following `errno' error conditions
@@ -6286,7 +6286,7 @@ exiting or terminating with a signal.  It uses the `atexit' function
 (*note Cleanups on Exit::) to make sure this is done by `exit'.
 
    The shell is supposed to take care of resetting the terminal modes
-when a process is stopped or continued; see *note Job Control::.  But
+when a process is stopped or continued; see *Note Job Control::.  But
 some existing shells do not actually do this, so you may wish to
 establish handlers for job control signals that reset terminal modes.
 The above example does so.
@@ -6510,7 +6510,7 @@ File: libc.info,  Node: Syslog,  Next: Mathematics,  Prev: Low-Level Terminal In
 This chapter describes facilities for issuing and logging messages of
 system administration interest.  This chapter has nothing to do with
 programs issuing messages to their own users or keeping private logs
-(One would typically do that with the facilities described in *note I/O
+(One would typically do that with the facilities described in *Note I/O
 on Streams::).
 
    Most systems have a facility called "Syslog" that allows programs to
@@ -6719,7 +6719,8 @@ The symbols referred to in this section are declared in the file
           If on, `openlog' sets up the connection so that any `syslog'
           on this connection writes its message to the calling process'
           Standard Error stream in addition to submitting it to Syslog.
-          If off, `syslog' does not write the message to Standard Error.
+          If off, `syslog' does not write the message to Standard
+          Error.
 
     `LOG_CONS'
           If on, `openlog' sets up the connection so that a `syslog' on
@@ -6843,7 +6844,7 @@ The symbols referred to in this section are declared in the file
 
      Results are undefined if the facility code is anything else.
 
-     *note_* `syslog' recognizes one other facility code: that of the
+     *note:* `syslog' recognizes one other facility code: that of the
      kernel.  But you can't specify that facility code with these
      functions.  If you try, it looks the same to `syslog' as if you are
      requesting the default facility.  But you wouldn't want to anyway,
@@ -6972,7 +6973,7 @@ The symbols referred to in this section are declared in the file
      possible message priorities.  If the bit is on, `syslog' handles
      messages of that priority normally.  If it is off, `syslog'
      discards messages of that priority.  Use the message priority
-     macros described in *note syslog; vsyslog:: and the `LOG_MASK' to
+     macros described in *Note syslog; vsyslog:: and the `LOG_MASK' to
      construct an appropriate MASK value, as in this example:
 
           LOG_MASK(LOG_EMERG) | LOG_MASK(LOG_ERROR)
@@ -7266,7 +7267,7 @@ respectively.
      returns the signed angle between the line from the origin to that
      point and the x-axis.  Thus, `atan2' is useful for converting
      Cartesian coordinates to polar coordinates.  (To compute the
-     radial coordinate, use `hypot'; see *note Exponents and
+     radial coordinate, use `hypot'; see *Note Exponents and
      Logarithms::.)
 
      If both X and Y are zero, `atan2' returns zero.
@@ -7440,7 +7441,7 @@ proper way to test the result of `ilogb' is as follows:
      the hypotenuse of a right triangle with sides of length X and Y,
      or the distance of the point (X, Y) from the origin.  Using this
      function instead of the direct formula is wise, since the error is
-     much smaller.  See also the function `cabs' in *note Absolute
+     much smaller.  See also the function `cabs' in *Note Absolute
      Value::.
 
  -- Function: double expm1 (double X)
@@ -7512,7 +7513,7 @@ File: libc.info,  Node: Hyperbolic Functions,  Next: Special Functions,  Prev: E
 =========================
 
 The functions in this section are related to the exponential functions;
-see *note Exponents and Logarithms::.
+see *Note Exponents and Logarithms::.
 
  -- Function: double sinh (double X)
  -- Function: float sinhf (float X)

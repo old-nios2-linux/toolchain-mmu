@@ -3,7 +3,7 @@
 <title>Input Section Basics - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Input-Section.html#Input-Section" title="Input Section">
 <link rel="next" href="Input-Section-Wildcards.html#Input-Section-Wildcards" title="Input Section Wildcards">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Input-Section-Basics"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Input-Section-Wildcards.html#Input-Section-Wildcards">Input Section Wildcards</a>,
+<a name="Input-Section-Basics"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Input-Section-Wildcards.html#Input-Section-Wildcards">Input Section Wildcards</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Input-Section.html#Input-Section">Input Section</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">3.6.4.1 Input Section Basics</h5>
@@ -40,28 +38,28 @@ describe further below (see <a href="Input-Section-Wildcards.html#Input-Section-
 
    <p>The most common input section description is to include all input
 sections with a particular name in the output section.  For example, to
-include all input &lsquo;<samp><span class="samp">.text</span></samp>&rsquo; sections, you would write:
+include all input <span class="samp">.text</span> sections, you would write:
 <pre class="smallexample">     *(.text)
 </pre>
-   <p class="noindent">Here the &lsquo;<samp><span class="samp">*</span></samp>&rsquo; is a wildcard which matches any file name.  To exclude a list
+   <p class="noindent">Here the <span class="samp">*</span> is a wildcard which matches any file name.  To exclude a list
 of files from matching the file name wildcard, EXCLUDE_FILE may be used to
 match all files except the ones specified in the EXCLUDE_FILE list.  For
 example:
 <pre class="smallexample">     (*(EXCLUDE_FILE (*crtend.o *otherfile.o) .ctors))
 </pre>
-   <p>will cause all .ctors sections from all files except <samp><span class="file">crtend.o</span></samp> and
-<samp><span class="file">otherfile.o</span></samp> to be included.
+   <p>will cause all .ctors sections from all files except <span class="file">crtend.o</span> and
+<span class="file">otherfile.o</span> to be included.
 
    <p>There are two ways to include more than one section:
 <pre class="smallexample">     *(.text .rdata)
      *(.text) *(.rdata)
 </pre>
-   <p class="noindent">The difference between these is the order in which the &lsquo;<samp><span class="samp">.text</span></samp>&rsquo; and
-&lsquo;<samp><span class="samp">.rdata</span></samp>&rsquo; input sections will appear in the output section.  In the
+   <p class="noindent">The difference between these is the order in which the <span class="samp">.text</span> and
+<span class="samp">.rdata</span> input sections will appear in the output section.  In the
 first example, they will be intermingled, appearing in the same order as
 they are found in the linker input.  In the second example, all
-&lsquo;<samp><span class="samp">.text</span></samp>&rsquo; input sections will appear first, followed by all
-&lsquo;<samp><span class="samp">.rdata</span></samp>&rsquo; input sections.
+<span class="samp">.text</span> input sections will appear first, followed by all
+<span class="samp">.rdata</span> input sections.
 
    <p>You can specify a file name to include sections from a particular file. 
 You would do this if one or more of your files contain special data that

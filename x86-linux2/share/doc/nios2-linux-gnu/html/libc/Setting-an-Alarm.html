@@ -3,7 +3,7 @@
 <title>Setting an Alarm - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Date-and-Time.html#Date-and-Time" title="Date and Time">
 <link rel="prev" href="Calendar-Time.html#Calendar-Time" title="Calendar Time">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Setting-an-Alarm"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Sleeping.html#Sleeping">Sleeping</a>,
+<a name="Setting-an-Alarm"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Sleeping.html#Sleeping">Sleeping</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Calendar-Time.html#Calendar-Time">Calendar Time</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Date-and-Time.html#Date-and-Time">Date and Time</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">21.5 Setting an Alarm</h3>
@@ -78,8 +76,8 @@ Therefore, if <code>sigaction</code> for whatever reason cannot be used, it is
 necessary to use <code>sysv_signal</code> and not <code>signal</code>.
 
    <p>The <code>setitimer</code> function is the primary means for setting an alarm. 
-This facility is declared in the header file <samp><span class="file">sys/time.h</span></samp>.  The
-<code>alarm</code> function, declared in <samp><span class="file">unistd.h</span></samp>, provides a somewhat
+This facility is declared in the header file <span class="file">sys/time.h</span>.  The
+<code>alarm</code> function, declared in <span class="file">unistd.h</span>, provides a somewhat
 simpler interface for setting the real-time timer. 
 <a name="index-unistd_002eh-2687"></a><a name="index-sys_002ftime_002eh-2688"></a>
 <!-- sys/time.h -->
@@ -132,20 +130,20 @@ by <var>which</var> in the structure pointed at by <var>old</var>.
 
 <!-- sys/time.h -->
 <!-- BSD -->
-     <dl>
+<dl>
 <dt><code>ITIMER_REAL</code><a name="index-ITIMER_005fREAL-2692"></a><dd>This constant can be used as the <var>which</var> argument to the
 <code>setitimer</code> and <code>getitimer</code> functions to specify the real-time
 timer.
 
      <!-- sys/time.h -->
-     <!-- BSD -->
-     <br><dt><code>ITIMER_VIRTUAL</code><a name="index-ITIMER_005fVIRTUAL-2693"></a><dd>This constant can be used as the <var>which</var> argument to the
+<!-- BSD -->
+<br><dt><code>ITIMER_VIRTUAL</code><a name="index-ITIMER_005fVIRTUAL-2693"></a><dd>This constant can be used as the <var>which</var> argument to the
 <code>setitimer</code> and <code>getitimer</code> functions to specify the virtual
 timer.
 
      <!-- sys/time.h -->
-     <!-- BSD -->
-     <br><dt><code>ITIMER_PROF</code><a name="index-ITIMER_005fPROF-2694"></a><dd>This constant can be used as the <var>which</var> argument to the
+<!-- BSD -->
+<br><dt><code>ITIMER_PROF</code><a name="index-ITIMER_005fPROF-2694"></a><dd>This constant can be used as the <var>which</var> argument to the
 <code>setitimer</code> and <code>getitimer</code> functions to specify the profiling
 timer. 
 </dl>

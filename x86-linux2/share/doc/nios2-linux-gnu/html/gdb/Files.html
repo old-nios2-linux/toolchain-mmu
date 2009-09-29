@@ -3,7 +3,7 @@
 <title>Files - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB-Files.html#GDB-Files" title="GDB Files">
 <link rel="next" href="Separate-Debug-Files.html#Separate-Debug-Files" title="Separate Debug Files">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Files"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Separate-Debug-Files.html#Separate-Debug-Files">Separate Debug Files</a>,
+<a name="Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Separate-Debug-Files.html#Separate-Debug-Files">Separate Debug Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB-Files.html#GDB-Files">GDB Files</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">16.1 Commands to Specify Files</h3>
@@ -55,7 +53,7 @@ directories to search, just as the shell does when looking for a program
 to run.  You can change the value of this variable, for both <span class="sc">gdb</span>
 and your program, using the <code>path</code> command.
 
-     <p><a name="index-unlinked-object-files-774"></a><a name="index-patching-object-files-775"></a>You can load unlinked object <samp><span class="file">.o</span></samp> files into <span class="sc">gdb</span> using
+     <p><a name="index-unlinked-object-files-774"></a><a name="index-patching-object-files-775"></a>You can load unlinked object <span class="file">.o</span> files into <span class="sc">gdb</span> using
 the <code>file</code> command.  You will not be able to &ldquo;run&rdquo; an object
 file, but you can disassemble functions and inspect variables.  Also,
 if the underlying BFD functionality supports it, you could use
@@ -115,18 +113,18 @@ still does the two-stage strategy, since the debug info is actually
 in stabs format.
 
      <p><a name="index-readnow-778"></a><a name="index-reading-symbols-immediately-779"></a><a name="index-symbols_002c-reading-immediately-780"></a><br><dt><code>symbol-file </code><var>filename</var> <span class="roman">[</span><code> -readnow </code><span class="roman">]</span><dt><code>file </code><var>filename</var> <span class="roman">[</span><code> -readnow </code><span class="roman">]</span><dd>You can override the <span class="sc">gdb</span> two-stage strategy for reading symbol
-tables by using the &lsquo;<samp><span class="samp">-readnow</span></samp>&rsquo; option with any of the commands that
+tables by using the <span class="samp">-readnow</span> option with any of the commands that
 load symbol table information, if you want to be sure <span class="sc">gdb</span> has the
 entire symbol table available.
 
      <!-- FIXME: for now no mention of directories, since this seems to be in -->
-     <!-- flux.  13mar1992 status is that in theory GDB would look either in -->
-     <!-- current dir or in same dir as myprog; but issues like competing -->
-     <!-- GDB's, or clutter in system dirs, mean that in practice right now -->
-     <!-- only current dir is used.  FFish says maybe a special GDB hierarchy -->
-     <!-- (eg rooted in val of env var GDBSYMS) could exist for mappable symbol -->
-     <!-- files. -->
-     <p><a name="index-core_002dfile-781"></a><br><dt><code>core-file </code><span class="roman">[</span><var>filename</var><span class="roman">]</span><dt><code>core</code><dd>Specify the whereabouts of a core dump file to be used as the &ldquo;contents
+<!-- flux.  13mar1992 status is that in theory GDB would look either in -->
+<!-- current dir or in same dir as myprog; but issues like competing -->
+<!-- GDB's, or clutter in system dirs, mean that in practice right now -->
+<!-- only current dir is used.  FFish says maybe a special GDB hierarchy -->
+<!-- (eg rooted in val of env var GDBSYMS) could exist for mappable symbol -->
+<!-- files. -->
+<p><a name="index-core_002dfile-781"></a><br><dt><code>core-file </code><span class="roman">[</span><var>filename</var><span class="roman">]</span><dt><code>core</code><dd>Specify the whereabouts of a core dump file to be used as the &ldquo;contents
 of memory&rdquo;.  Traditionally, core files contain only some parts of the
 address space of the process that generated them; <span class="sc">gdb</span> can access the
 executable file itself for other parts.
@@ -146,7 +144,7 @@ when <var>filename</var> has been dynamically loaded (by some other means)
 into the program that is running.  <var>address</var> should be the memory
 address at which the file has been loaded; <span class="sc">gdb</span> cannot figure
 this out for itself.  You can additionally specify an arbitrary number
-of &lsquo;<samp><span class="samp">-s</span><var>section</var> <var>address</var></samp>&rsquo; pairs, to give an explicit
+of <span class="samp">-s</span><var>section</var> <var>address</var> pairs, to give an explicit
 section name and base address for that section.  You can specify any
 <var>address</var> as an expression.
 
@@ -156,10 +154,10 @@ originally read with the <code>symbol-file</code> command.  You can use the
 thus read keeps adding to the old.  To discard all old symbol data
 instead, use the <code>symbol-file</code> command without any arguments.
 
-     <p><a name="index-relocatable-object-files_002c-reading-symbols-from-784"></a><a name="index-object-files_002c-relocatable_002c-reading-symbols-from-785"></a><a name="index-reading-symbols-from-relocatable-object-files-786"></a><a name="index-symbols_002c-reading-from-relocatable-object-files-787"></a><a name="index-g_t_0040file_007b_002eo_007d-files_002c-reading-symbols-from-788"></a>Although <var>filename</var> is typically a shared library file, an
+     <p><a name="index-relocatable-object-files_002c-reading-symbols-from-784"></a><a name="index-object-files_002c-relocatable_002c-reading-symbols-from-785"></a><a name="index-reading-symbols-from-relocatable-object-files-786"></a><a name="index-symbols_002c-reading-from-relocatable-object-files-787"></a><a name="index-_0040file_007b_002eo_007d-files_002c-reading-symbols-from-788"></a>Although <var>filename</var> is typically a shared library file, an
 executable file, or some other object file which has been fully
 relocated for loading into a process, you can also load symbolic
-information from relocatable <samp><span class="file">.o</span></samp> files, as long as:
+information from relocatable <span class="file">.o</span> files, as long as:
 
           <ul>
 <li>the file's symbolic information refers only to linker symbols defined in
@@ -183,7 +181,7 @@ way.
 
      <p><code>add-symbol-file</code> does not repeat if you press &lt;RET&gt; after using it.
 
-     <p><a name="index-add_002dsymbol_002dfile_002dfrom_002dmemory-789"></a><a name="index-g_t_0040code_007bsyscall-DSO_007d-790"></a><a name="index-load-symbols-from-memory-791"></a><br><dt><code>add-symbol-file-from-memory </code><var>address</var><dd>Load symbols from the given <var>address</var> in a dynamically loaded
+     <p><a name="index-add_002dsymbol_002dfile_002dfrom_002dmemory-789"></a><a name="index-_0040code_007bsyscall-DSO_007d-790"></a><a name="index-load-symbols-from-memory-791"></a><br><dt><code>add-symbol-file-from-memory </code><var>address</var><dd>Load symbols from the given <var>address</var> in a dynamically loaded
 object file whose image is mapped directly into the inferior's memory. 
 For example, the Linux kernel maps a <code>syscall DSO</code> into each
 process's address space; this DSO provides kernel-specific code for
@@ -281,7 +279,7 @@ automatically loads the symbols at the time of the <code>shl_load</code> call.
 <!-- FIXME: some @value{GDBN} release may permit some refs to undef -->
 <!-- FIXME...symbols-eg in a break cmd-assuming they are from a shared -->
 <!-- FIXME...lib; check this from time to time when updating manual -->
-   <p>There are times, however, when you may wish to not automatically load
+<p>There are times, however, when you may wish to not automatically load
 symbol definitions from shared libraries, such as when they are
 particularly large or there are many of them.
 
@@ -365,28 +363,28 @@ absolute shared library paths will be prefixed with <var>path</var>; many
 runtime loaders store the absolute paths to the shared library in the
 target program's memory.  If you use <code>set sysroot</code> to find shared
 libraries, they need to be laid out in the same way that they are on
-the target, with e.g. a <samp><span class="file">/lib</span></samp> and <samp><span class="file">/usr/lib</span></samp> hierarchy
+the target, with e.g. a <span class="file">/lib</span> and <span class="file">/usr/lib</span> hierarchy
 under <var>path</var>.
 
      <p>The <code>set solib-absolute-prefix</code> command is an alias for <code>set
 sysroot</code>.
 
-     <p><a name="index-default-system-root-818"></a><a name="index-g_t_0040samp_007b_002d_002dwith_002dsysroot_007d-819"></a>You can set the default system root by using the configure-time
-&lsquo;<samp><span class="samp">--with-sysroot</span></samp>&rsquo; option.  If the system root is inside
-<span class="sc">gdb</span>'s configured binary prefix (set with &lsquo;<samp><span class="samp">--prefix</span></samp>&rsquo; or
-&lsquo;<samp><span class="samp">--exec-prefix</span></samp>&rsquo;), then the default system root will be updated
+     <p><a name="index-default-system-root-818"></a><a name="index-_0040samp_007b_002d_002dwith_002dsysroot_007d-819"></a>You can set the default system root by using the configure-time
+<span class="samp">--with-sysroot</span> option.  If the system root is inside
+<span class="sc">gdb</span>'s configured binary prefix (set with <span class="samp">--prefix</span> or
+<span class="samp">--exec-prefix</span>), then the default system root will be updated
 automatically if the installed <span class="sc">gdb</span> is moved to a new
 location.
 
      <p><a name="index-show-sysroot-820"></a><br><dt><code>show sysroot</code><dd>Display the current shared library prefix.
 
      <p><a name="index-set-solib_002dsearch_002dpath-821"></a><br><dt><code>set solib-search-path </code><var>path</var><dd>If this variable is set, <var>path</var> is a colon-separated list of
-directories to search for shared libraries.  &lsquo;<samp><span class="samp">solib-search-path</span></samp>&rsquo;
-is used after &lsquo;<samp><span class="samp">sysroot</span></samp>&rsquo; fails to locate the library, or if the
+directories to search for shared libraries.  <span class="samp">solib-search-path</span>
+is used after <span class="samp">sysroot</span> fails to locate the library, or if the
 path to the library is relative instead of absolute.  If you want to
-use &lsquo;<samp><span class="samp">solib-search-path</span></samp>&rsquo; instead of &lsquo;<samp><span class="samp">sysroot</span></samp>&rsquo;, be sure to set
-&lsquo;<samp><span class="samp">sysroot</span></samp>&rsquo; to a nonexistent directory to prevent <span class="sc">gdb</span> from
-finding your host's libraries.  &lsquo;<samp><span class="samp">sysroot</span></samp>&rsquo; is preferred; setting
+use <span class="samp">solib-search-path</span> instead of <span class="samp">sysroot</span>, be sure to set
+<span class="samp">sysroot</span> to a nonexistent directory to prevent <span class="sc">gdb</span> from
+finding your host's libraries.  <span class="samp">sysroot</span> is preferred; setting
 it to a nonexistent directory may interfere with automatic loading
 of shared library symbols.
 

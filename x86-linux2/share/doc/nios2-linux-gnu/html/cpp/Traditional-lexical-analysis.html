@@ -3,7 +3,7 @@
 <title>Traditional lexical analysis - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Traditional-Mode.html#Traditional-Mode" title="Traditional Mode">
 <link rel="next" href="Traditional-macros.html#Traditional-macros" title="Traditional macros">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
--->
+man end-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,18 +40,16 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Traditional-lexical-analysis"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-macros.html#Traditional-macros">Traditional macros</a>,
+<a name="Traditional-lexical-analysis"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-macros.html#Traditional-macros">Traditional macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Traditional-Mode.html#Traditional-Mode">Traditional Mode</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">10.1 Traditional lexical analysis</h3>
@@ -71,9 +69,9 @@ the output.  In particular, hard tabs remain hard tabs.  This can be
 useful if, for example, you are preprocessing a Makefile.
 
    <p>Traditional CPP only recognizes C-style block comments, and treats the
-&lsquo;<samp><span class="samp">/*</span></samp>&rsquo; sequence as introducing a comment only if it lies outside
+<span class="samp">/*</span> sequence as introducing a comment only if it lies outside
 quoted text.  Quoted text is introduced by the usual single and double
-quotes, and also by an initial &lsquo;<samp><span class="samp">&lt;</span></samp>&rsquo; in a <code>#include</code>
+quotes, and also by an initial <span class="samp">&lt;</span> in a <code>#include</code>
 directive.
 
    <p>Traditionally, comments are completely removed and are not replaced
@@ -85,7 +83,7 @@ since it doesn't re-lex its input.  For example, in
 
 <pre class="smallexample">     #if foo/**/bar
 </pre>
-   <p class="noindent">&lsquo;<samp><span class="samp">foo</span></samp>&rsquo; and &lsquo;<samp><span class="samp">bar</span></samp>&rsquo; are distinct identifiers and expanded
+   <p class="noindent"><span class="samp">foo</span> and <span class="samp">bar</span> are distinct identifiers and expanded
 separately if they happen to be macros.  In other words, this
 directive is equivalent to
 

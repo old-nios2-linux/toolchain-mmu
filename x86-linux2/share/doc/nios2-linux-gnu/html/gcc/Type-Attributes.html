@@ -3,7 +3,7 @@
 <title>Type Attributes - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Variable-Attributes.html#Variable-Attributes" title="Variable Attributes">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Type-Attributes"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Alignment.html#Alignment">Alignment</a>,
+<a name="Type-Attributes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Alignment.html#Alignment">Alignment</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Variable-Attributes.html#Variable-Attributes">Variable Attributes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.32 Specifying Attributes of Types</h3>
@@ -65,7 +63,7 @@ double parentheses.  Six attributes are currently defined for types:
 functions (see <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>) and for variables
 (see <a href="Variable-Attributes.html#Variable-Attributes">Variable Attributes</a>).
 
- <p>You may also specify any one of these attributes with &lsquo;<samp><span class="samp">__</span></samp>&rsquo;
+ <p>You may also specify any one of these attributes with <span class="samp">__</span>
 preceding and following its keyword.  This allows you to use these
 attributes in header files without being concerned about a possible
 macro of the same name.  For example, you may use <code>__aligned__</code>
@@ -84,13 +82,13 @@ tag and the name of the type rather than after the closing brace.
 attributes.
 
      
-<a name="index-g_t_0040code_007baligned_007d-attribute-1925"></a>
+<a name="index-_0040code_007baligned_007d-attribute-1925"></a>
 <dl><dt><code>aligned (</code><var>alignment</var><code>)</code><dd>This attribute specifies a minimum alignment (in bytes) for variables
 of the specified type.  For example, the declarations:
 
      <pre class="smallexample">          struct S { short f[3]; } __attribute__ ((aligned (8)));
           typedef int more_aligned_int __attribute__ ((aligned (8)));
-</pre>
+     </pre>
      <p class="noindent">force the compiler to insure (as far as it can) that each variable whose
 type is <code>struct S</code> or <code>more_aligned_int</code> will be allocated and
 aligned <em>at least</em> on a 8-byte boundary.  On a SPARC, having all
@@ -117,7 +115,7 @@ useful alignment for the target machine you are compiling for.  For
 example, you could write:
 
      <pre class="smallexample">          struct S { short f[3]; } __attribute__ ((aligned));
-</pre>
+     </pre>
      <p>Whenever you leave out the alignment factor in an <code>aligned</code>
 attribute specification, the compiler automatically sets the alignment
 for the type to the largest alignment which is ever used for any data
@@ -165,7 +163,7 @@ integral type should be used.
 
      <p><a name="index-fshort_002denums-1926"></a>Specifying this attribute for <code>struct</code> and <code>union</code> types is
 equivalent to specifying the <code>packed</code> attribute on each of the
-structure or union members.  Specifying the <samp><span class="option">-fshort-enums</span></samp>
+structure or union members.  Specifying the <span class="option">-fshort-enums</span>
 flag on the line is equivalent to specifying the <code>packed</code>
 attribute on all <code>enum</code> definitions.
 
@@ -186,7 +184,7 @@ be packed too.
                int  i;
                struct my_unpacked_struct s;
             };
-</pre>
+     </pre>
      <p>You may only specify this attribute on the definition of a <code>enum</code>,
 <code>struct</code> or <code>union</code>, not on a <code>typedef</code> which does not
 also define the enumerated type, structure or union.
@@ -227,21 +225,21 @@ as follows:
             } wait_status_ptr_t __attribute__ ((__transparent_union__));
           
           pid_t wait (wait_status_ptr_t);
-</pre>
+     </pre>
      <p>This interface allows either <code>int *</code> or <code>union wait *</code>
 arguments to be passed, using the <code>int *</code> calling convention. 
 The program can call <code>wait</code> with arguments of either type:
 
      <pre class="smallexample">          int w1 () { int w; return wait (&amp;w); }
           int w2 () { union wait w; return wait (&amp;w); }
-</pre>
+     </pre>
      <p>With this interface, <code>wait</code>'s implementation might look like this:
 
      <pre class="smallexample">          pid_t wait (wait_status_ptr_t p)
           {
             return waitpid (-1, p.__ip, 0);
           }
-</pre>
+     </pre>
      <br><dt><code>unused</code><dd>When attached to a type (including a <code>union</code> or a <code>struct</code>),
 this attribute means that variables of that type are meant to appear
 possibly unused.  GCC will not produce a warning for any variables of
@@ -266,7 +264,7 @@ declared as deprecated.
           T2 y;
           typedef T1 T3 __attribute__ ((deprecated));
           T3 z __attribute__ ((deprecated));
-</pre>
+     </pre>
      <p>results in a warning on line 2 and 3 but not lines 4, 5, or 6.  No
 warning is issued for line 4 because T2 is not explicitly
 deprecated.  Line 5 has no warning because T3 is explicitly
@@ -278,7 +276,7 @@ variables (see <a href="Function-Attributes.html#Function-Attributes">Function A
      <br><dt><code>may_alias</code><dd>Accesses to objects with types with this attribute are not subjected to
 type-based alias analysis, but are instead assumed to be able to alias
 any other type of objects, just like the <code>char</code> type.  See
-<samp><span class="option">-fstrict-aliasing</span></samp> for more information on aliasing issues.
+<span class="option">-fstrict-aliasing</span> for more information on aliasing issues.
 
      <p>Example of use:
 
@@ -297,10 +295,10 @@ any other type of objects, just like the <code>char</code> type.  See
           
             exit(0);
           }
-</pre>
+     </pre>
      <p>If you replaced <code>short_a</code> with <code>short</code> in the variable
 declaration, the above program would abort when compiled with
-<samp><span class="option">-fstrict-aliasing</span></samp>, which is on by default at <samp><span class="option">-O2</span></samp> or
+<span class="option">-fstrict-aliasing</span>, which is on by default at <span class="option">-O2</span> or
 above in recent GCC versions.
 
 <h4 class="subsection">5.32.1 ARM Type Attributes</h4>
@@ -318,7 +316,7 @@ exported from a DLL.  For example:
           
           __declspec(dllexport)
           C::C() {}
-</pre>
+     </pre>
      <p>In this code, <code>C::C</code> is exported from the current DLL, but the
 virtual table for <code>C</code> is not exported.  (You can use
 <code>__attribute__</code> instead of <code>__declspec</code> if you prefer, but
@@ -329,7 +327,7 @@ most Symbian OS code uses <code>__declspec</code>.)
      <p>Two attributes are currently defined for i386 configurations:
 <code>ms_struct</code> and <code>gcc_struct</code>
 
-     <br><dt><code>ms_struct</code><dt><code>gcc_struct</code><dd><a name="index-g_t_0040code_007bms_005fstruct_007d-1927"></a><a name="index-g_t_0040code_007bgcc_005fstruct_007d-1928"></a>
+     <br><dt><code>ms_struct</code><dt><code>gcc_struct</code><dd><a name="index-_0040code_007bms_005fstruct_007d-1927"></a><a name="index-_0040code_007bgcc_005fstruct_007d-1928"></a>
 If <code>packed</code> is used on a structure, or if bit-fields are used
 it may be that the Microsoft ABI packs them differently
 than GCC would normally pack them.  Particularly when moving packed
@@ -337,13 +335,13 @@ data between functions compiled with GCC and the native Microsoft compiler
 (either via function call or as data in a file), it may be necessary to access
 either format.
 
-     <p>Currently <samp><span class="option">-m[no-]ms-bitfields</span></samp> is provided for the Microsoft Windows X86
+     <p>Currently <span class="option">-m[no-]ms-bitfields</span> is provided for the Microsoft Windows X86
 compilers to match the native Microsoft compiler. 
 </dl>
 
  <p>To specify multiple attributes, separate them by commas within the
-double parentheses: for example, &lsquo;<samp><span class="samp">__attribute__ ((aligned (16),
-packed))</span></samp>&rsquo;.
+double parentheses: for example, <span class="samp">__attribute__ ((aligned (16),
+packed))</span>.
 
  </body></html>
 

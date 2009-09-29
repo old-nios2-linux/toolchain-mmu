@@ -3,7 +3,7 @@
 <title>Asynchronous I/O - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="Synchronizing-I_002fO.html#Synchronizing-I_002fO" title="Synchronizing I/O">
@@ -17,20 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Asynchronous-I%2fO"></a>
-<a name="Asynchronous-I_002fO"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Control-Operations.html#Control-Operations">Control Operations</a>,
+<a name="Asynchronous-I_002fO"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Control-Operations.html#Control-Operations">Control Operations</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Synchronizing-I_002fO.html#Synchronizing-I_002fO">Synchronizing I/O</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">13.10 Perform I/O Operations in Parallel</h3>
@@ -40,20 +37,20 @@ significantly reduce the time an application spends waiting at I/O.  The
 new functions allow a program to initiate one or more I/O operations and
 then immediately resume normal work while the I/O operations are
 executed in parallel.  This functionality is available if the
-<samp><span class="file">unistd.h</span></samp> file defines the symbol <code>_POSIX_ASYNCHRONOUS_IO</code>.
+<span class="file">unistd.h</span> file defines the symbol <code>_POSIX_ASYNCHRONOUS_IO</code>.
 
    <p>These functions are part of the library with realtime functions named
-<samp><span class="file">librt</span></samp>.  They are not actually part of the <samp><span class="file">libc</span></samp> binary. 
+<span class="file">librt</span>.  They are not actually part of the <span class="file">libc</span> binary. 
 The implementation of these functions can be done using support in the
 kernel (if available) or using an implementation based on threads at
 userlevel.  In the latter case it might be necessary to link applications
-with the thread library <samp><span class="file">libpthread</span></samp> in addition to <samp><span class="file">librt</span></samp>.
+with the thread library <span class="file">libpthread</span> in addition to <span class="file">librt</span>.
 
    <p>All AIO operations operate on files which were opened previously.  There
 might be arbitrarily many operations running for one file.  The
 asynchronous I/O operations are controlled using a data structure named
 <code>struct aiocb</code> (<dfn>AIO control block</dfn>).  It is defined in
-<samp><span class="file">aio.h</span></samp> as follows.
+<span class="file">aio.h</span> as follows.
 
 <!-- aio.h -->
 <!-- POSIX.1b -->

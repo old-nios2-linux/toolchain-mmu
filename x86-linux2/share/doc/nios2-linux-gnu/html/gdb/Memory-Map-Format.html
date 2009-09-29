@@ -3,7 +3,7 @@
 <title>Memory Map Format - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Remote-Protocol.html#Remote-Protocol" title="Remote Protocol">
 <link rel="prev" href="File_002dI_002fO-Remote-Protocol-Extension.html#File_002dI_002fO-Remote-Protocol-Extension" title="File-I/O Remote Protocol Extension">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Memory-Map-Format"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="File_002dI_002fO-Remote-Protocol-Extension.html#File_002dI_002fO-Remote-Protocol-Extension">File-I/O Remote Protocol Extension</a>,
+<a name="Memory-Map-Format"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="File_002dI_002fO-Remote-Protocol-Extension.html#File_002dI_002fO-Remote-Protocol-Extension">File-I/O Remote Protocol Extension</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Remote-Protocol.html#Remote-Protocol">Remote Protocol</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">D.11 Memory Map Format</h3>
@@ -37,7 +35,7 @@ To be able to write into flash memory, <span class="sc">gdb</span> needs to obta
 memory map from the target.  This section describes the format of the
 memory map.
 
-   <p>The memory map is obtained using the &lsquo;<samp><span class="samp">qXfer:memory-map:read</span></samp>&rsquo;
+   <p>The memory map is obtained using the <span class="samp">qXfer:memory-map:read</span>
 (see <a href="qXfer-memory-map-read.html#qXfer-memory-map-read">qXfer memory map read</a>) packet and is an XML document that
 lists memory regions.  The top-level structure of the document is shown below:
 
@@ -56,22 +54,22 @@ lists memory regions.  The top-level structure of the document is shown below:
 bytes from there:
 
      <pre class="smallexample">          &lt;memory type="ram" start="<var>addr</var>" length="<var>length</var>"/&gt;
-</pre>
+     </pre>
      <li>A region of read-only memory:
 
      <pre class="smallexample">          &lt;memory type="rom" start="<var>addr</var>" length="<var>length</var>"/&gt;
-</pre>
+     </pre>
      <li>A region of flash memory, with erasure blocks <var>blocksize</var>
 bytes in length:
 
      <pre class="smallexample">          &lt;memory type="flash" start="<var>addr</var>" length="<var>length</var>"&gt;
             &lt;property name="blocksize"&gt;<var>blocksize</var>&lt;/property&gt;
           &lt;/memory&gt;
-</pre>
+     </pre>
      </ul>
 
    <p>Regions must not overlap.  <span class="sc">gdb</span> assumes that areas of memory not covered
-by the memory map are RAM, and uses the ordinary &lsquo;<samp><span class="samp">M</span></samp>&rsquo; and &lsquo;<samp><span class="samp">X</span></samp>&rsquo;
+by the memory map are RAM, and uses the ordinary <span class="samp">M</span> and <span class="samp">X</span>
 packets to write to addresses in such ranges.
 
    <p>The formal DTD for memory map format is given below:
@@ -106,5 +104,5 @@ packets to write to addresses in such ranges.
 <!-- Free Software Foundation, Inc. -->
 <!-- See the file gdb.texinfo for copying conditions. -->
 <!-- Revision: $Id: agentexpr.texi,v 1.2 1998/12/09 21:23:46 jimb Exp $ -->
-   </body></html>
+</body></html>
 

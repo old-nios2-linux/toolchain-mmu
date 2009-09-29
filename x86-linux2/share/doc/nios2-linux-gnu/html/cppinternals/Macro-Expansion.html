@@ -3,7 +3,7 @@
 <title>Macro Expansion - The GNU C Preprocessor Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Preprocessor Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Hash-Nodes.html#Hash-Nodes" title="Hash Nodes">
 <link rel="next" href="Token-Spacing.html#Token-Spacing" title="Token Spacing">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Macro-Expansion"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Token-Spacing.html#Token-Spacing">Token Spacing</a>,
+<a name="Macro-Expansion"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Token-Spacing.html#Token-Spacing">Token Spacing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Hash-Nodes.html#Hash-Nodes">Hash Nodes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="unnumbered">Macro Expansion Algorithm</h2>
@@ -64,7 +62,7 @@ index of the parameter it represents in the parameter list, which
 allows rapid replacement of parameters with their arguments during
 expansion.  Despite this optimization it is still necessary to store
 the original parameters to the macro, both for dumping with e.g.,
-<samp><span class="option">-dD</span></samp>, and to warn about non-trivial macro redefinitions when
+<span class="option">-dD</span>, and to warn about non-trivial macro redefinitions when
 the parameter names have changed.
 
 <h3 class="section">Macro expansion overview</h3>
@@ -145,23 +143,23 @@ example, which illustrates many of the points above, consider
 <pre class="smallexample">     #define foo(x) bar x
      foo(foo) (2)
 </pre>
-   <p class="noindent">which fully expands to &lsquo;<samp><span class="samp">bar foo (2)</span></samp>&rsquo;.  During pre-expansion
-of the argument, &lsquo;<samp><span class="samp">foo</span></samp>&rsquo; does not expand even though the macro is
+   <p class="noindent">which fully expands to <span class="samp">bar foo (2)</span>.  During pre-expansion
+of the argument, <span class="samp">foo</span> does not expand even though the macro is
 enabled, since it has no following parenthesis [pre-expansion of an
 argument only uses tokens from that argument; it cannot take tokens
 from whatever follows the macro invocation].  This still leaves the
-argument token &lsquo;<samp><span class="samp">foo</span></samp>&rsquo; eligible for future expansion.  Then, when
-re-scanning after argument replacement, the token &lsquo;<samp><span class="samp">foo</span></samp>&rsquo; is
+argument token <span class="samp">foo</span> eligible for future expansion.  Then, when
+re-scanning after argument replacement, the token <span class="samp">foo</span> is
 rejected for expansion, and marked ineligible for future expansion,
 since the macro is now disabled.  It is disabled because the
-replacement list &lsquo;<samp><span class="samp">bar foo</span></samp>&rsquo; of the macro is still on the context
+replacement list <span class="samp">bar foo</span> of the macro is still on the context
 stack.
 
    <p>If instead the algorithm looked for an opening parenthesis first and
 then tested whether the macro were disabled it would be subtly wrong. 
-In the example above, the replacement list of &lsquo;<samp><span class="samp">foo</span></samp>&rsquo; would be
+In the example above, the replacement list of <span class="samp">foo</span> would be
 popped in the process of finding the parenthesis, re-enabling
-&lsquo;<samp><span class="samp">foo</span></samp>&rsquo; and expanding it a second time.
+<span class="samp">foo</span> and expanding it a second time.
 
 <h3 class="section">Looking for a function-like macro's opening parenthesis</h3>
 

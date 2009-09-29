@@ -3,7 +3,7 @@
 <title>Header Files - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Overview.html#Overview" title="Overview">
 <link rel="next" href="Macros.html#Macros" title="Macros">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
--->
+man end-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,19 +40,17 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Header-Files"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Macros.html#Macros">Macros</a>,
+<a name="Header-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Macros.html#Macros">Macros</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Overview.html#Overview">Overview</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">2 Header Files</h2>
@@ -60,7 +58,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <p><a name="index-header-file-25"></a>A header file is a file containing C declarations and macro definitions
 (see <a href="Macros.html#Macros">Macros</a>) to be shared between several source files.  You request
 the use of a header file in your program by <dfn>including</dfn> it, with the
-C preprocessing directive &lsquo;<samp><span class="samp">#include</span></samp>&rsquo;.
+C preprocessing directive <span class="samp">#include</span>.
 
    <p>Header files serve two purposes.
 
@@ -87,7 +85,7 @@ as the risk that a failure to find one copy will result in
 inconsistencies within a program.
 
    <p>In C, the usual convention is to give header files names that end with
-<samp><span class="file">.h</span></samp>.  It is most portable to use only letters, digits, dashes, and
+<span class="file">.h</span>.  It is most portable to use only letters, digits, dashes, and
 underscores in header file names, and at most one dot.
 
 <ul class="menu">

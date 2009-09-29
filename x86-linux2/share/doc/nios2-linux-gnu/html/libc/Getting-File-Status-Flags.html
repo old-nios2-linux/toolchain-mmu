@@ -3,7 +3,7 @@
 <title>Getting File Status Flags - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-Status-Flags.html#File-Status-Flags" title="File Status Flags">
 <link rel="prev" href="Operating-Modes.html#Operating-Modes" title="Operating Modes">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Getting-File-Status-Flags"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Operating-Modes.html#Operating-Modes">Operating Modes</a>,
+<a name="Getting-File-Status-Flags"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Operating-Modes.html#Operating-Modes">Operating Modes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-Status-Flags.html#File-Status-Flags">File Status Flags</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">13.14.4 Getting and Setting File Status Flags</h4>
@@ -66,7 +64,7 @@ the file status flags for the open file corresponding to the
 argument to specify the new flags, so the call looks like this:
 
      <pre class="smallexample">          fcntl (<var>filedes</var>, F_SETFL, <var>new-flags</var>)
-</pre>
+     </pre>
         <p>You can't change the access mode for the file in this way; that is,
 whether the file descriptor was opened for reading or writing.
 

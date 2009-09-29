@@ -3,7 +3,7 @@
 <title>File Locks - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="File-Status-Flags.html#File-Status-Flags" title="File Status Flags">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="File-Locks"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Interrupt-Input.html#Interrupt-Input">Interrupt Input</a>,
+<a name="File-Locks"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Interrupt-Input.html#Interrupt-Input">Interrupt Input</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="File-Status-Flags.html#File-Status-Flags">File Status Flags</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">13.15 File Locks</h3>
@@ -63,7 +61,7 @@ process exits, and are not inherited by child processes created using
 
    <p>When making a lock, use a <code>struct flock</code> to specify what kind of
 lock and where.  This data type and the associated macros for the
-<code>fcntl</code> function are declared in the header file <samp><span class="file">fcntl.h</span></samp>. 
+<code>fcntl</code> function are declared in the header file <span class="file">fcntl.h</span>. 
 <a name="index-fcntl_002eh-1369"></a>
 <!-- fcntl.h -->
 <!-- POSIX.1 -->
@@ -105,7 +103,7 @@ requires a third argument of type <code>struct&nbsp;flock&nbsp;*</code><!-- /@w 
 to <code>fcntl</code>, so that the form of the call is:
 
      <pre class="smallexample">          fcntl (<var>filedes</var>, F_GETLK, <var>lockp</var>)
-</pre>
+     </pre>
         <p>If there is a lock already in place that would block the lock described
 by the <var>lockp</var> argument, information about that lock overwrites
 <code>*</code><var>lockp</var>.  Existing locks are not reported if they are
@@ -146,7 +144,7 @@ third argument of type <code>struct&nbsp;flock&nbsp;*</code><!-- /@w --> to be p
 <code>fcntl</code>, so that the form of the call is:
 
      <pre class="smallexample">          fcntl (<var>filedes</var>, F_SETLK, <var>lockp</var>)
-</pre>
+     </pre>
         <p>If the process already has a lock on any part of the region, the old lock
 on that part is replaced with the new lock.  You can remove a lock
 by specifying a lock type of <code>F_UNLCK</code>.
@@ -219,12 +217,12 @@ member of the <code>flock</code> structure.  The values are integer constants.
 <a name="index-F_005fRDLCK-1374"></a><dt><code>F_RDLCK</code><dd>This macro is used to specify a read (or shared) lock.
 
      <!-- fcntl.h -->
-     <!-- POSIX.1 -->
-     <p><a name="index-F_005fWRLCK-1375"></a><br><dt><code>F_WRLCK</code><dd>This macro is used to specify a write (or exclusive) lock.
+<!-- POSIX.1 -->
+<p><a name="index-F_005fWRLCK-1375"></a><br><dt><code>F_WRLCK</code><dd>This macro is used to specify a write (or exclusive) lock.
 
      <!-- fcntl.h -->
-     <!-- POSIX.1 -->
-     <p><a name="index-F_005fUNLCK-1376"></a><br><dt><code>F_UNLCK</code><dd>This macro is used to specify that the region is unlocked. 
+<!-- POSIX.1 -->
+<p><a name="index-F_005fUNLCK-1376"></a><br><dt><code>F_UNLCK</code><dd>This macro is used to specify that the region is unlocked. 
 </dl>
 
    <p>As an example of a situation where file locking is useful, consider a
@@ -245,7 +243,7 @@ a read lock.  While the read lock is set, no other process can lock
 that part of the file for writing.
 
 <!-- ??? This section could use an example program. -->
-   <p>Remember that file locks are only a <em>voluntary</em> protocol for
+<p>Remember that file locks are only a <em>voluntary</em> protocol for
 controlling access to a file.  There is still potential for access to
 the file by programs that don't use the lock protocol.
 

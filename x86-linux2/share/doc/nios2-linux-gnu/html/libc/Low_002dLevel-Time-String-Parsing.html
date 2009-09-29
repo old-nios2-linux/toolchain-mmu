@@ -3,7 +3,7 @@
 <title>Low-Level Time String Parsing - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Parsing-Date-and-Time.html#Parsing-Date-and-Time" title="Parsing Date and Time">
 <link rel="next" href="General-Time-String-Parsing.html#General-Time-String-Parsing" title="General Time String Parsing">
@@ -16,19 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Low-Level-Time-String-Parsing"></a>
-<a name="Low_002dLevel-Time-String-Parsing"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="General-Time-String-Parsing.html#General-Time-String-Parsing">General Time String Parsing</a>,
+<a name="Low_002dLevel-Time-String-Parsing"></a>Next:&nbsp;<a rel="next" accesskey="n" href="General-Time-String-Parsing.html#General-Time-String-Parsing">General Time String Parsing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Parsing-Date-and-Time.html#Parsing-Date-and-Time">Parsing Date and Time</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">21.4.6.1 Interpret string according to given format</h5>
@@ -154,7 +151,7 @@ recognized, input is consumed but no field in <var>tm</var> is set.
 
           <br><dt><code>%n</code><dt><code>%t</code><dd>Matches any white space.
 
-          <br><dt><code>%p</code><br><dt><code>%P</code><dd>The locale-dependent equivalent to &lsquo;<samp><span class="samp">AM</span></samp>&rsquo; or &lsquo;<samp><span class="samp">PM</span></samp>&rsquo;.
+          <br><dt><code>%p</code><br><dt><code>%P</code><dd>The locale-dependent equivalent to <span class="samp">AM</span> or <span class="samp">PM</span>.
 
           <p>This format is not useful unless <code>%I</code> or <code>%l</code> is also used. 
 Another complication is that the locale might not define these values at
@@ -271,7 +268,7 @@ numeric symbols.
           <p><em>Note:</em> Currently, this is not fully implemented.  The format is
 recognized, input is consumed but no field in <var>tm</var> is set.
 
-          <br><dt><code>%%</code><dd>A literal &lsquo;<samp><span class="samp">%</span></samp>&rsquo; character. 
+          <br><dt><code>%%</code><dd>A literal <span class="samp">%</span> character. 
 </dl>
 
         <p>All other characters in the format string must have a matching character

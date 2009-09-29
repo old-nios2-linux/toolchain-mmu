@@ -3,7 +3,7 @@
 <title>Template Instantiation - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions" title="C++ Extensions">
 <link rel="prev" href="C_002b_002b-Interface.html#C_002b_002b-Interface" title="C++ Interface">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Template-Instantiation"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Bound-member-functions.html#Bound-member-functions">Bound member functions</a>,
+<a name="Template-Instantiation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Bound-member-functions.html#Bound-member-functions">Bound member functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="C_002b_002b-Interface.html#C_002b_002b-Interface">C++ Interface</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions">C++ Extensions</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">6.5 Where's the Template?</h3>
@@ -111,11 +109,11 @@ then combine duplicate instantiations.
 template instantiations:
 
      <ol type=1 start=1>
-<li><a name="index-frepo-2532"></a>Compile your template-using code with <samp><span class="option">-frepo</span></samp>.  The compiler will
-generate files with the extension &lsquo;<samp><span class="samp">.rpo</span></samp>&rsquo; listing all of the
+<li><a name="index-frepo-2532"></a>Compile your template-using code with <span class="option">-frepo</span>.  The compiler will
+generate files with the extension <span class="samp">.rpo</span> listing all of the
 template instantiations used in the corresponding object files which
-could be instantiated there; the link wrapper, &lsquo;<samp><span class="samp">collect2</span></samp>&rsquo;, will
-then update the &lsquo;<samp><span class="samp">.rpo</span></samp>&rsquo; files to tell the compiler where to place
+could be instantiated there; the link wrapper, <span class="samp">collect2</span>, will
+then update the <span class="samp">.rpo</span> files to tell the compiler where to place
 those instantiations and rebuild any affected object files.  The
 link-time overhead is negligible after the first pass, as the compiler
 will continue to place the instantiations in the same files.
@@ -134,7 +132,7 @@ conflicts if multiple libraries try to provide the same instantiations.
 For greater control, use explicit instantiation as described in the next
 option.
 
-     <li><a name="index-fno_002dimplicit_002dtemplates-2533"></a>Compile your code with <samp><span class="option">-fno-implicit-templates</span></samp> to disable the
+     <li><a name="index-fno_002dimplicit_002dtemplates-2533"></a>Compile your code with <span class="option">-fno-implicit-templates</span> to disable the
 implicit generation of template instances, and explicitly instantiate
 all the ones you use.  This approach requires more knowledge of exactly
 which instances you need than do the others, but it's less
@@ -151,16 +149,16 @@ like
           template class Foo&lt;int&gt;;
           template ostream&amp; operator &lt;&lt;
                           (ostream&amp;, const Foo&lt;int&gt;&amp;);
-</pre>
+     </pre>
      <p>for each of the instances you need, and create a template instantiation
 library from those.
 
      <p>If you are using Cfront-model code, you can probably get away with not
-using <samp><span class="option">-fno-implicit-templates</span></samp> when compiling files that don't
-&lsquo;<samp><span class="samp">#include</span></samp>&rsquo; the member template definitions.
+using <span class="option">-fno-implicit-templates</span> when compiling files that don't
+<span class="samp">#include</span> the member template definitions.
 
      <p>If you use one big file to do the instantiations, you may want to
-compile it without <samp><span class="option">-fno-implicit-templates</span></samp> so you get all of the
+compile it without <span class="option">-fno-implicit-templates</span> so you get all of the
 instances required by your explicit instantiations (but not by any
 other files) without having to specify them as well.
 
@@ -175,7 +173,7 @@ functions (with (<code>static</code>):
      <pre class="smallexample">          extern template int max (int, int);
           inline template class Foo&lt;int&gt;;
           static template class Foo&lt;int&gt;;
-</pre>
+     </pre>
      <li>Do nothing.  Pretend G++ does implement automatic instantiation
 management.  Code written for the Borland model will work fine, but
 each translation unit will contain instances of each of the templates it

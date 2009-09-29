@@ -3,7 +3,7 @@
 <title>Separate Debug Files - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB-Files.html#GDB-Files" title="GDB Files">
 <link rel="prev" href="Files.html#Files" title="Files">
@@ -17,24 +17,22 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Separate-Debug-Files"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Symbol-Errors.html#Symbol-Errors">Symbol Errors</a>,
+<a name="Separate-Debug-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Symbol-Errors.html#Symbol-Errors">Symbol Errors</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Files.html#Files">Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB-Files.html#GDB-Files">GDB Files</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">16.2 Debugging Information in Separate Files</h3>
 
-<p><a name="index-separate-debugging-information-files-823"></a><a name="index-debugging-information-in-separate-files-824"></a><a name="index-g_t_0040file_007b_002edebug_007d-subdirectories-825"></a><a name="index-debugging-information-directory_002c-global-826"></a><a name="index-global-debugging-information-directory-827"></a>
+<p><a name="index-separate-debugging-information-files-823"></a><a name="index-debugging-information-in-separate-files-824"></a><a name="index-_0040file_007b_002edebug_007d-subdirectories-825"></a><a name="index-debugging-information-directory_002c-global-826"></a><a name="index-global-debugging-information-directory-827"></a>
 <span class="sc">gdb</span> allows you to put a program's debugging information in a
 file separate from the executable itself, in a way that allows
 <span class="sc">gdb</span> to find and load the debugging information automatically. 
@@ -55,12 +53,12 @@ places:
 
      <ul>
 <li>the directory containing the executable file (that is, it will look
-for a file named <samp><var>execdir</var><span class="file">/</span><var>debugfile</var></samp>,
-<li>a subdirectory of that directory named <samp><span class="file">.debug</span></samp> (that is, the
-file <samp><var>execdir</var><span class="file">/.debug/</span><var>debugfile</var></samp>, and
+for a file named <var>execdir</var><span class="file">/</span><var>debugfile</var>,
+<li>a subdirectory of that directory named <span class="file">.debug</span> (that is, the
+file <var>execdir</var><span class="file">/.debug/</span><var>debugfile</var>, and
 <li>a subdirectory of the global debug file directory that includes the
 executable's full path, and the name from the link (that is, the file
-<samp><var>globaldebugdir</var><span class="file">/</span><var>execdir</var><span class="file">/</span><var>debugfile</var></samp>, where
+<var>globaldebugdir</var><span class="file">/</span><var>execdir</var><span class="file">/</span><var>debugfile</var>, where
 <var>globaldebugdir</var> is the global debug file directory, and
 <var>execdir</var> has been turned into a relative path). 
 </ul>
@@ -68,12 +66,12 @@ executable's full path, and the name from the link (that is, the file
 information file whose checksum matches that given in the link, and
 reads the debugging information from the first one it finds.
 
-   <p>So, for example, if you ask <span class="sc">gdb</span> to debug <samp><span class="file">/usr/bin/ls</span></samp>,
-which has a link containing the name <samp><span class="file">ls.debug</span></samp>, and the global
-debug directory is <samp><span class="file">/usr/lib/debug</span></samp>, then <span class="sc">gdb</span> will look
-for debug information in <samp><span class="file">/usr/bin/ls.debug</span></samp>,
-<samp><span class="file">/usr/bin/.debug/ls.debug</span></samp>, and
-<samp><span class="file">/usr/lib/debug/usr/bin/ls.debug</span></samp>.
+   <p>So, for example, if you ask <span class="sc">gdb</span> to debug <span class="file">/usr/bin/ls</span>,
+which has a link containing the name <span class="file">ls.debug</span>, and the global
+debug directory is <span class="file">/usr/lib/debug</span>, then <span class="sc">gdb</span> will look
+for debug information in <span class="file">/usr/bin/ls.debug</span>,
+<span class="file">/usr/bin/.debug/ls.debug</span>, and
+<span class="file">/usr/lib/debug/usr/bin/ls.debug</span>.
 
    <p>You can set the global debugging info directory's name, and view the
 name <span class="sc">gdb</span> is currently using.
@@ -88,7 +86,7 @@ information files.
 
    </dl>
 
-   <p><a name="index-g_t_0040code_007b_002egnu_005fdebuglink_007d-sections-830"></a><a name="index-debug-links-831"></a>A debug link is a special section of the executable file named
+   <p><a name="index-_0040code_007b_002egnu_005fdebuglink_007d-sections-830"></a><a name="index-debug-links-831"></a>A debug link is a special section of the executable file named
 <code>.gnu_debuglink</code>.  The section must contain:
 
      <ul>
@@ -115,11 +113,11 @@ in an ordinary executable.
 
    <p>As of December 2002, there is no standard GNU utility to produce
 separated executable / debugging information file pairs.  Ulrich
-Drepper's <samp><span class="file">elfutils</span></samp> package, starting with version 0.53,
+Drepper's <span class="file">elfutils</span> package, starting with version 0.53,
 contains a version of the <code>strip</code> command such that the command
 <kbd>strip foo -f foo.debug</kbd> removes the debugging information from
-the executable file <samp><span class="file">foo</span></samp>, places it in the file
-<samp><span class="file">foo.debug</span></samp>, and leaves behind a debug link in <samp><span class="file">foo</span></samp>.
+the executable file <span class="file">foo</span>, places it in the file
+<span class="file">foo.debug</span>, and leaves behind a debug link in <span class="file">foo</span>.
 
    <p>Since there are many different ways to compute CRC's (different
 polynomials, reversals, byte ordering, etc.), the simplest way to

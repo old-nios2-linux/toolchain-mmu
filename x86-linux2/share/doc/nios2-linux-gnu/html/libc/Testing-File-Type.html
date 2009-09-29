@@ -3,7 +3,7 @@
 <title>Testing File Type - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-Attributes.html#File-Attributes" title="File Attributes">
 <link rel="prev" href="Reading-Attributes.html#Reading-Attributes" title="Reading Attributes">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Testing-File-Type"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="File-Owner.html#File-Owner">File Owner</a>,
+<a name="Testing-File-Type"></a>Next:&nbsp;<a rel="next" accesskey="n" href="File-Owner.html#File-Owner">File Owner</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Reading-Attributes.html#Reading-Attributes">Reading Attributes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-Attributes.html#File-Attributes">File Attributes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">14.9.3 Testing the Type of a File</h4>
@@ -49,7 +47,7 @@ just the file type code, and compare this against constants for each of
 the supported file types.
 
    <p>All of the symbols listed in this section are defined in the header file
-<samp><span class="file">sys/stat.h</span></samp>. 
+<span class="file">sys/stat.h</span>. 
 <a name="index-sys_002fstat_002eh-1510"></a>
 The following predicate macros test the type of a file, given the value
 <var>m</var> which is the <code>st_mode</code> field returned by <code>stat</code> on
@@ -134,28 +132,28 @@ appropriate constant.  For example,
 <dt><code>S_IFDIR</code><dd><a name="index-S_005fIFDIR-1519"></a>This is the file type constant of a directory file.
 
      <!-- sys/stat.h -->
-     <!-- BSD -->
-     <br><dt><code>S_IFCHR</code><dd><a name="index-S_005fIFCHR-1520"></a>This is the file type constant of a character-oriented device file.
+<!-- BSD -->
+<br><dt><code>S_IFCHR</code><dd><a name="index-S_005fIFCHR-1520"></a>This is the file type constant of a character-oriented device file.
 
      <!-- sys/stat.h -->
-     <!-- BSD -->
-     <br><dt><code>S_IFBLK</code><dd><a name="index-S_005fIFBLK-1521"></a>This is the file type constant of a block-oriented device file.
+<!-- BSD -->
+<br><dt><code>S_IFBLK</code><dd><a name="index-S_005fIFBLK-1521"></a>This is the file type constant of a block-oriented device file.
 
      <!-- sys/stat.h -->
-     <!-- BSD -->
-     <br><dt><code>S_IFREG</code><dd><a name="index-S_005fIFREG-1522"></a>This is the file type constant of a regular file.
+<!-- BSD -->
+<br><dt><code>S_IFREG</code><dd><a name="index-S_005fIFREG-1522"></a>This is the file type constant of a regular file.
 
      <!-- sys/stat.h -->
-     <!-- BSD -->
-     <br><dt><code>S_IFLNK</code><dd><a name="index-S_005fIFLNK-1523"></a>This is the file type constant of a symbolic link.
+<!-- BSD -->
+<br><dt><code>S_IFLNK</code><dd><a name="index-S_005fIFLNK-1523"></a>This is the file type constant of a symbolic link.
 
      <!-- sys/stat.h -->
-     <!-- BSD -->
-     <br><dt><code>S_IFSOCK</code><dd><a name="index-S_005fIFSOCK-1524"></a>This is the file type constant of a socket.
+<!-- BSD -->
+<br><dt><code>S_IFSOCK</code><dd><a name="index-S_005fIFSOCK-1524"></a>This is the file type constant of a socket.
 
      <!-- sys/stat.h -->
-     <!-- BSD -->
-     <br><dt><code>S_IFIFO</code><dd><a name="index-S_005fIFIFO-1525"></a>This is the file type constant of a FIFO or pipe. 
+<!-- BSD -->
+<br><dt><code>S_IFIFO</code><dd><a name="index-S_005fIFIFO-1525"></a>This is the file type constant of a FIFO or pipe. 
 </dl>
 
    <p>The POSIX.1b standard introduced a few more objects which possibly can

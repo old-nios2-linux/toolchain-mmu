@@ -3,7 +3,7 @@
 <title>Internal - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="BFD-front-end.html#BFD-front-end" title="BFD front end">
 <link rel="prev" href="Opening-and-Closing.html#Opening-and-Closing" title="Opening and Closing">
@@ -39,19 +39,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Internal"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="File-Caching.html#File-Caching">File Caching</a>,
+<a name="Internal"></a>Next:&nbsp;<a rel="next" accesskey="n" href="File-Caching.html#File-Caching">File Caching</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Opening-and-Closing.html#Opening-and-Closing">Opening and Closing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="BFD-front-end.html#BFD-front-end">BFD front end</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">2.15 Implementation details</h3>
@@ -90,7 +88,7 @@ the target format of the BFD and mangled accordingly. The
 mangling performs any necessary endian translations and
 removes alignment restrictions.  Note that types accepted and
 returned by these macros are identical so they can be swapped
-around in macros&mdash;for example, <samp><span class="file">libaout.h</span></samp> defines <code>GET_WORD</code>
+around in macros&mdash;for example, <span class="file">libaout.h</span> defines <code>GET_WORD</code>
 to either <code>bfd_get_32</code> or <code>bfd_get_64</code>.
 
    <p>In the put routines, <var>val</var> must be a <code>bfd_vma</code>.  If we are on a

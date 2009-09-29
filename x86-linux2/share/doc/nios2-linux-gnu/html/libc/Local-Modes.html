@@ -3,7 +3,7 @@
 <title>Local Modes - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Terminal-Modes.html#Terminal-Modes" title="Terminal Modes">
 <link rel="prev" href="Control-Modes.html#Control-Modes" title="Control Modes">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Local-Modes"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Line-Speed.html#Line-Speed">Line Speed</a>,
+<a name="Local-Modes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Line-Speed.html#Line-Speed">Line Speed</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Control-Modes.html#Control-Modes">Control Modes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Terminal-Modes.html#Terminal-Modes">Terminal Modes</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">17.4.7 Local Modes</h4>
@@ -81,10 +79,10 @@ input, without which <code>ECHOE</code> is simply irrelevant.
 &mdash; Macro: tcflag_t <b>ECHOPRT</b><var><a name="index-ECHOPRT-1909"></a></var><br>
 <blockquote><p>This bit is like <code>ECHOE</code>, enables display of the ERASE character in
 a way that is geared to a hardcopy terminal.  When you type the ERASE
-character, a &lsquo;<samp><span class="samp">\</span></samp>&rsquo; character is printed followed by the first
+character, a <span class="samp">\</span> character is printed followed by the first
 character erased.  Typing the ERASE character again just prints the next
 character erased.  Then, the next time you type a normal character, a
-&lsquo;<samp><span class="samp">/</span></samp>&rsquo; character is printed before the character echoes.
+<span class="samp">/</span> character is printed before the character echoes.
 
         <p>This is a BSD extension, and exists only in BSD systems and the
 GNU system. 
@@ -132,8 +130,8 @@ is not set.
 <div class="defun">
 &mdash; Macro: tcflag_t <b>ECHOCTL</b><var><a name="index-ECHOCTL-1913"></a></var><br>
 <blockquote><p>If this bit is set and the <code>ECHO</code> bit is also set, echo control
-characters with &lsquo;<samp><span class="samp">^</span></samp>&rsquo; followed by the corresponding text character. 
-Thus, control-A echoes as &lsquo;<samp><span class="samp">^A</span></samp>&rsquo;.  This is usually the preferred mode
+characters with <span class="samp">^</span> followed by the corresponding text character. 
+Thus, control-A echoes as <span class="samp">^A</span>.  This is usually the preferred mode
 for interactive input, because echoing a control character back to the
 terminal could have some undesired effect on the terminal.
 
@@ -233,5 +231,5 @@ bit remains set until reprinting is finished.  See <a href="Editing-Characters.h
 </p></blockquote></div>
 
 <!-- EXTPROC is too obscure to document now.  -roland -->
-   </body></html>
+</body></html>
 

@@ -3,7 +3,7 @@
 <title>Common Usage - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Message-catalogs-a-la-X_002fOpen.html#Message-catalogs-a-la-X_002fOpen" title="Message catalogs a la X/Open">
 <link rel="prev" href="The-gencat-program.html#The-gencat-program" title="The gencat program">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Common-Usage"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="The-gencat-program.html#The-gencat-program">The gencat program</a>,
+<a name="Common-Usage"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="The-gencat-program.html#The-gencat-program">The gencat program</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Message-catalogs-a-la-X_002fOpen.html#Message-catalogs-a-la-X_002fOpen">Message catalogs a la X/Open</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">8.1.4 How to use the <code>catgets</code> interface</h4>
@@ -90,7 +88,7 @@ program itself.
 before the program sources can be compiled.  In the last section it was
 described how to generate a header containing the mapping of the names. 
 E.g., for the example message file given in the last section we could
-call the <code>gencat</code> program as follow (assume <samp><span class="file">ex.msg</span></samp> contains
+call the <code>gencat</code> program as follow (assume <span class="file">ex.msg</span> contains
 the sources).
 
 <pre class="smallexample">     gencat -H ex.h -o ex.cat ex.msg
@@ -181,7 +179,7 @@ process it using the <code>gencat</code> program.
      Hello "Hallo, Welt!\n"
 </pre>
    <p>Now we can start building the program (assume the message catalog source
-file is named <samp><span class="file">hello.msg</span></samp> and the program source file <samp><span class="file">hello.c</span></samp>):
+file is named <span class="file">hello.msg</span> and the program source file <span class="file">hello.c</span>):
 
 <pre class="smallexample">     <p><table class="cartouche" summary="cartouche" border="1"><tr><td>
      % gencat -H msgnrs.h -o hello.cat hello.msg
@@ -198,8 +196,8 @@ file is named <samp><span class="file">hello.msg</span></samp> and the program s
      </td></tr></table>
 </pre>
    <p>The call of the <code>gencat</code> program creates the missing header file
-<samp><span class="file">msgnrs.h</span></samp> as well as the message catalog binary.  The former is
-used in the compilation of <samp><span class="file">hello.c</span></samp> while the later is placed in a
+<span class="file">msgnrs.h</span> as well as the message catalog binary.  The former is
+used in the compilation of <span class="file">hello.c</span> while the later is placed in a
 directory in which the <code>catopen</code> function will try to locate it. 
 Please check the <code>LC_ALL</code> environment variable and the default path
 for <code>catopen</code> presented in the description above.

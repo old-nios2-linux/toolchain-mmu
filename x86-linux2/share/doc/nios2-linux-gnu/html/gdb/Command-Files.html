@@ -3,7 +3,7 @@
 <title>Command Files - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Sequences.html#Sequences" title="Sequences">
 <link rel="prev" href="Hooks.html#Hooks" title="Hooks">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Command-Files"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Output.html#Output">Output</a>,
+<a name="Command-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Output.html#Output">Output</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Hooks.html#Hooks">Hooks</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Sequences.html#Sequences">Sequences</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">21.3 Command Files</h3>
@@ -56,7 +54,7 @@ printed as they are executed.  An error in any command terminates
 execution of the command file and control is returned to the console.
 
    <p><span class="sc">gdb</span> searches for <var>filename</var> in the current directory and then
-on the search path (specified with the &lsquo;<samp><span class="samp">directory</span></samp>&rsquo; command).
+on the search path (specified with the <span class="samp">directory</span> command).
 
    <p>If <code>-v</code>, for verbose mode, is given then <span class="sc">gdb</span> displays
 each command as it is executed.  The option must be given before
@@ -76,8 +74,8 @@ the next command.
 <pre class="smallexample">     gdb &lt; cmds &gt; log 2&gt;&amp;1
 </pre>
    <p>(The syntax above will vary depending on the shell used.) This example
-will execute commands from the file <samp><span class="file">cmds</span></samp>. All output and errors
-would be directed to <samp><span class="file">log</span></samp>.
+will execute commands from the file <span class="file">cmds</span>. All output and errors
+would be directed to <span class="file">log</span>.
 
    <p>Since commands stored on command files tend to be more general than
 commands typed interactively, they frequently need to deal with

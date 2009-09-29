@@ -3,7 +3,7 @@
 <title>Source Files - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Program-Structure.html#Program-Structure" title="Program Structure">
 <link rel="prev" href="Main-Program.html#Main-Program" title="Main Program">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Source-Files"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Include-Files.html#Include-Files">Include Files</a>,
+<a name="Source-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Include-Files.html#Include-Files">Include Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Main-Program.html#Main-Program">Main Program</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Program-Structure.html#Program-Structure">Program Structure</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">2.2 Paths and Names of the Source Files</h3>
@@ -59,7 +57,7 @@ language has been specified via this mechanism.
 <br><dt><code>N_SO_OBJCPLUS</code> (0x33)<dd>Objective-C++
 </dl>
 
-   <p>Some compilers (for example, GCC2 and SunOS4 <samp><span class="file">/bin/cc</span></samp>) also
+   <p>Some compilers (for example, GCC2 and SunOS4 <span class="file">/bin/cc</span>) also
 include the directory in which the source was compiled, in a second
 <code>N_SO</code> symbol preceding the one containing the file name.  This
 symbol can be distinguished by the fact that it ends in a slash.  Code
@@ -79,7 +77,7 @@ directive which assembles to a <code>C_FILE</code> symbol; explaining this in
 detail is outside the scope of this document.
 
 <!-- FIXME: Exactly when should the empty N_SO be used?  Why? -->
-   <p>If it is useful to indicate the end of a source file, this is done with
+<p>If it is useful to indicate the end of a source file, this is done with
 an <code>N_SO</code> symbol with an empty string for the name.  The value is
 the address of the end of the text section for the file.  For some
 systems, there is no indication of the end of a source file, and you

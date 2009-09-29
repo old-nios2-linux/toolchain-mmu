@@ -3,7 +3,7 @@
 <title>Reading RTL - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="RTL.html#RTL" title="RTL">
 <link rel="prev" href="Sharing.html#Sharing" title="Sharing">
@@ -37,25 +37,23 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Reading-RTL"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Sharing.html#Sharing">Sharing</a>,
+<a name="Reading-RTL"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Sharing.html#Sharing">Sharing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="RTL.html#RTL">RTL</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">11.21 Reading RTL</h3>
 
 <p>To read an RTL object from a file, call <code>read_rtx</code>.  It takes one
 argument, a stdio stream, and returns a single RTL object.  This routine
-is defined in <samp><span class="file">read-rtl.c</span></samp>.  It is not available in the compiler
+is defined in <span class="file">read-rtl.c</span>.  It is not available in the compiler
 itself, only the various programs that generate the compiler back end
 from the machine description.
 
@@ -68,8 +66,8 @@ program is very dependent on the particular target machine.  And the RTL
 does not contain all the information about the program.
 
  <p>The proper way to interface GCC to a new language front end is with
-the &ldquo;tree&rdquo; data structure, described in the files <samp><span class="file">tree.h</span></samp> and
-<samp><span class="file">tree.def</span></samp>.  The documentation for this structure (see <a href="Trees.html#Trees">Trees</a>)
+the &ldquo;tree&rdquo; data structure, described in the files <span class="file">tree.h</span> and
+<span class="file">tree.def</span>.  The documentation for this structure (see <a href="Trees.html#Trees">Trees</a>)
 is incomplete.
 
 <!-- *-texinfo-*- -->
@@ -79,5 +77,5 @@ is incomplete.
 <!--  -->
 <!-- Control Flow Graph -->
 <!--  -->
- </body></html>
+</body></html>
 

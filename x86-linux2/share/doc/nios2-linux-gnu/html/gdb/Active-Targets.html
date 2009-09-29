@@ -3,7 +3,7 @@
 <title>Active Targets - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Targets.html#Targets" title="Targets">
 <link rel="next" href="Target-Commands.html#Target-Commands" title="Target Commands">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Active-Targets"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Target-Commands.html#Target-Commands">Target Commands</a>,
+<a name="Active-Targets"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Target-Commands.html#Target-Commands">Target Commands</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Targets.html#Targets">Targets</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">17.1 Active Targets</h3>
@@ -39,7 +37,7 @@ active targets, one in each class.  This allows you to (for example)
 start a process and inspect its activity without abandoning your work on
 a core file.
 
-   <p>For example, if you execute &lsquo;<samp><span class="samp">gdb a.out</span></samp>&rsquo;, then the executable file
+   <p>For example, if you execute <span class="samp">gdb a.out</span>, then the executable file
 <code>a.out</code> is the only active target.  If you designate a core file as
 well&mdash;presumably from a prior run that crashed and coredumped&mdash;then
 <span class="sc">gdb</span> has two active targets and uses them in tandem, looking

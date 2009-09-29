@@ -3,7 +3,7 @@
 <title>Processor Resources - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Resource-Usage-And-Limitation.html#Resource-Usage-And-Limitation" title="Resource Usage And Limitation">
 <link rel="prev" href="Memory-Resources.html#Memory-Resources" title="Memory Resources">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Processor-Resources"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Memory-Resources.html#Memory-Resources">Memory Resources</a>,
+<a name="Processor-Resources"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Memory-Resources.html#Memory-Resources">Memory Resources</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Resource-Usage-And-Limitation.html#Resource-Usage-And-Limitation">Resource Usage And Limitation</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">22.5 Learn about the processors available</h3>
@@ -39,14 +37,14 @@ to have at any time as many processes running as there are processors.
 To determine the number of processors available to the system one can
 run
 
-   <p><a name="index-g_t_005fSC_005fNPROCESSORS_005fCONF-2786"></a><a name="index-sysconf-2787"></a>
+   <p><a name="index-_005fSC_005fNPROCESSORS_005fCONF-2786"></a><a name="index-sysconf-2787"></a>
 <pre class="smallexample">       sysconf (_SC_NPROCESSORS_CONF)
 </pre>
    <p class="noindent">which returns the number of processors the operating system configured. 
 But it might be possible for the operating system to disable individual
 processors and so the call
 
-   <p><a name="index-g_t_005fSC_005fNPROCESSORS_005fONLN-2788"></a><a name="index-sysconf-2789"></a>
+   <p><a name="index-_005fSC_005fNPROCESSORS_005fONLN-2788"></a><a name="index-sysconf-2789"></a>
 <pre class="smallexample">       sysconf (_SC_NPROCESSORS_ONLN)
 </pre>
    <p class="noindent">returns the number of processors which are currently inline (i.e.,
@@ -54,7 +52,7 @@ available).
 
    <p>For these two pieces of information the GNU C library also provides
 functions to get the information directly.  The functions are declared
-in <samp><span class="file">sys/sysinfo.h</span></samp>.
+in <span class="file">sys/sysinfo.h</span>.
 
 <!-- sys/sysinfo.h -->
 <!-- GNU -->
@@ -91,7 +89,7 @@ place at most <var>nelem</var> elements into the array but never more than
 three elements.  The return value is the number of elements written to
 <var>loadavg</var>, or -1 on error.
 
-        <p>This function is declared in <samp><span class="file">stdlib.h</span></samp>. 
+        <p>This function is declared in <span class="file">stdlib.h</span>. 
 </p></blockquote></div>
 
    </body></html>

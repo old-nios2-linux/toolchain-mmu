@@ -3,7 +3,7 @@
 <title>Common Blocks - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Variables.html#Variables" title="Variables">
 <link rel="prev" href="Register-Variables.html#Register-Variables" title="Register Variables">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Common-Blocks"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Statics.html#Statics">Statics</a>,
+<a name="Common-Blocks"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Statics.html#Statics">Statics</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Register-Variables.html#Register-Variables">Register Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Variables.html#Variables">Variables</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">4.4 Common Blocks</h3>
@@ -50,7 +48,7 @@ compiler actually puts it both places).
 offset within the common block of that variable.  IBM uses the
 <code>C_ECOML</code> stab type, and there is a corresponding <code>N_ECOML</code>
 stab type, but Sun's Fortran compiler uses <code>N_GSYM</code> instead.  The
-variables within a common block use the &lsquo;<samp><span class="samp">V</span></samp>&rsquo; symbol descriptor (I
+variables within a common block use the <span class="samp">V</span> symbol descriptor (I
 believe this is true of all Fortran variables).  Other stabs (at least
 type declarations using <code>C_DECL</code>) can also be between the
 <code>N_BCOMM</code> and the <code>N_ECOMM</code>.

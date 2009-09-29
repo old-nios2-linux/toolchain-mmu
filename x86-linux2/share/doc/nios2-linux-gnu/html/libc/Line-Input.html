@@ -3,7 +3,7 @@
 <title>Line Input - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="I_002fO-on-Streams.html#I_002fO-on-Streams" title="I/O on Streams">
 <link rel="prev" href="Character-Input.html#Character-Input" title="Character Input">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Line-Input"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Unreading.html#Unreading">Unreading</a>,
+<a name="Line-Input"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Unreading.html#Unreading">Unreading</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Character-Input.html#Character-Input">Character Input</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="I_002fO-on-Streams.html#I_002fO-on-Streams">I/O on Streams</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">12.9 Line-Oriented Input</h3>
@@ -46,7 +44,7 @@ makes it easy to read lines reliably.
 reads a delimited record, defined as everything through the next
 occurrence of a specified delimiter character.
 
-   <p>All these functions are declared in <samp><span class="file">stdio.h</span></samp>.
+   <p>All these functions are declared in <span class="file">stdio.h</span>.
 
 <!-- stdio.h -->
 <!-- GNU -->
@@ -105,7 +103,7 @@ like this:
           {
             return getdelim (lineptr, n, '\n', stream);
           }
-</pre>
+     </pre>
         </blockquote></div>
 
 <!-- stdio.h -->

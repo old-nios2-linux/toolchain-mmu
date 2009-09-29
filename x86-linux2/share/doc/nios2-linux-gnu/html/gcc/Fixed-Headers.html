@@ -3,7 +3,7 @@
 <title>Fixed Headers - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Trouble.html#Trouble" title="Trouble">
 <link rel="prev" href="Incompatibilities.html#Incompatibilities" title="Incompatibilities">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Fixed-Headers"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Standard-Libraries.html#Standard-Libraries">Standard Libraries</a>,
+<a name="Fixed-Headers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Standard-Libraries.html#Standard-Libraries">Standard Libraries</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Incompatibilities.html#Incompatibilities">Incompatibilities</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Trouble.html#Trouble">Trouble</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">10.5 Fixed Header Files</h3>
@@ -69,9 +67,9 @@ doesn't do the right thing automatically.
      <ul>
 <li>If you update the system's header files, such as by installing a new
 system version, the fixed header files of GCC are not automatically
-updated.  They can be updated using the <samp><span class="command">mkheaders</span></samp> script
+updated.  They can be updated using the <span class="command">mkheaders</span> script
 installed in
-<samp><var>libexecdir</var><span class="file">/gcc/</span><var>target</var><span class="file">/</span><var>version</var><span class="file">/install-tools/</span></samp>.
+<var>libexecdir</var><span class="file">/gcc/</span><var>target</var><span class="file">/</span><var>version</var><span class="file">/install-tools/</span>.
 
      <li>On some systems, header file directories contain
 machine-specific symbolic links in certain places.  This makes it

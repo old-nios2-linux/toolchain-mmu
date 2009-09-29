@@ -3,7 +3,7 @@
 <title>Argp Help Flags - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Argp-Help.html#Argp-Help" title="Argp Help">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -15,17 +15,15 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Argp-Help-Flags"></a>
 <p>
-Up:&nbsp;<a rel="up" accesskey="u" href="Argp-Help.html#Argp-Help">Argp Help</a>
-<hr>
+<a name="Argp-Help-Flags"></a>Up:&nbsp;<a rel="up" accesskey="u" href="Argp-Help.html#Argp-Help">Argp Help</a>
+<hr><br>
 </div>
 
 <h4 class="subsection">25.3.10 Flags for the <code>argp_help</code> Function</h4>
@@ -36,14 +34,14 @@ is determined by the <var>flags</var> argument.  This should consist of any of
 the following flags, or'd together:
 
      <dl>
-<dt><code>ARGP_HELP_USAGE</code><a name="index-ARGP_005fHELP_005fUSAGE-3081"></a><dd>A unix &lsquo;<samp><span class="samp">Usage:</span></samp>&rsquo; message that explicitly lists all options.
+<dt><code>ARGP_HELP_USAGE</code><a name="index-ARGP_005fHELP_005fUSAGE-3081"></a><dd>A unix <span class="samp">Usage:</span> message that explicitly lists all options.
 
-     <br><dt><code>ARGP_HELP_SHORT_USAGE</code><a name="index-ARGP_005fHELP_005fSHORT_005fUSAGE-3082"></a><dd>A unix &lsquo;<samp><span class="samp">Usage:</span></samp>&rsquo; message that displays an appropriate placeholder to
+     <br><dt><code>ARGP_HELP_SHORT_USAGE</code><a name="index-ARGP_005fHELP_005fSHORT_005fUSAGE-3082"></a><dd>A unix <span class="samp">Usage:</span> message that displays an appropriate placeholder to
 indicate where the options go; useful for showing the non-option
 argument syntax.
 
-     <br><dt><code>ARGP_HELP_SEE</code><a name="index-ARGP_005fHELP_005fSEE-3083"></a><dd>A &lsquo;<samp><span class="samp">Try ... for more help</span></samp>&rsquo; message; &lsquo;<samp><span class="samp">...</span></samp>&rsquo; contains the
-program name and &lsquo;<samp><span class="samp">--help</span></samp>&rsquo;.
+     <br><dt><code>ARGP_HELP_SEE</code><a name="index-ARGP_005fHELP_005fSEE-3083"></a><dd>A <span class="samp">Try ... for more help</span> message; <span class="samp">...</span> contains the
+program name and <span class="samp">--help</span>.
 
      <br><dt><code>ARGP_HELP_LONG</code><a name="index-ARGP_005fHELP_005fLONG-3084"></a><dd>A verbose option help message that gives each option available along
 with its documentation string.
@@ -82,7 +80,7 @@ error.
 error.  This is used when no other specific error messages are
 appropriate or available.
 
-     <br><dt><code>ARGP_HELP_STD_HELP</code><a name="index-ARGP_005fHELP_005fSTD_005fHELP-3094"></a><dd>This prints the standard response for a &lsquo;<samp><span class="samp">--help</span></samp>&rsquo; option, and
+     <br><dt><code>ARGP_HELP_STD_HELP</code><a name="index-ARGP_005fHELP_005fSTD_005fHELP-3094"></a><dd>This prints the standard response for a <span class="samp">--help</span> option, and
 terminates the program successfully. 
 </dl>
 

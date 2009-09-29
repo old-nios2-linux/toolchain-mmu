@@ -3,7 +3,7 @@
 <title>Traditional Scheduling Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Traditional-Scheduling.html#Traditional-Scheduling" title="Traditional Scheduling">
 <link rel="prev" href="Traditional-Scheduling-Intro.html#Traditional-Scheduling-Intro" title="Traditional Scheduling Intro">
@@ -16,24 +16,22 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Traditional-Scheduling-Functions"></a>
 <p>
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Traditional-Scheduling-Intro.html#Traditional-Scheduling-Intro">Traditional Scheduling Intro</a>,
+<a name="Traditional-Scheduling-Functions"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Traditional-Scheduling-Intro.html#Traditional-Scheduling-Intro">Traditional Scheduling Intro</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Traditional-Scheduling.html#Traditional-Scheduling">Traditional Scheduling</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">22.3.4.2 Functions For Traditional Scheduling</h5>
 
 <p><a name="index-sys_002fresource_002eh-2754"></a>This section describes how you can read and set the nice value of a
-process.  All these symbols are declared in <samp><span class="file">sys/resource.h</span></samp>.
+process.  All these symbols are declared in <span class="file">sys/resource.h</span>.
 
    <p>The function and macro names are defined by POSIX, and refer to
 "priority," but the functions actually have to do with nice values, as
@@ -50,8 +48,8 @@ priority values:
 <dt><code>PRIO_MIN</code><a name="index-PRIO_005fMIN-2755"></a><dd>The lowest valid nice value.
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>PRIO_MAX</code><a name="index-PRIO_005fMAX-2756"></a><dd>The highest valid nice value. 
+<!-- BSD -->
+<br><dt><code>PRIO_MAX</code><a name="index-PRIO_005fMAX-2756"></a><dd>The highest valid nice value. 
 </dl>
 
 <!-- sys/resource.h -->
@@ -118,13 +116,13 @@ processes in which you are interested.  These are the possible values of
 <dt><code>PRIO_PROCESS</code><a name="index-PRIO_005fPROCESS-2759"></a><dd>One particular process.  The argument <var>id</var> is a process ID (pid).
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>PRIO_PGRP</code><a name="index-PRIO_005fPGRP-2760"></a><dd>All the processes in a particular process group.  The argument <var>id</var> is
+<!-- BSD -->
+<br><dt><code>PRIO_PGRP</code><a name="index-PRIO_005fPGRP-2760"></a><dd>All the processes in a particular process group.  The argument <var>id</var> is
 a process group ID (pgid).
 
      <!-- sys/resource.h -->
-     <!-- BSD -->
-     <br><dt><code>PRIO_USER</code><a name="index-PRIO_005fUSER-2761"></a><dd>All the processes owned by a particular user (i.e. whose real uid
+<!-- BSD -->
+<br><dt><code>PRIO_USER</code><a name="index-PRIO_005fUSER-2761"></a><dd>All the processes owned by a particular user (i.e. whose real uid
 indicates the user).  The argument <var>id</var> is a user ID (uid). 
 </dl>
 
@@ -152,7 +150,7 @@ same values as for <code>setpriority</code>.
             else
                 return -1;
           }
-</pre>
+     </pre>
         </blockquote></div>
 
    </body></html>

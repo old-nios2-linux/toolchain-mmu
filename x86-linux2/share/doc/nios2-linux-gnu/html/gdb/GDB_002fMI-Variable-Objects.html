@@ -3,7 +3,7 @@
 <title>GDB/MI Variable Objects - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB_002fMI.html#GDB_002fMI" title="GDB/MI">
 <link rel="prev" href="GDB_002fMI-Stack-Manipulation.html#GDB_002fMI-Stack-Manipulation" title="GDB/MI Stack Manipulation">
@@ -17,20 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="GDB%2fMI-Variable-Objects"></a>
-<a name="GDB_002fMI-Variable-Objects"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Data-Manipulation.html#GDB_002fMI-Data-Manipulation">GDB/MI Data Manipulation</a>,
+<a name="GDB_002fMI-Variable-Objects"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Data-Manipulation.html#GDB_002fMI-Data-Manipulation">GDB/MI Data Manipulation</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="GDB_002fMI-Stack-Manipulation.html#GDB_002fMI-Stack-Manipulation">GDB/MI Stack Manipulation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">25.12 <span class="sc">gdb/mi</span> Variable Objects</h3>
@@ -125,7 +122,7 @@ how it can be used.
 
 <h4 class="subheading">The <code>-var-create</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dcreate-1433"></a>
+<p><a name="index-_002dvar_002dcreate-1433"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -137,24 +134,24 @@ a variable, the result of an expression, a memory cell or a CPU
 register.
 
    <p>The <var>name</var> parameter is the string by which the object can be
-referenced.  It must be unique.  If &lsquo;<samp><span class="samp">-</span></samp>&rsquo; is specified, the varobj
+referenced.  It must be unique.  If <span class="samp">-</span> is specified, the varobj
 system will generate a string &ldquo;varNNNNNN&rdquo; automatically.  It will be
 unique provided that one does not specify <var>name</var> on that format. 
 The command fails if a duplicate name is found.
 
    <p>The frame under which the expression should be evaluated can be
-specified by <var>frame-addr</var>.  A &lsquo;<samp><span class="samp">*</span></samp>&rsquo; indicates that the current
+specified by <var>frame-addr</var>.  A <span class="samp">*</span> indicates that the current
 frame should be used.
 
    <p><var>expression</var> is any expression valid on the current language set (must not
-begin with a &lsquo;<samp><span class="samp">*</span></samp>&rsquo;), or one of the following:
+begin with a <span class="samp">*</span>), or one of the following:
 
      <ul>
-<li>&lsquo;<samp><span class="samp">*</span><var>addr</var></samp>&rsquo;, where <var>addr</var> is the address of a memory cell
+<li><span class="samp">*</span><var>addr</var>, where <var>addr</var> is the address of a memory cell
 
-     <li>&lsquo;<samp><span class="samp">*</span><var>addr</var><span class="samp">-</span><var>addr</var></samp>&rsquo; &mdash; a memory address range (TBD)
+     <li><span class="samp">*</span><var>addr</var><span class="samp">-</span><var>addr</var> &mdash; a memory address range (TBD)
 
-     <li>&lsquo;<samp><span class="samp">$</span><var>regname</var></samp>&rsquo; &mdash; a CPU register name
+     <li><span class="samp">$</span><var>regname</var> &mdash; a CPU register name
 </ul>
 
 <h5 class="subsubheading">Result</h5>
@@ -167,20 +164,20 @@ the <span class="sc">gdb</span> CLI:
 </pre>
    <h4 class="subheading">The <code>-var-delete</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002ddelete-1434"></a>
+<p><a name="index-_002dvar_002ddelete-1434"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -var-delete [ -c ] <var>name</var>
 </pre>
    <p>Deletes a previously created variable object and all of its children. 
-With the &lsquo;<samp><span class="samp">-c</span></samp>&rsquo; option, just deletes the children.
+With the <span class="samp">-c</span> option, just deletes the children.
 
    <p>Returns an error if the object <var>name</var> is not found.
 
 <h4 class="subheading">The <code>-var-set-format</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dset_002dformat-1435"></a>
+<p><a name="index-_002dvar_002dset_002dformat-1435"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -203,7 +200,7 @@ variable itself, and the children are not affected.
 
 <h4 class="subheading">The <code>-var-show-format</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dshow_002dformat-1436"></a>
+<p><a name="index-_002dvar_002dshow_002dformat-1436"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -216,7 +213,7 @@ variable itself, and the children are not affected.
 </pre>
    <h4 class="subheading">The <code>-var-info-num-children</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dinfo_002dnum_002dchildren-1437"></a>
+<p><a name="index-_002dvar_002dinfo_002dnum_002dchildren-1437"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -228,13 +225,15 @@ variable itself, and the children are not affected.
 </pre>
    <h4 class="subheading">The <code>-var-list-children</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dlist_002dchildren-1438"></a>
+<p><a name="index-_002dvar_002dlist_002dchildren-1438"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -var-list-children [<var>print-values</var>] <var>name</var>
 </pre>
-   <p><a name="g_t_002dvar_002dlist_002dchildren"></a>Return a list of the children of the specified variable object and
+   <p><a name="_002dvar_002dlist_002dchildren"></a>
+
+   <p>Return a list of the children of the specified variable object and
 create variable objects for them, if they do not already exist.  With
 a single argument or if <var>print-values</var> has a value for of 0 or
 <code>--no-values</code>, print only the names of the variables; if
@@ -256,7 +255,7 @@ and unions.
 </pre>
 <h4 class="subheading">The <code>-var-info-type</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dinfo_002dtype-1439"></a>
+<p><a name="index-_002dvar_002dinfo_002dtype-1439"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -270,7 +269,7 @@ returned as a string in the same format as it is output by the
 </pre>
    <h4 class="subheading">The <code>-var-info-expression</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dinfo_002dexpression-1440"></a>
+<p><a name="index-_002dvar_002dinfo_002dexpression-1440"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -284,7 +283,7 @@ returned as a string in the same format as it is output by the
 
 <h4 class="subheading">The <code>-var-show-attributes</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dshow_002dattributes-1441"></a>
+<p><a name="index-_002dvar_002dshow_002dattributes-1441"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -298,7 +297,7 @@ returned as a string in the same format as it is output by the
 
 <h4 class="subheading">The <code>-var-evaluate-expression</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002devaluate_002dexpression-1442"></a>
+<p><a name="index-_002dvar_002devaluate_002dexpression-1442"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -315,14 +314,14 @@ before the value of a child variable can be evaluated.
 
 <h4 class="subheading">The <code>-var-assign</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dassign-1443"></a>
+<p><a name="index-_002dvar_002dassign-1443"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -var-assign <var>name</var> <var>expression</var>
 </pre>
    <p>Assigns the value of <var>expression</var> to the variable object specified
-by <var>name</var>.  The object must be &lsquo;<samp><span class="samp">editable</span></samp>&rsquo;.  If the variable's
+by <var>name</var>.  The object must be <span class="samp">editable</span>.  If the variable's
 value is altered by the assign, the variable will show up in any
 subsequent <code>-var-update</code> list.
 
@@ -338,7 +337,7 @@ subsequent <code>-var-update</code> list.
 </pre>
 <h4 class="subheading">The <code>-var-update</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dupdate-1444"></a>
+<p><a name="index-_002dvar_002dupdate-1444"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -349,13 +348,13 @@ subsequent <code>-var-update</code> list.
 list of variable objects whose values have changed; <var>name</var> must
 be a root variable object.  Here, &ldquo;changed&rdquo; means that the result of
 <code>-var-evaluate-expression</code> before and after the
-<code>-var-update</code> is different.  If &lsquo;<samp><span class="samp">*</span></samp>&rsquo; is used as the variable
+<code>-var-update</code> is different.  If <span class="samp">*</span> is used as the variable
 object names, all existing variable objects are updated, except
-for frozen ones (see <a href="_002dvar_002dset_002dfrozen.html#g_t_002dvar_002dset_002dfrozen">-var-set-frozen</a>).  The option
+for frozen ones (see <a href="_002dvar_002dset_002dfrozen.html#_002dvar_002dset_002dfrozen">-var-set-frozen</a>).  The option
 <var>print-values</var> determines whether both names and values, or just
 names are printed.  The possible values of this options are the same
-as for <code>-var-list-children</code> (see <a href="_002dvar_002dlist_002dchildren.html#g_t_002dvar_002dlist_002dchildren">-var-list-children</a>).  It is
-recommended to use the &lsquo;<samp><span class="samp">--all-values</span></samp>&rsquo; option, to reduce the
+as for <code>-var-list-children</code> (see <a href="_002dvar_002dlist_002dchildren.html#_002dvar_002dlist_002dchildren">-var-list-children</a>).  It is
+recommended to use the <span class="samp">--all-values</span> option, to reduce the
 number of MI commands needed on each program stop.
 
 <h5 class="subsubheading">Example</h5>
@@ -369,7 +368,8 @@ number of MI commands needed on each program stop.
      type_changed="false"}]
      (gdb)
 </pre>
-   <p><a name="g_t_002dvar_002dupdate"></a>The field in_scope may take three values:
+   <p><a name="_002dvar_002dupdate"></a>
+The field in_scope may take three values:
 
      <dl>
 <dt><code>"true"</code><dd>The variable object's current value is valid.
@@ -390,15 +390,15 @@ be prepared for this possibility.  See <a href="GDB_002fMI-Development-and-Front
 
 <h4 class="subheading">The <code>-var-set-frozen</code> Command</h4>
 
-<p><a name="index-g_t_002dvar_002dset_002dfrozen-1445"></a><a name="g_t_002dvar_002dset_002dfrozen"></a>
+<p><a name="index-_002dvar_002dset_002dfrozen-1445"></a><a name="_002dvar_002dset_002dfrozen"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -var-set-frozen <var>name</var> <var>flag</var>
 </pre>
    <p>Set the frozenness flag on the variable object <var>name</var>.  The
-<var>flag</var> parameter should be either &lsquo;<samp><span class="samp">1</span></samp>&rsquo; to make the variable
-frozen or &lsquo;<samp><span class="samp">0</span></samp>&rsquo; to make it unfrozen.  If a variable object is
+<var>flag</var> parameter should be either <span class="samp">1</span> to make the variable
+frozen or <span class="samp">0</span> to make it unfrozen.  If a variable object is
 frozen, then neither itself, nor any of its children, are
 implicitly updated by <code>-var-update</code> of
 a parent variable or by <code>-var-update *</code>.  Only
@@ -416,5 +416,5 @@ Unfreezing a variable does not update it, only subsequent
      (gdb)
 </pre>
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-   </body></html>
+</body></html>
 

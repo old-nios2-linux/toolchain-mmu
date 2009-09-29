@@ -3,7 +3,7 @@
 <title>Gimplification pass - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Passes.html#Passes" title="Passes">
 <link rel="prev" href="Parsing-pass.html#Parsing-pass" title="Parsing pass">
@@ -38,19 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Gimplification-pass"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Pass-manager.html#Pass-manager">Pass manager</a>,
+<a name="Gimplification-pass"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Pass-manager.html#Pass-manager">Pass manager</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Parsing-pass.html#Parsing-pass">Parsing pass</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Passes.html#Passes">Passes</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">8.2 Gimplification pass</h3>
@@ -68,7 +66,7 @@ Usually it is easier to generate GENERIC trees plus extensions
 and let the language-independent gimplifier do most of the work.
 
  <p><a name="index-gimplify_005ffunction_005ftree-215"></a><a name="index-gimplify_005fexpr-216"></a><a name="index-lang_005fhooks_002egimplify_005fexpr-217"></a>The main entry point to this pass is <code>gimplify_function_tree</code>
-located in <samp><span class="file">gimplify.c</span></samp>.  From here we process the entire
+located in <span class="file">gimplify.c</span>.  From here we process the entire
 function gimplifying each statement in turn.  The main workhorse
 for this pass is <code>gimplify_expr</code>.  Approximately everything
 passes through here at least once, and it is from here that we

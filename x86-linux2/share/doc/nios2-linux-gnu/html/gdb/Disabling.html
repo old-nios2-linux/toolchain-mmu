@@ -3,7 +3,7 @@
 <title>Disabling - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Breakpoints.html#Breakpoints" title="Breakpoints">
 <link rel="prev" href="Delete-Breaks.html#Delete-Breaks" title="Delete Breaks">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Disabling"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Conditions.html#Conditions">Conditions</a>,
+<a name="Disabling"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Conditions.html#Conditions">Conditions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Delete-Breaks.html#Delete-Breaks">Delete Breaks</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Breakpoints.html#Breakpoints">Breakpoints</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">5.1.5 Disabling Breakpoints</h4>
@@ -84,7 +82,7 @@ Breakpoints set by the <code>tbreak</code> command start out in this state.
 
 <!-- FIXME: I think the following ``Except for [...] @code{tbreak}'' is -->
 <!-- confusing: tbreak is also initially enabled. -->
-   <p>Except for a breakpoint set with <code>tbreak</code> (see <a href="Set-Breaks.html#Set-Breaks">Setting Breakpoints</a>), breakpoints that you set are initially enabled;
+<p>Except for a breakpoint set with <code>tbreak</code> (see <a href="Set-Breaks.html#Set-Breaks">Setting Breakpoints</a>), breakpoints that you set are initially enabled;
 subsequently, they become disabled or enabled only when you use one of
 the commands above.  (The command <code>until</code> can set and delete a
 breakpoint of its own, but it does not change the state of your other

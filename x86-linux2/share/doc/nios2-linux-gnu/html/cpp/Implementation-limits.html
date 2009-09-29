@@ -3,7 +3,7 @@
 <title>Implementation limits - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Implementation-Details.html#Implementation-Details" title="Implementation Details">
 <link rel="prev" href="Implementation_002ddefined-behavior.html#Implementation_002ddefined-behavior" title="Implementation-defined behavior">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
--->
+man end-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,19 +41,17 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Implementation-limits"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Obsolete-Features.html#Obsolete-Features">Obsolete Features</a>,
+<a name="Implementation-limits"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Obsolete-Features.html#Obsolete-Features">Obsolete Features</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Implementation_002ddefined-behavior.html#Implementation_002ddefined-behavior">Implementation-defined behavior</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Implementation-Details.html#Implementation-Details">Implementation Details</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">11.2 Implementation limits</h3>
@@ -63,7 +61,7 @@ CPP has a small number of internal limits.  This section lists the
 limits which the C standard requires to be no lower than some minimum,
 and all the others known.  It is intended that there should be as few limits
 as possible.  If you encounter an undocumented or inconvenient limit,
-please report that as a bug.  See <a href="../gcc/Bugs.html#Bugs">Reporting Bugs</a>.
+please report that as a bug.  See <a href="../gcc/Bugs.html#Bugs">Reporting Bugs (Using the GNU Compiler Collection (GCC))</a>.
 
    <p>Where we say something is limited <dfn>only by available memory</dfn>, that
 means that internal data structures impose no intrinsic limit, and space
@@ -73,7 +71,7 @@ allocated by the compiler at the same time, the amount of memory
 consumed by other processes on the same computer, etc.
 
      <ul>
-<li>Nesting levels of &lsquo;<samp><span class="samp">#include</span></samp>&rsquo; files.
+<li>Nesting levels of <span class="samp">#include</span> files.
 
      <p>We impose an arbitrary limit of 200 levels, to avoid runaway recursion. 
 The standard requires at least 15 levels.

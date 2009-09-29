@@ -3,7 +3,7 @@
 <title>Builtin Types - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Types.html#Types" title="Types">
 <link rel="next" href="Miscellaneous-Types.html#Miscellaneous-Types" title="Miscellaneous Types">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Builtin-Types"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Miscellaneous-Types.html#Miscellaneous-Types">Miscellaneous Types</a>,
+<a name="Builtin-Types"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Miscellaneous-Types.html#Miscellaneous-Types">Miscellaneous Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Types.html#Types">Types</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">5.1 Builtin Types</h3>
@@ -41,7 +39,7 @@ enough information to distinguish the type from other types.
 
    <p>The traditional way to define builtin types is convoluted, so new ways
 have been invented to describe them.  Sun's <code>acc</code> uses special
-builtin type descriptors (&lsquo;<samp><span class="samp">b</span></samp>&rsquo; and &lsquo;<samp><span class="samp">R</span></samp>&rsquo;), and IBM uses negative
+builtin type descriptors (<span class="samp">b</span> and <span class="samp">R</span>), and IBM uses negative
 type numbers.  GDB accepts all three ways, as of version 4.8; dbx just
 accepts the traditional builtin types and perhaps one of the other two
 formats.  The following sections describe each of these formats.

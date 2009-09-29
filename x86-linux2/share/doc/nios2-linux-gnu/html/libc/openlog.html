@@ -3,7 +3,7 @@
 <title>openlog - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages" title="Submitting Syslog Messages">
 <link rel="next" href="syslog_003b-vsyslog.html#syslog_003b-vsyslog" title="syslog; vsyslog">
@@ -16,31 +16,29 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="openlog"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="syslog_003b-vsyslog.html#syslog_003b-vsyslog">syslog; vsyslog</a>,
+<a name="openlog"></a>Next:&nbsp;<a rel="next" accesskey="n" href="syslog_003b-vsyslog.html#syslog_003b-vsyslog">syslog; vsyslog</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages">Submitting Syslog Messages</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">18.2.1 openlog</h4>
 
 <p>The symbols referred to in this section are declared in the file
-<samp><span class="file">syslog.h</span></samp>.
+<span class="file">syslog.h</span>.
 
 <!-- syslog.h -->
 <!-- BSD -->
 <div class="defun">
 &mdash; Function: void <b>openlog</b> (<var>const char *ident, int option, int facility</var>)<var><a name="index-openlog-2033"></a></var><br>
 <blockquote>
-        <p><code>openlog</code> opens or reopens a connection to Syslog in preparation
+<p><code>openlog</code> opens or reopens a connection to Syslog in preparation
 for submitting messages.
 
         <p><var>ident</var> is an arbitrary identification string which future
@@ -80,13 +78,13 @@ get unloaded, as in this example:
           
             closelog ();
           }
-</pre>
+     </pre>
         <p>Without the call to <code>closelog</code>, future invocations of <code>syslog</code>
 by the program using the shared library may crash, if the library gets
 unloaded and the memory containing the string <code>"mylibrary"</code> becomes
 unmapped.  This is a limitation of the BSD syslog interface.
 
-        <p><code>openlog</code> may or may not open the <samp><span class="file">/dev/log</span></samp> socket, depending
+        <p><code>openlog</code> may or may not open the <span class="file">/dev/log</span> socket, depending
 on <var>option</var>.  If it does, it tries to open it and connect it as a
 stream socket.  If that doesn't work, it tries to open it and connect it
 as a datagram socket.  The socket has the &ldquo;Close on Exec&rdquo; attribute,
@@ -116,7 +114,7 @@ receives to the console).
 on this connection inserts the calling process' Process ID (PID) into
 the message.  When off, <code>openlog</code> does not insert the PID.
 
-          <br><dt><code>LOG_NDELAY</code><dd>When on, <code>openlog</code> opens and connects the <samp><span class="file">/dev/log</span></samp> socket. 
+          <br><dt><code>LOG_NDELAY</code><dd>When on, <code>openlog</code> opens and connects the <span class="file">/dev/log</span> socket. 
 When off, a future <code>syslog</code> call must open and connect the socket.
 
           <p><strong>Portability note:</strong>  In early systems, the sense of this bit was
@@ -142,12 +140,12 @@ LOG_NDELAY and the socket is already open and connected, <code>openlog</code>
 just leaves it that way.
 
      <!-- There is a bug in closelog() (glibc 2.1.3) wherein it does not reset the -->
-     <!-- default log facility to LOG_USER, which means the default default log -->
-     <!-- facility could be whatever the default log facility was for a previous -->
-     <!-- Syslog connection.  I have documented what the function should be rather -->
-     <!-- than what it is because I think if anyone ever gets concerned, the code -->
-     <!-- will change. -->
-        </blockquote></div>
+<!-- default log facility to LOG_USER, which means the default default log -->
+<!-- facility could be whatever the default log facility was for a previous -->
+<!-- Syslog connection.  I have documented what the function should be rather -->
+<!-- than what it is because I think if anyone ever gets concerned, the code -->
+<!-- will change. -->
+</blockquote></div>
 
    </body></html>
 

@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.13 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -1840,7 +1840,7 @@ for this function is in `stdlib.h'.
 
      This function actually terminates the process by raising a
      `SIGABRT' signal, and your program can include a handler to
-     intercept this signal; see *note Signal Handling::.
+     intercept this signal; see *Note Signal Handling::.
 
    *Future Change Warning:* Proposed Federal censorship regulations may
 prohibit us from giving you information about the possibility of
@@ -1875,10 +1875,10 @@ terminates, or as a result of a signal--the following things happen:
 
    * All open file descriptors in the process are closed.  *Note
      Low-Level I/O::.  Note that streams are not flushed automatically
-     when the process terminates; see *note I/O on Streams::.
+     when the process terminates; see *Note I/O on Streams::.
 
    * A process exit status is saved to be reported back to the parent
-     process via `wait' or `waitpid'; see *note Process Completion::.
+     process via `wait' or `waitpid'; see *Note Process Completion::.
      If the program exited, this status includes as its low-order 8
      bits the program exit status.
 
@@ -2018,7 +2018,7 @@ running in the parent process or the child.
 
    Having several processes run the same program is only occasionally
 useful.  But the child can execute another program using one of the
-`exec' functions; see *note Executing a File::.  The program that the
+`exec' functions; see *Note Executing a File::.  The program that the
 process is executing is called its "process image".  Starting execution
 of a new program causes the process to forget all about its previous
 process image; when the new program exits, the process exits too,
@@ -2094,7 +2094,7 @@ parent process are:
      descriptor is shared by both processes; *note File Position::.
 
    * The elapsed processor times for the child process are set to zero;
-     see *note Processor Time::.
+     see *Note Processor Time::.
 
    * The child doesn't inherit file locks set by the parent process.
      *Note Control Operations::.
@@ -2161,7 +2161,7 @@ header file `unistd.h'.
      access these arguments.
 
      The environment for the new process image is taken from the
-     `environ' variable of the current process image; see *note
+     `environ' variable of the current process image; see *Note
      Environment Variables::, for information about environments.
 
  -- Function: int execl (const char *FILENAME, const char *ARG0, ...)
@@ -2174,7 +2174,7 @@ header file `unistd.h'.
      This is similar to `execv', but permits you to specify the
      environment for the new program explicitly as the ENV argument.
      This should be an array of strings in the same format as for the
-     `environ' variable; see *note Environment Access::.
+     `environ' variable; see *Note Environment Access::.
 
  -- Function: int execle (const char *FILENAME, const char *ARG0, char
           *const ENV[], ...)
@@ -2256,28 +2256,28 @@ locations.  But many other attributes of the process are unchanged:
 
    * File mode creation mask.  *Note Setting Permissions::.
 
-   * Process signal mask; see *note Process Signal Mask::.
+   * Process signal mask; see *Note Process Signal Mask::.
 
-   * Pending signals; see *note Blocking Signals::.
+   * Pending signals; see *Note Blocking Signals::.
 
-   * Elapsed processor time associated with the process; see *note
+   * Elapsed processor time associated with the process; see *Note
      Processor Time::.
 
    If the set-user-ID and set-group-ID mode bits of the process image
 file are set, this affects the effective user ID and effective group ID
 (respectively) of the process.  These concepts are discussed in detail
-in *note Process Persona::.
+in *Note Process Persona::.
 
    Signals that are set to be ignored in the existing process image are
 also set to be ignored in the new process image.  All other signals are
 set to the default action in the new process image.  For more
-information about signals, see *note Signal Handling::.
+information about signals, see *Note Signal Handling::.
 
    File descriptors open in the existing process image remain open in
 the new process image, unless they have the `FD_CLOEXEC'
 (close-on-exec) flag set.  The files that remain open inherit all
 attributes of the open file description from the existing process image,
-including file locks.  File descriptors are discussed in *note
+including file locks.  File descriptors are discussed in *Note
 Low-Level I/O::.
 
    Streams, by contrast, cannot survive through `exec' functions,
@@ -2770,7 +2770,7 @@ reading or as writing.  (The description of each operation should say
 which.)
 
    For more information about the primitive `read' and `write'
-functions, see *note I/O Primitives::.
+functions, see *Note I/O Primitives::.
 
 
 File: libc.info,  Node: Orphaned Process Groups,  Next: Implementing a Shell,  Prev: Access to the Terminal,  Up: Job Control
@@ -3004,7 +3004,7 @@ its controlling terminal, it can launch jobs in response to commands
 typed by the user.
 
    To create the processes in a process group, you use the same `fork'
-and `exec' functions described in *note Process Creation Concepts::.
+and `exec' functions described in *Note Process Creation Concepts::.
 Since there are multiple child processes involved, though, things are a
 little more complicated and you must be careful to do things in the
 right order.  Otherwise, nasty race conditions can result.
@@ -3017,7 +3017,7 @@ in that group.  The sample shell program presented in this chapter uses
 the first approach because it makes bookkeeping somewhat simpler.
 
    As each process is forked, it should put itself in the new process
-group by calling `setpgid'; see *note Process Group Functions::.  The
+group by calling `setpgid'; see *Note Process Group Functions::.  The
 first process in the new group becomes its "process group leader", and
 its process ID becomes the "process group ID" for the group.
 
@@ -3039,7 +3039,7 @@ well as by each of its child processes, to avoid race conditions.
 actions.
 
    During initialization, the shell process set itself to ignore job
-control signals; see *note Initializing the Shell::.  As a result, any
+control signals; see *Note Initializing the Shell::.  As a result, any
 child processes it creates also ignore these signals by inheritance.
 This is definitely undesirable, so each child process should explicitly
 set the actions for these signals back to `SIG_DFL' just after it is
@@ -3124,7 +3124,7 @@ process group as the shell itself.
    Next, here is the function that actually launches a complete job.
 After creating the child processes, this function calls some other
 functions to put the newly created job into the foreground or
-background; these are discussed in *note Foreground and Background::.
+background; these are discussed in *Note Foreground and Background::.
 
      void
      launch_job (job *j, int foreground)
@@ -3204,7 +3204,7 @@ be done when a background job is launched.
    When a foreground job is launched, the shell must first give it
 access to the controlling terminal by calling `tcsetpgrp'.  Then, the
 shell should wait for processes in that process group to terminate or
-stop.  This is discussed in more detail in *note Stopped and Terminated
+stop.  This is discussed in more detail in *Note Stopped and Terminated
 Jobs::.
 
    When all of the processes in the group have either completed or
@@ -3219,7 +3219,7 @@ the shell should restore its own saved terminal modes before
 continuing.  In case the job is merely stopped, the shell should first
 save the current terminal modes so that it can restore them later if
 the job is continued.  The functions for dealing with terminal modes are
-`tcgetattr' and `tcsetattr'; these are described in *note Terminal
+`tcgetattr' and `tcsetattr'; these are described in *Note Terminal
 Modes::.
 
    Here is the sample shell's function for doing all of this.
@@ -3280,7 +3280,7 @@ File: libc.info,  Node: Stopped and Terminated Jobs,  Next: Continuing Stopped J
 
 When a foreground process is launched, the shell must block until all of
 the processes in that job have either terminated or stopped.  It can do
-this by calling the `waitpid' function; see *note Process Completion::.
+this by calling the `waitpid' function; see *Note Process Completion::.
 Use the `WUNTRACED' option so that status is reported for processes
 that stop as well as processes that terminate.
 
@@ -3443,7 +3443,7 @@ complete, as if the job had just been launched in the foreground.
    The sample shell program handles both newly created and continued
 jobs with the same pair of functions, `put_job_in_foreground' and
 `put_job_in_background'.  The definitions of these functions were given
-in *note Foreground and Background::.  When continuing a stopped job, a
+in *Note Foreground and Background::.  When continuing a stopped job, a
 nonzero value is passed as the CONT argument to ensure that the
 `SIGCONT' signal is sent and the terminal modes reset, as appropriate.
 
@@ -3561,7 +3561,7 @@ it has one).  To find the name of the specific terminal device, use
      represents the size of a string large enough to hold the file name
      returned by `ctermid'.
 
-   See also the `isatty' and `ttyname' functions, in *note Is It a
+   See also the `isatty' and `ttyname' functions, in *Note Is It a
 Terminal::.
 
 
@@ -4288,7 +4288,7 @@ done like this:
 
      gcc -shared -o libnss_NAME.so.2 -Wl,-soname,libnss_NAME.so.2 OBJECTS
 
-*note Options for Linking: (gcc)Link Options, to learn more about this
+*Note Options for Linking: (gcc)Link Options, to learn more about this
 command line.
 
    To use the new module the library must be able to find it.  This can
@@ -4329,7 +4329,7 @@ the database (e.g., it is `pw' for the password database).
 
      One special case for this function is that it takes an additional
      argument for some DATABASEs (i.e., the interface is `int setDBent
-     (int)').  *note Host Names::, which describes the `sethostent'
+     (int)').  *Note Host Names::, which describes the `sethostent'
      function.
 
      The return value should be NSS_STATUS_SUCCESS or according to the
@@ -4474,7 +4474,7 @@ Each user account on a computer system is identified by a "user name"
 (or "login name") and "user ID".  Normally, each user name has a unique
 user ID, but it is possible for several login names to have the same
 user ID.  The user names and corresponding user IDs are stored in a
-data base which you can access as described in *note User Database::.
+data base which you can access as described in *Note User Database::.
 
    Users are classified in "groups".  Each user name belongs to one
 "default group" and may also belong to any number of "supplementary
@@ -4511,7 +4511,7 @@ important.
 lifetime of a process.  *Note Why Change Persona::.
 
    For details on how a process's effective user ID and group IDs affect
-its permission to access files, see *note Access Permission::.
+its permission to access files, see *Note Access Permission::.
 
    The effective user ID of a process also controls permissions for
 sending signals using the `kill' function.  *Note Signaling Another
@@ -5105,7 +5105,7 @@ name of the user who is running a process, and the name of the user who
 logged in the current session.  See also the function `getuid' and
 friends (*note Reading Persona::).  How this information is collected by
 the system and how to control/add/remove information from the background
-storage is described in *note User Accounting Database::.
+storage is described in *Note User Accounting Database::.
 
    The `getlogin' function is declared in `unistd.h', while `cuserid'
 and `L_cuserid' are declared in `stdio.h'.  
@@ -5136,7 +5136,7 @@ and `L_cuserid' are declared in `stdio.h'.
 
    These functions let your program identify positively the user who is
 running or the user who logged in this session.  (These can differ when
-setuid programs are involved; see *note Process Persona::.)  The user
+setuid programs are involved; see *Note Process Persona::.)  The user
 cannot do anything to fool these functions.
 
    For most purposes, it is more useful to use the environment variable
@@ -5457,8 +5457,8 @@ differences in the return types, and there are considerable differences
 between the various definitions of `struct utmp'.  When programming for
 the GNU system, it is probably best to stick with the functions
 described in this section.  If however, you want your program to be
-portable, consider using the XPG functions described in *note XPG
-Functions::, or take a look at the BSD compatible functions in *note
+portable, consider using the XPG functions described in *Note XPG
+Functions::, or take a look at the BSD compatible functions in *Note
 Logging In and Out::.
 
 
@@ -6242,7 +6242,7 @@ can make changes.
 * System Parameters::           Getting and setting various system parameters
 
    To get information on parameters of the system that are built into
-the system, such as the maximum length of a filename, *note System
+the system, such as the maximum length of a filename, *Note System
 Configuration::.
 
 
@@ -6412,7 +6412,7 @@ associated data type are declared in the header file `sys/utsname.h'.
    As a bonus, `uname' also gives some information identifying the
 particular system your program is running on.  This is the same
 information which you can get with functions targetted to this purpose
-described in *note Host Identification::.
+described in *Note Host Identification::.
 
  -- Data Type: struct utsname
      The `utsname' structure is used to hold information returned by
@@ -6457,13 +6457,13 @@ described in *note Host Identification::.
     `char nodename[]'
           This is the host name of this particular computer.  In the
           GNU C library, the value is the same as that returned by
-          `gethostname'; see *note Host Identification::.
+          `gethostname'; see *Note Host Identification::.
 
           gethostname() is implemented with a call to uname().
 
     `char domainname[]'
           This is the NIS or YP domain name.  It is the same value
-          returned by `getdomainname'; see *note Host Identification::.
+          returned by `getdomainname'; see *Note Host Identification::.
           This element is a relatively recent invention and use of it
           is not as portable as use of the rest of the structure.
 
@@ -6597,7 +6597,7 @@ defined in `fstab.h'.
           part, introduced by an `=' character.
 
           If the value of this element must be processed it should
-          ideally be done using the `getsubopt' function; see *note
+          ideally be done using the `getsubopt' function; see *Note
           Suboptions::.
 
     `const char *fs_type'

@@ -3,7 +3,7 @@
 <title>Formatting Calendar Time - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Calendar-Time.html#Calendar-Time" title="Calendar Time">
 <link rel="prev" href="High-Accuracy-Clock.html#High-Accuracy-Clock" title="High Accuracy Clock">
@@ -17,25 +17,23 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Formatting-Calendar-Time"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Parsing-Date-and-Time.html#Parsing-Date-and-Time">Parsing Date and Time</a>,
+<a name="Formatting-Calendar-Time"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Parsing-Date-and-Time.html#Parsing-Date-and-Time">Parsing Date and Time</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="High-Accuracy-Clock.html#High-Accuracy-Clock">High Accuracy Clock</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Calendar-Time.html#Calendar-Time">Calendar Time</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">21.4.5 Formatting Calendar Time</h4>
 
 <p>The functions described in this section format calendar time values as
-strings.  These functions are declared in the header file <samp><span class="file">time.h</span></samp>. 
+strings.  These functions are declared in the header file <span class="file">time.h</span>. 
 <a name="index-time_002eh-2655"></a>
 <!-- time.h -->
 <!-- ISO -->
@@ -46,13 +44,13 @@ strings.  These functions are declared in the header file <samp><span class="fil
 <var>brokentime</var> points to into a string in a standard format:
 
      <pre class="smallexample">          "Tue May 21 13:46:22 1991\n"
-</pre>
-        <p>The abbreviations for the days of week are: &lsquo;<samp><span class="samp">Sun</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Mon</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">Tue</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Wed</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Thu</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Fri</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">Sat</span></samp>&rsquo;.
+     </pre>
+        <p>The abbreviations for the days of week are: <span class="samp">Sun</span>, <span class="samp">Mon</span>,
+<span class="samp">Tue</span>, <span class="samp">Wed</span>, <span class="samp">Thu</span>, <span class="samp">Fri</span>, and <span class="samp">Sat</span>.
 
-        <p>The abbreviations for the months are: &lsquo;<samp><span class="samp">Jan</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Feb</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">Mar</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Apr</span></samp>&rsquo;, &lsquo;<samp><span class="samp">May</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Jun</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Jul</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Aug</span></samp>&rsquo;,
-&lsquo;<samp><span class="samp">Sep</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Oct</span></samp>&rsquo;, &lsquo;<samp><span class="samp">Nov</span></samp>&rsquo;, and &lsquo;<samp><span class="samp">Dec</span></samp>&rsquo;.
+        <p>The abbreviations for the months are: <span class="samp">Jan</span>, <span class="samp">Feb</span>,
+<span class="samp">Mar</span>, <span class="samp">Apr</span>, <span class="samp">May</span>, <span class="samp">Jun</span>, <span class="samp">Jul</span>, <span class="samp">Aug</span>,
+<span class="samp">Sep</span>, <span class="samp">Oct</span>, <span class="samp">Nov</span>, and <span class="samp">Dec</span>.
 
         <p>The return value points to a statically allocated string, which might be
 overwritten by subsequent calls to <code>asctime</code> or <code>ctime</code>. 
@@ -83,7 +81,7 @@ specify the calendar time argument as a <code>time_t</code> simple time value
 rather than in broken-down local time format.  It is equivalent to
 
      <pre class="smallexample">          asctime (localtime (<var>time</var>))
-</pre>
+     </pre>
         <p><code>ctime</code> sets the variable <code>tzname</code>, because <code>localtime</code>
 does so.  See <a href="Time-Zone-Functions.html#Time-Zone-Functions">Time Zone Functions</a>. 
 </p></blockquote></div>
@@ -94,10 +92,10 @@ does so.  See <a href="Time-Zone-Functions.html#Time-Zone-Functions">Time Zone F
 &mdash; Function: char * <b>ctime_r</b> (<var>const time_t *time, char *buffer</var>)<var><a name="index-ctime_005fr-2659"></a></var><br>
 <blockquote><p>This function is similar to <code>ctime</code>, but places the result in the
 string pointed to by <var>buffer</var>.  It is equivalent to (written using
-gcc extensions, see <a href="../gcc/Statement-Exprs.html#Statement-Exprs">Statement Exprs</a>):
+gcc extensions, see <a href="../gcc/Statement-Exprs.html#Statement-Exprs">Statement Exprs (Porting and Using gcc)</a>):
 
      <pre class="smallexample">          ({ struct tm tm; asctime_r (localtime_r (time, &amp;tm), buf); })
-</pre>
+     </pre>
         <p>If no error occurred the function returns a pointer to the string the
 result was written into, i.e., it returns <var>buffer</var>.  Otherwise
 return <code>NULL</code>. 
@@ -114,7 +112,7 @@ time conversion (see <a href="Locales.html#Locales">Locales</a>).
 
         <p>Ordinary characters appearing in the <var>template</var> are copied to the
 output string <var>s</var>; this can include multibyte character sequences. 
-Conversion specifiers are introduced by a &lsquo;<samp><span class="samp">%</span></samp>&rsquo; character, followed
+Conversion specifiers are introduced by a <span class="samp">%</span> character, followed
 by an optional flag which can be one of the following.  These flags
 are all GNU extensions. The first three affect only the output of
 numbers:
@@ -160,7 +158,7 @@ applies only to numeric format specifiers.
 is available, it is ignored.
 
         <p>The conversion specifier ends with a format specifier taken from the
-following list.  The whole &lsquo;<samp><span class="samp">%</span></samp>&rsquo; sequence is replaced in the output
+following list.  The whole <span class="samp">%</span> sequence is replaced in the output
 string as follows:
 
           <dl>
@@ -240,20 +238,20 @@ padded with blank (range <code> 1</code> through <code>12</code>).
 
           <br><dt><code>%M</code><dd>The minute as a decimal number (range <code>00</code> through <code>59</code>).
 
-          <br><dt><code>%n</code><dd>A single &lsquo;<samp><span class="samp">\n</span></samp>&rsquo; (newline) character.
+          <br><dt><code>%n</code><dd>A single <span class="samp">\n</span> (newline) character.
 
           <p>This format was first standardized by POSIX.2-1992 and by ISO&nbsp;C99<!-- /@w -->.
 
-          <br><dt><code>%p</code><dd>Either &lsquo;<samp><span class="samp">AM</span></samp>&rsquo; or &lsquo;<samp><span class="samp">PM</span></samp>&rsquo;, according to the given time value; or the
+          <br><dt><code>%p</code><dd>Either <span class="samp">AM</span> or <span class="samp">PM</span>, according to the given time value; or the
 corresponding strings for the current locale.  Noon is treated as
-&lsquo;<samp><span class="samp">PM</span></samp>&rsquo; and midnight as &lsquo;<samp><span class="samp">AM</span></samp>&rsquo;.  In most locales
-&lsquo;<samp><span class="samp">AM</span></samp>&rsquo;/&lsquo;<samp><span class="samp">PM</span></samp>&rsquo; format is not supported, in such cases <code>"%p"</code>
+<span class="samp">PM</span> and midnight as <span class="samp">AM</span>.  In most locales
+<span class="samp">AM</span>/<span class="samp">PM</span> format is not supported, in such cases <code>"%p"</code>
 yields an empty string.
 
-          <br><dt><code>%P</code><dd>Either &lsquo;<samp><span class="samp">am</span></samp>&rsquo; or &lsquo;<samp><span class="samp">pm</span></samp>&rsquo;, according to the given time value; or the
+          <br><dt><code>%P</code><dd>Either <span class="samp">am</span> or <span class="samp">pm</span>, according to the given time value; or the
 corresponding strings for the current locale, printed in lowercase
-characters.  Noon is treated as &lsquo;<samp><span class="samp">pm</span></samp>&rsquo; and midnight as &lsquo;<samp><span class="samp">am</span></samp>&rsquo;.  In
-most locales &lsquo;<samp><span class="samp">AM</span></samp>&rsquo;/&lsquo;<samp><span class="samp">PM</span></samp>&rsquo; format is not supported, in such cases
+characters.  Noon is treated as <span class="samp">pm</span> and midnight as <span class="samp">am</span>.  In
+most locales <span class="samp">AM</span>/<span class="samp">PM</span> format is not supported, in such cases
 <code>"%P"</code> yields an empty string.
 
           <p>This format is a GNU extension.
@@ -275,7 +273,7 @@ Leap seconds are not counted unless leap second support is available.
 
           <br><dt><code>%S</code><dd>The seconds as a decimal number (range <code>00</code> through <code>60</code>).
 
-          <br><dt><code>%t</code><dd>A single &lsquo;<samp><span class="samp">\t</span></samp>&rsquo; (tabulator) character.
+          <br><dt><code>%t</code><dd>A single <span class="samp">\t</span> (tabulator) character.
 
           <p>This format was first standardized by POSIX.2-1992 and by ISO&nbsp;C99<!-- /@w -->.
 
@@ -331,12 +329,12 @@ determinable.
 but was previously available as a GNU extension.
 
           <p>In the POSIX locale, a full RFC&nbsp;822<!-- /@w --> timestamp is generated by the format
-&lsquo;<samp><span class="samp">"%a,&nbsp;%d&nbsp;%b&nbsp;%Y&nbsp;%H:%M:%S&nbsp;%z"</span></samp>&rsquo;<!-- /@w --> (or the equivalent
-&lsquo;<samp><span class="samp">"%a,&nbsp;%d&nbsp;%b&nbsp;%Y&nbsp;%T&nbsp;%z"</span></samp>&rsquo;<!-- /@w -->).
+<span class="samp">"%a,&nbsp;%d&nbsp;%b&nbsp;%Y&nbsp;%H:%M:%S&nbsp;%z"</span><!-- /@w --> (or the equivalent
+<span class="samp">"%a,&nbsp;%d&nbsp;%b&nbsp;%Y&nbsp;%T&nbsp;%z"</span><!-- /@w -->).
 
           <br><dt><code>%Z</code><dd>The time zone abbreviation (empty if the time zone can't be determined).
 
-          <br><dt><code>%%</code><dd>A literal &lsquo;<samp><span class="samp">%</span></samp>&rsquo; character. 
+          <br><dt><code>%%</code><dd>A literal <span class="samp">%</span> character. 
 </dl>
 
         <p>The <var>size</var> parameter can be used to specify the maximum number of
@@ -364,7 +362,7 @@ code should be used:
               /* Something went wrong in the strftime call.  */
               ...
             }
-</pre>
+     </pre>
         <p>If <var>s</var> is a null pointer, <code>strftime</code> does not actually write
 anything, but instead returns the number of characters it would have written.
 

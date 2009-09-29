@@ -3,7 +3,7 @@
 <title>Translation with gettext - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Message-catalogs-with-gettext.html#Message-catalogs-with-gettext" title="Message catalogs with gettext">
 <link rel="next" href="Locating-gettext-catalog.html#Locating-gettext-catalog" title="Locating gettext catalog">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Translation-with-gettext"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Locating-gettext-catalog.html#Locating-gettext-catalog">Locating gettext catalog</a>,
+<a name="Translation-with-gettext"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Locating-gettext-catalog.html#Locating-gettext-catalog">Locating gettext catalog</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Message-catalogs-with-gettext.html#Message-catalogs-with-gettext">Message catalogs with gettext</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">8.2.1.1 What has to be done to translate a message?</h5>
@@ -49,13 +47,13 @@ this process is not more expensive than an access using an atomic key
 like in <code>catgets</code>.
 
    <p>The <code>gettext</code> approach has some advantages but also some
-disadvantages.  Please see the GNU <samp><span class="file">gettext</span></samp> manual for a detailed
+disadvantages.  Please see the GNU <span class="file">gettext</span> manual for a detailed
 discussion of the pros and cons.
 
    <p>All the definitions and declarations for <code>gettext</code> can be found in
-the <samp><span class="file">libintl.h</span></samp> header file.  On systems where these functions are
+the <span class="file">libintl.h</span> header file.  On systems where these functions are
 not part of the C library they can be found in a separate library named
-<samp><span class="file">libintl.a</span></samp> (or accordingly different for shared libraries).
+<span class="file">libintl.a</span> (or accordingly different for shared libraries).
 
 <!-- libintl.h -->
 <!-- GNU -->
@@ -81,7 +79,7 @@ selected (see <a href="Locating-gettext-catalog.html#Locating-gettext-catalog">L
 something like
 
      <pre class="smallexample">            printf (gettext ("Operation failed: %m\n"));
-</pre>
+     </pre>
         <p>Here the <var>errno</var> value is used in the <code>printf</code> function while
 processing the <code>%m</code> format element and if the <code>gettext</code>
 function would change this value (it is called before <code>printf</code> is
@@ -132,14 +130,14 @@ catalog has to be used (relative to a given directory, see below).
 <code>dcgettext</code> by using
 
      <pre class="smallexample">          dcgettext (domain, string, LC_MESSAGES)
-</pre>
+     </pre>
         <p class="noindent">instead of
 
      <pre class="smallexample">          dgettext (domain, string)
-</pre>
+     </pre>
         <p>This also shows which values are expected for the third parameter.  One
 has to use the available selectors for the categories available in
-<samp><span class="file">locale.h</span></samp>.  Normally the available values are <code>LC_CTYPE</code>,
+<span class="file">locale.h</span>.  Normally the available values are <code>LC_CTYPE</code>,
 <code>LC_COLLATE</code>, <code>LC_MESSAGES</code>, <code>LC_MONETARY</code>,
 <code>LC_NUMERIC</code>, and <code>LC_TIME</code>.  Please note that <code>LC_ALL</code>
 must not be used and even though the names might suggest this, there is

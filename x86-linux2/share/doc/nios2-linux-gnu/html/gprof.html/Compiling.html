@@ -3,7 +3,7 @@
 <title>Compiling - GNU gprof</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU gprof">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Introduction.html#Introduction" title="Introduction">
 <link rel="next" href="Executing.html#Executing" title="Executing">
@@ -16,19 +16,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Compiling"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Executing.html#Executing">Executing</a>,
+<a name="Compiling"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Executing.html#Executing">Executing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Introduction.html#Introduction">Introduction</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
+<hr><br>
 </div>
 
 <h2 class="chapter">2 Compiling a Program for Profiling</h2>
@@ -36,30 +34,30 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <p>The first step in generating profile information for your program is
 to compile and link it with profiling enabled.
 
-   <p>To compile a source file for profiling, specify the &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo; option when
+   <p>To compile a source file for profiling, specify the <span class="samp">-pg</span> option when
 you run the compiler.  (This is in addition to the options you normally
 use.)
 
    <p>To link the program for profiling, if you use a compiler such as <code>cc</code>
-to do the linking, simply specify &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo; in addition to your usual
-options.  The same option, &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo;, alters either compilation or linking
+to do the linking, simply specify <span class="samp">-pg</span> in addition to your usual
+options.  The same option, <span class="samp">-pg</span>, alters either compilation or linking
 to do what is necessary for profiling.  Here are examples:
 
 <pre class="example">     cc -g -c myprog.c utils.c -pg
      cc -o myprog myprog.o utils.o -pg
 </pre>
-   <p>The &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo; option also works with a command that both compiles and links:
+   <p>The <span class="samp">-pg</span> option also works with a command that both compiles and links:
 
 <pre class="example">     cc -o myprog myprog.c utils.c -g -pg
 </pre>
-   <p>Note: The &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo; option must be part of your compilation options
+   <p>Note: The <span class="samp">-pg</span> option must be part of your compilation options
 as well as your link options.  If it is not then no call-graph data
 will be gathered and when you run <code>gprof</code> you will get an error
 message like this:
 
 <pre class="example">     gprof: gmon.out file is missing call-graph data
 </pre>
-   <p>If you add the &lsquo;<samp><span class="samp">-Q</span></samp>&rsquo; switch to suppress the printing of the call
+   <p>If you add the <span class="samp">-Q</span> switch to suppress the printing of the call
 graph data you will still be able to see the time samples:
 
 <pre class="example">     Flat profile:
@@ -73,19 +71,19 @@ graph data you will still be able to see the time samples:
 </pre>
    <p>If you run the linker <code>ld</code> directly instead of through a compiler
 such as <code>cc</code>, you may have to specify a profiling startup file
-<samp><span class="file">gcrt0.o</span></samp> as the first input file instead of the usual startup
-file <samp><span class="file">crt0.o</span></samp>.  In addition, you would probably want to
-specify the profiling C library, <samp><span class="file">libc_p.a</span></samp>, by writing
-&lsquo;<samp><span class="samp">-lc_p</span></samp>&rsquo; instead of the usual &lsquo;<samp><span class="samp">-lc</span></samp>&rsquo;.  This is not absolutely
+<span class="file">gcrt0.o</span> as the first input file instead of the usual startup
+file <span class="file">crt0.o</span>.  In addition, you would probably want to
+specify the profiling C library, <span class="file">libc_p.a</span>, by writing
+<span class="samp">-lc_p</span> instead of the usual <span class="samp">-lc</span>.  This is not absolutely
 necessary, but doing this gives you number-of-calls information for
 standard library functions such as <code>read</code> and <code>open</code>.  For
 example:
 
 <pre class="example">     ld -o myprog /lib/gcrt0.o myprog.o utils.o -lc_p
 </pre>
-   <p>If you compile only some of the modules of the program with &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo;, you
+   <p>If you compile only some of the modules of the program with <span class="samp">-pg</span>, you
 can still profile the program, but you won't get complete information about
-the modules that were compiled without &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo;.  The only information
+the modules that were compiled without <span class="samp">-pg</span>.  The only information
 you get for the functions in those modules is the total time spent in them;
 there is no record of how many times they were called, or from where.  This
 will not affect the flat profile (except that the <code>calls</code> field for
@@ -93,29 +91,29 @@ the functions will be blank), but will greatly reduce the usefulness of the
 call graph.
 
    <p>If you wish to perform line-by-line profiling,
-you will also need to specify the &lsquo;<samp><span class="samp">-g</span></samp>&rsquo; option,
+you will also need to specify the <span class="samp">-g</span> option,
 instructing the compiler to insert debugging symbols into the program
 that match program addresses to source code lines. 
 See <a href="Line_002dby_002dline.html#Line_002dby_002dline">Line-by-line Profiling</a>.
 
-   <p>In addition to the &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo; and &lsquo;<samp><span class="samp">-g</span></samp>&rsquo; options, older versions of
-GCC required you to specify the &lsquo;<samp><span class="samp">-a</span></samp>&rsquo; option when compiling in
+   <p>In addition to the <span class="samp">-pg</span> and <span class="samp">-g</span> options, older versions of
+GCC required you to specify the <span class="samp">-a</span> option when compiling in
 order to instrument it to perform basic-block counting.  Newer
 versions do not require this option and will not accept it;
-basic-block counting is always enabled when &lsquo;<samp><span class="samp">-pg</span></samp>&rsquo; is on.
+basic-block counting is always enabled when <span class="samp">-pg</span> is on.
 
    <p>When basic-block counting is enabled, as the program runs
-it will count how many times it executed each branch of each &lsquo;<samp><span class="samp">if</span></samp>&rsquo;
-statement, each iteration of each &lsquo;<samp><span class="samp">do</span></samp>&rsquo; loop, etc.  This will
+it will count how many times it executed each branch of each <span class="samp">if</span>
+statement, each iteration of each <span class="samp">do</span> loop, etc.  This will
 enable <code>gprof</code> to construct an annotated source code
 listing showing how many times each line of code was executed.
 
    <p>It also worth noting that GCC supports a different profiling method
-which is enabled by the &lsquo;<samp><span class="samp">-fprofile-arcs</span></samp>&rsquo;, &lsquo;<samp><span class="samp">-ftest-coverage</span></samp>&rsquo;
-and &lsquo;<samp><span class="samp">-fprofile-values</span></samp>&rsquo; switches. These switches do not produce
+which is enabled by the <span class="samp">-fprofile-arcs</span>, <span class="samp">-ftest-coverage</span>
+and <span class="samp">-fprofile-values</span> switches. These switches do not produce
 data which is useful to <code>gprof</code> however, so they are not
 discussed further here.  There is also the
-&lsquo;<samp><span class="samp">-finstrument-functions</span></samp>&rsquo; switch which will cause GCC to insert
+<span class="samp">-finstrument-functions</span> switch which will cause GCC to insert
 calls to special user supplied instrumentation routines at the entry
 and exit of every function in their program.  This can be used to
 implement an alternative profiling scheme.

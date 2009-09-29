@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.13 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -3662,7 +3662,7 @@ relying on semantics undefined within the standard.
 
      Note that if you do this, you must link your program with the BSD
      compatibility library by passing the `-lbsd-compat' option to the
-     compiler or linker.  *Note_* If you forget to do this, you may get
+     compiler or linker.  *Note:* If you forget to do this, you may get
      very strange errors at run time.
 
  -- Macro: _REENTRANT
@@ -3708,10 +3708,10 @@ File: libc.info,  Node: Roadmap to the Manual,  Prev: Using the Library,  Up: In
 Here is an overview of the contents of the remaining chapters of this
 manual.
 
-   * *note Error Reporting::, describes how errors detected by the
+   * *Note Error Reporting::, describes how errors detected by the
      library are reported.
 
-   * *note Language Features::, contains information about library
+   * *Note Language Features::, contains information about library
      support for standard parts of the C language, including things
      like the `sizeof' operator and the symbolic constant `NULL', how
      to write functions accepting variable numbers of arguments, and
@@ -3720,133 +3720,133 @@ manual.
      allows you to put assertions in your code, and have diagnostic
      messages printed if the tests fail.
 
-   * *note Memory::, describes the GNU library's facilities for
+   * *Note Memory::, describes the GNU library's facilities for
      managing and using virtual and real memory, including dynamic
      allocation of virtual memory.  If you do not know in advance how
      much memory your program needs, you can allocate it dynamically
      instead, and manipulate it via pointers.
 
-   * *note Character Handling::, contains information about character
+   * *Note Character Handling::, contains information about character
      classification functions (such as `isspace') and functions for
      performing case conversion.
 
-   * *note String and Array Utilities::, has descriptions of functions
+   * *Note String and Array Utilities::, has descriptions of functions
      for manipulating strings (null-terminated character arrays) and
      general byte arrays, including operations such as copying and
      comparison.
 
-   * *note I/O Overview::, gives an overall look at the input and output
+   * *Note I/O Overview::, gives an overall look at the input and output
      facilities in the library, and contains information about basic
      concepts such as file names.
 
-   * *note I/O on Streams::, describes I/O operations involving streams
+   * *Note I/O on Streams::, describes I/O operations involving streams
      (or `FILE *' objects).  These are the normal C library functions
      from `stdio.h'.
 
-   * *note Low-Level I/O::, contains information about I/O operations
+   * *Note Low-Level I/O::, contains information about I/O operations
      on file descriptors.  File descriptors are a lower-level mechanism
      specific to the Unix family of operating systems.
 
-   * *note File System Interface::, has descriptions of operations on
+   * *Note File System Interface::, has descriptions of operations on
      entire files, such as functions for deleting and renaming them and
      for creating new directories.  This chapter also contains
      information about how you can access the attributes of a file,
      such as its owner and file protection modes.
 
-   * *note Pipes and FIFOs::, contains information about simple
+   * *Note Pipes and FIFOs::, contains information about simple
      interprocess communication mechanisms.  Pipes allow communication
      between two related processes (such as between a parent and
      child), while FIFOs allow communication between processes sharing
      a common file system on the same machine.
 
-   * *note Sockets::, describes a more complicated interprocess
+   * *Note Sockets::, describes a more complicated interprocess
      communication mechanism that allows processes running on different
      machines to communicate over a network.  This chapter also
      contains information about Internet host addressing and how to use
      the system network databases.
 
-   * *note Low-Level Terminal Interface::, describes how you can change
+   * *Note Low-Level Terminal Interface::, describes how you can change
      the attributes of a terminal device.  If you want to disable echo
      of characters typed by the user, for example, read this chapter.
 
-   * *note Mathematics::, contains information about the math library
+   * *Note Mathematics::, contains information about the math library
      functions.  These include things like random-number generators and
      remainder functions on integers as well as the usual trigonometric
      and exponential functions on floating-point numbers.
 
-   * *note Low-Level Arithmetic Functions: Arithmetic, describes
+   * *Note Low-Level Arithmetic Functions: Arithmetic, describes
      functions for simple arithmetic, analysis of floating-point
      values, and reading numbers from strings.
 
-   * *note Searching and Sorting::, contains information about functions
+   * *Note Searching and Sorting::, contains information about functions
      for searching and sorting arrays.  You can use these functions on
      any kind of array by providing an appropriate comparison function.
 
-   * *note Pattern Matching::, presents functions for matching regular
+   * *Note Pattern Matching::, presents functions for matching regular
      expressions and shell file name patterns, and for expanding words
      as the shell does.
 
-   * *note Date and Time::, describes functions for measuring both
+   * *Note Date and Time::, describes functions for measuring both
      calendar time and CPU time, as well as functions for setting
      alarms and timers.
 
-   * *note Character Set Handling::, contains information about
+   * *Note Character Set Handling::, contains information about
      manipulating characters and strings using character sets larger
      than will fit in the usual `char' data type.
 
-   * *note Locales::, describes how selecting a particular country or
+   * *Note Locales::, describes how selecting a particular country or
      language affects the behavior of the library.  For example, the
      locale affects collation sequences for strings and how monetary
      values are formatted.
 
-   * *note Non-Local Exits::, contains descriptions of the `setjmp' and
+   * *Note Non-Local Exits::, contains descriptions of the `setjmp' and
      `longjmp' functions.  These functions provide a facility for
      `goto'-like jumps which can jump from one function to another.
 
-   * *note Signal Handling::, tells you all about signals--what they
+   * *Note Signal Handling::, tells you all about signals--what they
      are, how to establish a handler that is called when a particular
      kind of signal is delivered, and how to prevent signals from
      arriving during critical sections of your program.
 
-   * *note Program Basics::, tells how your programs can access their
+   * *Note Program Basics::, tells how your programs can access their
      command-line arguments and environment variables.
 
-   * *note Processes::, contains information about how to start new
+   * *Note Processes::, contains information about how to start new
      processes and run programs.
 
-   * *note Job Control::, describes functions for manipulating process
+   * *Note Job Control::, describes functions for manipulating process
      groups and the controlling terminal.  This material is probably
      only of interest if you are writing a shell or other program which
      handles job control specially.
 
-   * *note Name Service Switch::, describes the services which are
+   * *Note Name Service Switch::, describes the services which are
      available for looking up names in the system databases, how to
      determine which service is used for which database, and how these
      services are implemented so that contributors can design their own
      services.
 
-   * *note User Database::, and *note Group Database::, tell you how to
+   * *Note User Database::, and *Note Group Database::, tell you how to
      access the system user and group databases.
 
-   * *note System Management::, describes functions for controlling and
+   * *Note System Management::, describes functions for controlling and
      getting information about the hardware and software configuration
      your program is executing under.
 
-   * *note System Configuration::, tells you how you can get
+   * *Note System Configuration::, tells you how you can get
      information about various operating system limits.  Most of these
      parameters are provided for compatibility with POSIX.
 
-   * *note Library Summary::, gives a summary of all the functions,
+   * *Note Library Summary::, gives a summary of all the functions,
      variables, and macros in the library, with complete data types and
      function prototypes, and says what standard or system each is
      derived from.
 
-   * *note Maintenance::, explains how to build and install the GNU C
+   * *Note Maintenance::, explains how to build and install the GNU C
      library on your system, how to report any bugs you might find, and
      how to add new functions or port the library to a new system.
 
    If you already know the name of the facility you are interested in,
-you can look it up in *note Library Summary::.  This gives you a
+you can look it up in *Note Library Summary::.  This gives you a
 summary of its syntax and a pointer to where you can find a more
 detailed description.  This appendix is particularly useful if you just
 want to verify the order and type of arguments to a function, for
@@ -3894,7 +3894,7 @@ the variable `errno'.  This variable is declared in the header file
      change the value of `errno'.
 
      Since `errno' is declared `volatile', it might be changed
-     asynchronously by a signal handler; see *note Defining Handlers::.
+     asynchronously by a signal handler; see *Note Defining Handlers::.
      However, a properly written signal handler saves and restores the
      value of `errno', so you generally do not need to worry about this
      possibility except when writing signal handlers.
@@ -3988,7 +3988,7 @@ on other systems.
      try the call again.
 
      You can choose to have functions resume after a signal that is
-     handled, rather than failing with `EINTR'; see *note Interrupted
+     handled, rather than failing with `EINTR'; see *Note Interrupted
      Primitives::.
 
  -- Macro: int EIO
@@ -4009,7 +4009,7 @@ on other systems.
 
  -- Macro: int ENOEXEC
      Invalid executable file format.  This condition is detected by the
-     `exec' functions; see *note Executing a File::.
+     `exec' functions; see *Note Executing a File::.
 
  -- Macro: int EBADF
      Bad file descriptor; for example, I/O on a descriptor that has been
@@ -4088,7 +4088,7 @@ on other systems.
  -- Macro: int ENFILE
      There are too many distinct file openings in the entire system.
      Note that any number of linked channels count as just one file
-     opening; see *note Linked Channels::.  This error never occurs in
+     opening; see *Note Linked Channels::.  This error never occurs in
      the GNU system.
 
  -- Macro: int ENOTTY
@@ -4352,7 +4352,7 @@ on other systems.
 
  -- Macro: int ENOLCK
      No locks available.  This is used by the file locking facilities;
-     see *note File Locks::.  This error is never generated by the GNU
+     see *Note File Locks::.  This error is never generated by the GNU
      system, but it can result from an operation to an NFS server
      running another operating system.
 
@@ -4588,7 +4588,7 @@ access to the name of the program that encountered the error.
 
  -- Function: void perror (const char *MESSAGE)
      This function prints an error message to the stream `stderr'; see
-     *note Standard Streams::.  The orientation of `stderr' is not
+     *Note Standard Streams::.  The orientation of `stderr' is not
      changed.
 
      If you call `perror' with a MESSAGE that is either a null pointer
@@ -4923,7 +4923,7 @@ seem to be in real memory.  Except for one thing: the elapsed execution
 time of an instruction that would normally be a few nanoseconds is
 suddenly much, much, longer (because the kernel normally has to do I/O
 to complete the page-in).  For programs sensitive to that, the functions
-described in *note Locking Pages:: can control it.  
+described in *Note Locking Pages:: can control it.  
 
    Within each virtual address space, a process has to keep track of
 what is at which addresses, and that process is called memory
@@ -5426,7 +5426,7 @@ in BSD, however--BSD does not provide any way to free such blocks.
             return memalign (getpagesize (), size);
           }
 
-     *note Query Memory Parameters:: for more information about the
+     *Note Query Memory Parameters:: for more information about the
      memory subsystem.
 
 
@@ -5763,7 +5763,7 @@ version.
           This is the number of chunks not in use.  (The memory
           allocator internally gets chunks of memory from the operating
           system, and then carves them up to satisfy individual
-          `malloc' requests; see *note Efficiency and Malloc::.)
+          `malloc' requests; see *Note Efficiency and Malloc::.)
 
     `int smblks'
           This field is unused.
@@ -6938,7 +6938,7 @@ several reasons:
      additional block on each iteration.  This is impossible with
      variable-sized arrays.
 
-   *Note_* If you mix use of `alloca' and variable-sized arrays within
+   *Note:* If you mix use of `alloca' and variable-sized arrays within
 one function, exiting a scope in which a variable-sized array was
 declared frees all blocks allocated with `alloca' during the execution
 of that scope.
@@ -6952,7 +6952,7 @@ File: libc.info,  Node: Resizing the Data Segment,  Prev: Locking Pages,  Up: Me
 The symbols in this section are declared in `unistd.h'.
 
    You will not normally use the functions in this section, because the
-functions described in *note Memory Allocation:: are easier to use.
+functions described in *Note Memory Allocation:: are easier to use.
 Those are interfaces to a GNU C Library memory allocator that uses the
 functions below itself.  The functions below are simple interfaces to
 system calls.
@@ -7266,7 +7266,7 @@ functions in the header file `ctype.h' are provided for this purpose.
 classifications of particular character codes, all of these functions
 are affected by the current locale.  (More precisely, they are affected
 by the locale currently selected for character classification--the
-`LC_CTYPE' category; see *note Locale Categories::.)
+`LC_CTYPE' category; see *Note Locale Categories::.)
 
    The ISO C standard specifies two different sets of functions.  The
 one set works on `char' type characters, the other one on `wchar_t'
@@ -7907,7 +7907,7 @@ the string.
 represents a single character.  This is still true today if the strings
 are encoded using a single-byte character encoding.  Things are
 different if the strings are encoded using a multibyte encoding (for
-more information on encodings see *note Extended Char Intro::).  There
+more information on encodings see *Note Extended Char Intro::).  There
 is no difference in the programming interface for these two kind of
 strings; the programmer has to be aware of this and interpret the byte
 sequences accordingly.
@@ -8322,14 +8322,14 @@ Output Functions::) and `scanf' (*note Formatted Input Functions::).
  -- Function: char * strdup (const char *S)
      This function copies the null-terminated string S into a newly
      allocated string.  The string is allocated using `malloc'; see
-     *note Unconstrained Allocation::.  If `malloc' cannot allocate
+     *Note Unconstrained Allocation::.  If `malloc' cannot allocate
      space for the new string, `strdup' returns a null pointer.
      Otherwise it returns a pointer to the new string.
 
  -- Function: wchar_t * wcsdup (const wchar_t *WS)
      This function copies the null-terminated wide character string WS
      into a newly allocated string.  The string is allocated using
-     `malloc'; see *note Unconstrained Allocation::.  If `malloc'
+     `malloc'; see *Note Unconstrained Allocation::.  If `malloc'
      cannot allocate space for the new string, `wcsdup' returns a null
      pointer.  Otherwise it returns a pointer to the new wide character
      string.

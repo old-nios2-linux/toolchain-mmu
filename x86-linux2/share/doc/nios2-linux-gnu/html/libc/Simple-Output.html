@@ -3,7 +3,7 @@
 <title>Simple Output - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="I_002fO-on-Streams.html#I_002fO-on-Streams" title="I/O on Streams">
 <link rel="prev" href="Streams-and-I18N.html#Streams-and-I18N" title="Streams and I18N">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Simple-Output"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Character-Input.html#Character-Input">Character Input</a>,
+<a name="Simple-Output"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Character-Input.html#Character-Input">Character Input</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Streams-and-I18N.html#Streams-and-I18N">Streams and I18N</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="I_002fO-on-Streams.html#I_002fO-on-Streams">I/O on Streams</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">12.7 Simple Output by Characters or Lines</h3>
@@ -38,7 +36,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="I_002fO-on-Streams.html#I_002fO-on-Stre
 line-oriented output.
 
    <p>These narrow streams functions are declared in the header file
-<samp><span class="file">stdio.h</span></samp> and the wide stream functions in <samp><span class="file">wchar.h</span></samp>. 
+<span class="file">stdio.h</span> and the wide stream functions in <span class="file">wchar.h</span>. 
 <a name="index-stdio_002eh-957"></a><a name="index-wchar_002eh-958"></a>
 <!-- stdio.h -->
 <!-- ISO -->
@@ -169,8 +167,8 @@ a non-negative value.
      <pre class="smallexample">          fputs ("Are ", stdout);
           fputs ("you ", stdout);
           fputs ("hungry?\n", stdout);
-</pre>
-        <p class="noindent">outputs the text &lsquo;<samp><span class="samp">Are you hungry?</span></samp>&rsquo; followed by a newline. 
+     </pre>
+        <p class="noindent">outputs the text <span class="samp">Are you hungry?</span> followed by a newline. 
 </p></blockquote></div>
 
 <!-- wchar.h -->
@@ -219,8 +217,8 @@ write a newline as this function does.)
 messages.  For example:
 
      <pre class="smallexample">          puts ("This is a message.");
-</pre>
-        <p class="noindent">outputs the text &lsquo;<samp><span class="samp">This is a message.</span></samp>&rsquo; followed by a newline. 
+     </pre>
+        <p class="noindent">outputs the text <span class="samp">This is a message.</span> followed by a newline. 
 </p></blockquote></div>
 
 <!-- stdio.h -->

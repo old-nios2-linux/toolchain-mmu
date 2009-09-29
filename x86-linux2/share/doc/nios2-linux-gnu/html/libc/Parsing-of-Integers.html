@@ -3,7 +3,7 @@
 <title>Parsing of Integers - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Parsing-of-Numbers.html#Parsing-of-Numbers" title="Parsing of Numbers">
 <link rel="next" href="Parsing-of-Floats.html#Parsing-of-Floats" title="Parsing of Floats">
@@ -16,24 +16,22 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Parsing-of-Integers"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Parsing-of-Floats.html#Parsing-of-Floats">Parsing of Floats</a>,
+<a name="Parsing-of-Integers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Parsing-of-Floats.html#Parsing-of-Floats">Parsing of Floats</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Parsing-of-Numbers.html#Parsing-of-Numbers">Parsing of Numbers</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">20.11.1 Parsing of Integers</h4>
 
-<p><a name="index-stdlib_002eh-2547"></a><a name="index-wchar_002eh-2548"></a>The &lsquo;<samp><span class="samp">str</span></samp>&rsquo; functions are declared in <samp><span class="file">stdlib.h</span></samp> and those
-beginning with &lsquo;<samp><span class="samp">wcs</span></samp>&rsquo; are declared in <samp><span class="file">wchar.h</span></samp>.  One might
+<p><a name="index-stdlib_002eh-2547"></a><a name="index-wchar_002eh-2548"></a>The <span class="samp">str</span> functions are declared in <span class="file">stdlib.h</span> and those
+beginning with <span class="samp">wcs</span> are declared in <span class="file">wchar.h</span>.  One might
 wonder about the use of <code>restrict</code> in the prototypes of the
 functions in this section.  It is seemingly useless but the ISO&nbsp;C<!-- /@w -->
 standard uses it (for the functions defined there) so we have to do it
@@ -54,18 +52,18 @@ of type <code>long int</code>.
 are whitespace is determined by the <code>isspace</code> function
 (see <a href="Classification-of-Characters.html#Classification-of-Characters">Classification of Characters</a>).  These are discarded.
 
-          <li>An optional plus or minus sign (&lsquo;<samp><span class="samp">+</span></samp>&rsquo; or &lsquo;<samp><span class="samp">-</span></samp>&rsquo;).
+          <li>An optional plus or minus sign (<span class="samp">+</span> or <span class="samp">-</span>).
 
           <li>A nonempty sequence of digits in the radix specified by <var>base</var>.
 
           <p>If <var>base</var> is zero, decimal radix is assumed unless the series of
-digits begins with &lsquo;<samp><span class="samp">0</span></samp>&rsquo; (specifying octal radix), or &lsquo;<samp><span class="samp">0x</span></samp>&rsquo; or
-&lsquo;<samp><span class="samp">0X</span></samp>&rsquo; (specifying hexadecimal radix); in other words, the same
+digits begins with <span class="samp">0</span> (specifying octal radix), or <span class="samp">0x</span> or
+<span class="samp">0X</span> (specifying hexadecimal radix); in other words, the same
 syntax used for integer constants in C.
 
           <p>Otherwise <var>base</var> must have a value between <code>2</code> and <code>36</code>. 
 If <var>base</var> is <code>16</code>, the digits may optionally be preceded by
-&lsquo;<samp><span class="samp">0x</span></samp>&rsquo; or &lsquo;<samp><span class="samp">0X</span></samp>&rsquo;.  If base has no legal value the value returned
+<span class="samp">0x</span> or <span class="samp">0X</span>.  If base has no legal value the value returned
 is <code>0l</code> and the global variable <code>errno</code> is set to <code>EINVAL</code>.
 
           <li>Any remaining characters in the string.  If <var>tailptr</var> is not a null
@@ -301,7 +299,7 @@ obsolete (despite having just been added); use <code>strtoll</code> instead.
 alternative representations of characters as described in the locale
 data.  Some locales specify thousands separator and the way they have to
 be used which can help to make large numbers more readable.  To read
-such numbers one has to use the <code>scanf</code> functions with the &lsquo;<samp><span class="samp">'</span></samp>&rsquo;
+such numbers one has to use the <code>scanf</code> functions with the <span class="samp">'</span>
 flag.
 
    <p>Here is a function which parses a string as a sequence of integers and

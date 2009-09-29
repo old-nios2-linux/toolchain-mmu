@@ -3,7 +3,7 @@
 <title>Scatter-Gather - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="Stream_002fDescriptor-Precautions.html#Stream_002fDescriptor-Precautions" title="Stream/Descriptor Precautions">
@@ -17,20 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Scatter-Gather"></a>
-<a name="Scatter_002dGather"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Memory_002dmapped-I_002fO.html#Memory_002dmapped-I_002fO">Memory-mapped I/O</a>,
+<a name="Scatter_002dGather"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Memory_002dmapped-I_002fO.html#Memory_002dmapped-I_002fO">Memory-mapped I/O</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Stream_002fDescriptor-Precautions.html#Stream_002fDescriptor-Precautions">Stream/Descriptor Precautions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">13.6 Fast Scatter-Gather I/O</h3>
@@ -55,7 +52,7 @@ which describe the location and size of each buffer.
 <div class="defun">
 &mdash; Data Type: <b>struct iovec</b><var><a name="index-struct-iovec-1250"></a></var><br>
 <blockquote>
-        <p>The <code>iovec</code> structure describes a buffer. It contains two fields:
+<p>The <code>iovec</code> structure describes a buffer. It contains two fields:
 
           <dl>
 <dt><code>void *iov_base</code><dd>Contains the address of a buffer.
@@ -70,7 +67,7 @@ which describe the location and size of each buffer.
 <div class="defun">
 &mdash; Function: ssize_t <b>readv</b> (<var>int filedes, const struct iovec *vector, int count</var>)<var><a name="index-readv-1251"></a></var><br>
 <blockquote>
-        <p>The <code>readv</code> function reads data from <var>filedes</var> and scatters it
+<p>The <code>readv</code> function reads data from <var>filedes</var> and scatters it
 into the buffers described in <var>vector</var>, which is taken to be
 <var>count</var> structures long.  As each buffer is filled, data is sent to the
 next.
@@ -89,7 +86,7 @@ errors are the same as in <code>read</code>.
 <div class="defun">
 &mdash; Function: ssize_t <b>writev</b> (<var>int filedes, const struct iovec *vector, int count</var>)<var><a name="index-writev-1252"></a></var><br>
 <blockquote>
-        <p>The <code>writev</code> function gathers data from the buffers described in
+<p>The <code>writev</code> function gathers data from the buffers described in
 <var>vector</var>, which is taken to be <var>count</var> structures long, and writes
 them to <code>filedes</code>.  As each buffer is written, it moves on to the
 next.
@@ -104,7 +101,7 @@ error.  The possible errors are the same as in <code>write</code>.
 
 <!-- Note - I haven't read this anywhere. I surmised it from my knowledge -->
 <!-- of computer science. Thus, there could be subtleties I'm missing. -->
-   <p>Note that if the buffers are small (under about 1kB), high-level streams
+<p>Note that if the buffers are small (under about 1kB), high-level streams
 may be easier to use than these functions.  However, <code>readv</code> and
 <code>writev</code> are more efficient when the individual buffers themselves
 (as opposed to the total output), are large.  In that case, a high-level

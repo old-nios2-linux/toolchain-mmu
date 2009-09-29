@@ -3,7 +3,7 @@
 <title>Tree-SSA passes - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Passes.html#Passes" title="Passes">
 <link rel="prev" href="Pass-manager.html#Pass-manager" title="Pass manager">
@@ -38,20 +38,17 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Tree-SSA-passes"></a>
-<a name="Tree_002dSSA-passes"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="RTL-passes.html#RTL-passes">RTL passes</a>,
+<a name="Tree_002dSSA-passes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="RTL-passes.html#RTL-passes">RTL passes</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Pass-manager.html#Pass-manager">Pass manager</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Passes.html#Passes">Passes</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">8.4 Tree-SSA passes</h3>
@@ -69,12 +66,12 @@ exception handling constructs surrounding code that obviously cannot
 throw, remove lexical bindings that contain no variables, and other
 assorted simplistic cleanups.  The idea is to get rid of the obvious
 stuff quickly rather than wait until later when it's more work to get
-rid of it.  This pass is located in <samp><span class="file">tree-cfg.c</span></samp> and described by
+rid of it.  This pass is located in <span class="file">tree-cfg.c</span> and described by
 <code>pass_remove_useless_stmts</code>.
 
      <li>Mudflap declaration registration
 
-     <p>If mudflap (see <a href="../gcc/Optimize-Options.html#Optimize-Options">-fmudflap -fmudflapth -fmudflapir</a>) is
+     <p>If mudflap (see <a href="../gcc/Optimize-Options.html#Optimize-Options">-fmudflap -fmudflapth -fmudflapir (Using the GNU Compiler Collection (GCC))</a>) is
 enabled, we generate code to register some variable declarations with
 the mudflap runtime.  Specifically, the runtime tracks the lifetimes of
 those variable declarations that have their addresses taken, or whose
@@ -82,7 +79,7 @@ bounds are unknown at compile time (<code>extern</code>).  This pass generates
 new exception handling constructs (<code>try</code>/<code>finally</code>), and so
 must run before those are lowered.  In addition, the pass enqueues
 declarations of static variables whose lifetimes extend to the entire
-program.  The pass is located in <samp><span class="file">tree-mudflap.c</span></samp> and is described
+program.  The pass is located in <span class="file">tree-mudflap.c</span> and is described
 by <code>pass_mudflap_1</code>.
 
      <li>Lower control flow
@@ -93,7 +90,7 @@ this pass, all <code>if</code> statements will have exactly two <code>goto</code
 statements in its <code>then</code> and <code>else</code> arms.  Lexical binding
 information for each statement will be found in <code>TREE_BLOCK</code> rather
 than being inferred from its position under a <code>BIND_EXPR</code>.  This
-pass is found in <samp><span class="file">gimple-low.c</span></samp> and is described by
+pass is found in <span class="file">gimple-low.c</span> and is described by
 <code>pass_lower_cf</code>.
 
      <li>Lower exception handling control flow
@@ -106,13 +103,13 @@ number for any statement that may have EH control flow semantics;
 examine <code>tree_can_throw_internal</code> or <code>tree_can_throw_external</code>
 for exact semantics.  Exact control flow may be extracted from
 <code>foreach_reachable_handler</code>.  The EH region nesting tree is defined
-in <samp><span class="file">except.h</span></samp> and built in <samp><span class="file">except.c</span></samp>.  The lowering pass
-itself is in <samp><span class="file">tree-eh.c</span></samp> and is described by <code>pass_lower_eh</code>.
+in <span class="file">except.h</span> and built in <span class="file">except.c</span>.  The lowering pass
+itself is in <span class="file">tree-eh.c</span> and is described by <code>pass_lower_eh</code>.
 
      <li>Build the control flow graph
 
      <p>This pass decomposes a function into basic blocks and creates all of
-the edges that connect them.  It is located in <samp><span class="file">tree-cfg.c</span></samp> and
+the edges that connect them.  It is located in <span class="file">tree-cfg.c</span> and
 is described by <code>pass_build_cfg</code>.
 
      <li>Find all referenced variables
@@ -121,7 +118,7 @@ is described by <code>pass_build_cfg</code>.
 variables referenced in the function, <code>referenced_vars</code>.  The
 index at which a variable is found in the array is used as a UID
 for the variable within this function.  This data is needed by the
-SSA rewriting routines.  The pass is located in <samp><span class="file">tree-dfa.c</span></samp>
+SSA rewriting routines.  The pass is located in <span class="file">tree-dfa.c</span>
 and is described by <code>pass_referenced_vars</code>.
 
      <li>Enter static single assignment form
@@ -131,7 +128,7 @@ this pass, all <code>is_gimple_reg</code> variables will be referenced by
 <code>SSA_NAME</code>, and all occurrences of other variables will be
 annotated with <code>VDEFS</code> and <code>VUSES</code>; PHI nodes will have
 been inserted as necessary for each basic block.  This pass is
-located in <samp><span class="file">tree-ssa.c</span></samp> and is described by <code>pass_build_ssa</code>.
+located in <span class="file">tree-ssa.c</span> and is described by <code>pass_build_ssa</code>.
 
      <li>Warn for uninitialized variables
 
@@ -140,7 +137,7 @@ are fed by default definition.  For non-parameter variables, such
 uses are uninitialized.  The pass is run twice, before and after
 optimization.  In the first pass we only warn for uses that are
 positively uninitialized; in the second pass we warn for uses that
-are possibly uninitialized.  The pass is located in <samp><span class="file">tree-ssa.c</span></samp>
+are possibly uninitialized.  The pass is located in <span class="file">tree-ssa.c</span>
 and is defined by <code>pass_early_warn_uninitialized</code> and
 <code>pass_late_warn_uninitialized</code>.
 
@@ -150,13 +147,13 @@ and is defined by <code>pass_early_warn_uninitialized</code> and
 result is unused.  It does not do memory life analysis, so any value
 that is stored in memory is considered used.  The pass is run multiple
 times throughout the optimization process.  It is located in
-<samp><span class="file">tree-ssa-dce.c</span></samp> and is described by <code>pass_dce</code>.
+<span class="file">tree-ssa-dce.c</span> and is described by <code>pass_dce</code>.
 
      <li>Dominator optimizations
 
      <p>This pass performs trivial dominator-based copy and constant propagation,
 expression simplification, and jump threading.  It is run multiple times
-throughout the optimization process.  It it located in <samp><span class="file">tree-ssa-dom.c</span></samp>
+throughout the optimization process.  It it located in <span class="file">tree-ssa-dom.c</span>
 and is described by <code>pass_dominator</code>.
 
      <li>Redundant PHI elimination
@@ -164,7 +161,7 @@ and is described by <code>pass_dominator</code>.
      <p>This pass removes PHI nodes for which all of the arguments are the same
 value, excluding feedback.  Such degenerate forms are typically created
 by removing unreachable code.  The pass is run multiple times throughout
-the optimization process.  It is located in <samp><span class="file">tree-ssa.c</span></samp> and is
+the optimization process.  It is located in <span class="file">tree-ssa.c</span> and is
 described by <code>pass_redundant_phi</code>.o
 
      <li>Forward propagation of single-use variables
@@ -172,7 +169,7 @@ described by <code>pass_redundant_phi</code>.o
      <p>This pass attempts to remove redundant computation by substituting
 variables that are used once into the expression that uses them and
 seeing if the result can be simplified.  It is located in
-<samp><span class="file">tree-ssa-forwprop.c</span></samp> and is described by <code>pass_forwprop</code>.
+<span class="file">tree-ssa-forwprop.c</span> and is described by <code>pass_forwprop</code>.
 
      <li>Copy Renaming
 
@@ -180,14 +177,14 @@ seeing if the result can be simplified.  It is located in
 copy operations such that SSA-&gt;normal can coalesce the copy away.  When compiler
 temporaries are copies of user variables, it also renames the compiler
 temporary to the user variable resulting in better use of user symbols.  It is
-located in <samp><span class="file">tree-ssa-copyrename.c</span></samp> and is described by
+located in <span class="file">tree-ssa-copyrename.c</span> and is described by
 <code>pass_copyrename</code>.
 
      <li>PHI node optimizations
 
      <p>This pass recognizes forms of PHI inputs that can be represented as
 conditional expressions and rewrites them into straight line code. 
-It is located in <samp><span class="file">tree-ssa-phiopt.c</span></samp> and is described by
+It is located in <span class="file">tree-ssa-phiopt.c</span> and is described by
 <code>pass_phiopt</code>.
 
      <li>May-alias optimization
@@ -198,20 +195,20 @@ is used to promote variables from in-memory addressable objects to
 non-aliased variables that can be renamed into SSA form.  We also
 update the <code>VDEF</code>/<code>VUSE</code> memory tags for non-renameable
 aggregates so that we get fewer false kills.  The pass is located
-in <samp><span class="file">tree-ssa-alias.c</span></samp> and is described by <code>pass_may_alias</code>.
+in <span class="file">tree-ssa-alias.c</span> and is described by <code>pass_may_alias</code>.
 
      <li>Profiling
 
      <p>This pass rewrites the function in order to collect runtime block
 and value profiling data.  Such data may be fed back into the compiler
 on a subsequent run so as to allow optimization based on expected
-execution frequencies.  The pass is located in <samp><span class="file">predict.c</span></samp> and
+execution frequencies.  The pass is located in <span class="file">predict.c</span> and
 is described by <code>pass_profile</code>.
 
      <li>Lower complex arithmetic
 
      <p>This pass rewrites complex arithmetic operations into their component
-scalar arithmetic operations.  The pass is located in <samp><span class="file">tree-complex.c</span></samp>
+scalar arithmetic operations.  The pass is located in <span class="file">tree-complex.c</span>
 and is described by <code>pass_lower_complex</code>.
 
      <li>Scalar replacement of aggregates
@@ -220,79 +217,79 @@ and is described by <code>pass_lower_complex</code>.
 a set of scalar variables.  The resulting scalar variables are
 rewritten into SSA form, which allows subsequent optimization passes
 to do a significantly better job with them.  The pass is located in
-<samp><span class="file">tree-sra.c</span></samp> and is described by <code>pass_sra</code>.
+<span class="file">tree-sra.c</span> and is described by <code>pass_sra</code>.
 
      <li>Dead store elimination
 
      <p>This pass eliminates stores to memory that are subsequently overwritten
 by another store, without any intervening loads.  The pass is located
-in <samp><span class="file">tree-ssa-dse.c</span></samp> and is described by <code>pass_dse</code>.
+in <span class="file">tree-ssa-dse.c</span> and is described by <code>pass_dse</code>.
 
      <li>Tail recursion elimination
 
      <p>This pass transforms tail recursion into a loop.  It is located in
-<samp><span class="file">tree-tailcall.c</span></samp> and is described by <code>pass_tail_recursion</code>.
+<span class="file">tree-tailcall.c</span> and is described by <code>pass_tail_recursion</code>.
 
      <li>Forward store motion
 
      <p>This pass sinks stores and assignments down the flowgraph closer to it's
-use point.  The pass is located in <samp><span class="file">tree-ssa-sink.c</span></samp> and is
+use point.  The pass is located in <span class="file">tree-ssa-sink.c</span> and is
 described by <code>pass_sink_code</code>.
 
      <li>Partial redundancy elimination
 
      <p>This pass eliminates partially redundant computations, as well as
-performing load motion.  The pass is located in <samp><span class="file">tree-ssa-pre.c</span></samp>
+performing load motion.  The pass is located in <span class="file">tree-ssa-pre.c</span>
 and is described by <code>pass_pre</code>.
 
      <p>Just before partial redundancy elimination, if
-<samp><span class="option">-funsafe-math-optimizations</span></samp> is on, GCC tries to convert
+<span class="option">-funsafe-math-optimizations</span> is on, GCC tries to convert
 divisions to multiplications by the reciprocal.  The pass is located
-in <samp><span class="file">tree-ssa-math-opts.c</span></samp> and is described by
+in <span class="file">tree-ssa-math-opts.c</span> and is described by
 <code>pass_cse_reciprocal</code>.
 
      <li>Full redundancy elimination
 
      <p>This is a simpler form of PRE that only eliminate redundancies that
-occur an all paths.  It is located in <samp><span class="file">tree-ssa-pre.c</span></samp> and
+occur an all paths.  It is located in <span class="file">tree-ssa-pre.c</span> and
 described by <code>pass_fre</code>.
 
      <li>Loop optimization
 
-     <p>The main driver of the pass is placed in <samp><span class="file">tree-ssa-loop.c</span></samp>
+     <p>The main driver of the pass is placed in <span class="file">tree-ssa-loop.c</span>
 and described by <code>pass_loop</code>.
 
      <p>The optimizations performed by this pass are:
 
      <p>Loop invariant motion.  This pass moves only invariants that
 would be hard to handle on rtl level (function calls, operations that expand to
-nontrivial sequences of insns).  With <samp><span class="option">-funswitch-loops</span></samp> it also moves
+nontrivial sequences of insns).  With <span class="option">-funswitch-loops</span> it also moves
 operands of conditions that are invariant out of the loop, so that we can use
 just trivial invariantness analysis in loop unswitching.  The pass also includes
-store motion.  The pass is implemented in <samp><span class="file">tree-ssa-loop-im.c</span></samp>.
+store motion.  The pass is implemented in <span class="file">tree-ssa-loop-im.c</span>.
 
      <p>Canonical induction variable creation.  This pass creates a simple counter
 for number of iterations of the loop and replaces the exit condition of the
 loop using it, in case when a complicated analysis is necessary to determine
 the number of iterations.  Later optimizations then may determine the number
-easily.  The pass is implemented in <samp><span class="file">tree-ssa-loop-ivcanon.c</span></samp>.
+easily.  The pass is implemented in <span class="file">tree-ssa-loop-ivcanon.c</span>.
 
      <p>Induction variable optimizations.  This pass performs standard induction
 variable optimizations, including strength reduction, induction variable
 merging and induction variable elimination.  The pass is implemented in
-<samp><span class="file">tree-ssa-loop-ivopts.c</span></samp>.
+<span class="file">tree-ssa-loop-ivopts.c</span>.
 
      <p>Loop unswitching.  This pass moves the conditional jumps that are invariant
 out of the loops.  To achieve this, a duplicate of the loop is created for
 each possible outcome of conditional jump(s).  The pass is implemented in
-<samp><span class="file">tree-ssa-loop-unswitch.c</span></samp>.  This pass should eventually replace the
-rtl-level loop unswitching in <samp><span class="file">loop-unswitch.c</span></samp>, but currently
+<span class="file">tree-ssa-loop-unswitch.c</span>.  This pass should eventually replace the
+rtl-level loop unswitching in <span class="file">loop-unswitch.c</span>, but currently
 the rtl-level pass is not completely redundant yet due to deficiencies
 in tree level alias analysis.
 
      <p>The optimizations also use various utility functions contained in
-<samp><span class="file">tree-ssa-loop-manip.c</span></samp>, <samp><span class="file">cfgloop.c</span></samp>, <samp><span class="file">cfgloopanal.c</span></samp> and
-<samp><span class="file">cfgloopmanip.c</span></samp>.
+<span class="file">tree-ssa-loop-manip.c</span>, <span class="file">cfgloop.c</span>, <span class="file">cfgloopanal.c</span> and
+<span class="file">cfgloopmanip.c</span>.
 
      <p>Vectorization.  This pass transforms loops to operate on vector types
 instead of scalar types.  Data parallelism across loop iterations is exploited
@@ -303,9 +300,9 @@ the number of elements operated upon in parallel in each iteration, and the
 <code>VF</code> copies of each scalar operation are fused to form a vector operation. 
 Additional loop transformations such as peeling and versioning may take place
 to align the number of iterations, and to align the memory accesses in the loop. 
-The pass is implemented in <samp><span class="file">tree-vectorizer.c</span></samp> (the main driver and general
-utilities), <samp><span class="file">tree-vect-analyze.c</span></samp> and <samp><span class="file">tree-vect-transform.c</span></samp>. 
-Analysis of data references is in <samp><span class="file">tree-data-ref.c</span></samp>.
+The pass is implemented in <span class="file">tree-vectorizer.c</span> (the main driver and general
+utilities), <span class="file">tree-vect-analyze.c</span> and <span class="file">tree-vect-transform.c</span>. 
+Analysis of data references is in <span class="file">tree-data-ref.c</span>.
 
      <li>Tree level if-conversion for vectorizer
 
@@ -314,29 +311,29 @@ We identify if convertible loops, if-convert statements and merge
 basic blocks in one big block.  The idea is to present loop in such
 form so that vectorizer can have one to one mapping between statements
 and available vector operations.  This patch re-introduces COND_EXPR
-at GIMPLE level.  This pass is located in <samp><span class="file">tree-if-conv.c</span></samp> and is
+at GIMPLE level.  This pass is located in <span class="file">tree-if-conv.c</span> and is
 described by <code>pass_if_conversion</code>.
 
      <li>Conditional constant propagation
 
      <p>This pass relaxes a lattice of values in order to identify those
 that must be constant even in the presence of conditional branches. 
-The pass is located in <samp><span class="file">tree-ssa-ccp.c</span></samp> and is described
+The pass is located in <span class="file">tree-ssa-ccp.c</span> and is described
 by <code>pass_ccp</code>.
 
      <p>A related pass that works on memory loads and stores, and not just
-register values, is located in <samp><span class="file">tree-ssa-ccp.c</span></samp> and described by
+register values, is located in <span class="file">tree-ssa-ccp.c</span> and described by
 <code>pass_store_ccp</code>.
 
      <li>Conditional copy propagation
 
      <p>This is similar to constant propagation but the lattice of values is
 the &ldquo;copy-of&rdquo; relation.  It eliminates redundant copies from the
-code.  The pass is located in <samp><span class="file">tree-ssa-copy.c</span></samp> and described by
+code.  The pass is located in <span class="file">tree-ssa-copy.c</span> and described by
 <code>pass_copy_prop</code>.
 
      <p>A related pass that works on memory copies, and not just register
-copies, is located in <samp><span class="file">tree-ssa-copy.c</span></samp> and described by
+copies, is located in <span class="file">tree-ssa-copy.c</span> and described by
 <code>pass_store_copy_prop</code>.
 
      <li>Value range propagation
@@ -350,26 +347,26 @@ contrast to Patterson's algorithm, this implementation does not
 propagate branch probabilities nor it uses more than a single
 range per SSA name. This means that the current implementation
 cannot be used for branch prediction (though adapting it would
-not be difficult).  The pass is located in <samp><span class="file">tree-vrp.c</span></samp> and is
+not be difficult).  The pass is located in <span class="file">tree-vrp.c</span> and is
 described by <code>pass_vrp</code>.
 
      <li>Folding built-in functions
 
      <p>This pass simplifies built-in functions, as applicable, with constant
 arguments or with inferrable string lengths.  It is located in
-<samp><span class="file">tree-ssa-ccp.c</span></samp> and is described by <code>pass_fold_builtins</code>.
+<span class="file">tree-ssa-ccp.c</span> and is described by <code>pass_fold_builtins</code>.
 
      <li>Split critical edges
 
      <p>This pass identifies critical edges and inserts empty basic blocks
 such that the edge is no longer critical.  The pass is located in
-<samp><span class="file">tree-cfg.c</span></samp> and is described by <code>pass_split_crit_edges</code>.
+<span class="file">tree-cfg.c</span> and is described by <code>pass_split_crit_edges</code>.
 
      <li>Control dependence dead code elimination
 
      <p>This pass is a stronger form of dead code elimination that can
 eliminate unnecessary control flow statements.   It is located
-in <samp><span class="file">tree-ssa-dce.c</span></samp> and is described by <code>pass_cd_dce</code>.
+in <span class="file">tree-ssa-dce.c</span> and is described by <code>pass_cd_dce</code>.
 
      <li>Tail call elimination
 
@@ -378,9 +375,9 @@ jumps.  No code transformation is actually applied here, but the
 data and control flow problem is solved.  The code transformation
 requires target support, and so is delayed until RTL.  In the
 meantime <code>CALL_EXPR_TAILCALL</code> is set indicating the possibility. 
-The pass is located in <samp><span class="file">tree-tailcall.c</span></samp> and is described by
+The pass is located in <span class="file">tree-tailcall.c</span> and is described by
 <code>pass_tail_calls</code>.  The RTL transformation is handled by
-<code>fixup_tail_calls</code> in <samp><span class="file">calls.c</span></samp>.
+<code>fixup_tail_calls</code> in <span class="file">calls.c</span>.
 
      <li>Warn for function return without value
 
@@ -388,7 +385,7 @@ The pass is located in <samp><span class="file">tree-tailcall.c</span></samp> an
 not specify a value and issues a warning.  Such a statement may have
 been injected by falling off the end of the function.  This pass is
 run last so that we have as much time as possible to prove that the
-statement is not reachable.  It is located in <samp><span class="file">tree-cfg.c</span></samp> and
+statement is not reachable.  It is located in <span class="file">tree-cfg.c</span> and
 is described by <code>pass_warn_function_return</code>.
 
      <li>Mudflap statement annotation
@@ -400,7 +397,7 @@ etc.) are replaced by code that checks the selected address range
 against the mudflap runtime's database of valid regions.  This check
 includes an inline lookup into a direct-mapped cache, based on
 shift/mask operations of the pointer value, with a fallback function
-call into the runtime.  The pass is located in <samp><span class="file">tree-mudflap.c</span></samp> and
+call into the runtime.  The pass is located in <span class="file">tree-mudflap.c</span> and
 is described by <code>pass_mudflap_2</code>.
 
      <li>Leave static single assignment form
@@ -408,14 +405,14 @@ is described by <code>pass_mudflap_2</code>.
      <p>This pass rewrites the function such that it is in normal form.  At
 the same time, we eliminate as many single-use temporaries as possible,
 so the intermediate language is no longer GIMPLE, but GENERIC.  The
-pass is located in <samp><span class="file">tree-outof-ssa.c</span></samp> and is described by
+pass is located in <span class="file">tree-outof-ssa.c</span> and is described by
 <code>pass_del_ssa</code>.
 
      <li>Merge PHI nodes that feed into one another
 
      <p>This is part of the CFG cleanup passes.  It attempts to join PHI nodes
 from a forwarder CFG block into another block with PHI nodes.  The
-pass is located in <samp><span class="file">tree-cfgcleanup.c</span></samp> and is described by
+pass is located in <span class="file">tree-cfgcleanup.c</span> and is described by
 <code>pass_merge_phi</code>.
 
      <li>Return value optimization
@@ -424,7 +421,7 @@ pass is located in <samp><span class="file">tree-cfgcleanup.c</span></samp> and 
 variable is an aggregate type, then the variable is replaced with the
 return value for the function (i.e., the function's DECL_RESULT).  This
 is equivalent to the C++ named return value optimization applied to
-GIMPLE.  The pass is located in <samp><span class="file">tree-nrv.c</span></samp> and is described by
+GIMPLE.  The pass is located in <span class="file">tree-nrv.c</span> and is described by
 <code>pass_nrv</code>.
 
      <li>Return slot optimization
@@ -440,13 +437,13 @@ pass is located in <code>tree-nrv.c</code> and is described by
      <p>This is a propagation pass similar to CCP that tries to remove calls
 to <code>__builtin_object_size</code> when the size of the object can be
 computed at compile-time.  This pass is located in
-<samp><span class="file">tree-object-size.c</span></samp> and is described by
+<span class="file">tree-object-size.c</span> and is described by
 <code>pass_object_sizes</code>.
 
      <li>Loop invariant motion
 
      <p>This pass removes expensive loop-invariant computations out of loops. 
-The pass is located in <samp><span class="file">tree-ssa-loop.c</span></samp> and described by
+The pass is located in <span class="file">tree-ssa-loop.c</span> and described by
 <code>pass_lim</code>.
 
      <li>Loop nest optimizations
@@ -456,26 +453,26 @@ includes loop interchange, scaling, skewing and reversal and they are
 all geared to the optimization of data locality in array traversals
 and the removal of dependencies that hamper optimizations such as loop
 parallelization and vectorization.  The pass is located in
-<samp><span class="file">tree-loop-linear.c</span></samp> and described by
+<span class="file">tree-loop-linear.c</span> and described by
 <code>pass_linear_transform</code>.
 
      <li>Removal of empty loops
 
      <p>This pass removes loops with no code in them.  The pass is located in
-<samp><span class="file">tree-ssa-loop-ivcanon.c</span></samp> and described by
+<span class="file">tree-ssa-loop-ivcanon.c</span> and described by
 <code>pass_empty_loop</code>.
 
      <li>Unrolling of small loops
 
      <p>This pass completely unrolls loops with few iterations.  The pass
-is located in <samp><span class="file">tree-ssa-loop-ivcanon.c</span></samp> and described by
+is located in <span class="file">tree-ssa-loop-ivcanon.c</span> and described by
 <code>pass_complete_unroll</code>.
 
      <li>Reassociation
 
      <p>This pass rewrites arithmetic expressions to enable optimizations that
 operate on them, like redundancy elimination and vectorization.  The
-pass is located in <samp><span class="file">tree-ssa-reassoc.c</span></samp> and described by
+pass is located in <span class="file">tree-ssa-reassoc.c</span> and described by
 <code>pass_reassoc</code>.
 
      <li>Optimization of <code>stdarg</code> functions

@@ -3,7 +3,7 @@
 <title>Header Files - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Using-the-Library.html#Using-the-Library" title="Using the Library">
 <link rel="next" href="Macro-Definitions.html#Macro-Definitions" title="Macro Definitions">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Header-Files"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Macro-Definitions.html#Macro-Definitions">Macro Definitions</a>,
+<a name="Header-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Macro-Definitions.html#Macro-Definitions">Macro Definitions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Using-the-Library.html#Using-the-Library">Using the Library</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">1.3.1 Header Files</h4>
@@ -54,7 +52,7 @@ program has been compiled, the linker resolves these references to
 the actual definitions provided in the archive file.
 
    <p>Header files are included into a program source file by the
-&lsquo;<samp><span class="samp">#include</span></samp>&rsquo; preprocessor directive.  The C language supports two
+<span class="samp">#include</span> preprocessor directive.  The C language supports two
 forms of this directive; the first,
 
 <pre class="smallexample">     #include "<var>header</var>"
@@ -66,19 +64,19 @@ By contrast,
 
 <pre class="smallexample">     #include &lt;file.h&gt;
 </pre>
-   <p class="noindent">is typically used to include a header file <samp><span class="file">file.h</span></samp> that contains
+   <p class="noindent">is typically used to include a header file <span class="file">file.h</span> that contains
 definitions and declarations for a standard library.  This file would
 normally be installed in a standard place by your system administrator. 
 You should use this second form for the C library header files.
 
-   <p>Typically, &lsquo;<samp><span class="samp">#include</span></samp>&rsquo; directives are placed at the top of the C
+   <p>Typically, <span class="samp">#include</span> directives are placed at the top of the C
 source file, before any other code.  If you begin your source files with
 some comments explaining what the code in the file does (a good idea),
-put the &lsquo;<samp><span class="samp">#include</span></samp>&rsquo; directives immediately afterwards, following the
+put the <span class="samp">#include</span> directives immediately afterwards, following the
 feature test macro definition (see <a href="Feature-Test-Macros.html#Feature-Test-Macros">Feature Test Macros</a>).
 
-   <p>For more information about the use of header files and &lsquo;<samp><span class="samp">#include</span></samp>&rsquo;
-directives, see <a href="../cpp/Header-Files.html#Header-Files">Header Files</a>.
+   <p>For more information about the use of header files and <span class="samp">#include</span>
+directives, see <a href="../cpp/Header-Files.html#Header-Files">Header Files (The GNU C Preprocessor Manual)</a>.
 
    <p>The GNU C library provides several header files, each of which contains
 the type and macro definitions and variable and function declarations

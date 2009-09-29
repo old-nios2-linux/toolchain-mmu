@@ -3,7 +3,7 @@
 <title>Signaling - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Altering.html#Altering" title="Altering">
 <link rel="prev" href="Jumping.html#Jumping" title="Jumping">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Signaling"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Returning.html#Returning">Returning</a>,
+<a name="Signaling"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Returning.html#Returning">Returning</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Jumping.html#Jumping">Jumping</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Altering.html#Altering">Altering</a>
-<hr>
+<hr><br>
 </div>
 
 <h3 class="section">15.3 Giving your Program a Signal</h3>
@@ -45,7 +43,7 @@ SIGINT</code> are both ways of sending an interrupt signal.
      <p>Alternatively, if <var>signal</var> is zero, continue execution without
 giving a signal.  This is useful when your program stopped on account of
 a signal and would ordinary see the signal when resumed with the
-<code>continue</code> command; &lsquo;<samp><span class="samp">signal 0</span></samp>&rsquo; causes it to resume without a
+<code>continue</code> command; <span class="samp">signal 0</span> causes it to resume without a
 signal.
 
      <p><code>signal</code> does not repeat when you press &lt;RET&gt; a second time

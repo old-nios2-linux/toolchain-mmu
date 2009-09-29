@@ -3,7 +3,7 @@
 <title>BFIN Syntax - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="BFIN_002dDependent.html#BFIN_002dDependent" title="BFIN-Dependent">
 <link rel="next" href="BFIN-Directives.html#BFIN-Directives" title="BFIN Directives">
@@ -16,18 +16,16 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="BFIN-Syntax"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="BFIN-Directives.html#BFIN-Directives">BFIN Directives</a>,
+<a name="BFIN-Syntax"></a>Next:&nbsp;<a rel="next" accesskey="n" href="BFIN-Directives.html#BFIN-Directives">BFIN Directives</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="BFIN_002dDependent.html#BFIN_002dDependent">BFIN-Dependent</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">8.5.1 Syntax</h4>
@@ -48,13 +46,13 @@ cases where this occurs.  The first is when two general operations
 are combined.  Normally a comma separates the different parts, as in
 
      <pre class="smallexample">          a0= r3.h * r2.l, a1 = r3.l * r2.h ;
-</pre>
+     </pre>
      <p>The second case occurs when a general instruction is combined with one
 or two memory references for joint issue.  The latter portions are
 set off by a "||" token.
 
      <pre class="smallexample">          a0 = r3.h * r2.l || r1 = [p3++] || r4 = [i2++];
-</pre>
+     </pre>
      <br><dt><code>Register Names</code><dd>
 The assembler treats register names and instruction keywords in a case
 insensitive manner.  User identifiers are case sensitive.  Thus, R3.l,
@@ -99,13 +97,13 @@ following the register name.  The most significant 16 bits are called
 the "high" half and is designated with ".H" following the name.
 
      <pre class="smallexample">             R7.L, r2.h, r4.L, R0.H
-</pre>
+     </pre>
      <br><dt><code>Pointer Registers</code><dd>The set of 32-bit registers (P0, P1, P2, P3, P4, P5, SP and FP) that
 normally contain byte addresses of data structures.  These are
 abbreviated as P-register or Preg.
 
      <pre class="smallexample">          p2, p5, fp, sp
-</pre>
+     </pre>
      <br><dt><code>Stack Pointer SP</code><dd>The stack pointer contains the 32-bit address of the last occupied
 byte location in the stack.  The stack grows by decrementing the
 stack pointer.

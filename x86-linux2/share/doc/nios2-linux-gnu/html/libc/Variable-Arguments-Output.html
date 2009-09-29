@@ -3,7 +3,7 @@
 <title>Variable Arguments Output - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Formatted-Output.html#Formatted-Output" title="Formatted Output">
 <link rel="prev" href="Dynamic-Output.html#Dynamic-Output" title="Dynamic Output">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Variable-Arguments-Output"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Parsing-a-Template-String.html#Parsing-a-Template-String">Parsing a Template String</a>,
+<a name="Variable-Arguments-Output"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Parsing-a-Template-String.html#Parsing-a-Template-String">Parsing a Template String</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Dynamic-Output.html#Dynamic-Output">Dynamic Output</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Formatted-Output.html#Formatted-Output">Formatted Output</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">12.12.9 Variable Arguments Output Functions</h4>
@@ -55,7 +53,7 @@ For example:
 <pre class="smallexample">     #define myprintf(a, b, c, d, e, rest...) \
                  printf (mytemplate , ## rest)
 </pre>
-   <p class="noindent">See <a href="../gcc/Macro-Varargs.html#Macro-Varargs">Macros with Variable Numbers of Arguments</a>, for details.  But this is limited to macros,
+   <p class="noindent">See <a href="../gcc/Macro-Varargs.html#Macro-Varargs">Macros with Variable Numbers of Arguments (Using GNU CC)</a>, for details.  But this is limited to macros,
 and does not apply to real functions at all.
 
    <p>Before calling <code>vprintf</code> or the other functions listed in this
@@ -83,7 +81,7 @@ arguments from a <code>va_list</code> pointer after passing it to
 subsequent <code>va_arg</code> calls will fetch the same arguments which
 <code>vprintf</code> previously used.)
 
-   <p>Prototypes for these functions are declared in <samp><span class="file">stdio.h</span></samp>. 
+   <p>Prototypes for these functions are declared in <span class="file">stdio.h</span>. 
 <a name="index-stdio_002eh-1035"></a>
 <!-- stdio.h -->
 <!-- ISO -->
@@ -199,7 +197,7 @@ For example, take this declaration of <code>eprintf</code>:
 <code>printf</code> (as opposed to <code>scanf</code>; see <a href="Formatted-Input.html#Formatted-Input">Formatted Input</a>);
 the format string appears as the first argument;
 and the arguments to satisfy the format begin with the second. 
-See <a href="../gcc/Function-Attributes.html#Function-Attributes">Declaring Attributes of Functions</a>, for more information.
+See <a href="../gcc/Function-Attributes.html#Function-Attributes">Declaring Attributes of Functions (Using GNU CC)</a>, for more information.
 
    </body></html>
 

@@ -3,7 +3,7 @@
 <title>Tracepoint Actions - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Set-Tracepoints.html#Set-Tracepoints" title="Set Tracepoints">
 <link rel="prev" href="Tracepoint-Passcounts.html#Tracepoint-Passcounts" title="Tracepoint Passcounts">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Tracepoint-Actions"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Listing-Tracepoints.html#Listing-Tracepoints">Listing Tracepoints</a>,
+<a name="Tracepoint-Actions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Listing-Tracepoints.html#Listing-Tracepoints">Listing Tracepoints</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Tracepoint-Passcounts.html#Tracepoint-Passcounts">Tracepoint Passcounts</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Set-Tracepoints.html#Set-Tracepoints">Set Tracepoints</a>
-<hr>
+<hr><br>
 </div>
 
 <h4 class="subsection">11.1.4 Tracepoint Action Lists</h4>
@@ -47,15 +45,15 @@ terminate the actions list with a line containing just <code>end</code>.  So
 far, the only defined actions are <code>collect</code> and
 <code>while-stepping</code>.
 
-     <p><a name="index-remove-actions-from-a-tracepoint-571"></a>To remove all actions from a tracepoint, type &lsquo;<samp><span class="samp">actions </span><var>num</var></samp>&rsquo;
-and follow it immediately with &lsquo;<samp><span class="samp">end</span></samp>&rsquo;.
+     <p><a name="index-remove-actions-from-a-tracepoint-571"></a>To remove all actions from a tracepoint, type <span class="samp">actions </span><var>num</var>
+and follow it immediately with <span class="samp">end</span>.
 
      <pre class="smallexample">          (gdb) <b>collect </b><var>data</var> // collect some data
           
           (gdb) <b>while-stepping 5</b> // single-step 5 times, collect data
           
           (gdb) <b>end</b>              // signals the end of actions.
-</pre>
+     </pre>
      <p>In the following example, the action list begins with <code>collect</code>
 commands indicating the things to be collected when the tracepoint is
 hit.  Then, in order to single-step and collect additional data
@@ -74,7 +72,7 @@ followed by the list of things to be collected while stepping.  The
             &gt; collect $fp, $sp
             &gt; end
           end
-</pre>
+     </pre>
      <p><a name="index-collect-_0040r_007b_0028tracepoints_0029_007d-572"></a><br><dt><code>collect </code><var>expr1</var><code>, </code><var>expr2</var><code>, ...</code><dd>Collect values of the given expressions when the tracepoint is hit. 
 This command accepts a comma-separated list of any valid expressions. 
 In addition to global, static, or local variables, the following
@@ -104,7 +102,7 @@ its own <code>end</code> command):
             &gt; collect $regs, myglobal
             &gt; end
           &gt;
-</pre>
+     </pre>
      <p class="noindent">You may abbreviate <code>while-stepping</code> as <code>ws</code> or
 <code>stepping</code>. 
 </dl>

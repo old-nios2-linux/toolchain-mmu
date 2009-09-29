@@ -3,7 +3,7 @@
 <title>Currency Symbol - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.13">
+<meta name="generator" content="makeinfo 4.7">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="The-Lame-Way-to-Locale-Data.html#The-Lame-Way-to-Locale-Data" title="The Lame Way to Locale Data">
 <link rel="prev" href="General-Numeric.html#General-Numeric" title="General Numeric">
@@ -17,19 +17,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
-<a name="Currency-Symbol"></a>
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Sign-of-Money-Amount.html#Sign-of-Money-Amount">Sign of Money Amount</a>,
+<a name="Currency-Symbol"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Sign-of-Money-Amount.html#Sign-of-Money-Amount">Sign of Money Amount</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="General-Numeric.html#General-Numeric">General Numeric</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="The-Lame-Way-to-Locale-Data.html#The-Lame-Way-to-Locale-Data">The Lame Way to Locale Data</a>
-<hr>
+<hr><br>
 </div>
 
 <h5 class="subsubsection">7.6.1.2 Printing the Currency Symbol</h5>
@@ -37,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="The-Lame-Way-to-Locale-Data.html#The-La
 <p><a name="index-currency-symbols-712"></a>
 These members of the <code>struct lconv</code> structure specify how to print
 the symbol to identify a monetary value&mdash;the international analog of
-&lsquo;<samp><span class="samp">$</span></samp>&rsquo; for US dollars.
+<span class="samp">$</span> for US dollars.
 
    <p>Each country has two standard currency symbols.  The <dfn>local currency
 symbol</dfn> is used commonly within the country, while the
@@ -55,7 +53,7 @@ assumed to be in Canadian dollars.
      <dl>
 <dt><code>char *currency_symbol</code><dd>The local currency symbol for the selected locale.
 
-     <p>In the standard &lsquo;<samp><span class="samp">C</span></samp>&rsquo; locale, this member has a value of <code>""</code>
+     <p>In the standard <span class="samp">C</span> locale, this member has a value of <code>""</code>
 (the empty string), meaning &ldquo;unspecified&rdquo;.  The ISO standard doesn't
 say what to do when you find this value; we recommend you simply print
 the empty string as you would print any other string pointed to by this
@@ -68,7 +66,7 @@ three-letter abbreviation determined by the international standard
 <cite>ISO 4217 Codes for the Representation of Currency and Funds</cite>,
 followed by a one-character separator (often a space).
 
-     <p>In the standard &lsquo;<samp><span class="samp">C</span></samp>&rsquo; locale, this member has a value of <code>""</code>
+     <p>In the standard <span class="samp">C</span> locale, this member has a value of <code>""</code>
 (the empty string), meaning &ldquo;unspecified&rdquo;.  We recommend you simply print
 the empty string as you would print any other string pointed to by this
 variable.
@@ -80,7 +78,7 @@ amount, or <code>0</code> if the strings should follow the value.  The
 positive amounts (or zero), and the <code>n_cs_precedes</code> and
 <code>int_n_cs_precedes</code> members apply to negative amounts.
 
-     <p>In the standard &lsquo;<samp><span class="samp">C</span></samp>&rsquo; locale, all of these members have a value of
+     <p>In the standard <span class="samp">C</span> locale, all of these members have a value of
 <code>CHAR_MAX</code>, meaning &ldquo;unspecified&rdquo;.  The ISO standard doesn't say
 what to do when you find this value.  We recommend printing the
 currency symbol before the amount, which is right for most countries. 
@@ -97,7 +95,7 @@ amount, or <code>0</code> if no space should appear.  The
 positive amounts (or zero), and the <code>n_sep_by_space</code> and
 <code>int_n_sep_by_space</code> members apply to negative amounts.
 
-     <p>In the standard &lsquo;<samp><span class="samp">C</span></samp>&rsquo; locale, all of these members have a value of
+     <p>In the standard <span class="samp">C</span> locale, all of these members have a value of
 <code>CHAR_MAX</code>, meaning &ldquo;unspecified&rdquo;.  The ISO standard doesn't say
 what you should do when you find this value; we suggest you treat it as
 1 (print a space).  In other words, treat all nonzero values alike in
