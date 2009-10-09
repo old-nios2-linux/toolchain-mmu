@@ -3,7 +3,7 @@
 <title>Extended Asm - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Inline.html#Inline" title="Inline">
@@ -38,22 +38,24 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Extended-Asm"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Constraints.html#Constraints">Constraints</a>,
+<a name="Extended-Asm"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Constraints.html#Constraints">Constraints</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Inline.html#Inline">Inline</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.34 Assembler Instructions with C Expression Operands</h3>
 
-<p><a name="index-extended-_0040code_007basm_007d-1942"></a><a name="index-_0040code_007basm_007d-expressions-1943"></a><a name="index-assembler-instructions-1944"></a><a name="index-registers-1945"></a>
+<p><a name="index-extended-_0040code_007basm_007d-1942"></a><a name="index-g_t_0040code_007basm_007d-expressions-1943"></a><a name="index-assembler-instructions-1944"></a><a name="index-registers-1945"></a>
 In an assembler instruction using <code>asm</code>, you can specify the
 operands of the instruction using C expressions.  This means you need not
 guess which registers or memory locations will contain the data you want
@@ -68,10 +70,10 @@ each operand.
 <pre class="smallexample">     asm ("fsinx %1,%0" : "=f" (result) : "f" (angle));
 </pre>
  <p class="noindent">Here <code>angle</code> is the C expression for the input operand while
-<code>result</code> is that of the output operand.  Each has <span class="samp">"f"</span> as its
+<code>result</code> is that of the output operand.  Each has `<samp><span class="samp">"f"</span></samp>' as its
 operand constraint, saying that a floating point register is required. 
-The <span class="samp">=</span> in <span class="samp">=f</span> indicates that the operand is an output; all
-output operands' constraints must use <span class="samp">=</span>.  The constraints use the
+The `<samp><span class="samp">=</span></samp>' in `<samp><span class="samp">=f</span></samp>' indicates that the operand is an output; all
+output operands' constraints must use `<samp><span class="samp">=</span></samp>'.  The constraints use the
 same language used in the machine description (see <a href="Constraints.html#Constraints">Constraints</a>).
 
  <p>Each operand is described by an operand-constraint string followed by
@@ -118,7 +120,7 @@ that register into the output.
  <p>The ordinary output operands must be write-only; GCC will assume that
 the values in these operands before the instruction are dead and need
 not be generated.  Extended asm supports input-output or read-write
-operands.  Use the constraint character <span class="samp">+</span> to indicate such an
+operands.  Use the constraint character `<samp><span class="samp">+</span></samp>' to indicate such an
 operand and list it with the output operands.  You should only use
 read-write operands when the constraints for the operand (or the
 operand in which only some of the bits are to be changed) allow a
@@ -130,12 +132,12 @@ operand.  The connection between them is expressed by constraints
 which say they need to be in the same location when the instruction
 executes.  You can use the same C expression for both operands, or
 different expressions.  For example, here we write the (fictitious)
-<span class="samp">combine</span> instruction with <code>bar</code> as its read-only source
+`<samp><span class="samp">combine</span></samp>' instruction with <code>bar</code> as its read-only source
 operand and <code>foo</code> as its read-write destination:
 
 <pre class="smallexample">     asm ("combine %2,%0" : "=r" (foo) : "0" (foo), "g" (bar));
 </pre>
- <p class="noindent">The constraint <span class="samp">"0"</span> for operand 1 says that it must occupy the
+ <p class="noindent">The constraint `<samp><span class="samp">"0"</span></samp>' for operand 1 says that it must occupy the
 same location as operand 0.  A number in constraint is allowed only in
 an input operand and it must refer to an output operand.
 
@@ -215,26 +217,26 @@ prevent GCC from deleting the <code>asm</code> statement as unused.
  <p>If you refer to a particular hardware register from the assembler code,
 you will probably have to list the register after the third colon to
 tell the compiler the register's value is modified.  In some assemblers,
-the register names begin with <span class="samp">%</span>; to produce one <span class="samp">%</span> in the
-assembler code, you must write <span class="samp">%%</span> in the input.
+the register names begin with `<samp><span class="samp">%</span></samp>'; to produce one `<samp><span class="samp">%</span></samp>' in the
+assembler code, you must write `<samp><span class="samp">%%</span></samp>' in the input.
 
  <p>If your assembler instruction can alter the condition code register, add
-<span class="samp">cc</span> to the list of clobbered registers.  GCC on some machines
+`<samp><span class="samp">cc</span></samp>' to the list of clobbered registers.  GCC on some machines
 represents the condition codes as a specific hardware register;
-<span class="samp">cc</span> serves to name this register.  On other machines, the
-condition code is handled differently, and specifying <span class="samp">cc</span> has no
+`<samp><span class="samp">cc</span></samp>' serves to name this register.  On other machines, the
+condition code is handled differently, and specifying `<samp><span class="samp">cc</span></samp>' has no
 effect.  But it is valid no matter what the machine.
 
  <p>If your assembler instructions access memory in an unpredictable
-fashion, add <span class="samp">memory</span> to the list of clobbered registers.  This
+fashion, add `<samp><span class="samp">memory</span></samp>' to the list of clobbered registers.  This
 will cause GCC to not keep memory values cached in registers across the
 assembler instruction and not optimize stores or loads to that memory. 
 You will also want to add the <code>volatile</code> keyword if the memory
 affected is not listed in the inputs or outputs of the <code>asm</code>, as
-the <span class="samp">memory</span> clobber does not count as a side-effect of the
+the `<samp><span class="samp">memory</span></samp>' clobber does not count as a side-effect of the
 <code>asm</code>.  If you know how large the accessed memory is, you can add
 it as input or output but if this is not known, you should add
-<span class="samp">memory</span>.  As an example, if you access ten bytes of a string, you
+`<samp><span class="samp">memory</span></samp>'.  As an example, if you access ten bytes of a string, you
 can use a memory input like:
 
 <pre class="smallexample">     {"m"( ({ struct { char x[10]; } *p = (void *)ptr ; *p; }) )}.
@@ -255,7 +257,7 @@ otherwise GCC might optimize the store to <code>x</code> away:
 <code>asm</code> template, separated by the characters normally used in assembly
 code for the system.  A combination that works in most places is a newline
 to break the line, plus a tab character to move to the instruction field
-(written as <span class="samp">\n\t</span>).  Sometimes semicolons can be used, if the
+(written as `<samp><span class="samp">\n\t</span></samp>').  Sometimes semicolons can be used, if the
 assembler allows semicolons as a line-breaking character.  Note that some
 assembler dialects use semicolons to start a comment. 
 The input operands are guaranteed not to use any of the clobbered
@@ -269,11 +271,11 @@ subroutine <code>_foo</code> accepts arguments in registers 9 and 10:
           : "g" (from), "g" (to)
           : "r9", "r10");
 </pre>
- <p>Unless an output operand has the <span class="samp">&amp;</span> constraint modifier, GCC
+ <p>Unless an output operand has the `<samp><span class="samp">&amp;</span></samp>' constraint modifier, GCC
 may allocate it in the same register as an unrelated input operand, on
 the assumption the inputs are consumed before the outputs are produced. 
 This assumption may be false if the assembler code actually consists of
-more than one instruction.  In such a case, use <span class="samp">&amp;</span> for each output
+more than one instruction.  In such a case, use `<samp><span class="samp">&amp;</span></samp>' for each output
 operand that may not overlap an input.  See <a href="Modifiers.html#Modifiers">Modifiers</a>.
 
  <p>If you want to test the condition code produced by an assembler

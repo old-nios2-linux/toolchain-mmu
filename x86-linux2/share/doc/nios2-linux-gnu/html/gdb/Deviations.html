@@ -3,7 +3,7 @@
 <title>Deviations - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Modula_002d2.html#Modula_002d2" title="Modula-2">
 <link rel="prev" href="M2-Defaults.html#M2-Defaults" title="M2 Defaults">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Deviations"></a>Next:&nbsp;<a rel="next" accesskey="n" href="M2-Checks.html#M2-Checks">M2 Checks</a>,
+<a name="Deviations"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="M2-Checks.html#M2-Checks">M2 Checks</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="M2-Defaults.html#M2-Defaults">M2 Defaults</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Modula_002d2.html#Modula_002d2">Modula-2</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="subsubsection">13.4.5.6 Deviations from Standard Modula-2</h5>
@@ -47,7 +49,7 @@ returned a pointer.)
      <li>C escape sequences can be used in strings and characters to represent
 non-printable characters.  <span class="sc">gdb</span> prints out strings with these
 escape sequences embedded.  Single non-printable characters are
-printed using the <span class="samp">CHR(</span><var>nnn</var><span class="samp">)</span> format.
+printed using the `<samp><span class="samp">CHR(</span><var>nnn</var><span class="samp">)</span></samp>' format.
 
      <li>The assignment operator (<code>:=</code>) returns the value of its right-hand
 argument.

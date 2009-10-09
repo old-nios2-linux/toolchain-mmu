@@ -3,7 +3,7 @@
 <title>Argp Option Flags - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Argp-Option-Vectors.html#Argp-Option-Vectors" title="Argp Option Vectors">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -15,15 +15,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Argp-Option-Flags"></a>Up:&nbsp;<a rel="up" accesskey="u" href="Argp-Option-Vectors.html#Argp-Option-Vectors">Argp Option Vectors</a>
-<hr><br>
+<a name="Argp-Option-Flags"></a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Argp-Option-Vectors.html#Argp-Option-Vectors">Argp Option Vectors</a>
+<hr>
 </div>
 
 <h5 class="subsubsection">25.3.4.1 Flags for Argp Options</h5>
@@ -56,13 +58,13 @@ be displayed in much the same manner as the options.  This is known as a
 <dfn>documentation option</dfn>.
 
      <p>If this flag is set, then the option <code>name</code> field is displayed
-unmodified (e.g., no <span class="samp">--</span> prefix is added) at the left-margin where
+unmodified (e.g., no `<samp><span class="samp">--</span></samp>' prefix is added) at the left-margin where
 a <em>short</em> option would normally be displayed, and this
 documentation string is left in it's usual place.  For purposes of
 sorting, any leading whitespace and punctuation is ignored, unless the
-first non-whitespace character is <span class="samp">-</span>.  This entry is displayed
+first non-whitespace character is `<samp><span class="samp">-</span></samp>'.  This entry is displayed
 after all options, after <code>OPTION_DOC</code> entries with a leading
-<span class="samp">-</span>, in the same group.
+`<samp><span class="samp">-</span></samp>', in the same group.
 
      <!-- argp.h -->
 <!-- GNU -->
@@ -73,7 +75,7 @@ field.  See <a href="Argp-Parsers.html#Argp-Parsers">Argp Parsers</a>.  Includin
 list would be redundant, and should be avoided.
 
      <p>For instance, if <code>args_doc</code> is <code>"FOO BAR\n-x BLAH"</code>, and the
-<span class="samp">-x</span> option's purpose is to distinguish these two cases, <span class="samp">-x</span>
+`<samp><span class="samp">-x</span></samp>' option's purpose is to distinguish these two cases, `<samp><span class="samp">-x</span></samp>'
 should probably be marked <code>OPTION_NO_USAGE</code>. 
 </dl>
 

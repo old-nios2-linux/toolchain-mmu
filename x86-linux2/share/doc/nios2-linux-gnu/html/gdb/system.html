@@ -3,7 +3,7 @@
 <title>system - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="List-of-Supported-Calls.html#List-of-Supported-Calls" title="List of Supported Calls">
 <link rel="prev" href="isatty.html#isatty" title="isatty">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="system"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="isatty.html#isatty">isatty</a>,
+<a name="system"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="isatty.html#isatty">isatty</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="List-of-Supported-Calls.html#List-of-Supported-Calls">List of Supported Calls</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="unnumberedsubsubsec">system</h5>
@@ -35,7 +37,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="List-of-Supported-Calls.html#List-of-Su
 <dt>Synopsis:<dd>
      <pre class="smallexample">          int system(const char *command);
      </pre>
-     <br><dt>Request:<dd><span class="samp">Fsystem,</span><var>commandptr</var><span class="samp">/</span><var>len</var>
+     <br><dt>Request:<dd>`<samp><span class="samp">Fsystem,</span><var>commandptr</var><span class="samp">/</span><var>len</var></samp>'
 
      <br><dt>Return value:<dd>If <var>len</var> is zero, the return value indicates whether a shell is
 available.  A zero return value indicates a shell is not available. 
@@ -43,7 +45,7 @@ For non-zero <var>len</var>, the value returned is -1 on error and the
 return status of the command otherwise.  Only the exit status of the
 command is returned, which is extracted from the host's <code>system</code>
 return value by calling <code>WEXITSTATUS(retval)</code>.  In case
-<span class="file">/bin/sh</span> could not be executed, 127 is returned.
+<samp><span class="file">/bin/sh</span></samp> could not be executed, 127 is returned.
 
      <br><dt>Errors:<dd>
           <dl>

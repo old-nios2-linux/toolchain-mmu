@@ -3,7 +3,7 @@
 <title>Native Debugging - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Target-Vector-Definition.html#Target-Vector-Definition" title="Target Vector Definition">
 <link rel="next" href="Support-Libraries.html#Support-Libraries" title="Support Libraries">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Native-Debugging"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Support-Libraries.html#Support-Libraries">Support Libraries</a>,
+<a name="Native-Debugging"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Support-Libraries.html#Support-Libraries">Support Libraries</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Target-Vector-Definition.html#Target-Vector-Definition">Target Vector Definition</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">12 Native Debugging</h2>
@@ -36,51 +38,51 @@ Several files control <span class="sc">gdb</span>'s configuration for native sup
 
      
 <a name="index-NATDEPFILES-434"></a>
-<dl><dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/</span><var>xyz</var><span class="file">.mh</span><dd>Specifies Makefile fragments needed by a <em>native</em> configuration on
+<dl><dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/</span><var>xyz</var><span class="file">.mh</span></samp><dd>Specifies Makefile fragments needed by a <em>native</em> configuration on
 machine <var>xyz</var>.  In particular, this lists the required
-native-dependent object files, by defining <span class="samp">NATDEPFILES=...</span>. 
+native-dependent object files, by defining `<samp><span class="samp">NATDEPFILES=...</span></samp>'. 
 Also specifies the header file which describes native support on
-<var>xyz</var>, by defining <span class="samp">NAT_FILE= nm-</span><var>xyz</var><span class="samp">.h</span>.  You can also
-define <span class="samp">NAT_CFLAGS</span>, <span class="samp">NAT_ADD_FILES</span>, <span class="samp">NAT_CLIBS</span>,
-<span class="samp">NAT_CDEPS</span>, etc.; see <span class="file">Makefile.in</span>.
+<var>xyz</var>, by defining `<samp><span class="samp">NAT_FILE= nm-</span><var>xyz</var><span class="samp">.h</span></samp>'.  You can also
+define `<samp><span class="samp">NAT_CFLAGS</span></samp>', `<samp><span class="samp">NAT_ADD_FILES</span></samp>', `<samp><span class="samp">NAT_CLIBS</span></samp>',
+`<samp><span class="samp">NAT_CDEPS</span></samp>', etc.; see <samp><span class="file">Makefile.in</span></samp>.
 
-     <p><em>Maintainer's note: The </em><span class="file">.mh</span><em> suffix is because this file
-originally contained </em><span class="file">Makefile</span><em> fragments for hosting </em><span class="sc">gdb</span><em>
+     <p><em>Maintainer's note: The <samp></em><span class="file">.mh</span><em></samp> suffix is because this file
+originally contained <samp></em><span class="file">Makefile</span><em></samp> fragments for hosting </em><span class="sc">gdb</span><em>
 on machine </em><var>xyz</var><em>.  While the file is no longer used for this
-purpose, the </em><span class="file">.mh</span><em> suffix remains.  Perhaps someone will
-eventually rename these fragments so that they have a </em><span class="file">.mn</span><em>
+purpose, the <samp></em><span class="file">.mh</span><em></samp> suffix remains.  Perhaps someone will
+eventually rename these fragments so that they have a <samp></em><span class="file">.mn</span><em></samp>
 suffix.</em>
 
-     <br><dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/nm-</span><var>xyz</var><span class="file">.h</span><dd>(<span class="file">nm.h</span> is a link to this file, created by <code>configure</code>).  Contains C
+     <br><dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/nm-</span><var>xyz</var><span class="file">.h</span></samp><dd>(<samp><span class="file">nm.h</span></samp> is a link to this file, created by <code>configure</code>).  Contains C
 macro definitions describing the native system environment, such as
 child process control and core file support.
 
-     <br><dt><span class="file">gdb/</span><var>xyz</var><span class="file">-nat.c</span><dd>Contains any miscellaneous C code required for this native support of
+     <br><dt><samp><span class="file">gdb/</span><var>xyz</var><span class="file">-nat.c</span></samp><dd>Contains any miscellaneous C code required for this native support of
 this machine.  On some machines it doesn't exist at all. 
 </dl>
 
    <p>There are some &ldquo;generic&rdquo; versions of routines that can be used by
 various systems.  These can be customized in various ways by macros
-defined in your <span class="file">nm-</span><var>xyz</var><span class="file">.h</span> file.  If these routines work for
+defined in your <samp><span class="file">nm-</span><var>xyz</var><span class="file">.h</span></samp> file.  If these routines work for
 the <var>xyz</var> host, you can just include the generic file's name (with
-<span class="samp">.o</span>, not <span class="samp">.c</span>) in <code>NATDEPFILES</code>.
+`<samp><span class="samp">.o</span></samp>', not `<samp><span class="samp">.c</span></samp>') in <code>NATDEPFILES</code>.
 
    <p>Otherwise, if your machine needs custom support routines, you will need
 to write routines that perform the same functions as the generic file. 
-Put them into <var>xyz</var><span class="file">-nat.c</span>, and put <var>xyz</var><span class="file">-nat.o</span>
+Put them into <samp><var>xyz</var><span class="file">-nat.c</span></samp>, and put <samp><var>xyz</var><span class="file">-nat.o</span></samp>
 into <code>NATDEPFILES</code>.
 
      <dl>
-<dt><span class="file">inftarg.c</span><dd>This contains the <em>target_ops vector</em> that supports Unix child
+<dt><samp><span class="file">inftarg.c</span></samp><dd>This contains the <em>target_ops vector</em> that supports Unix child
 processes on systems which use ptrace and wait to control the child.
 
-     <br><dt><span class="file">procfs.c</span><dd>This contains the <em>target_ops vector</em> that supports Unix child
+     <br><dt><samp><span class="file">procfs.c</span></samp><dd>This contains the <em>target_ops vector</em> that supports Unix child
 processes on systems which use /proc to control the child.
 
-     <br><dt><span class="file">fork-child.c</span><dd>This does the low-level grunge that uses Unix system calls to do a &ldquo;fork
+     <br><dt><samp><span class="file">fork-child.c</span></samp><dd>This does the low-level grunge that uses Unix system calls to do a &ldquo;fork
 and exec&rdquo; to start up a child process.
 
-     <br><dt><span class="file">infptrace.c</span><dd>This is the low level interface to inferior processes for systems using
+     <br><dt><samp><span class="file">infptrace.c</span></samp><dd>This is the low level interface to inferior processes for systems using
 the Unix <code>ptrace</code> call in a vanilla way. 
 </dl>
 
@@ -89,18 +91,18 @@ the Unix <code>ptrace</code> call in a vanilla way.
 <p><a name="index-native-core-files-435"></a>
      
 <a name="index-fetch_005fcore_005fregisters-436"></a>
-<dl><dt><span class="file">core-aout.c::fetch_core_registers()</span><dd>Support for reading registers out of a core file.  This routine calls
+<dl><dt><samp><span class="file">core-aout.c::fetch_core_registers()</span></samp><dd>Support for reading registers out of a core file.  This routine calls
 <code>register_addr()</code>, see below.  Now that BFD is used to read core
 files, virtually all machines should use <code>core-aout.c</code>, and should
 just provide <code>fetch_core_registers</code> in <var>xyz</var><code>-nat.c</code> (or
 <code>REGISTER_U_ADDR</code> in <code>nm-</code><var>xyz</var><code>.h</code>).
 
-     <br><dt><span class="file">core-aout.c::register_addr()</span><dd>If your <code>nm-</code><var>xyz</var><code>.h</code> file defines the macro
+     <br><dt><samp><span class="file">core-aout.c::register_addr()</span></samp><dd>If your <code>nm-</code><var>xyz</var><code>.h</code> file defines the macro
 <code>REGISTER_U_ADDR(addr, blockend, regno)</code>, it should be defined to
-set <code>addr</code> to the offset within the <span class="samp">user</span> struct of <span class="sc">gdb</span>
+set <code>addr</code> to the offset within the `<samp><span class="samp">user</span></samp>' struct of <span class="sc">gdb</span>
 register number <code>regno</code>.  <code>blockend</code> is the offset within the
 &ldquo;upage&rdquo; of <code>u.u_ar0</code>.  If <code>REGISTER_U_ADDR</code> is defined,
-<span class="file">core-aout.c</span> will define the <code>register_addr()</code> function and
+<samp><span class="file">core-aout.c</span></samp> will define the <code>register_addr()</code> function and
 use the macro in it.  If you do not define <code>REGISTER_U_ADDR</code>, but
 you are using the standard <code>fetch_core_registers()</code>, you will need
 to define your own version of <code>register_addr()</code>, put it into your
@@ -114,10 +116,10 @@ implementations simply locate the registers themselves.
    <p>When making <span class="sc">gdb</span> run native on a new operating system, to make it
 possible to debug core files, you will need to either write specific
 code for parsing your OS's core files, or customize
-<span class="file">bfd/trad-core.c</span>.  First, use whatever <code>#include</code> files your
+<samp><span class="file">bfd/trad-core.c</span></samp>.  First, use whatever <code>#include</code> files your
 machine uses to define the struct of registers that is accessible
 (possibly in the u-area) in a core file (rather than
-<span class="file">machine/reg.h</span>), and an include file that defines whatever header
+<samp><span class="file">machine/reg.h</span></samp>), and an include file that defines whatever header
 exists on a core file (e.g., the u-area or a <code>struct core</code>).  Then
 modify <code>trad_unix_core_file_p</code> to use these values to set up the
 section information for the data segment, stack segment, any other
@@ -130,13 +132,13 @@ around in.
 
    <p>Then back in <span class="sc">gdb</span>, you need a matching routine called
 <code>fetch_core_registers</code>.  If you can use the generic one, it's in
-<span class="file">core-aout.c</span>; if not, it's in your <var>xyz</var><span class="file">-nat.c</span> file. 
+<samp><span class="file">core-aout.c</span></samp>; if not, it's in your <samp><var>xyz</var><span class="file">-nat.c</span></samp> file. 
 It will be passed a char pointer to the entire &ldquo;registers&rdquo; segment,
 its length, and a zero; or a char pointer to the entire &ldquo;regs2&rdquo;
 segment, its length, and a 2.  The routine should suck out the supplied
 register values and install them into <span class="sc">gdb</span>'s &ldquo;registers&rdquo; array.
 
-   <p>If your system uses <span class="file">/proc</span> to control processes, and uses ELF
+   <p>If your system uses <samp><span class="file">/proc</span></samp> to control processes, and uses ELF
 format core files, then you may be able to use the same routines for
 reading the registers out of processes and out of core files.
 
@@ -154,30 +156,30 @@ reading the registers out of processes and out of core files.
 When <span class="sc">gdb</span> is configured and compiled, various macros are
 defined or left undefined, to control compilation when the host and
 target systems are the same.  These macros should be defined (or left
-undefined) in <span class="file">nm-</span><var>system</var><span class="file">.h</span>.
+undefined) in <samp><span class="file">nm-</span><var>system</var><span class="file">.h</span></samp>.
 
      <dl>
 <dt><code>CHILD_PREPARE_TO_STORE</code><dd><a name="index-CHILD_005fPREPARE_005fTO_005fSTORE-438"></a>If the machine stores all registers at once in the child process, then
 define this to ensure that all values are correct.  This usually entails
 a read from the child.
 
-     <p>[Note that this is incorrectly defined in <span class="file">xm-</span><var>system</var><span class="file">.h</span> files
+     <p>[Note that this is incorrectly defined in <samp><span class="file">xm-</span><var>system</var><span class="file">.h</span></samp> files
 currently.]
 
      <br><dt><code>FETCH_INFERIOR_REGISTERS</code><dd><a name="index-FETCH_005fINFERIOR_005fREGISTERS-439"></a>Define this if the native-dependent code will provide its own routines
 <code>fetch_inferior_registers</code> and <code>store_inferior_registers</code> in
-<var>host</var><span class="file">-nat.c</span>.  If this symbol is <em>not</em> defined, and
-<span class="file">infptrace.c</span> is included in this configuration, the default
-routines in <span class="file">infptrace.c</span> are used for these functions.
+<samp><var>host</var><span class="file">-nat.c</span></samp>.  If this symbol is <em>not</em> defined, and
+<samp><span class="file">infptrace.c</span></samp> is included in this configuration, the default
+routines in <samp><span class="file">infptrace.c</span></samp> are used for these functions.
 
      <br><dt><code>FP0_REGNUM</code><dd><a name="index-FP0_005fREGNUM-440"></a>This macro is normally defined to be the number of the first floating
 point register, if the machine has such registers.  As such, it would
-appear only in target-specific code.  However, <span class="file">/proc</span> support uses this
+appear only in target-specific code.  However, <samp><span class="file">/proc</span></samp> support uses this
 to decide whether floats are in use on this target.
 
      <br><dt><code>GET_LONGJMP_TARGET</code><dd><a name="index-GET_005fLONGJMP_005fTARGET-441"></a>For most machines, this is a target-dependent parameter.  On the
 DECstation and the Iris, this is a native-dependent parameter, since
-<span class="file">setjmp.h</span> is needed to define it.
+<samp><span class="file">setjmp.h</span></samp> is needed to define it.
 
      <p>This macro determines the target PC address that <code>longjmp</code> will jump to,
 assuming that we have just stopped at a longjmp breakpoint.  It takes a
@@ -200,9 +202,9 @@ root directory.
      <br><dt><code>ONE_PROCESS_WRITETEXT</code><dd><a name="index-ONE_005fPROCESS_005fWRITETEXT-444"></a>Define this to be able to, when a breakpoint insertion fails, warn the
 user that another process may be running with the same executable.
 
-     <br><dt><code>PROC_NAME_FMT</code><dd><a name="index-PROC_005fNAME_005fFMT-445"></a>Defines the format for the name of a <span class="file">/proc</span> device.  Should be
-defined in <span class="file">nm.h</span> <em>only</em> in order to override the default
-definition in <span class="file">procfs.c</span>.
+     <br><dt><code>PROC_NAME_FMT</code><dd><a name="index-PROC_005fNAME_005fFMT-445"></a>Defines the format for the name of a <samp><span class="file">/proc</span></samp> device.  Should be
+defined in <samp><span class="file">nm.h</span></samp> <em>only</em> in order to override the default
+definition in <samp><span class="file">procfs.c</span></samp>.
 
      <br><dt><code>REGISTER_U_ADDR</code><dd><a name="index-REGISTER_005fU_005fADDR-446"></a>Defines the offset of the registers in the &ldquo;u area&rdquo;.
 
@@ -228,16 +230,16 @@ expand into the number expected.
 
      <br><dt><code>U_REGS_OFFSET</code><dd><a name="index-U_005fREGS_005fOFFSET-452"></a>This is the offset of the registers in the upage.  It need only be
 defined if the generic ptrace register access routines in
-<span class="file">infptrace.c</span> are being used (that is, <span class="file">infptrace.c</span> is
+<samp><span class="file">infptrace.c</span></samp> are being used (that is, <samp><span class="file">infptrace.c</span></samp> is
 configured in, and <code>FETCH_INFERIOR_REGISTERS</code> is not defined).  If
-the default value from <span class="file">infptrace.c</span> is good enough, leave it
+the default value from <samp><span class="file">infptrace.c</span></samp> is good enough, leave it
 undefined.
 
      <p>The default value means that u.u_ar0 <em>points to</em> the location of
 the registers.  I'm guessing that <code>#define U_REGS_OFFSET 0</code> means
 that <code>u.u_ar0</code> <em>is</em> the location of the registers.
 
-     <br><dt><code>CLEAR_SOLIB</code><dd><a name="index-CLEAR_005fSOLIB-453"></a>See <span class="file">objfiles.c</span>.
+     <br><dt><code>CLEAR_SOLIB</code><dd><a name="index-CLEAR_005fSOLIB-453"></a>See <samp><span class="file">objfiles.c</span></samp>.
 
      <br><dt><code>DEBUG_PTRACE</code><dd><a name="index-DEBUG_005fPTRACE-454"></a>Define this to debug <code>ptrace</code> calls. 
 </dl>

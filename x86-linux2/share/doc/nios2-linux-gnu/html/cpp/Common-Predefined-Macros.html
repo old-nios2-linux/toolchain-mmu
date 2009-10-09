@@ -3,7 +3,7 @@
 <title>Common Predefined Macros - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Predefined-Macros.html#Predefined-Macros" title="Predefined Macros">
 <link rel="prev" href="Standard-Predefined-Macros.html#Standard-Predefined-Macros" title="Standard Predefined Macros">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,17 +41,19 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Common-Predefined-Macros"></a>Next:&nbsp;<a rel="next" accesskey="n" href="System_002dspecific-Predefined-Macros.html#System_002dspecific-Predefined-Macros">System-specific Predefined Macros</a>,
+<a name="Common-Predefined-Macros"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="System_002dspecific-Predefined-Macros.html#System_002dspecific-Predefined-Macros">System-specific Predefined Macros</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Standard-Predefined-Macros.html#Standard-Predefined-Macros">Standard Predefined Macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Predefined-Macros.html#Predefined-Macros">Predefined Macros</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.7.2 Common Predefined Macros</h4>
@@ -105,9 +107,9 @@ calculate a single number, then compare that against a threshold:
      <br><dt><code>__GNUG__</code><dd>The GNU C++ compiler defines this.  Testing it is equivalent to
 testing <code>(__GNUC__&nbsp;&amp;&amp;&nbsp;__cplusplus)<!-- /@w --></code>.
 
-     <br><dt><code>__STRICT_ANSI__</code><dd>GCC defines this macro if and only if the <span class="option">-ansi</span> switch, or a
-<span class="option">-std</span> switch specifying strict conformance to some version of ISO C,
-was specified when GCC was invoked.  It is defined to <span class="samp">1</span>. 
+     <br><dt><code>__STRICT_ANSI__</code><dd>GCC defines this macro if and only if the <samp><span class="option">-ansi</span></samp> switch, or a
+<samp><span class="option">-std</span></samp> switch specifying strict conformance to some version of ISO C,
+was specified when GCC was invoked.  It is defined to `<samp><span class="samp">1</span></samp>'. 
 This macro exists primarily to direct GNU libc's header files to
 restrict their definitions to the minimal set found in the 1989 C
 standard.
@@ -118,7 +120,7 @@ on the command line of the preprocessor or C compiler.
 
      <br><dt><code>__INCLUDE_LEVEL__</code><dd>This macro expands to a decimal integer constant that represents the
 depth of nesting in include files.  The value of this macro is
-incremented on every <span class="samp">#include</span> directive and decremented at the
+incremented on every `<samp><span class="samp">#include</span></samp>' directive and decremented at the
 end of every included file.  It starts out at 0, it's value within the
 base file specified on the command line.
 
@@ -134,7 +136,7 @@ defined in all optimizing compilations.  <code>__OPTIMIZE_SIZE__</code> is
 defined if the compiler is optimizing for size, not speed. 
 <code>__NO_INLINE__</code> is defined if no functions will be inlined into
 their callers (when not optimizing, or when inlining has been
-specifically disabled by <span class="option">-fno-inline</span>).
+specifically disabled by <samp><span class="option">-fno-inline</span></samp>).
 
      <p>These macros cause certain GNU header files to provide optimized
 definitions, using macros or inline functions, of system library
@@ -144,8 +146,8 @@ are defined.  If they are defined, their value is 1.
 
      <br><dt><code>__CHAR_UNSIGNED__</code><dd>GCC defines this macro if and only if the data type <code>char</code> is
 unsigned on the target machine.  It exists to cause the standard header
-file <span class="file">limits.h</span> to work correctly.  You should not use this macro
-yourself; instead, refer to the standard macros defined in <span class="file">limits.h</span>.
+file <samp><span class="file">limits.h</span></samp> to work correctly.  You should not use this macro
+yourself; instead, refer to the standard macros defined in <samp><span class="file">limits.h</span></samp>.
 
      <br><dt><code>__WCHAR_UNSIGNED__</code><dd>Like <code>__CHAR_UNSIGNED__</code>, this macro is defined if and only if the
 data type <code>wchar_t</code> is unsigned and the front-end is in C++ mode.
@@ -155,23 +157,23 @@ the prefix applied to CPU register names in assembly language for this
 target.  You can use it to write assembly that is usable in multiple
 environments.  For example, in the <code>m68k-aout</code> environment it
 expands to nothing, but in the <code>m68k-coff</code> environment it expands
-to a single <span class="samp">%</span>.
+to a single `<samp><span class="samp">%</span></samp>'.
 
      <br><dt><code>__USER_LABEL_PREFIX__</code><dd>This macro expands to a single token which is the prefix applied to
 user labels (symbols visible to C code) in assembly.  For example, in
-the <code>m68k-aout</code> environment it expands to an <span class="samp">_</span>, but in the
+the <code>m68k-aout</code> environment it expands to an `<samp><span class="samp">_</span></samp>', but in the
 <code>m68k-coff</code> environment it expands to nothing.
 
      <p>This macro will have the correct definition even if
-<span class="option">-f(no-)underscores</span> is in use, but it will not be correct if
+<samp><span class="option">-f(no-)underscores</span></samp> is in use, but it will not be correct if
 target-specific options that adjust this prefix are used (e.g. the
-OSF/rose <span class="option">-mno-underscores</span> option).
+OSF/rose <samp><span class="option">-mno-underscores</span></samp> option).
 
      <br><dt><code>__SIZE_TYPE__</code><dt><code>__PTRDIFF_TYPE__</code><dt><code>__WCHAR_TYPE__</code><dt><code>__WINT_TYPE__</code><dt><code>__INTMAX_TYPE__</code><dt><code>__UINTMAX_TYPE__</code><dd>These macros are defined to the correct underlying types for the
 <code>size_t</code>, <code>ptrdiff_t</code>, <code>wchar_t</code>, <code>wint_t</code>,
 <code>intmax_t</code>, and <code>uintmax_t</code>
 typedefs, respectively.  They exist to make the standard header files
-<span class="file">stddef.h</span> and <span class="file">wchar.h</span> work correctly.  You should not use
+<samp><span class="file">stddef.h</span></samp> and <samp><span class="file">wchar.h</span></samp> work correctly.  You should not use
 these macros directly; instead, include the appropriate headers and use
 the typedefs.
 
@@ -190,10 +192,10 @@ the appropriate headers.
 
      <br><dt><code>__DEPRECATED</code><dd>This macro is defined, with value 1, when compiling a C++ source file
 with warnings about deprecated constructs enabled.  These warnings are
-enabled by default, but can be disabled with <span class="option">-Wno-deprecated</span>.
+enabled by default, but can be disabled with <samp><span class="option">-Wno-deprecated</span></samp>.
 
      <br><dt><code>__EXCEPTIONS</code><dd>This macro is defined, with value 1, when compiling a C++ source file
-with exceptions enabled.  If <span class="option">-fno-exceptions</span> was used when
+with exceptions enabled.  If <samp><span class="option">-fno-exceptions</span></samp> was used when
 compiling the file, then this macro will not be defined.
 
      <br><dt><code>__USING_SJLJ_EXCEPTIONS__</code><dd>This macro is defined, with value 1, if the compiler uses the old
@@ -210,7 +212,7 @@ purpose of this macro is to ease implementation of the C++ runtime
 library provided with G++.
 
      <br><dt><code>__NEXT_RUNTIME__</code><dd>This macro is defined, with value 1, if (and only if) the NeXT runtime
-(as in <span class="option">-fnext-runtime</span>) is in use for Objective-C.  If the GNU
+(as in <samp><span class="option">-fnext-runtime</span></samp>) is in use for Objective-C.  If the GNU
 runtime is used, this macro is not defined, so that you can use this
 macro to determine which runtime (NeXT or GNU) is being used.
 
@@ -218,10 +220,10 @@ macro to determine which runtime (NeXT or GNU) is being used.
 is for a target where <code>long int</code> and pointer both use 64-bits and
 <code>int</code> uses 32-bit.
 
-     <br><dt><code>__SSP__</code><dd>This macro is defined, with value 1, when <span class="option">-fstack-protector</span> is in
+     <br><dt><code>__SSP__</code><dd>This macro is defined, with value 1, when <samp><span class="option">-fstack-protector</span></samp> is in
 use.
 
-     <br><dt><code>__SSP_ALL__</code><dd>This macro is defined, with value 2, when <span class="option">-fstack-protector-all</span> is
+     <br><dt><code>__SSP_ALL__</code><dd>This macro is defined, with value 2, when <samp><span class="option">-fstack-protector-all</span></samp> is
 in use.
 
    </dl>

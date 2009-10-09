@@ -3,7 +3,7 @@
 <title>Configure Terms - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Source-Tree.html#Source-Tree" title="Source Tree">
 <link rel="next" href="Top-Level.html#Top-Level" title="Top Level">
@@ -37,16 +37,18 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Configure-Terms"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Top-Level.html#Top-Level">Top Level</a>,
+<a name="Configure-Terms"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Top-Level.html#Top-Level">Top Level</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Source-Tree.html#Source-Tree">Source Tree</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">6.1 Configure Terms and History</h3>
@@ -62,10 +64,10 @@ know.
 are building on (<dfn>build</dfn>), the machine that you are building for
 (<dfn>host</dfn>), and the machine that GCC will produce code for
 (<dfn>target</dfn>).  When you configure GCC, you specify these with
-<span class="option">--build=</span>, <span class="option">--host=</span>, and <span class="option">--target=</span>.
+<samp><span class="option">--build=</span></samp>, <samp><span class="option">--host=</span></samp>, and <samp><span class="option">--target=</span></samp>.
 
  <p>Specifying the host without specifying the build should be avoided, as
-<span class="command">configure</span> may (and once did) assume that the host you specify
+<samp><span class="command">configure</span></samp> may (and once did) assume that the host you specify
 is also the build, which may not be true.
 
  <p>If build, host, and target are all the same, this is called a
@@ -86,17 +88,17 @@ There is a proposal to call this a <dfn>crossback</dfn>.
 used to build the target libraries (like <code>libstdc++</code>).  If build and host
 are different, you must have already build and installed a cross
 compiler that will be used to build the target libraries (if you
-configured with <span class="option">--target=foo-bar</span>, this compiler will be called
-<span class="command">foo-bar-gcc</span>).
+configured with <samp><span class="option">--target=foo-bar</span></samp>, this compiler will be called
+<samp><span class="command">foo-bar-gcc</span></samp>).
 
  <p>In the case of target libraries, the machine you're building for is the
-machine you specified with <span class="option">--target</span>.  So, build is the machine
+machine you specified with <samp><span class="option">--target</span></samp>.  So, build is the machine
 you're building on (no change there), host is the machine you're
 building for (the target libraries are built for the target, so host is
 the target you specified), and target doesn't apply (because you're not
 building a compiler, you're building libraries).  The configure/make
 process will adjust these variables as needed.  It also sets
-<code>$with_cross_host</code> to the original <span class="option">--host</span> value in case you
+<code>$with_cross_host</code> to the original <samp><span class="option">--host</span></samp> value in case you
 need it.
 
  <p>The <code>libiberty</code> support library is built up to three times: once

@@ -3,7 +3,7 @@
 <title>Getopt Long Option Example - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Getopt.html#Getopt" title="Getopt">
 <link rel="prev" href="Getopt-Long-Options.html#Getopt-Long-Options" title="Getopt Long Options">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Getopt-Long-Option-Example"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Getopt-Long-Options.html#Getopt-Long-Options">Getopt Long Options</a>,
+<a name="Getopt-Long-Option-Example"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Getopt-Long-Options.html#Getopt-Long-Options">Getopt Long Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Getopt.html#Getopt">Getopt</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">25.2.4 Example of Parsing Long Options with <code>getopt_long</code></h4>
@@ -34,7 +36,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Getopt.html#Getopt">Getopt</a>
      #include &lt;stdlib.h&gt;
      #include &lt;getopt.h&gt;
      
-     /* <span class="roman">Flag set by --verbose.</span> */
+     /* <span class="roman">Flag set by `<samp>--verbose</samp>'.</span> */
      static int verbose_flag;
      
      int
@@ -111,8 +113,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Getopt.html#Getopt">Getopt</a>
              }
          }
      
-       /* <span class="roman">Instead of reporting --verbose
-          and --brief as they are encountered,
+       /* <span class="roman">Instead of reporting `<samp>--verbose</samp>'
+          and `<samp>--brief</samp>' as they are encountered,
           we report the final status resulting from them.</span> */
        if (verbose_flag)
          puts ("verbose flag is set");

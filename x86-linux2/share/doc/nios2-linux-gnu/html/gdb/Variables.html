@@ -3,7 +3,7 @@
 <title>Variables - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Expressions.html#Expressions" title="Expressions">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Variables"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Arrays.html#Arrays">Arrays</a>,
+<a name="Variables"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Arrays.html#Arrays">Arrays</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Expressions.html#Expressions">Expressions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">8.2 Program Variables</h3>
@@ -75,18 +77,18 @@ you can specify a static variable in a particular function or file,
 using the colon-colon (<code>::</code>) notation:
 
    <p><a name="index-colon_002dcolon_002c-context-for-variables_002ffunctions-399"></a><!-- info cannot cope with a :: index entry, but why deprive hard copy readers? -->
-<a name="index-_0040code_007b_003a_003a_007d_002c-context-for-variables_002ffunctions-400"></a>
+<a name="index-g_t_0040code_007b_003a_003a_007d_002c-context-for-variables_002ffunctions-400"></a>
 <pre class="smallexample">     <var>file</var>::<var>variable</var>
      <var>function</var>::<var>variable</var>
 </pre>
    <p class="noindent">Here <var>file</var> or <var>function</var> is the name of the context for the
 static <var>variable</var>.  In the case of file names, you can use quotes to
 make sure <span class="sc">gdb</span> parses the file name as a single word&mdash;for example,
-to print a global value of <code>x</code> defined in <span class="file">f2.c</span>:
+to print a global value of <code>x</code> defined in <samp><span class="file">f2.c</span></samp>:
 
 <pre class="smallexample">     (gdb) p 'f2.c'::x
 </pre>
-   <p><a name="index-C_0040t_007b_002b_002b_007d-scope-resolution-401"></a>This use of <span class="samp">::</span> is very rarely in conflict with the very similar
+   <p><a name="index-C_0040t_007b_002b_002b_007d-scope-resolution-401"></a>This use of `<samp><span class="samp">::</span></samp>' is very rarely in conflict with the very similar
 use of the same notation in C<tt>++</tt>.  <span class="sc">gdb</span> also supports use of the C<tt>++</tt>
 scope resolution operator in <span class="sc">gdb</span> expressions. 
 <!-- FIXME: Um, so what happens in one of those rare cases where it's in -->
@@ -110,7 +112,7 @@ variable definitions may be gone.
 To be sure of always seeing accurate values, turn off all optimization
 when compiling.
 
-   <p><a name="index-_0060_0060No-symbol-_0022foo_0022-in-current-context_0027_0027-406"></a>Another possible effect of compiler optimizations is to optimize
+   <p><a name="index-g_t_0060_0060No-symbol-_0022foo_0022-in-current-context_0027_0027-406"></a>Another possible effect of compiler optimizations is to optimize
 unused variables out of existence, or assign variables to registers (as
 opposed to memory addresses).  Depending on the support for such cases
 offered by the debug info format used by the compiler, <span class="sc">gdb</span>
@@ -122,17 +124,17 @@ happens, <span class="sc">gdb</span> will print a message like this:
    <p>To solve such problems, either recompile without optimizations, or use a
 different debug info format, if the compiler supports several such
 formats.  For example, <span class="sc">gcc</span>, the <span class="sc">gnu</span> C/C<tt>++</tt> compiler,
-usually supports the <span class="option">-gstabs+</span> option.  <span class="option">-gstabs+</span>
+usually supports the <samp><span class="option">-gstabs+</span></samp> option.  <samp><span class="option">-gstabs+</span></samp>
 produces debug info in a format that is superior to formats such as
-COFF.  You may be able to use DWARF 2 (<span class="option">-gdwarf-2</span>), which is also
-an effective form for debug info.  See <a href="../gcc/Debugging-Options.html#Debugging-Options">Options for Debugging Your Program or GCC (Using the <span class="sc">gnu</span> Compiler Collection (GCC))</a>. 
+COFF.  You may be able to use DWARF 2 (<samp><span class="option">-gdwarf-2</span></samp>), which is also
+an effective form for debug info.  See <a href="../gcc/Debugging-Options.html#Debugging-Options">Options for Debugging Your Program or GCC</a>. 
 See <a href="C.html#C">C and C<tt>++</tt></a>, for more information about debug info formats
 that are best suited to C<tt>++</tt> programs.
 
    <p>If you ask to print an object whose contents are unknown to
 <span class="sc">gdb</span>, e.g., because its data type is not completely specified
-by the debug information, <span class="sc">gdb</span> will say <span class="samp">&lt;incomplete
-type&gt;</span>.  See <a href="Symbols.html#Symbols">incomplete type</a>, for more about this.
+by the debug information, <span class="sc">gdb</span> will say `<samp><span class="samp">&lt;incomplete
+type&gt;</span></samp>'.  See <a href="Symbols.html#Symbols">incomplete type</a>, for more about this.
 
    <p>Strings are identified as arrays of <code>char</code> values without specified
 signedness.  Arrays of either <code>signed char</code> or <code>unsigned char</code> get

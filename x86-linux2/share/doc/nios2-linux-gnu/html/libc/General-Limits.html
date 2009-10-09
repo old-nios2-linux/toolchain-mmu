@@ -3,7 +3,7 @@
 <title>General Limits - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Configuration.html#System-Configuration" title="System Configuration">
 <link rel="next" href="System-Options.html#System-Options" title="System Options">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="General-Limits"></a>Next:&nbsp;<a rel="next" accesskey="n" href="System-Options.html#System-Options">System Options</a>,
+<a name="General-Limits"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="System-Options.html#System-Options">System Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Configuration.html#System-Configuration">System Configuration</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">31.1 General Capacity Limits</h3>
@@ -39,14 +41,14 @@ system administrator, either at run time or by rebuilding the kernel,
 and this should not require recompiling application programs.
 
    <p><a name="index-limits_002eh-3497"></a>Each of the following limit parameters has a macro that is defined in
-<span class="file">limits.h</span> only if the system has a fixed, uniform limit for the
+<samp><span class="file">limits.h</span></samp> only if the system has a fixed, uniform limit for the
 parameter in question.  If the system allows different file systems or
 files to have different limits, then the macro is undefined; use
 <code>sysconf</code> to find out the limit that applies at a particular time
 on a particular machine.  See <a href="Sysconf.html#Sysconf">Sysconf</a>.
 
    <p>Each of these parameters also has another macro, with a name starting
-with <span class="samp">_POSIX</span>, which gives the lowest value that the limit is
+with `<samp><span class="samp">_POSIX</span></samp>', which gives the lowest value that the limit is
 allowed to have on <em>any</em> POSIX system.  See <a href="Minimums.html#Minimums">Minimums</a>.
 
    <p><a name="index-limits_002c-program-argument-size-3498"></a><!-- limits.h -->
@@ -95,7 +97,7 @@ process can have open simultaneously.  See <a href="Opening-Streams.html#Opening
 See <a href="Time-Zone-Functions.html#Time-Zone-Functions">Time Zone Functions</a>. 
 </p></blockquote></div>
 
-   <p>These limit macros are always defined in <span class="file">limits.h</span>.
+   <p>These limit macros are always defined in <samp><span class="file">limits.h</span></samp>.
 
    <p><a name="index-limits_002c-number-of-supplementary-group-IDs-3507"></a><!-- limits.h -->
 <!-- POSIX.1 -->
@@ -128,7 +130,7 @@ configurable.
 <div class="defun">
 &mdash; Macro: int <b>RE_DUP_MAX</b><var><a name="index-RE_005fDUP_005fMAX-3510"></a></var><br>
 <blockquote><p>The largest number of repetitions you are guaranteed is allowed in the
-construct <span class="samp">\{</span><var>min</var><span class="samp">,</span><var>max</var><span class="samp">\}</span> in a regular expression.
+construct `<samp><span class="samp">\{</span><var>min</var><span class="samp">,</span><var>max</var><span class="samp">\}</span></samp>' in a regular expression.
 
         <p>The value of this macro is actually a lower bound for the maximum.  That
 is, you can count on being able to have that many repetitions, but a

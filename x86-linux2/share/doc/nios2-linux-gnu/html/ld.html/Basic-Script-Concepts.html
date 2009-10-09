@@ -3,7 +3,7 @@
 <title>Basic Script Concepts - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Scripts.html#Scripts" title="Scripts">
 <link rel="next" href="Script-Format.html#Script-Format" title="Script Format">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Basic-Script-Concepts"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Script-Format.html#Script-Format">Script Format</a>,
+<a name="Basic-Script-Concepts"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Script-Format.html#Script-Format">Script Format</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Scripts.html#Scripts">Scripts</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">3.1 Basic Linker Script Concepts</h3>
@@ -64,7 +66,7 @@ based system).  In this case the ROM address would be the LMA, and the
 RAM address would be the VMA.
 
    <p>You can see the sections in an object file by using the <code>objdump</code>
-program with the <span class="samp">-h</span> option.
+program with the `<samp><span class="samp">-h</span></samp>' option.
 
    <p>Every object file also has a list of <dfn>symbols</dfn>, known as the
 <dfn>symbol table</dfn>.  A symbol may be defined or undefined.  Each symbol
@@ -75,7 +77,7 @@ static variable.  Every undefined function or global variable which is
 referenced in the input file will become an undefined symbol.
 
    <p>You can see the symbols in an object file by using the <code>nm</code>
-program, or by using the <code>objdump</code> program with the <span class="samp">-t</span>
+program, or by using the <code>objdump</code> program with the `<samp><span class="samp">-t</span></samp>'
 option.
 
    </body></html>

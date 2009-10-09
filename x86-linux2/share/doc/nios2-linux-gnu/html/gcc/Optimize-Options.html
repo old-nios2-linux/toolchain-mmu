@@ -3,7 +3,7 @@
 <title>Optimize Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GCC.html#Invoking-GCC" title="Invoking GCC">
 <link rel="prev" href="Debugging-Options.html#Debugging-Options" title="Debugging Options">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Optimize-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Preprocessor-Options.html#Preprocessor-Options">Preprocessor Options</a>,
+<a name="Optimize-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Preprocessor-Options.html#Preprocessor-Options">Preprocessor Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Debugging-Options.html#Debugging-Options">Debugging Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-GCC.html#Invoking-GCC">Invoking GCC</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">3.10 Options That Control Optimization</h3>
@@ -69,7 +71,7 @@ the performance and/or code size at the expense of compilation time
 and possibly the ability to debug the program.
 
  <p>The compiler performs optimization based on the knowledge it has of
-the program.  Optimization levels <span class="option">-O</span> and above, in
+the program.  Optimization levels <samp><span class="option">-O</span></samp> and above, in
 particular, enable <em>unit-at-a-time</em> mode, which allows the
 compiler to consider information gained from later functions in
 the file when compiling a function.  Compiling multiple files at
@@ -84,11 +86,11 @@ optimizations that have a flag are listed.
 <dt><code>-O</code><dt><code>-O1</code><dd><a name="index-O-468"></a><a name="index-O1-469"></a>Optimize.  Optimizing compilation takes somewhat more time, and a lot
 more memory for a large function.
 
-     <p>With <span class="option">-O</span>, the compiler tries to reduce code size and execution
+     <p>With <samp><span class="option">-O</span></samp>, the compiler tries to reduce code size and execution
 time, without performing any optimizations that take a great deal of
 compilation time.
 
-     <p><span class="option">-O</span> turns on the following optimization flags:
+     <p><samp><span class="option">-O</span></samp> turns on the following optimization flags:
      <pre class="smallexample">          -fdefer-pop 
           -fdelayed-branch 
           -fguess-branch-probability 
@@ -109,20 +111,20 @@ compilation time.
           -funit-at-a-time 
           -fmerge-constants
      </pre>
-     <p><span class="option">-O</span> also turns on <span class="option">-fomit-frame-pointer</span> on machines
+     <p><samp><span class="option">-O</span></samp> also turns on <samp><span class="option">-fomit-frame-pointer</span></samp> on machines
 where doing so does not interfere with debugging.
 
-     <p><span class="option">-O</span> doesn't turn on <span class="option">-ftree-sra</span> for the Ada compiler. 
+     <p><samp><span class="option">-O</span></samp> doesn't turn on <samp><span class="option">-ftree-sra</span></samp> for the Ada compiler. 
 This option must be explicitly specified on the command line to be
 enabled for the Ada compiler.
 
      <br><dt><code>-O2</code><dd><a name="index-O2-470"></a>Optimize even more.  GCC performs nearly all supported optimizations
 that do not involve a space-speed tradeoff.  The compiler does not
-perform loop unrolling or function inlining when you specify <span class="option">-O2</span>. 
-As compared to <span class="option">-O</span>, this option increases both compilation time
+perform loop unrolling or function inlining when you specify <samp><span class="option">-O2</span></samp>. 
+As compared to <samp><span class="option">-O</span></samp>, this option increases both compilation time
 and the performance of the generated code.
 
-     <p><span class="option">-O2</span> turns on all optimization flags specified by <span class="option">-O</span>.  It
+     <p><samp><span class="option">-O2</span></samp> turns on all optimization flags specified by <samp><span class="option">-O</span></samp>.  It
 also turns on the following optimization flags:
      <pre class="smallexample">          -fthread-jumps 
           -fcrossjumping 
@@ -145,45 +147,45 @@ also turns on the following optimization flags:
           -ftree-vrp 
           -ftree-pre
      </pre>
-     <p>Please note the warning under <span class="option">-fgcse</span> about
-invoking <span class="option">-O2</span> on programs that use computed gotos.
+     <p>Please note the warning under <samp><span class="option">-fgcse</span></samp> about
+invoking <samp><span class="option">-O2</span></samp> on programs that use computed gotos.
 
-     <br><dt><code>-O3</code><dd><a name="index-O3-471"></a>Optimize yet more.  <span class="option">-O3</span> turns on all optimizations specified by
-<span class="option">-O2</span> and also turns on the <span class="option">-finline-functions</span>,
-<span class="option">-funswitch-loops</span> and <span class="option">-fgcse-after-reload</span> options.
+     <br><dt><code>-O3</code><dd><a name="index-O3-471"></a>Optimize yet more.  <samp><span class="option">-O3</span></samp> turns on all optimizations specified by
+<samp><span class="option">-O2</span></samp> and also turns on the <samp><span class="option">-finline-functions</span></samp>,
+<samp><span class="option">-funswitch-loops</span></samp> and <samp><span class="option">-fgcse-after-reload</span></samp> options.
 
      <br><dt><code>-O0</code><dd><a name="index-O0-472"></a>Do not optimize.  This is the default.
 
-     <br><dt><code>-Os</code><dd><a name="index-Os-473"></a>Optimize for size.  <span class="option">-Os</span> enables all <span class="option">-O2</span> optimizations that
+     <br><dt><code>-Os</code><dd><a name="index-Os-473"></a>Optimize for size.  <samp><span class="option">-Os</span></samp> enables all <samp><span class="option">-O2</span></samp> optimizations that
 do not typically increase code size.  It also performs further
 optimizations designed to reduce code size.
 
-     <p><span class="option">-Os</span> disables the following optimization flags:
+     <p><samp><span class="option">-Os</span></samp> disables the following optimization flags:
      <pre class="smallexample">          -falign-functions  -falign-jumps  -falign-loops 
           -falign-labels  -freorder-blocks  -freorder-blocks-and-partition 
           -fprefetch-loop-arrays  -ftree-vect-loop-version
      </pre>
-     <p>If you use multiple <span class="option">-O</span> options, with or without level numbers,
+     <p>If you use multiple <samp><span class="option">-O</span></samp> options, with or without level numbers,
 the last such option is the one that is effective. 
 </dl>
 
- <p>Options of the form <span class="option">-f</span><var>flag</var> specify machine-independent
+ <p>Options of the form <samp><span class="option">-f</span><var>flag</var></samp> specify machine-independent
 flags.  Most flags have both positive and negative forms; the negative
-form of <span class="option">-ffoo</span> would be <span class="option">-fno-foo</span>.  In the table
+form of <samp><span class="option">-ffoo</span></samp> would be <samp><span class="option">-fno-foo</span></samp>.  In the table
 below, only one of the forms is listed&mdash;the one you typically will
-use.  You can figure out the other form by either removing <span class="samp">no-</span>
+use.  You can figure out the other form by either removing `<samp><span class="samp">no-</span></samp>'
 or adding it.
 
  <p>The following options control specific optimizations.  They are either
-activated by <span class="option">-O</span> options or are related to ones that are.  You
+activated by <samp><span class="option">-O</span></samp> options or are related to ones that are.  You
 can use the following flags in the rare cases when &ldquo;fine-tuning&rdquo; of
 optimizations to be performed is desired.
 
      <dl>
 <dt><code>-fno-default-inline</code><dd><a name="index-fno_002ddefault_002dinline-474"></a>Do not make member functions inline by default merely because they are
 defined inside the class scope (C++ only).  Otherwise, when you specify
-<span class="option">-O</span><!-- /@w -->, member functions defined inside class scope are compiled
-inline by default; i.e., you don't need to add <span class="samp">inline</span> in front of
+<samp><span class="option">-O</span></samp><!-- /@w -->, member functions defined inside class scope are compiled
+inline by default; i.e., you don't need to add `<samp><span class="samp">inline</span></samp>' in front of
 the member function name.
 
      <br><dt><code>-fno-defer-pop</code><dd><a name="index-fno_002ddefer_002dpop-475"></a>Always pop the arguments to each function call as soon as that function
@@ -191,7 +193,7 @@ returns.  For machines which must pop arguments after a function call,
 the compiler normally lets arguments accumulate on the stack for several
 function calls and pops them all at once.
 
-     <p>Disabled at levels <span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Disabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fforce-mem</code><dd><a name="index-fforce_002dmem-476"></a>Force memory operands to be copied into registers before doing
 arithmetic on them.  This produces better code by making all memory
@@ -212,13 +214,13 @@ some machines.</strong>
 the standard calling sequence automatically handles the frame pointer
 and nothing is saved by pretending it doesn't exist.  The
 machine-description macro <code>FRAME_POINTER_REQUIRED</code> controls
-whether a target machine supports this flag.  See <a href="../gccint/Registers.html#Registers">Register Usage (GNU Compiler Collection (GCC) Internals)</a>.
+whether a target machine supports this flag.  See <a href="../gccint/Registers.html#Registers">Register Usage</a>.
 
-     <p>Enabled at levels <span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-foptimize-sibling-calls</code><dd><a name="index-foptimize_002dsibling_002dcalls-479"></a>Optimize sibling and tail recursive calls.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fno-inline</code><dd><a name="index-fno_002dinline-480"></a>Don't pay attention to the <code>inline</code> keyword.  Normally this option
 is used to keep the compiler from expanding any functions inline. 
@@ -232,18 +234,18 @@ integrating in this way.
 declared <code>static</code>, then the function is normally not output as
 assembler code in its own right.
 
-     <p>Enabled at level <span class="option">-O3</span>.
+     <p>Enabled at level <samp><span class="option">-O3</span></samp>.
 
      <br><dt><code>-finline-functions-called-once</code><dd><a name="index-finline_002dfunctions_002dcalled_002donce-482"></a>Consider all <code>static</code> functions called once for inlining into their
 caller even if they are not marked <code>inline</code>.  If a call to a given
 function is integrated, then the function is not output as assembler code
 in its own right.
 
-     <p>Enabled if <span class="option">-funit-at-a-time</span> is enabled.
+     <p>Enabled if <samp><span class="option">-funit-at-a-time</span></samp> is enabled.
 
      <br><dt><code>-fearly-inlining</code><dd><a name="index-fearly_002dinlining-483"></a>Inline functions marked by <code>always_inline</code> and functions whose body seems
 smaller than the function call overhead early before doing
-<span class="option">-fprofile-generate</span> instrumentation and real inlining pass.  Doing so
+<samp><span class="option">-fprofile-generate</span></samp> instrumentation and real inlining pass.  Doing so
 makes profiling significantly cheaper and usually inlining faster on programs
 having large chains of nested wrapper functions.
 
@@ -262,8 +264,8 @@ means slower programs).  This option is particularly useful for programs that
 use inlining heavily such as those based on recursive templates with C++.
 
      <p>Inlining is actually controlled by a number of parameters, which may be
-specified individually by using <span class="option">--param </span><var>name</var><span class="option">=</span><var>value</var>. 
-The <span class="option">-finline-limit=</span><var>n</var> option sets some of these parameters
+specified individually by using <samp><span class="option">--param </span><var>name</var><span class="option">=</span><var>value</var></samp>. 
+The <samp><span class="option">-finline-limit=</span><var>n</var></samp> option sets some of these parameters
 as follows:
 
           <dl>
@@ -292,21 +294,21 @@ on, even if the variables aren't referenced.
 
      <p>GCC enables this option by default.  If you want to force the compiler to
 check if the variable was referenced, regardless of whether or not
-optimization is turned on, use the <span class="option">-fno-keep-static-consts</span> option.
+optimization is turned on, use the <samp><span class="option">-fno-keep-static-consts</span></samp> option.
 
      <br><dt><code>-fmerge-constants</code><dd>Attempt to merge identical constants (string constants and floating point
 constants) across compilation units.
 
      <p>This option is the default for optimized compilation if the assembler and
-linker support it.  Use <span class="option">-fno-merge-constants</span> to inhibit this
+linker support it.  Use <samp><span class="option">-fno-merge-constants</span></samp> to inhibit this
 behavior.
 
-     <p>Enabled at levels <span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fmerge-all-constants</code><dd>Attempt to merge identical constants and identical variables.
 
-     <p>This option implies <span class="option">-fmerge-constants</span>.  In addition to
-<span class="option">-fmerge-constants</span> this considers e.g. even constant initialized
+     <p>This option implies <samp><span class="option">-fmerge-constants</span></samp>.  In addition to
+<samp><span class="option">-fmerge-constants</span></samp> this considers e.g. even constant initialized
 arrays or initialized constant variables with integral or floating point
 types.  Languages like C or C++ require each non-automatic variable to
 have distinct location, so using this option will result in non-conforming
@@ -322,8 +324,8 @@ register, compare it against zero, then branch based upon the result.
 This option is only meaningful on architectures that support such
 instructions, which include x86, PowerPC, IA-64 and S/390.
 
-     <p>The default is <span class="option">-fbranch-count-reg</span>, enabled when
-<span class="option">-fstrength-reduce</span> is enabled.
+     <p>The default is <samp><span class="option">-fbranch-count-reg</span></samp>, enabled when
+<samp><span class="option">-fstrength-reduce</span></samp> is enabled.
 
      <br><dt><code>-fno-function-cse</code><dd><a name="index-fno_002dfunction_002dcse-489"></a>Do not put function addresses in registers; make each instruction that
 calls a constant function contain the function's address explicitly.
@@ -332,7 +334,7 @@ calls a constant function contain the function's address explicitly.
 that alter the assembler output may be confused by the optimizations
 performed when this option is not used.
 
-     <p>The default is <span class="option">-ffunction-cse</span>
+     <p>The default is <samp><span class="option">-ffunction-cse</span></samp>
 
      <br><dt><code>-fno-zero-initialized-in-bss</code><dd><a name="index-fno_002dzero_002dinitialized_002din_002dbss-490"></a>If the target supports a BSS section, GCC by default puts variables that
 are initialized to zero into BSS.  This can save space in the resulting
@@ -343,7 +345,7 @@ rely on variables going to the data section.  E.g., so that the
 resulting executable can find the beginning of that section and/or make
 assumptions based on that.
 
-     <p>The default is <span class="option">-fzero-initialized-in-bss</span>.
+     <p>The default is <samp><span class="option">-fzero-initialized-in-bss</span></samp>.
 
      <br><dt><code>-fbounds-check</code><dd><a name="index-fbounds_002dcheck-491"></a>For front-ends that support it, generate additional code to check that
 indices used to access arrays are within the declared range.  This is
@@ -356,15 +358,15 @@ string/heap functions, and some other associated constructs with
 range/validity tests.  Modules so instrumented should be immune to
 buffer overflows, invalid heap use, and some other classes of C/C++
 programming errors.  The instrumentation relies on a separate runtime
-library (<span class="file">libmudflap</span>), which will be linked into a program if
-<span class="option">-fmudflap</span> is given at link time.  Run-time behavior of the
-instrumented program is controlled by the <span class="env">MUDFLAP_OPTIONS</span>
+library (<samp><span class="file">libmudflap</span></samp>), which will be linked into a program if
+<samp><span class="option">-fmudflap</span></samp> is given at link time.  Run-time behavior of the
+instrumented program is controlled by the <samp><span class="env">MUDFLAP_OPTIONS</span></samp>
 environment variable.  See <code>env MUDFLAP_OPTIONS=-help a.out</code>
 for its options.
 
-     <p>Use <span class="option">-fmudflapth</span> instead of <span class="option">-fmudflap</span> to compile and to
-link if your program is multi-threaded.  Use <span class="option">-fmudflapir</span>, in
-addition to <span class="option">-fmudflap</span> or <span class="option">-fmudflapth</span>, if
+     <p>Use <samp><span class="option">-fmudflapth</span></samp> instead of <samp><span class="option">-fmudflap</span></samp> to compile and to
+link if your program is multi-threaded.  Use <samp><span class="option">-fmudflapir</span></samp>, in
+addition to <samp><span class="option">-fmudflap</span></samp> or <samp><span class="option">-fmudflapth</span></samp>, if
 instrumentation should ignore pointer reads.  This produces less
 instrumentation (and therefore faster execution) and still provides
 some protection against outright memory corrupting writes, but allows
@@ -373,7 +375,7 @@ erroneously read data to propagate within a program.
      <br><dt><code>-fstrength-reduce</code><dd><a name="index-fstrength_002dreduce-497"></a>Perform the optimizations of loop strength reduction and
 elimination of iteration variables.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fthread-jumps</code><dd><a name="index-fthread_002djumps-498"></a>Perform optimizations where we check to see if a jump branches to a
 location where another comparison subsumed by the first is found.  If
@@ -381,7 +383,7 @@ so, the first branch is redirected to either the destination of the
 second branch or a point immediately following it, depending on whether
 the condition is known to be true or false.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fcse-follow-jumps</code><dd><a name="index-fcse_002dfollow_002djumps-499"></a>In common subexpression elimination, scan through jump instructions
 when the target of the jump is not reached by any other path.  For
@@ -389,24 +391,24 @@ example, when CSE encounters an <code>if</code> statement with an
 <code>else</code> clause, CSE will follow the jump when the condition
 tested is false.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fcse-skip-blocks</code><dd><a name="index-fcse_002dskip_002dblocks-500"></a>This is similar to <span class="option">-fcse-follow-jumps</span>, but causes CSE to
+     <br><dt><code>-fcse-skip-blocks</code><dd><a name="index-fcse_002dskip_002dblocks-500"></a>This is similar to <samp><span class="option">-fcse-follow-jumps</span></samp>, but causes CSE to
 follow jumps which conditionally skip over blocks.  When CSE
 encounters a simple <code>if</code> statement with no else clause,
-<span class="option">-fcse-skip-blocks</span> causes CSE to follow the jump around the
+<samp><span class="option">-fcse-skip-blocks</span></samp> causes CSE to follow the jump around the
 body of the <code>if</code>.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-frerun-cse-after-loop</code><dd><a name="index-frerun_002dcse_002dafter_002dloop-501"></a>Re-run common subexpression elimination after loop optimizations has been
 performed.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-frerun-loop-opt</code><dd><a name="index-frerun_002dloop_002dopt-502"></a>Run the loop optimizer twice.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fgcse</code><dd><a name="index-fgcse-503"></a>Perform a global common subexpression elimination pass. 
 This pass also performs global constant and copy propagation.
@@ -414,39 +416,39 @@ This pass also performs global constant and copy propagation.
      <p><em>Note:</em> When compiling a program using computed gotos, a GCC
 extension, you may get better runtime performance if you disable
 the global common subexpression elimination pass by adding
-<span class="option">-fno-gcse</span> to the command line.
+<samp><span class="option">-fno-gcse</span></samp> to the command line.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fgcse-lm</code><dd><a name="index-fgcse_002dlm-504"></a>When <span class="option">-fgcse-lm</span> is enabled, global common subexpression elimination will
+     <br><dt><code>-fgcse-lm</code><dd><a name="index-fgcse_002dlm-504"></a>When <samp><span class="option">-fgcse-lm</span></samp> is enabled, global common subexpression elimination will
 attempt to move loads which are only killed by stores into themselves.  This
 allows a loop containing a load/store sequence to be changed to a load outside
 the loop, and a copy/store within the loop.
 
      <p>Enabled by default when gcse is enabled.
 
-     <br><dt><code>-fgcse-sm</code><dd><a name="index-fgcse_002dsm-505"></a>When <span class="option">-fgcse-sm</span> is enabled, a store motion pass is run after
+     <br><dt><code>-fgcse-sm</code><dd><a name="index-fgcse_002dsm-505"></a>When <samp><span class="option">-fgcse-sm</span></samp> is enabled, a store motion pass is run after
 global common subexpression elimination.  This pass will attempt to move
-stores out of loops.  When used in conjunction with <span class="option">-fgcse-lm</span>,
+stores out of loops.  When used in conjunction with <samp><span class="option">-fgcse-lm</span></samp>,
 loops containing a load/store sequence can be changed to a load before
 the loop and a store after the loop.
 
      <p>Not enabled at any optimization level.
 
-     <br><dt><code>-fgcse-las</code><dd><a name="index-fgcse_002dlas-506"></a>When <span class="option">-fgcse-las</span> is enabled, the global common subexpression
+     <br><dt><code>-fgcse-las</code><dd><a name="index-fgcse_002dlas-506"></a>When <samp><span class="option">-fgcse-las</span></samp> is enabled, the global common subexpression
 elimination pass eliminates redundant loads that come after stores to the
 same memory location (both partial and full redundancies).
 
      <p>Not enabled at any optimization level.
 
-     <br><dt><code>-fgcse-after-reload</code><dd><a name="index-fgcse_002dafter_002dreload-507"></a>When <span class="option">-fgcse-after-reload</span> is enabled, a redundant load elimination
+     <br><dt><code>-fgcse-after-reload</code><dd><a name="index-fgcse_002dafter_002dreload-507"></a>When <samp><span class="option">-fgcse-after-reload</span></samp> is enabled, a redundant load elimination
 pass is performed after reload.  The purpose of this pass is to cleanup
 redundant spilling.
 
      <br><dt><code>-floop-optimize</code><dd><a name="index-floop_002doptimize-508"></a>Perform loop optimizations: move constant expressions out of loops, simplify
 exit test conditions and optionally do strength-reduction as well.
 
-     <p>Enabled at levels <span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-floop-optimize2</code><dd><a name="index-floop_002doptimize2-509"></a>Perform loop optimizations using the new loop optimizer.  The optimizations
 (loop unrolling, peeling and unswitching, loop invariant motion) are enabled
@@ -456,25 +458,25 @@ by separate flags.
 overflow, and that the loops with nontrivial exit condition are not
 infinite.  This enables a wider range of loop optimizations even if
 the loop optimizer itself cannot prove that these assumptions are valid. 
-Using <span class="option">-Wunsafe-loop-optimizations</span>, the compiler will warn you
+Using <samp><span class="option">-Wunsafe-loop-optimizations</span></samp>, the compiler will warn you
 if it finds this kind of loop.
 
      <br><dt><code>-fcrossjumping</code><dd><a name="index-crossjumping-511"></a>Perform cross-jumping transformation.  This transformation unifies equivalent code and save code size.  The
 resulting code may or may not perform better than without cross-jumping.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fif-conversion</code><dd><a name="index-if_002dconversion-512"></a>Attempt to transform conditional jumps into branch-less equivalents.  This
 include use of conditional moves, min, max, set flags and abs instructions, and
 some tricks doable by standard arithmetics.  The use of conditional execution
 on chips where it is available is controlled by <code>if-conversion2</code>.
 
-     <p>Enabled at levels <span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fif-conversion2</code><dd><a name="index-if_002dconversion2-513"></a>Use conditional execution (where available) to transform conditional jumps into
 branch-less equivalents.
 
-     <p>Enabled at levels <span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fdelete-null-pointer-checks</code><dd><a name="index-fdelete_002dnull_002dpointer_002dchecks-514"></a>Use global dataflow analysis to identify and eliminate useless checks
 for null pointers.  The compiler assumes that dereferencing a null
@@ -483,30 +485,30 @@ it has already been dereferenced, it cannot be null.
 
      <p>In some environments, this assumption is not true, and programs can
 safely dereference null pointers.  Use
-<span class="option">-fno-delete-null-pointer-checks</span> to disable this optimization
+<samp><span class="option">-fno-delete-null-pointer-checks</span></samp> to disable this optimization
 for programs which depend on that behavior.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fexpensive-optimizations</code><dd><a name="index-fexpensive_002doptimizations-515"></a>Perform a number of minor optimizations that are relatively expensive.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-foptimize-register-move</code><dt><code>-fregmove</code><dd><a name="index-foptimize_002dregister_002dmove-516"></a><a name="index-fregmove-517"></a>Attempt to reassign register numbers in move instructions and as
 operands of other simple instructions in order to maximize the amount of
 register tying.  This is especially helpful on machines with two-operand
 instructions.
 
-     <p>Note <span class="option">-fregmove</span> and <span class="option">-foptimize-register-move</span> are the same
+     <p>Note <samp><span class="option">-fregmove</span></samp> and <samp><span class="option">-foptimize-register-move</span></samp> are the same
 optimization.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fdelayed-branch</code><dd><a name="index-fdelayed_002dbranch-518"></a>If supported for the target machine, attempt to reorder instructions
 to exploit instruction slots available after delayed branch
 instructions.
 
-     <p>Enabled at levels <span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fschedule-insns</code><dd><a name="index-fschedule_002dinsns-519"></a>If supported for the target machine, attempt to reorder instructions to
 eliminate execution stalls due to required data being unavailable.  This
@@ -514,30 +516,30 @@ helps machines that have slow floating point or memory load instructions
 by allowing other instructions to be issued until the result of the load
 or floating point instruction is required.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
-     <br><dt><code>-fschedule-insns2</code><dd><a name="index-fschedule_002dinsns2-520"></a>Similar to <span class="option">-fschedule-insns</span>, but requests an additional pass of
+     <br><dt><code>-fschedule-insns2</code><dd><a name="index-fschedule_002dinsns2-520"></a>Similar to <samp><span class="option">-fschedule-insns</span></samp>, but requests an additional pass of
 instruction scheduling after register allocation has been done.  This is
 especially useful on machines with a relatively small number of
 registers and where memory load instructions take more than one cycle.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fno-sched-interblock</code><dd><a name="index-fno_002dsched_002dinterblock-521"></a>Don't schedule instructions across basic blocks.  This is normally
 enabled by default when scheduling before register allocation, i.e. 
-with <span class="option">-fschedule-insns</span> or at <span class="option">-O2</span> or higher.
+with <samp><span class="option">-fschedule-insns</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
      <br><dt><code>-fno-sched-spec</code><dd><a name="index-fno_002dsched_002dspec-522"></a>Don't allow speculative motion of non-load instructions.  This is normally
 enabled by default when scheduling before register allocation, i.e. 
-with <span class="option">-fschedule-insns</span> or at <span class="option">-O2</span> or higher.
+with <samp><span class="option">-fschedule-insns</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
      <br><dt><code>-fsched-spec-load</code><dd><a name="index-fsched_002dspec_002dload-523"></a>Allow speculative motion of some load instructions.  This only makes
 sense when scheduling before register allocation, i.e. with
-<span class="option">-fschedule-insns</span> or at <span class="option">-O2</span> or higher.
+<samp><span class="option">-fschedule-insns</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
      <br><dt><code>-fsched-spec-load-dangerous</code><dd><a name="index-fsched_002dspec_002dload_002ddangerous-524"></a>Allow speculative motion of more load instructions.  This only makes
 sense when scheduling before register allocation, i.e. with
-<span class="option">-fschedule-insns</span> or at <span class="option">-O2</span> or higher.
+<samp><span class="option">-fschedule-insns</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
      <br><dt><code>-fsched-stalled-insns=</code><var>n</var><dd><a name="index-fsched_002dstalled_002dinsns-525"></a>Define how many insns (if any) can be moved prematurely from the queue
 of stalled insns into the ready list, during the second scheduling pass.
@@ -545,7 +547,7 @@ of stalled insns into the ready list, during the second scheduling pass.
      <br><dt><code>-fsched-stalled-insns-dep=</code><var>n</var><dd><a name="index-fsched_002dstalled_002dinsns_002ddep-526"></a>Define how many insn groups (cycles) will be examined for a dependency
 on a stalled insn that is candidate for premature removal from the queue
 of stalled insns.  Has an effect only during the second scheduling pass,
-and only if <span class="option">-fsched-stalled-insns</span> is used and its value is not zero.
+and only if <samp><span class="option">-fsched-stalled-insns</span></samp> is used and its value is not zero.
 
      <br><dt><code>-fsched2-use-superblocks</code><dd><a name="index-fsched2_002duse_002dsuperblocks-527"></a>When scheduling after register allocation, do use superblock scheduling
 algorithm.  Superblock scheduling allows motion across basic block boundaries
@@ -554,18 +556,18 @@ descriptions used by GCC model the CPU closely enough to avoid unreliable
 results from the algorithm.
 
      <p>This only makes sense when scheduling after register allocation, i.e. with
-<span class="option">-fschedule-insns2</span> or at <span class="option">-O2</span> or higher.
+<samp><span class="option">-fschedule-insns2</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
-     <br><dt><code>-fsched2-use-traces</code><dd><a name="index-fsched2_002duse_002dtraces-528"></a>Use <span class="option">-fsched2-use-superblocks</span> algorithm when scheduling after register
+     <br><dt><code>-fsched2-use-traces</code><dd><a name="index-fsched2_002duse_002dtraces-528"></a>Use <samp><span class="option">-fsched2-use-superblocks</span></samp> algorithm when scheduling after register
 allocation and additionally perform code duplication in order to increase the
-size of superblocks using tracer pass.  See <span class="option">-ftracer</span> for details on
+size of superblocks using tracer pass.  See <samp><span class="option">-ftracer</span></samp> for details on
 trace formation.
 
      <p>This mode should produce faster but significantly longer programs.  Also
-without <span class="option">-fbranch-probabilities</span> the traces constructed may not
+without <samp><span class="option">-fbranch-probabilities</span></samp> the traces constructed may not
 match the reality and hurt the performance.  This only makes
 sense when scheduling after register allocation, i.e. with
-<span class="option">-fschedule-insns2</span> or at <span class="option">-O2</span> or higher.
+<samp><span class="option">-fschedule-insns2</span></samp> or at <samp><span class="option">-O2</span></samp> or higher.
 
      <br><dt><code>-freschedule-modulo-scheduled-loops</code><dd><a name="index-fscheduling_002din_002dmodulo_002dscheduled_002dloops-529"></a>The modulo scheduling comes before the traditional scheduling, if a loop was modulo scheduled
 we may want to prevent the later scheduling passes from changing its schedule, we use this
@@ -579,64 +581,64 @@ seems to result in better code than would otherwise be produced.
      <p>This option is always enabled by default on certain machines, usually
 those which have no call-preserved registers to use instead.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-ftree-pre</code><dd>Perform Partial Redundancy Elimination (PRE) on trees.  This flag is
-enabled by default at <span class="option">-O2</span> and <span class="option">-O3</span>.
+enabled by default at <samp><span class="option">-O2</span></samp> and <samp><span class="option">-O3</span></samp>.
 
      <br><dt><code>-ftree-fre</code><dd>Perform Full Redundancy Elimination (FRE) on trees.  The difference
 between FRE and PRE is that FRE only considers expressions
 that are computed on all paths leading to the redundant computation. 
 This analysis faster than PRE, though it exposes fewer redundancies. 
-This flag is enabled by default at <span class="option">-O</span> and higher.
+This flag is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-copy-prop</code><dd>Perform copy propagation on trees.  This pass eliminates unnecessary
-copy operations.  This flag is enabled by default at <span class="option">-O</span> and
+copy operations.  This flag is enabled by default at <samp><span class="option">-O</span></samp> and
 higher.
 
      <br><dt><code>-ftree-store-copy-prop</code><dd>Perform copy propagation of memory loads and stores.  This pass
 eliminates unnecessary copy operations in memory references
 (structures, global variables, arrays, etc).  This flag is enabled by
-default at <span class="option">-O2</span> and higher.
+default at <samp><span class="option">-O2</span></samp> and higher.
 
      <br><dt><code>-ftree-salias</code><dd>Perform structural alias analysis on trees.  This flag
-is enabled by default at <span class="option">-O</span> and higher.
+is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-sink</code><dd>Perform forward store motion  on trees.  This flag is
-enabled by default at <span class="option">-O</span> and higher.
+enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-ccp</code><dd>Perform sparse conditional constant propagation (CCP) on trees.  This
 pass only operates on local scalar variables and is enabled by default
-at <span class="option">-O</span> and higher.
+at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-store-ccp</code><dd>Perform sparse conditional constant propagation (CCP) on trees.  This
 pass operates on both local scalar variables and memory stores and
 loads (global variables, structures, arrays, etc).  This flag is
-enabled by default at <span class="option">-O2</span> and higher.
+enabled by default at <samp><span class="option">-O2</span></samp> and higher.
 
      <br><dt><code>-ftree-dce</code><dd>Perform dead code elimination (DCE) on trees.  This flag is enabled by
-default at <span class="option">-O</span> and higher.
+default at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-dominator-opts</code><dd>Perform a variety of simple scalar cleanups (constant/copy
 propagation, redundancy elimination, range propagation and expression
 simplification) based on a dominator tree traversal.  This also
 performs jump threading (to reduce jumps to jumps). This flag is
-enabled by default at <span class="option">-O</span> and higher.
+enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-ch</code><dd>Perform loop header copying on trees.  This is beneficial since it increases
 effectiveness of code motion optimizations.  It also saves one jump.  This flag
-is enabled by default at <span class="option">-O</span> and higher.  It is not enabled
-for <span class="option">-Os</span>, since it usually increases code size.
+is enabled by default at <samp><span class="option">-O</span></samp> and higher.  It is not enabled
+for <samp><span class="option">-Os</span></samp>, since it usually increases code size.
 
      <br><dt><code>-ftree-loop-optimize</code><dd>Perform loop optimizations on trees.  This flag is enabled by default
-at <span class="option">-O</span> and higher.
+at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-loop-linear</code><dd>Perform linear loop transformations on tree.  This flag can improve cache
 performance and allow further loop optimizations to take place.
 
      <br><dt><code>-ftree-loop-im</code><dd>Perform loop invariant motion on trees.  This pass moves only invariants that
 would be hard to handle at RTL level (function calls, operations that expand to
-nontrivial sequences of insns).  With <span class="option">-funswitch-loops</span> it also moves
+nontrivial sequences of insns).  With <samp><span class="option">-funswitch-loops</span></samp> it also moves
 operands of conditions that are invariant out of the loop, so that we can use
 just trivial invariantness analysis in loop unswitching.  The pass also includes
 store motion.
@@ -651,22 +653,22 @@ variable merging and induction variable elimination) on trees.
 
      <br><dt><code>-ftree-sra</code><dd>Perform scalar replacement of aggregates.  This pass replaces structure
 references with scalars to prevent committing structures to memory too
-early.  This flag is enabled by default at <span class="option">-O</span> and higher.
+early.  This flag is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-copyrename</code><dd>Perform copy renaming on trees.  This pass attempts to rename compiler
 temporaries to other variables at copy locations, usually resulting in
 variable names which more closely resemble the original variables.  This flag
-is enabled by default at <span class="option">-O</span> and higher.
+is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-ter</code><dd>Perform temporary expression replacement during the SSA-&gt;normal phase.  Single
 use/single def temporaries are replaced at their use location with their
 defining expression.  This results in non-GIMPLE code, but gives the expanders
 much more complex trees to work on resulting in better RTL generation.  This is
-enabled by default at <span class="option">-O</span> and higher.
+enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-lrs</code><dd>Perform live range splitting during the SSA-&gt;normal phase.  Distinct live
 ranges of a variable are split into unique variables, allowing for better
-optimization later.  This is enabled by default at <span class="option">-O</span> and higher.
+optimization later.  This is enabled by default at <samp><span class="option">-O</span></samp> and higher.
 
      <br><dt><code>-ftree-vectorize</code><dd>Perform loop vectorization on trees.
 
@@ -675,14 +677,14 @@ appears to be vectorizable except that data alignment or data dependence cannot
 be determined at compile time then vectorized and non-vectorized versions of
 the loop are generated along with runtime checks for alignment or dependence
 to control which version is executed.  This option is enabled by default
-except at level <span class="option">-Os</span> where it is disabled.
+except at level <samp><span class="option">-Os</span></samp> where it is disabled.
 
      <br><dt><code>-ftree-vrp</code><dd>Perform Value Range Propagation on trees.  This is similar to the
 constant propagation pass, but instead of values, ranges of values are
 propagated.  This allows the optimizers to remove unnecessary range
 checks like array bound checks and null pointer checks.  This is
-enabled by default at <span class="option">-O2</span> and higher.  Null pointer check
-elimination is only done if <span class="option">-fdelete-null-pointer-checks</span> is
+enabled by default at <samp><span class="option">-O2</span></samp> and higher.  Null pointer check
+elimination is only done if <samp><span class="option">-fdelete-null-pointer-checks</span></samp> is
 enabled.
 
      <br><dt><code>-ftracer</code><dd><a name="index-ftracer-532"></a>Perform tail duplication to enlarge superblock size.  This transformation
@@ -690,27 +692,27 @@ simplifies the control flow of the function allowing other optimizations to do
 better job.
 
      <br><dt><code>-funroll-loops</code><dd><a name="index-funroll_002dloops-533"></a>Unroll loops whose number of iterations can be determined at compile
-time or upon entry to the loop.  <span class="option">-funroll-loops</span> implies both
-<span class="option">-fstrength-reduce</span> and <span class="option">-frerun-cse-after-loop</span>.  This
+time or upon entry to the loop.  <samp><span class="option">-funroll-loops</span></samp> implies both
+<samp><span class="option">-fstrength-reduce</span></samp> and <samp><span class="option">-frerun-cse-after-loop</span></samp>.  This
 option makes code larger, and may or may not make it run faster.
 
      <br><dt><code>-funroll-all-loops</code><dd><a name="index-funroll_002dall_002dloops-534"></a>Unroll all loops, even if their number of iterations is uncertain when
 the loop is entered.  This usually makes programs run more slowly. 
-<span class="option">-funroll-all-loops</span> implies the same options as
-<span class="option">-funroll-loops</span>,
+<samp><span class="option">-funroll-all-loops</span></samp> implies the same options as
+<samp><span class="option">-funroll-loops</span></samp>,
 
-     <br><dt><code>-fsplit-ivs-in-unroller</code><dd><a name="index-_002dfsplit_002divs_002din_002dunroller-535"></a>Enables expressing of values of induction variables in later iterations
+     <br><dt><code>-fsplit-ivs-in-unroller</code><dd><a name="index-g_t_002dfsplit_002divs_002din_002dunroller-535"></a>Enables expressing of values of induction variables in later iterations
 of the unrolled loop using the value in the first iteration.  This breaks
 long dependency chains, thus improving efficiency of the scheduling passes.
 
-     <p>Combination of <span class="option">-fweb</span> and CSE is often sufficient to obtain the
+     <p>Combination of <samp><span class="option">-fweb</span></samp> and CSE is often sufficient to obtain the
 same effect.  However in cases the loop body is more complicated than
 a single basic block, this is not reliable.  It also does not work at all
 on some of the architectures due to restrictions in the CSE pass.
 
      <p>This optimization is enabled by default.
 
-     <br><dt><code>-fvariable-expansion-in-unroller</code><dd><a name="index-_002dfvariable_002dexpansion_002din_002dunroller-536"></a>With this option, the compiler will create multiple copies of some
+     <br><dt><code>-fvariable-expansion-in-unroller</code><dd><a name="index-g_t_002dfvariable_002dexpansion_002din_002dunroller-536"></a>With this option, the compiler will create multiple copies of some
 local variables when unrolling a loop which can result in superior code.
 
      <br><dt><code>-fprefetch-loop-arrays</code><dd><a name="index-fprefetch_002dloop_002darrays-537"></a>If supported by the target machine, generate instructions to prefetch
@@ -720,32 +722,32 @@ memory to improve the performance of loops that access large arrays.
 dependent on the structure of loops within the source code.
 
      <br><dt><code>-fno-peephole</code><dt><code>-fno-peephole2</code><dd><a name="index-fno_002dpeephole-538"></a><a name="index-fno_002dpeephole2-539"></a>Disable any machine-specific peephole optimizations.  The difference
-between <span class="option">-fno-peephole</span> and <span class="option">-fno-peephole2</span> is in how they
+between <samp><span class="option">-fno-peephole</span></samp> and <samp><span class="option">-fno-peephole2</span></samp> is in how they
 are implemented in the compiler; some targets use one, some use the
 other, a few use both.
 
-     <p><span class="option">-fpeephole</span> is enabled by default. 
-<span class="option">-fpeephole2</span> enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p><samp><span class="option">-fpeephole</span></samp> is enabled by default. 
+<samp><span class="option">-fpeephole2</span></samp> enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fno-guess-branch-probability</code><dd><a name="index-fno_002dguess_002dbranch_002dprobability-540"></a>Do not guess branch probabilities using heuristics.
 
      <p>GCC will use heuristics to guess branch probabilities if they are
-not provided by profiling feedback (<span class="option">-fprofile-arcs</span>).  These
+not provided by profiling feedback (<samp><span class="option">-fprofile-arcs</span></samp>).  These
 heuristics are based on the control flow graph.  If some branch probabilities
-are specified by <span class="samp">__builtin_expect</span>, then the heuristics will be
+are specified by `<samp><span class="samp">__builtin_expect</span></samp>', then the heuristics will be
 used to guess branch probabilities for the rest of the control flow graph,
-taking the <span class="samp">__builtin_expect</span> info into account.  The interactions
-between the heuristics and <span class="samp">__builtin_expect</span> can be complex, and in
+taking the `<samp><span class="samp">__builtin_expect</span></samp>' info into account.  The interactions
+between the heuristics and `<samp><span class="samp">__builtin_expect</span></samp>' can be complex, and in
 some cases, it may be useful to disable the heuristics so that the effects
-of <span class="samp">__builtin_expect</span> are easier to understand.
+of `<samp><span class="samp">__builtin_expect</span></samp>' are easier to understand.
 
-     <p>The default is <span class="option">-fguess-branch-probability</span> at levels
-<span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>The default is <samp><span class="option">-fguess-branch-probability</span></samp> at levels
+<samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-freorder-blocks</code><dd><a name="index-freorder_002dblocks-541"></a>Reorder basic blocks in the compiled function in order to reduce number of
 taken branches and improve code locality.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
      <br><dt><code>-freorder-blocks-and-partition</code><dd><a name="index-freorder_002dblocks_002dand_002dpartition-542"></a>In addition to reordering basic blocks in the compiled function, in order
 to reduce number of taken branches, partitions hot and cold basic blocks
@@ -765,9 +767,9 @@ the linker so object file format must support named sections and linker must
 place them in a reasonable way.
 
      <p>Also profile feedback must be available in to make this option effective.  See
-<span class="option">-fprofile-arcs</span> for details.
+<samp><span class="option">-fprofile-arcs</span></samp> for details.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fstrict-aliasing</code><dd><a name="index-fstrict_002daliasing-544"></a>Allows the compiler to assume the strictest aliasing rules applicable to
 the language being compiled.  For C (and C++), this activates
@@ -792,7 +794,7 @@ type.
      </pre>
      <p>The practice of reading from a different union member than the one most
 recently written to (called &ldquo;type-punning&rdquo;) is common.  Even with
-<span class="option">-fstrict-aliasing</span>, type-punning is allowed, provided the memory
+<samp><span class="option">-fstrict-aliasing</span></samp>, type-punning is allowed, provided the memory
 is accessed through the union type.  So, the code above will work as
 expected.  However, this code might not:
      <pre class="smallexample">          int f() {
@@ -809,7 +811,7 @@ node, an alias set for the node.  Nodes in different alias sets are not
 allowed to alias.  For an example, see the C front-end function
 <code>c_get_alias_set</code>.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-falign-arrays</code><dd><a name="index-falign_002darrays-545"></a>Set the minimum alignment for array variables to be the largest power
 of two less than or equal to their total storage size, or the biggest
@@ -819,11 +821,11 @@ does not strictly conform to the C standard.
 
      <br><dt><code>-falign-functions</code><dt><code>-falign-functions=</code><var>n</var><dd><a name="index-falign_002dfunctions-546"></a>Align the start of functions to the next power-of-two greater than
 <var>n</var>, skipping up to <var>n</var> bytes.  For instance,
-<span class="option">-falign-functions=32</span> aligns functions to the next 32-byte
-boundary, but <span class="option">-falign-functions=24</span> would align to the next
+<samp><span class="option">-falign-functions=32</span></samp> aligns functions to the next 32-byte
+boundary, but <samp><span class="option">-falign-functions=24</span></samp> would align to the next
 32-byte boundary only if this can be done by skipping 23 bytes or less.
 
-     <p><span class="option">-fno-align-functions</span> and <span class="option">-falign-functions=1</span> are
+     <p><samp><span class="option">-fno-align-functions</span></samp> and <samp><span class="option">-falign-functions=1</span></samp> are
 equivalent and mean that functions will not be aligned.
 
      <p>Some assemblers only support this flag when <var>n</var> is a power of two;
@@ -831,47 +833,47 @@ in that case, it is rounded up.
 
      <p>If <var>n</var> is not specified or is zero, use a machine-dependent default.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
      <br><dt><code>-falign-labels</code><dt><code>-falign-labels=</code><var>n</var><dd><a name="index-falign_002dlabels-547"></a>Align all branch targets to a power-of-two boundary, skipping up to
-<var>n</var> bytes like <span class="option">-falign-functions</span>.  This option can easily
+<var>n</var> bytes like <samp><span class="option">-falign-functions</span></samp>.  This option can easily
 make code slower, because it must insert dummy operations for when the
 branch target is reached in the usual flow of the code.
 
-     <p><span class="option">-fno-align-labels</span> and <span class="option">-falign-labels=1</span> are
+     <p><samp><span class="option">-fno-align-labels</span></samp> and <samp><span class="option">-falign-labels=1</span></samp> are
 equivalent and mean that labels will not be aligned.
 
-     <p>If <span class="option">-falign-loops</span> or <span class="option">-falign-jumps</span> are applicable and
+     <p>If <samp><span class="option">-falign-loops</span></samp> or <samp><span class="option">-falign-jumps</span></samp> are applicable and
 are greater than this value, then their values are used instead.
 
      <p>If <var>n</var> is not specified or is zero, use a machine-dependent default
-which is very likely to be <span class="samp">1</span>, meaning no alignment.
+which is very likely to be `<samp><span class="samp">1</span></samp>', meaning no alignment.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
      <br><dt><code>-falign-loops</code><dt><code>-falign-loops=</code><var>n</var><dd><a name="index-falign_002dloops-548"></a>Align loops to a power-of-two boundary, skipping up to <var>n</var> bytes
-like <span class="option">-falign-functions</span>.  The hope is that the loop will be
+like <samp><span class="option">-falign-functions</span></samp>.  The hope is that the loop will be
 executed many times, which will make up for any execution of the dummy
 operations.
 
-     <p><span class="option">-fno-align-loops</span> and <span class="option">-falign-loops=1</span> are
+     <p><samp><span class="option">-fno-align-loops</span></samp> and <samp><span class="option">-falign-loops=1</span></samp> are
 equivalent and mean that loops will not be aligned.
 
      <p>If <var>n</var> is not specified or is zero, use a machine-dependent default.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
      <br><dt><code>-falign-jumps</code><dt><code>-falign-jumps=</code><var>n</var><dd><a name="index-falign_002djumps-549"></a>Align branch targets to a power-of-two boundary, for branch targets
 where the targets can only be reached by jumping, skipping up to <var>n</var>
-bytes like <span class="option">-falign-functions</span>.  In this case, no dummy operations
+bytes like <samp><span class="option">-falign-functions</span></samp>.  In this case, no dummy operations
 need be executed.
 
-     <p><span class="option">-fno-align-jumps</span> and <span class="option">-falign-jumps=1</span> are
+     <p><samp><span class="option">-fno-align-jumps</span></samp> and <samp><span class="option">-falign-jumps=1</span></samp> are
 equivalent and mean that loops will not be aligned.
 
      <p>If <var>n</var> is not specified or is zero, use a machine-dependent default.
 
-     <p>Enabled at levels <span class="option">-O2</span>, <span class="option">-O3</span>.
+     <p>Enabled at levels <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>.
 
      <br><dt><code>-funit-at-a-time</code><dd><a name="index-funit_002dat_002da_002dtime-550"></a>Parse the whole compilation unit before starting to produce code. 
 This allows some extra optimizations to take place but consumes
@@ -897,10 +899,10 @@ may break <code>asm</code> statements calling functions directly.  Again,
 attribute <code>used</code> will prevent this behavior. 
 </ul>
 
-     <p>As a temporary workaround, <span class="option">-fno-unit-at-a-time</span> can be used,
+     <p>As a temporary workaround, <samp><span class="option">-fno-unit-at-a-time</span></samp> can be used,
 but this scheme may not be supported by future releases of GCC.
 
-     <p>Enabled at levels <span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Enabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fweb</code><dd><a name="index-fweb-551"></a>Constructs webs as commonly used for register allocation purposes and assign
 each web individual pseudo register.  This allows the register allocation pass
@@ -909,7 +911,7 @@ passes, such as CSE, loop optimizer and trivial dead code remover.  It can,
 however, make debugging impossible, since variables will no longer stay in a
 &ldquo;home register&rdquo;.
 
-     <p>Enabled by default with <span class="option">-funroll-loops</span>.
+     <p>Enabled by default with <samp><span class="option">-funroll-loops</span></samp>.
 
      <br><dt><code>-fwhole-program</code><dd><a name="index-fwhole_002dprogram-552"></a>Assume that the current compilation unit represents whole program being
 compiled.  All public functions and variables with the exception of <code>main</code>
@@ -917,7 +919,7 @@ and those merged by attribute <code>externally_visible</code> become static func
 and in a affect gets more aggressively optimized by interprocedural optimizers. 
 While this option is equivalent to proper use of <code>static</code> keyword for
 programs consisting of single file, in combination with option
-<span class="option">--combine</span> this flag can be used to compile most of smaller scale C
+<samp><span class="option">--combine</span></samp> this flag can be used to compile most of smaller scale C
 programs since the functions and variables become local for the whole combined
 compilation unit, not for the single source file itself.
 
@@ -925,12 +927,12 @@ compilation unit, not for the single source file itself.
 we perform a copy-propagation pass to try to reduce scheduling dependencies
 and occasionally eliminate the copy.
 
-     <p>Disabled at levels <span class="option">-O</span>, <span class="option">-O2</span>, <span class="option">-O3</span>, <span class="option">-Os</span>.
+     <p>Disabled at levels <samp><span class="option">-O</span></samp>, <samp><span class="option">-O2</span></samp>, <samp><span class="option">-O3</span></samp>, <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-fprofile-generate</code><dd><a name="index-fprofile_002dgenerate-554"></a>
 Enable options usually used for instrumenting application to produce
 profile useful for later recompilation with profile feedback based
-optimization.  You must use <span class="option">-fprofile-generate</span> both when
+optimization.  You must use <samp><span class="option">-fprofile-generate</span></samp> both when
 compiling and when linking your program.
 
      <p>The following options are enabled: <code>-fprofile-arcs</code>, <code>-fprofile-values</code>, <code>-fvpt</code>.
@@ -958,17 +960,17 @@ the 68000 where the floating registers (of the 68881) keep more
 precision than a <code>double</code> is supposed to have.  Similarly for the
 x86 architecture.  For most programs, the excess precision does only
 good, but a few programs rely on the precise definition of IEEE floating
-point.  Use <span class="option">-ffloat-store</span> for such programs, after modifying
+point.  Use <samp><span class="option">-ffloat-store</span></samp> for such programs, after modifying
 them to store all pertinent intermediate computations into variables.
 
-     <br><dt><code>-ffast-math</code><dd><a name="index-ffast_002dmath-558"></a>Sets <span class="option">-fno-math-errno</span>, <span class="option">-funsafe-math-optimizations</span>, <br>
-<span class="option">-fno-trapping-math</span>, <span class="option">-ffinite-math-only</span>,
-<span class="option">-fno-rounding-math</span>, <span class="option">-fno-signaling-nans</span>
-and <span class="option">fcx-limited-range</span>.
+     <br><dt><code>-ffast-math</code><dd><a name="index-ffast_002dmath-558"></a>Sets <samp><span class="option">-fno-math-errno</span></samp>, <samp><span class="option">-funsafe-math-optimizations</span></samp>, <br>
+<samp><span class="option">-fno-trapping-math</span></samp>, <samp><span class="option">-ffinite-math-only</span></samp>,
+<samp><span class="option">-fno-rounding-math</span></samp>, <samp><span class="option">-fno-signaling-nans</span></samp>
+and <samp><span class="option">fcx-limited-range</span></samp>.
 
      <p>This option causes the preprocessor macro <code>__FAST_MATH__</code> to be defined.
 
-     <p>This option should never be turned on by any <span class="option">-O</span> option since
+     <p>This option should never be turned on by any <samp><span class="option">-O</span></samp> option since
 it can result in incorrect output for programs which depend on
 an exact implementation of IEEE or ISO rules/specifications for
 math functions.
@@ -978,16 +980,16 @@ with a single instruction, e.g., sqrt.  A program that relies on
 IEEE exceptions for math error handling may want to use this flag
 for speed while maintaining IEEE arithmetic compatibility.
 
-     <p>This option should never be turned on by any <span class="option">-O</span> option since
+     <p>This option should never be turned on by any <samp><span class="option">-O</span></samp> option since
 it can result in incorrect output for programs which depend on
 an exact implementation of IEEE or ISO rules/specifications for
 math functions.
 
-     <p>The default is <span class="option">-fmath-errno</span>.
+     <p>The default is <samp><span class="option">-fmath-errno</span></samp>.
 
      <p>On Darwin systems, the math library never sets <code>errno</code>.  There is therefore
 no reason for the compiler to consider the possibility that it might,
-and <span class="option">-fno-math-errno</span> is the default.
+and <samp><span class="option">-fno-math-errno</span></samp> is the default.
 
      <br><dt><code>-funsafe-math-optimizations</code><dd><a name="index-funsafe_002dmath_002doptimizations-560"></a>Allow optimizations for floating-point arithmetic that (a) assume
 that arguments and results are valid and (b) may violate IEEE or
@@ -995,34 +997,34 @@ ANSI standards.  When used at link-time, it may include libraries
 or startup files that change the default FPU control word or other
 similar optimizations.
 
-     <p>This option should never be turned on by any <span class="option">-O</span> option since
+     <p>This option should never be turned on by any <samp><span class="option">-O</span></samp> option since
 it can result in incorrect output for programs which depend on
 an exact implementation of IEEE or ISO rules/specifications for
 math functions.
 
-     <p>The default is <span class="option">-fno-unsafe-math-optimizations</span>.
+     <p>The default is <samp><span class="option">-fno-unsafe-math-optimizations</span></samp>.
 
      <br><dt><code>-ffinite-math-only</code><dd><a name="index-ffinite_002dmath_002donly-561"></a>Allow optimizations for floating-point arithmetic that assume
 that arguments and results are not NaNs or +-Infs.
 
-     <p>This option should never be turned on by any <span class="option">-O</span> option since
+     <p>This option should never be turned on by any <samp><span class="option">-O</span></samp> option since
 it can result in incorrect output for programs which depend on
 an exact implementation of IEEE or ISO rules/specifications.
 
-     <p>The default is <span class="option">-fno-finite-math-only</span>.
+     <p>The default is <samp><span class="option">-fno-finite-math-only</span></samp>.
 
      <br><dt><code>-fno-trapping-math</code><dd><a name="index-fno_002dtrapping_002dmath-562"></a>Compile code assuming that floating-point operations cannot generate
 user-visible traps.  These traps include division by zero, overflow,
 underflow, inexact result and invalid operation.  This option implies
-<span class="option">-fno-signaling-nans</span>.  Setting this option may allow faster
+<samp><span class="option">-fno-signaling-nans</span></samp>.  Setting this option may allow faster
 code if one relies on &ldquo;non-stop&rdquo; IEEE arithmetic, for example.
 
-     <p>This option should never be turned on by any <span class="option">-O</span> option since
+     <p>This option should never be turned on by any <samp><span class="option">-O</span></samp> option since
 it can result in incorrect output for programs which depend on
 an exact implementation of IEEE or ISO rules/specifications for
 math functions.
 
-     <p>The default is <span class="option">-ftrapping-math</span>.
+     <p>The default is <samp><span class="option">-ftrapping-math</span></samp>.
 
      <br><dt><code>-frounding-math</code><dd><a name="index-frounding_002dmath-563"></a>Disable transformations and optimizations that assume default floating
 point rounding behavior.  This is round-to-zero for all floating point
@@ -1034,7 +1036,7 @@ floating point expressions at compile-time (which may be affected by
 rounding mode) and arithmetic transformations that are unsafe in the
 presence of sign-dependent rounding modes.
 
-     <p>The default is <span class="option">-fno-rounding-math</span>.
+     <p>The default is <samp><span class="option">-fno-rounding-math</span></samp>.
 
      <p>This option is experimental and does not currently guarantee to
 disable all GCC optimizations that are affected by rounding mode. 
@@ -1045,12 +1047,12 @@ will be used to specify the default state for <code>FENV_ACCESS</code>.
      <br><dt><code>-fsignaling-nans</code><dd><a name="index-fsignaling_002dnans-564"></a>Compile code assuming that IEEE signaling NaNs may generate user-visible
 traps during floating-point operations.  Setting this option disables
 optimizations that may change the number of exceptions visible with
-signaling NaNs.  This option implies <span class="option">-ftrapping-math</span>.
+signaling NaNs.  This option implies <samp><span class="option">-ftrapping-math</span></samp>.
 
      <p>This option causes the preprocessor macro <code>__SUPPORT_SNAN__</code> to
 be defined.
 
-     <p>The default is <span class="option">-fno-signaling-nans</span>.
+     <p>The default is <samp><span class="option">-fno-signaling-nans</span></samp>.
 
      <p>This option is experimental and does not currently guarantee to
 disable all GCC optimizations that affect signaling NaN behavior.
@@ -1060,7 +1062,7 @@ implicitly converting it to double precision constant.
 
      <br><dt><code>-fcx-limited-range</code><dt><code>-fno-cx-limited-range</code><dd><a name="index-fcx_002dlimited_002drange-566"></a><a name="index-fno_002dcx_002dlimited_002drange-567"></a>When enabled, this option states that a range reduction step is not
 needed when performing complex division.  The default is
-<span class="option">-fno-cx-limited-range</span>, but is enabled by <span class="option">-ffast-math</span>.
+<samp><span class="option">-fno-cx-limited-range</span></samp>, but is enabled by <samp><span class="option">-ffast-math</span></samp>.
 
      <p>This option controls the default setting of the ISO C99
 <code>CX_LIMITED_RANGE</code> pragma.  Nevertheless, the option applies to
@@ -1069,40 +1071,40 @@ all languages.
  </dl>
 
  <p>The following options control optimizations that may improve
-performance, but are not enabled by any <span class="option">-O</span> options.  This
+performance, but are not enabled by any <samp><span class="option">-O</span></samp> options.  This
 section includes experimental options that may produce broken code.
 
      <dl>
-<dt><code>-fbranch-probabilities</code><dd><a name="index-fbranch_002dprobabilities-568"></a>After running a program compiled with <span class="option">-fprofile-arcs</span>
-(see <a href="Debugging-Options.html#Debugging-Options">Options for Debugging Your Program or <span class="command">gcc</span></a>), you can compile it a second time using
-<span class="option">-fbranch-probabilities</span>, to improve optimizations based on
+<dt><code>-fbranch-probabilities</code><dd><a name="index-fbranch_002dprobabilities-568"></a>After running a program compiled with <samp><span class="option">-fprofile-arcs</span></samp>
+(see <a href="Debugging-Options.html#Debugging-Options">Options for Debugging Your Program or <samp><span class="command">gcc</span></samp></a>), you can compile it a second time using
+<samp><span class="option">-fbranch-probabilities</span></samp>, to improve optimizations based on
 the number of times each branch was taken.  When the program
-compiled with <span class="option">-fprofile-arcs</span> exits it saves arc execution
-counts to a file called <var>sourcename</var><span class="file">.gcda</span> for each source
+compiled with <samp><span class="option">-fprofile-arcs</span></samp> exits it saves arc execution
+counts to a file called <samp><var>sourcename</var><span class="file">.gcda</span></samp> for each source
 file  The information in this data file is very dependent on the
 structure of the generated code, so you must use the same source code
 and the same optimization options for both compilations.
 
-     <p>With <span class="option">-fbranch-probabilities</span>, GCC puts a
-<span class="samp">REG_BR_PROB</span> note on each <span class="samp">JUMP_INSN</span> and <span class="samp">CALL_INSN</span>. 
+     <p>With <samp><span class="option">-fbranch-probabilities</span></samp>, GCC puts a
+`<samp><span class="samp">REG_BR_PROB</span></samp>' note on each `<samp><span class="samp">JUMP_INSN</span></samp>' and `<samp><span class="samp">CALL_INSN</span></samp>'. 
 These can be used to improve optimization.  Currently, they are only
-used in one place: in <span class="file">reorg.c</span>, instead of guessing which path a
-branch is mostly to take, the <span class="samp">REG_BR_PROB</span> values are used to
+used in one place: in <samp><span class="file">reorg.c</span></samp>, instead of guessing which path a
+branch is mostly to take, the `<samp><span class="samp">REG_BR_PROB</span></samp>' values are used to
 exactly determine which path is taken more often.
 
-     <br><dt><code>-fprofile-values</code><dd><a name="index-fprofile_002dvalues-569"></a>If combined with <span class="option">-fprofile-arcs</span>, it adds code so that some
+     <br><dt><code>-fprofile-values</code><dd><a name="index-fprofile_002dvalues-569"></a>If combined with <samp><span class="option">-fprofile-arcs</span></samp>, it adds code so that some
 data about values of expressions in the program is gathered.
 
-     <p>With <span class="option">-fbranch-probabilities</span>, it reads back the data gathered
-from profiling values of expressions and adds <span class="samp">REG_VALUE_PROFILE</span>
+     <p>With <samp><span class="option">-fbranch-probabilities</span></samp>, it reads back the data gathered
+from profiling values of expressions and adds `<samp><span class="samp">REG_VALUE_PROFILE</span></samp>'
 notes to instructions for their later usage in optimizations.
 
-     <p>Enabled with <span class="option">-fprofile-generate</span> and <span class="option">-fprofile-use</span>.
+     <p>Enabled with <samp><span class="option">-fprofile-generate</span></samp> and <samp><span class="option">-fprofile-use</span></samp>.
 
-     <br><dt><code>-fvpt</code><dd><a name="index-fvpt-570"></a>If combined with <span class="option">-fprofile-arcs</span>, it instructs the compiler to add
+     <br><dt><code>-fvpt</code><dd><a name="index-fvpt-570"></a>If combined with <samp><span class="option">-fprofile-arcs</span></samp>, it instructs the compiler to add
 a code to gather information about values of expressions.
 
-     <p>With <span class="option">-fbranch-probabilities</span>, it reads back the data gathered
+     <p>With <samp><span class="option">-fbranch-probabilities</span></samp>, it reads back the data gathered
 and actually performs the optimizations based on them. 
 Currently the optimizations include specialization of division operation
 using the knowledge about the value of the denominator.
@@ -1114,36 +1116,36 @@ debug information format adopted by the target, however, it can
 make debugging impossible, since variables will no longer stay in
 a &ldquo;home register&rdquo;.
 
-     <p>Enabled by default with <span class="option">-funroll-loops</span>.
+     <p>Enabled by default with <samp><span class="option">-funroll-loops</span></samp>.
 
      <br><dt><code>-ftracer</code><dd><a name="index-ftracer-572"></a>Perform tail duplication to enlarge superblock size.  This transformation
 simplifies the control flow of the function allowing other optimizations to do
 better job.
 
-     <p>Enabled with <span class="option">-fprofile-use</span>.
+     <p>Enabled with <samp><span class="option">-fprofile-use</span></samp>.
 
      <br><dt><code>-funroll-loops</code><dd><a name="index-funroll_002dloops-573"></a>Unroll loops whose number of iterations can be determined at compile time or
-upon entry to the loop.  <span class="option">-funroll-loops</span> implies
-<span class="option">-frerun-cse-after-loop</span>, <span class="option">-fweb</span> and <span class="option">-frename-registers</span>. 
+upon entry to the loop.  <samp><span class="option">-funroll-loops</span></samp> implies
+<samp><span class="option">-frerun-cse-after-loop</span></samp>, <samp><span class="option">-fweb</span></samp> and <samp><span class="option">-frename-registers</span></samp>. 
 It also turns on complete loop peeling (i.e. complete removal of loops with
 small constant number of iterations).  This option makes code larger, and may
 or may not make it run faster.
 
-     <p>Enabled with <span class="option">-fprofile-use</span>.
+     <p>Enabled with <samp><span class="option">-fprofile-use</span></samp>.
 
      <br><dt><code>-funroll-all-loops</code><dd><a name="index-funroll_002dall_002dloops-574"></a>Unroll all loops, even if their number of iterations is uncertain when
 the loop is entered.  This usually makes programs run more slowly. 
-<span class="option">-funroll-all-loops</span> implies the same options as
-<span class="option">-funroll-loops</span>.
+<samp><span class="option">-funroll-all-loops</span></samp> implies the same options as
+<samp><span class="option">-funroll-loops</span></samp>.
 
      <br><dt><code>-fpeel-loops</code><dd><a name="index-fpeel_002dloops-575"></a>Peels the loops for that there is enough information that they do not
 roll much (from profile feedback).  It also turns on complete loop peeling
 (i.e. complete removal of loops with small constant number of iterations).
 
-     <p>Enabled with <span class="option">-fprofile-use</span>.
+     <p>Enabled with <samp><span class="option">-fprofile-use</span></samp>.
 
      <br><dt><code>-fmove-loop-invariants</code><dd><a name="index-fmove_002dloop_002dinvariants-576"></a>Enables the loop invariant motion pass in the new loop optimizer.  Enabled
-at level <span class="option">-O1</span>
+at level <samp><span class="option">-O1</span></samp>
 
      <br><dt><code>-funswitch-loops</code><dd><a name="index-funswitch_002dloops-577"></a>Move branches with loop invariant conditions out of the loop, with duplicates
 of the loop on both branches (modified according to result of the condition).
@@ -1151,7 +1153,7 @@ of the loop on both branches (modified according to result of the condition).
      <br><dt><code>-fprefetch-loop-arrays</code><dd><a name="index-fprefetch_002dloop_002darrays-578"></a>If supported by the target machine, generate instructions to prefetch
 memory to improve the performance of loops that access large arrays.
 
-     <p>Disabled at level <span class="option">-Os</span>.
+     <p>Disabled at level <samp><span class="option">-Os</span></samp>.
 
      <br><dt><code>-ffunction-sections</code><dt><code>-fdata-sections</code><dd><a name="index-ffunction_002dsections-579"></a><a name="index-fdata_002dsections-580"></a>Place each function or data item into its own section in the output
 file if the target supports arbitrary sections.  The name of the
@@ -1169,7 +1171,7 @@ so.  When you specify these options, the assembler and linker will
 create larger object and executable files and will also be slower. 
 You will not be able to use <code>gprof</code> on all systems if you
 specify this option and you may have problems with debugging if
-you specify both this option and <span class="option">-g</span>.
+you specify both this option and <samp><span class="option">-g</span></samp>.
 
      <br><dt><code>-fbranch-target-load-optimize</code><dd><a name="index-fbranch_002dtarget_002dload_002doptimize-581"></a>Perform branch target register load optimization before prologue / epilogue
 threading. 
@@ -1190,13 +1192,13 @@ functions with buffers larger than 8 bytes.  The guards are initialized
 when a function is entered and then checked when the function exits. 
 If a guard check fails, an error message is printed and the program exits.
 
-     <br><dt><code>-fstack-protector-all</code><dd>Like <span class="option">-fstack-protector</span> except that all functions are protected.
+     <br><dt><code>-fstack-protector-all</code><dd>Like <samp><span class="option">-fstack-protector</span></samp> except that all functions are protected.
 
      <br><dt><code>--param </code><var>name</var><code>=</code><var>value</var><dd><a name="index-param-584"></a>In some places, GCC uses various constants to control the amount of
 optimization that is done.  For example, GCC will not inline functions
 that contain more that a certain number of instructions.  You can
 control some of these constants on the command-line using the
-<span class="option">--param</span> option.
+<samp><span class="option">--param</span></samp> option.
 
      <p>The names of specific parameters, and the meaning of the values, are
 tied to the internals of the compiler, and are subject to change
@@ -1222,7 +1224,7 @@ structure exceeds this parameter, then block copies are not used.  The
 default is 75.
 
           <br><dt><code>max-crossjump-edges</code><dd>The maximum number of incoming edges to consider for crossjumping. 
-The algorithm used by <span class="option">-fcrossjumping</span> is O(N^2) in
+The algorithm used by <samp><span class="option">-fcrossjumping</span></samp> is O(N^2) in
 the number of edges incoming to each block.  Increasing values mean
 more aggressive optimization, making the compile time increase with
 probably small improvement in executable size.
@@ -1276,7 +1278,7 @@ will consider for inlining.  This only affects functions declared
 inline and methods implemented in a class declaration (C++). 
 The default value is 450.
 
-          <br><dt><code>max-inline-insns-auto</code><dd>When you use <span class="option">-finline-functions</span> (included in <span class="option">-O3</span>),
+          <br><dt><code>max-inline-insns-auto</code><dd>When you use <samp><span class="option">-finline-functions</span></samp> (included in <samp><span class="option">-O3</span></samp>),
 a lot of functions that would otherwise not be considered for inlining
 by the compiler will be investigated.  To those functions, a different
 (more restrictive) limit compared to functions declared inline can
@@ -1285,47 +1287,47 @@ The default value is 90.
 
           <br><dt><code>large-function-insns</code><dd>The limit specifying really large functions.  For functions larger than this
 limit after inlining inlining is constrained by
-<span class="option">--param large-function-growth</span>.  This parameter is useful primarily
+<samp><span class="option">--param large-function-growth</span></samp>.  This parameter is useful primarily
 to avoid extreme compilation time caused by non-linear algorithms used by the
 backend. 
-This parameter is ignored when <span class="option">-funit-at-a-time</span> is not used. 
+This parameter is ignored when <samp><span class="option">-funit-at-a-time</span></samp> is not used. 
 The default value is 2700.
 
           <br><dt><code>large-function-growth</code><dd>Specifies maximal growth of large function caused by inlining in percents. 
-This parameter is ignored when <span class="option">-funit-at-a-time</span> is not used. 
+This parameter is ignored when <samp><span class="option">-funit-at-a-time</span></samp> is not used. 
 The default value is 100 which limits large function growth to 2.0 times
 the original size.
 
           <br><dt><code>large-unit-insns</code><dd>The limit specifying large translation unit.  Growth caused by inlining of
-units larger than this limit is limited by <span class="option">--param inline-unit-growth</span>. 
+units larger than this limit is limited by <samp><span class="option">--param inline-unit-growth</span></samp>. 
 For small units this might be too tight (consider unit consisting of function A
 that is inline and B that just calls A three time.  If B is small relative to
 A, the growth of unit is 300\% and yet such inlining is very sane.  For very
 large units consisting of small inlininable functions however the overall unit
 growth limit is needed to avoid exponential explosion of code size.  Thus for
-smaller units, the size is increased to <span class="option">--param large-unit-insns</span>
-before aplying <span class="option">--param inline-unit-growth</span>.  The default is 10000
+smaller units, the size is increased to <samp><span class="option">--param large-unit-insns</span></samp>
+before aplying <samp><span class="option">--param inline-unit-growth</span></samp>.  The default is 10000
 
           <br><dt><code>inline-unit-growth</code><dd>Specifies maximal overall growth of the compilation unit caused by inlining. 
-This parameter is ignored when <span class="option">-funit-at-a-time</span> is not used. 
+This parameter is ignored when <samp><span class="option">-funit-at-a-time</span></samp> is not used. 
 The default value is 50 which limits unit growth to 1.5 times the original
 size.
 
           <br><dt><code>max-inline-insns-recursive</code><dt><code>max-inline-insns-recursive-auto</code><dd>Specifies maximum number of instructions out-of-line copy of self recursive inline
 function can grow into by performing recursive inlining.
 
-          <p>For functions declared inline <span class="option">--param max-inline-insns-recursive</span> is
+          <p>For functions declared inline <samp><span class="option">--param max-inline-insns-recursive</span></samp> is
 taken into account.  For function not declared inline, recursive inlining
-happens only when <span class="option">-finline-functions</span> (included in <span class="option">-O3</span>) is
-enabled and <span class="option">--param max-inline-insns-recursive-auto</span> is used.  The
+happens only when <samp><span class="option">-finline-functions</span></samp> (included in <samp><span class="option">-O3</span></samp>) is
+enabled and <samp><span class="option">--param max-inline-insns-recursive-auto</span></samp> is used.  The
 default value is 450.
 
           <br><dt><code>max-inline-recursive-depth</code><dt><code>max-inline-recursive-depth-auto</code><dd>Specifies maximum recursion depth used by the recursive inlining.
 
-          <p>For functions declared inline <span class="option">--param max-inline-recursive-depth</span> is
+          <p>For functions declared inline <samp><span class="option">--param max-inline-recursive-depth</span></samp> is
 taken into account.  For function not declared inline, recursive inlining
-happens only when <span class="option">-finline-functions</span> (included in <span class="option">-O3</span>) is
-enabled and <span class="option">--param max-inline-recursive-depth-auto</span> is used.  The
+happens only when <samp><span class="option">-finline-functions</span></samp> (included in <samp><span class="option">-O3</span></samp>) is
+enabled and <samp><span class="option">--param max-inline-recursive-depth-auto</span></samp> is used.  The
 default value is 450.
 
           <br><dt><code>min-inline-recursive-probability</code><dd>Recursive inlining is profitable only for function having deep recursion
@@ -1333,7 +1335,7 @@ in average and can hurt for function having little recursion depth by
 increasing the prologue size or complexity of function body to other
 optimizers.
 
-          <p>When profile feedback is available (see <span class="option">-fprofile-generate</span>) the actual
+          <p>When profile feedback is available (see <samp><span class="option">-fprofile-generate</span></samp>) the actual
 recursion depth can be guessed from probability that function will recurse via
 given call expression.  This parameter limits inlining only to call expression
 whose probability exceeds given threshold (in percents).  The default value is
@@ -1413,7 +1415,7 @@ This value is used to limit superblock formation once the given percentage of
 executed instructions is covered.  This limits unnecessary code size
 expansion.
 
-          <p>The <span class="option">tracer-dynamic-coverage-feedback</span> is used only when profile
+          <p>The <samp><span class="option">tracer-dynamic-coverage-feedback</span></samp> is used only when profile
 feedback is available.  The real profiles (as opposed to statically estimated
 ones) are much less balanced allowing the threshold to be larger value.
 
@@ -1430,7 +1432,7 @@ threshold (in percent).
 Stop forward growth if the best edge do have probability lower than this
 threshold.
 
-          <p>Similarly to <span class="option">tracer-dynamic-coverage</span> two values are present, one for
+          <p>Similarly to <samp><span class="option">tracer-dynamic-coverage</span></samp> two values are present, one for
 compilation for profile feedback and one for compilation without.  The value
 for compilation with profile feedback needs to be more conservative (higher) in
 order to make tracer effective.
@@ -1466,14 +1468,14 @@ RAM &gt;= 1GB.  If <code>getrlimit</code> is available, the notion of "RAM" is
 the smallest of actual RAM and <code>RLIMIT_DATA</code> or <code>RLIMIT_AS</code>.  If
 GCC is not able to calculate RAM on a particular platform, the lower
 bound of 30% is used.  Setting this parameter and
-<span class="option">ggc-min-heapsize</span> to zero causes a full collection to occur at
+<samp><span class="option">ggc-min-heapsize</span></samp> to zero causes a full collection to occur at
 every opportunity.  This is extremely slow, but can be useful for
 debugging.
 
           <br><dt><code>ggc-min-heapsize</code><dd>
 Minimum size of the garbage collector's heap before it begins bothering
 to collect garbage.  The first collection occurs after the heap expands
-by <span class="option">ggc-min-expand</span>% beyond <span class="option">ggc-min-heapsize</span>.  Again,
+by <samp><span class="option">ggc-min-expand</span></samp>% beyond <samp><span class="option">ggc-min-heapsize</span></samp>.  Again,
 tuning this may improve compilation speed, and has no effect on code
 generation.
 
@@ -1483,7 +1485,7 @@ with a lower bound of 4096 (four megabytes) and an upper bound of
 131072 (128 megabytes).  If GCC is not able to calculate RAM on a
 particular platform, the lower bound is used.  Setting this parameter
 very large effectively disables garbage collection.  Setting this
-parameter and <span class="option">ggc-min-expand</span> to zero causes a full collection
+parameter and <samp><span class="option">ggc-min-expand</span></samp> to zero causes a full collection
 to occur at every opportunity.
 
           <br><dt><code>max-reload-search-insns</code><dd>The maximum number of instruction reload should look backward for equivalent
@@ -1495,7 +1497,7 @@ value is 100.
 Increasing values mean more aggressive optimization, making the compile time
 increase with probably slightly better performance.  The default value is 500.
 
-          <br><dt><code>max-flow-memory-location</code><dd>Similar as <span class="option">max-cselib-memory-location</span> but for dataflow liveness. 
+          <br><dt><code>max-flow-memory-location</code><dd>Similar as <samp><span class="option">max-cselib-memory-location</span></samp> but for dataflow liveness. 
 The default value is 100.
 
           <br><dt><code>reorder-blocks-duplicate</code><dt><code>reorder-blocks-duplicate-feedback</code><dd>
@@ -1504,9 +1506,9 @@ branch or duplicate the code on its destination.  Code is duplicated when its
 estimated size is smaller than this value multiplied by the estimated size of
 unconditional jump in the hot spots of the program.
 
-          <p>The <span class="option">reorder-block-duplicate-feedback</span> is used only when profile
+          <p>The <samp><span class="option">reorder-block-duplicate-feedback</span></samp> is used only when profile
 feedback is available and may be set to higher values than
-<span class="option">reorder-block-duplicate</span> since information about the hot spots is more
+<samp><span class="option">reorder-block-duplicate</span></samp> since information about the hot spots is more
 accurate.
 
           <br><dt><code>max-sched-region-blocks</code><dd>The maximum number of blocks in a region to be considered for
@@ -1538,7 +1540,7 @@ SSA updater switches to a full update for those symbols.  The default
 ratio is 3.
 
           <br><dt><code>ssp-buffer-size</code><dd>The minimum size of buffers (i.e. arrays) that will receive stack smashing
-protection when <span class="option">-fstack-protection</span> is used.
+protection when <samp><span class="option">-fstack-protection</span></samp> is used.
 
           <br><dt><code>max-jump-thread-duplication-stmts</code><dd>Maximum number of statements allowed in a block that needs to be
 duplicated when threading jumps.

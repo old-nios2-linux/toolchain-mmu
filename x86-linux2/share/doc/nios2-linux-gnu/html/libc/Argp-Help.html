@@ -3,7 +3,7 @@
 <title>Argp Help - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Argp.html#Argp" title="Argp">
 <link rel="prev" href="Argp-Flags.html#Argp-Flags" title="Argp Flags">
@@ -17,24 +17,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Argp-Help"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Argp-Examples.html#Argp-Examples">Argp Examples</a>,
+<a name="Argp-Help"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Argp-Examples.html#Argp-Examples">Argp Examples</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Argp-Flags.html#Argp-Flags">Argp Flags</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Argp.html#Argp">Argp</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">25.3.9 The <code>argp_help</code> Function</h4>
 
 <p>Normally programs using argp need not be written with particular
 printing argument-usage-type help messages in mind as the standard
-<span class="samp">--help</span> option is handled automatically by argp.  Typical error
+`<samp><span class="samp">--help</span></samp>' option is handled automatically by argp.  Typical error
 cases can be handled using <code>argp_usage</code> and
 <code>argp_error</code>.  See <a href="Argp-Helper-Functions.html#Argp-Helper-Functions">Argp Helper Functions</a>.  However, if it's
 desirable to print a help message in some context other than parsing the
@@ -48,7 +50,7 @@ program options, argp offers the <code>argp_help</code> interface.
 <var>stream</var>.  The type of messages printed will be determined by
 <var>flags</var>.
 
-        <p>Any options such as <span class="samp">--help</span> that are implemented automatically by
+        <p>Any options such as `<samp><span class="samp">--help</span></samp>' that are implemented automatically by
 argp itself will <em>not</em> be present in the help output; for this
 reason it is best to use <code>argp_state_help</code> if calling from within
 an argp parser function.  See <a href="Argp-Helper-Functions.html#Argp-Helper-Functions">Argp Helper Functions</a>. 

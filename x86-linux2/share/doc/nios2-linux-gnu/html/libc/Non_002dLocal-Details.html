@@ -3,7 +3,7 @@
 <title>Non-Local Details - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Non_002dLocal-Exits.html#Non_002dLocal-Exits" title="Non-Local Exits">
 <link rel="prev" href="Non_002dLocal-Intro.html#Non_002dLocal-Intro" title="Non-Local Intro">
@@ -17,24 +17,27 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Non_002dLocal-Details"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Non_002dLocal-Exits-and-Signals.html#Non_002dLocal-Exits-and-Signals">Non-Local Exits and Signals</a>,
+<a name="Non-Local-Details"></a>
+<a name="Non_002dLocal-Details"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Non_002dLocal-Exits-and-Signals.html#Non_002dLocal-Exits-and-Signals">Non-Local Exits and Signals</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Non_002dLocal-Intro.html#Non_002dLocal-Intro">Non-Local Intro</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Non_002dLocal-Exits.html#Non_002dLocal-Exits">Non-Local Exits</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">23.2 Details of Non-Local Exits</h3>
 
 <p>Here are the details on the functions and data structures used for
 performing non-local exits.  These facilities are declared in
-<span class="file">setjmp.h</span>. 
+<samp><span class="file">setjmp.h</span></samp>. 
 <a name="index-setjmp_002eh-2796"></a>
 <!-- setjmp.h -->
 <!-- ISO -->
@@ -75,19 +78,19 @@ part of the C compiler and can interact with other parts of the language
 in strange ways.
 
    <p>The <code>setjmp</code> function is actually a macro without an actual
-function definition, so you shouldn't try to <span class="samp">#undef</span> it or take
+function definition, so you shouldn't try to `<samp><span class="samp">#undef</span></samp>' it or take
 its address.  In addition, calls to <code>setjmp</code> are safe in only the
 following contexts:
 
      <ul>
 <li>As the test expression of a selection or iteration
-statement (such as <span class="samp">if</span>, <span class="samp">switch</span>, or <span class="samp">while</span>).
+statement (such as `<samp><span class="samp">if</span></samp>', `<samp><span class="samp">switch</span></samp>', or `<samp><span class="samp">while</span></samp>').
 
      <li>As one operand of a equality or comparison operator that appears as the
 test expression of a selection or iteration statement.  The other
 operand must be an integer constant expression.
 
-     <li>As the operand of a unary <span class="samp">!</span> operator, that appears as the
+     <li>As the operand of a unary `<samp><span class="samp">!</span></samp>' operator, that appears as the
 test expression of a selection or iteration statement.
 
      <li>By itself as an expression statement. 

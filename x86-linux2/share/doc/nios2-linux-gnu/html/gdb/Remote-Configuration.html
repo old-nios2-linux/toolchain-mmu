@@ -3,7 +3,7 @@
 <title>Remote Configuration - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Remote-Debugging.html#Remote-Debugging" title="Remote Debugging">
 <link rel="prev" href="Server.html#Server" title="Server">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Remote-Configuration"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Remote-Stub.html#Remote-Stub">Remote Stub</a>,
+<a name="Remote-Configuration"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Remote-Stub.html#Remote-Stub">Remote Stub</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Server.html#Server">Server</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Remote-Debugging.html#Remote-Debugging">Remote Debugging</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">18.3 Remote Configuration</h3>
@@ -53,11 +55,11 @@ remote targets.
      <br><dt><code>set remotebreak</code><dd><a name="index-interrupt-remote-programs-887"></a><a name="index-BREAK-signal-instead-of-Ctrl_002dC-888"></a><a name="set-remotebreak"></a>
 If set to on, <span class="sc">gdb</span> sends a <code>BREAK</code> signal to the remote
 when you type <kbd>Ctrl-c</kbd> to interrupt the program running
-on the remote.  If set to off, <span class="sc">gdb</span> sends the <span class="samp">Ctrl-C</span>
+on the remote.  If set to off, <span class="sc">gdb</span> sends the `<samp><span class="samp">Ctrl-C</span></samp>'
 character instead.  The default is off, since most remote systems
-expect to see <span class="samp">Ctrl-C</span> as the interrupt signal.
+expect to see `<samp><span class="samp">Ctrl-C</span></samp>' as the interrupt signal.
 
-     <br><dt><code>show remotebreak</code><dd>Show whether <span class="sc">gdb</span> sends <code>BREAK</code> or <span class="samp">Ctrl-C</span> to
+     <br><dt><code>show remotebreak</code><dd>Show whether <span class="sc">gdb</span> sends <code>BREAK</code> or `<samp><span class="samp">Ctrl-C</span></samp>' to
 interrupt the remote program.
 
      <br><dt><code>set remoteflow on</code><dt><code>set remoteflow off</code><dd><a name="index-set-remoteflow-889"></a>Enable or disable hardware flow control (<code>RTS</code>/<code>CTS</code>)
@@ -94,10 +96,10 @@ watchpoints.  A limit of -1, the default, is treated as unlimited.
    <p><a name="index-remote-packets_002c-enabling-and-disabling-896"></a>The <span class="sc">gdb</span> remote protocol autodetects the packets supported by
 your debugging stub.  If you need to override the autodetection, you
 can use these commands to enable or disable individual packets.  Each
-packet can be set to <span class="samp">on</span> (the remote target supports this
-packet), <span class="samp">off</span> (the remote target does not support this packet),
-or <span class="samp">auto</span> (detect remote target support for this packet).  They
-all default to <span class="samp">auto</span>.  For more information about each packet,
+packet can be set to `<samp><span class="samp">on</span></samp>' (the remote target supports this
+packet), `<samp><span class="samp">off</span></samp>' (the remote target does not support this packet),
+or `<samp><span class="samp">auto</span></samp>' (detect remote target support for this packet).  They
+all default to `<samp><span class="samp">auto</span></samp>'.  For more information about each packet,
 see <a href="Remote-Protocol.html#Remote-Protocol">Remote Protocol</a>.
 
    <p>During normal use, you should not have to use any of these commands. 

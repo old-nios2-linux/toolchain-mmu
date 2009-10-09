@@ -3,7 +3,7 @@
 <title>Insns - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="RTL.html#RTL" title="RTL">
 <link rel="prev" href="Assembler.html#Assembler" title="Assembler">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Insns"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Calls.html#Calls">Calls</a>,
+<a name="Insns"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Calls.html#Calls">Calls</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Assembler.html#Assembler">Assembler</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="RTL.html#RTL">RTL</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">11.18 Insns</h3>
@@ -176,7 +178,7 @@ standard ones.  <code>CODE_LABEL_NUMBER</code> is used to hold the <dfn>label
 number</dfn>, a number that identifies this label uniquely among all the
 labels in the compilation (not just in the current function). 
 Ultimately, the label is represented in the assembler output as an
-assembler label, usually of the form <span class="samp">L</span><var>n</var> where <var>n</var> is
+assembler label, usually of the form `<samp><span class="samp">L</span><var>n</var></samp>' where <var>n</var> is
 the label number.
 
      <p>When a <code>code_label</code> appears in an RTL expression, it normally
@@ -202,11 +204,11 @@ same name).
      <p>Much of the compiler treats all four kinds of label identically.  Some
 of it needs to know whether or not a label is an alternate entry point;
 for this purpose, the macro <code>LABEL_ALT_ENTRY_P</code> is provided.  It is
-equivalent to testing whether <span class="samp">LABEL_KIND (label) == LABEL_NORMAL</span>. 
+equivalent to testing whether `<samp><span class="samp">LABEL_KIND (label) == LABEL_NORMAL</span></samp>'. 
 The only place that cares about the distinction between static, global,
 and weak alternate entry points, besides the front-end code that creates
 them, is the function <code>output_alternate_entry_point</code>, in
-<span class="file">final.c</span>.
+<samp><span class="file">final.c</span></samp>.
 
      <p>To set the kind of a label, use the <code>SET_LABEL_KIND</code> macro.
 
@@ -272,7 +274,7 @@ optimization.
      <p>These codes are printed symbolically when they appear in debugging dumps. 
 </dl>
 
- <p><a name="index-_0040code_007bTImode_007d_002c-in-_0040code_007binsn_007d-1102"></a><a name="index-_0040code_007bHImode_007d_002c-in-_0040code_007binsn_007d-1103"></a><a name="index-_0040code_007bQImode_007d_002c-in-_0040code_007binsn_007d-1104"></a>The machine mode of an insn is normally <code>VOIDmode</code>, but some
+ <p><a name="index-g_t_0040code_007bTImode_007d_002c-in-_0040code_007binsn_007d-1102"></a><a name="index-g_t_0040code_007bHImode_007d_002c-in-_0040code_007binsn_007d-1103"></a><a name="index-g_t_0040code_007bQImode_007d_002c-in-_0040code_007binsn_007d-1104"></a>The machine mode of an insn is normally <code>VOIDmode</code>, but some
 phases use the mode for various purposes.
 
  <p>The common subexpression elimination pass sets the mode of an insn to
@@ -312,7 +314,7 @@ The function <code>asm_noperands</code> returns a non-negative value for
 such insns.
 
      <p>In the debugging output, this field is printed as a number followed by
-a symbolic representation that locates the pattern in the <span class="file">md</span>
+a symbolic representation that locates the pattern in the <samp><span class="file">md</span></samp>
 file as some small positive or negative offset from a named pattern.
 
      <p><a name="index-LOG_005fLINKS-1108"></a><br><dt><code>LOG_LINKS (</code><var>i</var><code>)</code><dd>A list (chain of <code>insn_list</code> expressions) giving information about
@@ -390,7 +392,7 @@ insn is reached.  This is used so that decrement and branch until zero
 instructions, such as the m68k dbra, can be matched.
 
      <p>The <code>REG_NONNEG</code> note is added to insns only if the machine
-description has a <span class="samp">decrement_and_branch_until_zero</span> pattern.
+description has a `<samp><span class="samp">decrement_and_branch_until_zero</span></samp>' pattern.
 
      <p><a name="index-REG_005fNO_005fCONFLICT-1116"></a><br><dt><code>REG_NO_CONFLICT</code><dd>This insn does not cause a conflict between <var>op</var> and the item
 being set by this insn even though it might appear that it does. 

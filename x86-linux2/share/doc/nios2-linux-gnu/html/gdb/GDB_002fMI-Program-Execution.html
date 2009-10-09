@@ -3,7 +3,7 @@
 <title>GDB/MI Program Execution - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB_002fMI.html#GDB_002fMI" title="GDB/MI">
 <link rel="prev" href="GDB_002fMI-Thread-Commands.html#GDB_002fMI-Thread-Commands" title="GDB/MI Thread Commands">
@@ -17,29 +17,32 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="GDB_002fMI-Program-Execution"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Stack-Manipulation.html#GDB_002fMI-Stack-Manipulation">GDB/MI Stack Manipulation</a>,
+<a name="GDB%2fMI-Program-Execution"></a>
+<a name="GDB_002fMI-Program-Execution"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Stack-Manipulation.html#GDB_002fMI-Stack-Manipulation">GDB/MI Stack Manipulation</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="GDB_002fMI-Thread-Commands.html#GDB_002fMI-Thread-Commands">GDB/MI Thread Commands</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">25.10 <span class="sc">gdb/mi</span> Program Execution</h3>
 
 <p>These are the asynchronous commands which generate the out-of-band
-record <span class="samp">*stopped</span>.  Currently <span class="sc">gdb</span> only really executes
+record `<samp><span class="samp">*stopped</span></samp>'.  Currently <span class="sc">gdb</span> only really executes
 asynchronously with remote targets and this interaction is mimicked in
 other cases.
 
 <h4 class="subheading">The <code>-exec-continue</code> Command</h4>
 
-<p><a name="index-_002dexec_002dcontinue-1416"></a>
+<p><a name="index-g_t_002dexec_002dcontinue-1416"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -50,7 +53,7 @@ encountered, or until the inferior exits.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> corresponding is <span class="samp">continue</span>.
+<p>The corresponding <span class="sc">gdb</span> corresponding is `<samp><span class="samp">continue</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -64,7 +67,7 @@ encountered, or until the inferior exits.
 </pre>
 <h4 class="subheading">The <code>-exec-finish</code> Command</h4>
 
-<p><a name="index-_002dexec_002dfinish-1417"></a>
+<p><a name="index-g_t_002dexec_002dfinish-1417"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -75,7 +78,7 @@ function is exited.  Displays the results returned by the function.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">finish</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">finish</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -104,7 +107,7 @@ value itself.
 </pre>
    <h4 class="subheading">The <code>-exec-interrupt</code> Command</h4>
 
-<p><a name="index-_002dexec_002dinterrupt-1418"></a>
+<p><a name="index-g_t_002dexec_002dinterrupt-1418"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -113,12 +116,12 @@ value itself.
    <p>Interrupts the background execution of the target.  Note how the token
 associated with the stop message is the one for the execution command
 that has been interrupted.  The token for the interrupt itself only
-appears in the <span class="samp">^done</span> output.  If the user is trying to
+appears in the `<samp><span class="samp">^done</span></samp>' output.  If the user is trying to
 interrupt a non-running program, an error message will be printed.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">interrupt</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">interrupt</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -142,7 +145,7 @@ interrupt a non-running program, an error message will be printed.
 </pre>
 <h4 class="subheading">The <code>-exec-next</code> Command</h4>
 
-<p><a name="index-_002dexec_002dnext-1419"></a>
+<p><a name="index-g_t_002dexec_002dnext-1419"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -153,7 +156,7 @@ of the next source line is reached.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">next</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">next</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -165,7 +168,7 @@ of the next source line is reached.
 </pre>
 <h4 class="subheading">The <code>-exec-next-instruction</code> Command</h4>
 
-<p><a name="index-_002dexec_002dnext_002dinstruction-1420"></a>
+<p><a name="index-g_t_002dexec_002dnext_002dinstruction-1420"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -178,7 +181,7 @@ printed as well.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">nexti</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">nexti</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -193,7 +196,7 @@ printed as well.
 </pre>
 <h4 class="subheading">The <code>-exec-return</code> Command</h4>
 
-<p><a name="index-_002dexec_002dreturn-1421"></a>
+<p><a name="index-g_t_002dexec_002dreturn-1421"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -204,7 +207,7 @@ Displays the new current frame.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">return</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">return</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -234,7 +237,7 @@ Displays the new current frame.
 </pre>
 <h4 class="subheading">The <code>-exec-run</code> Command</h4>
 
-<p><a name="index-_002dexec_002drun-1422"></a>
+<p><a name="index-g_t_002dexec_002drun-1422"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -247,7 +250,7 @@ the program has exited exceptionally.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">run</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">run</span></samp>'.
 
 <h5 class="subsubheading">Examples</h5>
 
@@ -293,7 +296,7 @@ the program has exited exceptionally.
    <!-- @subheading -exec-signal -->
 <h4 class="subheading">The <code>-exec-step</code> Command</h4>
 
-<p><a name="index-_002dexec_002dstep-1423"></a>
+<p><a name="index-g_t_002dexec_002dstep-1423"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -306,7 +309,7 @@ function.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">step</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">step</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -331,7 +334,7 @@ function.
 </pre>
    <h4 class="subheading">The <code>-exec-step-instruction</code> Command</h4>
 
-<p><a name="index-_002dexec_002dstep_002dinstruction-1424"></a>
+<p><a name="index-g_t_002dexec_002dstep_002dinstruction-1424"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -345,7 +348,7 @@ well.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">stepi</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">stepi</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -369,7 +372,7 @@ well.
 </pre>
 <h4 class="subheading">The <code>-exec-until</code> Command</h4>
 
-<p><a name="index-_002dexec_002duntil-1425"></a>
+<p><a name="index-g_t_002dexec_002duntil-1425"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -378,11 +381,11 @@ well.
    <p>Executes the inferior until the <var>location</var> specified in the
 argument is reached.  If there is no argument, the inferior executes
 until a source line greater than the current one is reached.  The
-reason for stopping in this case will be <span class="samp">location-reached</span>.
+reason for stopping in this case will be `<samp><span class="samp">location-reached</span></samp>'.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">until</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">until</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 

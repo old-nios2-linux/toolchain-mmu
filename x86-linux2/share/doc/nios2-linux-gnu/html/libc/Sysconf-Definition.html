@@ -3,7 +3,7 @@
 <title>Sysconf Definition - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Sysconf.html#Sysconf" title="Sysconf">
 <link rel="next" href="Constants-for-Sysconf.html#Constants-for-Sysconf" title="Constants for Sysconf">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Sysconf-Definition"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Constants-for-Sysconf.html#Constants-for-Sysconf">Constants for Sysconf</a>,
+<a name="Sysconf-Definition"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Constants-for-Sysconf.html#Constants-for-Sysconf">Constants for Sysconf</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Sysconf.html#Sysconf">Sysconf</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">31.4.1 Definition of <code>sysconf</code></h4>
@@ -35,7 +37,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Sysconf.html#Sysconf">Sysconf</a>
 <div class="defun">
 &mdash; Function: long int <b>sysconf</b> (<var>int parameter</var>)<var><a name="index-sysconf-3523"></a></var><br>
 <blockquote><p>This function is used to inquire about runtime system parameters.  The
-<var>parameter</var> argument should be one of the <span class="samp">_SC_</span> symbols listed
+<var>parameter</var> argument should be one of the `<samp><span class="samp">_SC_</span></samp>' symbols listed
 below.
 
         <p>The normal return value from <code>sysconf</code> is the value you requested. 

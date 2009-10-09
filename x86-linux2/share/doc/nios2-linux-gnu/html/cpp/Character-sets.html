@@ -3,7 +3,7 @@
 <title>Character sets - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Overview.html#Overview" title="Overview">
 <link rel="next" href="Initial-processing.html#Initial-processing" title="Initial processing">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,16 +40,18 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Character-sets"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Initial-processing.html#Initial-processing">Initial processing</a>,
+<a name="Character-sets"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Initial-processing.html#Initial-processing">Initial processing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Overview.html#Overview">Overview</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">1.1 Character sets</h3>
@@ -74,7 +76,7 @@ We plan to fix this in the near future.
 
    <p>All preprocessing work (the subject of the rest of this manual) is
 carried out in the source character set.  If you request textual
-output from the preprocessor with the <span class="option">-E</span> option, it will be
+output from the preprocessor with the <samp><span class="option">-E</span></samp> option, it will be
 in UTF-8.
 
    <p>After preprocessing is complete, string and character constants are
@@ -92,11 +94,11 @@ the character in the source character set that they represent, then
 converted to the execution character set, just like unescaped
 characters.
 
-   <p>Unless the experimental <span class="option">-fextended-identifiers</span> option is used,
+   <p>Unless the experimental <samp><span class="option">-fextended-identifiers</span></samp> option is used,
 GCC does not permit the use of characters outside the ASCII range, nor
-<span class="samp">\u</span> and <span class="samp">\U</span> escapes, in identifiers.  Even with that
+`<samp><span class="samp">\u</span></samp>' and `<samp><span class="samp">\U</span></samp>' escapes, in identifiers.  Even with that
 option, characters outside the ASCII range can only be specified with
-the <span class="samp">\u</span> and <span class="samp">\U</span> escapes, not used directly in identifiers.
+the `<samp><span class="samp">\u</span></samp>' and `<samp><span class="samp">\U</span></samp>' escapes, not used directly in identifiers.
 
    <div class="footnote">
 <hr>

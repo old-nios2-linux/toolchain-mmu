@@ -3,7 +3,7 @@
 <title>Error Codes - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Error-Reporting.html#Error-Reporting" title="Error Reporting">
 <link rel="prev" href="Checking-for-Errors.html#Checking-for-Errors" title="Checking for Errors">
@@ -17,22 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Error-Codes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Error-Messages.html#Error-Messages">Error Messages</a>,
+<a name="Error-Codes"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Error-Messages.html#Error-Messages">Error Messages</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Checking-for-Errors.html#Checking-for-Errors">Checking for Errors</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Error-Reporting.html#Error-Reporting">Error Reporting</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">2.2 Error Codes</h3>
 
-<p><a name="index-errno_002eh-62"></a>The error code macros are defined in the header file <span class="file">errno.h</span>. 
+<p><a name="index-errno_002eh-62"></a>The error code macros are defined in the header file <samp><span class="file">errno.h</span></samp>. 
 All of them expand into integer constant values.  Some of these error
 codes can't occur on the GNU system, but they can occur using the GNU
 library on other systems.

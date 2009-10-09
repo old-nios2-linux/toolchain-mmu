@@ -3,7 +3,7 @@
 <title>Architectures - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="BFD-front-end.html#BFD-front-end" title="BFD front end">
 <link rel="prev" href="Targets.html#Targets" title="Targets">
@@ -39,17 +39,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Architectures"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Opening-and-Closing.html#Opening-and-Closing">Opening and Closing</a>,
+<a name="Architectures"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Opening-and-Closing.html#Opening-and-Closing">Opening and Closing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Targets.html#Targets">Targets</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="BFD-front-end.html#BFD-front-end">BFD front end</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">2.13 Architectures</h3>
@@ -65,7 +67,7 @@ without access to an open BFD.
    <p>The architecture information is provided by each architecture package. 
 The set of default architectures is selected by the macro
 <code>SELECT_ARCHITECTURES</code>.  This is normally set up in the
-<span class="file">config/</span><var>target</var><span class="file">.mt</span> file of your choice.  If the name is not
+<samp><span class="file">config/</span><var>target</var><span class="file">.mt</span></samp> file of your choice.  If the name is not
 defined, then all the architectures supported are included.
 
    <p>When BFD starts up, all the architectures are called with an
@@ -74,7 +76,7 @@ insert as many items into the list of architectures as it wants to;
 generally this would be one for each machine and one for the
 default case (an item with a machine field of 0).
 
-   <p>BFD's idea of an architecture is implemented in <span class="file">archures.c</span>.
+   <p>BFD's idea of an architecture is implemented in <samp><span class="file">archures.c</span></samp>.
 
 <h4 class="subsection">2.13.1 bfd_architecture</h4>
 

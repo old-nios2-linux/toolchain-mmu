@@ -3,7 +3,7 @@
 <title>syslog; vsyslog - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages" title="Submitting Syslog Messages">
 <link rel="prev" href="openlog.html#openlog" title="openlog">
@@ -17,23 +17,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="syslog_003b-vsyslog"></a>Next:&nbsp;<a rel="next" accesskey="n" href="closelog.html#closelog">closelog</a>,
+<a name="syslog%3b-vsyslog"></a>
+<a name="syslog_003b-vsyslog"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="closelog.html#closelog">closelog</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="openlog.html#openlog">openlog</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages">Submitting Syslog Messages</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">18.2.2 syslog, vsyslog</h4>
 
 <p>The symbols referred to in this section are declared in the file
-<span class="file">syslog.h</span>.
+<samp><span class="file">syslog.h</span></samp>.
 
 <!-- syslog() is implemented as a call to vsyslog(). -->
 <!-- syslog.h -->
@@ -113,11 +116,11 @@ default default facility is <code>LOG_USER</code>.  The default for all the
 connection options in <var>options</var> is as if those bits were off. 
 <code>syslog</code> leaves the Syslog connection open.
 
-        <p>If the <span class="file">dev/log</span> socket is not open and connected, <code>syslog</code>
+        <p>If the <samp><span class="file">dev/log</span></samp> socket is not open and connected, <code>syslog</code>
 opens and connects it, the same as <code>openlog</code> with the
 <code>LOG_NDELAY</code> option would.
 
-        <p><code>syslog</code> leaves <span class="file">/dev/log</span> open and connected unless its attempt
+        <p><code>syslog</code> leaves <samp><span class="file">/dev/log</span></samp> open and connected unless its attempt
 to send the message failed, in which case <code>syslog</code> closes it (with the
 hope that a future implicit open will restore the Syslog connection to a
 usable state).

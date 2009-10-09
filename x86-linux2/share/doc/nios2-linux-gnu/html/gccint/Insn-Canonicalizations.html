@@ -3,7 +3,7 @@
 <title>Insn Canonicalizations - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Machine-Desc.html#Machine-Desc" title="Machine Desc">
 <link rel="prev" href="Looping-Patterns.html#Looping-Patterns" title="Looping Patterns">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Insn-Canonicalizations"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Expander-Definitions.html#Expander-Definitions">Expander Definitions</a>,
+<a name="Insn-Canonicalizations"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Expander-Definitions.html#Expander-Definitions">Expander Definitions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Looping-Patterns.html#Looping-Patterns">Looping Patterns</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Machine-Desc.html#Machine-Desc">Machine Desc</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.14 Canonicalization of Instructions</h3>
@@ -77,7 +79,7 @@ can itself be a <code>plus</code>.  <code>and</code>, <code>ior</code>, <code>xo
 <code>umax</code> are associative when applied to integers, and sometimes to
 floating-point.
 
-     <li><a name="index-_0040code_007bneg_007d_002c-canonicalization-of-1524"></a><a name="index-_0040code_007bnot_007d_002c-canonicalization-of-1525"></a><a name="index-_0040code_007bmult_007d_002c-canonicalization-of-1526"></a><a name="index-_0040code_007bplus_007d_002c-canonicalization-of-1527"></a><a name="index-_0040code_007bminus_007d_002c-canonicalization-of-1528"></a>For these operators, if only one operand is a <code>neg</code>, <code>not</code>,
+     <li><a name="index-g_t_0040code_007bneg_007d_002c-canonicalization-of-1524"></a><a name="index-g_t_0040code_007bnot_007d_002c-canonicalization-of-1525"></a><a name="index-g_t_0040code_007bmult_007d_002c-canonicalization-of-1526"></a><a name="index-g_t_0040code_007bplus_007d_002c-canonicalization-of-1527"></a><a name="index-g_t_0040code_007bminus_007d_002c-canonicalization-of-1528"></a>For these operators, if only one operand is a <code>neg</code>, <code>not</code>,
 <code>mult</code>, <code>plus</code>, or <code>minus</code> expression, it will be the
 first operand.
 
@@ -88,7 +90,7 @@ the operations as far as possible.  For instance,
 <code>(plus (mult (neg A) B) C)</code> is canonicalized as
 <code>(minus A (mult B C))</code>.
 
-     <p><a name="index-_0040code_007bcompare_007d_002c-canonicalization-of-1529"></a><li>For the <code>compare</code> operator, a constant is always the second operand
+     <p><a name="index-g_t_0040code_007bcompare_007d_002c-canonicalization-of-1529"></a><li>For the <code>compare</code> operator, a constant is always the second operand
 on machines where <code>cc0</code> is used (see <a href="Jump-Patterns.html#Jump-Patterns">Jump Patterns</a>).  On other
 machines, there are rare cases where the compiler might want to construct
 a <code>compare</code> with a constant as the first operand.  However, these
@@ -106,7 +108,7 @@ above.
      <li>Within address computations (i.e., inside <code>mem</code>), a left shift is
 converted into the appropriate multiplication by a power of two.
 
-     <p><a name="index-_0040code_007bior_007d_002c-canonicalization-of-1530"></a><a name="index-_0040code_007band_007d_002c-canonicalization-of-1531"></a><a name="index-De-Morgan_0027s-law-1532"></a><li>De Morgan's Law is used to move bitwise negation inside a bitwise
+     <p><a name="index-g_t_0040code_007bior_007d_002c-canonicalization-of-1530"></a><a name="index-g_t_0040code_007band_007d_002c-canonicalization-of-1531"></a><a name="index-De-Morgan_0027s-law-1532"></a><li>De Morgan's Law is used to move bitwise negation inside a bitwise
 logical-and or logical-or operation.  If this results in only one
 operand being a <code>not</code> expression, it will be the first one.
 
@@ -133,7 +135,7 @@ for that instruction as
      <p>In both cases, it is not necessary to include patterns for the many
 logically equivalent RTL expressions.
 
-     <p><a name="index-_0040code_007bxor_007d_002c-canonicalization-of-1533"></a><li>The only possible RTL expressions involving both bitwise exclusive-or
+     <p><a name="index-g_t_0040code_007bxor_007d_002c-canonicalization-of-1533"></a><li>The only possible RTL expressions involving both bitwise exclusive-or
 and bitwise negation are <code>(xor:</code><var>m</var> <var>x</var> <var>y</var><code>)</code>
 and <code>(not:</code><var>m</var><code> (xor:</code><var>m</var> <var>x</var> <var>y</var><code>))</code>.
 
@@ -146,7 +148,7 @@ the form
 <code>(compare </code><var>x</var><code> (const_int 0))</code> will be converted to
 <var>x</var>.
 
-     <p><a name="index-_0040code_007bzero_005fextract_007d_002c-canonicalization-of-1534"></a><a name="index-_0040code_007bsign_005fextract_007d_002c-canonicalization-of-1535"></a><li>Equality comparisons of a group of bits (usually a single bit) with zero
+     <p><a name="index-g_t_0040code_007bzero_005fextract_007d_002c-canonicalization-of-1534"></a><a name="index-g_t_0040code_007bsign_005fextract_007d_002c-canonicalization-of-1535"></a><li>Equality comparisons of a group of bits (usually a single bit) with zero
 will be written using <code>zero_extract</code> rather than the equivalent
 <code>and</code> or <code>sign_extract</code> operations.
 

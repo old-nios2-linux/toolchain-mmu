@@ -3,7 +3,7 @@
 <title>C++ Named Operators - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Predefined-Macros.html#Predefined-Macros" title="Predefined Macros">
 <link rel="prev" href="System_002dspecific-Predefined-Macros.html#System_002dspecific-Predefined-Macros" title="System-specific Predefined Macros">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,16 +40,19 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="C_002b_002b-Named-Operators"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="System_002dspecific-Predefined-Macros.html#System_002dspecific-Predefined-Macros">System-specific Predefined Macros</a>,
+<a name="C++-Named-Operators"></a>
+<a name="C_002b_002b-Named-Operators"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="System_002dspecific-Predefined-Macros.html#System_002dspecific-Predefined-Macros">System-specific Predefined Macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Predefined-Macros.html#Predefined-Macros">Predefined Macros</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.7.4 C++ Named Operators</h4>
@@ -58,9 +61,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Predefined-Macros.html#Predefined-Macro
 In C++, there are eleven keywords which are simply alternate spellings
 of operators normally written with punctuation.  These keywords are
 treated as such even in the preprocessor.  They function as operators in
-<span class="samp">#if</span>, and they cannot be defined as macros or poisoned.  In C, you
+`<samp><span class="samp">#if</span></samp>', and they cannot be defined as macros or poisoned.  In C, you
 can request that those keywords take their C++ meaning by including
-<span class="file">iso646.h</span>.  That header defines each one as a normal object-like
+<samp><span class="file">iso646.h</span></samp>.  That header defines each one as a normal object-like
 macro expanding to the appropriate punctuator.
 
    <p>These are the named operators and their corresponding punctuators:

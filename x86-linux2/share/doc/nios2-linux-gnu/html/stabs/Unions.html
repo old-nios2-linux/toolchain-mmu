@@ -3,7 +3,7 @@
 <title>Unions - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Types.html#Types" title="Types">
 <link rel="prev" href="Typedefs.html#Typedefs" title="Typedefs">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Unions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Function-Types.html#Function-Types">Function Types</a>,
+<a name="Unions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Function-Types.html#Function-Types">Function Types</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Typedefs.html#Typedefs">Typedefs</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Types.html#Types">Types</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.10 Unions</h3>
@@ -57,19 +59,19 @@ scope.
      .stabs "u_tag:T23=u4u_int:1,0,32;u_float:12,0,32;u_char:21,0,32;;",
             128,0,0,0
 </pre>
-   <p>The symbol descriptor <span class="samp">T</span>, following the <span class="samp">name:</span> means that
+   <p>The symbol descriptor `<samp><span class="samp">T</span></samp>', following the `<samp><span class="samp">name:</span></samp>' means that
 the stab describes an enumeration, structure, or union tag.  The type
-descriptor <span class="samp">u</span>, following the <span class="samp">23=</span> of the type definition,
-narrows it down to a union type definition.  Following the <span class="samp">u</span> is
+descriptor `<samp><span class="samp">u</span></samp>', following the `<samp><span class="samp">23=</span></samp>' of the type definition,
+narrows it down to a union type definition.  Following the `<samp><span class="samp">u</span></samp>' is
 the number of bytes in the union.  After that is a list of union element
-descriptions.  Their format is <var>name</var><span class="samp">:</span><var>type</var><span class="samp">, </span><var>bit
-offset into the union</var><span class="samp">, </span><var>number of bytes for the element</var><span class="samp">;</span>.
+descriptions.  Their format is `<samp><var>name</var><span class="samp">:</span><var>type</var><span class="samp">, </span><var>bit
+offset into the union</var><span class="samp">, </span><var>number of bytes for the element</var><span class="samp">;</span></samp>'.
 
    <p>The stab for the union variable is:
 
 <pre class="example">     .stabs "an_u:23",128,0,0,-20     # <span class="roman">128 is N_LSYM</span>
 </pre>
-   <p><span class="samp">-20</span> specifies where the variable is stored (see <a href="Stack-Variables.html#Stack-Variables">Stack Variables</a>).
+   <p>`<samp><span class="samp">-20</span></samp>' specifies where the variable is stored (see <a href="Stack-Variables.html#Stack-Variables">Stack Variables</a>).
 
    </body></html>
 

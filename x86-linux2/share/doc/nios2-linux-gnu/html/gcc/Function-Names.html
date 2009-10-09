@@ -3,7 +3,7 @@
 <title>Function Names - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Incomplete-Enums.html#Incomplete-Enums" title="Incomplete Enums">
@@ -38,22 +38,24 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Function-Names"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Return-Address.html#Return-Address">Return Address</a>,
+<a name="Function-Names"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Return-Address.html#Return-Address">Return Address</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Incomplete-Enums.html#Incomplete-Enums">Incomplete Enums</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.40 Function Names as Strings</h3>
 
-<p><a name="index-_0040code_007b_005f_005ffunc_005f_005f_007d-identifier-2021"></a><a name="index-_0040code_007b_005f_005fFUNCTION_005f_005f_007d-identifier-2022"></a><a name="index-_0040code_007b_005f_005fPRETTY_005fFUNCTION_005f_005f_007d-identifier-2023"></a>
+<p><a name="index-g_t_0040code_007b_005f_005ffunc_005f_005f_007d-identifier-2021"></a><a name="index-g_t_0040code_007b_005f_005fFUNCTION_005f_005f_007d-identifier-2022"></a><a name="index-g_t_0040code_007b_005f_005fPRETTY_005fFUNCTION_005f_005f_007d-identifier-2023"></a>
 GCC provides three magic variables which hold the name of the current
 function, as a string.  The first of these is <code>__func__</code>, which
 is part of the C99 standard:

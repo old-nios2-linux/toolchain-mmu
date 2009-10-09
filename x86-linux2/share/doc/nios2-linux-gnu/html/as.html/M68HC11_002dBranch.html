@@ -3,7 +3,7 @@
 <title>M68HC11-Branch - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="M68HC11_002dopcodes.html#M68HC11_002dopcodes" title="M68HC11-opcodes">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -15,15 +15,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="M68HC11_002dBranch"></a>Up:&nbsp;<a rel="up" accesskey="u" href="M68HC11_002dopcodes.html#M68HC11_002dopcodes">M68HC11-opcodes</a>
-<hr><br>
+<a name="M68HC11-Branch"></a>
+<a name="M68HC11_002dBranch"></a>
+Up:&nbsp;<a rel="up" accesskey="u" href="M68HC11_002dopcodes.html#M68HC11_002dopcodes">M68HC11-opcodes</a>
+<hr>
 </div>
 
 <h5 class="subsubsection">8.20.6.1 Branch Improvement</h5>
@@ -31,9 +34,9 @@
 <p><a name="index-pseudo_002dopcodes_002c-M68HC11-1161"></a><a name="index-M68HC11-pseudo_002dopcodes-1162"></a><a name="index-branch-improvement_002c-M68HC11-1163"></a><a name="index-M68HC11-branch-improvement-1164"></a>
 Certain pseudo opcodes are permitted for branch instructions. 
 They expand to the shortest branch instruction that reach the
-target. Generally these mnemonics are made by prepending <span class="samp">j</span> to
+target. Generally these mnemonics are made by prepending `<samp><span class="samp">j</span></samp>' to
 the start of Motorola mnemonic. These pseudo opcodes are not affected
-by the <span class="samp">--short-branches</span> or <span class="samp">--force-long-branches</span> options.
+by the `<samp><span class="samp">--short-branches</span></samp>' or `<samp><span class="samp">--force-long-branches</span></samp>' options.
 
    <p>The following table summarizes the pseudo-operations.
 
@@ -61,7 +64,7 @@ by the <span class="samp">--short-branches</span> or <span class="samp">--force-
 particular machine instruction, depending on the displacement to the
 branch target.
 
-     <br><dt><code>jb</code><var>XX</var><dd>Here, <span class="samp">jb</span><var>XX</var> stands for an entire family of pseudo-operations,
+     <br><dt><code>jb</code><var>XX</var><dd>Here, `<samp><span class="samp">jb</span><var>XX</var></samp>' stands for an entire family of pseudo-operations,
 where <var>XX</var> is a conditional branch or condition-code test.  The full
 list of pseudo-ops in this family is:
      <pre class="smallexample">           jbcc   jbeq   jbge   jbgt   jbhi   jbvs   jbpl  jblo

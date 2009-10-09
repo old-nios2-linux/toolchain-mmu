@@ -3,7 +3,7 @@
 <title>Process Creation Example - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Processes.html#Processes" title="Processes">
 <link rel="prev" href="BSD-Wait-Functions.html#BSD-Wait-Functions" title="BSD Wait Functions">
@@ -16,23 +16,25 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Process-Creation-Example"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="BSD-Wait-Functions.html#BSD-Wait-Functions">BSD Wait Functions</a>,
+<a name="Process-Creation-Example"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="BSD-Wait-Functions.html#BSD-Wait-Functions">BSD Wait Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Processes.html#Processes">Processes</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">26.9 Process Creation Example</h3>
 
 <p>Here is an example program showing how you might write a function
 similar to the built-in <code>system</code>.  It executes its <var>command</var>
-argument using the equivalent of <span class="samp">sh -c </span><var>command</var>.
+argument using the equivalent of `<samp><span class="samp">sh -c </span><var>command</var></samp>'.
 
 <pre class="smallexample">     #include &lt;stddef.h&gt;
      #include &lt;stdlib.h&gt;

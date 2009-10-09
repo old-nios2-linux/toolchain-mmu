@@ -3,7 +3,7 @@
 <title>Controlling Buffering - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stream-Buffering.html#Stream-Buffering" title="Stream Buffering">
 <link rel="prev" href="Flushing-Buffers.html#Flushing-Buffers" title="Flushing Buffers">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Controlling-Buffering"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Flushing-Buffers.html#Flushing-Buffers">Flushing Buffers</a>,
+<a name="Controlling-Buffering"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Flushing-Buffers.html#Flushing-Buffers">Flushing Buffers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stream-Buffering.html#Stream-Buffering">Stream Buffering</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">12.20.3 Controlling Which Kind of Buffering</h4>
@@ -35,7 +37,7 @@ performed on it), you can explicitly specify what kind of buffering you
 want it to have using the <code>setvbuf</code> function. 
 <a name="index-buffering_002c-controlling-1140"></a>
 The facilities listed in this section are declared in the header
-file <span class="file">stdio.h</span>. 
+file <samp><span class="file">stdio.h</span></samp>. 
 <a name="index-stdio_002eh-1141"></a>
 <!-- stdio.h -->
 <!-- ISO -->
@@ -72,7 +74,7 @@ be honored.
 <!-- stdio.h -->
 <!-- ISO -->
 <div class="defun">
-&mdash; Macro: int <b>_IOFBF</b><var><a name="index-_005fIOFBF-1143"></a></var><br>
+&mdash; Macro: int <b>_IOFBF</b><var><a name="index-g_t_005fIOFBF-1143"></a></var><br>
 <blockquote><p>The value of this macro is an integer constant expression that can be
 used as the <var>mode</var> argument to the <code>setvbuf</code> function to
 specify that the stream should be fully buffered. 
@@ -81,7 +83,7 @@ specify that the stream should be fully buffered.
 <!-- stdio.h -->
 <!-- ISO -->
 <div class="defun">
-&mdash; Macro: int <b>_IOLBF</b><var><a name="index-_005fIOLBF-1144"></a></var><br>
+&mdash; Macro: int <b>_IOLBF</b><var><a name="index-g_t_005fIOLBF-1144"></a></var><br>
 <blockquote><p>The value of this macro is an integer constant expression that can be
 used as the <var>mode</var> argument to the <code>setvbuf</code> function to
 specify that the stream should be line buffered. 
@@ -90,7 +92,7 @@ specify that the stream should be line buffered.
 <!-- stdio.h -->
 <!-- ISO -->
 <div class="defun">
-&mdash; Macro: int <b>_IONBF</b><var><a name="index-_005fIONBF-1145"></a></var><br>
+&mdash; Macro: int <b>_IONBF</b><var><a name="index-g_t_005fIONBF-1145"></a></var><br>
 <blockquote><p>The value of this macro is an integer constant expression that can be
 used as the <var>mode</var> argument to the <code>setvbuf</code> function to
 specify that the stream should be unbuffered. 
@@ -164,12 +166,12 @@ GNU C library.
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: int <b>__flbf</b> (<var>FILE *stream</var>)<var><a name="index-_005f_005fflbf-1150"></a></var><br>
+&mdash; Function: int <b>__flbf</b> (<var>FILE *stream</var>)<var><a name="index-g_t_005f_005fflbf-1150"></a></var><br>
 <blockquote><p>The <code>__flbf</code> function will return a nonzero value in case the
 stream <var>stream</var> is line buffered.  Otherwise the return value is
 zero.
 
-        <p>This function is declared in the <span class="file">stdio_ext.h</span> header. 
+        <p>This function is declared in the <samp><span class="file">stdio_ext.h</span></samp> header. 
 </p></blockquote></div>
 
    <p>Two more extensions allow to determine the size of the buffer and how
@@ -178,23 +180,23 @@ much of it is used.  These functions were also introduced in Solaris.
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: size_t <b>__fbufsize</b> (<var>FILE *stream</var>)<var><a name="index-_005f_005ffbufsize-1151"></a></var><br>
+&mdash; Function: size_t <b>__fbufsize</b> (<var>FILE *stream</var>)<var><a name="index-g_t_005f_005ffbufsize-1151"></a></var><br>
 <blockquote><p>The <code>__fbufsize</code> function return the size of the buffer in the
 stream <var>stream</var>.  This value can be used to optimize the use of the
 stream.
 
-        <p>This function is declared in the <span class="file">stdio_ext.h</span> header. 
+        <p>This function is declared in the <samp><span class="file">stdio_ext.h</span></samp> header. 
 </p></blockquote></div>
 
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: size_t <b>__fpending</b> (<var>FILE *stream</var>)<var> The </var><code>__fpending</code><var><a name="index-_005f_005ffpending-1152"></a></var><br>
+&mdash; Function: size_t <b>__fpending</b> (<var>FILE *stream</var>)<var> The </var><code>__fpending</code><var><a name="index-g_t_005f_005ffpending-1152"></a></var><br>
 <blockquote><p>function returns the number of bytes currently in the output buffer. 
 For wide-oriented stream the measuring unit is wide characters.  This
 function should not be used on buffers in read mode or opened read-only.
 
-        <p>This function is declared in the <span class="file">stdio_ext.h</span> header. 
+        <p>This function is declared in the <samp><span class="file">stdio_ext.h</span></samp> header. 
 </p></blockquote></div>
 
    </body></html>

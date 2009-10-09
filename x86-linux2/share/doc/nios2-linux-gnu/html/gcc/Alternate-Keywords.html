@@ -3,7 +3,7 @@
 <title>Alternate Keywords - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Explicit-Reg-Vars.html#Explicit-Reg-Vars" title="Explicit Reg Vars">
@@ -38,34 +38,36 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Alternate-Keywords"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Incomplete-Enums.html#Incomplete-Enums">Incomplete Enums</a>,
+<a name="Alternate-Keywords"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Incomplete-Enums.html#Incomplete-Enums">Incomplete Enums</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Explicit-Reg-Vars.html#Explicit-Reg-Vars">Explicit Reg Vars</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.38 Alternate Keywords</h3>
 
 <p><a name="index-alternate-keywords-2017"></a><a name="index-keywords_002c-alternate-2018"></a>
-<span class="option">-ansi</span> and the various <span class="option">-std</span> options disable certain
+<samp><span class="option">-ansi</span></samp> and the various <samp><span class="option">-std</span></samp> options disable certain
 keywords.  This causes trouble when you want to use GNU C extensions, or
 a general-purpose header file that should be usable by all programs,
 including ISO C programs.  The keywords <code>asm</code>, <code>typeof</code> and
 <code>inline</code> are not available in programs compiled with
-<span class="option">-ansi</span> or <span class="option">-std</span> (although <code>inline</code> can be used in a
-program compiled with <span class="option">-std=c99</span>).  The ISO C99 keyword
-<code>restrict</code> is only available when <span class="option">-std=gnu99</span> (which will
-eventually be the default) or <span class="option">-std=c99</span> (or the equivalent
-<span class="option">-std=iso9899:1999</span>) is used.
+<samp><span class="option">-ansi</span></samp> or <samp><span class="option">-std</span></samp> (although <code>inline</code> can be used in a
+program compiled with <samp><span class="option">-std=c99</span></samp>).  The ISO C99 keyword
+<code>restrict</code> is only available when <samp><span class="option">-std=gnu99</span></samp> (which will
+eventually be the default) or <samp><span class="option">-std=c99</span></samp> (or the equivalent
+<samp><span class="option">-std=iso9899:1999</span></samp>) is used.
 
- <p>The way to solve these problems is to put <span class="samp">__</span> at the beginning and
+ <p>The way to solve these problems is to put `<samp><span class="samp">__</span></samp>' at the beginning and
 end of each problematical keyword.  For example, use <code>__asm__</code>
 instead of <code>asm</code>, and <code>__inline__</code> instead of <code>inline</code>.
 
@@ -77,7 +79,7 @@ macros to replace them with the customary keywords.  It looks like this:
      #define __asm__ asm
      #endif
 </pre>
- <p><a name="index-_005f_005fextension_005f_005f-2019"></a><a name="index-pedantic-2020"></a><span class="option">-pedantic</span> and other options cause warnings for many GNU C extensions. 
+ <p><a name="index-g_t_005f_005fextension_005f_005f-2019"></a><a name="index-pedantic-2020"></a><samp><span class="option">-pedantic</span></samp> and other options cause warnings for many GNU C extensions. 
 You can
 prevent such warnings within one expression by writing
 <code>__extension__</code> before the expression.  <code>__extension__</code> has no

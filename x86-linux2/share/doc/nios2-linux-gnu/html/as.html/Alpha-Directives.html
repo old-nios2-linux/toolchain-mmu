@@ -3,7 +3,7 @@
 <title>Alpha Directives - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Alpha_002dDependent.html#Alpha_002dDependent" title="Alpha-Dependent">
 <link rel="prev" href="Alpha-Floating-Point.html#Alpha-Floating-Point" title="Alpha Floating Point">
@@ -17,22 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Alpha-Directives"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Alpha-Opcodes.html#Alpha-Opcodes">Alpha Opcodes</a>,
+<a name="Alpha-Directives"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Alpha-Opcodes.html#Alpha-Opcodes">Alpha Opcodes</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Alpha-Floating-Point.html#Alpha-Floating-Point">Alpha Floating Point</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Alpha_002dDependent.html#Alpha_002dDependent">Alpha-Dependent</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">8.1.5 Alpha Assembler Directives</h4>
 
-<p><span class="command">as</span> for the Alpha supports many additional directives for
+<p><samp><span class="command">as</span></samp> for the Alpha supports many additional directives for
 compatibility with the native assembler.  This section describes them only
 briefly.
 
@@ -40,7 +42,7 @@ briefly.
 
      <dl>
 <dt><code>.arch </code><var>cpu</var><dd>Specifies the target processor.  This is equivalent to the
-<span class="option">-m</span><var>cpu</var> command-line option.  See <a href="Alpha-Options.html#Alpha-Options">Options</a>,
+<samp><span class="option">-m</span><var>cpu</var></samp> command-line option.  See <a href="Alpha-Options.html#Alpha-Options">Options</a>,
 for a list of values for <var>cpu</var>.
 
      <br><dt><code>.ent </code><var>function</var><code>[, </code><var>n</var><code>]</code><dd>Mark the beginning of <var>function</var>.  An optional number may follow for
@@ -113,7 +115,7 @@ a dynamic relocation when used in a shared library.
      <br><dt><code>.d_floating </code><var>expression</var><dd>Stores <var>expression</var> as a VAX D format value.
 
      <br><dt><code>.set </code><var>feature</var><dd>Enables or disables various assembler features.  Using the positive
-name of the feature enables while using <span class="samp">no</span><var>feature</var> disables.
+name of the feature enables while using `<samp><span class="samp">no</span><var>feature</var></samp>' disables.
 
           <dl>
 <dt><code>at</code><dd>Indicates that macro expansions may clobber the <dfn>assembler
@@ -127,7 +129,7 @@ instructions, such as <code>br label</code> vs <code>br $31,label</code> are
 considered alternate forms and not macros.
 
           <br><dt><code>move</code><dt><code>reorder</code><dt><code>volatile</code><dd>These control whether and how the assembler may re-order instructions. 
-Accepted for compatibility with the OSF/1 assembler, but <span class="command">as</span>
+Accepted for compatibility with the OSF/1 assembler, but <samp><span class="command">as</span></samp>
 does not do instruction scheduling, so these features are ignored. 
 </dl>
      </dl>

@@ -3,7 +3,7 @@
 <title>Hints implementation - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Implementation.html#C-Implementation" title="C Implementation">
 <link rel="prev" href="Arrays-and-pointers-implementation.html#Arrays-and-pointers-implementation" title="Arrays and pointers implementation">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Hints-implementation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Structures-unions-enumerations-and-bit_002dfields-implementation.html#Structures-unions-enumerations-and-bit_002dfields-implementation">Structures unions enumerations and bit-fields implementation</a>,
+<a name="Hints-implementation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Structures-unions-enumerations-and-bit_002dfields-implementation.html#Structures-unions-enumerations-and-bit_002dfields-implementation">Structures unions enumerations and bit-fields implementation</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Arrays-and-pointers-implementation.html#Arrays-and-pointers-implementation">Arrays and pointers implementation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Implementation.html#C-Implementation">C Implementation</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">4.8 Hints</h3>
@@ -63,7 +65,7 @@ storage-class specifier are effective (C90 6.5.1, C99 6.7.1).</cite>
 <li>When used as part of the register variable extension, see
 <a href="Explicit-Reg-Vars.html#Explicit-Reg-Vars">Explicit Reg Vars</a>.
 
-          <li>When <span class="option">-O0</span> is in use, the compiler allocates distinct stack
+          <li>When <samp><span class="option">-O0</span></samp> is in use, the compiler allocates distinct stack
 memory for all variables that do not have the <code>register</code>
 storage-class specifier; if <code>register</code> is specified, the variable
 may have a shorter lifespan than the code would indicate and may never
@@ -78,9 +80,9 @@ in registers unless they are marked <code>register</code>.
      <li><cite>The extent to which suggestions made by using the inline function
 specifier are effective (C99 6.7.4).</cite>
 
-     <p>GCC will not inline any functions if the <span class="option">-fno-inline</span> option is
-used or if <span class="option">-O0</span> is used.  Otherwise, GCC may still be unable to
-inline a function for many reasons; the <span class="option">-Winline</span> option may be
+     <p>GCC will not inline any functions if the <samp><span class="option">-fno-inline</span></samp> option is
+used or if <samp><span class="option">-O0</span></samp> is used.  Otherwise, GCC may still be unable to
+inline a function for many reasons; the <samp><span class="option">-Winline</span></samp> option may be
 used to determine if a function has not been inlined and why not.
 
 </ul>

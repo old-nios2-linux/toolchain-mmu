@@ -3,7 +3,7 @@
 <title>Protocols Database - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Internet-Namespace.html#Internet-Namespace" title="Internet Namespace">
 <link rel="prev" href="Host-Addresses.html#Host-Addresses" title="Host Addresses">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Protocols-Database"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Ports.html#Ports">Ports</a>,
+<a name="Protocols-Database"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Ports.html#Ports">Ports</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Host-Addresses.html#Host-Addresses">Host Addresses</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Internet-Namespace.html#Internet-Namespace">Internet Namespace</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">16.6.6 Protocols Database</h4>
@@ -46,15 +48,15 @@ default is UDP (&ldquo;user datagram protocol&rdquo;).  For reliable datagram
 communication, the default is RDP (&ldquo;reliable datagram protocol&rdquo;). 
 You should nearly always use the default.
 
-   <p><a name="index-_002fetc_002fprotocols-1758"></a>Internet protocols are generally specified by a name instead of a
+   <p><a name="index-g_t_002fetc_002fprotocols-1758"></a>Internet protocols are generally specified by a name instead of a
 number.  The network protocols that a host knows about are stored in a
 database.  This is usually either derived from the file
-<span class="file">/etc/protocols</span>, or it may be an equivalent provided by a name
+<samp><span class="file">/etc/protocols</span></samp>, or it may be an equivalent provided by a name
 server.  You look up the protocol number associated with a named
 protocol in the database using the <code>getprotobyname</code> function.
 
    <p>Here are detailed descriptions of the utilities for accessing the
-protocols database.  These are declared in <span class="file">netdb.h</span>. 
+protocols database.  These are declared in <samp><span class="file">netdb.h</span></samp>. 
 <a name="index-netdb_002eh-1759"></a>
 <!-- netdb.h -->
 <!-- BSD -->

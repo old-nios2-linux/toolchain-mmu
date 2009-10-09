@@ -3,7 +3,7 @@
 <title>Termination Internals - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Program-Termination.html#Program-Termination" title="Program Termination">
 <link rel="prev" href="Aborting-a-Program.html#Aborting-a-Program" title="Aborting a Program">
@@ -16,28 +16,30 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Termination-Internals"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Aborting-a-Program.html#Aborting-a-Program">Aborting a Program</a>,
+<a name="Termination-Internals"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Aborting-a-Program.html#Aborting-a-Program">Aborting a Program</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Program-Termination.html#Program-Termination">Program Termination</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">25.6.5 Termination Internals</h4>
 
 <p>The <code>_exit</code> function is the primitive used for process termination
-by <code>exit</code>.  It is declared in the header file <span class="file">unistd.h</span>. 
+by <code>exit</code>.  It is declared in the header file <samp><span class="file">unistd.h</span></samp>. 
 <a name="index-unistd_002eh-3143"></a>
 <!-- unistd.h -->
 <!-- POSIX.1 -->
 
 <div class="defun">
-&mdash; Function: void <b>_exit</b> (<var>int status</var>)<var><a name="index-_005fexit-3144"></a></var><br>
+&mdash; Function: void <b>_exit</b> (<var>int status</var>)<var><a name="index-g_t_005fexit-3144"></a></var><br>
 <blockquote><p>The <code>_exit</code> function is the primitive for causing a process to
 terminate with status <var>status</var>.  Calling this function does not
 execute cleanup functions registered with <code>atexit</code> or
@@ -47,14 +49,14 @@ execute cleanup functions registered with <code>atexit</code> or
 <!-- stdlib.h -->
 <!-- ISO -->
 <div class="defun">
-&mdash; Function: void <b>_Exit</b> (<var>int status</var>)<var><a name="index-_005fExit-3145"></a></var><br>
+&mdash; Function: void <b>_Exit</b> (<var>int status</var>)<var><a name="index-g_t_005fExit-3145"></a></var><br>
 <blockquote><p>The <code>_Exit</code> function is the ISO&nbsp;C<!-- /@w --> equivalent to <code>_exit</code>. 
 The ISO&nbsp;C<!-- /@w --> committee members were not sure whether the definitions of
 <code>_exit</code> and <code>_Exit</code> were compatible so they have not used the
 POSIX name.
 
         <p>This function was introduced in ISO&nbsp;C99<!-- /@w --> and is declared in
-<span class="file">stdlib.h</span>. 
+<samp><span class="file">stdlib.h</span></samp>. 
 </p></blockquote></div>
 
    <p>When a process terminates for any reason&mdash;either because the program

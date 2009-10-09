@@ -3,7 +3,7 @@
 <title>Working Directory - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Running.html#Running" title="Running">
 <link rel="prev" href="Environment.html#Environment" title="Environment">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Working-Directory"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Input_002fOutput.html#Input_002fOutput">Input/Output</a>,
+<a name="Working-Directory"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Input_002fOutput.html#Input_002fOutput">Input/Output</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Environment.html#Environment">Environment</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Running.html#Running">Running</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">4.5 Your Program's Working Directory</h3>
@@ -52,7 +54,7 @@ that specify files for <span class="sc">gdb</span> to operate on.  See <a href="
    <p>It is generally impossible to find the current working directory of
 the process being debugged (since a program can change its directory
 during its run).  If you work on a system where <span class="sc">gdb</span> is
-configured with the <span class="file">/proc</span> support, you can use the <code>info
+configured with the <samp><span class="file">/proc</span></samp> support, you can use the <code>info
 proc</code> command (see <a href="SVR4-Process-Information.html#SVR4-Process-Information">SVR4 Process Information</a>) to find out the
 current working directory of the debuggee.
 

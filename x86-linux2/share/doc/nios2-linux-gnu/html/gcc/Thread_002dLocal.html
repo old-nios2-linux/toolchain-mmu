@@ -3,7 +3,7 @@
 <title>Thread-Local - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Unnamed-Fields.html#Unnamed-Fields" title="Unnamed Fields">
@@ -37,28 +37,31 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Thread_002dLocal"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Unnamed-Fields.html#Unnamed-Fields">Unnamed Fields</a>,
+<a name="Thread-Local"></a>
+<a name="Thread_002dLocal"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Unnamed-Fields.html#Unnamed-Fields">Unnamed Fields</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.51 Thread-Local Storage</h3>
 
-<p><a name="index-Thread_002dLocal-Storage-2503"></a><a name="index-_0040acronym_007bTLS_007d-2504"></a><a name="index-_005f_005fthread-2505"></a>
+<p><a name="index-Thread_002dLocal-Storage-2503"></a><a name="index-g_t_0040acronym_007bTLS_007d-2504"></a><a name="index-g_t_005f_005fthread-2505"></a>
 Thread-local storage (<acronym>TLS</acronym>) is a mechanism by which variables
 are allocated such that there is one instance of the variable per extant
 thread.  The run-time model GCC uses to implement this originates
 in the IA-64 processor-specific ABI, but has since been migrated
 to other processors as well.  It requires significant support from
-the linker (<span class="command">ld</span>), dynamic linker (<span class="command">ld.so</span>), and
-system libraries (<span class="file">libc.so</span> and <span class="file">libpthread.so</span>), so it
+the linker (<samp><span class="command">ld</span></samp>), dynamic linker (<samp><span class="command">ld.so</span></samp>), and
+system libraries (<samp><span class="file">libc.so</span></samp> and <samp><span class="file">libpthread.so</span></samp>), so it
 is not available everywhere.
 
  <p>At the user level, the extension is visible with a new storage

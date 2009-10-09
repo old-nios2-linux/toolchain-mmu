@@ -3,7 +3,7 @@
 <title>MN10300 Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="MMIX-Options.html#MMIX-Options" title="MMIX Options">
@@ -38,23 +38,25 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="MN10300-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="MT-Options.html#MT-Options">MT Options</a>,
+<a name="MN10300-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="MT-Options.html#MT-Options">MT Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="MMIX-Options.html#MMIX-Options">MMIX Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.17.24 MN10300 Options</h4>
 
 <p><a name="index-MN10300-options-1313"></a>
-These <span class="option">-m</span> options are defined for Matsushita MN10300 architectures:
+These <samp><span class="option">-m</span></samp> options are defined for Matsushita MN10300 architectures:
 
      <dl>
 <dt><code>-mmult-bug</code><dd><a name="index-mmult_002dbug-1314"></a>Generate code to avoid bugs in the multiply instructions for the MN10300
@@ -72,7 +74,7 @@ is the default.
 in both <code>a0</code> and <code>d0</code>.  Otherwise, the pointer is returned
 only in a0, and attempts to call such functions without a prototype
 would result in errors.  Note that this option is on by default; use
-<span class="option">-mno-return-pointer-on-d0</span> to disable it.
+<samp><span class="option">-mno-return-pointer-on-d0</span></samp> to disable it.
 
      <br><dt><code>-mno-crt0</code><dd><a name="index-mno_002dcrt0-1319"></a>Do not link in the C run-time initialization object file.
 

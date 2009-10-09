@@ -3,7 +3,7 @@
 <title>Macros - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Optimized-Code.html#Optimized-Code" title="Optimized Code">
 <link rel="next" href="Tracepoints.html#Tracepoints" title="Tracepoints">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Macros"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Tracepoints.html#Tracepoints">Tracepoints</a>,
+<a name="Macros"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Tracepoints.html#Tracepoints">Tracepoints</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Optimized-Code.html#Optimized-Code">Optimized Code</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">10 C Preprocessor Macros</h2>
@@ -40,7 +42,7 @@ where it was defined.
    <p>You may need to compile your program specially to provide <span class="sc">gdb</span>
 with information about preprocessor macros.  Most compilers do not
 include macros in their debugging information, even when you compile
-with the <span class="option">-g</span> flag.  See <a href="Compilation.html#Compilation">Compilation</a>.
+with the <samp><span class="option">-g</span></samp> flag.  See <a href="Compilation.html#Compilation">Compilation</a>.
 
    <p>A program may define a macro at one point, remove that definition later,
 and then provide a different definition after that.  Thus, at different
@@ -88,14 +90,14 @@ second form defines a &ldquo;function-like&rdquo; macro, which takes the argumen
 given in <var>arglist</var>.
 
      <p>A definition introduced by this command is in scope in every expression
-evaluated in <span class="sc">gdb</span>, until it is removed with the <span class="command">macro
-undef</span> command, described below.  The definition overrides all
+evaluated in <span class="sc">gdb</span>, until it is removed with the <samp><span class="command">macro
+undef</span></samp> command, described below.  The definition overrides all
 definitions for <var>macro</var> present in the program being debugged, as
 well as any previous user-supplied definition.
 
      <p><a name="index-macro-undef-553"></a><br><dt><code>macro undef </code><var>macro</var><dd><i>(This command is not yet implemented.)</i>  Remove any user-supplied
 definition for the macro named <var>macro</var>.  This command only affects
-definitions provided with the <span class="command">macro define</span> command, described
+definitions provided with the <samp><span class="command">macro define</span></samp> command, described
 above; it cannot remove definitions present in the program being
 debugged.
 
@@ -127,7 +129,7 @@ show our source files:
      $
 </pre>
    <p>Now, we compile the program using the <span class="sc">gnu</span> C compiler, <span class="sc">gcc</span>. 
-We pass the <span class="option">-gdwarf-2</span> and <span class="option">-g3</span> flags to ensure the
+We pass the <samp><span class="option">-gdwarf-2</span></samp> and <samp><span class="option">-g3</span></samp> flags to ensure the
 compiler includes information about preprocessor macros in the debugging
 information.
 
@@ -170,7 +172,7 @@ to decide which macro definitions are in scope:
      expands to: once (M + 1)
      (gdb)
 </pre>
-   <p>In the example above, note that <span class="command">macro expand-once</span> expands only
+   <p>In the example above, note that <samp><span class="command">macro expand-once</span></samp> expands only
 the macro invocation explicit in the original text &mdash; the invocation of
 <code>ADD</code> &mdash; but does not expand the invocation of the macro <code>M</code>,
 which was introduced by <code>ADD</code>.

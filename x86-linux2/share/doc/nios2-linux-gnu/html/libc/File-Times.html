@@ -3,7 +3,7 @@
 <title>File Times - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-Attributes.html#File-Attributes" title="File Attributes">
 <link rel="prev" href="Testing-File-Access.html#Testing-File-Access" title="Testing File Access">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="File-Times"></a>Next:&nbsp;<a rel="next" accesskey="n" href="File-Size.html#File-Size">File Size</a>,
+<a name="File-Times"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="File-Size.html#File-Size">File Size</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Testing-File-Access.html#Testing-File-Access">Testing File Access</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-Attributes.html#File-Attributes">File Attributes</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">14.9.9 File Times</h4>
@@ -38,7 +40,7 @@ correspond to the <code>st_atime</code>, <code>st_mtime</code>, and <code>st_cti
 members of the <code>stat</code> structure; see <a href="File-Attributes.html#File-Attributes">File Attributes</a>.
 
    <p>All of these times are represented in calendar time format, as
-<code>time_t</code> objects.  This data type is defined in <span class="file">time.h</span>. 
+<code>time_t</code> objects.  This data type is defined in <samp><span class="file">time.h</span></samp>. 
 For more information about representation and manipulation of time
 values, see <a href="Calendar-Time.html#Calendar-Time">Calendar Time</a>. 
 <a name="index-time_002eh-1583"></a>
@@ -62,7 +64,7 @@ updates its attribute change time field.
 
    <p>You can also change some of the time stamps of a file explicitly using
 the <code>utime</code> function&mdash;all except the attribute change time.  You
-need to include the header file <span class="file">utime.h</span> to use this facility. 
+need to include the header file <samp><span class="file">utime.h</span></samp> to use this facility. 
 <a name="index-utime_002eh-1584"></a>
 <!-- time.h -->
 <!-- POSIX.1 -->
@@ -125,7 +127,7 @@ microseconds.  They correspond to the <code>tv_usec</code> field of a
 
    <p>The <code>utimes</code> function is like <code>utime</code>, but also lets you specify
 the fractional part of the file times.  The prototype for this function is
-in the header file <span class="file">sys/time.h</span>. 
+in the header file <samp><span class="file">sys/time.h</span></samp>. 
 <a name="index-sys_002ftime_002eh-1587"></a>
 <!-- sys/time.h -->
 <!-- BSD -->

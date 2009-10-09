@@ -3,7 +3,7 @@
 <title>Formatting Documentation - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Using-History-Interactively.html#Using-History-Interactively" title="Using History Interactively">
 <link rel="next" href="Installing-GDB.html#Installing-GDB" title="Installing GDB">
@@ -16,25 +16,27 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Formatting-Documentation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Installing-GDB.html#Installing-GDB">Installing GDB</a>,
+<a name="Formatting-Documentation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Installing-GDB.html#Installing-GDB">Installing GDB</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Using-History-Interactively.html#Using-History-Interactively">Using History Interactively</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="appendix">Appendix A Formatting Documentation</h2>
 
-<p><a name="index-_0040value_007bGDBN_007d-reference-card-1650"></a><a name="index-reference-card-1651"></a>The <span class="sc">gdb</span> 4 release includes an already-formatted reference card, ready
-for printing with PostScript or Ghostscript, in the <span class="file">gdb</span>
+<p><a name="index-g_t_0040value_007bGDBN_007d-reference-card-1650"></a><a name="index-reference-card-1651"></a>The <span class="sc">gdb</span> 4 release includes an already-formatted reference card, ready
+for printing with PostScript or Ghostscript, in the <samp><span class="file">gdb</span></samp>
 subdirectory of the main source directory<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>.  If you can use PostScript or Ghostscript with your printer,
-you can print the reference card immediately with <span class="file">refcard.ps</span>.
+you can print the reference card immediately with <samp><span class="file">refcard.ps</span></samp>.
 
    <p>The release also includes the source for the reference card.  You
 can format it, using TeX, by typing:
@@ -56,9 +58,9 @@ formatting commands to create the on-line version of the documentation
 and TeX (or <code>texi2roff</code>) to typeset the printed version.
 
    <p><span class="sc">gdb</span> includes an already formatted copy of the on-line Info
-version of this manual in the <span class="file">gdb</span> subdirectory.  The main Info
-file is <span class="file">gdb-6.6.50.20070620-cvs/gdb/gdb.info</span>, and it refers to
-subordinate files matching <span class="samp">gdb.info*</span> in the same directory.  If
+version of this manual in the <samp><span class="file">gdb</span></samp> subdirectory.  The main Info
+file is <samp><span class="file">gdb-6.6.50.20070620-cvs/gdb/gdb.info</span></samp>, and it refers to
+subordinate files matching `<samp><span class="samp">gdb.info*</span></samp>' in the same directory.  If
 necessary, you can print out these files, or read them with any editor;
 but they are easier to read using the <code>info</code> subsystem in <span class="sc">gnu</span>
 Emacs or the standalone <code>info</code> program, available as part of the
@@ -69,14 +71,14 @@ Info formatting programs, such as <code>texinfo-format-buffer</code> or
 <code>makeinfo</code>.
 
    <p>If you have <code>makeinfo</code> installed, and are in the top level
-<span class="sc">gdb</span> source directory (<span class="file">gdb-6.6.50.20070620-cvs</span>, in the case of
+<span class="sc">gdb</span> source directory (<samp><span class="file">gdb-6.6.50.20070620-cvs</span></samp>, in the case of
 version 6.6.50.20070620-cvs), you can make the Info file by typing:
 
 <pre class="smallexample">     cd gdb
      make gdb.info
 </pre>
    <p>If you want to typeset and print copies of this manual, you need TeX,
-a program to print its <span class="sc">dvi</span> output files, and <span class="file">texinfo.tex</span>, the
+a program to print its <span class="sc">dvi</span> output files, and <samp><span class="file">texinfo.tex</span></samp>, the
 Texinfo definitions file.
 
    <p>TeX is a typesetting program; it does not print files directly, but
@@ -85,28 +87,28 @@ document, you need a program to print <span class="sc">dvi</span> files.  If you
 has TeX installed, chances are it has such a program.  The precise
 command to use depends on your system; <kbd>lpr -d</kbd> is common; another
 (for PostScript devices) is <kbd>dvips</kbd>.  The <span class="sc">dvi</span> print command may
-require a file name without any extension or a <span class="samp">.dvi</span> extension.
+require a file name without any extension or a `<samp><span class="samp">.dvi</span></samp>' extension.
 
    <p>TeX also requires a macro definitions file called
-<span class="file">texinfo.tex</span>.  This file tells TeX how to typeset a document
+<samp><span class="file">texinfo.tex</span></samp>.  This file tells TeX how to typeset a document
 written in Texinfo format.  On its own, TeX cannot either read or
-typeset a Texinfo file.  <span class="file">texinfo.tex</span> is distributed with GDB
-and is located in the <span class="file">gdb-</span><var>version-number</var><span class="file">/texinfo</span>
+typeset a Texinfo file.  <samp><span class="file">texinfo.tex</span></samp> is distributed with GDB
+and is located in the <samp><span class="file">gdb-</span><var>version-number</var><span class="file">/texinfo</span></samp>
 directory.
 
    <p>If you have TeX and a <span class="sc">dvi</span> printer program installed, you can
-typeset and print this manual.  First switch to the <span class="file">gdb</span>
+typeset and print this manual.  First switch to the <samp><span class="file">gdb</span></samp>
 subdirectory of the main source directory (for example, to
-<span class="file">gdb-6.6.50.20070620-cvs/gdb</span>) and type:
+<samp><span class="file">gdb-6.6.50.20070620-cvs/gdb</span></samp>) and type:
 
 <pre class="smallexample">     make gdb.dvi
 </pre>
-   <p>Then give <span class="file">gdb.dvi</span> to your <span class="sc">dvi</span> printing program.
+   <p>Then give <samp><span class="file">gdb.dvi</span></samp> to your <span class="sc">dvi</span> printing program.
 
    <div class="footnote">
 <hr>
 <h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> In
-<span class="file">gdb-6.6.50.20070620-cvs/gdb/refcard.ps</span> of the version 6.6.50.20070620-cvs
+<samp><span class="file">gdb-6.6.50.20070620-cvs/gdb/refcard.ps</span></samp> of the version 6.6.50.20070620-cvs
 release.</p>
 
    <p><hr></div>

@@ -3,7 +3,7 @@
 <title>Representation of Strings - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="String-and-Array-Utilities.html#String-and-Array-Utilities" title="String and Array Utilities">
 <link rel="next" href="String_002fArray-Conventions.html#String_002fArray-Conventions" title="String/Array Conventions">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Representation-of-Strings"></a>Next:&nbsp;<a rel="next" accesskey="n" href="String_002fArray-Conventions.html#String_002fArray-Conventions">String/Array Conventions</a>,
+<a name="Representation-of-Strings"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="String_002fArray-Conventions.html#String_002fArray-Conventions">String/Array Conventions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-and-Array-Utilities">String and Array Utilities</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.1 Representation of Strings</h3>
@@ -62,8 +64,8 @@ null character marking the end of a string, you can write
 although both are represented by the integer <code>0</code>.
 
    <p><a name="index-string-literal-461"></a><dfn>String literals</dfn> appear in C program source as strings of
-characters between double-quote characters (<span class="samp">"</span>) where the initial
-double-quote character is immediately preceded by a capital <span class="samp">L</span>
+characters between double-quote characters (`<samp><span class="samp">"</span></samp>') where the initial
+double-quote character is immediately preceded by a capital `<samp><span class="samp">L</span></samp>'
 (ell) character (as in <code>L"foo"</code>).  In ISO&nbsp;C<!-- /@w -->, string literals
 can also be formed by <dfn>string concatenation</dfn>: <code>"a" "b"</code> is the
 same as <code>"ab"</code>.  For wide character strings one can either use

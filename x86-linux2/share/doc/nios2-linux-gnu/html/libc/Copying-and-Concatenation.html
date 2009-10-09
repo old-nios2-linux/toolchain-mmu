@@ -3,7 +3,7 @@
 <title>Copying and Concatenation - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="String-and-Array-Utilities.html#String-and-Array-Utilities" title="String and Array Utilities">
 <link rel="prev" href="String-Length.html#String-Length" title="String Length">
@@ -17,26 +17,28 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Copying-and-Concatenation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="String_002fArray-Comparison.html#String_002fArray-Comparison">String/Array Comparison</a>,
+<a name="Copying-and-Concatenation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="String_002fArray-Comparison.html#String_002fArray-Comparison">String/Array Comparison</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="String-Length.html#String-Length">String Length</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-and-Array-Utilities">String and Array Utilities</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.4 Copying and Concatenation</h3>
 
 <p>You can use the functions described in this section to copy the contents
 of strings and arrays, or to append the contents of one string to
-another.  The <span class="samp">str</span> and <span class="samp">mem</span> functions are declared in the
-header file <span class="file">string.h</span> while the <span class="samp">wstr</span> and <span class="samp">wmem</span>
-functions are declared in the file <span class="file">wchar.h</span>. 
+another.  The `<samp><span class="samp">str</span></samp>' and `<samp><span class="samp">mem</span></samp>' functions are declared in the
+header file <samp><span class="file">string.h</span></samp> while the `<samp><span class="samp">wstr</span></samp>' and `<samp><span class="samp">wmem</span></samp>'
+functions are declared in the file <samp><span class="file">wchar.h</span></samp>. 
 <a name="index-string_002eh-477"></a><a name="index-wchar_002eh-478"></a><a name="index-copying-strings-and-arrays-479"></a><a name="index-string-copy-functions-480"></a><a name="index-array-copy-functions-481"></a><a name="index-concatenating-strings-482"></a><a name="index-string-concatenation-functions-483"></a>
 A helpful way to remember the ordering of the arguments to the functions
 in this section is that it corresponds to an assignment expression, with
@@ -346,8 +348,8 @@ terminates the destination string.
 the end of the string <var>to</var> (that is, the address of the terminating
 null character <code>to + strlen (from)</code>) rather than the beginning.
 
-        <p>For example, this program uses <code>stpcpy</code> to concatenate <span class="samp">foo</span>
-and <span class="samp">bar</span> to produce <span class="samp">foobar</span>, which it then prints.
+        <p>For example, this program uses <code>stpcpy</code> to concatenate `<samp><span class="samp">foo</span></samp>'
+and `<samp><span class="samp">bar</span></samp>' to produce `<samp><span class="samp">foobar</span></samp>', which it then prints.
 
      <pre class="smallexample">          #include &lt;string.h&gt;
           #include &lt;stdio.h&gt;
@@ -368,7 +370,7 @@ customary on Unix systems, but we did not invent it either.  Perhaps it
 comes from MS-DOG.
 
         <p>Its behavior is undefined if the strings overlap.  The function is
-declared in <span class="file">string.h</span>. 
+declared in <samp><span class="file">string.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- wchar.h -->
@@ -384,7 +386,7 @@ developing the GNU C Library itself.
 
         <p>The behavior of <code>wcpcpy</code> is undefined if the strings overlap.
 
-        <p><code>wcpcpy</code> is a GNU extension and is declared in <span class="file">wchar.h</span>. 
+        <p><code>wcpcpy</code> is a GNU extension and is declared in <samp><span class="file">wchar.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- string.h -->
@@ -410,7 +412,7 @@ is implemented to be useful in contexts where this behavior of the
 developing the GNU C Library itself.
 
         <p>Its behavior is undefined if the strings overlap.  The function is
-declared in <span class="file">string.h</span>. 
+declared in <samp><span class="file">string.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- wchar.h -->
@@ -438,7 +440,7 @@ developing the GNU C Library itself.
 
         <p>Its behavior is undefined if the strings overlap.
 
-        <p><code>wcpncpy</code> is a GNU extension and is declared in <span class="file">wchar.h</span>. 
+        <p><code>wcpncpy</code> is a GNU extension and is declared in <samp><span class="file">wchar.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- string.h -->
@@ -552,7 +554,7 @@ to use <code>strcat</code>/<code>wcscat</code>.  A lot of time is wasted finding
 end of the destination string so that the actual copying can start. 
 This is a common example:
 
-   <p><a name="index-_005f_005fva_005fcopy-508"></a><a name="index-va_005fcopy-509"></a>
+   <p><a name="index-g_t_005f_005fva_005fcopy-508"></a><a name="index-va_005fcopy-509"></a>
 <pre class="smallexample">     /* <span class="roman">This function concatenates arbitrarily many strings.  The last</span>
         <span class="roman">parameter must be </span><code>NULL</code><span class="roman">.</span>  */
      char *

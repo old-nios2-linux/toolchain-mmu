@@ -3,7 +3,7 @@
 <title>Exception Region Output - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Assembler-Format.html#Assembler-Format" title="Assembler Format">
 <link rel="prev" href="Dispatch-Tables.html#Dispatch-Tables" title="Dispatch Tables">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Exception-Region-Output"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Alignment-Output.html#Alignment-Output">Alignment Output</a>,
+<a name="Exception-Region-Output"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Alignment-Output.html#Alignment-Output">Alignment Output</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Dispatch-Tables.html#Dispatch-Tables">Dispatch Tables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Assembler-Format.html#Assembler-Format">Assembler Format</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">14.19.9 Assembler Commands for Exception Regions</h4>
@@ -62,7 +64,7 @@ region.
 <blockquote><p>If defined, a C string constant for the name of the section containing
 exception handling frame unwind information.  If not defined, GCC will
 provide a default definition if the target supports named sections. 
-<span class="file">crtstuff.c</span> uses this macro to switch to the appropriate section.
+<samp><span class="file">crtstuff.c</span></samp> uses this macro to switch to the appropriate section.
 
       <p>You should define this symbol if your target supports DWARF 2 frame
 unwind information and the default definition does not work. 
@@ -98,8 +100,8 @@ that it does not contain any extraneous set bits in it.
 <blockquote><p>Define this macro to 0 if your target supports DWARF 2 frame unwind
 information, but it does not yet work with exception handling. 
 Otherwise, if your target supports this information (if it defines
-<span class="samp">INCOMING_RETURN_ADDR_RTX</span> and either <span class="samp">UNALIGNED_INT_ASM_OP</span>
-or <span class="samp">OBJECT_FORMAT_ELF</span>), GCC will provide a default definition of
+`<samp><span class="samp">INCOMING_RETURN_ADDR_RTX</span></samp>' and either `<samp><span class="samp">UNALIGNED_INT_ASM_OP</span></samp>'
+or `<samp><span class="samp">OBJECT_FORMAT_ELF</span></samp>'), GCC will provide a default definition of
 1.
 
       <p>If <code>TARGET_UNWIND_INFO</code> is defined, the target specific unwinder
@@ -126,7 +128,7 @@ tables even when exceptions are not used.
 <div class="defun">
 &mdash; Macro: <b>MUST_USE_SJLJ_EXCEPTIONS</b><var><a name="index-MUST_005fUSE_005fSJLJ_005fEXCEPTIONS-2409"></a></var><br>
 <blockquote><p>This macro need only be defined if <code>DWARF2_UNWIND_INFO</code> is
-runtime-variable.  In that case, <span class="file">except.h</span> cannot correctly
+runtime-variable.  In that case, <samp><span class="file">except.h</span></samp> cannot correctly
 determine the corresponding definition of
 <code>MUST_USE_SJLJ_EXCEPTIONS</code>, so the target must provide it directly. 
 </p></blockquote></div>
@@ -147,8 +149,8 @@ the target supports DWARF 2 frame unwind information.
 exception table is to be placed (see <a href="Sections.html#Sections">Sections</a>).  The default is a
 function that switches to a section named <code>.gcc_except_table</code> on
 machines that support named sections via
-<code>TARGET_ASM_NAMED_SECTION</code>, otherwise if <span class="option">-fpic</span> or
-<span class="option">-fPIC</span> is in effect, the <code>data_section</code>, otherwise the
+<code>TARGET_ASM_NAMED_SECTION</code>, otherwise if <samp><span class="option">-fpic</span></samp> or
+<samp><span class="option">-fPIC</span></samp> is in effect, the <code>data_section</code>, otherwise the
 <code>readonly_data_section</code>. 
 </p></blockquote></div>
 

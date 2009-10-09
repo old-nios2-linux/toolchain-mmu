@@ -3,7 +3,7 @@
 <title>Side Effects - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="RTL.html#RTL" title="RTL">
 <link rel="prev" href="RTL-Declarations.html#RTL-Declarations" title="RTL Declarations">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Side-Effects"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Incdec.html#Incdec">Incdec</a>,
+<a name="Side-Effects"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Incdec.html#Incdec">Incdec</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="RTL-Declarations.html#RTL-Declarations">RTL Declarations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="RTL.html#RTL">RTL</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">11.15 Side Effect Expressions</h3>
@@ -107,7 +109,7 @@ offset (in bytes) into the structure at which the data in that register
 corresponds.  The first element may be null to indicate that the structure
 is also passed partly in memory.
 
-     <p><a name="index-jump-instructions-and-_0040code_007bset_007d-1038"></a><a name="index-_0040code_007bif_005fthen_005felse_007d-usage-1039"></a>If <var>lval</var> is <code>(pc)</code>, we have a jump instruction, and the
+     <p><a name="index-jump-instructions-and-_0040code_007bset_007d-1038"></a><a name="index-g_t_0040code_007bif_005fthen_005felse_007d-usage-1039"></a>If <var>lval</var> is <code>(pc)</code>, we have a jump instruction, and the
 possibilities for <var>x</var> are very limited.  It may be a
 <code>label_ref</code> expression (unconditional jump).  It may be an
 <code>if_then_else</code> (conditional jump), in which case either the
@@ -189,7 +191,7 @@ constituent instructions might not.
 <code>parallel</code> with other side effects, the register allocator
 guarantees that the register is unoccupied both before and after that
 insn.  However, the reload phase may allocate a register used for one of
-the inputs unless the <span class="samp">&amp;</span> constraint is specified for the selected
+the inputs unless the `<samp><span class="samp">&amp;</span></samp>' constraint is specified for the selected
 alternative (see <a href="Modifiers.html#Modifiers">Modifiers</a>).  You can clobber either a specific hard
 register, a pseudo register, or a <code>scratch</code> expression; in the
 latter two cases, GCC will allocate a hard register that is available
@@ -235,8 +237,8 @@ that the register is live.  You should think twice before adding
 instead.  The <code>use</code> RTX is most commonly useful to describe that
 a fixed register is implicitly used in an insn.  It is also safe to use
 in patterns where the compiler knows for other reasons that the result
-of the whole pattern is variable, such as <span class="samp">movmem</span><var>m</var> or
-<span class="samp">call</span> patterns.
+of the whole pattern is variable, such as `<samp><span class="samp">movmem</span><var>m</var></samp>' or
+`<samp><span class="samp">call</span></samp>' patterns.
 
      <p>During the reload phase, an insn that has a <code>use</code> as pattern
 can carry a reg_equal note.  These <code>use</code> insns will be deleted

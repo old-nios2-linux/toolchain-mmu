@@ -3,7 +3,7 @@
 <title>Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="#Top">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <!--
@@ -35,8 +35,9 @@ included in the section entitled "GNU Free Documentation License".
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
@@ -80,7 +81,7 @@ included in the section entitled &ldquo;GNU Free Documentation License&rdquo;.
 <li><a href="index.html#toc_C_002b_002b-Extensions">6 Extensions to the C++ Language</a></li>
 <li><a href="index.html#toc_Objective_002dC">7 GNU Objective-C runtime features</a></li>
 <li><a href="index.html#toc_Compatibility">8 Binary Compatibility</a></li>
-<li><a href="index.html#toc_Gcov">9 <span class="command">gcov</span>&mdash;a Test Coverage Program</a></li>
+<li><a href="index.html#toc_Gcov">9 <samp><span class="command">gcov</span></samp>&mdash;a Test Coverage Program</a></li>
 <li><a href="index.html#toc_Trouble">10 Known Causes of Trouble with GCC</a></li>
 <li><a href="index.html#toc_Bugs">11 Reporting Bugs</a></li>
 <li><a href="index.html#toc_Service">12 How To Get Help with GCC</a></li>
@@ -417,12 +418,12 @@ included in the section entitled &ldquo;GNU Free Documentation License&rdquo;.
 <li><a href="compatibility_005falias.html#compatibility_005falias">7.5 compatibility_alias</a>
 </li></ul>
 <li><a name="toc_Compatibility" href="Compatibility.html#Compatibility">8 Binary Compatibility</a>
-<li><a name="toc_Gcov" href="Gcov.html#Gcov">9 <span class="command">gcov</span>&mdash;a Test Coverage Program</a>
+<li><a name="toc_Gcov" href="Gcov.html#Gcov">9 <samp><span class="command">gcov</span></samp>&mdash;a Test Coverage Program</a>
 <ul>
-<li><a href="Gcov-Intro.html#Gcov-Intro">9.1 Introduction to <span class="command">gcov</span></a>
+<li><a href="Gcov-Intro.html#Gcov-Intro">9.1 Introduction to <samp><span class="command">gcov</span></samp></a>
 <li><a href="Invoking-Gcov.html#Invoking-Gcov">9.2 Invoking gcov</a>
-<li><a href="Gcov-and-Optimization.html#Gcov-and-Optimization">9.3 Using <span class="command">gcov</span> with GCC Optimization</a>
-<li><a href="Gcov-Data-Files.html#Gcov-Data-Files">9.4 Brief description of <span class="command">gcov</span> data files</a>
+<li><a href="Gcov-and-Optimization.html#Gcov-and-Optimization">9.3 Using <samp><span class="command">gcov</span></samp> with GCC Optimization</a>
+<li><a href="Gcov-Data-Files.html#Gcov-Data-Files">9.4 Brief description of <samp><span class="command">gcov</span></samp> data files</a>
 <li><a href="Cross_002dprofiling.html#Cross_002dprofiling">9.5 Data file relocation to support cross-profiling</a>
 </li></ul>
 <li><a name="toc_Trouble" href="Trouble.html#Trouble">10 Known Causes of Trouble with GCC</a>
@@ -441,7 +442,7 @@ included in the section entitled &ldquo;GNU Free Documentation License&rdquo;.
 <li><a href="Temporaries.html#Temporaries">10.8.3 Temporaries May Vanish Before You Expect</a>
 <li><a href="Copy-Assignment.html#Copy-Assignment">10.8.4 Implicit Copy-Assignment for Virtual Bases</a>
 </li></ul>
-<li><a href="Protoize-Caveats.html#Protoize-Caveats">10.9 Caveats of using <span class="command">protoize</span></a>
+<li><a href="Protoize-Caveats.html#Protoize-Caveats">10.9 Caveats of using <samp><span class="command">protoize</span></samp></a>
 <li><a href="Non_002dbugs.html#Non_002dbugs">10.10 Certain Changes We Don't Want to Make</a>
 <li><a href="Warnings-and-Errors.html#Warnings-and-Errors">10.11 Warning Messages and Error Messages</a>
 </li></ul>
@@ -471,9 +472,10 @@ included in the section entitled &ldquo;GNU Free Documentation License&rdquo;.
 
 <div class="node">
 <p>
-<a name="Top"></a>Next:&nbsp;<a rel="next" accesskey="n" href="G_002b_002b-and-GCC.html#G_002b_002b-and-GCC">G++ and GCC</a>,
+<a name="Top"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="G_002b_002b-and-GCC.html#G_002b_002b-and-GCC">G++ and GCC</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#DIR">(DIR)</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="unnumbered">Introduction</h2>
@@ -484,18 +486,18 @@ as well as their features and incompatibilities, and how to report
 bugs.  It corresponds to GCC version 4.1.2. 
 The internals of the GNU compilers, including how to port them to new
 targets and some information about how to write front ends for new
-languages, are documented in a separate manual.  See <a href="../gccint/index.html#Top">Introduction (GNU Compiler Collection (GCC) Internals)</a>.
+languages, are documented in a separate manual.  See <a href="../gccint/index.html#Top">Introduction</a>.
 
 <ul class="menu">
 <li><a accesskey="1" href="G_002b_002b-and-GCC.html#G_002b_002b-and-GCC">G++ and GCC</a>:      You can compile C or C++ programs. 
 <li><a accesskey="2" href="Standards.html#Standards">Standards</a>:        Language standards supported by GCC. 
-<li><a accesskey="3" href="Invoking-GCC.html#Invoking-GCC">Invoking GCC</a>:     Command options supported by <span class="samp">gcc</span>. 
+<li><a accesskey="3" href="Invoking-GCC.html#Invoking-GCC">Invoking GCC</a>:     Command options supported by `<samp><span class="samp">gcc</span></samp>'. 
 <li><a accesskey="4" href="C-Implementation.html#C-Implementation">C Implementation</a>:  How GCC implements the ISO C specification. 
 <li><a accesskey="5" href="C-Extensions.html#C-Extensions">C Extensions</a>:     GNU extensions to the C language family. 
 <li><a accesskey="6" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions">C++ Extensions</a>:   GNU extensions to the C++ language. 
 <li><a accesskey="7" href="Objective_002dC.html#Objective_002dC">Objective-C</a>:      GNU Objective-C runtime features. 
 <li><a accesskey="8" href="Compatibility.html#Compatibility">Compatibility</a>:    Binary Compatibility
-<li><a accesskey="9" href="Gcov.html#Gcov">Gcov</a>:             <span class="command">gcov</span>---a test coverage program. 
+<li><a accesskey="9" href="Gcov.html#Gcov">Gcov</a>:             <samp><span class="command">gcov</span></samp>---a test coverage program. 
 <li><a href="Trouble.html#Trouble">Trouble</a>:          If you have trouble using GCC. 
 <li><a href="Bugs.html#Bugs">Bugs</a>:             How, why and where to report bugs. 
 <li><a href="Service.html#Service">Service</a>:          How to find suppliers of support for GCC. 

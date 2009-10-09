@@ -3,7 +3,7 @@
 <title>Tracepoint Actions - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Set-Tracepoints.html#Set-Tracepoints" title="Set Tracepoints">
 <link rel="prev" href="Tracepoint-Passcounts.html#Tracepoint-Passcounts" title="Tracepoint Passcounts">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Tracepoint-Actions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Listing-Tracepoints.html#Listing-Tracepoints">Listing Tracepoints</a>,
+<a name="Tracepoint-Actions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Listing-Tracepoints.html#Listing-Tracepoints">Listing Tracepoints</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Tracepoint-Passcounts.html#Tracepoint-Passcounts">Tracepoint Passcounts</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Set-Tracepoints.html#Set-Tracepoints">Set Tracepoints</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">11.1.4 Tracepoint Action Lists</h4>
@@ -45,8 +47,8 @@ terminate the actions list with a line containing just <code>end</code>.  So
 far, the only defined actions are <code>collect</code> and
 <code>while-stepping</code>.
 
-     <p><a name="index-remove-actions-from-a-tracepoint-571"></a>To remove all actions from a tracepoint, type <span class="samp">actions </span><var>num</var>
-and follow it immediately with <span class="samp">end</span>.
+     <p><a name="index-remove-actions-from-a-tracepoint-571"></a>To remove all actions from a tracepoint, type `<samp><span class="samp">actions </span><var>num</var></samp>'
+and follow it immediately with `<samp><span class="samp">end</span></samp>'.
 
      <pre class="smallexample">          (gdb) <b>collect </b><var>data</var> // collect some data
           

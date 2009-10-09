@@ -3,7 +3,7 @@
 <title>Block Structure - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Program-Structure.html#Program-Structure" title="Program Structure">
 <link rel="prev" href="Nested-Procedures.html#Nested-Procedures" title="Nested Procedures">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Block-Structure"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Alternate-Entry-Points.html#Alternate-Entry-Points">Alternate Entry Points</a>,
+<a name="Block-Structure"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Alternate-Entry-Points.html#Alternate-Entry-Points">Alternate Entry Points</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Nested-Procedures.html#Nested-Procedures">Nested Procedures</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Program-Structure.html#Program-Structure">Program Structure</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">2.7 Block Structure</h3>
@@ -58,9 +60,9 @@ represents the procedure itself.
 However, dbx seems to not care, and GCC always sets desc to
 zero.
 
-   <p><a name="index-_002ebb-20"></a><a name="index-_002ebe-21"></a><a name="index-C_005fBLOCK-22"></a>For XCOFF, block scope is indicated with <code>C_BLOCK</code> symbols.  If the
-name of the symbol is <span class="samp">.bb</span>, then it is the beginning of the block;
-if the name of the symbol is <span class="samp">.be</span>; it is the end of the block.
+   <p><a name="index-g_t_002ebb-20"></a><a name="index-g_t_002ebe-21"></a><a name="index-C_005fBLOCK-22"></a>For XCOFF, block scope is indicated with <code>C_BLOCK</code> symbols.  If the
+name of the symbol is `<samp><span class="samp">.bb</span></samp>', then it is the beginning of the block;
+if the name of the symbol is `<samp><span class="samp">.be</span></samp>'; it is the end of the block.
 
    </body></html>
 

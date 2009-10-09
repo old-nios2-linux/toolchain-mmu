@@ -3,7 +3,7 @@
 <title>The Ctrl-C Message - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File_002dI_002fO-Remote-Protocol-Extension.html#File_002dI_002fO-Remote-Protocol-Extension" title="File-I/O Remote Protocol Extension">
 <link rel="prev" href="The-F-Reply-Packet.html#The-F-Reply-Packet" title="The F Reply Packet">
@@ -17,23 +17,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="The-Ctrl_002dC-Message"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Console-I_002fO.html#Console-I_002fO">Console I/O</a>,
+<a name="The-Ctrl-C-Message"></a>
+<a name="The-Ctrl_002dC-Message"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Console-I_002fO.html#Console-I_002fO">Console I/O</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="The-F-Reply-Packet.html#The-F-Reply-Packet">The F Reply Packet</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File_002dI_002fO-Remote-Protocol-Extension.html#File_002dI_002fO-Remote-Protocol-Extension">File-I/O Remote Protocol Extension</a>
-<hr><br>
+<hr>
 </div>
 
-<h4 class="subsection">D.10.5 The <span class="samp">Ctrl-C</span> Message</h4>
+<h4 class="subsection">D.10.5 The `<samp><span class="samp">Ctrl-C</span></samp>' Message</h4>
 
 <p><a name="index-ctrl_002dc-message_002c-in-file_002di_002fo-protocol-1804"></a>
-If the <span class="samp">Ctrl-C</span> flag is set in the <span class="sc">gdb</span>
+If the `<samp><span class="samp">Ctrl-C</span></samp>' flag is set in the <span class="sc">gdb</span>
 reply packet (see <a href="The-F-Reply-Packet.html#The-F-Reply-Packet">The F Reply Packet</a>),
 the target should behave as if it had
 gotten a break message.  The meaning for the target is &ldquo;system call

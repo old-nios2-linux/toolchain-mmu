@@ -3,7 +3,7 @@
 <title>Unnamed Fields - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Pragmas.html#Pragmas" title="Pragmas">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Unnamed-Fields"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Thread_002dLocal.html#Thread_002dLocal">Thread-Local</a>,
+<a name="Unnamed-Fields"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Thread_002dLocal.html#Thread_002dLocal">Thread-Local</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Pragmas.html#Pragmas">Pragmas</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.50 Unnamed struct/union fields within structs/unions</h3>
@@ -68,7 +70,7 @@ without names.  For example:
      } foo;
 </pre>
  <p>In this example, the user would be able to access members of the unnamed
-union with code like <span class="samp">foo.b</span>.  Note that only unnamed structs and
+union with code like `<samp><span class="samp">foo.b</span></samp>'.  Note that only unnamed structs and
 unions are allowed, you may not have, for example, an unnamed
 <code>int</code>.
 
@@ -82,16 +84,16 @@ For example, this structure:
        };
      } foo;
 </pre>
- <p>It is ambiguous which <code>a</code> is being referred to with <span class="samp">foo.a</span>. 
+ <p>It is ambiguous which <code>a</code> is being referred to with `<samp><span class="samp">foo.a</span></samp>'. 
 Such constructs are not supported and must be avoided.  In the future,
 such constructs may be detected and treated as compilation errors.
 
- <p><a name="index-fms_002dextensions-2502"></a>Unless <span class="option">-fms-extensions</span> is used, the unnamed field must be a
-structure or union definition without a tag (for example, <span class="samp">struct
-{ int a; };</span>).  If <span class="option">-fms-extensions</span> is used, the field may
-also be a definition with a tag such as <span class="samp">struct foo { int a;
-};</span>, a reference to a previously defined structure or union such as
-<span class="samp">struct foo;</span>, or a reference to a <code>typedef</code> name for a
+ <p><a name="index-fms_002dextensions-2502"></a>Unless <samp><span class="option">-fms-extensions</span></samp> is used, the unnamed field must be a
+structure or union definition without a tag (for example, `<samp><span class="samp">struct
+{ int a; };</span></samp>').  If <samp><span class="option">-fms-extensions</span></samp> is used, the field may
+also be a definition with a tag such as `<samp><span class="samp">struct foo { int a;
+};</span></samp>', a reference to a previously defined structure or union such as
+`<samp><span class="samp">struct foo;</span></samp>', or a reference to a <code>typedef</code> name for a
 previously defined structure or union type.
 
  </body></html>

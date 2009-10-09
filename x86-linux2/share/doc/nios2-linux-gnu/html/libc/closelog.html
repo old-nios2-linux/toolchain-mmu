@@ -3,7 +3,7 @@
 <title>closelog - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages" title="Submitting Syslog Messages">
 <link rel="prev" href="syslog_003b-vsyslog.html#syslog_003b-vsyslog" title="syslog; vsyslog">
@@ -17,23 +17,25 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="closelog"></a>Next:&nbsp;<a rel="next" accesskey="n" href="setlogmask.html#setlogmask">setlogmask</a>,
+<a name="closelog"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="setlogmask.html#setlogmask">setlogmask</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="syslog_003b-vsyslog.html#syslog_003b-vsyslog">syslog; vsyslog</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages">Submitting Syslog Messages</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">18.2.3 closelog</h4>
 
 <p>The symbols referred to in this section are declared in the file
-<span class="file">syslog.h</span>.
+<samp><span class="file">syslog.h</span></samp>.
 
 <!-- syslog.h -->
 <!-- BSD -->
@@ -41,7 +43,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submitting-Syslog-Messages.html#Submitt
 &mdash; Function: void <b>closelog</b> (<var>void</var>)<var><a name="index-closelog-2063"></a></var><br>
 <blockquote>
 <p><code>closelog</code> closes the current Syslog connection, if there is one. 
-This includes closing the <span class="file">dev/log</span> socket, if it is open. 
+This includes closing the <samp><span class="file">dev/log</span></samp> socket, if it is open. 
 <code>closelog</code> also sets the identification string for Syslog messages
 back to the default, if <code>openlog</code> was called with a non-NULL argument
 to <var>ident</var>.  The default identification string is the program name

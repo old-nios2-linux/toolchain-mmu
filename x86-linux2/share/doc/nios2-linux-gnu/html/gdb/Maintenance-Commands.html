@@ -3,7 +3,7 @@
 <title>Maintenance Commands - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Installing-GDB.html#Installing-GDB" title="Installing GDB">
 <link rel="next" href="Remote-Protocol.html#Remote-Protocol" title="Remote Protocol">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Maintenance-Commands"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Remote-Protocol.html#Remote-Protocol">Remote Protocol</a>,
+<a name="Maintenance-Commands"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Remote-Protocol.html#Remote-Protocol">Remote Protocol</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Installing-GDB.html#Installing-GDB">Installing GDB</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="appendix">Appendix C Maintenance Commands</h2>
@@ -44,7 +46,7 @@ messages, see <a href="Debugging-Output.html#Debugging-Output">Debugging Output<
 This command is useful for debugging the Agent Expression mechanism
 (see <a href="Agent-Expressions.html#Agent-Expressions">Agent Expressions</a>).
 
-     <p><a name="index-maint-info-breakpoints-1659"></a><br><dt><code><a name="maint-info-breakpoints"></a>maint info breakpoints</code><dd>Using the same format as <span class="samp">info breakpoints</span>, display both the
+     <p><a name="index-maint-info-breakpoints-1659"></a><br><dt><code><a name="maint-info-breakpoints"></a>maint info breakpoints</code><dd>Using the same format as `<samp><span class="samp">info breakpoints</span></samp>', display both the
 breakpoints you've set explicitly, and those <span class="sc">gdb</span> is using for
 internal purposes.  Internal breakpoints are shown with negative
 breakpoint numbers.  The type column identifies what kind of breakpoint
@@ -82,7 +84,7 @@ argument <var>replacement</var> says which newer command should be used in
 favor of the deprecated one; if it is given, <span class="sc">gdb</span> will mention
 the replacement as part of the warning.
 
-     <p><a name="index-maint-dump_002dme-1667"></a><br><dt><code>maint dump-me</code><dd><a name="index-_0040code_007bSIGQUIT_007d-signal_002c-dump-core-of-_0040value_007bGDBN_007d-1668"></a>Cause a fatal signal in the debugger and force it to dump its core. 
+     <p><a name="index-maint-dump_002dme-1667"></a><br><dt><code>maint dump-me</code><dd><a name="index-g_t_0040code_007bSIGQUIT_007d-signal_002c-dump-core-of-_0040value_007bGDBN_007d-1668"></a>Cause a fatal signal in the debugger and force it to dump its core. 
 This is supported only on systems which support aborting a program
 with the <code>SIGQUIT</code> signal.
 
@@ -109,7 +111,7 @@ used as the text of the error or warning message.
      <p><a name="index-maint-packet-1671"></a><br><dt><code>maint packet </code><var>text</var><dd>If <span class="sc">gdb</span> is talking to an inferior via the serial protocol,
 then this command sends the string <var>text</var> to the inferior, and
 displays the response packet.  <span class="sc">gdb</span> supplies the initial
-<span class="samp">$</span> character, the terminating <span class="samp">#</span> character, and the
+`<samp><span class="samp">$</span></samp>' character, the terminating `<samp><span class="samp">#</span></samp>' character, and the
 checksum.
 
      <p><a name="index-maint-print-architecture-1672"></a><br><dt><code>maint print architecture </code><span class="roman">[</span><var>file</var><span class="roman">]</span><dd>Print the entire architecture configuration.  The optional argument
@@ -138,7 +140,7 @@ checksum.
 the raw register cache; the command <code>maint print cooked-registers</code>
 includes the (cooked) value of all registers; and the command
 <code>maint print register-groups</code> includes the groups that each
-register is a member of.  See <a href="../gdbint/Registers.html#Registers">Registers (<span class="sc">gdb</span> Internals)</a>.
+register is a member of.  See <a href="../gdbint/Registers.html#Registers">Registers</a>.
 
      <p>These commands take an optional parameter, a file name to which to
 write the information.
@@ -196,7 +198,7 @@ data structures, including its flags and contained types.
      <p><a name="index-maint-set-dwarf2-max_002dcache_002dage-1688"></a><a name="index-maint-show-dwarf2-max_002dcache_002dage-1689"></a><br><dt><code>maint set dwarf2 max-cache-age</code><dt><code>maint show dwarf2 max-cache-age</code><dd>Control the DWARF 2 compilation unit cache.
 
      <p><a name="index-DWARF-2-compilation-units-cache-1690"></a>In object files with inter-compilation-unit references, such as those
-produced by the GCC option <span class="samp">-feliminate-dwarf2-dups</span>, the DWARF 2
+produced by the GCC option `<samp><span class="samp">-feliminate-dwarf2-dups</span></samp>', the DWARF 2
 reader needs to frequently refer to previously read compilation units. 
 This setting controls how long a compilation unit will remain in the
 cache if it is not referenced.  A higher limit means that cached
@@ -206,16 +208,16 @@ slow down <span class="sc">gdb</span> startup, but reduce memory consumption.
 
      <p><a name="index-maint-set-profile-1691"></a><a name="index-maint-show-profile-1692"></a><a name="index-profiling-GDB-1693"></a><br><dt><code>maint set profile</code><dt><code>maint show profile</code><dd>Control profiling of <span class="sc">gdb</span>.
 
-     <p>Profiling will be disabled until you use the <span class="samp">maint set profile</span>
+     <p>Profiling will be disabled until you use the `<samp><span class="samp">maint set profile</span></samp>'
 command to enable it.  When you enable profiling, the system will begin
 collecting timing and execution count data; when you disable profiling or
 exit <span class="sc">gdb</span>, the results will be written to a log file.  Remember that
 if you use profiling, <span class="sc">gdb</span> will overwrite the profiling log file
-(often called <span class="file">gmon.out</span>).  If you have a record of important profiling
-data in a <span class="file">gmon.out</span> file, be sure to move it to a safe location.
+(often called <samp><span class="file">gmon.out</span></samp>).  If you have a record of important profiling
+data in a <samp><span class="file">gmon.out</span></samp> file, be sure to move it to a safe location.
 
-     <p>Configuring with <span class="samp">--enable-profiling</span> arranges for <span class="sc">gdb</span> to be
-compiled with the <span class="samp">-pg</span> compiler option.
+     <p>Configuring with `<samp><span class="samp">--enable-profiling</span></samp>' arranges for <span class="sc">gdb</span> to be
+compiled with the `<samp><span class="samp">-pg</span></samp>' compiler option.
 
      <p><a name="index-maint-show_002ddebug_002dregs-1694"></a><a name="index-x86-hardware-debug-registers-1695"></a><br><dt><code>maint show-debug-regs</code><dd>Control whether to show variables that mirror the x86 hardware debug
 registers.  Use <code>ON</code> to enable, <code>OFF</code> to disable.  If
@@ -226,14 +228,14 @@ triggers a hardware-assisted breakpoint or watchpoint.
      <p><a name="index-maint-space-1696"></a><a name="index-memory-used-by-commands-1697"></a><br><dt><code>maint space</code><dd>Control whether to display memory usage for each command.  If set to a
 nonzero value, <span class="sc">gdb</span> will display how much memory each command
 took, following the command's own output.  This can also be requested
-by invoking <span class="sc">gdb</span> with the <span class="option">--statistics</span> command-line
+by invoking <span class="sc">gdb</span> with the <samp><span class="option">--statistics</span></samp> command-line
 switch (see <a href="Mode-Options.html#Mode-Options">Mode Options</a>).
 
      <p><a name="index-maint-time-1698"></a><a name="index-time-of-command-execution-1699"></a><br><dt><code>maint time</code><dd>Control whether to display the execution time for each command.  If
 set to a nonzero value, <span class="sc">gdb</span> will display how much time it
 took to execute each command, following the command's own output. 
 This can also be requested by invoking <span class="sc">gdb</span> with the
-<span class="option">--statistics</span> command-line switch (see <a href="Mode-Options.html#Mode-Options">Mode Options</a>).
+<samp><span class="option">--statistics</span></samp> command-line switch (see <a href="Mode-Options.html#Mode-Options">Mode Options</a>).
 
      <p><a name="index-maint-translate_002daddress-1700"></a><br><dt><code>maint translate-address </code><span class="roman">[</span><var>section</var><span class="roman">]</span> <var>addr</var><dd>Find the symbol stored at the location specified by the address
 <var>addr</var> and an optional section name <var>section</var>.  If found,

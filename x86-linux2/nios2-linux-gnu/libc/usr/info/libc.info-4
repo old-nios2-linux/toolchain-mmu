@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.8 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -8428,7 +8428,7 @@ replaced with six characters which make the whole string a unique file
 name.  Usually the template string is something like
 `/tmp/PREFIXXXXXXX', and each program uses a unique PREFIX.
 
-   *Note:* Because `mktemp' and `mkstemp' modify the template string,
+   *Note_* Because `mktemp' and `mkstemp' modify the template string,
 you _must not_ pass string constants to them.  String constants are
 normally in read-only storage, so your program would crash when
 `mktemp' or `mkstemp' tried to modify the string.  These functions are

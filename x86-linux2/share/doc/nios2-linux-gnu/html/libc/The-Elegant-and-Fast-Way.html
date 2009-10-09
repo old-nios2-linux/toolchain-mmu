@@ -3,7 +3,7 @@
 <title>The Elegant and Fast Way - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Locale-Information.html#Locale-Information" title="Locale Information">
 <link rel="prev" href="The-Lame-Way-to-Locale-Data.html#The-Lame-Way-to-Locale-Data" title="The Lame Way to Locale Data">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="The-Elegant-and-Fast-Way"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="The-Lame-Way-to-Locale-Data.html#The-Lame-Way-to-Locale-Data">The Lame Way to Locale Data</a>,
+<a name="The-Elegant-and-Fast-Way"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="The-Lame-Way-to-Locale-Data.html#The-Lame-Way-to-Locale-Data">The Lame Way to Locale Data</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Locale-Information.html#Locale-Information">Locale Information</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">7.6.2 Pinpoint Access to Locale Data</h4>
@@ -51,8 +53,8 @@ fast and it is not a problem to call this function multiple times.
 formatting information, information from the
 <code>LC_TIME</code> and <code>LC_MESSAGES</code> categories is available.
 
-        <p><a name="index-langinfo_002eh-714"></a>The type <code>nl_type</code> is defined in <span class="file">nl_types.h</span>.  The argument
-<var>item</var> is a numeric value defined in the header <span class="file">langinfo.h</span>. 
+        <p><a name="index-langinfo_002eh-714"></a>The type <code>nl_type</code> is defined in <samp><span class="file">nl_types.h</span></samp>.  The argument
+<var>item</var> is a numeric value defined in the header <samp><span class="file">langinfo.h</span></samp>. 
 The X/Open standard defines the following values:
 
           <dl>
@@ -191,7 +193,7 @@ to a yes/no question.  What is said for <code>YESSTR</code> is also true here.
 should be used. 
 </dl>
 
-        <p>The file <span class="file">langinfo.h</span> defines a lot more symbols but none of them
+        <p>The file <samp><span class="file">langinfo.h</span></samp> defines a lot more symbols but none of them
 is official.  Using them is not portable, and the format of the
 return values might change.  Therefore we recommended you not use
 them.

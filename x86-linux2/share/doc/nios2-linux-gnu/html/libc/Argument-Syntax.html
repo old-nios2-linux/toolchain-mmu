@@ -3,7 +3,7 @@
 <title>Argument Syntax - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Program-Arguments.html#Program-Arguments" title="Program Arguments">
 <link rel="next" href="Parsing-Program-Arguments.html#Parsing-Program-Arguments" title="Parsing Program Arguments">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Argument-Syntax"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Parsing-Program-Arguments.html#Parsing-Program-Arguments">Parsing Program Arguments</a>,
+<a name="Argument-Syntax"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Parsing-Program-Arguments.html#Parsing-Program-Arguments">Parsing Program Arguments</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Program-Arguments.html#Program-Arguments">Program Arguments</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">25.1.1 Program Argument Syntax Conventions</h4>
@@ -36,21 +38,21 @@ POSIX recommends these conventions for command line arguments.
 it easy to implement them.
 
      <ul>
-<li>Arguments are options if they begin with a hyphen delimiter (<span class="samp">-</span>).
+<li>Arguments are options if they begin with a hyphen delimiter (`<samp><span class="samp">-</span></samp>').
 
      <li>Multiple options may follow a hyphen delimiter in a single token if
-the options do not take arguments.  Thus, <span class="samp">-abc</span> is equivalent to
-<span class="samp">-a -b -c</span>.
+the options do not take arguments.  Thus, `<samp><span class="samp">-abc</span></samp>' is equivalent to
+`<samp><span class="samp">-a -b -c</span></samp>'.
 
      <li>Option names are single alphanumeric characters (as for <code>isalnum</code>;
 see <a href="Classification-of-Characters.html#Classification-of-Characters">Classification of Characters</a>).
 
-     <li>Certain options require an argument.  For example, the <span class="samp">-o</span> command
+     <li>Certain options require an argument.  For example, the `<samp><span class="samp">-o</span></samp>' command
 of the <code>ld</code> command requires an argument&mdash;an output file name.
 
      <li>An option and its argument may or may not appear as separate tokens.  (In
 other words, the whitespace separating them is optional.)  Thus,
-<span class="samp">-o&nbsp;foo</span><!-- /@w --> and <span class="samp">-ofoo</span> are equivalent.
+`<samp><span class="samp">-o&nbsp;foo</span></samp>'<!-- /@w --> and `<samp><span class="samp">-ofoo</span></samp>' are equivalent.
 
      <li>Options typically precede other non-option arguments.
 
@@ -63,7 +65,7 @@ non-option arguments.  They do this by reordering the elements of the
 it, define the <code>_POSIX_OPTION_ORDER</code> environment variable. 
 See <a href="Standard-Environment.html#Standard-Environment">Standard Environment</a>.
 
-     <li>The argument <span class="samp">--</span> terminates all options; any following arguments
+     <li>The argument `<samp><span class="samp">--</span></samp>' terminates all options; any following arguments
 are treated as non-option arguments, even if they begin with a hyphen.
 
      <li>A token consisting of a single hyphen character is interpreted as an
@@ -75,13 +77,13 @@ interpretation is left up to the particular application program.
 </ul>
 
    <p><a name="index-long_002dnamed-options-3018"></a>GNU adds <dfn>long options</dfn> to these conventions.  Long options consist
-of <span class="samp">--</span> followed by a name made of alphanumeric characters and
+of `<samp><span class="samp">--</span></samp>' followed by a name made of alphanumeric characters and
 dashes.  Option names are typically one to three words long, with
 hyphens to separate words.  Users can abbreviate the option names as
 long as the abbreviations are unique.
 
    <p>To specify an argument for a long option, write
-<span class="samp">--</span><var>name</var><span class="samp">=</span><var>value</var>.  This syntax enables a long option to
+`<samp><span class="samp">--</span><var>name</var><span class="samp">=</span><var>value</var></samp>'.  This syntax enables a long option to
 accept an argument that is itself optional.
 
    <p>Eventually, the GNU system will provide completion for long option names

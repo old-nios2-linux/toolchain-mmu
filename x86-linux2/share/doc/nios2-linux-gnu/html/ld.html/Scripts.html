@@ -3,7 +3,7 @@
 <title>Scripts - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Invocation.html#Invocation" title="Invocation">
 <link rel="next" href="Machine-Dependent.html#Machine-Dependent" title="Machine Dependent">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Scripts"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Machine-Dependent.html#Machine-Dependent">Machine Dependent</a>,
+<a name="Scripts"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Machine-Dependent.html#Machine-Dependent">Machine Dependent</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Invocation.html#Invocation">Invocation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">3 Linker Scripts</h2>
@@ -43,11 +45,11 @@ described below.
 
    <p>The linker always uses a linker script.  If you do not supply one
 yourself, the linker will use a default script that is compiled into the
-linker executable.  You can use the <span class="samp">--verbose</span> command line option
+linker executable.  You can use the `<samp><span class="samp">--verbose</span></samp>' command line option
 to display the default linker script.  Certain command line options,
-such as <span class="samp">-r</span> or <span class="samp">-N</span>, will affect the default linker script.
+such as `<samp><span class="samp">-r</span></samp>' or `<samp><span class="samp">-N</span></samp>', will affect the default linker script.
 
-   <p>You may supply your own linker script by using the <span class="samp">-T</span> command
+   <p>You may supply your own linker script by using the `<samp><span class="samp">-T</span></samp>' command
 line option.  When you do this, your linker script will replace the
 default linker script.
 

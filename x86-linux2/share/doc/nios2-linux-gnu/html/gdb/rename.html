@@ -3,7 +3,7 @@
 <title>rename - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="List-of-Supported-Calls.html#List-of-Supported-Calls" title="List of Supported Calls">
 <link rel="prev" href="lseek.html#lseek" title="lseek">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="rename"></a>Next:&nbsp;<a rel="next" accesskey="n" href="unlink.html#unlink">unlink</a>,
+<a name="rename"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="unlink.html#unlink">unlink</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="lseek.html#lseek">lseek</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="List-of-Supported-Calls.html#List-of-Supported-Calls">List of Supported Calls</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="unnumberedsubsubsec">rename</h5>
@@ -37,7 +39,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="List-of-Supported-Calls.html#List-of-Su
 <dt>Synopsis:<dd>
      <pre class="smallexample">          int rename(const char *oldpath, const char *newpath);
      </pre>
-     <br><dt>Request:<dd><span class="samp">Frename,</span><var>oldpathptr</var><span class="samp">/</span><var>len</var><span class="samp">,</span><var>newpathptr</var><span class="samp">/</span><var>len</var>
+     <br><dt>Request:<dd>`<samp><span class="samp">Frename,</span><var>oldpathptr</var><span class="samp">/</span><var>len</var><span class="samp">,</span><var>newpathptr</var><span class="samp">/</span><var>len</var></samp>'
 
      <br><dt>Return value:<dd>On success, zero is returned.  On error, -1 is returned.
 

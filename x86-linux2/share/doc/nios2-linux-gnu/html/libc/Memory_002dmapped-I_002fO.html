@@ -3,7 +3,7 @@
 <title>Memory-mapped I/O - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="Scatter_002dGather.html#Scatter_002dGather" title="Scatter-Gather">
@@ -17,17 +17,20 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Memory_002dmapped-I_002fO"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Waiting-for-I_002fO.html#Waiting-for-I_002fO">Waiting for I/O</a>,
+<a name="Memory-mapped-I%2fO"></a>
+<a name="Memory_002dmapped-I_002fO"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Waiting-for-I_002fO.html#Waiting-for-I_002fO">Waiting for I/O</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Scatter_002dGather.html#Scatter_002dGather">Scatter-Gather</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.7 Memory-mapped I/O</h3>
@@ -55,10 +58,10 @@ available.
 for mapping must be page-aligned, and length values will be rounded up. 
 To determine the size of a page the machine uses one should use
 
-   <p><a name="index-_005fSC_005fPAGESIZE-1253"></a>
+   <p><a name="index-g_t_005fSC_005fPAGESIZE-1253"></a>
 <pre class="smallexample">     size_t page_size = (size_t) sysconf (_SC_PAGESIZE);
 </pre>
-   <p class="noindent">These functions are declared in <span class="file">sys/mman.h</span>.
+   <p class="noindent">These functions are declared in <samp><span class="file">sys/mman.h</span></samp>.
 
 <!-- sys/mman.h -->
 <!-- POSIX -->
@@ -286,7 +289,7 @@ optional optimizations one should not rely on this function.
 only allow sequential access and do not fit into the mapping abstraction. 
 In addition, some regular files may not be mmapable, and older kernels may
 not support mapping at all.  Thus, programs using <code>mmap</code> should
-have a fallback method to use should it fail. See <a href="../standards/Mmap.html#Mmap">Mmap (GNU Coding Standards)</a>.
+have a fallback method to use should it fail. See <a href="../standards/Mmap.html#Mmap">Mmap</a>.
 
 <!-- sys/mman.h -->
 <!-- POSIX -->

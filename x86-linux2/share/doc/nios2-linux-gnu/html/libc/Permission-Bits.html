@@ -3,7 +3,7 @@
 <title>Permission Bits - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-Attributes.html#File-Attributes" title="File Attributes">
 <link rel="prev" href="File-Owner.html#File-Owner" title="File Owner">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Permission-Bits"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Access-Permission.html#Access-Permission">Access Permission</a>,
+<a name="Permission-Bits"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Access-Permission.html#Access-Permission">Access Permission</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="File-Owner.html#File-Owner">File Owner</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-Attributes.html#File-Attributes">File Attributes</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">14.9.5 The Mode Bits for Access Permission</h4>
@@ -39,7 +41,7 @@ permission bits, which control who can read or write the file.
 See <a href="Testing-File-Type.html#Testing-File-Type">Testing File Type</a>, for information about the file type code.
 
    <p>All of the symbols listed in this section are defined in the header file
-<span class="file">sys/stat.h</span>. 
+<samp><span class="file">sys/stat.h</span></samp>. 
 <a name="index-sys_002fstat_002eh-1537"></a>
 <a name="index-file-permission-bits-1538"></a>These symbolic constants are defined for the file mode bits that control
 access permission for the file:
@@ -70,7 +72,7 @@ synonym provided for BSD compatibility.
 
      <!-- sys/stat.h -->
 <!-- POSIX.1 -->
-<br><dt><code>S_IRWXU</code><dd><a name="index-S_005fIRWXU-1545"></a>This is equivalent to <span class="samp">(S_IRUSR | S_IWUSR | S_IXUSR)</span>.
+<br><dt><code>S_IRWXU</code><dd><a name="index-S_005fIRWXU-1545"></a>This is equivalent to `<samp><span class="samp">(S_IRUSR | S_IWUSR | S_IXUSR)</span></samp>'.
 
      <!-- sys/stat.h -->
 <!-- POSIX.1 -->
@@ -87,7 +89,7 @@ Usually 010.
 
      <!-- sys/stat.h -->
 <!-- POSIX.1 -->
-<br><dt><code>S_IRWXG</code><dd><a name="index-S_005fIRWXG-1549"></a>This is equivalent to <span class="samp">(S_IRGRP | S_IWGRP | S_IXGRP)</span>.
+<br><dt><code>S_IRWXG</code><dd><a name="index-S_005fIRWXG-1549"></a>This is equivalent to `<samp><span class="samp">(S_IRGRP | S_IWGRP | S_IXGRP)</span></samp>'.
 
      <!-- sys/stat.h -->
 <!-- POSIX.1 -->
@@ -103,7 +105,7 @@ Usually 010.
 
      <!-- sys/stat.h -->
 <!-- POSIX.1 -->
-<br><dt><code>S_IRWXO</code><dd><a name="index-S_005fIRWXO-1553"></a>This is equivalent to <span class="samp">(S_IROTH | S_IWOTH | S_IXOTH)</span>.
+<br><dt><code>S_IRWXO</code><dd><a name="index-S_005fIRWXO-1553"></a>This is equivalent to `<samp><span class="samp">(S_IROTH | S_IWOTH | S_IXOTH)</span></samp>'.
 
      <!-- sys/stat.h -->
 <!-- POSIX -->
@@ -127,7 +129,7 @@ applies&mdash;you must have both write permission for the directory and own
 the file you want to delete.  The one exception is that the owner of the
 directory can delete any file in the directory, no matter who owns it
 (provided the owner has given himself write permission for the
-directory).  This is commonly used for the <span class="file">/tmp</span> directory, where
+directory).  This is commonly used for the <samp><span class="file">/tmp</span></samp> directory, where
 anyone may create files but not delete files created by other users.
 
      <p>Originally the sticky bit on an executable file modified the swapping

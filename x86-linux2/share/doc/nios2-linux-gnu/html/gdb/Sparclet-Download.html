@@ -3,7 +3,7 @@
 <title>Sparclet Download - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Sparclet.html#Sparclet" title="Sparclet">
 <link rel="prev" href="Sparclet-Connection.html#Sparclet-Connection" title="Sparclet Connection">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Sparclet-Download"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Sparclet-Execution.html#Sparclet-Execution">Sparclet Execution</a>,
+<a name="Sparclet-Download"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Sparclet-Execution.html#Sparclet-Execution">Sparclet Execution</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Sparclet-Connection.html#Sparclet-Connection">Sparclet Connection</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Sparclet.html#Sparclet">Sparclet</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="subsubsection">19.3.8.3 Sparclet Download</h5>
@@ -42,7 +44,7 @@ address.  You can use <code>objdump</code> to find out what this value is.  The 
 offset is an offset which is added to the VMA (virtual memory address)
 of each of the file's sections. 
 For instance, if the program
-<span class="file">prog</span> was linked to text address 0x1201000, with data at 0x12010160
+<samp><span class="file">prog</span></samp> was linked to text address 0x1201000, with data at 0x12010160
 and bss at 0x12010170, in <span class="sc">gdb</span>, type:
 
 <pre class="smallexample">     (gdbslet) load prog 0x12010000

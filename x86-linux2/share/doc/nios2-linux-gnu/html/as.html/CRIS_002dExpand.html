@@ -3,7 +3,7 @@
 <title>CRIS-Expand - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="CRIS_002dDependent.html#CRIS_002dDependent" title="CRIS-Dependent">
 <link rel="prev" href="CRIS_002dOpts.html#CRIS_002dOpts" title="CRIS-Opts">
@@ -17,23 +17,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="CRIS_002dExpand"></a>Next:&nbsp;<a rel="next" accesskey="n" href="CRIS_002dSymbols.html#CRIS_002dSymbols">CRIS-Symbols</a>,
+<a name="CRIS-Expand"></a>
+<a name="CRIS_002dExpand"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="CRIS_002dSymbols.html#CRIS_002dSymbols">CRIS-Symbols</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="CRIS_002dOpts.html#CRIS_002dOpts">CRIS-Opts</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="CRIS_002dDependent.html#CRIS_002dDependent">CRIS-Dependent</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">8.6.2 Instruction expansion</h4>
 
 <p><a name="index-instruction-expansion_002c-CRIS-680"></a><a name="index-CRIS-instruction-expansion-681"></a><code>as</code> will silently choose an instruction that fits
-the operand size for <span class="samp">[register+constant]</span> operands.  For
+the operand size for `<samp><span class="samp">[register+constant]</span></samp>' operands.  For
 example, the offset <code>127</code> in <code>move.d [r3+127],r4</code> fits
 in an instruction using a signed-byte offset.  Similarly,
 <code>move.d [r2+32767],r1</code> will generate an instruction using a

@@ -3,7 +3,7 @@
 <title>Complex Numbers - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Arithmetic.html#Arithmetic" title="Arithmetic">
 <link rel="prev" href="Arithmetic-Functions.html#Arithmetic-Functions" title="Arithmetic Functions">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Complex-Numbers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Operations-on-Complex.html#Operations-on-Complex">Operations on Complex</a>,
+<a name="Complex-Numbers"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Operations-on-Complex.html#Operations-on-Complex">Operations on Complex</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Arithmetic-Functions.html#Arithmetic-Functions">Arithmetic Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">20.9 Complex Numbers</h3>
@@ -35,17 +37,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic.html#Arithmetic">Arithmetic<
 <p><a name="index-complex_002eh-2520"></a><a name="index-complex-numbers-2521"></a>
 ISO&nbsp;C99<!-- /@w --> introduces support for complex numbers in C.  This is done
 with a new type qualifier, <code>complex</code>.  It is a keyword if and only
-if <span class="file">complex.h</span> has been included.  There are three complex types,
+if <samp><span class="file">complex.h</span></samp> has been included.  There are three complex types,
 corresponding to the three real types:  <code>float complex</code>,
 <code>double complex</code>, and <code>long double complex</code>.
 
    <p>To construct complex numbers you need a way to indicate the imaginary
 part of a number.  There is no standard notation for an imaginary
-floating point constant.  Instead, <span class="file">complex.h</span> defines two macros
+floating point constant.  Instead, <samp><span class="file">complex.h</span></samp> defines two macros
 that can be used to create complex numbers.
 
 <div class="defun">
-&mdash; Macro: const float complex <b>_Complex_I</b><var><a name="index-_005fComplex_005fI-2522"></a></var><br>
+&mdash; Macro: const float complex <b>_Complex_I</b><var><a name="index-g_t_005fComplex_005fI-2522"></a></var><br>
 <blockquote><p>This macro is a representation of the complex number &ldquo;0+1i&rdquo;. 
 Multiplying a real floating-point value by <code>_Complex_I</code> gives a
 complex number whose value is purely imaginary.  You can use this to
@@ -58,7 +60,7 @@ the type of that value is <code>complex</code>.
 </p></blockquote></div>
 
 <!-- Put this back in when gcc supports _Imaginary_I.  It's too confusing. -->
-<p class="noindent"><code>_Complex_I</code> is a bit of a mouthful.  <span class="file">complex.h</span> also defines
+<p class="noindent"><code>_Complex_I</code> is a bit of a mouthful.  <samp><span class="file">complex.h</span></samp> also defines
 a shorter name for the same constant.
 
 <div class="defun">

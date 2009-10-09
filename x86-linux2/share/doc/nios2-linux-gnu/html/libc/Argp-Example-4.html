@@ -3,7 +3,7 @@
 <title>Argp Example 4 - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Argp-Examples.html#Argp-Examples" title="Argp Examples">
 <link rel="prev" href="Argp-Example-3.html#Argp-Example-3" title="Argp Example 3">
@@ -16,22 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Argp-Example-4"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Argp-Example-3.html#Argp-Example-3">Argp Example 3</a>,
+<a name="Argp-Example-4"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Argp-Example-3.html#Argp-Example-3">Argp Example 3</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Argp-Examples.html#Argp-Examples">Argp Examples</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="subsubsection">25.3.11.4 A Program Using Multiple Combined Argp Parsers</h5>
 
 <p>This program uses the same features as example 3, but has more options,
-and presents more structure in the <span class="samp">--help</span> output.  It also
+and presents more structure in the `<samp><span class="samp">--help</span></samp>' output.  It also
 illustrates how you can `steal' the remainder of the input arguments
 past a certain point for programs that accept a list of items.  It also
 illustrates the <var>key</var> value <code>ARGP_KEY_NO_ARGS</code>, which is only
@@ -121,9 +123,9 @@ current locale.
      {
        char *arg1;                   /* <var>arg1</var> */
        char **strings;               /* <span class="roman">[</span><var>string</var><span class="roman">...]</span> */
-       int silent, verbose, abort;   /* <span class="roman">-s, -v, --abort</span> */
-       char *output_file;            /* <var>file</var><span class="roman"> arg to --output</span> */
-       int repeat_count;             /* <var>count</var><span class="roman"> arg to --repeat</span> */
+       int silent, verbose, abort;   /* <span class="roman">`<samp>-s</samp>', `<samp>-v</samp>', `<samp>--abort</samp>'</span> */
+       char *output_file;            /* <var>file</var><span class="roman"> arg to `<samp>--output</samp>'</span> */
+       int repeat_count;             /* <var>count</var><span class="roman"> arg to `<samp>--repeat</samp>'</span> */
      };
      
      /* <span class="roman">Parse a single option.</span> */

@@ -3,7 +3,7 @@
 <title>Processes - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Running.html#Running" title="Running">
 <link rel="prev" href="Threads.html#Threads" title="Threads">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Processes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Checkpoint_002fRestart.html#Checkpoint_002fRestart">Checkpoint/Restart</a>,
+<a name="Processes"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Checkpoint_002fRestart.html#Checkpoint_002fRestart">Checkpoint/Restart</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Threads.html#Threads">Threads</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Running.html#Running">Running</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">4.10 Debugging Programs with Multiple Processes</h3>
@@ -117,7 +119,7 @@ position (program counter) of the process.
 
      <p><a name="index-fork-_0040var_007bfork_002did_007d-163"></a><br><dt><code>fork </code><var>fork-id</var><dd>Make fork number <var>fork-id</var> the current process.  The argument
 <var>fork-id</var> is the internal fork number assigned by <span class="sc">gdb</span>,
-as shown in the first field of the <span class="samp">info forks</span> display.
+as shown in the first field of the `<samp><span class="samp">info forks</span></samp>' display.
 
    </dl>
 

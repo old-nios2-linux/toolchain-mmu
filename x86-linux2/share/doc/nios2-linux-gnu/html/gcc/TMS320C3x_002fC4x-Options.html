@@ -3,7 +3,7 @@
 <title>TMS320C3x/C4x Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="System-V-Options.html#System-V-Options" title="System V Options">
@@ -38,29 +38,32 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="TMS320C3x_002fC4x-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="V850-Options.html#V850-Options">V850 Options</a>,
+<a name="TMS320C3x%2fC4x-Options"></a>
+<a name="TMS320C3x_002fC4x-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="V850-Options.html#V850-Options">V850 Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="System-V-Options.html#System-V-Options">System V Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.17.33 TMS320C3x/C4x Options</h4>
 
 <p><a name="index-TMS320C3x_002fC4x-Options-1575"></a>
-These <span class="samp">-m</span> options are defined for TMS320C3x/C4x implementations:
+These `<samp><span class="samp">-m</span></samp>' options are defined for TMS320C3x/C4x implementations:
 
      <dl>
 <dt><code>-mcpu=</code><var>cpu_type</var><dd><a name="index-mcpu-1576"></a>Set the instruction set, register set, and instruction scheduling
 parameters for machine type <var>cpu_type</var>.  Supported values for
-<var>cpu_type</var> are <span class="samp">c30</span>, <span class="samp">c31</span>, <span class="samp">c32</span>, <span class="samp">c40</span>, and
-<span class="samp">c44</span>.  The default is <span class="samp">c40</span> to generate code for the
+<var>cpu_type</var> are `<samp><span class="samp">c30</span></samp>', `<samp><span class="samp">c31</span></samp>', `<samp><span class="samp">c32</span></samp>', `<samp><span class="samp">c40</span></samp>', and
+`<samp><span class="samp">c44</span></samp>'.  The default is `<samp><span class="samp">c40</span></samp>' to generate code for the
 TMS320C40.
 
      <br><dt><code>-mbig-memory</code><dt><code>-mbig</code><dt><code>-msmall-memory</code><dt><code>-msmall</code><dd><a name="index-mbig_002dmemory-1577"></a><a name="index-mbig-1578"></a><a name="index-msmall_002dmemory-1579"></a><a name="index-msmall-1580"></a>Generates code for the big or small memory model.  The small memory
@@ -92,7 +95,7 @@ an object library.
      <br><dt><code>-mmpyi</code><dt><code>-mno-mpyi</code><dd><a name="index-mmpyi-1587"></a><a name="index-mno_002dmpyi-1588"></a>For the C3x use the 24-bit MPYI instruction for integer multiplies
 instead of a library call to guarantee 32-bit results.  Note that if one
 of the operands is a constant, then the multiplication will be performed
-using shifts and adds.  If the <span class="option">-mmpyi</span> option is not specified for the C3x,
+using shifts and adds.  If the <samp><span class="option">-mmpyi</span></samp> option is not specified for the C3x,
 then squaring operations are performed inline instead of a library call.
 
      <br><dt><code>-mfast-fix</code><dt><code>-mno-fast-fix</code><dd><a name="index-mfast_002dfix-1589"></a><a name="index-mno_002dfast_002dfix-1590"></a>The C3x/C4x FIX instruction to convert a floating point value to an
@@ -108,7 +111,7 @@ instruction for zero overhead looping.  The RPTB construct is only used
 for innermost loops that do not call functions or jump across the loop
 boundaries.  There is no advantage having nested RPTB loops due to the
 overhead required to save and restore the RC, RS, and RE registers. 
-This is enabled by default with <span class="option">-O2</span>.
+This is enabled by default with <samp><span class="option">-O2</span></samp>.
 
      <br><dt><code>-mrpts=</code><var>count</var><dt><code>-mno-rpts</code><dd><a name="index-mrpts-1593"></a><a name="index-mno_002drpts-1594"></a>Enable (disable) the use of the single instruction repeat instruction
 RPTS.  If a repeat block contains a single instruction, and the loop
@@ -136,10 +139,10 @@ By default, arguments are passed in registers where possible rather
 than by pushing arguments on to the stack.
 
      <br><dt><code>-mparallel-insns</code><dt><code>-mno-parallel-insns</code><dd><a name="index-mparallel_002dinsns-1600"></a><a name="index-mno_002dparallel_002dinsns-1601"></a>Allow the generation of parallel instructions.  This is enabled by
-default with <span class="option">-O2</span>.
+default with <samp><span class="option">-O2</span></samp>.
 
      <br><dt><code>-mparallel-mpy</code><dt><code>-mno-parallel-mpy</code><dd><a name="index-mparallel_002dmpy-1602"></a><a name="index-mno_002dparallel_002dmpy-1603"></a>Allow the generation of MPY||ADD and MPY||SUB parallel instructions,
-provided <span class="option">-mparallel-insns</span> is also specified.  These instructions have
+provided <samp><span class="option">-mparallel-insns</span></samp> is also specified.  These instructions have
 tight register constraints which can pessimize the code generation
 of large functions.
 

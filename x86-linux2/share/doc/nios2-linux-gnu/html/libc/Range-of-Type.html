@@ -3,7 +3,7 @@
 <title>Range of Type - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data-Type-Measurements.html#Data-Type-Measurements" title="Data Type Measurements">
 <link rel="prev" href="Width-of-Type.html#Width-of-Type" title="Width of Type">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Range-of-Type"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Floating-Type-Macros.html#Floating-Type-Macros">Floating Type Macros</a>,
+<a name="Range-of-Type"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Floating-Type-Macros.html#Floating-Type-Macros">Floating Type Macros</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Width-of-Type.html#Width-of-Type">Width of Type</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data-Type-Measurements.html#Data-Type-Measurements">Data Type Measurements</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">A.5.2 Range of an Integer Type</h4>
@@ -36,7 +38,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Data-Type-Measurements.html#Data-Type-M
 Suppose you need to store an integer value which can range from zero to
 one million.  Which is the smallest type you can use?  There is no
 general rule; it depends on the C compiler and target machine.  You can
-use the <span class="samp">MIN</span> and <span class="samp">MAX</span> macros in <span class="file">limits.h</span> to determine
+use the `<samp><span class="samp">MIN</span></samp>' and `<samp><span class="samp">MAX</span></samp>' macros in <samp><span class="file">limits.h</span></samp> to determine
 which type will work.
 
    <p>Each signed integer type has a pair of macros which give the smallest
@@ -45,8 +47,8 @@ such macro, for the maximum value; the minimum value is, of course,
 zero.
 
    <p>The values of these macros are all integer constant expressions.  The
-<span class="samp">MAX</span> and <span class="samp">MIN</span> macros for <code>char</code> and <code>short&nbsp;int</code><!-- /@w --> types have values of type <code>int</code>.  The <span class="samp">MAX</span> and
-<span class="samp">MIN</span> macros for the other types have values of the same type
+`<samp><span class="samp">MAX</span></samp>' and `<samp><span class="samp">MIN</span></samp>' macros for <code>char</code> and <code>short&nbsp;int</code><!-- /@w --> types have values of type <code>int</code>.  The `<samp><span class="samp">MAX</span></samp>' and
+`<samp><span class="samp">MIN</span></samp>' macros for the other types have values of the same type
 described by the macro&mdash;thus, <code>ULONG_MAX</code> has type
 <code>unsigned&nbsp;long&nbsp;int</code><!-- /@w -->.
 
@@ -143,7 +145,7 @@ This is the maximum value that can be represented by a <code>wchar_t</code>.
 See <a href="Extended-Char-Intro.html#Extended-Char-Intro">Extended Char Intro</a>. 
 </dl>
 
-   <p>The header file <span class="file">limits.h</span> also defines some additional constants
+   <p>The header file <samp><span class="file">limits.h</span></samp> also defines some additional constants
 that parameterize various operating system and file system limits.  These
 constants are described in <a href="System-Configuration.html#System-Configuration">System Configuration</a>.
 

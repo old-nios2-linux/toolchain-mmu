@@ -3,7 +3,7 @@
 <title>Search Path - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Header-Files.html#Header-Files" title="Header Files">
 <link rel="prev" href="Include-Operation.html#Include-Operation" title="Include Operation">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,17 +41,19 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Search-Path"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Once_002dOnly-Headers.html#Once_002dOnly-Headers">Once-Only Headers</a>,
+<a name="Search-Path"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Once_002dOnly-Headers.html#Once_002dOnly-Headers">Once-Only Headers</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Include-Operation.html#Include-Operation">Include Operation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Header-Files.html#Header-Files">Header Files</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">2.3 Search Path</h3>
@@ -65,16 +67,16 @@ requested with <code>#include&nbsp;&lt;</code><var>file</var><code>&gt;<!-- /@w 
      /usr/<var>target</var>/include
      /usr/include
 </pre>
-   <p>For C++ programs, it will also look in <span class="file">/usr/include/g++-v3</span>,
+   <p>For C++ programs, it will also look in <samp><span class="file">/usr/include/g++-v3</span></samp>,
 first.  In the above, <var>target</var> is the canonical name of the system
 GCC was configured to compile code for; often but not always the same as
 the canonical name of the system it runs on.  <var>version</var> is the
 version of GCC in use.
 
-   <p>You can add to this list with the <span class="option">-I</span><var>dir</var> command line
-option.  All the directories named by <span class="option">-I</span> are searched, in
+   <p>You can add to this list with the <samp><span class="option">-I</span><var>dir</var></samp> command line
+option.  All the directories named by <samp><span class="option">-I</span></samp> are searched, in
 left-to-right order, <em>before</em> the default directories.  The only
-exception is when <span class="file">dir</span> is already searched by default.  In
+exception is when <samp><span class="file">dir</span></samp> is already searched by default.  In
 this case, the option is ignored and the search order for system
 directories remains unchanged.
 
@@ -84,40 +86,40 @@ Thus, it is possible for a directory to occur twice in the final search
 chain if it was specified in both the quote and bracket chains.
 
    <p>You can prevent GCC from searching any of the default directories with
-the <span class="option">-nostdinc</span> option.  This is useful when you are compiling an
+the <samp><span class="option">-nostdinc</span></samp> option.  This is useful when you are compiling an
 operating system kernel or some other program that does not use the
 standard C library facilities, or the standard C library itself. 
-<span class="option">-I</span> options are not ignored as described above when
-<span class="option">-nostdinc</span> is in effect.
+<samp><span class="option">-I</span></samp> options are not ignored as described above when
+<samp><span class="option">-nostdinc</span></samp> is in effect.
 
    <p>GCC looks for headers requested with <code>#include&nbsp;"</code><var>file</var><code>"<!-- /@w --></code>
 first in the directory containing the current file, then in the
-directories as specified by <span class="option">-iquote</span> options, then in the same
+directories as specified by <samp><span class="option">-iquote</span></samp> options, then in the same
 places it would have looked for a header requested with angle
-brackets.  For example, if <span class="file">/usr/include/sys/stat.h</span> contains
-<code>#include&nbsp;"types.h"<!-- /@w --></code>, GCC looks for <span class="file">types.h</span> first in
-<span class="file">/usr/include/sys</span>, then in its usual search path.
+brackets.  For example, if <samp><span class="file">/usr/include/sys/stat.h</span></samp> contains
+<code>#include&nbsp;"types.h"<!-- /@w --></code>, GCC looks for <samp><span class="file">types.h</span></samp> first in
+<samp><span class="file">/usr/include/sys</span></samp>, then in its usual search path.
 
-   <p><span class="samp">#line</span> (see <a href="Line-Control.html#Line-Control">Line Control</a>) does not change GCC's idea of the
+   <p>`<samp><span class="samp">#line</span></samp>' (see <a href="Line-Control.html#Line-Control">Line Control</a>) does not change GCC's idea of the
 directory containing the current file.
 
-   <p>You may put <span class="option">-I-</span> at any point in your list of <span class="option">-I</span> options. 
+   <p>You may put <samp><span class="option">-I-</span></samp> at any point in your list of <samp><span class="option">-I</span></samp> options. 
 This has two effects.  First, directories appearing before the
-<span class="option">-I-</span> in the list are searched only for headers requested with
-quote marks.  Directories after <span class="option">-I-</span> are searched for all
+<samp><span class="option">-I-</span></samp> in the list are searched only for headers requested with
+quote marks.  Directories after <samp><span class="option">-I-</span></samp> are searched for all
 headers.  Second, the directory containing the current file is not
 searched for anything, unless it happens to be one of the directories
-named by an <span class="option">-I</span> switch.  <span class="option">-I-</span> is deprecated, <span class="option">-iquote</span>
+named by an <samp><span class="option">-I</span></samp> switch.  <samp><span class="option">-I-</span></samp> is deprecated, <samp><span class="option">-iquote</span></samp>
 should be used instead.
 
-   <p><span class="option">-I. -I-</span> is not the same as no <span class="option">-I</span> options at all, and does
-not cause the same behavior for <span class="samp">&lt;&gt;</span> includes that <span class="samp">""</span>
-includes get with no special options.  <span class="option">-I.</span> searches the
+   <p><samp><span class="option">-I. -I-</span></samp> is not the same as no <samp><span class="option">-I</span></samp> options at all, and does
+not cause the same behavior for `<samp><span class="samp">&lt;&gt;</span></samp>' includes that `<samp><span class="samp">""</span></samp>'
+includes get with no special options.  <samp><span class="option">-I.</span></samp> searches the
 compiler's current working directory for header files.  That may or may
 not be the same as the directory containing the current file.
 
-   <p>If you need to look for headers in a directory named <span class="file">-</span>, write
-<span class="option">-I./-</span>.
+   <p>If you need to look for headers in a directory named <samp><span class="file">-</span></samp>, write
+<samp><span class="option">-I./-</span></samp>.
 
    <p>There are several more ways to adjust the header search path.  They are
 generally less useful.  See <a href="Invocation.html#Invocation">Invocation</a>.

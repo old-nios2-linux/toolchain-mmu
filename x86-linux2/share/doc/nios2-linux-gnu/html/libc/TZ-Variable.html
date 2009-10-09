@@ -3,7 +3,7 @@
 <title>TZ Variable - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Calendar-Time.html#Calendar-Time" title="Calendar Time">
 <link rel="prev" href="Parsing-Date-and-Time.html#Parsing-Date-and-Time" title="Parsing Date and Time">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="TZ-Variable"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Time-Zone-Functions.html#Time-Zone-Functions">Time Zone Functions</a>,
+<a name="TZ-Variable"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Time-Zone-Functions.html#Time-Zone-Functions">Time Zone Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Parsing-Date-and-Time.html#Parsing-Date-and-Time">Parsing Date and Time</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Calendar-Time.html#Calendar-Time">Calendar Time</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">21.4.7 Specifying the Time Zone with <code>TZ</code></h4>
@@ -35,7 +37,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Calendar-Time.html#Calendar-Time">Calen
 <p>In POSIX systems, a user can specify the time zone by means of the
 <code>TZ</code> environment variable.  For information about how to set
 environment variables, see <a href="Environment-Variables.html#Environment-Variables">Environment Variables</a>.  The functions
-for accessing the time zone are declared in <span class="file">time.h</span>. 
+for accessing the time zone are declared in <samp><span class="file">time.h</span></samp>. 
 <a name="index-time_002eh-2666"></a><a name="index-time-zone-2667"></a>
 You should not normally need to set <code>TZ</code>.  If the system is
 configured properly, the default time zone will be correct.  You might
@@ -136,23 +138,23 @@ specifications, it is best to use the time zone information database
 library, <var>characters</var> is the name of a file which describes the time
 zone.
 
-   <p><a name="index-_002fetc_002flocaltime-2668"></a><a name="index-localtime-2669"></a>If the <code>TZ</code> environment variable does not have a value, the
+   <p><a name="index-g_t_002fetc_002flocaltime-2668"></a><a name="index-localtime-2669"></a>If the <code>TZ</code> environment variable does not have a value, the
 operation chooses a time zone by default.  In the GNU C library, the
-default time zone is like the specification <span class="samp">TZ=:/etc/localtime</span>
-(or <span class="samp">TZ=:/usr/local/etc/localtime</span>, depending on how GNU C library
+default time zone is like the specification `<samp><span class="samp">TZ=:/etc/localtime</span></samp>'
+(or `<samp><span class="samp">TZ=:/usr/local/etc/localtime</span></samp>', depending on how GNU C library
 was configured; see <a href="Installation.html#Installation">Installation</a>).  Other C libraries use their own
 rule for choosing the default time zone, so there is little we can say
 about them.
 
-   <p><a name="index-time-zone-database-2670"></a><a name="index-_002fshare_002flib_002fzoneinfo-2671"></a><a name="index-zoneinfo-2672"></a>If <var>characters</var> begins with a slash, it is an absolute file name;
+   <p><a name="index-time-zone-database-2670"></a><a name="index-g_t_002fshare_002flib_002fzoneinfo-2671"></a><a name="index-zoneinfo-2672"></a>If <var>characters</var> begins with a slash, it is an absolute file name;
 otherwise the library looks for the file
-<span class="file">/share/lib/zoneinfo/</span><var>characters</var><!-- /@w -->.  The <span class="file">zoneinfo</span>
+<samp><span class="file">/share/lib/zoneinfo/</span><var>characters</var></samp><!-- /@w -->.  The <samp><span class="file">zoneinfo</span></samp>
 directory contains data files describing local time zones in many
 different parts of the world.  The names represent major cities, with
 subdirectories for geographical areas; for example,
-<span class="file">America/New_York</span>, <span class="file">Europe/London</span>, <span class="file">Asia/Hong_Kong</span>. 
+<samp><span class="file">America/New_York</span></samp>, <samp><span class="file">Europe/London</span></samp>, <samp><span class="file">Asia/Hong_Kong</span></samp>. 
 These data files are installed by the system administrator, who also
-sets <span class="file">/etc/localtime</span> to point to the data file for the local time
+sets <samp><span class="file">/etc/localtime</span></samp> to point to the data file for the local time
 zone.  The GNU C library comes with a large database of time zone
 information for most regions of the world, which is maintained by a
 community of volunteers and put in the public domain.

@@ -3,7 +3,7 @@
 <title>Exponents and Logarithms - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mathematics.html#Mathematics" title="Mathematics">
 <link rel="prev" href="Inverse-Trig-Functions.html#Inverse-Trig-Functions" title="Inverse Trig Functions">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Exponents-and-Logarithms"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Hyperbolic-Functions.html#Hyperbolic-Functions">Hyperbolic Functions</a>,
+<a name="Exponents-and-Logarithms"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Hyperbolic-Functions.html#Hyperbolic-Functions">Hyperbolic Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Inverse-Trig-Functions.html#Inverse-Trig-Functions">Inverse Trig Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mathematics.html#Mathematics">Mathematics</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">19.4 Exponentiation and Logarithms</h3>
@@ -175,7 +177,7 @@ functions except that they return signed integer values.
 
 <p class="noindent">Since integers cannot represent infinity and NaN, <code>ilogb</code> instead
 returns an integer that can't be the exponent of a normal floating-point
-number.  <span class="file">math.h</span> defines constants so you can check for this.
+number.  <samp><span class="file">math.h</span></samp> defines constants so you can check for this.
 
 <!-- math.h -->
 <!-- ISO -->

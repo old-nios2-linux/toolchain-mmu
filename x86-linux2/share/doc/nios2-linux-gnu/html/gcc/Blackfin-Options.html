@@ -3,7 +3,7 @@
 <title>Blackfin Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="AVR-Options.html#AVR-Options" title="AVR Options">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Blackfin-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="CRIS-Options.html#CRIS-Options">CRIS Options</a>,
+<a name="Blackfin-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="CRIS-Options.html#CRIS-Options">CRIS Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="AVR-Options.html#AVR-Options">AVR Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.17.5 Blackfin Options</h4>
@@ -58,7 +60,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options"
 <dt><code>-momit-leaf-frame-pointer</code><dd><a name="index-momit_002dleaf_002dframe_002dpointer-791"></a>Don't keep the frame pointer in a register for leaf functions.  This
 avoids the instructions to save, set up and restore frame pointers and
 makes an extra register available in leaf functions.  The option
-<span class="option">-fomit-frame-pointer</span> removes the frame pointer for all functions
+<samp><span class="option">-fomit-frame-pointer</span></samp> removes the frame pointer for all functions
 which might make debugging harder.
 
      <br><dt><code>-mspecld-anomaly</code><dd><a name="index-mspecld_002danomaly-792"></a>When enabled, the compiler will ensure that the generated code does not
@@ -81,7 +83,7 @@ the entire program fits into the low 64k of memory.
 
      <br><dt><code>-mid-shared-library</code><dd><a name="index-mid_002dshared_002dlibrary-798"></a>Generate code that supports shared libraries via the library ID method. 
 This allows for execute in place and shared libraries in an environment
-without virtual memory management.  This option implies <span class="option">-fPIC</span>.
+without virtual memory management.  This option implies <samp><span class="option">-fPIC</span></samp>.
 
      <br><dt><code>-mno-id-shared-library</code><dd><a name="index-mno_002did_002dshared_002dlibrary-799"></a>Generate code that doesn't assume ID based shared libraries are being used. 
 This is the default.
@@ -98,7 +100,7 @@ will lie outside of the 24 bit addressing range of the offset based
 version of subroutine call instruction.
 
      <p>This feature is not enabled by default.  Specifying
-<span class="option">-mno-long-calls</span> will restore the default behavior.  Note these
+<samp><span class="option">-mno-long-calls</span></samp> will restore the default behavior.  Note these
 switches have no effect on how the compiler generates code to handle
 function calls via function pointers. 
 </dl>

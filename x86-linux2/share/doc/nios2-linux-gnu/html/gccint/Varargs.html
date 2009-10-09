@@ -3,7 +3,7 @@
 <title>Varargs - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Macros.html#Target-Macros" title="Target Macros">
 <link rel="prev" href="Stack-and-Calling.html#Stack-and-Calling" title="Stack and Calling">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Varargs"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Trampolines.html#Trampolines">Trampolines</a>,
+<a name="Varargs"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Trampolines.html#Trampolines">Trampolines</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Stack-and-Calling.html#Stack-and-Calling">Stack and Calling</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Macros.html#Target-Macros">Target Macros</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">14.10 Implementing the Varargs Macros</h3>
@@ -72,7 +74,7 @@ the end of the named arguments is with the built-in functions described
 below.
 
 <div class="defun">
-&mdash; Macro: <b>__builtin_saveregs</b> ()<var><a name="index-_005f_005fbuiltin_005fsaveregs-2087"></a></var><br>
+&mdash; Macro: <b>__builtin_saveregs</b> ()<var><a name="index-g_t_005f_005fbuiltin_005fsaveregs-2087"></a></var><br>
 <blockquote><p>Use this built-in function to save the argument registers in memory so
 that the varargs mechanism can access them.  Both ISO and traditional
 versions of <code>va_start</code> must use <code>__builtin_saveregs</code>, unless
@@ -81,7 +83,7 @@ you use <code>TARGET_SETUP_INCOMING_VARARGS</code> (see below) instead.
       <p>On some machines, <code>__builtin_saveregs</code> is open-coded under the
 control of the target hook <code>TARGET_EXPAND_BUILTIN_SAVEREGS</code>.  On
 other machines, it calls a routine written in assembler language,
-found in <span class="file">libgcc2.c</span>.
+found in <samp><span class="file">libgcc2.c</span></samp>.
 
       <p>Code generated for the call to <code>__builtin_saveregs</code> appears at the
 beginning of the function, as opposed to where the call to
@@ -93,7 +95,7 @@ to use them for its own purposes.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Macro: <b>__builtin_args_info</b> (<var>category</var>)<var><a name="index-_005f_005fbuiltin_005fargs_005finfo-2088"></a></var><br>
+&mdash; Macro: <b>__builtin_args_info</b> (<var>category</var>)<var><a name="index-g_t_005f_005fbuiltin_005fargs_005finfo-2088"></a></var><br>
 <blockquote><p>Use this built-in function to find the first anonymous arguments in
 registers.
 
@@ -118,7 +120,7 @@ values accessed by <code>__builtin_args_info</code>.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Macro: <b>__builtin_next_arg</b> (<var>lastarg</var>)<var><a name="index-_005f_005fbuiltin_005fnext_005farg-2089"></a></var><br>
+&mdash; Macro: <b>__builtin_next_arg</b> (<var>lastarg</var>)<var><a name="index-g_t_005f_005fbuiltin_005fnext_005farg-2089"></a></var><br>
 <blockquote><p>This is the equivalent of <code>__builtin_args_info</code>, for stack
 arguments.  It returns the address of the first anonymous stack
 argument, as type <code>void *</code>.  If <code>ARGS_GROW_DOWNWARD</code>, it
@@ -130,7 +132,7 @@ of the current function.
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Macro: <b>__builtin_classify_type</b> (<var>object</var>)<var><a name="index-_005f_005fbuiltin_005fclassify_005ftype-2090"></a></var><br>
+&mdash; Macro: <b>__builtin_classify_type</b> (<var>object</var>)<var><a name="index-g_t_005f_005fbuiltin_005fclassify_005ftype-2090"></a></var><br>
 <blockquote><p>Since each machine has its own conventions for which data types are
 passed in which kind of register, your implementation of <code>va_arg</code>
 has to embody these conventions.  The easiest way to categorize the
@@ -141,7 +143,7 @@ with <code>sizeof</code> and <code>__alignof__</code>.
 considering only its data type.  It returns an integer describing what
 kind of type that is&mdash;integer, floating, pointer, structure, and so on.
 
-      <p>The file <span class="file">typeclass.h</span> defines an enumeration that you can use to
+      <p>The file <samp><span class="file">typeclass.h</span></samp> defines an enumeration that you can use to
 interpret the values of <code>__builtin_classify_type</code>. 
 </p></blockquote></div>
 

@@ -3,7 +3,7 @@
 <title>Complex - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Long-Long.html#Long-Long" title="Long Long">
@@ -38,37 +38,39 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Complex"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Hex-Floats.html#Hex-Floats">Hex Floats</a>,
+<a name="Complex"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Hex-Floats.html#Hex-Floats">Hex Floats</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Long-Long.html#Long-Long">Long Long</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.9 Complex Numbers</h3>
 
-<p><a name="index-complex-numbers-1760"></a><a name="index-_0040code_007b_005fComplex_007d-keyword-1761"></a><a name="index-_0040code_007b_005f_005fcomplex_005f_005f_007d-keyword-1762"></a>
+<p><a name="index-complex-numbers-1760"></a><a name="index-g_t_0040code_007b_005fComplex_007d-keyword-1761"></a><a name="index-g_t_0040code_007b_005f_005fcomplex_005f_005f_007d-keyword-1762"></a>
 ISO C99 supports complex floating data types, and as an extension GCC
 supports them in C89 mode and in C++, and supports complex integer data
 types which are not part of ISO C99.  You can declare complex types
 using the keyword <code>_Complex</code>.  As an extension, the older GNU
 keyword <code>__complex__</code> is also supported.
 
- <p>For example, <span class="samp">_Complex double x;</span> declares <code>x</code> as a
+ <p>For example, `<samp><span class="samp">_Complex double x;</span></samp>' declares <code>x</code> as a
 variable whose real part and imaginary part are both of type
-<code>double</code>.  <span class="samp">_Complex short int y;</span> declares <code>y</code> to
+<code>double</code>.  `<samp><span class="samp">_Complex short int y;</span></samp>' declares <code>y</code> to
 have real and imaginary parts of type <code>short int</code>; this is not
 likely to be useful, but it shows that the set of complex types is
 complete.
 
- <p>To write a constant with a complex data type, use the suffix <span class="samp">i</span> or
-<span class="samp">j</span> (either one; they are equivalent).  For example, <code>2.5fi</code>
+ <p>To write a constant with a complex data type, use the suffix `<samp><span class="samp">i</span></samp>' or
+`<samp><span class="samp">j</span></samp>' (either one; they are equivalent).  For example, <code>2.5fi</code>
 has type <code>_Complex float</code> and <code>3i</code> has type
 <code>_Complex int</code>.  Such a constant always has a pure imaginary
 value, but you can form any complex value you like by adding one to a
@@ -77,7 +79,7 @@ conforming C library (such as GNU libc), and want to construct complex
 constants of floating type, you should include <code>&lt;complex.h&gt;</code> and
 use the macros <code>I</code> or <code>_Complex_I</code> instead.
 
- <p><a name="index-_0040code_007b_005f_005freal_005f_005f_007d-keyword-1763"></a><a name="index-_0040code_007b_005f_005fimag_005f_005f_007d-keyword-1764"></a>To extract the real part of a complex-valued expression <var>exp</var>, write
+ <p><a name="index-g_t_0040code_007b_005f_005freal_005f_005f_007d-keyword-1763"></a><a name="index-g_t_0040code_007b_005f_005fimag_005f_005f_007d-keyword-1764"></a>To extract the real part of a complex-valued expression <var>exp</var>, write
 <code>__real__ </code><var>exp</var>.  Likewise, use <code>__imag__</code> to
 extract the imaginary part.  This is a GNU extension; for values of
 floating type, you should use the ISO C99 functions <code>crealf</code>,
@@ -85,7 +87,7 @@ floating type, you should use the ISO C99 functions <code>crealf</code>,
 <code>cimagl</code>, declared in <code>&lt;complex.h&gt;</code> and also provided as
 built-in functions by GCC.
 
- <p><a name="index-complex-conjugation-1765"></a>The operator <span class="samp">~</span> performs complex conjugation when used on a value
+ <p><a name="index-complex-conjugation-1765"></a>The operator `<samp><span class="samp">~</span></samp>' performs complex conjugation when used on a value
 with a complex type.  This is a GNU extension; for values of
 floating type, you should use the ISO C99 functions <code>conjf</code>,
 <code>conj</code> and <code>conjl</code>, declared in <code>&lt;complex.h&gt;</code> and also

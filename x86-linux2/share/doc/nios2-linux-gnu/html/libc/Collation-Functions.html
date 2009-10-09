@@ -3,7 +3,7 @@
 <title>Collation Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="String-and-Array-Utilities.html#String-and-Array-Utilities" title="String and Array Utilities">
 <link rel="prev" href="String_002fArray-Comparison.html#String_002fArray-Comparison" title="String/Array Comparison">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Collation-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Search-Functions.html#Search-Functions">Search Functions</a>,
+<a name="Collation-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Search-Functions.html#Search-Functions">Search Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="String_002fArray-Comparison.html#String_002fArray-Comparison">String/Array Comparison</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-and-Array-Utilities">String and Array Utilities</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.6 Collation Functions</h3>
@@ -37,12 +39,12 @@ In some locales, the conventions for lexicographic ordering differ from
 the strict numeric ordering of character codes.  For example, in Spanish
 most glyphs with diacritical marks such as accents are not considered
 distinct letters for the purposes of collation.  On the other hand, the
-two-character sequence <span class="samp">ll</span> is treated as a single letter that is
-collated immediately after <span class="samp">l</span>.
+two-character sequence `<samp><span class="samp">ll</span></samp>' is treated as a single letter that is
+collated immediately after `<samp><span class="samp">l</span></samp>'.
 
    <p>You can use the functions <code>strcoll</code> and <code>strxfrm</code> (declared in
-the headers file <span class="file">string.h</span>) and <code>wcscoll</code> and <code>wcsxfrm</code>
-(declared in the headers file <span class="file">wchar</span>) to compare strings using a
+the headers file <samp><span class="file">string.h</span></samp>) and <code>wcscoll</code> and <code>wcsxfrm</code>
+(declared in the headers file <samp><span class="file">wchar</span></samp>) to compare strings using a
 collation ordering appropriate for the current locale.  The locale used
 by these functions in particular can be specified by setting the locale
 for the <code>LC_COLLATE</code> category; see <a href="Locales.html#Locales">Locales</a>. 

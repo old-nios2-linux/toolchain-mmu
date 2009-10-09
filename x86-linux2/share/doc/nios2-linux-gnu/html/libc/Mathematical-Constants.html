@@ -3,7 +3,7 @@
 <title>Mathematical Constants - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mathematics.html#Mathematics" title="Mathematics">
 <link rel="next" href="Trig-Functions.html#Trig-Functions" title="Trig Functions">
@@ -16,22 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Mathematical-Constants"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Trig-Functions.html#Trig-Functions">Trig Functions</a>,
+<a name="Mathematical-Constants"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Trig-Functions.html#Trig-Functions">Trig Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mathematics.html#Mathematics">Mathematics</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">19.1 Predefined Mathematical Constants</h3>
 
 <p><a name="index-constants-2067"></a><a name="index-mathematical-constants-2068"></a>
-The header <span class="file">math.h</span> defines several useful mathematical constants. 
+The header <samp><span class="file">math.h</span></samp> defines several useful mathematical constants. 
 All values are defined as preprocessor macros starting with <code>M_</code>. 
 The values provided are:
 
@@ -59,7 +61,7 @@ See <a href="Feature-Test-Macros.html#Feature-Test-Macros">Feature Test Macros</
 
    <p>All values are of type <code>double</code>.  As an extension, the GNU C
 library also defines these constants with type <code>long double</code>.  The
-<code>long double</code> macros have a lowercase <span class="samp">l</span> appended to their
+<code>long double</code> macros have a lowercase `<samp><span class="samp">l</span></samp>' appended to their
 names: <code>M_El</code>, <code>M_PIl</code>, and so forth.  These are only
 available if <code>_GNU_SOURCE</code> is defined.
 
@@ -68,7 +70,7 @@ same value as <code>M_PI</code>.  This constant is not standard; it may have
 appeared in some old AT&amp;T headers, and is mentioned in Stroustrup's book
 on C++.  It infringes on the user's name space, so the GNU C library
 does not define it.  Fixing programs written to expect it is simple:
-replace <code>PI</code> with <code>M_PI</code> throughout, or put <span class="samp">-DPI=M_PI</span>
+replace <code>PI</code> with <code>M_PI</code> throughout, or put `<samp><span class="samp">-DPI=M_PI</span></samp>'
 on the compiler command line.
 
    </body></html>

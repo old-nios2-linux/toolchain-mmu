@@ -3,7 +3,7 @@
 <title>File-I/O Overview - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File_002dI_002fO-Remote-Protocol-Extension.html#File_002dI_002fO-Remote-Protocol-Extension" title="File-I/O Remote Protocol Extension">
 <link rel="next" href="Protocol-Basics.html#Protocol-Basics" title="Protocol Basics">
@@ -16,16 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="File_002dI_002fO-Overview"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Protocol-Basics.html#Protocol-Basics">Protocol Basics</a>,
+<a name="File-I%2fO-Overview"></a>
+<a name="File_002dI_002fO-Overview"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Protocol-Basics.html#Protocol-Basics">Protocol Basics</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File_002dI_002fO-Remote-Protocol-Extension.html#File_002dI_002fO-Remote-Protocol-Extension">File-I/O Remote Protocol Extension</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">D.10.1 File-I/O Overview</h4>
@@ -45,15 +48,15 @@ translating the system-dependent value representations into the internal
 protocol representations when data is transmitted.
 
    <p>The communication is synchronous.  A system call is possible only when
-<span class="sc">gdb</span> is waiting for a response from the <span class="samp">C</span>, <span class="samp">c</span>, <span class="samp">S</span>
-or <span class="samp">s</span> packets.  While <span class="sc">gdb</span> handles the request for a system call,
+<span class="sc">gdb</span> is waiting for a response from the `<samp><span class="samp">C</span></samp>', `<samp><span class="samp">c</span></samp>', `<samp><span class="samp">S</span></samp>'
+or `<samp><span class="samp">s</span></samp>' packets.  While <span class="sc">gdb</span> handles the request for a system call,
 the target is stopped to allow deterministic access to the target's
 memory.  Therefore File-I/O is not interruptible by target signals.  On
 the other hand, it is possible to interrupt File-I/O by a user interrupt
-(<span class="samp">Ctrl-C</span>) within <span class="sc">gdb</span>.
+(`<samp><span class="samp">Ctrl-C</span></samp>') within <span class="sc">gdb</span>.
 
    <p>The target's request to perform a host system call does not finish
-the latest <span class="samp">C</span>, <span class="samp">c</span>, <span class="samp">S</span> or <span class="samp">s</span> action.  That means,
+the latest `<samp><span class="samp">C</span></samp>', `<samp><span class="samp">c</span></samp>', `<samp><span class="samp">S</span></samp>' or `<samp><span class="samp">s</span></samp>' action.  That means,
 after finishing the system call, the target returns to continuing the
 previous activity (continue, step).  No additional continue or step
 request from <span class="sc">gdb</span> is required.

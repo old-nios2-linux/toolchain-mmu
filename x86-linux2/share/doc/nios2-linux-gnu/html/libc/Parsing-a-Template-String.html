@@ -3,7 +3,7 @@
 <title>Parsing a Template String - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Formatted-Output.html#Formatted-Output" title="Formatted Output">
 <link rel="prev" href="Variable-Arguments-Output.html#Variable-Arguments-Output" title="Variable Arguments Output">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Parsing-a-Template-String"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Example-of-Parsing.html#Example-of-Parsing">Example of Parsing</a>,
+<a name="Parsing-a-Template-String"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Example-of-Parsing.html#Example-of-Parsing">Example of Parsing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Variable-Arguments-Output.html#Variable-Arguments-Output">Variable Arguments Output</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Formatted-Output.html#Formatted-Output">Formatted Output</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">12.12.10 Parsing a Template String</h4>
@@ -40,7 +42,7 @@ provide interfaces to <code>printf</code> to avoid passing along invalid
 arguments from the user's program, which could cause a crash.
 
    <p>All the symbols described in this section are declared in the header
-file <span class="file">printf.h</span>.
+file <samp><span class="file">printf.h</span></samp>.
 
 <!-- printf.h -->
 <!-- GNU -->
@@ -50,7 +52,7 @@ file <span class="file">printf.h</span>.
 arguments expected by the <code>printf</code> template string <var>template</var>. 
 The information is stored in the array <var>argtypes</var>; each element of
 this array describes one argument.  This information is encoded using
-the various <span class="samp">PA_</span> macros, listed below.
+the various `<samp><span class="samp">PA_</span></samp>' macros, listed below.
 
         <p>The argument <var>n</var> specifies the number of elements in the array
 <var>argtypes</var>.  This is the maximum number of elements that
@@ -107,8 +109,8 @@ for integer values.
      <!-- printf.h -->
 <!-- GNU -->
 <br><dt><code>PA_LAST</code><a name="index-PA_005fLAST-1054"></a><dd>You can define additional base types for your own programs as offsets
-from <code>PA_LAST</code>.  For example, if you have data types <span class="samp">foo</span>
-and <span class="samp">bar</span> with their own specialized <code>printf</code> conversions,
+from <code>PA_LAST</code>.  For example, if you have data types `<samp><span class="samp">foo</span></samp>'
+and `<samp><span class="samp">bar</span></samp>' with their own specialized <code>printf</code> conversions,
 you could define encodings for these types as:
 
      <pre class="smallexample">          #define PA_FOO  PA_LAST
@@ -124,22 +126,22 @@ the code for the basic type using inclusive-or.
 <!-- GNU -->
 <dt><code>PA_FLAG_PTR</code><a name="index-PA_005fFLAG_005fPTR-1055"></a><dd>If this bit is set, it indicates that the encoded type is a pointer to
 the base type, rather than an immediate value. 
-For example, <span class="samp">PA_INT|PA_FLAG_PTR</span> represents the type <span class="samp">int *</span>.
+For example, `<samp><span class="samp">PA_INT|PA_FLAG_PTR</span></samp>' represents the type `<samp><span class="samp">int *</span></samp>'.
 
      <!-- printf.h -->
 <!-- GNU -->
 <br><dt><code>PA_FLAG_SHORT</code><a name="index-PA_005fFLAG_005fSHORT-1056"></a><dd>If this bit is set, it indicates that the base type is modified with
-<code>short</code>.  (This corresponds to the <span class="samp">h</span> type modifier.)
+<code>short</code>.  (This corresponds to the `<samp><span class="samp">h</span></samp>' type modifier.)
 
      <!-- printf.h -->
 <!-- GNU -->
 <br><dt><code>PA_FLAG_LONG</code><a name="index-PA_005fFLAG_005fLONG-1057"></a><dd>If this bit is set, it indicates that the base type is modified with
-<code>long</code>.  (This corresponds to the <span class="samp">l</span> type modifier.)
+<code>long</code>.  (This corresponds to the `<samp><span class="samp">l</span></samp>' type modifier.)
 
      <!-- printf.h -->
 <!-- GNU -->
 <br><dt><code>PA_FLAG_LONG_LONG</code><a name="index-PA_005fFLAG_005fLONG_005fLONG-1058"></a><dd>If this bit is set, it indicates that the base type is modified with
-<code>long long</code>.  (This corresponds to the <span class="samp">L</span> type modifier.)
+<code>long long</code>.  (This corresponds to the `<samp><span class="samp">L</span></samp>' type modifier.)
 
      <!-- printf.h -->
 <!-- GNU -->

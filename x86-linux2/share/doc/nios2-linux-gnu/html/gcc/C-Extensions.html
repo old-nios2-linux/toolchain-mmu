@@ -3,7 +3,7 @@
 <title>C Extensions - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="C-Implementation.html#C-Implementation" title="C Implementation">
 <link rel="next" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions" title="C++ Extensions">
@@ -37,24 +37,26 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="C-Extensions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions">C++ Extensions</a>,
+<a name="C-Extensions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions">C++ Extensions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="C-Implementation.html#C-Implementation">C Implementation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">5 Extensions to the C Language Family</h2>
 
 <p><a name="index-extensions_002c-C-language-1718"></a><a name="index-C-language-extensions-1719"></a>
 <a name="index-pedantic-1720"></a>GNU C provides several language features not found in ISO standard C. 
-(The <span class="option">-pedantic</span> option directs GCC to print a warning message if
+(The <samp><span class="option">-pedantic</span></samp> option directs GCC to print a warning message if
 any of these features is used.)  To test for the availability of these
 features in conditional compilation, check for a predefined macro
 <code>__GNUC__</code>, which is always defined under GCC.
@@ -72,7 +74,7 @@ extensions, accepted by GCC in C89 mode and in C++.
 <li><a accesskey="4" href="Nested-Functions.html#Nested-Functions">Nested Functions</a>:     As in Algol and Pascal, lexical scoping of functions. 
 <li><a accesskey="5" href="Constructing-Calls.html#Constructing-Calls">Constructing Calls</a>: 	Dispatching a call to another function. 
 <li><a accesskey="6" href="Typeof.html#Typeof">Typeof</a>:               <code>typeof</code>: referring to the type of an expression. 
-<li><a accesskey="7" href="Conditionals.html#Conditionals">Conditionals</a>:         Omitting the middle operand of a <span class="samp">?:</span> expression. 
+<li><a accesskey="7" href="Conditionals.html#Conditionals">Conditionals</a>:         Omitting the middle operand of a `<samp><span class="samp">?:</span></samp>' expression. 
 <li><a accesskey="8" href="Long-Long.html#Long-Long">Long Long</a>: 		Double-word integers---<code>long long int</code>. 
 <li><a accesskey="9" href="Complex.html#Complex">Complex</a>:              Data types for complex numbers. 
 <li><a href="Hex-Floats.html#Hex-Floats">Hex Floats</a>:           Hexadecimal floating-point constants. 
@@ -96,7 +98,7 @@ extensions, accepted by GCC in C89 mode and in C++.
 <li><a href="Function-Prototypes.html#Function-Prototypes">Function Prototypes</a>:  Prototype declarations and old-style definitions. 
 <li><a href="C_002b_002b-Comments.html#C_002b_002b-Comments">C++ Comments</a>:         C++ comments are recognized. 
 <li><a href="Dollar-Signs.html#Dollar-Signs">Dollar Signs</a>:         Dollar sign is allowed in identifiers. 
-<li><a href="Character-Escapes.html#Character-Escapes">Character Escapes</a>:    <span class="samp">\e</span> stands for the character &lt;ESC&gt;. 
+<li><a href="Character-Escapes.html#Character-Escapes">Character Escapes</a>:    `<samp><span class="samp">\e</span></samp>' stands for the character &lt;ESC&gt;. 
 <li><a href="Variable-Attributes.html#Variable-Attributes">Variable Attributes</a>: 	Specifying attributes of variables. 
 <li><a href="Type-Attributes.html#Type-Attributes">Type Attributes</a>: 	Specifying attributes of types. 
 <li><a href="Alignment.html#Alignment">Alignment</a>:            Inquiring about the alignment of a type or variable. 

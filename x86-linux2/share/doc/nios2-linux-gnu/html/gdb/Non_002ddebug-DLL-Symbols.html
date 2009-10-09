@@ -3,7 +3,7 @@
 <title>Non-debug DLL Symbols - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cygwin-Native.html#Cygwin-Native" title="Cygwin Native">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -15,15 +15,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Non_002ddebug-DLL-Symbols"></a>Up:&nbsp;<a rel="up" accesskey="u" href="Cygwin-Native.html#Cygwin-Native">Cygwin Native</a>
-<hr><br>
+<a name="Non-debug-DLL-Symbols"></a>
+<a name="Non_002ddebug-DLL-Symbols"></a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Cygwin-Native.html#Cygwin-Native">Cygwin Native</a>
+<hr>
 </div>
 
 <h5 class="subsubsection">19.1.5.1 Support for DLLs without Debugging Symbols</h5>
@@ -31,7 +34,7 @@
 <p><a name="index-DLLs-with-no-debugging-symbols-1011"></a><a name="index-Minimal-symbols-and-DLLs-1012"></a>
 Very often on windows, some of the DLLs that your program relies on do
 not include symbolic debugging information (for example,
-<span class="file">kernel32.dll</span>).  When <span class="sc">gdb</span> doesn't recognize any debugging
+<samp><span class="file">kernel32.dll</span></samp>).  When <span class="sc">gdb</span> doesn't recognize any debugging
 symbols in a DLL, it relies on the minimal amount of symbolic
 information contained in the DLL's export table.  This section
 describes working with such symbols, known internally to <span class="sc">gdb</span> as
@@ -127,7 +130,7 @@ to set the breakpoint at a raw memory address:
      Breakpoint 1 at 0x1e04eff0
 </pre>
    <p>The author of these extensions is not entirely convinced that setting a
-break point within a shared DLL like <span class="file">kernel32.dll</span> is completely
+break point within a shared DLL like <samp><span class="file">kernel32.dll</span></samp> is completely
 safe.
 
    </body></html>

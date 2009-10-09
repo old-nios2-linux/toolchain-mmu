@@ -3,7 +3,7 @@
 <title>More Flags for Globbing - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Globbing.html#Globbing" title="Globbing">
 <link rel="prev" href="Flags-for-Globbing.html#Flags-for-Globbing" title="Flags for Globbing">
@@ -16,23 +16,25 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="More-Flags-for-Globbing"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Flags-for-Globbing.html#Flags-for-Globbing">Flags for Globbing</a>,
+<a name="More-Flags-for-Globbing"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Flags-for-Globbing.html#Flags-for-Globbing">Flags for Globbing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Globbing.html#Globbing">Globbing</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">10.2.3 More Flags for Globbing</h4>
 
 <p>Beside the flags described in the last section, the GNU implementation of
 <code>glob</code> allows a few more flags which are also defined in the
-<span class="file">glob.h</span> file.  Some of the extensions implement functionality
+<samp><span class="file">glob.h</span></samp> file.  Some of the extensions implement functionality
 which is available in modern shell implementations.
 
      <dl>
@@ -101,15 +103,15 @@ verbatim it is used to represent the home directory of a known user.
 <code>/</code> (slash), the home directory of the process owner is
 substituted.  Using <code>getlogin</code> and <code>getpwnam</code> the information
 is read from the system databases.  As an example take user <code>bart</code>
-with his home directory at <span class="file">/home/bart</span>.  For him a call like
+with his home directory at <samp><span class="file">/home/bart</span></samp>.  For him a call like
 
      <pre class="smallexample">          glob ("~/bin/*", GLOB_TILDE, NULL, &amp;result)
      </pre>
-     <p class="noindent">would return the contents of the directory <span class="file">/home/bart/bin</span>. 
+     <p class="noindent">would return the contents of the directory <samp><span class="file">/home/bart/bin</span></samp>. 
 Instead of referring to the own home directory it is also possible to
 name the home directory of other users.  To do so one has to append the
 user name after the tilde character.  So the contents of user
-<code>homer</code>'s <span class="file">bin</span> directory can be retrieved by
+<code>homer</code>'s <samp><span class="file">bin</span></samp> directory can be retrieved by
 
      <pre class="smallexample">          glob ("~homer/bin/*", GLOB_TILDE, NULL, &amp;result)
      </pre>

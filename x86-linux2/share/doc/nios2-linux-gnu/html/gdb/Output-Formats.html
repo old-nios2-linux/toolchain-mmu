@@ -3,7 +3,7 @@
 <title>Output Formats - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Arrays.html#Arrays" title="Arrays">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Output-Formats"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Memory.html#Memory">Memory</a>,
+<a name="Output-Formats"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Memory.html#Memory">Memory</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Arrays.html#Arrays">Arrays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">8.4 Output Formats</h3>
@@ -53,7 +55,7 @@ hexadecimal.
 
      <br><dt><code>o</code><dd>Print as integer in octal.
 
-     <br><dt><code>t</code><dd>Print as integer in binary.  The letter <span class="samp">t</span> stands for &ldquo;two&rdquo;. 
+     <br><dt><code>t</code><dd>Print as integer in binary.  The letter `<samp><span class="samp">t</span></samp>' stands for &ldquo;two&rdquo;. 
 <a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>
 
      <br><dt><code>a</code><dd><a name="index-unknown-address_002c-locating-412"></a><a name="index-locate-address-413"></a>Print as an address, both absolute in hexadecimal and as an offset from
@@ -68,7 +70,7 @@ See <a href="Symbols.html#Symbols">info symbol</a>.
 
      <br><dt><code>c</code><dd>Regard as an integer and print it as a character constant.  This
 prints both the numerical value and its character representation.  The
-character representation is replaced with the octal escape <span class="samp">\nnn</span>
+character representation is replaced with the octal escape `<samp><span class="samp">\nnn</span></samp>'
 for characters outside the 7-bit <span class="sc">ascii</span> range.
 
      <br><dt><code>f</code><dd>Regard the bits of the value as a floating point number and print
@@ -84,12 +86,12 @@ names in <span class="sc">gdb</span> cannot contain a slash.
 
    <p>To reprint the last value in the value history with a different format,
 you can use the <code>print</code> command with just a format and no
-expression.  For example, <span class="samp">p/x</span> reprints the last value in hex.
+expression.  For example, `<samp><span class="samp">p/x</span></samp>' reprints the last value in hex.
 
    <div class="footnote">
 <hr>
-<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> <span class="samp">b</span> cannot be used because these format letters are also
-used with the <code>x</code> command, where <span class="samp">b</span> stands for &ldquo;byte&rdquo;;
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> `<samp><span class="samp">b</span></samp>' cannot be used because these format letters are also
+used with the <code>x</code> command, where `<samp><span class="samp">b</span></samp>' stands for &ldquo;byte&rdquo;;
 see <a href="Memory.html#Memory">Examining Memory</a>.</p>
 
    <p><hr></div>

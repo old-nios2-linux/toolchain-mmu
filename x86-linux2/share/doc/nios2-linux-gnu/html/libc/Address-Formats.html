@@ -3,7 +3,7 @@
 <title>Address Formats - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Socket-Addresses.html#Socket-Addresses" title="Socket Addresses">
 <link rel="next" href="Setting-Address.html#Setting-Address" title="Setting Address">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Address-Formats"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Setting-Address.html#Setting-Address">Setting Address</a>,
+<a name="Address-Formats"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Setting-Address.html#Setting-Address">Setting Address</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Socket-Addresses.html#Socket-Addresses">Socket Addresses</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">16.3.1 Address Formats</h4>
@@ -45,7 +47,7 @@ sockaddr</code> data type is the <dfn>address format designator</dfn>.  This tel
 you which data type to use to understand the address fully.
 
    <p><a name="index-sys_002fsocket_002eh-1654"></a>The symbols in this section are defined in the header file
-<span class="file">sys/socket.h</span>.
+<samp><span class="file">sys/socket.h</span></samp>.
 
 <!-- sys/socket.h -->
 <!-- BSD -->
@@ -63,8 +65,8 @@ length 14 of <code>sa_data</code> is essentially arbitrary.
 </dl>
         </p></blockquote></div>
 
-   <p>Each address format has a symbolic name which starts with <span class="samp">AF_</span>. 
-Each of them corresponds to a <span class="samp">PF_</span> symbol which designates the
+   <p>Each address format has a symbolic name which starts with `<samp><span class="samp">AF_</span></samp>'. 
+Each of them corresponds to a `<samp><span class="samp">PF_</span></samp>' symbol which designates the
 corresponding namespace.  Here is a list of address format names:
 
      <dl>
@@ -108,7 +110,7 @@ cases, such as to clear out the default destination address of a
 for completeness, but there is no reason to use it in a program. 
 </dl>
 
-   <p><span class="file">sys/socket.h</span> defines symbols starting with <span class="samp">AF_</span> for many
+   <p><samp><span class="file">sys/socket.h</span></samp> defines symbols starting with `<samp><span class="samp">AF_</span></samp>' for many
 different kinds of networks, most or all of which are not actually
 implemented.  We will document those that really work as we receive
 information about how to use them.

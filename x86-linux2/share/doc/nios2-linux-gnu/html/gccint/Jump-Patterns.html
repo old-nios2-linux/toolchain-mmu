@@ -3,7 +3,7 @@
 <title>Jump Patterns - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Machine-Desc.html#Machine-Desc" title="Machine Desc">
 <link rel="prev" href="Dependent-Patterns.html#Dependent-Patterns" title="Dependent Patterns">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Jump-Patterns"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Looping-Patterns.html#Looping-Patterns">Looping Patterns</a>,
+<a name="Jump-Patterns"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Looping-Patterns.html#Looping-Patterns">Looping Patterns</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Dependent-Patterns.html#Dependent-Patterns">Dependent Patterns</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Machine-Desc.html#Machine-Desc">Machine Desc</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.12 Defining Jump Instruction Patterns</h3>
@@ -131,7 +133,7 @@ different formats of the condition code register.
  <p>Registers used to store the condition code value should have a mode that
 is in class <code>MODE_CC</code>.  Normally, it will be <code>CCmode</code>.  If
 additional modes are required (as for the add example mentioned above in
-the SPARC), define them in <var>machine</var><span class="file">-modes.def</span>
+the SPARC), define them in <samp><var>machine</var><span class="file">-modes.def</span></samp>
 (see <a href="Condition-Code.html#Condition-Code">Condition Code</a>).  Also define <code>SELECT_CC_MODE</code> to choose
 a mode given an operand of a compare.
 

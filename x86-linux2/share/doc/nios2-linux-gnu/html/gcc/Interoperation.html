@@ -3,7 +3,7 @@
 <title>Interoperation - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Trouble.html#Trouble" title="Trouble">
 <link rel="prev" href="Cross_002dCompiler-Problems.html#Cross_002dCompiler-Problems" title="Cross-Compiler Problems">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Interoperation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Incompatibilities.html#Incompatibilities">Incompatibilities</a>,
+<a name="Interoperation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Incompatibilities.html#Incompatibilities">Incompatibilities</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Cross_002dCompiler-Problems.html#Cross_002dCompiler-Problems">Cross-Compiler Problems</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Trouble.html#Trouble">Trouble</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">10.3 Interoperation</h3>
@@ -77,8 +79,8 @@ at run time.
 causes static variable destructors (currently used only in C++) not to
 be run.
 
-     <li>On some SGI systems, when you use <span class="option">-lgl_s</span> as an option,
-it gets translated magically to <span class="samp">-lgl_s -lX11_s -lc_s</span>. 
+     <li>On some SGI systems, when you use <samp><span class="option">-lgl_s</span></samp> as an option,
+it gets translated magically to `<samp><span class="samp">-lgl_s -lX11_s -lc_s</span></samp>'. 
 Naturally, this does not happen when you use GCC. 
 You must specify all three options explicitly.
 
@@ -97,7 +99,7 @@ Another solution is to modify the function that is compiled with
 Sun CC to copy the argument into a local variable; local variables
 are always properly aligned.  A third solution is to modify the function
 that uses the pointer to dereference it via the following function
-<code>access_double</code> instead of directly with <span class="samp">*</span>:
+<code>access_double</code> instead of directly with `<samp><span class="samp">*</span></samp>':
 
      <pre class="smallexample">          inline double
           access_double (double *unaligned_ptr)
@@ -115,14 +117,14 @@ that uses the pointer to dereference it via the following function
      </pre>
      <p class="noindent">Storing into the pointer can be done likewise with the same union.
 
-     <li>On Solaris, the <code>malloc</code> function in the <span class="file">libmalloc.a</span> library
+     <li>On Solaris, the <code>malloc</code> function in the <samp><span class="file">libmalloc.a</span></samp> library
 may allocate memory that is only 4 byte aligned.  Since GCC on the
 SPARC assumes that doubles are 8 byte aligned, this may result in a
 fatal signal if doubles are stored in memory allocated by the
-<span class="file">libmalloc.a</span> library.
+<samp><span class="file">libmalloc.a</span></samp> library.
 
-     <p>The solution is to not use the <span class="file">libmalloc.a</span> library.  Use instead
-<code>malloc</code> and related functions from <span class="file">libc.a</span>; they do not have
+     <p>The solution is to not use the <samp><span class="file">libmalloc.a</span></samp> library.  Use instead
+<code>malloc</code> and related functions from <samp><span class="file">libc.a</span></samp>; they do not have
 this problem.
 
      <li>On the HP PA machine, ADB sometimes fails to work on functions compiled
@@ -131,7 +133,7 @@ with GCC.  Specifically, it fails to work on functions that use
 generate HP-UX unwind descriptors for such functions.  It may even be
 impossible to generate them.
 
-     <li>Debugging (<span class="option">-g</span>) is not supported on the HP PA machine, unless you use
+     <li>Debugging (<samp><span class="option">-g</span></samp>) is not supported on the HP PA machine, unless you use
 the preliminary GNU tools.
 
      <li>Taking the address of a label may generate errors from the HP-UX
@@ -161,38 +163,38 @@ receive errors from the AIX Assembler complaining about a displacement
 that is too large.  If you should run into it, you can work around by
 making your function smaller.
 
-     <li>The <span class="file">libstdc++.a</span> library in GCC relies on the SVR4 dynamic
+     <li>The <samp><span class="file">libstdc++.a</span></samp> library in GCC relies on the SVR4 dynamic
 linker semantics which merges global symbols between libraries and
 applications, especially necessary for C++ streams functionality. 
 This is not the default behavior of AIX shared libraries and dynamic
-linking.  <span class="file">libstdc++.a</span> is built on AIX with &ldquo;runtime-linking&rdquo;
+linking.  <samp><span class="file">libstdc++.a</span></samp> is built on AIX with &ldquo;runtime-linking&rdquo;
 enabled so that symbol merging can occur.  To utilize this feature,
-the application linked with <span class="file">libstdc++.a</span> must include the
-<span class="option">-Wl,-brtl</span> flag on the link line.  G++ cannot impose this
+the application linked with <samp><span class="file">libstdc++.a</span></samp> must include the
+<samp><span class="option">-Wl,-brtl</span></samp> flag on the link line.  G++ cannot impose this
 because this option may interfere with the semantics of the user
-program and users may not always use <span class="samp">g++</span> to link his or her
+program and users may not always use `<samp><span class="samp">g++</span></samp>' to link his or her
 application.  Applications are not required to use the
-<span class="option">-Wl,-brtl</span> flag on the link line&mdash;the rest of the
-<span class="file">libstdc++.a</span> library which is not dependent on the symbol
+<samp><span class="option">-Wl,-brtl</span></samp> flag on the link line&mdash;the rest of the
+<samp><span class="file">libstdc++.a</span></samp> library which is not dependent on the symbol
 merging semantics will continue to function correctly.
 
      <li>An application can interpose its own definition of functions for
-functions invoked by <span class="file">libstdc++.a</span> with &ldquo;runtime-linking&rdquo;
+functions invoked by <samp><span class="file">libstdc++.a</span></samp> with &ldquo;runtime-linking&rdquo;
 enabled on AIX.  To accomplish this the application must be linked
 with &ldquo;runtime-linking&rdquo; option and the functions explicitly must be
-exported by the application (<span class="option">-Wl,-brtl,-bE:exportfile</span>).
+exported by the application (<samp><span class="option">-Wl,-brtl,-bE:exportfile</span></samp>).
 
      <li>AIX on the RS/6000 provides support (NLS) for environments outside of
 the United States.  Compilers and assemblers use NLS to support
 locale-specific representations of various objects including
-floating-point numbers (<span class="samp">.</span> vs <span class="samp">,</span> for separating decimal
+floating-point numbers (`<samp><span class="samp">.</span></samp>' vs `<samp><span class="samp">,</span></samp>' for separating decimal
 fractions).  There have been problems reported where the library linked
 with GCC does not produce the same floating-point formats that the
-assembler accepts.  If you have this problem, set the <span class="env">LANG</span>
-environment variable to <span class="samp">C</span> or <span class="samp">En_US</span>.
+assembler accepts.  If you have this problem, set the <samp><span class="env">LANG</span></samp>
+environment variable to `<samp><span class="samp">C</span></samp>' or `<samp><span class="samp">En_US</span></samp>'.
 
-     <li><a name="index-fdollars_002din_002didentifiers-2548"></a>Even if you specify <span class="option">-fdollars-in-identifiers</span>,
-you cannot successfully use <span class="samp">$</span> in identifiers on the RS/6000 due
+     <li><a name="index-fdollars_002din_002didentifiers-2548"></a>Even if you specify <samp><span class="option">-fdollars-in-identifiers</span></samp>,
+you cannot successfully use `<samp><span class="samp">$</span></samp>' in identifiers on the RS/6000 due
 to a restriction in the IBM assembler.  GAS supports these
 identifiers.
 

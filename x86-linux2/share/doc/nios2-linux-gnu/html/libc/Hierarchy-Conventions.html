@@ -3,7 +3,7 @@
 <title>Hierarchy Conventions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Porting.html#Porting" title="Porting">
 <link rel="next" href="Porting-to-Unix.html#Porting-to-Unix" title="Porting to Unix">
@@ -16,44 +16,46 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Hierarchy-Conventions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Porting-to-Unix.html#Porting-to-Unix">Porting to Unix</a>,
+<a name="Hierarchy-Conventions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Porting-to-Unix.html#Porting-to-Unix">Porting to Unix</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Porting.html#Porting">Porting</a>
-<hr><br>
+<hr>
 </div>
 
-<h4 class="appendixsubsec">D.2.1 Layout of the <span class="file">sysdeps</span> Directory Hierarchy</h4>
+<h4 class="appendixsubsec">D.2.1 Layout of the <samp><span class="file">sysdeps</span></samp> Directory Hierarchy</h4>
 
 <p>A GNU configuration name has three parts: the CPU type, the
-manufacturer's name, and the operating system.  <span class="file">configure</span> uses
+manufacturer's name, and the operating system.  <samp><span class="file">configure</span></samp> uses
 these to pick the list of system-dependent directories to look for.  If
-the <span class="samp">--nfp</span> option is <em>not</em> passed to <span class="file">configure</span>, the
-directory <var>machine</var><span class="file">/fpu</span> is also used.  The operating system
+the `<samp><span class="samp">--nfp</span></samp>' option is <em>not</em> passed to <samp><span class="file">configure</span></samp>, the
+directory <samp><var>machine</var><span class="file">/fpu</span></samp> is also used.  The operating system
 often has a <dfn>base operating system</dfn>; for example, if the operating
-system is <span class="samp">Linux</span>, the base operating system is <span class="samp">unix/sysv</span>. 
+system is `<samp><span class="samp">Linux</span></samp>', the base operating system is `<samp><span class="samp">unix/sysv</span></samp>'. 
 The algorithm used to pick the list of directories is simple:
-<span class="file">configure</span> makes a list of the base operating system,
+<samp><span class="file">configure</span></samp> makes a list of the base operating system,
 manufacturer, CPU type, and operating system, in that order.  It then
 concatenates all these together with slashes in between, to produce a
-directory name; for example, the configuration <span class="samp">i686-linux-gnu</span><!-- /@w -->
-results in <span class="file">unix/sysv/linux/i386/i686</span>.  <span class="file">configure</span> then
+directory name; for example, the configuration `<samp><span class="samp">i686-linux-gnu</span></samp>'<!-- /@w -->
+results in <samp><span class="file">unix/sysv/linux/i386/i686</span></samp>.  <samp><span class="file">configure</span></samp> then
 tries removing each element of the list in turn, so
-<span class="file">unix/sysv/linux</span> and <span class="file">unix/sysv</span> are also tried, among others. 
+<samp><span class="file">unix/sysv/linux</span></samp> and <samp><span class="file">unix/sysv</span></samp> are also tried, among others. 
 Since the precise version number of the operating system is often not
 important, and it would be very inconvenient, for example, to have
-identical <span class="file">irix6.2</span> and <span class="file">irix6.3</span> directories,
-<span class="file">configure</span> tries successively less specific operating system names
+identical <samp><span class="file">irix6.2</span></samp> and <samp><span class="file">irix6.3</span></samp> directories,
+<samp><span class="file">configure</span></samp> tries successively less specific operating system names
 by removing trailing suffixes starting with a period.
 
    <p>As an example, here is the complete list of directories that would be
-tried for the configuration <span class="samp">i686-linux-gnu</span><!-- /@w --> (with the
-<span class="file">crypt</span> and <span class="file">linuxthreads</span> add-on):
+tried for the configuration `<samp><span class="samp">i686-linux-gnu</span></samp>'<!-- /@w --> (with the
+<samp><span class="file">crypt</span></samp> and <samp><span class="file">linuxthreads</span></samp> add-on):
 
 <pre class="smallexample">     sysdeps/i386/elf
      crypt/sysdeps/unix
@@ -88,58 +90,58 @@ tried for the configuration <span class="samp">i686-linux-gnu</span><!-- /@w -->
      sysdeps/generic
 </pre>
    <p>Different machine architectures are conventionally subdirectories at the
-top level of the <span class="file">sysdeps</span> directory tree.  For example,
-<span class="file">sysdeps/sparc</span><!-- /@w --> and <span class="file">sysdeps/m68k</span><!-- /@w -->.  These contain
+top level of the <samp><span class="file">sysdeps</span></samp> directory tree.  For example,
+<samp><span class="file">sysdeps/sparc</span></samp><!-- /@w --> and <samp><span class="file">sysdeps/m68k</span></samp><!-- /@w -->.  These contain
 files specific to those machine architectures, but not specific to any
 particular operating system.  There might be subdirectories for
 specializations of those architectures, such as
-<span class="file">sysdeps/m68k/68020</span><!-- /@w -->. Code which is specific to the
+<samp><span class="file">sysdeps/m68k/68020</span></samp><!-- /@w -->. Code which is specific to the
 floating-point coprocessor used with a particular machine should go in
-<span class="file">sysdeps/</span><var>machine</var><span class="file">/fpu</span><!-- /@w -->.
+<samp><span class="file">sysdeps/</span><var>machine</var><span class="file">/fpu</span></samp><!-- /@w -->.
 
-   <p>There are a few directories at the top level of the <span class="file">sysdeps</span>
+   <p>There are a few directories at the top level of the <samp><span class="file">sysdeps</span></samp>
 hierarchy that are not for particular machine architectures.
 
      <dl>
-<dt><span class="file">generic</span><dd>As described above (see <a href="Porting.html#Porting">Porting</a>), this is the subdirectory
+<dt><samp><span class="file">generic</span></samp><dd>As described above (see <a href="Porting.html#Porting">Porting</a>), this is the subdirectory
 that every configuration implicitly uses after all others.
 
-     <br><dt><span class="file">ieee754</span><dd>This directory is for code using the IEEE 754 floating-point format,
+     <br><dt><samp><span class="file">ieee754</span></samp><dd>This directory is for code using the IEEE 754 floating-point format,
 where the C type <code>float</code> is IEEE 754 single-precision format, and
 <code>double</code> is IEEE 754 double-precision format.  Usually this
-directory is referred to in the <span class="file">Implies</span> file in a machine
-architecture-specific directory, such as <span class="file">m68k/Implies</span>.
+directory is referred to in the <samp><span class="file">Implies</span></samp> file in a machine
+architecture-specific directory, such as <samp><span class="file">m68k/Implies</span></samp>.
 
-     <br><dt><span class="file">libm-ieee754</span><dd>This directory contains an implementation of a mathematical library
+     <br><dt><samp><span class="file">libm-ieee754</span></samp><dd>This directory contains an implementation of a mathematical library
 usable on platforms which use IEEE&nbsp;754<!-- /@w --> conformant floating-point
 arithmetic.
 
-     <br><dt><span class="file">libm-i387</span><dd>This is a special case.  Ideally the code should be in
-<span class="file">sysdeps/i386/fpu</span> but for various reasons it is kept aside.
+     <br><dt><samp><span class="file">libm-i387</span></samp><dd>This is a special case.  Ideally the code should be in
+<samp><span class="file">sysdeps/i386/fpu</span></samp> but for various reasons it is kept aside.
 
-     <br><dt><span class="file">posix</span><dd>This directory contains implementations of things in the library in
+     <br><dt><samp><span class="file">posix</span></samp><dd>This directory contains implementations of things in the library in
 terms of <span class="sc">POSIX.1</span> functions.  This includes some of the <span class="sc">POSIX.1</span>
 functions themselves.  Of course, <span class="sc">POSIX.1</span> cannot be completely
 implemented in terms of itself, so a configuration using just
-<span class="file">posix</span> cannot be complete.
+<samp><span class="file">posix</span></samp> cannot be complete.
 
-     <br><dt><span class="file">unix</span><dd>This is the directory for Unix-like things.  See <a href="Porting-to-Unix.html#Porting-to-Unix">Porting to Unix</a>. 
-<span class="file">unix</span> implies <span class="file">posix</span>.  There are some special-purpose
-subdirectories of <span class="file">unix</span>:
+     <br><dt><samp><span class="file">unix</span></samp><dd>This is the directory for Unix-like things.  See <a href="Porting-to-Unix.html#Porting-to-Unix">Porting to Unix</a>. 
+<samp><span class="file">unix</span></samp> implies <samp><span class="file">posix</span></samp>.  There are some special-purpose
+subdirectories of <samp><span class="file">unix</span></samp>:
 
           <dl>
-<dt><span class="file">unix/common</span><dd>This directory is for things common to both BSD and System V release 4. 
-Both <span class="file">unix/bsd</span> and <span class="file">unix/sysv/sysv4</span> imply <span class="file">unix/common</span>.
+<dt><samp><span class="file">unix/common</span></samp><dd>This directory is for things common to both BSD and System V release 4. 
+Both <samp><span class="file">unix/bsd</span></samp> and <samp><span class="file">unix/sysv/sysv4</span></samp> imply <samp><span class="file">unix/common</span></samp>.
 
-          <br><dt><span class="file">unix/inet</span><dd>This directory is for <code>socket</code> and related functions on Unix systems. 
-<span class="file">unix/inet/Subdirs</span> enables the <span class="file">inet</span> top-level subdirectory. 
-<span class="file">unix/common</span> implies <span class="file">unix/inet</span>. 
+          <br><dt><samp><span class="file">unix/inet</span></samp><dd>This directory is for <code>socket</code> and related functions on Unix systems. 
+<samp><span class="file">unix/inet/Subdirs</span></samp> enables the <samp><span class="file">inet</span></samp> top-level subdirectory. 
+<samp><span class="file">unix/common</span></samp> implies <samp><span class="file">unix/inet</span></samp>. 
 </dl>
 
-     <br><dt><span class="file">mach</span><dd>This is the directory for things based on the Mach microkernel from CMU
+     <br><dt><samp><span class="file">mach</span></samp><dd>This is the directory for things based on the Mach microkernel from CMU
 (including the GNU operating system).  Other basic operating systems
 (VMS, for example) would have their own directories at the top level of
-the <span class="file">sysdeps</span> hierarchy, parallel to <span class="file">unix</span> and <span class="file">mach</span>. 
+the <samp><span class="file">sysdeps</span></samp> hierarchy, parallel to <samp><span class="file">unix</span></samp> and <samp><span class="file">mach</span></samp>. 
 </dl>
 
    </body></html>

@@ -3,7 +3,7 @@
 <title>String Parameters - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Configuration.html#System-Configuration" title="System Configuration">
 <link rel="prev" href="Utility-Minimums.html#Utility-Minimums" title="Utility Minimums">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="String-Parameters"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Utility-Minimums.html#Utility-Minimums">Utility Minimums</a>,
+<a name="String-Parameters"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Utility-Minimums.html#Utility-Minimums">Utility Minimums</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Configuration.html#System-Configuration">System Configuration</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">31.12 String-Valued Parameters</h3>
@@ -40,7 +42,7 @@ system with the function <code>confstr</code>:
 <blockquote><p>This function reads the value of a string-valued system parameter,
 storing the string into <var>len</var> bytes of memory space starting at
 <var>buf</var>.  The <var>parameter</var> argument should be one of the
-<span class="samp">_CS_</span> symbols listed below.
+`<samp><span class="samp">_CS_</span></samp>' symbols listed below.
 
         <p>The normal return value from <code>confstr</code> is the length of the string
 value that you asked for.  If you supply a null pointer for <var>buf</var>,

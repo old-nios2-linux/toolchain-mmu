@@ -3,7 +3,7 @@
 <title>Transformations On Global Variables - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Transformations-On-Symbol-Tables.html#Transformations-On-Symbol-Tables" title="Transformations On Symbol Tables">
 <link rel="prev" href="Transformations-On-Static-Variables.html#Transformations-On-Static-Variables" title="Transformations On Static Variables">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Transformations-On-Global-Variables"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Stab-Section-Transformations.html#Stab-Section-Transformations">Stab Section Transformations</a>,
+<a name="Transformations-On-Global-Variables"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Stab-Section-Transformations.html#Stab-Section-Transformations">Stab Section Transformations</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Transformations-On-Static-Variables.html#Transformations-On-Static-Variables">Transformations On Static Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Transformations-On-Symbol-Tables.html#Transformations-On-Symbol-Tables">Transformations On Symbol Tables</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">7.2.2 Transformations on Global Variables</h4>
@@ -44,7 +46,7 @@ linker symbol table entry describing the variable.  The source line:
 </pre>
    <p>The variable is represented by two symbol table entries in the object
 file (see below).  The first one originated as a stab.  The second one
-is an external symbol.  The upper case <span class="samp">D</span> signifies that the
+is an external symbol.  The upper case `<samp><span class="samp">D</span></samp>' signifies that the
 <code>n_type</code> field of the symbol table contains 7, <code>N_DATA</code> with
 local linkage.  The stab's value is zero since the value is not used for
 <code>N_GSYM</code> stabs.  The value of the linker symbol is the relocatable

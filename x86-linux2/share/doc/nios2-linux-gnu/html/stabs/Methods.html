@@ -3,7 +3,7 @@
 <title>Methods - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cplusplus.html#Cplusplus" title="Cplusplus">
 <link rel="prev" href="Class-Instance.html#Class-Instance" title="Class Instance">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Methods"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Method-Type-Descriptor.html#Method-Type-Descriptor">Method Type Descriptor</a>,
+<a name="Methods"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Method-Type-Descriptor.html#Method-Type-Descriptor">Method Type Descriptor</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Class-Instance.html#Class-Instance">Class Instance</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cplusplus.html#Cplusplus">Cplusplus</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">8.6 Method Definition</h3>
@@ -49,7 +51,7 @@ pointer is a pointer to the object on which the method was called.  Note
 that the method name is mangled to encode the class name and argument
 types.  Name mangling is described in the <span class="sc">arm</span> (<cite>The Annotated
 C++ Reference Manual</cite>, by Ellis and Stroustrup, <span class="sc">isbn</span>
-0-201-51459-1); <span class="file">gpcompare.texi</span> in Cygnus GCC distributions
+0-201-51459-1); <samp><span class="file">gpcompare.texi</span></samp> in Cygnus GCC distributions
 describes the differences between GNU mangling and <span class="sc">arm</span>
 mangling. 
 <!-- FIXME: Use @xref, especially if this is generally installed in the -->
@@ -68,7 +70,7 @@ name of the <code>this</code> pointer is always <code>this</code>.  Type 19, the
 but a stab defining <code>baseA</code> has not yet been emitted.  Since the
 compiler knows it will be emitted shortly, here it just outputs a cross
 reference to the undefined symbol, by prefixing the symbol name with
-<span class="samp">xs</span>.
+`<samp><span class="samp">xs</span></samp>'.
 
 <pre class="example">     .stabs "name:sym_desc(register param)type_def(19)=
              type_desc(ptr to)type_ref(baseA)=

@@ -3,7 +3,7 @@
 <title>File Locks - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="File-Status-Flags.html#File-Status-Flags" title="File Status Flags">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="File-Locks"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Interrupt-Input.html#Interrupt-Input">Interrupt Input</a>,
+<a name="File-Locks"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Interrupt-Input.html#Interrupt-Input">Interrupt Input</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="File-Status-Flags.html#File-Status-Flags">File Status Flags</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.15 File Locks</h3>
@@ -61,7 +63,7 @@ process exits, and are not inherited by child processes created using
 
    <p>When making a lock, use a <code>struct flock</code> to specify what kind of
 lock and where.  This data type and the associated macros for the
-<code>fcntl</code> function are declared in the header file <span class="file">fcntl.h</span>. 
+<code>fcntl</code> function are declared in the header file <samp><span class="file">fcntl.h</span></samp>. 
 <a name="index-fcntl_002eh-1369"></a>
 <!-- fcntl.h -->
 <!-- POSIX.1 -->

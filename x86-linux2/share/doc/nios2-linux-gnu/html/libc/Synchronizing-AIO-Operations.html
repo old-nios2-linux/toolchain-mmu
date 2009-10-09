@@ -3,7 +3,7 @@
 <title>Synchronizing AIO Operations - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Asynchronous-I_002fO.html#Asynchronous-I_002fO" title="Asynchronous I/O">
 <link rel="prev" href="Status-of-AIO-Operations.html#Status-of-AIO-Operations" title="Status of AIO Operations">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Synchronizing-AIO-Operations"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Cancel-AIO-Operations.html#Cancel-AIO-Operations">Cancel AIO Operations</a>,
+<a name="Synchronizing-AIO-Operations"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Cancel-AIO-Operations.html#Cancel-AIO-Operations">Cancel AIO Operations</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Status-of-AIO-Operations.html#Status-of-AIO-Operations">Status of AIO Operations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Asynchronous-I_002fO.html#Asynchronous-I_002fO">Asynchronous I/O</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">13.10.3 Getting into a Consistent State</h4>
@@ -41,7 +43,7 @@ resources (mainly computation time).  Instead POSIX.1b defines two
 functions which will help with most kinds of consistency.
 
    <p>The <code>aio_fsync</code> and <code>aio_fsync64</code> functions are only available
-if the symbol <code>_POSIX_SYNCHRONIZED_IO</code> is defined in <span class="file">unistd.h</span>.
+if the symbol <code>_POSIX_SYNCHRONIZED_IO</code> is defined in <samp><span class="file">unistd.h</span></samp>.
 
    <p><a name="index-synchronizing-1301"></a><!-- aio.h -->
 <!-- POSIX.1b -->

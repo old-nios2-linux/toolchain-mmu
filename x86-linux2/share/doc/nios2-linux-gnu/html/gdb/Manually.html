@@ -3,7 +3,7 @@
 <title>Manually - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Setting.html#Setting" title="Setting">
 <link rel="prev" href="Filenames.html#Filenames" title="Filenames">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Manually"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Automatically.html#Automatically">Automatically</a>,
+<a name="Manually"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Automatically.html#Automatically">Automatically</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Filenames.html#Filenames">Filenames</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Setting.html#Setting">Setting</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">13.1.2 Setting the Working Language</h4>
@@ -37,10 +39,10 @@ expressions are interpreted the same way in your debugging session and
 your program.
 
    <p><a name="index-set-language-618"></a>If you wish, you may set the language manually.  To do this, issue the
-command <span class="samp">set language </span><var>lang</var>, where <var>lang</var> is the name of
+command `<samp><span class="samp">set language </span><var>lang</var></samp>', where <var>lang</var> is the name of
 a language, such as
 <code>c</code> or <code>modula-2</code>. 
-For a list of the supported languages, type <span class="samp">set language</span>.
+For a list of the supported languages, type `<samp><span class="samp">set language</span></samp>'.
 
    <p>Setting the language manually prevents <span class="sc">gdb</span> from updating the working
 language automatically.  This can lead to confusion if you try

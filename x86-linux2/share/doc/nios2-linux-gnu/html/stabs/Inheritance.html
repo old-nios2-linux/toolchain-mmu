@@ -3,7 +3,7 @@
 <title>Inheritance - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cplusplus.html#Cplusplus" title="Cplusplus">
 <link rel="prev" href="Virtual-Methods.html#Virtual-Methods" title="Virtual Methods">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Inheritance"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Virtual-Base-Classes.html#Virtual-Base-Classes">Virtual Base Classes</a>,
+<a name="Inheritance"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Virtual-Base-Classes.html#Virtual-Base-Classes">Virtual Base Classes</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Virtual-Methods.html#Virtual-Methods">Virtual Methods</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cplusplus.html#Cplusplus">Cplusplus</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">8.12 Inheritance</h3>
@@ -47,9 +49,9 @@ appears bracketed by an exclamation point and a comma.
 visibility character, a number, a comma, another number, and a
 semi-colon.
 
-   <p>The virtual character is <span class="samp">1</span> if the base class is virtual and
-<span class="samp">0</span> if not.  The visibility character is <span class="samp">2</span> if the derivation
-is public, <span class="samp">1</span> if it is protected, and <span class="samp">0</span> if it is private. 
+   <p>The virtual character is `<samp><span class="samp">1</span></samp>' if the base class is virtual and
+`<samp><span class="samp">0</span></samp>' if not.  The visibility character is `<samp><span class="samp">2</span></samp>' if the derivation
+is public, `<samp><span class="samp">1</span></samp>' if it is protected, and `<samp><span class="samp">0</span></samp>' if it is private. 
 Debuggers should ignore virtual or visibility characters they do not
 recognize, and assume a reasonable default (such as public and
 non-virtual) (GDB 4.11 does not, but this should be fixed in the next

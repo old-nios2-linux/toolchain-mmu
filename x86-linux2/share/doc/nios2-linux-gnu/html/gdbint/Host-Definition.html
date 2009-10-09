@@ -3,7 +3,7 @@
 <title>Host Definition - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Language-Support.html#Language-Support" title="Language Support">
 <link rel="next" href="Target-Architecture-Definition.html#Target-Architecture-Definition" title="Target Architecture Definition">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Host-Definition"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Target-Architecture-Definition.html#Target-Architecture-Definition">Target Architecture Definition</a>,
+<a name="Host-Definition"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Target-Architecture-Definition.html#Target-Architecture-Definition">Target Architecture Definition</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Language-Support.html#Language-Support">Language Support</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">8 Host Definition</h2>
@@ -44,24 +46,24 @@ below, but these mostly exist for historical reasons, and will
 eventually disappear.
 
      <dl>
-<dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/</span><var>xyz</var><span class="file">.mh</span><dd>This file once contained both host and native configuration information
+<dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/</span><var>xyz</var><span class="file">.mh</span></samp><dd>This file once contained both host and native configuration information
 (see <a href="Native-Debugging.html#Native-Debugging">Native Debugging</a>) for the machine <var>xyz</var>.  The host
 configuration information is now handed by Autoconf.
 
      <p>Host configuration information included a definition of
 <code>XM_FILE=xm-</code><var>xyz</var><code>.h</code> and possibly definitions for <code>CC</code>,
 <code>SYSV_DEFINE</code>, <code>XM_CFLAGS</code>, <code>XM_ADD_FILES</code>,
-<code>XM_CLIBS</code>, <code>XM_CDEPS</code>, etc.; see <span class="file">Makefile.in</span>.
+<code>XM_CLIBS</code>, <code>XM_CDEPS</code>, etc.; see <samp><span class="file">Makefile.in</span></samp>.
 
      <p>New host only configurations do not need this file.
 
-     <br><dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/xm-</span><var>xyz</var><span class="file">.h</span><dd>This file once contained definitions and includes required when hosting
+     <br><dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/xm-</span><var>xyz</var><span class="file">.h</span></samp><dd>This file once contained definitions and includes required when hosting
 gdb on machine <var>xyz</var>.  Those definitions and includes are now
 handled by Autoconf.
 
      <p>New host and native configurations do not need this file.
 
-     <p><em>Maintainer's note: Some hosts continue to use the </em><span class="file">xm-xyz.h</span><em>
+     <p><em>Maintainer's note: Some hosts continue to use the <samp></em><span class="file">xm-xyz.h</span><em></samp>
 file to define the macros </em><var>HOST_FLOAT_FORMAT</var><em>,
 </em><var>HOST_DOUBLE_FORMAT</var><em> and </em><var>HOST_LONG_DOUBLE_FORMAT</var><em>.  That code
 also needs to be replaced with either an Autoconf or run-time test.</em>
@@ -72,9 +74,9 @@ also needs to be replaced with either an Autoconf or run-time test.</em>
 
 <p><a name="index-generic-host-support-171"></a>There are some &ldquo;generic&rdquo; versions of routines that can be used by
 various systems.  These can be customized in various ways by macros
-defined in your <span class="file">xm-</span><var>xyz</var><span class="file">.h</span> file.  If these routines work for
+defined in your <samp><span class="file">xm-</span><var>xyz</var><span class="file">.h</span></samp> file.  If these routines work for
 the <var>xyz</var> host, you can just include the generic file's name (with
-<span class="samp">.o</span>, not <span class="samp">.c</span>) in <code>XDEPFILES</code>.
+`<samp><span class="samp">.o</span></samp>', not `<samp><span class="samp">.c</span></samp>') in <code>XDEPFILES</code>.
 
    <p>Otherwise, if your machine needs custom support routines, you will need
 to write routines that perform the same functions as the generic file. 
@@ -84,14 +86,14 @@ into <code>XDEPFILES</code>.
      
 <a name="index-remote-debugging-support-172"></a>
 <a name="index-serial-line-support-173"></a>
-<dl><dt><span class="file">ser-unix.c</span><dd>This contains serial line support for Unix systems.  This is always
+<dl><dt><samp><span class="file">ser-unix.c</span></samp><dd>This contains serial line support for Unix systems.  This is always
 included, via the makefile variable <code>SER_HARDWIRE</code>; override this
-variable in the <span class="file">.mh</span> file to avoid it.
+variable in the <samp><span class="file">.mh</span></samp> file to avoid it.
 
-     <br><dt><span class="file">ser-go32.c</span><dd>This contains serial line support for 32-bit programs running under DOS,
+     <br><dt><samp><span class="file">ser-go32.c</span></samp><dd>This contains serial line support for 32-bit programs running under DOS,
 using the DJGPP (a.k.a. GO32) execution environment.
 
-     <p><a name="index-TCP-remote-support-174"></a><br><dt><span class="file">ser-tcp.c</span><dd>This contains generic TCP support using sockets. 
+     <p><a name="index-TCP-remote-support-174"></a><br><dt><samp><span class="file">ser-tcp.c</span></samp><dd>This contains generic TCP support using sockets. 
 </dl>
 
 <h3 class="section">8.2 Host Conditionals</h3>
@@ -103,8 +105,8 @@ the meaning is not documented here, then one of the source files where
 they are used is indicated) are:
 
      <dl>
-<dt><span class="sc">gdb</span><code>INIT_FILENAME</code><a name="index-_0040value_007bGDBN_007dINIT_005fFILENAME-175"></a><dd>The default name of <span class="sc">gdb</span>'s initialization file (normally
-<span class="file">.gdbinit</span>).
+<dt><span class="sc">gdb</span><code>INIT_FILENAME</code><a name="index-g_t_0040value_007bGDBN_007dINIT_005fFILENAME-175"></a><dd>The default name of <span class="sc">gdb</span>'s initialization file (normally
+<samp><span class="file">.gdbinit</span></samp>).
 
      <br><dt><code>NO_STD_REGS</code><a name="index-NO_005fSTD_005fREGS-176"></a><dd>This macro is deprecated.
 
@@ -144,7 +146,7 @@ tables.  For some machines this allows for sharing and quick updates.
 it will default to <code>long long</code> or <code>long</code>, depending on
 <code>CC_HAS_LONG_LONG</code>.
 
-     <br><dt><code>CC_HAS_LONG_LONG</code><a name="index-CC_005fHAS_005fLONG_005fLONG-198"></a><dd><a name="index-_0040code_007blong-long_007d-data-type-199"></a>Define this if the host C compiler supports <code>long long</code>.  This is set
+     <br><dt><code>CC_HAS_LONG_LONG</code><a name="index-CC_005fHAS_005fLONG_005fLONG-198"></a><dd><a name="index-g_t_0040code_007blong-long_007d-data-type-199"></a>Define this if the host C compiler supports <code>long long</code>.  This is set
 by the <code>configure</code> script.
 
      <br><dt><code>PRINTF_HAS_LONG_LONG</code><a name="index-PRINTF_005fHAS_005fLONG_005fLONG-200"></a><dd>Define this if the host can handle printing of long long integers via
@@ -188,8 +190,8 @@ defined.
 <code>SIGTSTP</code>.  (Only redefined for the Convex.)
 
      <br><dt><code>USG</code><a name="index-USG-211"></a><dd>Means that System V (prior to SVR4) include files are in use.  (FIXME:
-This symbol is abused in <span class="file">infrun.c</span>, <span class="file">regex.c</span>, and
-<span class="file">utils.c</span> for other things, at the moment.)
+This symbol is abused in <samp><span class="file">infrun.c</span></samp>, <samp><span class="file">regex.c</span></samp>, and
+<samp><span class="file">utils.c</span></samp> for other things, at the moment.)
 
      <br><dt><code>lint</code><a name="index-lint-212"></a><dd>Define this to help placate <code>lint</code> in some situations.
 

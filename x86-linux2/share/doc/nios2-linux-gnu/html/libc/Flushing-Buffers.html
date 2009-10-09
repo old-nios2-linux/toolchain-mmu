@@ -3,7 +3,7 @@
 <title>Flushing Buffers - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stream-Buffering.html#Stream-Buffering" title="Stream Buffering">
 <link rel="prev" href="Buffering-Concepts.html#Buffering-Concepts" title="Buffering Concepts">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Flushing-Buffers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Controlling-Buffering.html#Controlling-Buffering">Controlling Buffering</a>,
+<a name="Flushing-Buffers"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Controlling-Buffering.html#Controlling-Buffering">Controlling Buffering</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Buffering-Concepts.html#Buffering-Concepts">Buffering Concepts</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stream-Buffering.html#Stream-Buffering">Stream Buffering</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">12.20.2 Flushing Buffers</h4>
@@ -51,7 +53,7 @@ from its file.
 </ul>
 
    <p>If you want to flush the buffered output at another time, call
-<code>fflush</code>, which is declared in the header file <span class="file">stdio.h</span>. 
+<code>fflush</code>, which is declared in the header file <samp><span class="file">stdio.h</span></samp>. 
 <a name="index-stdio_002eh-1135"></a>
 <!-- stdio.h -->
 <!-- ISO -->
@@ -87,11 +89,11 @@ exported.
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: void <b>_flushlbf</b> (<var>void</var>)<var><a name="index-_005fflushlbf-1138"></a></var><br>
+&mdash; Function: void <b>_flushlbf</b> (<var>void</var>)<var><a name="index-g_t_005fflushlbf-1138"></a></var><br>
 <blockquote><p>The <code>_flushlbf</code> function flushes all line buffered streams
 currently opened.
 
-        <p>This function is declared in the <span class="file">stdio_ext.h</span> header. 
+        <p>This function is declared in the <samp><span class="file">stdio_ext.h</span></samp> header. 
 </p></blockquote></div>
 
    <p><strong>Compatibility Note:</strong> Some brain-damaged operating systems have
@@ -109,14 +111,14 @@ the GNU C library can be used.
 <!-- stdio_ext.h -->
 <!-- GNU -->
 <div class="defun">
-&mdash; Function: void <b>__fpurge</b> (<var>FILE *stream</var>)<var><a name="index-_005f_005ffpurge-1139"></a></var><br>
+&mdash; Function: void <b>__fpurge</b> (<var>FILE *stream</var>)<var><a name="index-g_t_005f_005ffpurge-1139"></a></var><br>
 <blockquote><p>The <code>__fpurge</code> function causes the buffer of the stream
 <var>stream</var> to be emptied.  If the stream is currently in read mode all
 input in the buffer is lost.  If the stream is in output mode the
 buffered output is not written to the device (or whatever other
 underlying storage) and the buffer the cleared.
 
-        <p>This function is declared in <span class="file">stdio_ext.h</span>. 
+        <p>This function is declared in <samp><span class="file">stdio_ext.h</span></samp>. 
 </p></blockquote></div>
 
    </body></html>

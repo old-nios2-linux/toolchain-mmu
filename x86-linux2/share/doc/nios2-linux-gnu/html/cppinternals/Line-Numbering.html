@@ -3,7 +3,7 @@
 <title>Line Numbering - The GNU C Preprocessor Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Preprocessor Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Token-Spacing.html#Token-Spacing" title="Token Spacing">
 <link rel="next" href="Guard-Macros.html#Guard-Macros" title="Guard Macros">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Line-Numbering"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Guard-Macros.html#Guard-Macros">Guard Macros</a>,
+<a name="Line-Numbering"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Guard-Macros.html#Guard-Macros">Guard Macros</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Token-Spacing.html#Token-Spacing">Token Spacing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="unnumbered">Line numbering</h2>
@@ -62,7 +64,7 @@ from the replacement list of a macro expansion carries the location of
 the token within the <code>#define</code> directive, because cpplib expands a
 macro by returning pointers to the tokens in its replacement list.  The
 current implementation of cpplib assigns tokens created from built-in
-macros and the <span class="samp">#</span> and <span class="samp">##</span> operators the location of the most
+macros and the `<samp><span class="samp">#</span></samp>' and `<samp><span class="samp">##</span></samp>' operators the location of the most
 recently lexed token.  This is a because they are allocated from the
 lexer's token runs, and because of the way the diagnostic routines infer
 the appropriate location to report.
@@ -106,8 +108,8 @@ starts counting from one.
 unit.  With some simple infrastructure, it is straight forward to map
 from this to the original source file and line number pair, saving space
 whenever line number information needs to be saved.  The code the
-implements this mapping lies in the files <span class="file">line-map.c</span> and
-<span class="file">line-map.h</span>.
+implements this mapping lies in the files <samp><span class="file">line-map.c</span></samp> and
+<samp><span class="file">line-map.h</span></samp>.
 
    <p>Command-line macros and assertions are implemented by pushing a buffer
 containing the right hand side of an equivalent <code>#define</code> or

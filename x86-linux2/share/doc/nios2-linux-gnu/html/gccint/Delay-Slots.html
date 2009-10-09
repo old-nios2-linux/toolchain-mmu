@@ -3,7 +3,7 @@
 <title>Delay Slots - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Insn-Attributes.html#Insn-Attributes" title="Insn Attributes">
 <link rel="prev" href="Constant-Attributes.html#Constant-Attributes" title="Constant Attributes">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Delay-Slots"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Processor-pipeline-description.html#Processor-pipeline-description">Processor pipeline description</a>,
+<a name="Delay-Slots"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Processor-pipeline-description.html#Processor-pipeline-description">Processor pipeline description</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Constant-Attributes.html#Constant-Attributes">Constant Attributes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Insn-Attributes.html#Insn-Attributes">Insn Attributes</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">13.19.7 Delay Slot Scheduling</h4>
@@ -93,7 +95,7 @@ supported for that delay slot, <code>(nil)</code> should be coded.
 
  <p>For example, in the common case where branch and call insns require
 a single delay slot, which may contain any insn other than a branch or
-call, the following would be placed in the <span class="file">md</span> file:
+call, the following would be placed in the <samp><span class="file">md</span></samp> file:
 
 <pre class="smallexample">     (define_delay (eq_attr "type" "branch,call")
                    [(eq_attr "type" "!branch,call") (nil) (nil)])

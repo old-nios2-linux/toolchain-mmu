@@ -3,7 +3,7 @@
 <title>Support Libraries - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Native-Debugging.html#Native-Debugging" title="Native Debugging">
 <link rel="next" href="Coding.html#Coding" title="Coding">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Support-Libraries"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Coding.html#Coding">Coding</a>,
+<a name="Support-Libraries"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Coding.html#Coding">Coding</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Native-Debugging.html#Native-Debugging">Native Debugging</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">13 Support Libraries</h2>
@@ -62,7 +64,7 @@ string table, etc.
 
 <p><a name="index-opcodes-library-456"></a>
 The opcodes library provides <span class="sc">gdb</span>'s disassembler.  (It's a separate
-library because it's also used in binutils, for <span class="file">objdump</span>).
+library because it's also used in binutils, for <samp><span class="file">objdump</span></samp>).
 
 <h3 class="section">13.3 readline</h3>
 
@@ -71,7 +73,7 @@ that allow users to edit command lines as they are typed in.
 
 <h3 class="section">13.4 libiberty</h3>
 
-<p><a name="index-_0040code_007blibiberty_007d-library-458"></a>
+<p><a name="index-g_t_0040code_007blibiberty_007d-library-458"></a>
 The <code>libiberty</code> library provides a set of functions and features
 that integrate and improve on functionality found in modern operating
 systems.  Broadly speaking, such features can be divided into three
@@ -84,11 +86,11 @@ beyond standard functions).
    <p><span class="sc">gdb</span> uses various features provided by the <code>libiberty</code>
 library, for instance the C<tt>++</tt> demangler, the <acronym>IEEE</acronym>
 floating format support functions, the input options parser
-<span class="samp">getopt</span>, the <span class="samp">obstack</span> extension, and other functions.
+`<samp><span class="samp">getopt</span></samp>', the `<samp><span class="samp">obstack</span></samp>' extension, and other functions.
 
 <h4 class="subsection">13.4.1 <code>obstacks</code> in <span class="sc">gdb</span></h4>
 
-<p><a name="index-_0040code_007bobstacks_007d-459"></a>
+<p><a name="index-g_t_0040code_007bobstacks_007d-459"></a>
 The obstack mechanism provides a convenient way to allocate and free
 chunks of memory.  Each obstack is a pool of memory that is managed
 like a stack.  Objects (of any nature, size and alignment) are
@@ -151,7 +153,7 @@ Regex conditionals.
 <p><a name="index-Array-Containers-461"></a><a name="index-VEC-462"></a>
 Often it is necessary to manipulate a dynamic array of a set of
 objects.  C forces some bookkeeping on this, which can get cumbersome
-and repetitive.  The <span class="file">vec.h</span> file contains macros for defining
+and repetitive.  The <samp><span class="file">vec.h</span></samp> file contains macros for defining
 and using a typesafe vector type.  The functions defined will be
 inlined when compiling, and so the abstraction cost should be zero. 
 Domain checks are added to detect programming errors.
@@ -246,7 +248,7 @@ that is not possible in plain C.
        { do something with elt }
      
 </pre>
-   <p>The <span class="file">vec.h</span> file provides details on how to invoke the various
+   <p>The <samp><span class="file">vec.h</span></samp> file provides details on how to invoke the various
 accessors provided.  They are enumerated here:
 
      <dl>

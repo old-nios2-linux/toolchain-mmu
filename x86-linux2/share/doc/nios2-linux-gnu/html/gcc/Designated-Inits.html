@@ -3,7 +3,7 @@
 <title>Designated Inits - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Compound-Literals.html#Compound-Literals" title="Compound Literals">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Designated-Inits"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Cast-to-Union.html#Cast-to-Union">Cast to Union</a>,
+<a name="Designated-Inits"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Cast-to-Union.html#Cast-to-Union">Cast to Union</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Compound-Literals.html#Compound-Literals">Compound Literals</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.20 Designated Initializers</h3>
@@ -64,7 +66,7 @@ an extension in C89 mode as well.  This extension is not
 implemented in GNU C++.
 
  <p>To specify an array index, write
-<span class="samp">[</span><var>index</var><span class="samp">] =</span> before the element value.  For example,
+`<samp><span class="samp">[</span><var>index</var><span class="samp">] =</span></samp>' before the element value.  For example,
 
 <pre class="smallexample">     int a[6] = { [4] = 29, [2] = 15 };
 </pre>
@@ -76,11 +78,11 @@ implemented in GNU C++.
 initialized is automatic.
 
  <p>An alternative syntax for this which has been obsolete since GCC 2.5 but
-GCC still accepts is to write <span class="samp">[</span><var>index</var><span class="samp">]</span> before the element
-value, with no <span class="samp">=</span>.
+GCC still accepts is to write `<samp><span class="samp">[</span><var>index</var><span class="samp">]</span></samp>' before the element
+value, with no `<samp><span class="samp">=</span></samp>'.
 
  <p>To initialize a range of elements to the same value, write
-<span class="samp">[</span><var>first</var><span class="samp"> ... </span><var>last</var><span class="samp">] = </span><var>value</var>.  This is a GNU
+`<samp><span class="samp">[</span><var>first</var><span class="samp"> ... </span><var>last</var><span class="samp">] = </span><var>value</var></samp>'.  This is a GNU
 extension.  For example,
 
 <pre class="smallexample">     int widths[] = { [0 ... 9] = 1, [10 ... 99] = 2, [100] = 3 };
@@ -92,7 +94,7 @@ not for each initialized field by the range initializer.
 plus one.
 
  <p>In a structure initializer, specify the name of a field to initialize
-with <span class="samp">.</span><var>fieldname</var><span class="samp"> =</span> before the element value.  For example,
+with `<samp><span class="samp">.</span><var>fieldname</var><span class="samp"> =</span></samp>' before the element value.  For example,
 given the following structure,
 
 <pre class="smallexample">     struct point { int x, y; };
@@ -106,11 +108,11 @@ given the following structure,
 <pre class="smallexample">     struct point p = { xvalue, yvalue };
 </pre>
  <p>Another syntax which has the same meaning, obsolete since GCC 2.5, is
-<var>fieldname</var><span class="samp">:</span>, as shown here:
+`<samp><var>fieldname</var><span class="samp">:</span></samp>', as shown here:
 
 <pre class="smallexample">     struct point p = { y: yvalue, x: xvalue };
 </pre>
- <p><a name="index-designators-1806"></a>The <span class="samp">[</span><var>index</var><span class="samp">]</span> or <span class="samp">.</span><var>fieldname</var> is known as a
+ <p><a name="index-designators-1806"></a>The `<samp><span class="samp">[</span><var>index</var><span class="samp">]</span></samp>' or `<samp><span class="samp">.</span><var>fieldname</var></samp>' is known as a
 <dfn>designator</dfn>.  You can also use a designator (or the obsolete colon
 syntax) when initializing a union, to specify which element of the union
 should be used.  For example,
@@ -143,11 +145,11 @@ For example:
        = { [' '] = 1, ['\t'] = 1, ['\h'] = 1,
            ['\f'] = 1, ['\n'] = 1, ['\r'] = 1 };
 </pre>
- <p><a name="index-designator-lists-1807"></a>You can also write a series of <span class="samp">.</span><var>fieldname</var> and
-<span class="samp">[</span><var>index</var><span class="samp">]</span> designators before an <span class="samp">=</span> to specify a
+ <p><a name="index-designator-lists-1807"></a>You can also write a series of `<samp><span class="samp">.</span><var>fieldname</var></samp>' and
+`<samp><span class="samp">[</span><var>index</var><span class="samp">]</span></samp>' designators before an `<samp><span class="samp">=</span></samp>' to specify a
 nested subobject to initialize; the list is taken relative to the
 subobject corresponding to the closest surrounding brace pair.  For
-example, with the <span class="samp">struct point</span> declaration above:
+example, with the `<samp><span class="samp">struct point</span></samp>' declaration above:
 
 <pre class="smallexample">     struct point ptarray[10] = { [2].y = yv2, [2].x = xv2, [0].x = xv0 };
 </pre>

@@ -3,7 +3,7 @@
 <title>Setting Groups - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Users-and-Groups.html#Users-and-Groups" title="Users and Groups">
 <link rel="prev" href="Setting-User-ID.html#Setting-User-ID" title="Setting User ID">
@@ -17,24 +17,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Setting-Groups"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Enable_002fDisable-Setuid.html#Enable_002fDisable-Setuid">Enable/Disable Setuid</a>,
+<a name="Setting-Groups"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Enable_002fDisable-Setuid.html#Enable_002fDisable-Setuid">Enable/Disable Setuid</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Setting-User-ID.html#Setting-User-ID">Setting User ID</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Users-and-Groups.html#Users-and-Groups">Users and Groups</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">29.7 Setting the Group IDs</h3>
 
 <p>This section describes the functions for altering the group IDs (real
 and effective) of a process.  To use these facilities, you must include
-the header files <span class="file">sys/types.h</span> and <span class="file">unistd.h</span>. 
+the header files <samp><span class="file">sys/types.h</span></samp> and <samp><span class="file">unistd.h</span></samp>. 
 <a name="index-unistd_002eh-3318"></a><a name="index-sys_002ftypes_002eh-3319"></a>
 <!-- unistd.h -->
 <!-- POSIX.1 -->
@@ -106,7 +108,7 @@ there is no way to drop privileges permanently.
 
    <p>The system also lets privileged processes change their supplementary
 group IDs.  To use <code>setgroups</code> or <code>initgroups</code>, your programs
-should include the header file <span class="file">grp.h</span>. 
+should include the header file <samp><span class="file">grp.h</span></samp>. 
 <a name="index-grp_002eh-3323"></a>
 <!-- grp.h -->
 <!-- BSD -->
@@ -145,7 +147,7 @@ has constructed.
    <p>If you are interested in the groups a particular user belongs to, but do
 not want to change the process's supplementary group IDs, you can use
 <code>getgrouplist</code>.  To use <code>getgrouplist</code>, your programs should
-include the header file <span class="file">grp.h</span>. 
+include the header file <samp><span class="file">grp.h</span></samp>. 
 <a name="index-grp_002eh-3326"></a>
 <!-- grp.h -->
 <!-- BSD -->

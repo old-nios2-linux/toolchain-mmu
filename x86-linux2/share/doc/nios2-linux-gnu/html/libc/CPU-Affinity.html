@@ -3,7 +3,7 @@
 <title>CPU Affinity - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Priority.html#Priority" title="Priority">
 <link rel="prev" href="Traditional-Scheduling.html#Traditional-Scheduling" title="Traditional Scheduling">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="CPU-Affinity"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Traditional-Scheduling.html#Traditional-Scheduling">Traditional Scheduling</a>,
+<a name="CPU-Affinity"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Traditional-Scheduling.html#Traditional-Scheduling">Traditional Scheduling</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Priority.html#Priority">Priority</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">22.3.5 Limiting execution to certain CPUs</h4>
@@ -78,7 +80,7 @@ The data type has a fixed size; in the unlikely case that the number
 of bits are not sufficient to describe the CPUs of the system a
 different interface has to be used.
 
-        <p>This type is a GNU extension and is defined in <span class="file">sched.h</span>. 
+        <p>This type is a GNU extension and is defined in <samp><span class="file">sched.h</span></samp>. 
 </p></blockquote></div>
 
    <p>To manipulate the bitset, to set and reset bits, a number of macros is
@@ -103,7 +105,7 @@ manipulation should happen via the next four macros.
 &mdash; Macro: void <b>CPU_ZERO</b> (<var>cpu_set_t *set</var>)<var><a name="index-CPU_005fZERO-2765"></a></var><br>
 <blockquote><p>This macro initializes the CPU set <var>set</var> to be the empty set.
 
-        <p>This macro is a GNU extension and is defined in <span class="file">sched.h</span>. 
+        <p>This macro is a GNU extension and is defined in <samp><span class="file">sched.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- sched.h -->
@@ -115,7 +117,7 @@ manipulation should happen via the next four macros.
         <p>The <var>cpu</var> parameter must not have side effects since it is
 evaluated more than once.
 
-        <p>This macro is a GNU extension and is defined in <span class="file">sched.h</span>. 
+        <p>This macro is a GNU extension and is defined in <samp><span class="file">sched.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- sched.h -->
@@ -127,7 +129,7 @@ evaluated more than once.
         <p>The <var>cpu</var> parameter must not have side effects since it is
 evaluated more than once.
 
-        <p>This macro is a GNU extension and is defined in <span class="file">sched.h</span>. 
+        <p>This macro is a GNU extension and is defined in <samp><span class="file">sched.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- sched.h -->
@@ -140,7 +142,7 @@ of the CPU set <var>set</var>, and zero (false) otherwise.
         <p>The <var>cpu</var> parameter must not have side effects since it is
 evaluated more than once.
 
-        <p>This macro is a GNU extension and is defined in <span class="file">sched.h</span>. 
+        <p>This macro is a GNU extension and is defined in <samp><span class="file">sched.h</span></samp>. 
 </p></blockquote></div>
 
    <p>CPU bitsets can be constructed from scratch or the currently installed
@@ -166,7 +168,7 @@ and <code>errno</code> is set to represent the error condition.
           <br><dt><code>EFAULT</code><dd>The pointer <var>cpuset</var> is does not point to a valid object. 
 </dl>
 
-        <p>This function is a GNU extension and is declared in <span class="file">sched.h</span>. 
+        <p>This function is a GNU extension and is declared in <samp><span class="file">sched.h</span></samp>. 
 </p></blockquote></div>
 
    <p>Note that it is not portably possible to use this information to
@@ -195,7 +197,7 @@ to the error code:
 not leave a processor for the process or thread to run on. 
 </dl>
 
-        <p>This function is a GNU extension and is declared in <span class="file">sched.h</span>. 
+        <p>This function is a GNU extension and is declared in <samp><span class="file">sched.h</span></samp>. 
 </p></blockquote></div>
 
    </body></html>

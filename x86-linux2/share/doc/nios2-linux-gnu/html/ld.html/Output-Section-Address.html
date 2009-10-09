@@ -3,7 +3,7 @@
 <title>Output Section Address - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="SECTIONS.html#SECTIONS" title="SECTIONS">
 <link rel="prev" href="Output-Section-Name.html#Output-Section-Name" title="Output Section Name">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Output-Section-Address"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Input-Section.html#Input-Section">Input Section</a>,
+<a name="Output-Section-Address"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Input-Section.html#Input-Section">Input Section</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Output-Section-Name.html#Output-Section-Name">Output Section Name</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="SECTIONS.html#SECTIONS">SECTIONS</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.6.3 Output Section Address</h4>
@@ -52,9 +54,9 @@ within the output section.
 <pre class="smallexample">     .text : { *(.text) }
 </pre>
    <p class="noindent">are subtly different.  The first will set the address of the
-<span class="samp">.text</span> output section to the current value of the location
+`<samp><span class="samp">.text</span></samp>' output section to the current value of the location
 counter.  The second will set it to the current value of the location
-counter aligned to the strictest alignment of a <span class="samp">.text</span> input
+counter aligned to the strictest alignment of a `<samp><span class="samp">.text</span></samp>' input
 section.
 
    <p>The <var>address</var> may be an arbitrary expression; <a href="Expressions.html#Expressions">Expressions</a>. 

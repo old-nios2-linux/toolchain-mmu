@@ -3,7 +3,7 @@
 <title>Query Memory Parameters - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Memory-Resources.html#Memory-Resources" title="Memory Resources">
 <link rel="prev" href="Memory-Subsystem.html#Memory-Subsystem" title="Memory Subsystem">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Query-Memory-Parameters"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Memory-Subsystem.html#Memory-Subsystem">Memory Subsystem</a>,
+<a name="Query-Memory-Parameters"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Memory-Subsystem.html#Memory-Subsystem">Memory Subsystem</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Memory-Resources.html#Memory-Resources">Memory Resources</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">22.4.2 How to get information about the memory subsystem?</h4>
@@ -53,7 +55,7 @@ processes on the same system.  Therefore the system should be queried at
 runtime about the current page size and no assumptions (except about it
 being a power of two) should be made.
 
-   <p><a name="index-_005fSC_005fPAGESIZE-2778"></a>The correct interface to query about the page size is <code>sysconf</code>
+   <p><a name="index-g_t_005fSC_005fPAGESIZE-2778"></a>The correct interface to query about the page size is <code>sysconf</code>
 (see <a href="Sysconf-Definition.html#Sysconf-Definition">Sysconf Definition</a>) with the parameter <code>_SC_PAGESIZE</code>. 
 There is a much older interface available, too.
 
@@ -65,20 +67,20 @@ There is a much older interface available, too.
 This value is fixed for the runtime of the process but can vary in
 different runs of the application.
 
-        <p>The function is declared in <span class="file">unistd.h</span>. 
+        <p>The function is declared in <samp><span class="file">unistd.h</span></samp>. 
 </p></blockquote></div>
 
    <p>Widely available on System&nbsp;V<!-- /@w --> derived systems is a method to get
 information about the physical memory the system has.  The call
 
-   <p><a name="index-_005fSC_005fPHYS_005fPAGES-2780"></a><a name="index-sysconf-2781"></a>
+   <p><a name="index-g_t_005fSC_005fPHYS_005fPAGES-2780"></a><a name="index-sysconf-2781"></a>
 <pre class="smallexample">       sysconf (_SC_PHYS_PAGES)
 </pre>
    <p class="noindent">returns the total number of pages of physical the system has. 
 This does not mean all this memory is available.  This information can
 be found using
 
-   <p><a name="index-_005fSC_005fAVPHYS_005fPAGES-2782"></a><a name="index-sysconf-2783"></a>
+   <p><a name="index-g_t_005fSC_005fAVPHYS_005fPAGES-2782"></a><a name="index-sysconf-2783"></a>
 <pre class="smallexample">       sysconf (_SC_AVPHYS_PAGES)
 </pre>
    <p>These two values help to optimize applications.  The value returned for
@@ -91,7 +93,7 @@ memory the system is in trouble.
 
    <p>The GNU C library provides in addition to these already described way to
 get this information two functions.  They are declared in the file
-<span class="file">sys/sysinfo.h</span>.  Programmers should prefer to use the
+<samp><span class="file">sys/sysinfo.h</span></samp>.  Programmers should prefer to use the
 <code>sysconf</code> method described above.
 
 <!-- sys/sysinfo.h -->

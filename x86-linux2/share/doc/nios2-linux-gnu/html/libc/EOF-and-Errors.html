@@ -3,7 +3,7 @@
 <title>EOF and Errors - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="I_002fO-on-Streams.html#I_002fO-on-Streams" title="I/O on Streams">
 <link rel="prev" href="Formatted-Input.html#Formatted-Input" title="Formatted Input">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="EOF-and-Errors"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Error-Recovery.html#Error-Recovery">Error Recovery</a>,
+<a name="EOF-and-Errors"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Error-Recovery.html#Error-Recovery">Error Recovery</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Formatted-Input.html#Formatted-Input">Formatted Input</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="I_002fO-on-Streams.html#I_002fO-on-Streams">I/O on Streams</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">12.15 End-Of-File and Errors</h3>
@@ -50,7 +52,7 @@ stream functions to indicate an end-of-file condition, or some other
 error situation.  With the GNU library, <code>EOF</code> is <code>-1</code>.  In
 other libraries, its value may be some other negative number.
 
-        <p>This symbol is declared in <span class="file">stdio.h</span>. 
+        <p>This symbol is declared in <samp><span class="file">stdio.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- wchar.h -->
@@ -62,7 +64,7 @@ stream functions to indicate an end-of-file condition, or some other
 error situation.  With the GNU library, <code>WEOF</code> is <code>-1</code>.  In
 other libraries, its value may be some other negative number.
 
-        <p>This symbol is declared in <span class="file">wchar.h</span>. 
+        <p>This symbol is declared in <samp><span class="file">wchar.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- stdio.h -->
@@ -72,7 +74,7 @@ other libraries, its value may be some other negative number.
 <blockquote><p>The <code>feof</code> function returns nonzero if and only if the end-of-file
 indicator for the stream <var>stream</var> is set.
 
-        <p>This symbol is declared in <span class="file">stdio.h</span>. 
+        <p>This symbol is declared in <samp><span class="file">stdio.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- stdio.h -->
@@ -84,7 +86,7 @@ function except that it does not implicitly lock the stream.
 
         <p>This function is a GNU extension.
 
-        <p>This symbol is declared in <span class="file">stdio.h</span>. 
+        <p>This symbol is declared in <samp><span class="file">stdio.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- stdio.h -->
@@ -95,7 +97,7 @@ function except that it does not implicitly lock the stream.
 indicator for the stream <var>stream</var> is set, indicating that an error
 has occurred on a previous operation on the stream.
 
-        <p>This symbol is declared in <span class="file">stdio.h</span>. 
+        <p>This symbol is declared in <samp><span class="file">stdio.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- stdio.h -->
@@ -107,7 +109,7 @@ function except that it does not implicitly lock the stream.
 
         <p>This function is a GNU extension.
 
-        <p>This symbol is declared in <span class="file">stdio.h</span>. 
+        <p>This symbol is declared in <samp><span class="file">stdio.h</span></samp>. 
 </p></blockquote></div>
 
    <p>In addition to setting the error indicator associated with the stream,

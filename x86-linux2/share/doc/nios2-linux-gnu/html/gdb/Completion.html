@@ -3,7 +3,7 @@
 <title>Completion - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Commands.html#Commands" title="Commands">
 <link rel="prev" href="Command-Syntax.html#Command-Syntax" title="Command Syntax">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Completion"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Help.html#Help">Help</a>,
+<a name="Completion"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Help.html#Help">Help</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Command-Syntax.html#Command-Syntax">Command Syntax</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Commands.html#Commands">Commands</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">3.2 Command Completion</h3>
@@ -48,16 +50,16 @@ enter it).  For example, if you type
 <!-- replace " @key" by "@key" in the following... -->
 <pre class="smallexample">     (gdb) info bre &lt;TAB&gt;
 </pre>
-   <p class="noindent"><span class="sc">gdb</span> fills in the rest of the word <span class="samp">breakpoints</span>, since that is
-the only <code>info</code> subcommand beginning with <span class="samp">bre</span>:
+   <p class="noindent"><span class="sc">gdb</span> fills in the rest of the word `<samp><span class="samp">breakpoints</span></samp>', since that is
+the only <code>info</code> subcommand beginning with `<samp><span class="samp">bre</span></samp>':
 
 <pre class="smallexample">     (gdb) info breakpoints
 </pre>
    <p class="noindent">You can either press &lt;RET&gt; at this point, to run the <code>info
 breakpoints</code> command, or backspace and enter something else, if
-<span class="samp">breakpoints</span> does not look like the command you expected.  (If you
+`<samp><span class="samp">breakpoints</span></samp>' does not look like the command you expected.  (If you
 were sure you wanted <code>info breakpoints</code> in the first place, you
-might as well just type &lt;RET&gt; immediately after <span class="samp">info bre</span>,
+might as well just type &lt;RET&gt; immediately after `<samp><span class="samp">info bre</span></samp>',
 to exploit command abbreviations rather than command completion).
 
    <p>If there is more than one possibility for the next word when you press
@@ -65,7 +67,7 @@ to exploit command abbreviations rather than command completion).
 characters and try again, or just press &lt;TAB&gt; a second time;
 <span class="sc">gdb</span> displays all the possible completions for that word.  For
 example, you might want to set a breakpoint on a subroutine whose name
-begins with <span class="samp">make_</span>, but when you type <kbd>b make_&lt;TAB&gt;</kbd> <span class="sc">gdb</span>
+begins with `<samp><span class="samp">make_</span></samp>', but when you type <kbd>b make_&lt;TAB&gt;</kbd> <span class="sc">gdb</span>
 just sounds the bell.  Typing &lt;TAB&gt; again displays all the
 function names in your program that begin with those characters, for
 example:
@@ -80,7 +82,7 @@ example:
      (gdb) b make_
 </pre>
    <p class="noindent">After displaying the available possibilities, <span class="sc">gdb</span> copies your
-partial input (<span class="samp">b make_</span> in the example) so you can finish the
+partial input (`<samp><span class="samp">b make_</span></samp>' in the example) so you can finish the
 command.
 
    <p>If you just want to see the list of alternatives in the first place, you

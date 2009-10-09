@@ -3,7 +3,7 @@
 <title>gcov Testing - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Testsuites.html#Testsuites" title="Testsuites">
 <link rel="prev" href="libgcj-Tests.html#libgcj-Tests" title="libgcj Tests">
@@ -38,39 +38,41 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="gcov-Testing"></a>Next:&nbsp;<a rel="next" accesskey="n" href="profopt-Testing.html#profopt-Testing">profopt Testing</a>,
+<a name="gcov-Testing"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="profopt-Testing.html#profopt-Testing">profopt Testing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="libgcj-Tests.html#libgcj-Tests">libgcj Tests</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Testsuites.html#Testsuites">Testsuites</a>
-<hr><br>
+<hr>
 </div>
 
-<h4 class="subsection">6.4.6 Support for testing <span class="command">gcov</span></h4>
+<h4 class="subsection">6.4.6 Support for testing <samp><span class="command">gcov</span></samp></h4>
 
-<p>Language-independent support for testing <span class="command">gcov</span>, and for checking
+<p>Language-independent support for testing <samp><span class="command">gcov</span></samp>, and for checking
 that branch profiling produces expected values, is provided by the
-expect file <span class="file">gcov.exp</span>.  <span class="command">gcov</span> tests also rely on procedures
-in <span class="file">gcc.dg.exp</span> to compile and run the test program.  A typical
-<span class="command">gcov</span> test contains the following DejaGnu commands within comments:
+expect file <samp><span class="file">gcov.exp</span></samp>.  <samp><span class="command">gcov</span></samp> tests also rely on procedures
+in <samp><span class="file">gcc.dg.exp</span></samp> to compile and run the test program.  A typical
+<samp><span class="command">gcov</span></samp> test contains the following DejaGnu commands within comments:
 
 <pre class="smallexample">     { dg-options "-fprofile-arcs -ftest-coverage" }
      { dg-do run { target native } }
      { dg-final { run-gcov sourcefile } }
 </pre>
- <p>Checks of <span class="command">gcov</span> output can include line counts, branch percentages,
+ <p>Checks of <samp><span class="command">gcov</span></samp> output can include line counts, branch percentages,
 and call return percentages.  All of these checks are requested via
 commands that appear in comments in the test's source file. 
 Commands to check line counts are processed by default. 
 Commands to check branch percentages and call return percentages are
-processed if the <span class="command">run-gcov</span> command has arguments <code>branches</code>
+processed if the <samp><span class="command">run-gcov</span></samp> command has arguments <code>branches</code>
 or <code>calls</code>, respectively.  For example, the following specifies
-checking both, as well as passing <span class="option">-b</span> to <span class="command">gcov</span>:
+checking both, as well as passing <samp><span class="option">-b</span></samp> to <samp><span class="command">gcov</span></samp>:
 
 <pre class="smallexample">     { dg-final { run-gcov branches calls { -b sourcefile } } }
 </pre>

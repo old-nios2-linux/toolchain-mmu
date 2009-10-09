@@ -3,7 +3,7 @@
 <title>Macro define and undefine - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Types.html#Types" title="Types">
 <link rel="next" href="Symbol-Tables.html#Symbol-Tables" title="Symbol Tables">
@@ -16,24 +16,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Macro-define-and-undefine"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Symbol-Tables.html#Symbol-Tables">Symbol Tables</a>,
+<a name="Macro-define-and-undefine"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Symbol-Tables.html#Symbol-Tables">Symbol Tables</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Types.html#Types">Types</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">6 Representation of #define and #undef</h2>
 
 <p>This section describes the stabs support for macro define and undefine
-information, supported on some systems.  (e.g., with <span class="option">-g3</span>
-<span class="option">-gstabs</span> when using GCC).
+information, supported on some systems.  (e.g., with <samp><span class="option">-g3</span></samp>
+<samp><span class="option">-gstabs</span></samp> when using GCC).
 
    <p>A <code>#define </code><var>macro-name</var> <var>macro-body</var> is represented with
 an <code>N_MAC_DEFINE</code> stab with a string field of

@@ -3,7 +3,7 @@
 <title>GDB/MI Data Manipulation - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB_002fMI.html#GDB_002fMI" title="GDB/MI">
 <link rel="prev" href="GDB_002fMI-Variable-Objects.html#GDB_002fMI-Variable-Objects" title="GDB/MI Variable Objects">
@@ -17,22 +17,25 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="GDB_002fMI-Data-Manipulation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Tracepoint-Commands.html#GDB_002fMI-Tracepoint-Commands">GDB/MI Tracepoint Commands</a>,
+<a name="GDB%2fMI-Data-Manipulation"></a>
+<a name="GDB_002fMI-Data-Manipulation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Tracepoint-Commands.html#GDB_002fMI-Tracepoint-Commands">GDB/MI Tracepoint Commands</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="GDB_002fMI-Variable-Objects.html#GDB_002fMI-Variable-Objects">GDB/MI Variable Objects</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">25.13 <span class="sc">gdb/mi</span> Data Manipulation</h3>
 
-<p><a name="index-data-manipulation_002c-in-_0040sc_007bgdb_002fmi_007d-1446"></a><a name="index-_0040sc_007bgdb_002fmi_007d_002c-data-manipulation-1447"></a>This section describes the <span class="sc">gdb/mi</span> commands that manipulate data:
+<p><a name="index-data-manipulation_002c-in-_0040sc_007bgdb_002fmi_007d-1446"></a><a name="index-g_t_0040sc_007bgdb_002fmi_007d_002c-data-manipulation-1447"></a>This section describes the <span class="sc">gdb/mi</span> commands that manipulate data:
 examine memory and registers, evaluate expressions, etc.
 
 <!-- REMOVED FROM THE INTERFACE. -->
@@ -44,7 +47,7 @@ examine memory and registers, evaluate expressions, etc.
 <!-- N.A. -->
 <h4 class="subheading">The <code>-data-disassemble</code> Command</h4>
 
-<p><a name="index-_002ddata_002ddisassemble-1448"></a>
+<p><a name="index-g_t_002ddata_002ddisassemble-1448"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -56,11 +59,11 @@ examine memory and registers, evaluate expressions, etc.
 <p class="noindent">Where:
 
      <dl>
-<dt><var>start-addr</var><dd>is the beginning address (or <code>$pc</code>)
-<br><dt><var>end-addr</var><dd>is the end address
-<br><dt><var>filename</var><dd>is the name of the file to disassemble
-<br><dt><var>linenum</var><dd>is the line number to disassemble around
-<br><dt><var>lines</var><dd>is the number of disassembly lines to be produced.  If it is -1,
+<dt>`<samp><var>start-addr</var></samp>'<dd>is the beginning address (or <code>$pc</code>)
+<br><dt>`<samp><var>end-addr</var></samp>'<dd>is the end address
+<br><dt>`<samp><var>filename</var></samp>'<dd>is the name of the file to disassemble
+<br><dt>`<samp><var>linenum</var></samp>'<dd>is the line number to disassemble around
+<br><dt>`<samp><var>lines</var></samp>'<dd>is the number of disassembly lines to be produced.  If it is -1,
 the whole function will be disassembled, in case no <var>end-addr</var> is
 specified.  If <var>end-addr</var> is specified as a non-zero value, and
 <var>lines</var> is lower than the number of disassembly lines between
@@ -68,7 +71,7 @@ specified.  If <var>end-addr</var> is specified as a non-zero value, and
 displayed; if <var>lines</var> is higher than the number of lines between
 <var>start-addr</var> and <var>end-addr</var>, only the lines up to <var>end-addr</var>
 are displayed. 
-<br><dt><var>mode</var><dd>is either 0 (meaning only disassembly) or 1 (meaning mixed source and
+<br><dt>`<samp><var>mode</var></samp>'<dd>is either 0 (meaning only disassembly) or 1 (meaning mixed source and
 disassembly). 
 </dl>
 
@@ -160,7 +163,7 @@ directly by <span class="sc">gdb/mi</span>, i.e., it is not possible to adjust i
 </pre>
    <h4 class="subheading">The <code>-data-evaluate-expression</code> Command</h4>
 
-<p><a name="index-_002ddata_002devaluate_002dexpression-1449"></a>
+<p><a name="index-g_t_002ddata_002devaluate_002dexpression-1449"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -172,9 +175,9 @@ If the expression contains spaces, it must be enclosed in double quotes.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> commands are <span class="samp">print</span>, <span class="samp">output</span>, and
-<span class="samp">call</span>.  In <code>gdbtk</code> only, there's a corresponding
-<span class="samp">gdb_eval</span> command.
+<p>The corresponding <span class="sc">gdb</span> commands are `<samp><span class="samp">print</span></samp>', `<samp><span class="samp">output</span></samp>', and
+`<samp><span class="samp">call</span></samp>'.  In <code>gdbtk</code> only, there's a corresponding
+`<samp><span class="samp">gdb_eval</span></samp>' command.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -197,7 +200,7 @@ output.
 </pre>
    <h4 class="subheading">The <code>-data-list-changed-registers</code> Command</h4>
 
-<p><a name="index-_002ddata_002dlist_002dchanged_002dregisters-1450"></a>
+<p><a name="index-g_t_002ddata_002dlist_002dchanged_002dregisters-1450"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -208,7 +211,7 @@ output.
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
 <p><span class="sc">gdb</span> doesn't have a direct analog for this command; <code>gdbtk</code>
-has the corresponding command <span class="samp">gdb_changed_register_list</span>.
+has the corresponding command `<samp><span class="samp">gdb_changed_register_list</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -230,7 +233,7 @@ has the corresponding command <span class="samp">gdb_changed_register_list</span
 </pre>
    <h4 class="subheading">The <code>-data-list-register-names</code> Command</h4>
 
-<p><a name="index-_002ddata_002dlist_002dregister_002dnames-1451"></a>
+<p><a name="index-g_t_002ddata_002dlist_002dregister_002dnames-1451"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -246,8 +249,8 @@ include empty register names.
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
 <p><span class="sc">gdb</span> does not have a command which corresponds to
-<span class="samp">-data-list-register-names</span>.  In <code>gdbtk</code> there is a
-corresponding command <span class="samp">gdb_regnames</span>.
+`<samp><span class="samp">-data-list-register-names</span></samp>'.  In <code>gdbtk</code> there is a
+corresponding command `<samp><span class="samp">gdb_regnames</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -268,7 +271,7 @@ corresponding command <span class="samp">gdb_regnames</span>.
 </pre>
    <h4 class="subheading">The <code>-data-list-register-values</code> Command</h4>
 
-<p><a name="index-_002ddata_002dlist_002dregister_002dvalues-1452"></a>
+<p><a name="index-g_t_002ddata_002dlist_002dregister_002dvalues-1452"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -292,8 +295,8 @@ numbers indicates that the contents of all the registers must be returned.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> commands are <span class="samp">info reg</span>, <span class="samp">info
-all-reg</span>, and (in <code>gdbtk</code>) <span class="samp">gdb_fetch_registers</span>.
+<p>The corresponding <span class="sc">gdb</span> commands are `<samp><span class="samp">info reg</span></samp>', `<samp><span class="samp">info
+all-reg</span></samp>', and (in <code>gdbtk</code>) `<samp><span class="samp">gdb_fetch_registers</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -346,7 +349,7 @@ don't appear in the actual output):
 </pre>
    <h4 class="subheading">The <code>-data-read-memory</code> Command</h4>
 
-<p><a name="index-_002ddata_002dread_002dmemory-1453"></a>
+<p><a name="index-g_t_002ddata_002dread_002dmemory-1453"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -357,44 +360,44 @@ don't appear in the actual output):
 <p class="noindent">where:
 
      <dl>
-<dt><var>address</var><dd>An expression specifying the address of the first memory word to be
+<dt>`<samp><var>address</var></samp>'<dd>An expression specifying the address of the first memory word to be
 read.  Complex expressions containing embedded white space should be
 quoted using the C convention.
 
-     <br><dt><var>word-format</var><dd>The format to be used to print the memory words.  The notation is the
+     <br><dt>`<samp><var>word-format</var></samp>'<dd>The format to be used to print the memory words.  The notation is the
 same as for <span class="sc">gdb</span>'s <code>print</code> command (see <a href="Output-Formats.html#Output-Formats">Output Formats</a>).
 
-     <br><dt><var>word-size</var><dd>The size of each memory word in bytes.
+     <br><dt>`<samp><var>word-size</var></samp>'<dd>The size of each memory word in bytes.
 
-     <br><dt><var>nr-rows</var><dd>The number of rows in the output table.
+     <br><dt>`<samp><var>nr-rows</var></samp>'<dd>The number of rows in the output table.
 
-     <br><dt><var>nr-cols</var><dd>The number of columns in the output table.
+     <br><dt>`<samp><var>nr-cols</var></samp>'<dd>The number of columns in the output table.
 
-     <br><dt><var>aschar</var><dd>If present, indicates that each row should include an <span class="sc">ascii</span> dump.  The
+     <br><dt>`<samp><var>aschar</var></samp>'<dd>If present, indicates that each row should include an <span class="sc">ascii</span> dump.  The
 value of <var>aschar</var> is used as a padding character when a byte is not a
 member of the printable <span class="sc">ascii</span> character set (printable <span class="sc">ascii</span>
 characters are those whose code is between 32 and 126, inclusively).
 
-     <br><dt><var>byte-offset</var><dd>An offset to add to the <var>address</var> before fetching memory. 
+     <br><dt>`<samp><var>byte-offset</var></samp>'<dd>An offset to add to the <var>address</var> before fetching memory. 
 </dl>
 
    <p>This command displays memory contents as a table of <var>nr-rows</var> by
 <var>nr-cols</var> words, each word being <var>word-size</var> bytes.  In total,
 <var>nr-rows</var><code> * </code><var>nr-cols</var><code> * </code><var>word-size</var> bytes are read
-(returned as <span class="samp">total-bytes</span>).  Should less than the requested number
+(returned as `<samp><span class="samp">total-bytes</span></samp>').  Should less than the requested number
 of bytes be returned by the target, the missing words are identified
-using <span class="samp">N/A</span>.  The number of bytes read from the target is returned
-in <span class="samp">nr-bytes</span> and the starting address used to read memory in
-<span class="samp">addr</span>.
+using `<samp><span class="samp">N/A</span></samp>'.  The number of bytes read from the target is returned
+in `<samp><span class="samp">nr-bytes</span></samp>' and the starting address used to read memory in
+`<samp><span class="samp">addr</span></samp>'.
 
    <p>The address of the next/previous row or page is available in
-<span class="samp">next-row</span> and <span class="samp">prev-row</span>, <span class="samp">next-page</span> and
-<span class="samp">prev-page</span>.
+`<samp><span class="samp">next-row</span></samp>' and `<samp><span class="samp">prev-row</span></samp>', `<samp><span class="samp">next-page</span></samp>' and
+`<samp><span class="samp">prev-page</span></samp>'.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">x</span>.  <code>gdbtk</code> has
-<span class="samp">gdb_get_mem</span> memory read command.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">x</span></samp>'.  <code>gdbtk</code> has
+`<samp><span class="samp">gdb_get_mem</span></samp>' memory read command.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -424,7 +427,7 @@ display as a single word formatted in decimal.
      (gdb)
 </pre>
    <p>Read thirty two bytes of memory starting at <code>bytes+16</code> and format
-as eight rows of four columns.  Include a string encoding with <span class="samp">x</span>
+as eight rows of four columns.  Include a string encoding with `<samp><span class="samp">x</span></samp>'
 used as the non-printable character.
 
 <pre class="smallexample">     (gdb)

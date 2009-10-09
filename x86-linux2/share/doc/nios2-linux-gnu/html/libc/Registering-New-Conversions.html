@@ -3,7 +3,7 @@
 <title>Registering New Conversions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Customizing-Printf.html#Customizing-Printf" title="Customizing Printf">
 <link rel="next" href="Conversion-Specifier-Options.html#Conversion-Specifier-Options" title="Conversion Specifier Options">
@@ -16,22 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Registering-New-Conversions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Conversion-Specifier-Options.html#Conversion-Specifier-Options">Conversion Specifier Options</a>,
+<a name="Registering-New-Conversions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Conversion-Specifier-Options.html#Conversion-Specifier-Options">Conversion Specifier Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Customizing-Printf.html#Customizing-Printf">Customizing Printf</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">12.13.1 Registering New Conversions</h4>
 
 <p>The function to register a new output conversion is
-<code>register_printf_function</code>, declared in <span class="file">printf.h</span>. 
+<code>register_printf_function</code>, declared in <samp><span class="file">printf.h</span></samp>. 
 <a name="index-printf_002eh-1063"></a>
 <!-- printf.h -->
 <!-- GNU -->
@@ -39,9 +41,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Customizing-Printf.html#Customizing-Pri
 <div class="defun">
 &mdash; Function: int <b>register_printf_function</b> (<var>int spec, printf_function handler-function, printf_arginfo_function arginfo-function</var>)<var><a name="index-register_005fprintf_005ffunction-1064"></a></var><br>
 <blockquote><p>This function defines the conversion specifier character <var>spec</var>. 
-Thus, if <var>spec</var> is <code>'Y'</code>, it defines the conversion <span class="samp">%Y</span>. 
-You can redefine the built-in conversions like <span class="samp">%s</span>, but flag
-characters like <span class="samp">#</span> and type modifiers like <span class="samp">l</span> can never be
+Thus, if <var>spec</var> is <code>'Y'</code>, it defines the conversion `<samp><span class="samp">%Y</span></samp>'. 
+You can redefine the built-in conversions like `<samp><span class="samp">%s</span></samp>', but flag
+characters like `<samp><span class="samp">#</span></samp>' and type modifiers like `<samp><span class="samp">l</span></samp>' can never be
 used as conversions; calling <code>register_printf_function</code> for those
 characters has no effect.  It is advisable not to use lowercase letters,
 since the ISO C standard warns that additional lowercase letters may be

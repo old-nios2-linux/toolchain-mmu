@@ -3,7 +3,7 @@
 <title>Convenience Vars - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Value-History.html#Value-History" title="Value History">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Convenience-Vars"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Registers.html#Registers">Registers</a>,
+<a name="Convenience-Vars"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Registers.html#Registers">Registers</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Value-History.html#Value-History">Value History</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">8.9 Convenience Variables</h3>
@@ -38,11 +40,11 @@ exist entirely within <span class="sc">gdb</span>; they are not part of your pro
 setting a convenience variable has no direct effect on further execution
 of your program.  That is why you can use them freely.
 
-   <p>Convenience variables are prefixed with <span class="samp">$</span>.  Any name preceded by
-<span class="samp">$</span> can be used for a convenience variable, unless it is one of
+   <p>Convenience variables are prefixed with `<samp><span class="samp">$</span></samp>'.  Any name preceded by
+`<samp><span class="samp">$</span></samp>' can be used for a convenience variable, unless it is one of
 the predefined machine-specific register names (see <a href="Registers.html#Registers">Registers</a>). 
 (Value history references, in contrast, are <em>numbers</em> preceded
-by <span class="samp">$</span>.  See <a href="Value-History.html#Value-History">Value History</a>.)
+by `<samp><span class="samp">$</span></samp>'.  See <a href="Value-History.html#Value-History">Value History</a>.)
 
    <p>You can save a value in a convenience variable with an assignment
 expression, just as you would set a variable in your program. 
@@ -91,7 +93,7 @@ a field from successive elements of an array of structures:
 values likely to be useful.
 
      
-<a name="index-_0024_005f_0040r_007b_002c-convenience-variable_007d-474"></a>
+<a name="index-g_t_0024_005f_0040r_007b_002c-convenience-variable_007d-474"></a>
 <dl><dt><code>$_</code><dd>The variable <code>$_</code> is automatically set by the <code>x</code> command to
 the last address examined (see <a href="Memory.html#Memory">Examining Memory</a>).  Other
 commands which provide a default address for <code>x</code> to examine also
@@ -100,11 +102,11 @@ and <code>info breakpoint</code>.  The type of <code>$_</code> is <code>void *</
 except when set by the <code>x</code> command, in which case it is a pointer
 to the type of <code>$__</code>.
 
-     <p><a name="index-_0024_005f_005f_0040r_007b_002c-convenience-variable_007d-475"></a><br><dt><code>$__</code><dd>The variable <code>$__</code> is automatically set by the <code>x</code> command
+     <p><a name="index-g_t_0024_005f_005f_0040r_007b_002c-convenience-variable_007d-475"></a><br><dt><code>$__</code><dd>The variable <code>$__</code> is automatically set by the <code>x</code> command
 to the value found in the last address examined.  Its type is chosen
 to match the format in which the data was printed.
 
-     <br><dt><code>$_exitcode</code><dd><a name="index-_0024_005fexitcode_0040r_007b_002c-convenience-variable_007d-476"></a>The variable <code>$_exitcode</code> is automatically set to the exit code when
+     <br><dt><code>$_exitcode</code><dd><a name="index-g_t_0024_005fexitcode_0040r_007b_002c-convenience-variable_007d-476"></a>The variable <code>$_exitcode</code> is automatically set to the exit code when
 the program being debugged terminates. 
 </dl>
 

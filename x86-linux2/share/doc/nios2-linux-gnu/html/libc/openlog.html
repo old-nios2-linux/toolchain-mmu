@@ -3,7 +3,7 @@
 <title>openlog - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages" title="Submitting Syslog Messages">
 <link rel="next" href="syslog_003b-vsyslog.html#syslog_003b-vsyslog" title="syslog; vsyslog">
@@ -16,22 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="openlog"></a>Next:&nbsp;<a rel="next" accesskey="n" href="syslog_003b-vsyslog.html#syslog_003b-vsyslog">syslog; vsyslog</a>,
+<a name="openlog"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="syslog_003b-vsyslog.html#syslog_003b-vsyslog">syslog; vsyslog</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submitting-Syslog-Messages.html#Submitting-Syslog-Messages">Submitting Syslog Messages</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">18.2.1 openlog</h4>
 
 <p>The symbols referred to in this section are declared in the file
-<span class="file">syslog.h</span>.
+<samp><span class="file">syslog.h</span></samp>.
 
 <!-- syslog.h -->
 <!-- BSD -->
@@ -84,7 +86,7 @@ by the program using the shared library may crash, if the library gets
 unloaded and the memory containing the string <code>"mylibrary"</code> becomes
 unmapped.  This is a limitation of the BSD syslog interface.
 
-        <p><code>openlog</code> may or may not open the <span class="file">/dev/log</span> socket, depending
+        <p><code>openlog</code> may or may not open the <samp><span class="file">/dev/log</span></samp> socket, depending
 on <var>option</var>.  If it does, it tries to open it and connect it as a
 stream socket.  If that doesn't work, it tries to open it and connect it
 as a datagram socket.  The socket has the &ldquo;Close on Exec&rdquo; attribute,
@@ -114,7 +116,7 @@ receives to the console).
 on this connection inserts the calling process' Process ID (PID) into
 the message.  When off, <code>openlog</code> does not insert the PID.
 
-          <br><dt><code>LOG_NDELAY</code><dd>When on, <code>openlog</code> opens and connects the <span class="file">/dev/log</span> socket. 
+          <br><dt><code>LOG_NDELAY</code><dd>When on, <code>openlog</code> opens and connects the <samp><span class="file">/dev/log</span></samp> socket. 
 When off, a future <code>syslog</code> call must open and connect the socket.
 
           <p><strong>Portability note:</strong>  In early systems, the sense of this bit was

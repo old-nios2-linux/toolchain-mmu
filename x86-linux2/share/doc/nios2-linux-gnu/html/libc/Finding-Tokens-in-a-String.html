@@ -3,7 +3,7 @@
 <title>Finding Tokens in a String - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="String-and-Array-Utilities.html#String-and-Array-Utilities" title="String and Array Utilities">
 <link rel="prev" href="Search-Functions.html#Search-Functions" title="Search Functions">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Finding-Tokens-in-a-String"></a>Next:&nbsp;<a rel="next" accesskey="n" href="strfry.html#strfry">strfry</a>,
+<a name="Finding-Tokens-in-a-String"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="strfry.html#strfry">strfry</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Search-Functions.html#Search-Functions">Search Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-and-Array-Utilities">String and Array Utilities</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.8 Finding Tokens in a String</h3>
@@ -35,7 +37,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-
 <p><a name="index-tokenizing-strings-567"></a><a name="index-breaking-a-string-into-tokens-568"></a><a name="index-parsing-tokens-from-a-string-569"></a>It's fairly common for programs to have a need to do some simple kinds
 of lexical analysis and parsing, such as splitting a command string up
 into tokens.  You can do this with the <code>strtok</code> function, declared
-in the header file <span class="file">string.h</span>. 
+in the header file <samp><span class="file">string.h</span></samp>. 
 <a name="index-string_002eh-570"></a>
 <!-- string.h -->
 <!-- ISO -->
@@ -250,8 +252,8 @@ for <code>strsep</code> returning an empty string before processing it.
 component of the path in <var>filename</var>.  This function is the preferred
 usage, since it does not modify the argument, <var>filename</var>, and
 respects trailing slashes.  The prototype for <code>basename</code> can be
-found in <span class="file">string.h</span>.  Note, this function is overriden by the XPG
-version, if <span class="file">libgen.h</span> is included.
+found in <samp><span class="file">string.h</span></samp>.  Note, this function is overriden by the XPG
+version, if <samp><span class="file">libgen.h</span></samp> is included.
 
         <p>Example of using GNU <code>basename</code>:
 
@@ -285,7 +287,7 @@ spirit to the GNU version, but may modify the <var>path</var> by removing
 trailing '/' characters.  If the <var>path</var> is made up entirely of '/'
 characters, then "/" will be returned.  Also, if <var>path</var> is
 <code>NULL</code> or an empty string, then "." is returned.  The prototype for
-the XPG version can be found in <span class="file">libgen.h</span>.
+the XPG version can be found in <samp><span class="file">libgen.h</span></samp>.
 
         <p>Example of using XPG <code>basename</code>:
 
@@ -319,7 +321,7 @@ the XPG version can be found in <span class="file">libgen.h</span>.
 <code>basename</code>.  It returns the parent directory of the file specified
 by <var>path</var>.  If <var>path</var> is <code>NULL</code>, an empty string, or
 contains no '/' characters, then "." is returned.  The prototype for this
-function can be found in <span class="file">libgen.h</span>. 
+function can be found in <samp><span class="file">libgen.h</span></samp>. 
 </p></blockquote></div>
 
    </body></html>

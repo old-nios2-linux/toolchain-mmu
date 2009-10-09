@@ -3,7 +3,7 @@
 <title>Argp Flags - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Argp.html#Argp" title="Argp">
 <link rel="prev" href="Argp-Parsers.html#Argp-Parsers" title="Argp Parsers">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Argp-Flags"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Argp-Help.html#Argp-Help">Argp Help</a>,
+<a name="Argp-Flags"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Argp-Help.html#Argp-Help">Argp Help</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Argp-Parsers.html#Argp-Parsers">Argp Parsers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Argp.html#Argp">Argp</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">25.3.7 Flags for <code>argp_parse</code></h4>
@@ -68,7 +70,7 @@ line.  Normally they're rearranged so that all options come first.
 
      <!-- argp.h -->
 <!-- GNU -->
-<br><dt><code>ARGP_NO_HELP</code><a name="index-ARGP_005fNO_005fHELP-3070"></a><dd>Don't provide the standard long option <span class="samp">--help</span>, which ordinarily
+<br><dt><code>ARGP_NO_HELP</code><a name="index-ARGP_005fNO_005fHELP-3070"></a><dd>Don't provide the standard long option `<samp><span class="samp">--help</span></samp>', which ordinarily
 causes usage and option help information to be output to <code>stdout</code>
 and <code>exit (0)</code>.
 
@@ -79,8 +81,8 @@ and <code>exit (0)</code>.
      <!-- argp.h -->
 <!-- GNU -->
 <br><dt><code>ARGP_LONG_ONLY</code><a name="index-ARGP_005fLONG_005fONLY-3072"></a><dd>Use the gnu getopt `long-only' rules for parsing arguments.  This allows
-long-options to be recognized with only a single <span class="samp">-</span>
-(i.e.  <span class="samp">-help</span>).  This results in a less useful interface, and its
+long-options to be recognized with only a single `<samp><span class="samp">-</span></samp>'
+(i.e.  `<samp><span class="samp">-help</span></samp>').  This results in a less useful interface, and its
 use is discouraged as it conflicts with the way most GNU programs work
 as well as the GNU coding standards.
 

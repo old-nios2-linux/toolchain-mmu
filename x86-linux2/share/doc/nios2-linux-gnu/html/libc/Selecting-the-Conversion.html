@@ -3,7 +3,7 @@
 <title>Selecting the Conversion - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Restartable-multibyte-conversion.html#Restartable-multibyte-conversion" title="Restartable multibyte conversion">
 <link rel="next" href="Keeping-the-state.html#Keeping-the-state" title="Keeping the state">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Selecting-the-Conversion"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Keeping-the-state.html#Keeping-the-state">Keeping the state</a>,
+<a name="Selecting-the-Conversion"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Keeping-the-state.html#Keeping-the-state">Keeping the state</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Restartable-multibyte-conversion.html#Restartable-multibyte-conversion">Restartable multibyte conversion</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">6.3.1 Selecting the conversion and its properties</h4>
@@ -49,7 +51,7 @@ The ISO&nbsp;C<!-- /@w --> standard defines two macros that provide this informa
 &mdash; Macro: int <b>MB_LEN_MAX</b><var><a name="index-MB_005fLEN_005fMAX-633"></a></var><br>
 <blockquote><p><code>MB_LEN_MAX</code> specifies the maximum number of bytes in the multibyte
 sequence for a single character in any of the supported locales.  It is
-a compile-time constant and is defined in <span class="file">limits.h</span>. 
+a compile-time constant and is defined in <samp><span class="file">limits.h</span></samp>. 
 <a name="index-limits_002eh-634"></a></p></blockquote></div>
 
 <!-- stdlib.h -->
@@ -62,7 +64,7 @@ The value is never greater than <code>MB_LEN_MAX</code>.  Unlike
 <code>MB_LEN_MAX</code> this macro need not be a compile-time constant, and in
 the GNU C library it is not.
 
-        <p><a name="index-stdlib_002eh-636"></a><code>MB_CUR_MAX</code> is defined in <span class="file">stdlib.h</span>. 
+        <p><a name="index-stdlib_002eh-636"></a><code>MB_CUR_MAX</code> is defined in <samp><span class="file">stdlib.h</span></samp>. 
 </p></blockquote></div>
 
    <p>Two different macros are necessary since strictly ISO&nbsp;C90<!-- /@w --> compilers

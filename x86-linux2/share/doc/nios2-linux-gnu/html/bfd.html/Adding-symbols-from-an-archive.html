@@ -3,7 +3,7 @@
 <title>Adding symbols from an archive - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Adding-Symbols-to-the-Hash-Table.html#Adding-Symbols-to-the-Hash-Table" title="Adding Symbols to the Hash Table">
 <link rel="prev" href="Adding-symbols-from-an-object-file.html#Adding-symbols-from-an-object-file" title="Adding symbols from an object file">
@@ -38,16 +38,18 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Adding-symbols-from-an-archive"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Adding-symbols-from-an-object-file.html#Adding-symbols-from-an-object-file">Adding symbols from an object file</a>,
+<a name="Adding-symbols-from-an-archive"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Adding-symbols-from-an-object-file.html#Adding-symbols-from-an-object-file">Adding symbols from an object file</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Adding-Symbols-to-the-Hash-Table.html#Adding-Symbols-to-the-Hash-Table">Adding Symbols to the Hash Table</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="subsubsection">2.17.2.3 Adding symbols from an archive</h5>
@@ -59,7 +61,7 @@ included in the link.  For each such element it must call the
 <code>add_archive_element</code> linker callback, and it must add the
 symbols from the object file to the linker hash table.
 
-   <p><a name="index-_005fbfd_005fgeneric_005flink_005fadd_005farchive_005fsymbols-1359"></a>In most cases the work of looking through the symbols in the
+   <p><a name="index-g_t_005fbfd_005fgeneric_005flink_005fadd_005farchive_005fsymbols-1359"></a>In most cases the work of looking through the symbols in the
 archive should be done by the
 <code>_bfd_generic_link_add_archive_symbols</code> function.  This
 function builds a hash table from the archive symbol table and

@@ -3,7 +3,7 @@
 <title>Synchronizing I/O - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="Waiting-for-I_002fO.html#Waiting-for-I_002fO" title="Waiting for I/O">
@@ -17,17 +17,20 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Synchronizing-I_002fO"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Asynchronous-I_002fO.html#Asynchronous-I_002fO">Asynchronous I/O</a>,
+<a name="Synchronizing-I%2fO"></a>
+<a name="Synchronizing-I_002fO"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Asynchronous-I_002fO.html#Asynchronous-I_002fO">Asynchronous I/O</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Waiting-for-I_002fO.html#Waiting-for-I_002fO">Waiting for I/O</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.9 Synchronizing I/O operations</h3>
@@ -50,7 +53,7 @@ has not been written to the device.  All dirty buffers in the kernel will
 be written and so an overall consistent system can be achieved (if no
 other process in parallel writes data).
 
-        <p>A prototype for <code>sync</code> can be found in <span class="file">unistd.h</span>.
+        <p>A prototype for <code>sync</code> can be found in <samp><span class="file">unistd.h</span></samp>.
 
         <p>The return value is zero to indicate no error. 
 </p></blockquote></div>
@@ -67,7 +70,7 @@ the open file <var>fildes</var> is written to the device associated with the
 descriptor.  The function call does not return unless all actions have
 finished.
 
-        <p>A prototype for <code>fsync</code> can be found in <span class="file">unistd.h</span>.
+        <p>A prototype for <code>fsync</code> can be found in <samp><span class="file">unistd.h</span></samp>.
 
         <p>This function is a cancellation point in multi-threaded programs.  This
 is a problem if the thread allocates some resources (like memory, file
@@ -107,7 +110,7 @@ missing this functionality <code>fdatasync</code> is emulated by a call to
 <code>fsync</code> since the performed actions are a superset of those
 required by <code>fdatasync</code>.
 
-        <p>The prototype for <code>fdatasync</code> is in <span class="file">unistd.h</span>.
+        <p>The prototype for <code>fdatasync</code> is in <samp><span class="file">unistd.h</span></samp>.
 
         <p>The return value of the function is zero if no error occurred.  Otherwise
 it is -1 and the global variable <var>errno</var> is set to the

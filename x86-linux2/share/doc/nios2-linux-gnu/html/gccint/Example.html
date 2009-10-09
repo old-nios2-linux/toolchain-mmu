@@ -3,7 +3,7 @@
 <title>Example - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Machine-Desc.html#Machine-Desc" title="Machine Desc">
 <link rel="prev" href="Patterns.html#Patterns" title="Patterns">
@@ -38,22 +38,24 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Example"></a>Next:&nbsp;<a rel="next" accesskey="n" href="RTL-Template.html#RTL-Template">RTL Template</a>,
+<a name="Example"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="RTL-Template.html#RTL-Template">RTL Template</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Patterns.html#Patterns">Patterns</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Machine-Desc.html#Machine-Desc">Machine Desc</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.3 Example of <code>define_insn</code></h3>
 
-<p><a name="index-_0040code_007bdefine_005finsn_007d-example-1234"></a>
+<p><a name="index-g_t_0040code_007bdefine_005finsn_007d-example-1234"></a>
 Here is an actual example of an instruction pattern, for the 68000/68020.
 
 <pre class="smallexample">     (define_insn "tstsi"
@@ -82,7 +84,7 @@ Here is an actual example of an instruction pattern, for the 68000/68020.
  <p>This is an instruction that sets the condition codes based on the value of
 a general operand.  It has no condition, so any insn whose RTL description
 has the form shown may be handled according to this pattern.  The name
-<span class="samp">tstsi</span> means &ldquo;test a <code>SImode</code> value&rdquo; and tells the RTL generation
+`<samp><span class="samp">tstsi</span></samp>' means &ldquo;test a <code>SImode</code> value&rdquo; and tells the RTL generation
 pass that, when it is necessary to test such a value, an insn to do so
 can be constructed using this pattern.
 
@@ -90,7 +92,7 @@ can be constructed using this pattern.
 output template to return based on the kind of operand and the specific
 type of CPU for which code is being generated.
 
- <p><span class="samp">"rm"</span> is an operand constraint.  Its meaning is explained below.
+ <p>`<samp><span class="samp">"rm"</span></samp>' is an operand constraint.  Its meaning is explained below.
 
  </body></html>
 

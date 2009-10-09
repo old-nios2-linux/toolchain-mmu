@@ -3,7 +3,7 @@
 <title>Local Variable Parameters - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Parameters.html#Parameters" title="Parameters">
 <link rel="prev" href="Register-Parameters.html#Register-Parameters" title="Register Parameters">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Local-Variable-Parameters"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Reference-Parameters.html#Reference-Parameters">Reference Parameters</a>,
+<a name="Local-Variable-Parameters"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Reference-Parameters.html#Reference-Parameters">Reference Parameters</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Register-Parameters.html#Register-Parameters">Register Parameters</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Parameters.html#Parameters">Parameters</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">4.7.2 Storing Parameters as Local Variables</h4>
@@ -42,7 +44,7 @@ that it's in a register, but this isn't always done.
 the prologue (for example, the parameter is declared as a <code>float</code>,
 but the calling conventions specify that it is passed as a
 <code>double</code>), then GCC2 (sometimes) uses a pair of symbols.  The first
-symbol uses symbol descriptor <span class="samp">p</span> and the type which is passed. 
+symbol uses symbol descriptor `<samp><span class="samp">p</span></samp>' and the type which is passed. 
 The second symbol has the type and location which the parameter actually
 has after the prologue.  For example, suppose the following C code
 appears with no prototypes involved:
@@ -62,7 +64,7 @@ converts it to a float in register number 0, then the stabs look like:
 (see <a href="Line-Numbers.html#Line-Numbers">Line Numbers</a>).
 
    <p><a name="index-N_005fLSYM_002c-for-parameter-48"></a>GCC, at least on the 960, has another solution to the same problem.  It
-uses a single <span class="samp">p</span> symbol descriptor for an argument which is stored
+uses a single `<samp><span class="samp">p</span></samp>' symbol descriptor for an argument which is stored
 as a local variable but uses <code>N_LSYM</code> instead of <code>N_PSYM</code>.  In
 this case, the value of the symbol is an offset relative to the local
 variables for that function, not relative to the arguments; on some
@@ -85,8 +87,8 @@ the debugger can only print those two arguments (because it has no way
 of knowing that additional arguments were passed), but on the VAX or
 other machines with a calling convention which indicates the number of
 words of arguments, the debugger can print all three arguments.  To do
-so, the parameter symbol (symbol descriptor <span class="samp">p</span>) (not necessarily
-<span class="samp">r</span> or symbol descriptor omitted symbols) needs to contain the
+so, the parameter symbol (symbol descriptor `<samp><span class="samp">p</span></samp>') (not necessarily
+`<samp><span class="samp">r</span></samp>' or symbol descriptor omitted symbols) needs to contain the
 actual type as passed (for example, <code>double</code> not <code>float</code> if it
 is passed as a double and converted to a float).
 

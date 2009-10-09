@@ -3,7 +3,7 @@
 <title>Precompiled Headers - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GCC.html#Invoking-GCC" title="Invoking GCC">
 <link rel="prev" href="Environment-Variables.html#Environment-Variables" title="Environment Variables">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Precompiled-Headers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Running-Protoize.html#Running-Protoize">Running Protoize</a>,
+<a name="Precompiled-Headers"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Running-Protoize.html#Running-Protoize">Running Protoize</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Environment-Variables.html#Environment-Variables">Environment Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-GCC.html#Invoking-GCC">Invoking GCC</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">3.20 Using Precompiled Headers</h3>
@@ -62,43 +64,43 @@ build the project.  To make builds faster, GCC allows users to
 header file they will be much faster.
 
  <p>To create a precompiled header file, simply compile it as you would any
-other file, if necessary using the <span class="option">-x</span> option to make the driver
+other file, if necessary using the <samp><span class="option">-x</span></samp> option to make the driver
 treat it as a C or C++ header file.  You will probably want to use a
-tool like <span class="command">make</span> to keep the precompiled header up-to-date when
+tool like <samp><span class="command">make</span></samp> to keep the precompiled header up-to-date when
 the headers it contains change.
 
  <p>A precompiled header file will be searched for when <code>#include</code> is
 seen in the compilation.  As it searches for the included file
-(see <a href="../cpp/Search-Path.html#Search-Path">Search Path (The C Preprocessor)</a>) the
+(see <a href="../cpp/Search-Path.html#Search-Path">Search Path</a>) the
 compiler looks for a precompiled header in each directory just before it
 looks for the include file in that directory.  The name searched for is
-the name specified in the <code>#include</code> with <span class="samp">.gch</span> appended.  If
+the name specified in the <code>#include</code> with `<samp><span class="samp">.gch</span></samp>' appended.  If
 the precompiled header file can't be used, it is ignored.
 
  <p>For instance, if you have <code>#include "all.h"</code>, and you have
-<span class="file">all.h.gch</span> in the same directory as <span class="file">all.h</span>, then the
+<samp><span class="file">all.h.gch</span></samp> in the same directory as <samp><span class="file">all.h</span></samp>, then the
 precompiled header file will be used if possible, and the original
 header will be used otherwise.
 
  <p>Alternatively, you might decide to put the precompiled header file in a
-directory and use <span class="option">-I</span> to ensure that directory is searched
+directory and use <samp><span class="option">-I</span></samp> to ensure that directory is searched
 before (or instead of) the directory containing the original header. 
 Then, if you want to check that the precompiled header file is always
 used, you can put a file of the same name as the original header in this
 directory containing an <code>#error</code> command.
 
- <p>This also works with <span class="option">-include</span>.  So yet another way to use
+ <p>This also works with <samp><span class="option">-include</span></samp>.  So yet another way to use
 precompiled headers, good for projects not designed with precompiled
 header files in mind, is to simply take most of the header files used by
 a project, include them from another header file, precompile that header
-file, and <span class="option">-include</span> the precompiled header.  If the header files
+file, and <samp><span class="option">-include</span></samp> the precompiled header.  If the header files
 have guards against multiple inclusion, they will be skipped because
 they've already been included (in the precompiled header).
 
  <p>If you need to precompile the same header file for different
 languages, targets, or compiler options, you can instead make a
-<em>directory</em> named like <span class="file">all.h.gch</span>, and put each precompiled
-header in the directory, perhaps using <span class="option">-o</span>.  It doesn't matter
+<em>directory</em> named like <samp><span class="file">all.h.gch</span></samp>, and put each precompiled
+header in the directory, perhaps using <samp><span class="option">-o</span></samp>.  It doesn't matter
 what you call the files in the directory, every precompiled header in
 the directory will be considered.  The first precompiled header
 encountered in the directory that is valid for this compilation will
@@ -129,19 +131,19 @@ either be defined in the same way as when the precompiled header was
 generated, or must not affect the precompiled header, which usually
 means that they don't appear in the precompiled header at all.
 
-     <p>The <span class="option">-D</span> option is one way to define a macro before a
+     <p>The <samp><span class="option">-D</span></samp> option is one way to define a macro before a
 precompiled header is included; using a <code>#define</code> can also do it. 
 There are also some options that define macros implicitly, like
-<span class="option">-O</span> and <span class="option">-Wdeprecated</span>; the same rule applies to macros
+<samp><span class="option">-O</span></samp> and <samp><span class="option">-Wdeprecated</span></samp>; the same rule applies to macros
 defined this way.
 
      <li>If debugging information is output when using the precompiled
-header, using <span class="option">-g</span> or similar, the same kind of debugging information
+header, using <samp><span class="option">-g</span></samp> or similar, the same kind of debugging information
 must have been output when building the precompiled header.  However,
-a precompiled header built using <span class="option">-g</span> can be used in a compilation
+a precompiled header built using <samp><span class="option">-g</span></samp> can be used in a compilation
 when no debugging information is being output.
 
-     <li>The same <span class="option">-m</span> options must generally be used when building
+     <li>The same <samp><span class="option">-m</span></samp> options must generally be used when building
 and using the precompiled header.  See <a href="Submodel-Options.html#Submodel-Options">Submodel Options</a>,
 for any cases where this rule is relaxed.
 
@@ -150,8 +152,8 @@ the precompiled header:
 
      <pre class="smallexample">          -fexceptions -funit-at-a-time
      </pre>
-     <li>Some other command-line options starting with <span class="option">-f</span>,
-<span class="option">-p</span>, or <span class="option">-O</span> must be defined in the same way as when
+     <li>Some other command-line options starting with <samp><span class="option">-f</span></samp>,
+<samp><span class="option">-p</span></samp>, or <samp><span class="option">-O</span></samp> must be defined in the same way as when
 the precompiled header was generated.  At present, it's not clear
 which options are safe to change and which are not; the safest choice
 is to use exactly the same options when generating and using the
@@ -172,7 +174,7 @@ see <a href="Bugs.html#Bugs">Bugs</a>.
 
  <p>If you do use differing options when generating and using the
 precompiled header, the actual behavior will be a mixture of the
-behavior for the options.  For instance, if you use <span class="option">-g</span> to
+behavior for the options.  For instance, if you use <samp><span class="option">-g</span></samp> to
 generate the precompiled header but not when using it, you may or may
 not get debugging information for routines in the precompiled header.
 

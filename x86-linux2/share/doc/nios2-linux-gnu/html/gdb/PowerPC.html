@@ -3,7 +3,7 @@
 <title>PowerPC - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Embedded-Processors.html#Embedded-Processors" title="Embedded Processors">
 <link rel="prev" href="PA.html#PA" title="PA">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="PowerPC"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Sparclet.html#Sparclet">Sparclet</a>,
+<a name="PowerPC"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Sparclet.html#Sparclet">Sparclet</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="PA.html#PA">PA</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Embedded-Processors.html#Embedded-Processors">Embedded Processors</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">19.3.6 PowerPC</h4>
@@ -41,9 +43,9 @@ convention.  By default, <span class="sc">gdb</span> selects the calling convent
 on the selected architecture and the provided executable file.
 
      <br><dt><code>set powerpc vector-abi</code><dt><code>show powerpc vector-abi</code><dd>Force <span class="sc">gdb</span> to use the specified calling convention for vector
-arguments and return values.  The valid options are <span class="samp">auto</span>;
-<span class="samp">generic</span>, to avoid vector registers even if they are present;
-<span class="samp">altivec</span>, to use AltiVec registers; and <span class="samp">spe</span> to use SPE
+arguments and return values.  The valid options are `<samp><span class="samp">auto</span></samp>';
+`<samp><span class="samp">generic</span></samp>', to avoid vector registers even if they are present;
+`<samp><span class="samp">altivec</span></samp>', to use AltiVec registers; and `<samp><span class="samp">spe</span></samp>' to use SPE
 registers.  By default, <span class="sc">gdb</span> selects the calling convention
 based on the selected architecture and the provided executable file.
 

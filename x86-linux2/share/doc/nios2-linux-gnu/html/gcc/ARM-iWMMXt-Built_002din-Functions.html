@@ -3,7 +3,7 @@
 <title>ARM iWMMXt Built-in Functions - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Builtins.html#Target-Builtins" title="Target Builtins">
 <link rel="prev" href="Altera-Nios-II-Built_002din-Functions.html#Altera-Nios-II-Built_002din-Functions" title="Altera Nios II Built-in Functions">
@@ -38,23 +38,26 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="ARM-iWMMXt-Built_002din-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="ARM-NEON-Intrinsics.html#ARM-NEON-Intrinsics">ARM NEON Intrinsics</a>,
+<a name="ARM-iWMMXt-Built-in-Functions"></a>
+<a name="ARM-iWMMXt-Built_002din-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="ARM-NEON-Intrinsics.html#ARM-NEON-Intrinsics">ARM NEON Intrinsics</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Altera-Nios-II-Built_002din-Functions.html#Altera-Nios-II-Built_002din-Functions">Altera Nios II Built-in Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Builtins.html#Target-Builtins">Target Builtins</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">5.47.3 ARM iWMMXt Built-in Functions</h4>
 
 <p>These built-in functions are available for the ARM family of
-processors when the <span class="option">-mcpu=iwmmxt</span> switch is used:
+processors when the <samp><span class="option">-mcpu=iwmmxt</span></samp> switch is used:
 
 <pre class="smallexample">     typedef int v2si __attribute__ ((vector_size (8)));
      typedef short v4hi __attribute__ ((vector_size (8)));

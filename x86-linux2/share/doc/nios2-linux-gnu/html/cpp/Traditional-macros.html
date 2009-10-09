@@ -3,7 +3,7 @@
 <title>Traditional macros - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Traditional-Mode.html#Traditional-Mode" title="Traditional Mode">
 <link rel="prev" href="Traditional-lexical-analysis.html#Traditional-lexical-analysis" title="Traditional lexical analysis">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,17 +41,19 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Traditional-macros"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-miscellany.html#Traditional-miscellany">Traditional miscellany</a>,
+<a name="Traditional-macros"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-miscellany.html#Traditional-miscellany">Traditional miscellany</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Traditional-lexical-analysis.html#Traditional-lexical-analysis">Traditional lexical analysis</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Traditional-Mode.html#Traditional-Mode">Traditional Mode</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">10.2 Traditional macros</h3>
@@ -70,14 +72,14 @@ expansion can run together with the text after the macro invocation to
 produce a single token.
 
    <p>Normally comments are removed from the replacement text after the
-macro is expanded, but if the <span class="option">-CC</span> option is passed on the
+macro is expanded, but if the <samp><span class="option">-CC</span></samp> option is passed on the
 command line comments are preserved.  (In fact, the current
 implementation removes comments even before saving the macro
 replacement text, but it careful to do it in such a way that the
 observed effect is identical even in the function-like macro case.)
 
-   <p>The ISO stringification operator <span class="samp">#</span> and token paste operator
-<span class="samp">##</span> have no special meaning.  As explained later, an effect
+   <p>The ISO stringification operator `<samp><span class="samp">#</span></samp>' and token paste operator
+`<samp><span class="samp">##</span></samp>' have no special meaning.  As explained later, an effect
 similar to these operators can be obtained in a different way.  Macro
 names that are embedded in quotes, either from the main file or after
 macro replacement, do not expand.
@@ -106,13 +108,13 @@ closing quote is treated like any other character.  There is no
 facility for handling variadic macros.
 
    <p>This implementation removes all comments from macro arguments, unless
-the <span class="option">-C</span> option is given.  The form of all other horizontal
+the <samp><span class="option">-C</span></samp> option is given.  The form of all other horizontal
 whitespace in arguments is preserved, including leading and trailing
 whitespace.  In particular
 
 <pre class="smallexample">     f( )
 </pre>
-   <p class="noindent">is treated as an invocation of the macro <span class="samp">f</span> with a single
+   <p class="noindent">is treated as an invocation of the macro `<samp><span class="samp">f</span></samp>' with a single
 argument consisting of a single space.  If you want to invoke a
 function-like macro that takes no arguments, you must not leave any
 whitespace between the parentheses.

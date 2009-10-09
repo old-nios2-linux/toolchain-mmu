@@ -3,7 +3,7 @@
 <title>Location Counter - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Expressions.html#Expressions" title="Expressions">
 <link rel="prev" href="Orphan-Sections.html#Orphan-Sections" title="Orphan Sections">
@@ -17,22 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Location-Counter"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Operators.html#Operators">Operators</a>,
+<a name="Location-Counter"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Operators.html#Operators">Operators</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Orphan-Sections.html#Orphan-Sections">Orphan Sections</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Expressions.html#Expressions">Expressions</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.10.4 The Location Counter</h4>
 
-<p><a name="index-_002e-459"></a><a name="index-dot-460"></a><a name="index-location-counter-461"></a><a name="index-current-output-location-462"></a>The special linker variable <dfn>dot</dfn> <span class="samp">.</span> always contains the
+<p><a name="index-g_t_002e-459"></a><a name="index-dot-460"></a><a name="index-location-counter-461"></a><a name="index-current-output-location-462"></a>The special linker variable <dfn>dot</dfn> `<samp><span class="samp">.</span></samp>' always contains the
 current output location counter.  Since the <code>.</code> always refers to a
 location in an output section, it may only appear in an expression
 within a <code>SECTIONS</code> command.  The <code>.</code> symbol may appear
@@ -56,11 +58,11 @@ doing creates areas with overlapping LMAs.
          } = 0x12345678;
      }
 </pre>
-   <p class="noindent">In the previous example, the <span class="samp">.text</span> section from <span class="file">file1</span> is
-located at the beginning of the output section <span class="samp">output</span>.  It is
-followed by a 1000 byte gap.  Then the <span class="samp">.text</span> section from
-<span class="file">file2</span> appears, also with a 1000 byte gap following before the
-<span class="samp">.text</span> section from <span class="file">file3</span>.  The notation <span class="samp">= 0x12345678</span>
+   <p class="noindent">In the previous example, the `<samp><span class="samp">.text</span></samp>' section from <samp><span class="file">file1</span></samp> is
+located at the beginning of the output section `<samp><span class="samp">output</span></samp>'.  It is
+followed by a 1000 byte gap.  Then the `<samp><span class="samp">.text</span></samp>' section from
+<samp><span class="file">file2</span></samp> appears, also with a 1000 byte gap following before the
+`<samp><span class="samp">.text</span></samp>' section from <samp><span class="file">file3</span></samp>.  The notation `<samp><span class="samp">= 0x12345678</span></samp>'
 specifies what data to write in the gaps (see <a href="Output-Section-Fill.html#Output-Section-Fill">Output Section Fill</a>).
 
    <p><a name="index-dot-inside-sections-464"></a>Note: <code>.</code> actually refers to the byte offset from the start of the
@@ -84,14 +86,14 @@ not an absolute address.  Thus in a script like this:
          }
      }
 </pre>
-   <p>The <span class="samp">.text</span> section will be assigned a starting address of 0x100
+   <p>The `<samp><span class="samp">.text</span></samp>' section will be assigned a starting address of 0x100
 and a size of exactly 0x200 bytes, even if there is not enough data in
-the <span class="samp">.text</span> input sections to fill this area.  (If there is too
+the `<samp><span class="samp">.text</span></samp>' input sections to fill this area.  (If there is too
 much data, an error will be produced because this would be an attempt to
-move <code>.</code> backwards).  The <span class="samp">.data</span> section will start at 0x500
+move <code>.</code> backwards).  The `<samp><span class="samp">.data</span></samp>' section will start at 0x500
 and it will have an extra 0x600 bytes worth of space after the end of
-the values from the <span class="samp">.data</span> input sections and before the end of
-the <span class="samp">.data</span> output section itself.
+the values from the `<samp><span class="samp">.data</span></samp>' input sections and before the end of
+the `<samp><span class="samp">.data</span></samp>' output section itself.
 
    <p><a name="index-dot-outside-sections-465"></a>Setting symbols to the value of the location counter outside of an
 output section statement can result in unexpected values if the linker

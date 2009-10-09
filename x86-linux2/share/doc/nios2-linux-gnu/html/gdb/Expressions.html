@@ -3,7 +3,7 @@
 <title>Expressions - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="next" href="Variables.html#Variables" title="Variables">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Expressions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Variables.html#Variables">Variables</a>,
+<a name="Expressions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Variables.html#Variables">Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">8.1 Expressions</h3>
@@ -59,13 +61,13 @@ at that address in memory.
 to programming languages:
 
      <dl>
-<dt><code>@</code><dd><span class="samp">@</span> is a binary operator for treating parts of memory as arrays. 
+<dt><code>@</code><dd>`<samp><span class="samp">@</span></samp>' is a binary operator for treating parts of memory as arrays. 
 See <a href="Arrays.html#Arrays">Artificial Arrays</a>, for more information.
 
-     <br><dt><code>::</code><dd><span class="samp">::</span> allows you to specify a variable in terms of the file or
+     <br><dt><code>::</code><dd>`<samp><span class="samp">::</span></samp>' allows you to specify a variable in terms of the file or
 function where it is defined.  See <a href="Variables.html#Variables">Program Variables</a>.
 
-     <p><a name="index-_0040_007b_0040var_007btype_007d_0040_007d-394"></a><a name="index-type-casting-memory-395"></a><a name="index-memory_002c-viewing-as-typed-object-396"></a><a name="index-casts_002c-to-view-memory-397"></a><br><dt><code>{</code><var>type</var><code>} </code><var>addr</var><dd>Refers to an object of type <var>type</var> stored at address <var>addr</var> in
+     <p><a name="index-g_t_0040_007b_0040var_007btype_007d_0040_007d-394"></a><a name="index-type-casting-memory-395"></a><a name="index-memory_002c-viewing-as-typed-object-396"></a><a name="index-casts_002c-to-view-memory-397"></a><br><dt><code>{</code><var>type</var><code>} </code><var>addr</var><dd>Refers to an object of type <var>type</var> stored at address <var>addr</var> in
 memory.  <var>addr</var> may be any expression whose value is an integer or
 pointer (but parentheses are required around binary operators, just as in
 a cast).  This construct is allowed regardless of what kind of data is

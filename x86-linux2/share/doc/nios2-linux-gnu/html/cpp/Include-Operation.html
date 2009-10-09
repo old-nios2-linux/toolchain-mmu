@@ -3,7 +3,7 @@
 <title>Include Operation - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Header-Files.html#Header-Files" title="Header Files">
 <link rel="prev" href="Include-Syntax.html#Include-Syntax" title="Include Syntax">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,32 +41,34 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Include-Operation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Search-Path.html#Search-Path">Search Path</a>,
+<a name="Include-Operation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Search-Path.html#Search-Path">Search Path</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Include-Syntax.html#Include-Syntax">Include Syntax</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Header-Files.html#Header-Files">Header Files</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">2.2 Include Operation</h3>
 
-<p>The <span class="samp">#include</span> directive works by directing the C preprocessor to
+<p>The `<samp><span class="samp">#include</span></samp>' directive works by directing the C preprocessor to
 scan the specified file as input before continuing with the rest of the
 current file.  The output from the preprocessor contains the output
 already generated, followed by the output resulting from the included
 file, followed by the output that comes from the text after the
-<span class="samp">#include</span> directive.  For example, if you have a header file
-<span class="file">header.h</span> as follows,
+`<samp><span class="samp">#include</span></samp>' directive.  For example, if you have a header file
+<samp><span class="file">header.h</span></samp> as follows,
 
 <pre class="smallexample">     char *test (void);
 </pre>
-   <p class="noindent">and a main program called <span class="file">program.c</span> that uses the header file,
+   <p class="noindent">and a main program called <samp><span class="file">program.c</span></samp> that uses the header file,
 like this,
 
 <pre class="smallexample">     int x;
@@ -79,7 +81,7 @@ like this,
      }
 </pre>
    <p class="noindent">the compiler will see the same token stream as it would if
-<span class="file">program.c</span> read
+<samp><span class="file">program.c</span></samp> read
 
 <pre class="smallexample">     int x;
      char *test (void);
@@ -104,7 +106,7 @@ the file.
 syntactic units&mdash;function declarations or definitions, type
 declarations, etc.
 
-   <p>The line following the <span class="samp">#include</span> directive is always treated as a
+   <p>The line following the `<samp><span class="samp">#include</span></samp>' directive is always treated as a
 separate line by the C preprocessor, even if the included file lacks a
 final newline.
 

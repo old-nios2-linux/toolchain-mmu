@@ -3,7 +3,7 @@
 <title>Languages - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Overlays.html#Overlays" title="Overlays">
 <link rel="next" href="Symbols.html#Symbols" title="Symbols">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Languages"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Symbols.html#Symbols">Symbols</a>,
+<a name="Languages"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Symbols.html#Symbols">Symbols</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Overlays.html#Overlays">Overlays</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">13 Using <span class="sc">gdb</span> with Different Languages</h2>
@@ -37,7 +39,7 @@ rarely expressed in the same manner.  For instance, in ANSI C,
 dereferencing a pointer <code>p</code> is accomplished by <code>*p</code>, but in
 Modula-2, it is accomplished by <code>p^</code>.  Values can also be
 represented (and displayed) differently.  Hex numbers in C appear as
-<span class="samp">0x1ae</span>, while in Modula-2 they appear as <span class="samp">1AEH</span>.
+`<samp><span class="samp">0x1ae</span></samp>', while in Modula-2 they appear as `<samp><span class="samp">1AEH</span></samp>'.
 
    <p><a name="index-working-language-617"></a>Language-specific information is built into <span class="sc">gdb</span> for some languages,
 allowing you to express operations like the above in your program's

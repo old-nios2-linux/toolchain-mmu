@@ -3,7 +3,7 @@
 <title>Error Messages - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Error-Reporting.html#Error-Reporting" title="Error Reporting">
 <link rel="prev" href="Error-Codes.html#Error-Codes" title="Error Codes">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Error-Messages"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Error-Codes.html#Error-Codes">Error Codes</a>,
+<a name="Error-Messages"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Error-Codes.html#Error-Codes">Error Codes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Error-Reporting.html#Error-Reporting">Error Reporting</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">2.3 Error Messages</h3>
@@ -52,7 +54,7 @@ you make subsequent calls to <code>strerror</code>, the string might be
 overwritten.  (But it's guaranteed that no library function ever calls
 <code>strerror</code> behind your back.)
 
-        <p>The function <code>strerror</code> is declared in <span class="file">string.h</span>. 
+        <p>The function <code>strerror</code> is declared in <samp><span class="file">string.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- string.h -->
@@ -74,7 +76,7 @@ there is no way to guarantee the string returned by <code>strerror</code>
 really belongs to the last call of the current thread.
 
         <p>This function <code>strerror_r</code> is a GNU extension and it is declared in
-<span class="file">string.h</span>. 
+<samp><span class="file">string.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- stdio.h -->
@@ -94,7 +96,7 @@ prefixes its output with this string.  It adds a colon and a space
 character to separate the <var>message</var> from the error string corresponding
 to <code>errno</code>.
 
-        <p>The function <code>perror</code> is declared in <span class="file">stdio.h</span>. 
+        <p>The function <code>perror</code> is declared in <samp><span class="file">stdio.h</span></samp>. 
 </p></blockquote></div>
 
    <p><code>strerror</code> and <code>perror</code> produce the exact same message for any
@@ -185,7 +187,7 @@ programs which read some input files should should provide information
 about the input file name and the line number in case an error is
 encountered while reading the file.  For these occasions there are two
 functions available which are widely used throughout the GNU project. 
-These functions are declared in <span class="file">error.h</span>.
+These functions are declared in <samp><span class="file">error.h</span></samp>.
 
 <!-- error.h -->
 <!-- GNU -->
@@ -326,7 +328,7 @@ like this:
 choice and enable the programmer to write applications which follow the
 GNU coding standard.  The GNU libc additionally contains functions which
 are used in BSD for the same purpose.  These functions are declared in
-<span class="file">err.h</span>.  It is generally advised to not use these functions.  They
+<samp><span class="file">err.h</span></samp>.  It is generally advised to not use these functions.  They
 are included only for compatibility.
 
 <!-- err.h -->

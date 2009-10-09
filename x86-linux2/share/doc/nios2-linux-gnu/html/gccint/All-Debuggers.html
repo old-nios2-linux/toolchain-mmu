@@ -3,7 +3,7 @@
 <title>All Debuggers - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Debugging-Info.html#Debugging-Info" title="Debugging Info">
 <link rel="next" href="DBX-Options.html#DBX-Options" title="DBX Options">
@@ -37,16 +37,18 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="All-Debuggers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="DBX-Options.html#DBX-Options">DBX Options</a>,
+<a name="All-Debuggers"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="DBX-Options.html#DBX-Options">DBX Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Debugging-Info.html#Debugging-Info">Debugging Info</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">14.20.1 Macros Affecting All Debugging Formats</h4>
@@ -82,7 +84,7 @@ computation assumes that <var>x</var> is based on the frame-pointer and
 gives the offset from the frame-pointer.  This is required for targets
 that produce debugging output for DBX or COFF-style debugging output
 for SDB and allow the frame-pointer to be eliminated when the
-<span class="option">-g</span> options is used. 
+<samp><span class="option">-g</span></samp> options is used. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -95,21 +97,21 @@ having address <var>x</var> (an RTL expression).  The nominal offset is
 <div class="defun">
 &mdash; Macro: <b>PREFERRED_DEBUGGING_TYPE</b><var><a name="index-PREFERRED_005fDEBUGGING_005fTYPE-2433"></a></var><br>
 <blockquote><p>A C expression that returns the type of debugging output GCC should
-produce when the user specifies just <span class="option">-g</span>.  Define
+produce when the user specifies just <samp><span class="option">-g</span></samp>.  Define
 this if you have arranged for GCC to support more than one format of
 debugging output.  Currently, the allowable values are <code>DBX_DEBUG</code>,
 <code>SDB_DEBUG</code>, <code>DWARF_DEBUG</code>, <code>DWARF2_DEBUG</code>,
 <code>XCOFF_DEBUG</code>, <code>VMS_DEBUG</code>, and <code>VMS_AND_DWARF2_DEBUG</code>.
 
-      <p>When the user specifies <span class="option">-ggdb</span>, GCC normally also uses the
+      <p>When the user specifies <samp><span class="option">-ggdb</span></samp>, GCC normally also uses the
 value of this macro to select the debugging output format, but with two
 exceptions.  If <code>DWARF2_DEBUGGING_INFO</code> is defined, GCC uses the
 value <code>DWARF2_DEBUG</code>.  Otherwise, if <code>DBX_DEBUGGING_INFO</code> is
 defined, GCC uses <code>DBX_DEBUG</code>.
 
       <p>The value of this macro only affects the default debugging output; the
-user can always get a specific type of output by using <span class="option">-gstabs</span>,
-<span class="option">-gcoff</span>, <span class="option">-gdwarf-2</span>, <span class="option">-gxcoff</span>, or <span class="option">-gvms</span>. 
+user can always get a specific type of output by using <samp><span class="option">-gstabs</span></samp>,
+<samp><span class="option">-gcoff</span></samp>, <samp><span class="option">-gdwarf-2</span></samp>, <samp><span class="option">-gxcoff</span></samp>, or <samp><span class="option">-gvms</span></samp>. 
 </p></blockquote></div>
 
  </body></html>

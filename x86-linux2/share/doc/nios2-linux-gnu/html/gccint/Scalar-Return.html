@@ -3,7 +3,7 @@
 <title>Scalar Return - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Stack-and-Calling.html#Stack-and-Calling" title="Stack and Calling">
 <link rel="prev" href="Register-Arguments.html#Register-Arguments" title="Register Arguments">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Scalar-Return"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Aggregate-Return.html#Aggregate-Return">Aggregate Return</a>,
+<a name="Scalar-Return"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Aggregate-Return.html#Aggregate-Return">Aggregate Return</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Register-Arguments.html#Register-Arguments">Register Arguments</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Stack-and-Calling.html#Stack-and-Calling">Stack and Calling</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">14.9.8 How Scalar Function Values Are Returned</h4>
@@ -144,7 +146,7 @@ should recognize only the caller's register numbers.
 
 <div class="defun">
 &mdash; Macro: <b>APPLY_RESULT_SIZE</b><var><a name="index-APPLY_005fRESULT_005fSIZE-2042"></a></var><br>
-<blockquote><p>Define this macro if <span class="samp">untyped_call</span> and <span class="samp">untyped_return</span>
+<blockquote><p>Define this macro if `<samp><span class="samp">untyped_call</span></samp>' and `<samp><span class="samp">untyped_return</span></samp>'
 need more space than is implied by <code>FUNCTION_VALUE_REGNO_P</code> for
 saving and restoring an arbitrary return value. 
 </p></blockquote></div>

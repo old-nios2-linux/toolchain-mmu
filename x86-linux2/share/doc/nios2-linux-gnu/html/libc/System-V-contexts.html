@@ -3,7 +3,7 @@
 <title>System V contexts - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Non_002dLocal-Exits.html#Non_002dLocal-Exits" title="Non-Local Exits">
 <link rel="prev" href="Non_002dLocal-Exits-and-Signals.html#Non_002dLocal-Exits-and-Signals" title="Non-Local Exits and Signals">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="System-V-contexts"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Non_002dLocal-Exits-and-Signals.html#Non_002dLocal-Exits-and-Signals">Non-Local Exits and Signals</a>,
+<a name="System-V-contexts"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Non_002dLocal-Exits-and-Signals.html#Non_002dLocal-Exits-and-Signals">Non-Local Exits and Signals</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Non_002dLocal-Exits.html#Non_002dLocal-Exits">Non-Local Exits</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">23.4 Complete Context Control</h3>
@@ -36,7 +38,7 @@ chapter so far.  These function were part of the original System&nbsp;V<!-- /@w 
 API and by this route were added to the Unix API.  Beside on branded
 Unix implementations these interfaces are not widely available.  Not all
 platforms and/or architectures the GNU C Library is available on provide
-this interface.  Use <span class="file">configure</span> to detect the availability.
+this interface.  Use <samp><span class="file">configure</span></samp> to detect the availability.
 
    <p>Similar to the <code>jmp_buf</code> and <code>sigjmp_buf</code> types used for the
 variables to contain the state of the <code>longjmp</code> functions the
@@ -44,7 +46,7 @@ interfaces of interest here have an appropriate type as well.  Objects
 of this type are normally much larger since more information is
 contained.  The type is also used in a few more places as we will see. 
 The types and functions described in this section are all defined and
-declared respectively in the <span class="file">ucontext.h</span> header file.
+declared respectively in the <samp><span class="file">ucontext.h</span></samp> header file.
 
 <!-- ucontext.h -->
 <!-- SVID -->

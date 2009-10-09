@@ -3,7 +3,7 @@
 <title>XPG Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="User-Accounting-Database.html#User-Accounting-Database" title="User Accounting Database">
 <link rel="prev" href="Manipulating-the-Database.html#Manipulating-the-Database" title="Manipulating the Database">
@@ -17,23 +17,25 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="XPG-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Logging-In-and-Out.html#Logging-In-and-Out">Logging In and Out</a>,
+<a name="XPG-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Logging-In-and-Out.html#Logging-In-and-Out">Logging In and Out</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Manipulating-the-Database.html#Manipulating-the-Database">Manipulating the Database</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="User-Accounting-Database.html#User-Accounting-Database">User Accounting Database</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">29.12.2 XPG User Accounting Database Functions</h4>
 
 <p>These functions, described in the X/Open Portability Guide, are declared
-in the header file <span class="file">utmpx.h</span>. 
+in the header file <samp><span class="file">utmpx.h</span></samp>. 
 <a name="index-utmpx_002eh-3362"></a>
 
 <div class="defun">
@@ -47,7 +49,7 @@ in the header file <span class="file">utmpx.h</span>.
 
           <br><dt><code>pid_t ut_pid</code><dd>The process ID number of the login process.
 
-          <br><dt><code>char ut_line[]</code><dd>The device name of the tty (without <span class="file">/dev/</span>).
+          <br><dt><code>char ut_line[]</code><dd>The device name of the tty (without <samp><span class="file">/dev/</span></samp>).
 
           <br><dt><code>char ut_id[]</code><dd>The inittab ID of the process.
 
@@ -58,14 +60,14 @@ the time when the system clock changed, and for entries of type
 <code>NEW_TIME</code> this is the time the system clock was set to. 
 </dl>
         On the GNU system, <code>struct utmpx</code> is identical to <code>struct
-utmp</code> except for the fact that including <span class="file">utmpx.h</span> does not make
+utmp</code> except for the fact that including <samp><span class="file">utmpx.h</span></samp> does not make
 visible the declaration of <code>struct exit_status</code>. 
 </p></blockquote></div>
 
    <p>The following macros are defined for use as values for the
 <code>ut_type</code> member of the <code>utmpx</code> structure.  The values are
 integer constants and are, on the GNU system, identical to the
-definitions in <span class="file">utmp.h</span>.
+definitions in <samp><span class="file">utmp.h</span></samp>.
 
      <dl>
 <!-- utmpx.h -->

@@ -3,7 +3,7 @@
 <title>Flags for Globbing - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Globbing.html#Globbing" title="Globbing">
 <link rel="prev" href="Calling-Glob.html#Calling-Glob" title="Calling Glob">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Flags-for-Globbing"></a>Next:&nbsp;<a rel="next" accesskey="n" href="More-Flags-for-Globbing.html#More-Flags-for-Globbing">More Flags for Globbing</a>,
+<a name="Flags-for-Globbing"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="More-Flags-for-Globbing.html#More-Flags-for-Globbing">More Flags for Globbing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Calling-Glob.html#Calling-Glob">Calling Glob</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Globbing.html#Globbing">Globbing</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">10.2.2 Flags for Globbing</h4>
@@ -85,7 +87,7 @@ right away.  Otherwise, it continues.
 
      <!-- glob.h -->
 <!-- POSIX.2 -->
-<br><dt><code>GLOB_MARK</code><a name="index-GLOB_005fMARK-862"></a><dd>If the pattern matches the name of a directory, append <span class="samp">/</span> to the
+<br><dt><code>GLOB_MARK</code><a name="index-GLOB_005fMARK-862"></a><dd>If the pattern matches the name of a directory, append `<samp><span class="samp">/</span></samp>' to the
 directory's name when returning it.
 
      <!-- glob.h -->
@@ -103,13 +105,13 @@ the directory.)  The only reason <em>not</em> to sort is to save time.
 
      <!-- glob.h -->
 <!-- POSIX.2 -->
-<br><dt><code>GLOB_NOESCAPE</code><a name="index-GLOB_005fNOESCAPE-865"></a><dd>Don't treat the <span class="samp">\</span> character specially in patterns.  Normally,
-<span class="samp">\</span> quotes the following character, turning off its special meaning
+<br><dt><code>GLOB_NOESCAPE</code><a name="index-GLOB_005fNOESCAPE-865"></a><dd>Don't treat the `<samp><span class="samp">\</span></samp>' character specially in patterns.  Normally,
+`<samp><span class="samp">\</span></samp>' quotes the following character, turning off its special meaning
 (if any) so that it matches only itself.  When quoting is enabled, the
-pattern <span class="samp">\?</span> matches only the string <span class="samp">?</span>, because the question
+pattern `<samp><span class="samp">\?</span></samp>' matches only the string `<samp><span class="samp">?</span></samp>', because the question
 mark in the pattern acts like an ordinary character.
 
-     <p>If you use <code>GLOB_NOESCAPE</code>, then <span class="samp">\</span> is an ordinary character.
+     <p>If you use <code>GLOB_NOESCAPE</code>, then `<samp><span class="samp">\</span></samp>' is an ordinary character.
 
      <p><code>glob</code> does its work by calling the function <code>fnmatch</code>
 repeatedly.  It handles the flag <code>GLOB_NOESCAPE</code> by turning on the

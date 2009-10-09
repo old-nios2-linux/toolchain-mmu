@@ -3,7 +3,7 @@
 <title>Undefining and Redefining Macros - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Macros.html#Macros" title="Macros">
 <link rel="prev" href="Predefined-Macros.html#Predefined-Macros" title="Predefined Macros">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,27 +41,29 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Undefining-and-Redefining-Macros"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Directives-Within-Macro-Arguments.html#Directives-Within-Macro-Arguments">Directives Within Macro Arguments</a>,
+<a name="Undefining-and-Redefining-Macros"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Directives-Within-Macro-Arguments.html#Directives-Within-Macro-Arguments">Directives Within Macro Arguments</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Predefined-Macros.html#Predefined-Macros">Predefined Macros</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Macros.html#Macros">Macros</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">3.8 Undefining and Redefining Macros</h3>
 
-<p><a name="index-undefining-macros-67"></a><a name="index-redefining-macros-68"></a><a name="index-_0023undef-69"></a>
+<p><a name="index-undefining-macros-67"></a><a name="index-redefining-macros-68"></a><a name="index-g_t_0023undef-69"></a>
 If a macro ceases to be useful, it may be <dfn>undefined</dfn> with the
-<span class="samp">#undef</span> directive.  <span class="samp">#undef</span> takes a single argument, the
+`<samp><span class="samp">#undef</span></samp>' directive.  `<samp><span class="samp">#undef</span></samp>' takes a single argument, the
 name of the macro to undefine.  You use the bare macro name, even if the
 macro is function-like.  It is an error if anything appears on the line
-after the macro name.  <span class="samp">#undef</span> has no effect if the name is not a
+after the macro name.  `<samp><span class="samp">#undef</span></samp>' has no effect if the name is not a
 macro.
 
 <pre class="smallexample">     #define FOO 4
@@ -70,7 +72,7 @@ macro.
      x = FOO;        ==&gt; x = FOO;
 </pre>
    <p>Once a macro has been undefined, that identifier may be <dfn>redefined</dfn>
-as a macro by a subsequent <span class="samp">#define</span> directive.  The new definition
+as a macro by a subsequent `<samp><span class="samp">#define</span></samp>' directive.  The new definition
 need not have any resemblance to the old definition.
 
    <p>However, if an identifier which is currently a macro is redefined, then

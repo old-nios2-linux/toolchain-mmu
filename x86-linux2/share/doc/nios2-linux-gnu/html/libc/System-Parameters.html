@@ -3,7 +3,7 @@
 <title>System Parameters - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Management.html#System-Management" title="System Management">
 <link rel="prev" href="Filesystem-Handling.html#Filesystem-Handling" title="Filesystem Handling">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="System-Parameters"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Filesystem-Handling.html#Filesystem-Handling">Filesystem Handling</a>,
+<a name="System-Parameters"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Filesystem-Handling.html#Filesystem-Handling">Filesystem Handling</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Management.html#System-Management">System Management</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">30.4 System Parameters</h3>
@@ -33,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="System-Management.html#System-Managemen
 <p>This section describes the <code>sysctl</code> function, which gets and sets
 a variety of system parameters.
 
-   <p>The symbols used in this section are declared in the file <span class="file">sysctl.h</span>.
+   <p>The symbols used in this section are declared in the file <samp><span class="file">sysctl.h</span></samp>.
 
 <!-- sysctl.h -->
 <!-- BSD -->
@@ -62,7 +64,7 @@ in a hierarchical structure like a hierarchical filesystem.  To identify
 a particular parameter, you specify a path through the structure in a
 way analogous to specifying the pathname of a file.  Each component of
 the path is specified by an integer and each of these integers has a
-macro defined for it by <span class="file">sysctl.h</span>.  <var>names</var> is the path, in
+macro defined for it by <samp><span class="file">sysctl.h</span></samp>.  <var>names</var> is the path, in
 the form of an array of integers.  Each component of the path is one
 element of the array, in order.  <var>nlen</var> is the number of components
 in the path.

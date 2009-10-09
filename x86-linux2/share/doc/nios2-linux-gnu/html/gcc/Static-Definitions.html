@@ -3,7 +3,7 @@
 <title>Static Definitions - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002b_002b-Misunderstandings.html#C_002b_002b-Misunderstandings" title="C++ Misunderstandings">
 <link rel="next" href="Name-lookup.html#Name-lookup" title="Name lookup">
@@ -37,16 +37,18 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Static-Definitions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Name-lookup.html#Name-lookup">Name lookup</a>,
+<a name="Static-Definitions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Name-lookup.html#Name-lookup">Name lookup</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002b_002b-Misunderstandings.html#C_002b_002b-Misunderstandings">C++ Misunderstandings</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">10.8.1 Declare <em>and</em> Define Static Members</h4>
@@ -71,9 +73,9 @@ file, such as:
 <pre class="smallexample">     int Foo::bar = 0;
 </pre>
  <p>Other C++ compilers may not correctly implement the standard behavior. 
-As a result, when you switch to <span class="command">g++</span> from one of these compilers,
+As a result, when you switch to <samp><span class="command">g++</span></samp> from one of these compilers,
 you may discover that a program that appeared to work correctly in fact
-does not conform to the standard: <span class="command">g++</span> reports as undefined
+does not conform to the standard: <samp><span class="command">g++</span></samp> reports as undefined
 symbols any static data members that lack definitions.
 
  </body></html>

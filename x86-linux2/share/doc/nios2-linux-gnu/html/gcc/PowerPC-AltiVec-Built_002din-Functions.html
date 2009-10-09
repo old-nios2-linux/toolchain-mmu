@@ -3,7 +3,7 @@
 <title>PowerPC AltiVec Built-in Functions - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Builtins.html#Target-Builtins" title="Target Builtins">
 <link rel="prev" href="MIPS-Paired_002dSingle-Support.html#MIPS-Paired_002dSingle-Support" title="MIPS Paired-Single Support">
@@ -38,17 +38,20 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="PowerPC-AltiVec-Built_002din-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="SPARC-VIS-Built_002din-Functions.html#SPARC-VIS-Built_002din-Functions">SPARC VIS Built-in Functions</a>,
+<a name="PowerPC-AltiVec-Built-in-Functions"></a>
+<a name="PowerPC-AltiVec-Built_002din-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="SPARC-VIS-Built_002din-Functions.html#SPARC-VIS-Built_002din-Functions">SPARC VIS Built-in Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="MIPS-Paired_002dSingle-Support.html#MIPS-Paired_002dSingle-Support">MIPS Paired-Single Support</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Builtins.html#Target-Builtins">Target Builtins</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">5.47.10 PowerPC AltiVec Built-in Functions</h4>
@@ -56,8 +59,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Target-Builtins.html#Target-Builtins">T
 <p>GCC provides an interface for the PowerPC family of processors to access
 the AltiVec operations described in Motorola's AltiVec Programming
 Interface Manual.  The interface is made available by including
-<code>&lt;altivec.h&gt;</code> and using <span class="option">-maltivec</span> and
-<span class="option">-mabi=altivec</span>.  The interface supports the following vector
+<code>&lt;altivec.h&gt;</code> and using <samp><span class="option">-maltivec</span></samp> and
+<samp><span class="option">-mabi=altivec</span></samp>.  The interface supports the following vector
 types.
 
 <pre class="smallexample">     vector unsigned char
@@ -88,8 +91,8 @@ vector type is the default signedness of the base type.  The default
 varies depending on the operating system, so a portable program should
 always specify the signedness.
 
-     <li>Compiling with <span class="option">-maltivec</span> adds keywords <code>__vector</code>,
-<code>__pixel</code>, and <code>__bool</code>.  Macros <span class="option">vector</span>,
+     <li>Compiling with <samp><span class="option">-maltivec</span></samp> adds keywords <code>__vector</code>,
+<code>__pixel</code>, and <code>__bool</code>.  Macros <samp><span class="option">vector</span></samp>,
 <code>pixel</code>, and <code>bool</code> are defined in <code>&lt;altivec.h&gt;</code> and can
 be undefined.
 

@@ -3,7 +3,7 @@
 <title>Dynamic String Input - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Formatted-Input.html#Formatted-Input" title="Formatted Input">
 <link rel="prev" href="String-Input-Conversions.html#String-Input-Conversions" title="String Input Conversions">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Dynamic-String-Input"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Other-Input-Conversions.html#Other-Input-Conversions">Other Input Conversions</a>,
+<a name="Dynamic-String-Input"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Other-Input-Conversions.html#Other-Input-Conversions">Other Input Conversions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="String-Input-Conversions.html#String-Input-Conversions">String Input Conversions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Formatted-Input.html#Formatted-Input">Formatted Input</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">12.14.6 Dynamically Allocating String Conversions</h4>
@@ -35,17 +37,17 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Formatted-Input.html#Formatted-Input">F
 <p>A GNU extension to formatted input lets you safely read a string with no
 maximum size.  Using this feature, you don't supply a buffer; instead,
 <code>scanf</code> allocates a buffer big enough to hold the data and gives
-you its address.  To use this feature, write <span class="samp">a</span> as a flag
-character, as in <span class="samp">%as</span> or <span class="samp">%a[0-9a-z]</span>.
+you its address.  To use this feature, write `<samp><span class="samp">a</span></samp>' as a flag
+character, as in `<samp><span class="samp">%as</span></samp>' or `<samp><span class="samp">%a[0-9a-z]</span></samp>'.
 
    <p>The pointer argument you supply for where to store the input should have
 type <code>char **</code>.  The <code>scanf</code> function allocates a buffer and
 stores its address in the word that the argument points to.  You should
 free the buffer with <code>free</code> when you no longer need it.
 
-   <p>Here is an example of using the <span class="samp">a</span> flag with the <span class="samp">%[...]</span>
+   <p>Here is an example of using the `<samp><span class="samp">a</span></samp>' flag with the `<samp><span class="samp">%[...]</span></samp>'
 conversion specification to read a &ldquo;variable assignment&rdquo; of the form
-<var>variable</var><span class="samp"> = </span><var>value</var>.
+`<samp><var>variable</var><span class="samp"> = </span><var>value</var></samp>'.
 
 <pre class="smallexample">     {
        char *variable, *value;

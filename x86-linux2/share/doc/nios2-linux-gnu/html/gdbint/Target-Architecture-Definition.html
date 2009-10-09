@@ -3,7 +3,7 @@
 <title>Target Architecture Definition - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Host-Definition.html#Host-Definition" title="Host Definition">
 <link rel="next" href="Target-Descriptions.html#Target-Descriptions" title="Target Descriptions">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Target-Architecture-Definition"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Target-Descriptions.html#Target-Descriptions">Target Descriptions</a>,
+<a name="Target-Architecture-Definition"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Target-Descriptions.html#Target-Descriptions">Target Descriptions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Host-Definition.html#Host-Definition">Host Definition</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">9 Target Architecture Definition</h2>
@@ -37,7 +39,7 @@ with them.
 
    <p>The target architecture object is implemented as the C structure
 <code>struct gdbarch *</code>.  The structure, and its methods, are generated
-using the Bourne shell script <span class="file">gdbarch.sh</span>.
+using the Bourne shell script <samp><span class="file">gdbarch.sh</span></samp>.
 
 <h3 class="section">9.1 Operating System ABI Variant Handling</h3>
 
@@ -63,7 +65,7 @@ sections known to be used by several operating systems.
 selected OS ABI.  There may be only one handler for a given OS ABI
 for each BFD architecture.
 
-   <p>The following OS ABI variants are defined in <span class="file">defs.h</span>:
+   <p>The following OS ABI variants are defined in <samp><span class="file">defs.h</span></samp>:
 
      
 <a name="index-GDB_005fOSABI_005fUNINITIALIZED-217"></a>
@@ -352,11 +354,11 @@ a <span class="sc">gdb</span> user when printing type expressions.
 <blockquote><p>Returns the type flags needed to construct a pointer type whose size
 is <var>byte_size</var> and whose address class is <var>dwarf2_addr_class</var>. 
 This function is normally called from within a symbol reader.  See
-<span class="file">dwarf2read.c</span>. 
+<samp><span class="file">dwarf2read.c</span></samp>. 
 </p></blockquote></div>
 
 <div class="defun">
-&mdash; Target Macro: char <b>*ADDRESS_CLASS_TYPE_FLAGS_TO_NAME</b> (<var>int type_flags</var>)<var><a name="index-_002aADDRESS_005fCLASS_005fTYPE_005fFLAGS_005fTO_005fNAME-263"></a></var><br>
+&mdash; Target Macro: char <b>*ADDRESS_CLASS_TYPE_FLAGS_TO_NAME</b> (<var>int type_flags</var>)<var><a name="index-g_t_002aADDRESS_005fCLASS_005fTYPE_005fFLAGS_005fTO_005fNAME-263"></a></var><br>
 <blockquote><p>Given the type flags representing an address class qualifier, return
 its name. 
 </p></blockquote></div>
@@ -525,7 +527,7 @@ their <var>reg</var> and <var>type</var> arguments in different orders.
 
 <h3 class="section">9.7 Using Different Register and Memory Data Representations</h3>
 
-<p><a name="index-register-representation-274"></a><a name="index-memory-representation-275"></a><a name="index-representations_002c-register-and-memory-276"></a><a name="index-register-data-formats_002c-converting-277"></a><a name="index-_0040code_007bstruct-value_007d_002c-converting-register-contents-to-278"></a>
+<p><a name="index-register-representation-274"></a><a name="index-memory-representation-275"></a><a name="index-representations_002c-register-and-memory-276"></a><a name="index-register-data-formats_002c-converting-277"></a><a name="index-g_t_0040code_007bstruct-value_007d_002c-converting-register-contents-to-278"></a>
 <em>Maintainer's note: The way GDB manipulates registers is undergoing
 significant change.  Many of the macros and functions referred to in this
 section are likely to be subject to further revision.  See
@@ -595,7 +597,7 @@ the <code>CONVERT_REGISTER_P</code> macro returns a non-zero value.
 
 <div class="defun">
 &mdash; Target Macro: void <b>REGISTER_CONVERT_TO_TYPE</b> (<var>int regnum, struct type *type, char *buf</var>)<var><a name="index-REGISTER_005fCONVERT_005fTO_005fTYPE-282"></a></var><br>
-<blockquote><p>See <span class="file">mips-tdep.c</span>.  It does not do what you want. 
+<blockquote><p>See <samp><span class="file">mips-tdep.c</span></samp>.  It does not do what you want. 
 </p></blockquote></div>
 
 <h3 class="section">9.8 Frame Interpretation</h3>
@@ -713,7 +715,7 @@ reason.
 address adjusted to account for architectural constraints on
 breakpoint placement.  This method is not needed by most targets.
 
-     <p>The FR-V target (see <span class="file">frv-tdep.c</span>) requires this method. 
+     <p>The FR-V target (see <samp><span class="file">frv-tdep.c</span></samp>) requires this method. 
 The FR-V is a VLIW architecture in which a number of RISC-like
 instructions are grouped (packed) together into an aggregate
 instruction or instruction bundle.  When the processor executes
@@ -739,7 +741,7 @@ the bundle, returning the address of the bundle.
 expectation, <span class="sc">gdb</span> prints a warning when an adjusted breakpoint
 is initially set and each time that that breakpoint is hit.
 
-     <br><dt><code>CALL_DUMMY_LOCATION</code><dd><a name="index-CALL_005fDUMMY_005fLOCATION-301"></a>See the file <span class="file">inferior.h</span>.
+     <br><dt><code>CALL_DUMMY_LOCATION</code><dd><a name="index-CALL_005fDUMMY_005fLOCATION-301"></a>See the file <samp><span class="file">inferior.h</span></samp>.
 
      <p>This method has been replaced by <code>push_dummy_code</code>
 (see <a href="push_005fdummy_005fcode.html#push_005fdummy_005fcode">push_dummy_code</a>).
@@ -764,7 +766,7 @@ program encounters a breakpoint.  This is often the number of bytes in
      <br><dt><code>DISABLE_UNSETTABLE_BREAK (</code><var>addr</var><code>)</code><dd><a name="index-DISABLE_005fUNSETTABLE_005fBREAK-306"></a>If defined, this should evaluate to 1 if <var>addr</var> is in a shared
 library in which breakpoints cannot be set and so should be disabled.
 
-     <br><dt><code>PRINT_FLOAT_INFO()</code><dd><a name="index-PRINT_005fFLOAT_005fINFO-307"></a>If defined, then the <span class="samp">info float</span> command will print information about
+     <br><dt><code>PRINT_FLOAT_INFO()</code><dd><a name="index-PRINT_005fFLOAT_005fINFO-307"></a>If defined, then the `<samp><span class="samp">info float</span></samp>' command will print information about
 the processor's floating point unit.
 
      <br><dt><code>print_registers_info (</code><var>gdbarch</var><code>, </code><var>frame</var><code>, </code><var>regnum</var><code>, </code><var>all</var><code>)</code><dd><a name="index-print_005fregisters_005finfo-308"></a>If defined, pretty print the value of the register <var>regnum</var> for the
@@ -775,10 +777,10 @@ registers (<var>all</var> is zero).
      <p>The default method prints one register per line, and if <var>all</var> is
 zero omits floating-point registers.
 
-     <br><dt><code>PRINT_VECTOR_INFO()</code><dd><a name="index-PRINT_005fVECTOR_005fINFO-309"></a>If defined, then the <span class="samp">info vector</span> command will call this function
+     <br><dt><code>PRINT_VECTOR_INFO()</code><dd><a name="index-PRINT_005fVECTOR_005fINFO-309"></a>If defined, then the `<samp><span class="samp">info vector</span></samp>' command will call this function
 to print information about the processor's vector unit.
 
-     <p>By default, the <span class="samp">info vector</span> command will print all vector
+     <p>By default, the `<samp><span class="samp">info vector</span></samp>' command will print all vector
 registers (the register's type having the vector attribute).
 
      <br><dt><code>DWARF_REG_TO_REGNUM</code><dd><a name="index-DWARF_005fREG_005fTO_005fREGNUM-310"></a>Convert DWARF register number into <span class="sc">gdb</span> regnum.  If not defined,
@@ -856,10 +858,10 @@ stack.
 outermost frame, with no caller, and nonzero otherwise.  Most normal
 situations can be handled without defining this macro, including <code>NULL</code>
 chain pointers, dummy frames, and frames whose PC values are inside the
-startup file (e.g. <span class="file">crt0.o</span>), inside <code>main</code>, or inside
+startup file (e.g. <samp><span class="file">crt0.o</span></samp>), inside <code>main</code>, or inside
 <code>_start</code>.
 
-     <br><dt><code>DEPRECATED_FRAME_INIT_SAVED_REGS(</code><var>frame</var><code>)</code><dd><a name="index-DEPRECATED_005fFRAME_005fINIT_005fSAVED_005fREGS-323"></a>See <span class="file">frame.h</span>.  Determines the address of all registers in the
+     <br><dt><code>DEPRECATED_FRAME_INIT_SAVED_REGS(</code><var>frame</var><code>)</code><dd><a name="index-DEPRECATED_005fFRAME_005fINIT_005fSAVED_005fREGS-323"></a>See <samp><span class="file">frame.h</span></samp>.  Determines the address of all registers in the
 current stack frame storing each in <code>frame-&gt;saved_regs</code>.  Space for
 <code>frame-&gt;saved_regs</code> shall be allocated by
 <code>DEPRECATED_FRAME_INIT_SAVED_REGS</code> using
@@ -924,7 +926,7 @@ look for to detect that GCC compiled the file.  The default symbols
 are <code>gcc_compiled.</code> and <code>gcc2_compiled.</code>,
 respectively.  (Currently only defined for the Delta 68.)
 
-     <br><dt><span class="sc">gdb</span><code>_MULTI_ARCH</code><dd><a name="index-_0040value_007bGDBN_007d_005fMULTI_005fARCH-332"></a>If defined and non-zero, enables support for multiple architectures
+     <br><dt><span class="sc">gdb</span><code>_MULTI_ARCH</code><dd><a name="index-g_t_0040value_007bGDBN_007d_005fMULTI_005fARCH-332"></a>If defined and non-zero, enables support for multiple architectures
 within <span class="sc">gdb</span>.
 
      <p>This support can be enabled at two levels.  At level one, only
@@ -932,14 +934,14 @@ definitions for previously undefined macros are provided; at level two,
 a multi-arch definition of all architecture dependent macros will be
 defined.
 
-     <br><dt><span class="sc">gdb</span><code>_TARGET_IS_HPPA</code><dd><a name="index-_0040value_007bGDBN_007d_005fTARGET_005fIS_005fHPPA-333"></a>This determines whether horrible kludge code in <span class="file">dbxread.c</span> and
-<span class="file">partial-stab.h</span> is used to mangle multiple-symbol-table files from
-HPPA's.  This should all be ripped out, and a scheme like <span class="file">elfread.c</span>
+     <br><dt><span class="sc">gdb</span><code>_TARGET_IS_HPPA</code><dd><a name="index-g_t_0040value_007bGDBN_007d_005fTARGET_005fIS_005fHPPA-333"></a>This determines whether horrible kludge code in <samp><span class="file">dbxread.c</span></samp> and
+<samp><span class="file">partial-stab.h</span></samp> is used to mangle multiple-symbol-table files from
+HPPA's.  This should all be ripped out, and a scheme like <samp><span class="file">elfread.c</span></samp>
 used instead.
 
      <br><dt><code>GET_LONGJMP_TARGET</code><dd><a name="index-GET_005fLONGJMP_005fTARGET-334"></a>For most machines, this is a target-dependent parameter.  On the
 DECstation and the Iris, this is a native-dependent parameter, since
-the header file <span class="file">setjmp.h</span> is needed to define it.
+the header file <samp><span class="file">setjmp.h</span></samp> is needed to define it.
 
      <p>This macro determines the target PC address that <code>longjmp</code> will jump to,
 assuming that we have just stopped at a <code>longjmp</code> breakpoint.  It takes a
@@ -957,12 +959,12 @@ repenting at leisure.
      <br><dt><code>I386_USE_GENERIC_WATCHPOINTS</code><dd>An x86-based target can define this to use the generic x86 watchpoint
 support; see <a href="Algorithms.html#Algorithms">I386_USE_GENERIC_WATCHPOINTS</a>.
 
-     <br><dt><code>SYMBOLS_CAN_START_WITH_DOLLAR</code><dd><a name="index-SYMBOLS_005fCAN_005fSTART_005fWITH_005fDOLLAR-337"></a>Some systems have routines whose names start with <span class="samp">$</span>.  Giving this
+     <br><dt><code>SYMBOLS_CAN_START_WITH_DOLLAR</code><dd><a name="index-SYMBOLS_005fCAN_005fSTART_005fWITH_005fDOLLAR-337"></a>Some systems have routines whose names start with `<samp><span class="samp">$</span></samp>'.  Giving this
 macro a non-zero value tells <span class="sc">gdb</span>'s expression parser to check for such
-routines when parsing tokens that begin with <span class="samp">$</span>.
+routines when parsing tokens that begin with `<samp><span class="samp">$</span></samp>'.
 
      <p>On HP-UX, certain system routines (millicode) have names beginning with
-<span class="samp">$</span> or <span class="samp">$$</span>.  For example, <code>$$dyncall</code> is a millicode
+`<samp><span class="samp">$</span></samp>' or `<samp><span class="samp">$$</span></samp>'.  For example, <code>$$dyncall</code> is a millicode
 routine that handles inter-space procedure calls on PA-RISC.
 
      <br><dt><code>DEPRECATED_INIT_EXTRA_FRAME_INFO (</code><var>fromleaf</var><code>, </code><var>frame</var><code>)</code><dd><a name="index-DEPRECATED_005fINIT_005fEXTRA_005fFRAME_005fINFO-338"></a>If additional information about the frame is required this should be
@@ -1048,7 +1050,7 @@ group <var>reggroup</var>.
 <dt><code>float_reggroup</code><dd>Any register with a valid name and a floating-point type. 
 <br><dt><code>vector_reggroup</code><dd>Any register with a valid name and a vector type. 
 <br><dt><code>general_reggroup</code><dd>Any register with a valid name and a type other than vector or
-floating-point.  <span class="samp">float_reggroup</span>. 
+floating-point.  `<samp><span class="samp">float_reggroup</span></samp>'. 
 <br><dt><code>save_reggroup</code><dt><code>restore_reggroup</code><dt><code>all_reggroup</code><dd>Any register with a valid name. 
 </dl>
 
@@ -1079,7 +1081,7 @@ mechanism.  The macro <code>SOFTWARE_SINGLE_STEP</code> must also be defined.
 
      <br><dt><code>SOFTWARE_SINGLE_STEP(</code><var>signal</var><code>, </code><var>insert_breakpoints_p</var><code>)</code><dd><a name="index-SOFTWARE_005fSINGLE_005fSTEP-364"></a>A function that inserts or removes (depending on
 <var>insert_breakpoints_p</var>) breakpoints at each possible destinations of
-the next instruction. See <span class="file">sparc-tdep.c</span> and <span class="file">rs6000-tdep.c</span>
+the next instruction. See <samp><span class="file">sparc-tdep.c</span></samp> and <samp><span class="file">rs6000-tdep.c</span></samp>
 for examples.
 
      <br><dt><code>SOFUN_ADDRESS_MAYBE_MISSING</code><dd><a name="index-SOFUN_005fADDRESS_005fMAYBE_005fMISSING-365"></a>Somebody clever observed that, the more actual addresses you have in the
@@ -1175,7 +1177,7 @@ given type will be passed by pointer rather than directly.
      <p>This method has been replaced by <code>stabs_argument_has_addr</code>
 (see <a href="stabs_005fargument_005fhas_005faddr.html#stabs_005fargument_005fhas_005faddr">stabs_argument_has_addr</a>).
 
-     <br><dt><code>SAVE_DUMMY_FRAME_TOS (</code><var>sp</var><code>)</code><dd><a name="index-SAVE_005fDUMMY_005fFRAME_005fTOS-381"></a><a name="SAVE_005fDUMMY_005fFRAME_005fTOS"></a> Used in <span class="samp">call_function_by_hand</span> to
+     <br><dt><code>SAVE_DUMMY_FRAME_TOS (</code><var>sp</var><code>)</code><dd><a name="index-SAVE_005fDUMMY_005fFRAME_005fTOS-381"></a><a name="SAVE_005fDUMMY_005fFRAME_005fTOS"></a> Used in `<samp><span class="samp">call_function_by_hand</span></samp>' to
 notify the target dependent code of the top-of-stack value that will be
 passed to the inferior code.  This is the value of the <code>SP</code>
 after both the dummy frame and space for parameters/results have been
@@ -1337,7 +1339,7 @@ accessor function for the global pointer
 <code>deprecated_tm_print_insn</code>.  This usually points to a function in
 the <code>opcodes</code> library (see <a href="Support-Libraries.html#Support-Libraries">Opcodes</a>). 
 <var>info</var> is a structure (of type <code>disassemble_info</code>) defined in
-<span class="file">include/dis-asm.h</span> used to pass information to the instruction
+<samp><span class="file">include/dis-asm.h</span></samp> used to pass information to the instruction
 decoding routine.
 
      <br><dt><code>struct frame_id unwind_dummy_id (struct frame_info *</code><var>frame</var><code>)</code><dd><a name="index-unwind_005fdummy_005fid-415"></a><a name="unwind_005fdummy_005fid"></a> Given <var>frame</var> return a <code>struct
@@ -1389,37 +1391,37 @@ allocate some memory in the inferior. The default value is "malloc".
 
      
 <a name="index-TDEPFILES-425"></a>
-<dl><dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/</span><var>ttt</var><span class="file">.mt</span><dd>Contains a Makefile fragment specific to this target.  Specifies what
+<dl><dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/</span><var>ttt</var><span class="file">.mt</span></samp><dd>Contains a Makefile fragment specific to this target.  Specifies what
 object files are needed for target <var>ttt</var>, by defining
-<span class="samp">TDEPFILES=...</span> and <span class="samp">TDEPLIBS=...</span>.  Also specifies
-the header file which describes <var>ttt</var>, by defining <span class="samp">TM_FILE=
-tm-</span><var>ttt</var><span class="samp">.h</span>.
+`<samp><span class="samp">TDEPFILES=...</span></samp>' and `<samp><span class="samp">TDEPLIBS=...</span></samp>'.  Also specifies
+the header file which describes <var>ttt</var>, by defining `<samp><span class="samp">TM_FILE=
+tm-</span><var>ttt</var><span class="samp">.h</span></samp>'.
 
-     <p>You can also define <span class="samp">TM_CFLAGS</span>, <span class="samp">TM_CLIBS</span>, <span class="samp">TM_CDEPS</span>,
+     <p>You can also define `<samp><span class="samp">TM_CFLAGS</span></samp>', `<samp><span class="samp">TM_CLIBS</span></samp>', `<samp><span class="samp">TM_CDEPS</span></samp>',
 but these are now deprecated, replaced by autoconf, and may go away in
 future versions of <span class="sc">gdb</span>.
 
-     <br><dt><span class="file">gdb/</span><var>ttt</var><span class="file">-tdep.c</span><dd>Contains any miscellaneous code required for this target machine.  On
+     <br><dt><samp><span class="file">gdb/</span><var>ttt</var><span class="file">-tdep.c</span></samp><dd>Contains any miscellaneous code required for this target machine.  On
 some machines it doesn't exist at all.  Sometimes the macros in
-<span class="file">tm-</span><var>ttt</var><span class="file">.h</span> become very complicated, so they are implemented
+<samp><span class="file">tm-</span><var>ttt</var><span class="file">.h</span></samp> become very complicated, so they are implemented
 as functions here instead, and the macro is simply defined to call the
 function.  This is vastly preferable, since it is easier to understand
 and debug.
 
-     <br><dt><span class="file">gdb/</span><var>arch</var><span class="file">-tdep.c</span><dt><span class="file">gdb/</span><var>arch</var><span class="file">-tdep.h</span><dd>This often exists to describe the basic layout of the target machine's
+     <br><dt><samp><span class="file">gdb/</span><var>arch</var><span class="file">-tdep.c</span></samp><dt><samp><span class="file">gdb/</span><var>arch</var><span class="file">-tdep.h</span></samp><dd>This often exists to describe the basic layout of the target machine's
 processor chip (registers, stack, etc.).  If used, it is included by
-<var>ttt</var><span class="file">-tdep.h</span>.  It can be shared among many targets that use
+<samp><var>ttt</var><span class="file">-tdep.h</span></samp>.  It can be shared among many targets that use
 the same processor.
 
-     <br><dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/tm-</span><var>ttt</var><span class="file">.h</span><dd>(<span class="file">tm.h</span> is a link to this file, created by <code>configure</code>).  Contains
+     <br><dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/tm-</span><var>ttt</var><span class="file">.h</span></samp><dd>(<samp><span class="file">tm.h</span></samp> is a link to this file, created by <code>configure</code>).  Contains
 macro definitions about the target machine's registers, stack frame
 format and instructions.
 
      <p>New targets do not need this file and should not create it.
 
-     <br><dt><span class="file">gdb/config/</span><var>arch</var><span class="file">/tm-</span><var>arch</var><span class="file">.h</span><dd>This often exists to describe the basic layout of the target machine's
+     <br><dt><samp><span class="file">gdb/config/</span><var>arch</var><span class="file">/tm-</span><var>arch</var><span class="file">.h</span></samp><dd>This often exists to describe the basic layout of the target machine's
 processor chip (registers, stack, etc.).  If used, it is included by
-<span class="file">tm-</span><var>ttt</var><span class="file">.h</span>.  It can be shared among many targets that use the
+<samp><span class="file">tm-</span><var>ttt</var><span class="file">.h</span></samp>.  It can be shared among many targets that use the
 same processor.
 
      <p>New targets do not need this file and should not create it.
@@ -1427,11 +1429,11 @@ same processor.
    </dl>
 
    <p>If you are adding a new operating system for an existing CPU chip, add a
-<span class="file">config/tm-</span><var>os</var><span class="file">.h</span> file that describes the operating system
+<samp><span class="file">config/tm-</span><var>os</var><span class="file">.h</span></samp> file that describes the operating system
 facilities that are unusual (extra symbol table info; the breakpoint
-instruction needed; etc.).  Then write a <var>arch</var><span class="file">/tm-</span><var>os</var><span class="file">.h</span>
-that just <code>#include</code>s <span class="file">tm-</span><var>arch</var><span class="file">.h</span> and
-<span class="file">config/tm-</span><var>os</var><span class="file">.h</span>.
+instruction needed; etc.).  Then write a <samp><var>arch</var><span class="file">/tm-</span><var>os</var><span class="file">.h</span></samp>
+that just <code>#include</code>s <samp><span class="file">tm-</span><var>arch</var><span class="file">.h</span></samp> and
+<samp><span class="file">config/tm-</span><var>os</var><span class="file">.h</span></samp>.
 
 <h3 class="section">9.13 Converting an existing Target Architecture to Multi-arch</h3>
 
@@ -1462,19 +1464,19 @@ encouraged to keep the patch size down.
    <p>Since each patch is well defined, and since each change has been tested
 and shows no regressions, the patches are considered <em>fairly</em>
 obvious.  Such patches, when submitted by developers listed in the
-<span class="file">MAINTAINERS</span> file, do not need approval.  Occasional steps in the
+<samp><span class="file">MAINTAINERS</span></samp> file, do not need approval.  Occasional steps in the
 process may be more complicated and less clear.  The developer is
 expected to use their judgment and is encouraged to seek advice as
 needed.
 
 <h4 class="subsection">9.13.1 Preparation</h4>
 
-<p>The first step is to establish control.  Build (with <span class="option">-Werror</span>
+<p>The first step is to establish control.  Build (with <samp><span class="option">-Werror</span></samp>
 enabled) and test the target so that there is a baseline against which
 the debugger can be compared.
 
    <p>At no stage can the test results regress or <span class="sc">gdb</span> stop compiling
-with <span class="option">-Werror</span>.
+with <samp><span class="option">-Werror</span></samp>.
 
 <h4 class="subsection">9.13.2 Add the multi-arch initialization code</h4>
 
@@ -1517,7 +1519,7 @@ architecture:
                               mips_dump_tdep);
      </pre>
      <li>Add the macro <code>GDB_MULTI_ARCH</code>, defined as 0 (zero), to the file<br>
-<span class="file">config/</span><var>arch</var><span class="file">/tm-</span><var>arch</var><span class="file">.h</span>.
+<samp><span class="file">config/</span><var>arch</var><span class="file">/tm-</span><var>arch</var><span class="file">.h</span></samp>.
 
    </ul>
 
@@ -1568,8 +1570,8 @@ architecture method) in small batches.
 
 <h4 class="subsection">9.13.8 Delete the TM file</h4>
 
-<p>The <span class="file">tm-</span><var>arch</var><span class="file">.h</span> can be deleted.  <var>arch</var><span class="file">.mt</span> and
-<span class="file">configure.in</span> updated.
+<p>The <samp><span class="file">tm-</span><var>arch</var><span class="file">.h</span></samp> can be deleted.  <samp><var>arch</var><span class="file">.mt</span></samp> and
+<samp><span class="file">configure.in</span></samp> updated.
 
    <div class="footnote">
 <hr>

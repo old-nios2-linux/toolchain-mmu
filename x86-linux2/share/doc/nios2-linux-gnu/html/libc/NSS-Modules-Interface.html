@@ -3,7 +3,7 @@
 <title>NSS Modules Interface - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="NSS-Module-Internals.html#NSS-Module-Internals" title="NSS Module Internals">
 <link rel="prev" href="NSS-Module-Names.html#NSS-Module-Names" title="NSS Module Names">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="NSS-Modules-Interface"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="NSS-Module-Names.html#NSS-Module-Names">NSS Module Names</a>,
+<a name="NSS-Modules-Interface"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="NSS-Module-Names.html#NSS-Module-Names">NSS Module Names</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="NSS-Module-Internals.html#NSS-Module-Internals">NSS Module Internals</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">28.3.2 The Interface of the Function in NSS Modules</h4>
@@ -64,7 +66,7 @@ result the reentrant function return an <code>enum nss_status</code> value:
      <br><dt><code>NSS_STATUS_SUCCESS</code><a name="index-NSS_005fSTATUS_005fSUCCESS-3288"></a><dd>numeric value <code>1</code>
 </dl>
 
-<p class="noindent">Now you see where the action items of the <span class="file">/etc/nsswitch.conf</span> file
+<p class="noindent">Now you see where the action items of the <samp><span class="file">/etc/nsswitch.conf</span></samp> file
 are used.
 
    <p>If you study the source code you will find there is a fifth value:

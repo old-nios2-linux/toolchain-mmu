@@ -3,7 +3,7 @@
 <title>Installation - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Library-Summary.html#Library-Summary" title="Library Summary">
 <link rel="next" href="Maintenance.html#Maintenance" title="Maintenance">
@@ -16,30 +16,32 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Installation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Maintenance.html#Maintenance">Maintenance</a>,
+<a name="Installation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Maintenance.html#Maintenance">Maintenance</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Library-Summary.html#Library-Summary">Library Summary</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <!-- %MENU% How to install the GNU C library -->
 <h2 class="appendix">Appendix C Installing the GNU C Library</h2>
 
-<p>Before you do anything else, you should read the file <span class="file">FAQ</span> located
+<p>Before you do anything else, you should read the file <samp><span class="file">FAQ</span></samp> located
 at the top level of the source tree.  This file answers common questions
 and describes problems you may experience with compilation and
 installation.  It is updated more frequently than this manual.
 
    <p>Features can be added to GNU Libc via <dfn>add-on</dfn> bundles.  These are
 separate tar files, which you unpack into the top level of the source
-tree.  Then you give <code>configure</code> the <span class="samp">--enable-add-ons</span> option
+tree.  Then you give <code>configure</code> the `<samp><span class="samp">--enable-add-ons</span></samp>' option
 to activate them, and they will be compiled into the library.
 
    <p>You will need recent versions of several GNU tools: definitely GCC and

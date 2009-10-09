@@ -3,7 +3,7 @@
 <title>Nonreentrancy - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Defining-Handlers.html#Defining-Handlers" title="Defining Handlers">
 <link rel="prev" href="Merged-Signals.html#Merged-Signals" title="Merged Signals">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Nonreentrancy"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Atomic-Data-Access.html#Atomic-Data-Access">Atomic Data Access</a>,
+<a name="Nonreentrancy"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Atomic-Data-Access.html#Atomic-Data-Access">Atomic Data Access</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Merged-Signals.html#Merged-Signals">Merged Signals</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Defining-Handlers.html#Defining-Handlers">Defining Handlers</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">24.4.6 Signal Handling and Nonreentrant Functions</h4>
@@ -48,7 +50,7 @@ instructions on most machines.
 handler.
 
      <ul>
-<li><a name="index-_0040code_007bvolatile_007d-declarations-2936"></a>If your handler needs to access any global variables from your program,
+<li><a name="index-g_t_0040code_007bvolatile_007d-declarations-2936"></a>If your handler needs to access any global variables from your program,
 declare those variables <code>volatile</code>.  This tells the compiler that
 the value of the variable might change asynchronously, and inhibits
 certain optimizations that would be invalidated by such modifications.

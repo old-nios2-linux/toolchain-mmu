@@ -3,7 +3,7 @@
 <title>CPU Time - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Processor-And-CPU-Time.html#Processor-And-CPU-Time" title="Processor And CPU Time">
 <link rel="next" href="Processor-Time.html#Processor-Time" title="Processor Time">
@@ -16,22 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="CPU-Time"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Processor-Time.html#Processor-Time">Processor Time</a>,
+<a name="CPU-Time"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Processor-Time.html#Processor-Time">Processor Time</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Processor-And-CPU-Time.html#Processor-And-CPU-Time">Processor And CPU Time</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">21.3.1 CPU Time Inquiry</h4>
 
 <p>To get a process' CPU time, you can use the <code>clock</code> function.  This
-facility is declared in the header file <span class="file">time.h</span>. 
+facility is declared in the header file <samp><span class="file">time.h</span></samp>. 
 <a name="index-time_002eh-2605"></a>
 In typical usage, you call the <code>clock</code> function at the beginning
 and end of the interval you want to time, subtract the values, and then

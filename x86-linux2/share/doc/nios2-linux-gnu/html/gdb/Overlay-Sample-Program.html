@@ -3,7 +3,7 @@
 <title>Overlay Sample Program - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Overlays.html#Overlays" title="Overlays">
 <link rel="prev" href="Automatic-Overlay-Debugging.html#Automatic-Overlay-Debugging" title="Automatic Overlay Debugging">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Overlay-Sample-Program"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Automatic-Overlay-Debugging.html#Automatic-Overlay-Debugging">Automatic Overlay Debugging</a>,
+<a name="Overlay-Sample-Program"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Automatic-Overlay-Debugging.html#Automatic-Overlay-Debugging">Automatic Overlay Debugging</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Overlays.html#Overlays">Overlays</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">12.4 Overlay Sample Program</h3>
@@ -33,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Overlays.html#Overlays">Overlays</a>
 <p><a name="index-overlay-example-program-615"></a>
 When linking a program which uses overlays, you must place the overlays
 at their load addresses, while relocating them to run at their mapped
-addresses.  To do this, you must write a linker script (see <a href="../ld/Overlay-Description.html#Overlay-Description">Overlay Description (Using ld: the GNU linker)</a>).  Unfortunately,
+addresses.  To do this, you must write a linker script (see <a href="../ld/Overlay-Description.html#Overlay-Description">Overlay Description</a>).  Unfortunately,
 since linker scripts are specific to a particular host system, target
 architecture, and target memory layout, this manual cannot provide
 portable sample code demonstrating <span class="sc">gdb</span>'s overlay support.
@@ -41,13 +43,13 @@ portable sample code demonstrating <span class="sc">gdb</span>'s overlay support
    <p>However, the <span class="sc">gdb</span> source distribution does contain an overlaid
 program, with linker scripts for a few systems, as part of its test
 suite.  The program consists of the following files from
-<span class="file">gdb/testsuite/gdb.base</span>:
+<samp><span class="file">gdb/testsuite/gdb.base</span></samp>:
 
      <dl>
-<dt><span class="file">overlays.c</span><dd>The main program file. 
-<br><dt><span class="file">ovlymgr.c</span><dd>A simple overlay manager, used by <span class="file">overlays.c</span>. 
-<br><dt><span class="file">foo.c</span><dt><span class="file">bar.c</span><dt><span class="file">baz.c</span><dt><span class="file">grbx.c</span><dd>Overlay modules, loaded and used by <span class="file">overlays.c</span>. 
-<br><dt><span class="file">d10v.ld</span><dt><span class="file">m32r.ld</span><dd>Linker scripts for linking the test program on the <code>d10v-elf</code>
+<dt><samp><span class="file">overlays.c</span></samp><dd>The main program file. 
+<br><dt><samp><span class="file">ovlymgr.c</span></samp><dd>A simple overlay manager, used by <samp><span class="file">overlays.c</span></samp>. 
+<br><dt><samp><span class="file">foo.c</span></samp><dt><samp><span class="file">bar.c</span></samp><dt><samp><span class="file">baz.c</span></samp><dt><samp><span class="file">grbx.c</span></samp><dd>Overlay modules, loaded and used by <samp><span class="file">overlays.c</span></samp>. 
+<br><dt><samp><span class="file">d10v.ld</span></samp><dt><samp><span class="file">m32r.ld</span></samp><dd>Linker scripts for linking the test program on the <code>d10v-elf</code>
 and <code>m32r-elf</code> targets. 
 </dl>
 

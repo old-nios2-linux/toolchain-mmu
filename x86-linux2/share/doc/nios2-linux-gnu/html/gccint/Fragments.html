@@ -3,7 +3,7 @@
 <title>Fragments - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Host-Config.html#Host-Config" title="Host Config">
 <link rel="next" href="Collect2.html#Collect2" title="Collect2">
@@ -37,32 +37,34 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Fragments"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Collect2.html#Collect2">Collect2</a>,
+<a name="Fragments"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Collect2.html#Collect2">Collect2</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Host-Config.html#Host-Config">Host Config</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">16 Makefile Fragments</h2>
 
 <p><a name="index-makefile-fragment-2654"></a>
-When you configure GCC using the <span class="file">configure</span> script, it will
-construct the file <span class="file">Makefile</span> from the template file
-<span class="file">Makefile.in</span>.  When it does this, it can incorporate makefile
-fragments from the <span class="file">config</span> directory.  These are used to set
+When you configure GCC using the <samp><span class="file">configure</span></samp> script, it will
+construct the file <samp><span class="file">Makefile</span></samp> from the template file
+<samp><span class="file">Makefile.in</span></samp>.  When it does this, it can incorporate makefile
+fragments from the <samp><span class="file">config</span></samp> directory.  These are used to set
 Makefile parameters that are not amenable to being calculated by
 autoconf.  The list of fragments to incorporate is set by
-<span class="file">config.gcc</span> (and occasionally <span class="file">config.build</span>
-and <span class="file">config.host</span>); See <a href="System-Config.html#System-Config">System Config</a>.
+<samp><span class="file">config.gcc</span></samp> (and occasionally <samp><span class="file">config.build</span></samp>
+and <samp><span class="file">config.host</span></samp>); See <a href="System-Config.html#System-Config">System Config</a>.
 
- <p>Fragments are named either <span class="file">t-</span><var>target</var> or <span class="file">x-</span><var>host</var>,
+ <p>Fragments are named either <samp><span class="file">t-</span><var>target</var></samp> or <samp><span class="file">x-</span><var>host</var></samp>,
 depending on whether they are relevant to configuring GCC to produce
 code for a particular target, or to configuring GCC to run on a
 particular host.  Here <var>target</var> and <var>host</var> are mnemonics
@@ -70,12 +72,12 @@ which usually have some relationship to the canonical system name, but
 no formal connection.
 
  <p>If these files do not exist, it means nothing needs to be added for a
-given target or host.  Most targets need a few <span class="file">t-</span><var>target</var>
-fragments, but needing <span class="file">x-</span><var>host</var> fragments is rare.
+given target or host.  Most targets need a few <samp><span class="file">t-</span><var>target</var></samp>
+fragments, but needing <samp><span class="file">x-</span><var>host</var></samp> fragments is rare.
 
 <ul class="menu">
-<li><a accesskey="1" href="Target-Fragment.html#Target-Fragment">Target Fragment</a>:  Writing <span class="file">t-</span><var>target</var> files. 
-<li><a accesskey="2" href="Host-Fragment.html#Host-Fragment">Host Fragment</a>:    Writing <span class="file">x-</span><var>host</var> files. 
+<li><a accesskey="1" href="Target-Fragment.html#Target-Fragment">Target Fragment</a>:  Writing <samp><span class="file">t-</span><var>target</var></samp> files. 
+<li><a accesskey="2" href="Host-Fragment.html#Host-Fragment">Host Fragment</a>:    Writing <samp><span class="file">x-</span><var>host</var></samp> files. 
 </ul>
 
  </body></html>

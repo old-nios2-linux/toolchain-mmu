@@ -3,7 +3,7 @@
 <title>Option properties - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Options.html#Options" title="Options">
 <link rel="prev" href="Option-file-format.html#Option-file-format" title="Option file format">
@@ -37,16 +37,18 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Option-properties"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Option-file-format.html#Option-file-format">Option file format</a>,
+<a name="Option-properties"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Option-file-format.html#Option-file-format">Option file format</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Options.html#Options">Options</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">7.2 Option properties</h3>
@@ -105,7 +107,7 @@ and wasn't given.
 </ul>
 
      <p>The option-processing script will usually declare <var>var</var> in
-<span class="file">options.c</span> and leave it to be zero-initialized at start-up time. 
+<samp><span class="file">options.c</span></samp> and leave it to be zero-initialized at start-up time. 
 You can modify this behavior using <code>VarExists</code> and <code>Init</code>.
 
      <br><dt><code>Var(</code><var>var</var><code>, </code><var>set</var><code>)</code><dd>The option controls an integer variable <var>var</var> and is active when
@@ -117,11 +119,11 @@ when the &ldquo;no-&rdquo; form is used.
 described above.
 
      <br><dt><code>VarExists</code><dd>The variable specified by the <code>Var</code> property already exists. 
-No definition should be added to <span class="file">options.c</span> in response to
+No definition should be added to <samp><span class="file">options.c</span></samp> in response to
 this option record.
 
      <p>You should use this property if an earlier option has already declared
-the variable or if the variable is declared outside <span class="file">options.c</span>.
+the variable or if the variable is declared outside <samp><span class="file">options.c</span></samp>.
 
      <br><dt><code>Init(</code><var>value</var><code>)</code><dd>The variable specified by the <code>Var</code> property should be statically
 initialized to <var>value</var>.
@@ -132,7 +134,7 @@ You may also specify <code>Var</code> to select a variable other than
 <code>target_flags</code>.
 
      <p>The options-processing script will automatically allocate a unique bit
-for the option.  If the option is attached to <span class="samp">target_flags</span>,
+for the option.  If the option is attached to `<samp><span class="samp">target_flags</span></samp>',
 the script will set the macro <code>MASK_</code><var>name</var> to the appropriate
 bitmask.  It will also declare a <code>TARGET_</code><var>name</var> macro that has
 the value 1 when the option is active and 0 otherwise.  If you use <code>Var</code>
@@ -148,22 +150,22 @@ macro that is 1 when the option is active and 0 otherwise.
 
      <br><dt><code>MaskExists</code><dd>The mask specified by the <code>Mask</code> property already exists. 
 No <code>MASK</code> or <code>TARGET</code> definitions should be added to
-<span class="file">options.h</span> in response to this option record.
+<samp><span class="file">options.h</span></samp> in response to this option record.
 
      <p>The main purpose of this property is to support synonymous options. 
-The first option should use <span class="samp">Mask(</span><var>name</var><span class="samp">)</span> and the others
-should use <span class="samp">Mask(</span><var>name</var><span class="samp">) MaskExists</span>.
+The first option should use `<samp><span class="samp">Mask(</span><var>name</var><span class="samp">)</span></samp>' and the others
+should use `<samp><span class="samp">Mask(</span><var>name</var><span class="samp">) MaskExists</span></samp>'.
 
-     <br><dt><code>Report</code><dd>The state of the option should be printed by <span class="option">-fverbose-asm</span>.
+     <br><dt><code>Report</code><dd>The state of the option should be printed by <samp><span class="option">-fverbose-asm</span></samp>.
 
      <br><dt><code>Undocumented</code><dd>The option is deliberately missing documentation and should not
-be included in the <span class="option">--help</span> output.
+be included in the <samp><span class="option">--help</span></samp> output.
 
      <br><dt><code>Condition(</code><var>cond</var><code>)</code><dd>The option should only be accepted if preprocessor condition
 <var>cond</var> is true.  Note that any C declarations associated with the
 option will be present even if <var>cond</var> is false; <var>cond</var> simply
 controls whether the option is accepted and whether it is printed in
-the <span class="option">--help</span> output. 
+the <samp><span class="option">--help</span></samp> output. 
 </dl>
 
 <!-- markers: CROSSREF BUG TODO -->

@@ -3,7 +3,7 @@
 <title>Label Output - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Assembler-Format.html#Assembler-Format" title="Assembler Format">
 <link rel="prev" href="Uninitialized-Data.html#Uninitialized-Data" title="Uninitialized Data">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Label-Output"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Initialization.html#Initialization">Initialization</a>,
+<a name="Label-Output"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Initialization.html#Initialization">Initialization</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Uninitialized-Data.html#Uninitialized-Data">Uninitialized Data</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Assembler-Format.html#Assembler-Format">Assembler Format</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">14.19.4 Output and Generation of Labels</h4>
@@ -82,7 +84,7 @@ that it is more efficient.
 &mdash; Macro: <b>SIZE_ASM_OP</b><var><a name="index-SIZE_005fASM_005fOP-2312"></a></var><br>
 <blockquote><p>A C string containing the appropriate assembler directive to specify the
 size of a symbol, without any arguments.  On systems that use ELF, the
-default (in <span class="file">config/elfos.h</span>) is <span class="samp">"\t.size\t"</span>; on other
+default (in <samp><span class="file">config/elfos.h</span></samp>) is `<samp><span class="samp">"\t.size\t"</span></samp>'; on other
 systems, the default is not to define this macro.
 
       <p>Define this macro only if it is correct to use the default definitions
@@ -110,9 +112,9 @@ address.
 
       <p>If you define <code>SIZE_ASM_OP</code>, a default definition of this macro is
 provided.  The default assumes that the assembler recognizes a special
-<span class="samp">.</span> symbol as referring to the current address, and can calculate
+`<samp><span class="samp">.</span></samp>' symbol as referring to the current address, and can calculate
 the difference between this and another symbol.  If your assembler does
-not recognize <span class="samp">.</span> or cannot do calculations with it, you will need
+not recognize `<samp><span class="samp">.</span></samp>' or cannot do calculations with it, you will need
 to redefine <code>ASM_OUTPUT_MEASURED_SIZE</code> to use some other technique. 
 </p></blockquote></div>
 
@@ -120,7 +122,7 @@ to redefine <code>ASM_OUTPUT_MEASURED_SIZE</code> to use some other technique.
 &mdash; Macro: <b>TYPE_ASM_OP</b><var><a name="index-TYPE_005fASM_005fOP-2315"></a></var><br>
 <blockquote><p>A C string containing the appropriate assembler directive to specify the
 type of a symbol, without any arguments.  On systems that use ELF, the
-default (in <span class="file">config/elfos.h</span>) is <span class="samp">"\t.type\t"</span>; on other
+default (in <samp><span class="file">config/elfos.h</span></samp>) is `<samp><span class="samp">"\t.type\t"</span></samp>'; on other
 systems, the default is not to define this macro.
 
       <p>Define this macro only if it is correct to use the default definition of
@@ -133,7 +135,7 @@ types at all, do not define this macro.
 &mdash; Macro: <b>TYPE_OPERAND_FMT</b><var><a name="index-TYPE_005fOPERAND_005fFMT-2316"></a></var><br>
 <blockquote><p>A C string which specifies (using <code>printf</code> syntax) the format of
 the second operand to <code>TYPE_ASM_OP</code>.  On systems that use ELF, the
-default (in <span class="file">config/elfos.h</span>) is <span class="samp">"@%s"</span>; on other systems,
+default (in <samp><span class="file">config/elfos.h</span></samp>) is `<samp><span class="samp">"@%s"</span></samp>'; on other systems,
 the default is not to define this macro.
 
       <p>Define this macro only if it is correct to use the default definition of
@@ -147,7 +149,7 @@ types at all, do not define this macro.
 <blockquote><p>A C statement (sans semicolon) to output to the stdio stream
 <var>stream</var> a directive telling the assembler that the type of the
 symbol <var>name</var> is <var>type</var>.  <var>type</var> is a C string; currently,
-that string is always either <span class="samp">"function"</span> or <span class="samp">"object"</span>, but
+that string is always either `<samp><span class="samp">"function"</span></samp>' or `<samp><span class="samp">"object"</span></samp>', but
 you should not count on this.
 
       <p>If you define <code>TYPE_ASM_OP</code> and <code>TYPE_OPERAND_FMT</code>, a default
@@ -288,11 +290,11 @@ declaration of <code>name</code>.
 &mdash; Macro: <b>SUPPORTS_WEAK</b><var><a name="index-SUPPORTS_005fWEAK-2328"></a></var><br>
 <blockquote><p>A C expression which evaluates to true if the target supports weak symbols.
 
-      <p>If you don't define this macro, <span class="file">defaults.h</span> provides a default
+      <p>If you don't define this macro, <samp><span class="file">defaults.h</span></samp> provides a default
 definition.  If either <code>ASM_WEAKEN_LABEL</code> or <code>ASM_WEAKEN_DECL</code>
-is defined, the default definition is <span class="samp">1</span>; otherwise, it is
-<span class="samp">0</span>.  Define this macro if you want to control weak symbol support
-with a compiler flag such as <span class="option">-melf</span>. 
+is defined, the default definition is `<samp><span class="samp">1</span></samp>'; otherwise, it is
+`<samp><span class="samp">0</span></samp>'.  Define this macro if you want to control weak symbol support
+with a compiler flag such as <samp><span class="option">-melf</span></samp>. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -300,7 +302,7 @@ with a compiler flag such as <span class="option">-melf</span>.
 <blockquote><p>A C statement (sans semicolon) to mark <var>decl</var> to be emitted as a
 public symbol such that extra copies in multiple translation units will
 be discarded by the linker.  Define this macro if your object file
-format provides support for this concept, such as the <span class="samp">COMDAT</span>
+format provides support for this concept, such as the `<samp><span class="samp">COMDAT</span></samp>'
 section flags in the Microsoft Windows PE/COFF format, and this support
 requires changes to <var>decl</var>, such as putting it in a separate section. 
 </p></blockquote></div>
@@ -310,9 +312,9 @@ requires changes to <var>decl</var>, such as putting it in a separate section.
 <blockquote><p>A C expression which evaluates to true if the target supports one-only
 semantics.
 
-      <p>If you don't define this macro, <span class="file">varasm.c</span> provides a default
+      <p>If you don't define this macro, <samp><span class="file">varasm.c</span></samp> provides a default
 definition.  If <code>MAKE_DECL_ONE_ONLY</code> is defined, the default
-definition is <span class="samp">1</span>; otherwise, it is <span class="samp">0</span>.  Define this macro if
+definition is `<samp><span class="samp">1</span></samp>'; otherwise, it is `<samp><span class="samp">0</span></samp>'.  Define this macro if
 you want to control one-only symbol support with a compiler flag, or if
 setting the <code>DECL_ONE_ONLY</code> flag is enough to mark a declaration to
 be emitted as one-only. 
@@ -375,7 +377,7 @@ directive.
 &mdash; Macro: <b>ASM_OUTPUT_LABELREF</b> (<var>stream, name</var>)<var><a name="index-ASM_005fOUTPUT_005fLABELREF-2336"></a></var><br>
 <blockquote><p>A C statement (sans semicolon) to output to the stdio stream
 <var>stream</var> a reference in assembler syntax to a label named
-<var>name</var>.  This should add <span class="samp">_</span> to the front of the name, if that
+<var>name</var>.  This should add `<samp><span class="samp">_</span></samp>' to the front of the name, if that
 is customary on your operating system, as it is in most Berkeley Unix
 systems.  This macro is used in <code>assemble_name</code>. 
 </p></blockquote></div>
@@ -411,7 +413,7 @@ will have name conflicts with internal labels.
 
       <p>It is desirable to exclude internal labels from the symbol table of the
 object file.  Most assemblers have a naming convention for labels that
-should be excluded; on many systems, the letter <span class="samp">L</span> at the
+should be excluded; on many systems, the letter `<samp><span class="samp">L</span></samp>' at the
 beginning of a label has this effect.  You should find out what
 convention your system uses, and follow it.
 
@@ -441,10 +443,10 @@ is made from the string <var>prefix</var> and the number <var>num</var>.
 produce the output that <code>(*targetm.asm_out.internal_label)</code> would produce
 with the same <var>prefix</var> and <var>num</var>.
 
-      <p>If the string begins with <span class="samp">*</span>, then <code>assemble_name</code> will
+      <p>If the string begins with `<samp><span class="samp">*</span></samp>', then <code>assemble_name</code> will
 output the rest of the string unchanged.  It is often convenient for
-<code>ASM_GENERATE_INTERNAL_LABEL</code> to use <span class="samp">*</span> in this way.  If the
-string doesn't start with <span class="samp">*</span>, then <code>ASM_OUTPUT_LABELREF</code> gets
+<code>ASM_GENERATE_INTERNAL_LABEL</code> to use `<samp><span class="samp">*</span></samp>' in this way.  If the
+string doesn't start with `<samp><span class="samp">*</span></samp>', then <code>ASM_OUTPUT_LABELREF</code> gets
 to output the string, and may change it.  (Of course,
 <code>ASM_OUTPUT_LABELREF</code> is also part of your machine description, so
 you should know what it does on your machine.) 
@@ -487,7 +489,7 @@ correct for most systems.
 <blockquote><p>A C statement to output to the stdio stream <var>stream</var> assembler code
 which defines (equates) the symbol whose tree node is <var>decl_of_name</var>
 to have the value of the tree node <var>decl_of_value</var>.  This macro will
-be used in preference to <span class="samp">ASM_OUTPUT_DEF</span> if it is defined and if
+be used in preference to `<samp><span class="samp">ASM_OUTPUT_DEF</span></samp>' if it is defined and if
 the tree nodes are available.
 
       <p><a name="index-SET_005fASM_005fOP-2346"></a>If <code>SET_ASM_OP</code> is defined, a default definition is provided which is
@@ -500,8 +502,8 @@ correct for most systems.
 (equates) the symbol whose tree node is <var>decl_of_name</var> to have the value
 of the tree node <var>decl_of_value</var> should be emitted near the end of the
 current compilation unit.  The default is to not defer output of defines. 
-This macro affects defines output by <span class="samp">ASM_OUTPUT_DEF</span> and
-<span class="samp">ASM_OUTPUT_DEF_FROM_DECLS</span>. 
+This macro affects defines output by `<samp><span class="samp">ASM_OUTPUT_DEF</span></samp>' and
+`<samp><span class="samp">ASM_OUTPUT_DEF_FROM_DECLS</span></samp>'. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -521,9 +523,9 @@ an undefined weak symbol.
 Objective-C methods.
 
       <p>The default name is a unique method number followed by the name of the
-class (e.g. <span class="samp">_1_Foo</span>).  For methods in categories, the name of
+class (e.g. `<samp><span class="samp">_1_Foo</span></samp>').  For methods in categories, the name of
 the category is also included in the assembler name (e.g. 
-<span class="samp">_1_Foo_Bar</span>).
+`<samp><span class="samp">_1_Foo_Bar</span></samp>').
 
       <p>These names are safe on most systems, but make debugging difficult since
 the method's selector is not present in the name.  Therefore, particular

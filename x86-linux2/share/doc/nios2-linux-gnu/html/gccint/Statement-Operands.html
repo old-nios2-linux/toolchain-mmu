@@ -3,7 +3,7 @@
 <title>Statement Operands - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Tree-SSA.html#Tree-SSA" title="Tree SSA">
 <link rel="prev" href="Annotations.html#Annotations" title="Annotations">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Statement-Operands"></a>Next:&nbsp;<a rel="next" accesskey="n" href="SSA.html#SSA">SSA</a>,
+<a name="Statement-Operands"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="SSA.html#SSA">SSA</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Annotations.html#Annotations">Annotations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Tree-SSA.html#Tree-SSA">Tree SSA</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">10.4 Statement Operands</h3>
@@ -130,7 +132,7 @@ definitions to mark that statement as a potential definition site for
 <code>a</code> and <code>b</code>.  Memory loads are similarly marked with virtual
 use operands.  Virtual operands are shown in tree dumps right before
 the statement that contains them.  To request a tree dump with virtual
-operands, use the <span class="option">-vops</span> option to <span class="option">-fdump-tree</span>:
+operands, use the <samp><span class="option">-vops</span></samp> option to <samp><span class="option">-fdump-tree</span></samp>:
 
 <pre class="smallexample">     {
        int a, b, *p;
@@ -169,7 +171,7 @@ call to <code>update_stmt</code>.
 <h4 class="subsection">10.4.1 Operand Iterators And Access Routines</h4>
 
 <p><a name="index-Operand-Iterators-590"></a><a name="index-Operand-Access-Routines-591"></a>
-Operands are collected by <span class="file">tree-ssa-operands.c</span>.  They are stored
+Operands are collected by <samp><span class="file">tree-ssa-operands.c</span></samp>.  They are stored
 inside each statement's annotation and can be accessed through either the
 operand iterators or an access routine.
 
@@ -231,7 +233,7 @@ all the operands for a statement:
 
      <li>Determine which operands you wish to use, and specify the flags of
     those you are interested in.  They are documented in
-    <span class="file">tree-ssa-operands.h</span>:
+    <samp><span class="file">tree-ssa-operands.h</span></samp>:
 
      <pre class="smallexample">          #define SSA_OP_USE              0x01    /* <span class="roman">Real USE operands.</span>  */
           #define SSA_OP_DEF              0x02    /* <span class="roman">Real DEF operands.</span>  */
@@ -308,7 +310,7 @@ this one.
          }
 </pre>
  <p>There are many examples in the code as well, as well as the
-documentation in <span class="file">tree-ssa-operands.h</span>.
+documentation in <samp><span class="file">tree-ssa-operands.h</span></samp>.
 
  <p>There are also a couple of variants on the stmt iterators regarding PHI
 nodes.

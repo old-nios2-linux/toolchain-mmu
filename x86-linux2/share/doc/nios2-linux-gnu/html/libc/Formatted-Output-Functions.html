@@ -3,7 +3,7 @@
 <title>Formatted Output Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Formatted-Output.html#Formatted-Output" title="Formatted Output">
 <link rel="prev" href="Other-Output-Conversions.html#Other-Output-Conversions" title="Other Output Conversions">
@@ -17,27 +17,29 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Formatted-Output-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Dynamic-Output.html#Dynamic-Output">Dynamic Output</a>,
+<a name="Formatted-Output-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Dynamic-Output.html#Dynamic-Output">Dynamic Output</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Other-Output-Conversions.html#Other-Output-Conversions">Other Output Conversions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Formatted-Output.html#Formatted-Output">Formatted Output</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">12.12.7 Formatted Output Functions</h4>
 
 <p>This section describes how to call <code>printf</code> and related functions. 
-Prototypes for these functions are in the header file <span class="file">stdio.h</span>. 
+Prototypes for these functions are in the header file <samp><span class="file">stdio.h</span></samp>. 
 Because these functions take a variable number of arguments, you
 <em>must</em> declare prototypes for them before using them.  Of course,
 the easiest way to make sure you have all the right prototypes is to
-just include <span class="file">stdio.h</span>. 
+just include <samp><span class="file">stdio.h</span></samp>. 
 <a name="index-stdio_002eh-1025"></a>
 <!-- stdio.h -->
 <!-- ISO -->
@@ -89,7 +91,7 @@ the array <var>s</var>, not including the terminating null character.
 
         <p>The behavior of this function is undefined if copying takes place
 between objects that overlap&mdash;for example, if <var>s</var> is also given
-as an argument to be printed under control of the <span class="samp">%s</span> conversion. 
+as an argument to be printed under control of the `<samp><span class="samp">%s</span></samp>' conversion. 
 See <a href="Copying-and-Concatenation.html#Copying-and-Concatenation">Copying and Concatenation</a>.
 
         <p><strong>Warning:</strong> The <code>sprintf</code> function can be <strong>dangerous</strong>

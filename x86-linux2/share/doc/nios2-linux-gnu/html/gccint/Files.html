@@ -3,7 +3,7 @@
 <title>Files - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Type-Information.html#Type-Information" title="Type Information">
 <link rel="prev" href="GGC-Roots.html#GGC-Roots" title="GGC Roots">
@@ -37,16 +37,18 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Files"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="GGC-Roots.html#GGC-Roots">GGC Roots</a>,
+<a name="Files"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="GGC-Roots.html#GGC-Roots">GGC Roots</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Type-Information.html#Type-Information">Type Information</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">19.3 Source Files Containing Type Information</h3>
@@ -63,14 +65,14 @@ machinery scans.  There are four cases:
           <ol type=a start=1>
 <li>For a back-end file, this is usually done
 automatically; if not, you should add it to <code>target_gtfiles</code> in
-the appropriate port's entries in <span class="file">config.gcc</span>.
+the appropriate port's entries in <samp><span class="file">config.gcc</span></samp>.
 
           <li>For files shared by all front ends, add the filename to the
-<code>GTFILES</code> variable in <span class="file">Makefile.in</span>.
+<code>GTFILES</code> variable in <samp><span class="file">Makefile.in</span></samp>.
 
           <li>For files that are part of one front end, add the filename to the
 <code>gtfiles</code> variable defined in the appropriate
-<span class="file">config-lang.in</span>.  For C, the file is <span class="file">c-config-lang.in</span>.
+<samp><span class="file">config-lang.in</span></samp>.  For C, the file is <samp><span class="file">c-config-lang.in</span></samp>.
 
           <li>For files that are part of some but not all front ends, add the
 filename to the <code>gtfiles</code> variable of <em>all</em> the front ends
@@ -81,22 +83,22 @@ that use it.
 in the right place to be visible to the generated files.  For a back-end
 header file, this should be done automatically.  For a front-end header
 file, it needs to be included by the same file that includes
-<span class="file">gtype-</span><var>lang</var><span class="file">.h</span>.  For other header files, it needs to be
-included in <span class="file">gtype-desc.c</span>, which is a generated file, so add it to
-<code>ifiles</code> in <code>open_base_file</code> in <span class="file">gengtype.c</span>.
+<samp><span class="file">gtype-</span><var>lang</var><span class="file">.h</span></samp>.  For other header files, it needs to be
+included in <samp><span class="file">gtype-desc.c</span></samp>, which is a generated file, so add it to
+<code>ifiles</code> in <code>open_base_file</code> in <samp><span class="file">gengtype.c</span></samp>.
 
      <p>For source files that aren't header files, the machinery will generate a
 header file that should be included in the source file you just changed. 
-The file will be called <span class="file">gt-</span><var>path</var><span class="file">.h</span> where <var>path</var> is the
-pathname relative to the <span class="file">gcc</span> directory with slashes replaced by
+The file will be called <samp><span class="file">gt-</span><var>path</var><span class="file">.h</span></samp> where <var>path</var> is the
+pathname relative to the <samp><span class="file">gcc</span></samp> directory with slashes replaced by
 <tt>-</tt>, so for example the header file to be included in
-<span class="file">cp/parser.c</span> is called <span class="file">gt-cp-parser.c</span>.  The
+<samp><span class="file">cp/parser.c</span></samp> is called <samp><span class="file">gt-cp-parser.c</span></samp>.  The
 generated header file should be included after everything else in the
 source file.  Don't forget to mention this file as a dependency in the
-<span class="file">Makefile</span>!
+<samp><span class="file">Makefile</span></samp>!
 
-     <li>If a new <span class="file">gt-</span><var>path</var><span class="file">.h</span> file is needed, you need to arrange to
-add a <span class="file">Makefile</span> rule that will ensure this file can be built. 
+     <li>If a new <samp><span class="file">gt-</span><var>path</var><span class="file">.h</span></samp> file is needed, you need to arrange to
+add a <samp><span class="file">Makefile</span></samp> rule that will ensure this file can be built. 
 This is done by making it a dependency of <code>s-gtype</code>, like this:
 <pre class="verbatim">     
      gt-path.h : s-gtype ; @true
@@ -104,9 +106,9 @@ This is done by making it a dependency of <code>s-gtype</code>, like this:
       </ol>
 
  <p>For language frontends, there is another file that needs to be included
-somewhere.  It will be called <span class="file">gtype-</span><var>lang</var><span class="file">.h</span>, where
+somewhere.  It will be called <samp><span class="file">gtype-</span><var>lang</var><span class="file">.h</span></samp>, where
 <var>lang</var> is the name of the subdirectory the language is contained in. 
-It will need <span class="file">Makefile</span> rules just like the other generated files.
+It will need <samp><span class="file">Makefile</span></samp> rules just like the other generated files.
 
  </body></html>
 

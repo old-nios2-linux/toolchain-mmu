@@ -3,7 +3,7 @@
 <title>Why Variadic - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Variadic-Functions.html#Variadic-Functions" title="Variadic Functions">
 <link rel="next" href="How-Variadic.html#How-Variadic" title="How Variadic">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Why-Variadic"></a>Next:&nbsp;<a rel="next" accesskey="n" href="How-Variadic.html#How-Variadic">How Variadic</a>,
+<a name="Why-Variadic"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="How-Variadic.html#How-Variadic">How Variadic</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Variadic-Functions.html#Variadic-Functions">Variadic Functions</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">A.2.1 Why Variadic Functions are Used</h4>
@@ -34,7 +36,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Variadic-Functions.html#Variadic-Functi
 a function, you specify the data type for each argument.  Every call to
 the function should supply the expected number of arguments, with types
 that can be converted to the specified ones.  Thus, if the function
-<span class="samp">foo</span> is declared with <code>int foo (int, char *);</code> then you must
+`<samp><span class="samp">foo</span></samp>' is declared with <code>int foo (int, char *);</code> then you must
 call it with two arguments, a number (any kind will do) and a string
 pointer.
 

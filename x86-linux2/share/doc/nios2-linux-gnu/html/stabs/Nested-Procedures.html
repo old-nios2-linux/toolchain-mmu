@@ -3,7 +3,7 @@
 <title>Nested Procedures - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Program-Structure.html#Program-Structure" title="Program Structure">
 <link rel="prev" href="Procedures.html#Procedures" title="Procedures">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Nested-Procedures"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Block-Structure.html#Block-Structure">Block Structure</a>,
+<a name="Nested-Procedures"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Block-Structure.html#Block-Structure">Block Structure</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Procedures.html#Procedures">Procedures</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Program-Structure.html#Program-Structure">Program Structure</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">2.6 Nested Procedures</h3>
@@ -37,7 +39,7 @@ symbol descriptor and the type information is optionally a scope
 specifier.  This consists of a comma, the name of the procedure, another
 comma, and the name of the enclosing procedure.  The first name is local
 to the scope specified, and seems to be redundant with the name of the
-symbol (before the <span class="samp">:</span>).  This feature is used by GCC, and
+symbol (before the `<samp><span class="samp">:</span></samp>').  This feature is used by GCC, and
 presumably Pascal, Modula-2, etc., compilers, for nested functions.
 
    <p>If procedures are nested more than one level deep, only the immediately

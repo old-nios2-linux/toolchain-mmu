@@ -3,7 +3,7 @@
 <title>M2 Constants - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Modula_002d2.html#Modula_002d2" title="Modula-2">
 <link rel="prev" href="Built_002dIn-Func_002fProc.html#Built_002dIn-Func_002fProc" title="Built-In Func/Proc">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="M2-Constants"></a>Next:&nbsp;<a rel="next" accesskey="n" href="M2-Types.html#M2-Types">M2 Types</a>,
+<a name="M2-Constants"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="M2-Types.html#M2-Types">M2 Types</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Built_002dIn-Func_002fProc.html#Built_002dIn-Func_002fProc">Built-In Func/Proc</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Modula_002d2.html#Modula_002d2">Modula-2</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="subsubsection">13.4.5.3 Constants</h5>
@@ -39,19 +41,19 @@ ways:
 <li>Integer constants are simply a sequence of digits.  When used in an
 expression, a constant is interpreted to be type-compatible with the
 rest of the expression.  Hexadecimal integers are specified by a
-trailing <span class="samp">H</span>, and octal integers by a trailing <span class="samp">B</span>.
+trailing `<samp><span class="samp">H</span></samp>', and octal integers by a trailing `<samp><span class="samp">B</span></samp>'.
 
      <li>Floating point constants appear as a sequence of digits, followed by a
 decimal point and another sequence of digits.  An optional exponent can
-then be specified, in the form <span class="samp">E[+|-]</span><var>nnn</var>, where
-<span class="samp">[+|-]</span><var>nnn</var> is the desired exponent.  All of the
+then be specified, in the form `<samp><span class="samp">E[+|-]</span><var>nnn</var></samp>', where
+`<samp><span class="samp">[+|-]</span><var>nnn</var></samp>' is the desired exponent.  All of the
 digits of the floating point constant must be valid decimal (base 10)
 digits.
 
      <li>Character constants consist of a single character enclosed by a pair of
 like quotes, either single (<code>'</code>) or double (<code>"</code>).  They may
 also be expressed by their ordinal value (their <span class="sc">ascii</span> value, usually)
-followed by a <span class="samp">C</span>.
+followed by a `<samp><span class="samp">C</span></samp>'.
 
      <li>String constants consist of a sequence of characters enclosed by a
 pair of like quotes, either single (<code>'</code>) or double (<code>"</code>). 

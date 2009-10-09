@@ -3,7 +3,7 @@
 <title>Descriptors and Streams - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="File-Position-Primitive.html#File-Position-Primitive" title="File Position Primitive">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Descriptors-and-Streams"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Stream_002fDescriptor-Precautions.html#Stream_002fDescriptor-Precautions">Stream/Descriptor Precautions</a>,
+<a name="Descriptors-and-Streams"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Stream_002fDescriptor-Precautions.html#Stream_002fDescriptor-Precautions">Stream/Descriptor Precautions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="File-Position-Primitive.html#File-Position-Primitive">File Position Primitive</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.4 Descriptors and Streams</h3>
@@ -36,7 +38,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLeve
 Given an open file descriptor, you can create a stream for it with the
 <code>fdopen</code> function.  You can get the underlying file descriptor for
 an existing stream with the <code>fileno</code> function.  These functions are
-declared in the header file <span class="file">stdio.h</span>. 
+declared in the header file <samp><span class="file">stdio.h</span></samp>. 
 <a name="index-stdio_002eh-1228"></a>
 <!-- stdio.h -->
 <!-- POSIX.1 -->
@@ -48,7 +50,7 @@ declared in the header file <span class="file">stdio.h</span>.
 
         <p>The <var>opentype</var> argument is interpreted in the same way as for the
 <code>fopen</code> function (see <a href="Opening-Streams.html#Opening-Streams">Opening Streams</a>), except that
-the <span class="samp">b</span> option is not permitted; this is because GNU makes no
+the `<samp><span class="samp">b</span></samp>' option is not permitted; this is because GNU makes no
 distinction between text and binary files.  Also, <code>"w"</code> and
 <code>"w+"</code> do not cause truncation of the file; these have an effect only
 when opening a file, and in this case the file has already been opened. 
@@ -89,7 +91,7 @@ is <code>FSETLOCKING_INTERNAL</code>.
         <p>This function is a GNU extension. 
 </p></blockquote></div>
 
-   <p><a name="index-standard-file-descriptors-1232"></a><a name="index-file-descriptors_002c-standard-1233"></a>There are also symbolic constants defined in <span class="file">unistd.h</span> for the
+   <p><a name="index-standard-file-descriptors-1232"></a><a name="index-file-descriptors_002c-standard-1233"></a>There are also symbolic constants defined in <samp><span class="file">unistd.h</span></samp> for the
 file descriptors belonging to the standard streams <code>stdin</code>,
 <code>stdout</code>, and <code>stderr</code>; see <a href="Standard-Streams.html#Standard-Streams">Standard Streams</a>. 
 <a name="index-unistd_002eh-1234"></a>

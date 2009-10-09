@@ -3,7 +3,7 @@
 <title>Memory - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Data.html#Data" title="Data">
 <link rel="prev" href="Output-Formats.html#Output-Formats" title="Output Formats">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Memory"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Auto-Display.html#Auto-Display">Auto Display</a>,
+<a name="Memory"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Auto-Display.html#Auto-Display">Auto Display</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Output-Formats.html#Output-Formats">Output Formats</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Data.html#Data">Data</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">8.5 Examining Memory</h3>
@@ -44,7 +46,7 @@ any of several formats, independently of your program's data types.
    <p><var>n</var>, <var>f</var>, and <var>u</var> are all optional parameters that specify how
 much memory to display and how to format it; <var>addr</var> is an
 expression giving the address where you want to start displaying memory. 
-If you use defaults for <var>nfu</var>, you need not type the slash <span class="samp">/</span>. 
+If you use defaults for <var>nfu</var>, you need not type the slash `<samp><span class="samp">/</span></samp>'. 
 Several commands set convenient defaults for <var>addr</var>.
 
      <dl>
@@ -54,9 +56,9 @@ how much memory (counting by units <var>u</var>) to display.
 <!-- 4.1.2. -->
 
      <br><dt><var>f</var><span class="roman">, the display format</span><dd>The display format is one of the formats used by <code>print</code>
-(<span class="samp">x</span>, <span class="samp">d</span>, <span class="samp">u</span>, <span class="samp">o</span>, <span class="samp">t</span>, <span class="samp">a</span>, <span class="samp">c</span>,
-<span class="samp">f</span>), and in addition <span class="samp">s</span> (for null-terminated strings) and
-<span class="samp">i</span> (for machine instructions).  The default is <span class="samp">x</span>
+(`<samp><span class="samp">x</span></samp>', `<samp><span class="samp">d</span></samp>', `<samp><span class="samp">u</span></samp>', `<samp><span class="samp">o</span></samp>', `<samp><span class="samp">t</span></samp>', `<samp><span class="samp">a</span></samp>', `<samp><span class="samp">c</span></samp>',
+`<samp><span class="samp">f</span></samp>'), and in addition `<samp><span class="samp">s</span></samp>' (for null-terminated strings) and
+`<samp><span class="samp">i</span></samp>' (for machine instructions).  The default is `<samp><span class="samp">x</span></samp>'
 (hexadecimal) initially.  The default changes each time you use either
 <code>x</code> or <code>print</code>.
 
@@ -70,8 +72,8 @@ how much memory (counting by units <var>u</var>) to display.
 </dl>
 
      <p>Each time you specify a unit size with <code>x</code>, that size becomes the
-default unit the next time you use <code>x</code>.  (For the <span class="samp">s</span> and
-<span class="samp">i</span> formats, the unit size is ignored and is normally not written.)
+default unit the next time you use <code>x</code>.  (For the `<samp><span class="samp">s</span></samp>' and
+`<samp><span class="samp">i</span></samp>' formats, the unit size is ignored and is normally not written.)
 
      <br><dt><var>addr</var><span class="roman">, starting display address</span><dd><var>addr</var> is the address where you want <span class="sc">gdb</span> to begin displaying
 memory.  The expression need not have a pointer value (though it may);
@@ -84,33 +86,33 @@ starting address of a line), and <code>print</code> (if you use it to display
 a value from memory). 
 </dl>
 
-   <p>For example, <span class="samp">x/3uh 0x54320</span> is a request to display three halfwords
-(<code>h</code>) of memory, formatted as unsigned decimal integers (<span class="samp">u</span>),
-starting at address <code>0x54320</code>.  <span class="samp">x/4xw $sp</span> prints the four
-words (<span class="samp">w</span>) of memory above the stack pointer (here, <span class="samp">$sp</span>;
-see <a href="Registers.html#Registers">Registers</a>) in hexadecimal (<span class="samp">x</span>).
+   <p>For example, `<samp><span class="samp">x/3uh 0x54320</span></samp>' is a request to display three halfwords
+(<code>h</code>) of memory, formatted as unsigned decimal integers (`<samp><span class="samp">u</span></samp>'),
+starting at address <code>0x54320</code>.  `<samp><span class="samp">x/4xw $sp</span></samp>' prints the four
+words (`<samp><span class="samp">w</span></samp>') of memory above the stack pointer (here, `<samp><span class="samp">$sp</span></samp>';
+see <a href="Registers.html#Registers">Registers</a>) in hexadecimal (`<samp><span class="samp">x</span></samp>').
 
    <p>Since the letters indicating unit sizes are all distinct from the
 letters specifying output formats, you do not have to remember whether
 unit size or format comes first; either order works.  The output
-specifications <span class="samp">4xw</span> and <span class="samp">4wx</span> mean exactly the same thing. 
-(However, the count <var>n</var> must come first; <span class="samp">wx4</span> does not work.)
+specifications `<samp><span class="samp">4xw</span></samp>' and `<samp><span class="samp">4wx</span></samp>' mean exactly the same thing. 
+(However, the count <var>n</var> must come first; `<samp><span class="samp">wx4</span></samp>' does not work.)
 
-   <p>Even though the unit size <var>u</var> is ignored for the formats <span class="samp">s</span>
-and <span class="samp">i</span>, you might still want to use a count <var>n</var>; for example,
-<span class="samp">3i</span> specifies that you want to see three machine instructions,
+   <p>Even though the unit size <var>u</var> is ignored for the formats `<samp><span class="samp">s</span></samp>'
+and `<samp><span class="samp">i</span></samp>', you might still want to use a count <var>n</var>; for example,
+`<samp><span class="samp">3i</span></samp>' specifies that you want to see three machine instructions,
 including any operands.  The command <code>disassemble</code> gives an
 alternative way of inspecting machine instructions; see <a href="Machine-Code.html#Machine-Code">Source and Machine Code</a>.
 
    <p>All the defaults for the arguments to <code>x</code> are designed to make it
 easy to continue scanning memory with minimal specifications each time
 you use <code>x</code>.  For example, after you have inspected three machine
-instructions with <span class="samp">x/3i </span><var>addr</var>, you can inspect the next seven
-with just <span class="samp">x/7</span>.  If you use &lt;RET&gt; to repeat the <code>x</code> command,
+instructions with `<samp><span class="samp">x/3i </span><var>addr</var></samp>', you can inspect the next seven
+with just `<samp><span class="samp">x/7</span></samp>'.  If you use &lt;RET&gt; to repeat the <code>x</code> command,
 the repeat count <var>n</var> is used again; the other arguments default as
 for successive uses of <code>x</code>.
 
-   <p><a name="index-_0040code_007b_0024_005f_007d_002c-_0040code_007b_0024_005f_005f_007d_002c-and-value-history-416"></a>The addresses and contents printed by the <code>x</code> command are not saved
+   <p><a name="index-g_t_0040code_007b_0024_005f_007d_002c-_0040code_007b_0024_005f_005f_007d_002c-and-value-history-416"></a>The addresses and contents printed by the <code>x</code> command are not saved
 in the value history because there is often too much of them and they
 would get in the way.  Instead, <span class="sc">gdb</span> makes these values available for
 subsequent use in expressions as values of the convenience variables

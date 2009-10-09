@@ -3,7 +3,7 @@
 <title>Data Output - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Assembler-Format.html#Assembler-Format" title="Assembler Format">
 <link rel="prev" href="File-Framework.html#File-Framework" title="File Framework">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Data-Output"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Uninitialized-Data.html#Uninitialized-Data">Uninitialized Data</a>,
+<a name="Data-Output"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Uninitialized-Data.html#Uninitialized-Data">Uninitialized Data</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="File-Framework.html#File-Framework">File Framework</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Assembler-Format.html#Assembler-Format">Assembler Format</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">14.19.2 Output of Data</h4>
@@ -152,7 +154,7 @@ anything for RTL expressions that can be output normally.)
       <p>The argument <var>file</var> is the standard I/O stream to output the
 assembler code on.  <var>x</var> is the RTL expression for the constant to
 output, and <var>mode</var> is the machine mode (in case <var>x</var> is a
-<span class="samp">const_int</span>).  <var>align</var> is the required alignment for the value
+`<samp><span class="samp">const_int</span></samp>').  <var>align</var> is the required alignment for the value
 <var>x</var>; you should output an assembler directive to force this much
 alignment.
 
@@ -188,7 +190,7 @@ define this macro.
 used as a logical line separator by the assembler.
 
       <p>If you do not define this macro, the default is that only
-the character <span class="samp">;</span> is treated as a logical line separator. 
+the character `<samp><span class="samp">;</span></samp>' is treated as a logical line separator. 
 </p></blockquote></div>
 
 <div class="defun">
@@ -199,7 +201,7 @@ assembler for grouping arithmetic expressions.  If not overridden, they
 default to normal parentheses, which is correct for most assemblers. 
 </p></blockquote></div>
 
- <p>These macros are provided by <span class="file">real.h</span> for writing the definitions
+ <p>These macros are provided by <samp><span class="file">real.h</span></samp> for writing the definitions
 of <code>ASM_OUTPUT_DOUBLE</code> and the like:
 
 <div class="defun">

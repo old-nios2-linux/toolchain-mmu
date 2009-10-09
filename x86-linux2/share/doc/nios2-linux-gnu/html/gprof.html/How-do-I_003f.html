@@ -3,7 +3,7 @@
 <title>How do I? - GNU gprof</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU gprof">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Inaccuracy.html#Inaccuracy" title="Inaccuracy">
 <link rel="next" href="Incompatibilities.html#Incompatibilities" title="Incompatibilities">
@@ -16,17 +16,20 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="How-do-I_003f"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Incompatibilities.html#Incompatibilities">Incompatibilities</a>,
+<a name="How-do-I%3f"></a>
+<a name="How-do-I_003f"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Incompatibilities.html#Incompatibilities">Incompatibilities</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Inaccuracy.html#Inaccuracy">Inaccuracy</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">7 Answers to Common Questions</h2>
@@ -38,7 +41,7 @@ Because <code>gprof</code> can only report call times and counts by function,
 the best way to get finer-grained information on where the program
 is spending its time is to re-factor large functions into sequences
 of calls to smaller ones.  Beware however that this can introduce
-artificial hot spots since compiling with <span class="samp">-pg</span> adds a significant
+artificial hot spots since compiling with `<samp><span class="samp">-pg</span></samp>' adds a significant
 overhead to function calls.  An alternative solution is to use a
 non-intrusive profiler, e.g. oprofile.
 
@@ -52,7 +55,7 @@ use the following pipeline:
 but not necessarily those that consumed the most time.
 
      <br><dt>How do I find which lines in my program called a particular function?<dd>
-Use <span class="samp">gprof -l</span> and lookup the function in the call graph. 
+Use `<samp><span class="samp">gprof -l</span></samp>' and lookup the function in the call graph. 
 The callers will be broken down by function and line number.
 
      <br><dt>How do I analyze a program that runs for less than a second?<dd>

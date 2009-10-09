@@ -3,7 +3,7 @@
 <title>Lexer - The GNU C Preprocessor Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Preprocessor Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Conventions.html#Conventions" title="Conventions">
 <link rel="next" href="Hash-Nodes.html#Hash-Nodes" title="Hash Nodes">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Lexer"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Hash-Nodes.html#Hash-Nodes">Hash Nodes</a>,
+<a name="Lexer"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Hash-Nodes.html#Hash-Nodes">Hash Nodes</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Conventions.html#Conventions">Conventions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="unnumbered">The Lexer</h2>
@@ -35,7 +37,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 
 <h3 class="section">Overview</h3>
 
-<p>The lexer is contained in the file <span class="file">lex.c</span>.  It is a hand-coded
+<p>The lexer is contained in the file <samp><span class="file">lex.c</span></samp>.  It is a hand-coded
 lexer, and not implemented as a state machine.  It can understand C, C++
 and Objective-C source code, and has been extended to allow reasonably
 successful preprocessing of assembly language.  The lexer does not make
@@ -87,7 +89,7 @@ using the line map code.
 
    <p>The first token on a logical, i.e. unescaped, line has the flag
 <code>BOL</code> set for beginning-of-line.  This flag is intended for
-internal use, both to distinguish a <span class="samp">#</span> that begins a directive
+internal use, both to distinguish a `<samp><span class="samp">#</span></samp>' that begins a directive
 from one that doesn't, and to generate a call-back to clients that want
 to be notified about the start of every non-directive line with tokens
 on it.  Clients cannot reliably determine this for themselves: the first
@@ -122,7 +124,7 @@ line when <code>parsing_args</code> is 1, since then code like
      foo
      baz
 </pre>
-   <p class="noindent">would be output with an erroneous space before <span class="samp">baz</span>:
+   <p class="noindent">would be output with an erroneous space before `<samp><span class="samp">baz</span></samp>':
 
 <pre class="smallexample">     foo
       baz
@@ -131,13 +133,13 @@ line when <code>parsing_args</code> is 1, since then code like
 in the preprocessor; there are plenty of tests in the testsuite for
 corner cases like this.
 
-   <p>The lexer is written to treat each of <span class="samp">\r</span>, <span class="samp">\n</span>, <span class="samp">\r\n</span>
-and <span class="samp">\n\r</span> as a single new line indicator.  This allows it to
+   <p>The lexer is written to treat each of `<samp><span class="samp">\r</span></samp>', `<samp><span class="samp">\n</span></samp>', `<samp><span class="samp">\r\n</span></samp>'
+and `<samp><span class="samp">\n\r</span></samp>' as a single new line indicator.  This allows it to
 transparently preprocess MS-DOS, Macintosh and Unix files without their
 needing to pass through a special filter beforehand.
 
-   <p>We also decided to treat a backslash, either <span class="samp">\</span> or the trigraph
-<span class="samp">??/</span>, separated from one of the above newline indicators by
+   <p>We also decided to treat a backslash, either `<samp><span class="samp">\</span></samp>' or the trigraph
+`<samp><span class="samp">??/</span></samp>', separated from one of the above newline indicators by
 non-comment whitespace only, as intending to escape the newline.  It
 tends to be a typing mistake, and cannot reasonably be mistaken for
 anything else in any of the C-family grammars.  Since handling it this
@@ -154,31 +156,31 @@ to handle the newlines themselves.
 trigraphs and backlash-escaped newlines.  Trigraphs are processed before
 any interpretation of the meaning of a character is made, and unfortunately
 there is a trigraph representation for a backslash, so it is possible for
-the trigraph <span class="samp">??/</span> to introduce an escaped newline.
+the trigraph `<samp><span class="samp">??/</span></samp>' to introduce an escaped newline.
 
    <p>Escaped newlines are tedious because theoretically they can occur
-anywhere&mdash;between the <span class="samp">+</span> and <span class="samp">=</span> of the <span class="samp">+=</span> token,
-within the characters of an identifier, and even between the <span class="samp">*</span>
-and <span class="samp">/</span> that terminates a comment.  Moreover, you cannot be sure
+anywhere&mdash;between the `<samp><span class="samp">+</span></samp>' and `<samp><span class="samp">=</span></samp>' of the `<samp><span class="samp">+=</span></samp>' token,
+within the characters of an identifier, and even between the `<samp><span class="samp">*</span></samp>'
+and `<samp><span class="samp">/</span></samp>' that terminates a comment.  Moreover, you cannot be sure
 there is just one&mdash;there might be an arbitrarily long sequence of them.
 
    <p>So, for example, the routine that lexes a number, <code>parse_number</code>,
 cannot assume that it can scan forwards until the first non-number
-character and be done with it, because this could be the <span class="samp">\</span>
-introducing an escaped newline, or the <span class="samp">?</span> introducing the trigraph
-sequence that represents the <span class="samp">\</span> of an escaped newline.  If it
-encounters a <span class="samp">?</span> or <span class="samp">\</span>, it calls <code>skip_escaped_newlines</code>
+character and be done with it, because this could be the `<samp><span class="samp">\</span></samp>'
+introducing an escaped newline, or the `<samp><span class="samp">?</span></samp>' introducing the trigraph
+sequence that represents the `<samp><span class="samp">\</span></samp>' of an escaped newline.  If it
+encounters a `<samp><span class="samp">?</span></samp>' or `<samp><span class="samp">\</span></samp>', it calls <code>skip_escaped_newlines</code>
 to skip over any potential escaped newlines before checking whether the
 number has been finished.
 
    <p>Similarly code in the main body of <code>_cpp_lex_direct</code> cannot simply
-check for a <span class="samp">=</span> after a <span class="samp">+</span> character to determine whether it
-has a <span class="samp">+=</span> token; it needs to be prepared for an escaped newline of
+check for a `<samp><span class="samp">=</span></samp>' after a `<samp><span class="samp">+</span></samp>' character to determine whether it
+has a `<samp><span class="samp">+=</span></samp>' token; it needs to be prepared for an escaped newline of
 some sort.  Such cases use the function <code>get_effective_char</code>, which
 returns the first character after any intervening escaped newlines.
 
    <p>The lexer needs to keep track of the correct column position, including
-counting tabs as specified by the <span class="option">-ftabstop=</span> option.  This
+counting tabs as specified by the <samp><span class="option">-ftabstop=</span></samp> option.  This
 should be done even within C-style comments; they can appear in the
 middle of a line, and we want to report diagnostics in the correct
 position for text appearing after the end of the comment.
@@ -198,16 +200,16 @@ per-token basis, and don't lex whole lines at a time, this is not a
 problem.
 
    <p>Another place where state flags are used to change behavior is whilst
-lexing header names.  Normally, a <span class="samp">&lt;</span> would be lexed as a single
+lexing header names.  Normally, a `<samp><span class="samp">&lt;</span></samp>' would be lexed as a single
 token.  After a <code>#include</code> directive, though, it should be lexed as
-a single token as far as the nearest <span class="samp">&gt;</span> character.  Note that we
+a single token as far as the nearest `<samp><span class="samp">&gt;</span></samp>' character.  Note that we
 don't allow the terminators of header names to be escaped; the first
-<span class="samp">"</span> or <span class="samp">&gt;</span> terminates the header name.
+`<samp><span class="samp">"</span></samp>' or `<samp><span class="samp">&gt;</span></samp>' terminates the header name.
 
    <p>Interpretation of some character sequences depends upon whether we are
 lexing C, C++ or Objective-C, and on the revision of the standard in
-force.  For example, <span class="samp">::</span> is a single token in C++, but in C it is
-two separate <span class="samp">:</span> tokens and almost certainly a syntax error.  Such
+force.  For example, `<samp><span class="samp">::</span></samp>' is a single token in C++, but in C it is
+two separate `<samp><span class="samp">:</span></samp>' tokens and almost certainly a syntax error.  Such
 cases are handled by <code>_cpp_lex_direct</code> based upon command-line
 flags stored in the <code>cpp_options</code> structure.
 
@@ -274,7 +276,7 @@ chaining a new token run on to the end of the existing one.
 the pointers to the tokens of its expansion that are returned will always
 remain valid.  However, macros are a little trickier than that, since
 they give rise to three sources of fresh tokens.  They are the built-in
-macros like <code>__LINE__</code>, and the <span class="samp">#</span> and <span class="samp">##</span> operators
+macros like <code>__LINE__</code>, and the `<samp><span class="samp">#</span></samp>' and `<samp><span class="samp">##</span></samp>' operators
 for stringification and token pasting.  I handled this by allocating
 space for these tokens from the lexer's token run chain.  This means
 they automatically receive the same lifetime guarantees as lexed tokens,

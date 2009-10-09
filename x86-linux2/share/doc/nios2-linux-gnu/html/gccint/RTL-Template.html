@@ -3,7 +3,7 @@
 <title>RTL Template - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Machine-Desc.html#Machine-Desc" title="Machine Desc">
 <link rel="prev" href="Example.html#Example" title="Example">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="RTL-Template"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Output-Template.html#Output-Template">Output Template</a>,
+<a name="RTL-Template"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Output-Template.html#Output-Template">Output Template</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Example.html#Example">Example</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Machine-Desc.html#Machine-Desc">Machine Desc</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.4 RTL Template</h3>
@@ -247,8 +249,8 @@ in a <code>parallel</code>.  For example,
             ""
             "loadm 0,0,%1,%2")
      </pre>
-     <p>This example comes from <span class="file">a29k.md</span>.  The function
-<code>load_multiple_operation</code> is defined in <span class="file">a29k.c</span> and checks
+     <p>This example comes from <samp><span class="file">a29k.md</span></samp>.  The function
+<code>load_multiple_operation</code> is defined in <samp><span class="file">a29k.c</span></samp> and checks
 that subsequent elements in the <code>parallel</code> are the same as the
 <code>set</code> in the pattern, except that they are referencing subsequent
 registers and memory locations.

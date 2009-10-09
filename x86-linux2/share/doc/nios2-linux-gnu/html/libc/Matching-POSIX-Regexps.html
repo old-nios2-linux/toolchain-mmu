@@ -3,7 +3,7 @@
 <title>Matching POSIX Regexps - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Regular-Expressions.html#Regular-Expressions" title="Regular Expressions">
 <link rel="prev" href="Flags-for-POSIX-Regexps.html#Flags-for-POSIX-Regexps" title="Flags for POSIX Regexps">
@@ -17,25 +17,27 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Matching-POSIX-Regexps"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Regexp-Subexpressions.html#Regexp-Subexpressions">Regexp Subexpressions</a>,
+<a name="Matching-POSIX-Regexps"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Regexp-Subexpressions.html#Regexp-Subexpressions">Regexp Subexpressions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Flags-for-POSIX-Regexps.html#Flags-for-POSIX-Regexps">Flags for POSIX Regexps</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Regular-Expressions.html#Regular-Expressions">Regular Expressions</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">10.3.3 Matching a Compiled POSIX Regular Expression</h4>
 
 <p>Once you have compiled a regular expression, as described in <a href="POSIX-Regexp-Compilation.html#POSIX-Regexp-Compilation">POSIX Regexp Compilation</a>, you can match it against strings using
 <code>regexec</code>.  A match anywhere inside the string counts as success,
-unless the regular expression contains anchor characters (<span class="samp">^</span> or
-<span class="samp">$</span>).
+unless the regular expression contains anchor characters (`<samp><span class="samp">^</span></samp>' or
+`<samp><span class="samp">$</span></samp>').
 
 <!-- regex.h -->
 <!-- POSIX.2 -->

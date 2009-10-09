@@ -3,7 +3,7 @@
 <title>Altera Nios II Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="next" href="ARC-Options.html#ARC-Options" title="ARC Options">
@@ -37,22 +37,24 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Altera-Nios-II-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="ARC-Options.html#ARC-Options">ARC Options</a>,
+<a name="Altera-Nios-II-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="ARC-Options.html#ARC-Options">ARC Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.17.1 Altera Nios II Options</h4>
 
 <p><a name="index-Altera-Nios-II-options-722"></a>
-These are the <span class="samp">-m</span> options defined for the Altera Nios II
+These are the `<samp><span class="samp">-m</span></samp>' options defined for the Altera Nios II
 processor.
 
      <dl>
@@ -101,16 +103,16 @@ non-portable) ordering of bitfields via a union.  Given:
           }
      </pre>
      <p>a call to <code>f</code> will return 1 when compiled with
-<span class="option">-mno-reverse-bitfields</span> (the default), or 2147483648 when
-compiled with <span class="option">-mreverse-bitfields</span>.
+<samp><span class="option">-mno-reverse-bitfields</span></samp> (the default), or 2147483648 when
+compiled with <samp><span class="option">-mreverse-bitfields</span></samp>.
 
      <p>For structures that are a multiple of 32 bits wide, the reversal is
 done 32 bits at a time.  For structures that are an odd multiple of 16
 bits wide, the reversal is done 16 bits at a time.  For structures
 that are an odd multiple of 8 bits wide, the reversal is done 8 bits
 at a time.  The size of a structure (as measured by the <code>sizeof</code>
-operator) never changes between <span class="option">-mno-reverse-bitfields</span> and
-<span class="option">-mreverse-bitfields</span>.  Nonetheless, there can be some
+operator) never changes between <samp><span class="option">-mno-reverse-bitfields</span></samp> and
+<samp><span class="option">-mreverse-bitfields</span></samp>.  Nonetheless, there can be some
 confusing corner cases with structs where the compiler has to add
 additional padding to meet alignment restrictions.  Consider:
 
@@ -135,9 +137,9 @@ additional padding to meet alignment restrictions.  Consider:
           }
      </pre>
      <p>a call to <code>f</code> will return 2 when compiled with
-<span class="option">-mno-reverse-bitfields</span> (the default), or 65536 when compiled
-with <span class="option">-mreverse-bitfields</span>.  This is because <code>sizeof
-(inner)</code> is 4 in both cases.  In the <span class="option">-mno-reverse-bitfields</span>
+<samp><span class="option">-mno-reverse-bitfields</span></samp> (the default), or 65536 when compiled
+with <samp><span class="option">-mreverse-bitfields</span></samp>.  This is because <code>sizeof
+(inner)</code> is 4 in both cases.  In the <samp><span class="option">-mno-reverse-bitfields</span></samp>
 case, the compiler pads the struct at the end to be 4 bytes long,
 effectively doing:
 
@@ -148,7 +150,7 @@ effectively doing:
             unsigned int padding:16;
           };
      </pre>
-     <p>In the <span class="option">-mreverse-bitfields</span> case, the hidden padding is
+     <p>In the <samp><span class="option">-mreverse-bitfields</span></samp> case, the hidden padding is
 reversed along with everything else, yielding the equivalent of:
 
      <pre class="smallexample">          struct inner
@@ -213,7 +215,7 @@ mean in odd cases like that.
             unsigned char f2;
           }
      </pre>
-     <p>are not equivalent.  When compiled with <span class="option">-mreverse-bitfields</span>,
+     <p>are not equivalent.  When compiled with <samp><span class="option">-mreverse-bitfields</span></samp>,
 they behave the same as:
 
      <pre class="smallexample">          struct array1r
@@ -233,7 +235,7 @@ they behave the same as:
           }
      </pre>
      <p>would, respectively, when compiled with
-<span class="option">-mno-reverse-bitfields</span>.  In particular, f1 is treated as a
+<samp><span class="option">-mno-reverse-bitfields</span></samp>.  In particular, f1 is treated as a
 single contiguous 24-bit object for purposes of reversal, while f1a,
 f1b, and f1c are treated as individual 8-bit objects that need not
 (and do not) remain contiguous.  Use caution.

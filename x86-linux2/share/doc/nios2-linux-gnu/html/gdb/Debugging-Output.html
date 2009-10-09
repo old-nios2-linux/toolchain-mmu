@@ -3,7 +3,7 @@
 <title>Debugging Output - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Controlling-GDB.html#Controlling-GDB" title="Controlling GDB">
 <link rel="prev" href="Messages_002fWarnings.html#Messages_002fWarnings" title="Messages/Warnings">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Debugging-Output"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Messages_002fWarnings.html#Messages_002fWarnings">Messages/Warnings</a>,
+<a name="Debugging-Output"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Messages_002fWarnings.html#Messages_002fWarnings">Messages/Warnings</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Controlling-GDB.html#Controlling-GDB">Controlling GDB</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">20.8 Optional Messages about Internal Happenings</h3>
@@ -61,10 +63,10 @@ default is off.
 <br><dt><code>show debug frame</code><dd>Displays the current state of displaying <span class="sc">gdb</span> frame debugging
 info. 
 <br><dt><code>set debug infrun</code><dd><a name="index-inferior-debugging-info-1267"></a>Turns on or off display of <span class="sc">gdb</span> debugging info for running the inferior. 
-The default is off.  <span class="file">infrun.c</span> contains GDB's runtime state machine used
+The default is off.  <samp><span class="file">infrun.c</span></samp> contains GDB's runtime state machine used
 for implementing operations such as single-stepping the inferior. 
 <br><dt><code>show debug infrun</code><dd>Displays the current state of <span class="sc">gdb</span> inferior debugging. 
-<br><dt><code>set debug lin-lwp</code><dd><a name="index-_0040sc_007bgnu_007d_002fLinux-LWP-debug-messages-1268"></a><a name="index-Linux-lightweight-processes-1269"></a>Turns on or off debugging messages from the Linux LWP debug support. 
+<br><dt><code>set debug lin-lwp</code><dd><a name="index-g_t_0040sc_007bgnu_007d_002fLinux-LWP-debug-messages-1268"></a><a name="index-Linux-lightweight-processes-1269"></a>Turns on or off debugging messages from the Linux LWP debug support. 
 <br><dt><code>show debug lin-lwp</code><dd>Show the current state of Linux LWP debugging messages. 
 <br><dt><code>set debug observer</code><dd><a name="index-observer-debugging-info-1270"></a>Turns on or off display of <span class="sc">gdb</span> observer debugging.  This
 includes info such as the notification of observable events. 

@@ -3,7 +3,7 @@
 <title>MIPS Paired-Single Support - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Builtins.html#Target-Builtins" title="Target Builtins">
 <link rel="prev" href="MIPS-DSP-Built_002din-Functions.html#MIPS-DSP-Built_002din-Functions" title="MIPS DSP Built-in Functions">
@@ -38,17 +38,20 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="MIPS-Paired_002dSingle-Support"></a>Next:&nbsp;<a rel="next" accesskey="n" href="PowerPC-AltiVec-Built_002din-Functions.html#PowerPC-AltiVec-Built_002din-Functions">PowerPC AltiVec Built-in Functions</a>,
+<a name="MIPS-Paired-Single-Support"></a>
+<a name="MIPS-Paired_002dSingle-Support"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="PowerPC-AltiVec-Built_002din-Functions.html#PowerPC-AltiVec-Built_002din-Functions">PowerPC AltiVec Built-in Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="MIPS-DSP-Built_002din-Functions.html#MIPS-DSP-Built_002din-Functions">MIPS DSP Built-in Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Builtins.html#Target-Builtins">Target Builtins</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">5.47.9 MIPS Paired-Single Support</h4>
@@ -62,7 +65,7 @@ the other being designated the &ldquo;lower half&rdquo;.
  <p>GCC supports paired-single operations using both the generic
 vector extensions (see <a href="Vector-Extensions.html#Vector-Extensions">Vector Extensions</a>) and a collection of
 MIPS-specific built-in functions.  Both kinds of support are
-enabled by the <span class="option">-mpaired-single</span> command-line option.
+enabled by the <samp><span class="option">-mpaired-single</span></samp> command-line option.
 
  <p>The vector type associated with paired-single values is usually
 called <code>v2sf</code>.  It can be defined in C as follows:

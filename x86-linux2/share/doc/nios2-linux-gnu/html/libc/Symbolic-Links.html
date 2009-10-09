@@ -3,7 +3,7 @@
 <title>Symbolic Links - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="File-System-Interface.html#File-System-Interface" title="File System Interface">
 <link rel="prev" href="Hard-Links.html#Hard-Links" title="Hard Links">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Symbolic-Links"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Deleting-Files.html#Deleting-Files">Deleting Files</a>,
+<a name="Symbolic-Links"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Deleting-Files.html#Deleting-Files">Deleting Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Hard-Links.html#Hard-Links">Hard Links</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="File-System-Interface.html#File-System-Interface">File System Interface</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">14.5 Symbolic Links</h3>
@@ -59,7 +61,7 @@ symbolic link, which one rarely wants.
 
    <p>Some systems have for some functions operating on files have a limit on
 how many symbolic links are followed when resolving a path name.  The
-limit if it exists is published in the <span class="file">sys/param.h</span> header file.
+limit if it exists is published in the <samp><span class="file">sys/param.h</span></samp> header file.
 
 <!-- sys/param.h -->
 <!-- BSD -->
@@ -75,7 +77,7 @@ result can indicate that there is no fixed limit although
 </p></blockquote></div>
 
    <p>Prototypes for most of the functions listed in this section are in
-<span class="file">unistd.h</span>. 
+<samp><span class="file">unistd.h</span></samp>. 
 <a name="index-unistd_002eh-1466"></a>
 <!-- unistd.h -->
 <!-- BSD -->
@@ -188,7 +190,7 @@ have a limit on the file name length.
           <br><dt><code>ELOOP</code><dd>More than <code>MAXSYMLINKS</code> many symlinks have been followed. 
 </dl>
 
-        <p>This function is a GNU extension and is declared in <span class="file">stdlib.h</span>. 
+        <p>This function is a GNU extension and is declared in <samp><span class="file">stdlib.h</span></samp>. 
 </p></blockquote></div>
 
    <p>The Unix standard includes a similar function which differs from
@@ -216,7 +218,7 @@ contain the part of the path component which does not exist or is not
 readable if the function returns <code>NULL</code> and <code>errno</code> is set to
 <code>EACCES</code> or <code>ENOENT</code>.
 
-        <p>This function is declared in <span class="file">stdlib.h</span>. 
+        <p>This function is declared in <samp><span class="file">stdlib.h</span></samp>. 
 </p></blockquote></div>
 
    <p>The advantage of using this function is that it is more widely

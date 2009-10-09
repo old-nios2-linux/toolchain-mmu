@@ -3,7 +3,7 @@
 <title>VAX-branch - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Vax_002dDependent.html#Vax_002dDependent" title="Vax-Dependent">
 <link rel="prev" href="VAX_002dopcodes.html#VAX_002dopcodes" title="VAX-opcodes">
@@ -17,17 +17,20 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="VAX_002dbranch"></a>Next:&nbsp;<a rel="next" accesskey="n" href="VAX_002doperands.html#VAX_002doperands">VAX-operands</a>,
+<a name="VAX-branch"></a>
+<a name="VAX_002dbranch"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="VAX_002doperands.html#VAX_002doperands">VAX-operands</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="VAX_002dopcodes.html#VAX_002dopcodes">VAX-opcodes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Vax_002dDependent.html#Vax_002dDependent">Vax-Dependent</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">8.33.5 VAX Branch Improvement</h4>
@@ -35,13 +38,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Vax_002dDependent.html#Vax_002dDependen
 <p><a name="index-VAX-branch-improvement-1720"></a><a name="index-branch-improvement_002c-VAX-1721"></a><a name="index-pseudo_002dops-for-branch_002c-VAX-1722"></a>Certain pseudo opcodes are permitted.  They are for branch
 instructions.  They expand to the shortest branch instruction that
 reaches the target.  Generally these mnemonics are made by
-substituting <span class="samp">j</span> for <span class="samp">b</span> at the start of a DEC mnemonic. 
+substituting `<samp><span class="samp">j</span></samp>' for `<samp><span class="samp">b</span></samp>' at the start of a DEC mnemonic. 
 This feature is included both for compatibility and to help
 compilers.  If you do not need this feature, avoid these
 opcodes.  Here are the mnemonics, and the code they can expand into.
 
      <dl>
-<dt><code>jbsb</code><dd><span class="samp">Jsb</span> is already an instruction mnemonic, so we chose <span class="samp">jbsb</span>.
+<dt><code>jbsb</code><dd>`<samp><span class="samp">Jsb</span></samp>' is already an instruction mnemonic, so we chose `<samp><span class="samp">jbsb</span></samp>'.
           <dl>
 <dt>(byte displacement)<dd><kbd>bsbb ...</kbd>
 <br><dt>(word displacement)<dd><kbd>bsbw ...</kbd>

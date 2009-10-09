@@ -3,7 +3,7 @@
 <title>Incompatibilities - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Trouble.html#Trouble" title="Trouble">
 <link rel="prev" href="Interoperation.html#Interoperation" title="Interoperation">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Incompatibilities"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Fixed-Headers.html#Fixed-Headers">Fixed Headers</a>,
+<a name="Incompatibilities"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Fixed-Headers.html#Fixed-Headers">Fixed Headers</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Interoperation.html#Interoperation">Interoperation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Trouble.html#Trouble">Trouble</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">10.4 Incompatibilities of GCC</h3>
@@ -65,11 +67,11 @@ There are several noteworthy incompatibilities between GNU C and K&amp;R
 identical-looking string constants are used, GCC stores only one
 copy of the string.
 
-     <p><a name="index-_0040code_007bmktemp_007d_002c-and-constant-strings-2557"></a>One consequence is that you cannot call <code>mktemp</code> with a string
+     <p><a name="index-g_t_0040code_007bmktemp_007d_002c-and-constant-strings-2557"></a>One consequence is that you cannot call <code>mktemp</code> with a string
 constant argument.  The function <code>mktemp</code> always alters the
 string its argument points to.
 
-     <p><a name="index-_0040code_007bsscanf_007d_002c-and-constant-strings-2558"></a><a name="index-_0040code_007bfscanf_007d_002c-and-constant-strings-2559"></a><a name="index-_0040code_007bscanf_007d_002c-and-constant-strings-2560"></a>Another consequence is that <code>sscanf</code> does not work on some very
+     <p><a name="index-g_t_0040code_007bsscanf_007d_002c-and-constant-strings-2558"></a><a name="index-g_t_0040code_007bfscanf_007d_002c-and-constant-strings-2559"></a><a name="index-g_t_0040code_007bscanf_007d_002c-and-constant-strings-2560"></a>Another consequence is that <code>sscanf</code> does not work on some very
 old systems when passed a string constant as its format control string
 or input.  This is because <code>sscanf</code> incorrectly tries to write
 into the string constant.  Likewise <code>fscanf</code> and <code>scanf</code>.
@@ -91,7 +93,7 @@ string constants.  For example, the following macro in GCC
      </pre>
      <p class="noindent">will produce output <code>"a"</code> regardless of what the argument <var>a</var> is.
 
-     <p><a name="index-_0040code_007bsetjmp_007d-incompatibilities-2561"></a><a name="index-_0040code_007blongjmp_007d-incompatibilities-2562"></a><li>When you use <code>setjmp</code> and <code>longjmp</code>, the only automatic
+     <p><a name="index-g_t_0040code_007bsetjmp_007d-incompatibilities-2561"></a><a name="index-g_t_0040code_007blongjmp_007d-incompatibilities-2562"></a><li>When you use <code>setjmp</code> and <code>longjmp</code>, the only automatic
 variables guaranteed to remain valid are those declared
 <code>volatile</code>.  This is a consequence of automatic register
 allocation.  Consider this function:
@@ -116,7 +118,7 @@ allocation.  Consider this function:
 its first value is restored; otherwise, it keeps the last value stored
 in it.
 
-     <p><a name="index-W-2563"></a>If you use the <span class="option">-W</span> option with the <span class="option">-O</span> option, you will
+     <p><a name="index-W-2563"></a>If you use the <samp><span class="option">-W</span></samp> option with the <samp><span class="option">-O</span></samp> option, you will
 get a warning when GCC thinks such a problem might be possible.
 
      <li>Programs that use preprocessing directives in the middle of macro
@@ -164,10 +166,10 @@ be a letter.  The underscore _ counts as a letter.&rdquo;, but GCC also
 allows dollar signs in identifiers.
 
      <p><a name="index-whitespace-2568"></a><li>PCC allows whitespace in the middle of compound assignment operators
-such as <span class="samp">+=</span>.  GCC, following the ISO standard, does not
+such as `<samp><span class="samp">+=</span></samp>'.  GCC, following the ISO standard, does not
 allow this.
 
-     <p><a name="index-apostrophes-2569"></a><a name="index-_0027-2570"></a><li>GCC complains about unterminated character constants inside of
+     <p><a name="index-apostrophes-2569"></a><a name="index-g_t_0027-2570"></a><li>GCC complains about unterminated character constants inside of
 preprocessing conditionals that fail.  Some programs have English
 comments enclosed in conditionals that are guaranteed to fail; if these
 comments contain apostrophes, GCC will probably report an error.  For
@@ -178,21 +180,21 @@ example, this code would produce an error:
           #endif
      </pre>
      <p>The best solution to such a problem is to put the text into an actual
-C comment delimited by <span class="samp">/*...*/</span>.
+C comment delimited by `<samp><span class="samp">/*...*/</span></samp>'.
 
-     <li>Many user programs contain the declaration <span class="samp">long time ();</span>.  In the
+     <li>Many user programs contain the declaration `<samp><span class="samp">long time ();</span></samp>'.  In the
 past, the system header files on many systems did not actually declare
 <code>time</code>, so it did not matter what type your program declared it to
 return.  But in systems with ISO C headers, <code>time</code> is declared to
 return <code>time_t</code>, and if that is not the same as <code>long</code>, then
-<span class="samp">long time ();</span> is erroneous.
+`<samp><span class="samp">long time ();</span></samp>' is erroneous.
 
      <p>The solution is to change your program to use appropriate system headers
 (<code>&lt;time.h&gt;</code> on systems with ISO C headers) and not to declare
 <code>time</code> if the system header files declare it, or failing that to
 use <code>time_t</code> as the return type of <code>time</code>.
 
-     <p><a name="index-_0040code_007bfloat_007d-as-function-value-type-2571"></a><li>When compiling functions that return <code>float</code>, PCC converts it to
+     <p><a name="index-g_t_0040code_007bfloat_007d-as-function-value-type-2571"></a><li>When compiling functions that return <code>float</code>, PCC converts it to
 a double.  GCC actually returns a <code>float</code>.  If you are concerned
 with PCC compatibility, you should declare your functions to return
 <code>double</code>; you might as well say what you mean.
@@ -222,9 +224,9 @@ compatible convention when returning structures and unions in memory,
 but still returns small structures and unions in registers.
 
      <p><a name="index-fpcc_002dstruct_002dreturn-2574"></a>You can tell GCC to use a compatible convention for all structure and
-union returning with the option <span class="option">-fpcc-struct-return</span>.
+union returning with the option <samp><span class="option">-fpcc-struct-return</span></samp>.
 
-     <p><a name="index-preprocessing-tokens-2575"></a><a name="index-preprocessing-numbers-2576"></a><li>GCC complains about program fragments such as <span class="samp">0x74ae-0x4000</span>
+     <p><a name="index-preprocessing-tokens-2575"></a><a name="index-preprocessing-numbers-2576"></a><li>GCC complains about program fragments such as `<samp><span class="samp">0x74ae-0x4000</span></samp>'
 which appear to be two hexadecimal constants separated by the minus
 operator.  Actually, this string is a single <dfn>preprocessing token</dfn>. 
 Each such token must correspond to one token in C.  Since this does not,
@@ -234,9 +236,9 @@ requires that this be treated as erroneous.
 
      <p>A <dfn>preprocessing token</dfn> is a <dfn>preprocessing number</dfn> if it
 begins with a digit and is followed by letters, underscores, digits,
-periods and <span class="samp">e+</span>, <span class="samp">e-</span>, <span class="samp">E+</span>, <span class="samp">E-</span>, <span class="samp">p+</span>,
-<span class="samp">p-</span>, <span class="samp">P+</span>, or <span class="samp">P-</span> character sequences.  (In strict C89
-mode, the sequences <span class="samp">p+</span>, <span class="samp">p-</span>, <span class="samp">P+</span> and <span class="samp">P-</span> cannot
+periods and `<samp><span class="samp">e+</span></samp>', `<samp><span class="samp">e-</span></samp>', `<samp><span class="samp">E+</span></samp>', `<samp><span class="samp">E-</span></samp>', `<samp><span class="samp">p+</span></samp>',
+`<samp><span class="samp">p-</span></samp>', `<samp><span class="samp">P+</span></samp>', or `<samp><span class="samp">P-</span></samp>' character sequences.  (In strict C89
+mode, the sequences `<samp><span class="samp">p+</span></samp>', `<samp><span class="samp">p-</span></samp>', `<samp><span class="samp">P+</span></samp>' and `<samp><span class="samp">P-</span></samp>' cannot
 appear in preprocessing numbers.)
 
      <p>To make the above program fragment valid, place whitespace in front of

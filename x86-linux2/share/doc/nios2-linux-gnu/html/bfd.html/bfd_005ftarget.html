@@ -3,7 +3,7 @@
 <title>bfd_target - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Targets.html#Targets" title="Targets">
 <link rel="prev" href="Targets.html#Targets" title="Targets">
@@ -38,16 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="bfd_005ftarget"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Targets.html#Targets">Targets</a>,
+<a name="bfd_target"></a>
+<a name="bfd_005ftarget"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Targets.html#Targets">Targets</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Targets.html#Targets">Targets</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">2.12.1 bfd_target</h4>
@@ -62,7 +65,7 @@ member.
 
    <p>The macros below are used to dispatch to functions through the
 <code>bfd_target</code> vector. They are used in a number of macros further
-down in <span class="file">bfd.h</span>, and are also used when calling various
+down in <samp><span class="file">bfd.h</span></samp>, and are also used when calling various
 routines by hand inside the BFD implementation.  The <var>arglist</var>
 argument must be parenthesized; it contains all the arguments
 to the called function.

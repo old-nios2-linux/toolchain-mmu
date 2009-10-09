@@ -3,7 +3,7 @@
 <title>Vague Linkage - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions" title="C++ Extensions">
 <link rel="prev" href="Restricted-Pointers.html#Restricted-Pointers" title="Restricted Pointers">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Vague-Linkage"></a>Next:&nbsp;<a rel="next" accesskey="n" href="C_002b_002b-Interface.html#C_002b_002b-Interface">C++ Interface</a>,
+<a name="Vague-Linkage"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="C_002b_002b-Interface.html#C_002b_002b-Interface">C++ Interface</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Restricted-Pointers.html#Restricted-Pointers">Restricted Pointers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions">C++ Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">6.3 Vague Linkage</h3>
@@ -88,12 +90,12 @@ Make sure that any inline virtuals are declared inline in the class
 body, even if they are not defined there.
 
      <br><dt>type_info objects<dd><a name="index-type_005finfo-2517"></a><a name="index-RTTI-2518"></a>C++ requires information about types to be written out in order to
-implement <span class="samp">dynamic_cast</span>, <span class="samp">typeid</span> and exception handling. 
+implement `<samp><span class="samp">dynamic_cast</span></samp>', `<samp><span class="samp">typeid</span></samp>' and exception handling. 
 For polymorphic classes (classes with virtual functions), the type_info
-object is written out along with the vtable so that <span class="samp">dynamic_cast</span>
+object is written out along with the vtable so that `<samp><span class="samp">dynamic_cast</span></samp>'
 can determine the dynamic type of a class object at runtime.  For all
 other types, we write out the type_info object when it is used: when
-applying <span class="samp">typeid</span> to an expression, throwing an object, or
+applying `<samp><span class="samp">typeid</span></samp>' to an expression, throwing an object, or
 referring to a type in a catch clause or exception specification.
 
      <br><dt>Template Instantiations<dd>Most everything in this section also applies to template instantiations,

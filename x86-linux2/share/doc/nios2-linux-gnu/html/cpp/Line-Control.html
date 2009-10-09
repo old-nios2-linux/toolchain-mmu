@@ -3,7 +3,7 @@
 <title>Line Control - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Diagnostics.html#Diagnostics" title="Diagnostics">
 <link rel="next" href="Pragmas.html#Pragmas" title="Pragmas">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,17 +40,19 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Line-Control"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Pragmas.html#Pragmas">Pragmas</a>,
+<a name="Line-Control"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Pragmas.html#Pragmas">Pragmas</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Diagnostics.html#Diagnostics">Diagnostics</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">6 Line Control</h2>
@@ -63,18 +65,18 @@ reported as having appeared on the line of the source file where the
 outermost macro was used.  We intend to be more accurate in the future.
 
    <p>If you write a program which generates source code, such as the
-<span class="command">bison</span> parser generator, you may want to adjust the preprocessor's
+<samp><span class="command">bison</span></samp> parser generator, you may want to adjust the preprocessor's
 notion of the current file name and line number by hand.  Parts of the
-output from <span class="command">bison</span> are generated from scratch, other parts come
+output from <samp><span class="command">bison</span></samp> are generated from scratch, other parts come
 from a standard parser file.  The rest are copied verbatim from
-<span class="command">bison</span>'s input.  You would like compiler error messages and
+<samp><span class="command">bison</span></samp>'s input.  You would like compiler error messages and
 symbolic debuggers to be able to refer to <code>bison</code>'s input file.
 
-   <p><a name="index-_0023line-98"></a><span class="command">bison</span> or any such program can arrange this by writing
-<span class="samp">#line</span> directives into the output file.  <span class="samp">#line</span> is a
+   <p><a name="index-g_t_0023line-98"></a><samp><span class="command">bison</span></samp> or any such program can arrange this by writing
+`<samp><span class="samp">#line</span></samp>' directives into the output file.  `<samp><span class="samp">#line</span></samp>' is a
 directive that specifies the original line number and source file name
 for subsequent input in the current preprocessor input file. 
-<span class="samp">#line</span> has three variants:
+`<samp><span class="samp">#line</span></samp>' has three variants:
 
      <dl>
 <dt><code>#line </code><var>linenum</var><dd><var>linenum</var> is a non-negative decimal integer constant.  It specifies
@@ -87,9 +89,9 @@ following line and all subsequent lines are reported to come from the
 file it specifies, until something else happens to change that. 
 <var>filename</var> is interpreted according to the normal rules for a string
 constant: backslash escapes are interpreted.  This is different from
-<span class="samp">#include</span>.
+`<samp><span class="samp">#include</span></samp>'.
 
-     <p>Previous versions of CPP did not interpret escapes in <span class="samp">#line</span>;
+     <p>Previous versions of CPP did not interpret escapes in `<samp><span class="samp">#line</span></samp>';
 we have changed it because the standard requires they be interpreted,
 and most other compilers do.
 
@@ -97,24 +99,24 @@ and most other compilers do.
 The result should match one of the above two forms. 
 </dl>
 
-   <p><span class="samp">#line</span> directives alter the results of the <code>__FILE__</code> and
-<code>__LINE__</code> predefined macros from that point on.  See <a href="Standard-Predefined-Macros.html#Standard-Predefined-Macros">Standard Predefined Macros</a>.  They do not have any effect on <span class="samp">#include</span>'s
+   <p>`<samp><span class="samp">#line</span></samp>' directives alter the results of the <code>__FILE__</code> and
+<code>__LINE__</code> predefined macros from that point on.  See <a href="Standard-Predefined-Macros.html#Standard-Predefined-Macros">Standard Predefined Macros</a>.  They do not have any effect on `<samp><span class="samp">#include</span></samp>''s
 idea of the directory containing the current file.  This is a change
 from GCC 2.95.  Previously, a file reading
 
 <pre class="smallexample">     #line 1 "../src/gram.y"
      #include "gram.h"
 </pre>
-   <p>would search for <span class="file">gram.h</span> in <span class="file">../src</span>, then the <span class="option">-I</span>
+   <p>would search for <samp><span class="file">gram.h</span></samp> in <samp><span class="file">../src</span></samp>, then the <samp><span class="option">-I</span></samp>
 chain; the directory containing the physical source file would not be
-searched.  In GCC 3.0 and later, the <span class="samp">#include</span> is not affected by
-the presence of a <span class="samp">#line</span> referring to a different directory.
+searched.  In GCC 3.0 and later, the `<samp><span class="samp">#include</span></samp>' is not affected by
+the presence of a `<samp><span class="samp">#line</span></samp>' referring to a different directory.
 
    <p>We made this change because the old behavior caused problems when
 generated source files were transported between machines.  For instance,
 it is common practice to ship generated parsers with a source release,
 so that people building the distribution do not need to have yacc or
-Bison installed.  These files frequently have <span class="samp">#line</span> directives
+Bison installed.  These files frequently have `<samp><span class="samp">#line</span></samp>' directives
 referring to the directory tree of the system where the distribution was
 created.  If GCC tries to search for headers in those directories, the
 build is likely to fail.
@@ -123,7 +125,7 @@ build is likely to fail.
 in the same directory as its source and it attempts to include a header
 which would be visible searching from the directory containing the
 source file.  However, this problem is easily solved with an additional
-<span class="option">-I</span> switch on the command line.  The failures caused by the old
+<samp><span class="option">-I</span></samp> switch on the command line.  The failures caused by the old
 semantics could sometimes be corrected only by editing the generated
 files, which is difficult and error-prone.
 

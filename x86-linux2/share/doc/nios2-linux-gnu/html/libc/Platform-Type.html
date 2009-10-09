@@ -3,7 +3,7 @@
 <title>Platform Type - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Management.html#System-Management" title="System Management">
 <link rel="prev" href="Host-Identification.html#Host-Identification" title="Host Identification">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Platform-Type"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Filesystem-Handling.html#Filesystem-Handling">Filesystem Handling</a>,
+<a name="Platform-Type"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Filesystem-Handling.html#Filesystem-Handling">Filesystem Handling</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Host-Identification.html#Host-Identification">Host Identification</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Management.html#System-Management">System Management</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">30.2 Platform Type Identification</h3>
@@ -35,7 +37,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="System-Management.html#System-Managemen
 <p>You can use the <code>uname</code> function to find out some information about
 the type of computer your program is running on.  This function and the
 associated data type are declared in the header file
-<span class="file">sys/utsname.h</span>. 
+<samp><span class="file">sys/utsname.h</span></samp>. 
 <a name="index-sys_002futsname_002eh-3454"></a>
 As a bonus, <code>uname</code> also gives some information identifying the
 particular system your program is running on.  This is the same information
@@ -73,7 +75,7 @@ any particular GNU program.
 
           <p>Since the value in <code>machine</code> is supposed to describe just the
 hardware, it consists of the first two parts of the configuration name:
-<var>cpu</var><span class="samp">-</span><var>manufacturer</var>.  For example, it might be one of these:
+`<samp><var>cpu</var><span class="samp">-</span><var>manufacturer</var></samp>'.  For example, it might be one of these:
 
           <blockquote>
 <code>"sparc-sun"</code>,

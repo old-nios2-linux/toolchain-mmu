@@ -3,7 +3,7 @@
 <title>Status bit operations - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Floating-Point-Errors.html#Floating-Point-Errors" title="Floating Point Errors">
 <link rel="prev" href="Infinity-and-NaN.html#Infinity-and-NaN" title="Infinity and NaN">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Status-bit-operations"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Math-Error-Reporting.html#Math-Error-Reporting">Math Error Reporting</a>,
+<a name="Status-bit-operations"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Math-Error-Reporting.html#Math-Error-Reporting">Math Error Reporting</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Infinity-and-NaN.html#Infinity-and-NaN">Infinity and NaN</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Floating-Point-Errors.html#Floating-Point-Errors">Floating Point Errors</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">20.5.3 Examining the FPU status word</h4>
@@ -40,8 +42,8 @@ them in the middle of a calculation.
    <p>These constants represent the various IEEE&nbsp;754<!-- /@w --> exceptions.  Not all
 FPUs report all the different exceptions.  Each constant is defined if
 and only if the FPU you are compiling for supports that exception, so
-you can test for FPU support with <span class="samp">#ifdef</span>.  They are defined in
-<span class="file">fenv.h</span>.
+you can test for FPU support with `<samp><span class="samp">#ifdef</span></samp>'.  They are defined in
+<samp><span class="file">fenv.h</span></samp>.
 
      <dl>
 <!-- fenv.h -->
@@ -105,8 +107,8 @@ which specifies which exceptions are set.  Otherwise the result is zero.
 
    <p>To understand these functions, imagine that the status word is an
 integer variable named <var>status</var>.  <code>feclearexcept</code> is then
-equivalent to <span class="samp">status &amp;= ~excepts</span> and <code>fetestexcept</code> is
-equivalent to <span class="samp">(status &amp; excepts)</span>.  The actual implementation may
+equivalent to `<samp><span class="samp">status &amp;= ~excepts</span></samp>' and <code>fetestexcept</code> is
+equivalent to `<samp><span class="samp">(status &amp; excepts)</span></samp>'.  The actual implementation may
 be very different, of course.
 
    <p>Exception flags are only cleared when the program explicitly requests it,

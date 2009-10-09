@@ -3,7 +3,7 @@
 <title>Server - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Remote-Debugging.html#Remote-Debugging" title="Remote Debugging">
 <link rel="prev" href="Connecting.html#Connecting" title="Connecting">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Server"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Remote-Configuration.html#Remote-Configuration">Remote Configuration</a>,
+<a name="Server"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Remote-Configuration.html#Remote-Configuration">Remote Configuration</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Connecting.html#Connecting">Connecting</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Remote-Debugging.html#Remote-Debugging">Remote Debugging</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">18.2 Using the <code>gdbserver</code> Program</h3>
@@ -68,8 +70,8 @@ syntax is:
      </pre>
      <p><var>comm</var> is either a device name (to use a serial line) or a TCP
 hostname and portnumber.  For example, to debug Emacs with the argument
-<span class="samp">foo.txt</span> and communicate with <span class="sc">gdb</span> over the serial port
-<span class="file">/dev/com1</span>:
+`<samp><span class="samp">foo.txt</span></samp>' and communicate with <span class="sc">gdb</span> over the serial port
+<samp><span class="file">/dev/com1</span></samp>:
 
      <pre class="smallexample">          target&gt; gdbserver /dev/com1 emacs foo.txt
      </pre>
@@ -82,9 +84,9 @@ with it.
      </pre>
      <p>The only difference from the previous example is the first argument,
 specifying that you are communicating with the host <span class="sc">gdb</span> via
-TCP.  The <span class="samp">host:2345</span> argument means that <code>gdbserver</code> is to
-expect a TCP connection from machine <span class="samp">host</span> to local TCP port 2345. 
-(Currently, the <span class="samp">host</span> part is ignored.)  You can choose any number
+TCP.  The `<samp><span class="samp">host:2345</span></samp>' argument means that <code>gdbserver</code> is to
+expect a TCP connection from machine `<samp><span class="samp">host</span></samp>' to local TCP port 2345. 
+(Currently, the `<samp><span class="samp">host</span></samp>' part is ignored.)  You can choose any number
 you want for the port number as long as it does not conflict with any
 TCP ports already in use on the target system (for example, <code>23</code> is
 reserved for <code>telnet</code>).<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>  You must use the same port number with the host <span class="sc">gdb</span>
@@ -124,7 +126,7 @@ programs.
 For TCP connections, you must start up <code>gdbserver</code> prior to using
 the <code>target remote</code> command.  Otherwise you may get an error whose
 text depends on the host system, but which usually looks something like
-<span class="samp">Connection refused</span>.  You don't need to use the <code>load</code>
+`<samp><span class="samp">Connection refused</span></samp>'.  You don't need to use the <code>load</code>
 command in <span class="sc">gdb</span> when using <code>gdbserver</code>, since the program is
 already on the target.
 

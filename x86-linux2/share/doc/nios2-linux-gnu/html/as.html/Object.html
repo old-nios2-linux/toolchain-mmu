@@ -3,7 +3,7 @@
 <title>Object - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Overview.html#Overview" title="Overview">
 <link rel="prev" href="Input-Files.html#Input-Files" title="Input Files">
@@ -17,27 +17,29 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Object"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Errors.html#Errors">Errors</a>,
+<a name="Object"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Errors.html#Errors">Errors</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Input-Files.html#Input-Files">Input Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Overview.html#Overview">Overview</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">1.6 Output (Object) File</h3>
 
-<p><a name="index-object-file-34"></a><a name="index-output-file-35"></a><a name="index-a_002eout-36"></a><a name="index-_002eo-37"></a>Every time you run <span class="command">as</span> it produces an output file, which is
+<p><a name="index-object-file-34"></a><a name="index-output-file-35"></a><a name="index-a_002eout-36"></a><a name="index-g_t_002eo-37"></a>Every time you run <samp><span class="command">as</span></samp> it produces an output file, which is
 your assembly language program translated into numbers.  This file
 is the object file.  Its default name is
 <code>a.out</code>. 
-You can give it another name by using the <span class="option">-o</span> option.  Conventionally,
-object file names end with <span class="file">.o</span>.  The default name is used for historical
+You can give it another name by using the <samp><span class="option">-o</span></samp> option.  Conventionally,
+object file names end with <samp><span class="file">.o</span></samp>.  The default name is used for historical
 reasons: older assemblers were capable of assembling self-contained programs
 directly into a runnable program.  (For some formats, this isn't currently
 possible, but it can be done for the <code>a.out</code> format.)

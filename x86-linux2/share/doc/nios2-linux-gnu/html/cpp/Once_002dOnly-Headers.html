@@ -3,7 +3,7 @@
 <title>Once-Only Headers - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Header-Files.html#Header-Files" title="Header Files">
 <link rel="prev" href="Search-Path.html#Search-Path" title="Search Path">
@@ -32,7 +32,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -41,17 +41,20 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Once_002dOnly-Headers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Computed-Includes.html#Computed-Includes">Computed Includes</a>,
+<a name="Once-Only-Headers"></a>
+<a name="Once_002dOnly-Headers"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Computed-Includes.html#Computed-Includes">Computed Includes</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Search-Path.html#Search-Path">Search Path</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Header-Files.html#Header-Files">Header Files</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">2.4 Once-Only Headers</h3>
@@ -80,8 +83,8 @@ over the entire contents of the file, and the compiler will not see it
 twice.
 
    <p>CPP optimizes even further.  It remembers when a header file has a
-wrapper <span class="samp">#ifndef</span>.  If a subsequent <span class="samp">#include</span> specifies that
-header, and the macro in the <span class="samp">#ifndef</span> is still defined, it does
+wrapper `<samp><span class="samp">#ifndef</span></samp>'.  If a subsequent `<samp><span class="samp">#include</span></samp>' specifies that
+header, and the macro in the `<samp><span class="samp">#ifndef</span></samp>' is still defined, it does
 not bother to rescan the file at all.
 
    <p>You can put comments outside the wrapper.  They will not interfere with
@@ -89,8 +92,8 @@ this optimization.
 
    <p><a name="index-controlling-macro-31"></a><a name="index-guard-macro-32"></a>The macro <code>FILE_FOO_SEEN</code> is called the <dfn>controlling macro</dfn> or
 <dfn>guard macro</dfn>.  In a user header file, the macro name should not
-begin with <span class="samp">_</span>.  In a system header file, it should begin with
-<span class="samp">__</span> to avoid conflicts with user programs.  In any kind of header
+begin with `<samp><span class="samp">_</span></samp>'.  In a system header file, it should begin with
+`<samp><span class="samp">__</span></samp>' to avoid conflicts with user programs.  In any kind of header
 file, the macro name should contain the name of the file and some
 additional text, to avoid conflicts with other header files.
 

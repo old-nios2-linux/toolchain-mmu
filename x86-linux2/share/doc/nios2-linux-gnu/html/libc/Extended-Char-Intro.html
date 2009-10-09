@@ -3,7 +3,7 @@
 <title>Extended Char Intro - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Character-Set-Handling.html#Character-Set-Handling" title="Character Set Handling">
 <link rel="next" href="Charset-Function-Overview.html#Charset-Function-Overview" title="Charset Function Overview">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Extended-Char-Intro"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Charset-Function-Overview.html#Charset-Function-Overview">Charset Function Overview</a>,
+<a name="Extended-Char-Intro"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Charset-Function-Overview.html#Charset-Function-Overview">Charset Function Overview</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Character-Set-Handling.html#Character-Set-Handling">Character Set Handling</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">6.1 Introduction to Extended Characters</h3>
@@ -96,7 +98,7 @@ those functions that take a single wide character.
 <blockquote><p>This data type is used as the base type for wide character strings. 
 In other words, arrays of objects of this type are the equivalent of
 <code>char[]</code> for multibyte character strings.  The type is defined in
-<span class="file">stddef.h</span>.
+<samp><span class="file">stddef.h</span></samp>.
 
         <p>The ISO&nbsp;C90<!-- /@w --> standard, where <code>wchar_t</code> was introduced, does not
 say anything specific about the representation.  It only requires that
@@ -127,7 +129,7 @@ representation if their size is 32 bits wide but if <code>wchar_t</code> is
 defined as <code>char</code> the type <code>wint_t</code> must be defined as
 <code>int</code> due to the parameter promotion.
 
-        <p><a name="index-wchar_002eh-619"></a>This type is defined in <span class="file">wchar.h</span> and was introduced in
+        <p><a name="index-wchar_002eh-619"></a>This type is defined in <samp><span class="file">wchar.h</span></samp> and was introduced in
 Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w -->. 
 </p></blockquote></div>
 
@@ -187,7 +189,7 @@ are used:
           }
      </pre>
         <p><a name="index-wchar_002eh-623"></a>This macro was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w --> and is
-defined in <span class="file">wchar.h</span>. 
+defined in <samp><span class="file">wchar.h</span></samp>. 
 </p></blockquote></div>
 
    <p>These internal representations present problems when it comes to storing

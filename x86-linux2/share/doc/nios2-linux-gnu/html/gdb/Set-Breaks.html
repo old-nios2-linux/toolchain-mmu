@@ -3,7 +3,7 @@
 <title>Set Breaks - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Breakpoints.html#Breakpoints" title="Breakpoints">
 <link rel="next" href="Set-Watchpoints.html#Set-Watchpoints" title="Set Watchpoints">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Set-Breaks"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Set-Watchpoints.html#Set-Watchpoints">Set Watchpoints</a>,
+<a name="Set-Breaks"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Set-Watchpoints.html#Set-Watchpoints">Set Watchpoints</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Breakpoints.html#Breakpoints">Breakpoints</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">5.1.1 Setting Breakpoints</h4>
@@ -33,8 +35,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Breakpoints.html#Breakpoints">Breakpoin
 <!-- FIXME LMB what does GDB do if no code on line of breakpt? -->
 <!-- consider in particular declaration with/without initialization. -->
 <!-- FIXME 2 is there stuff on this already? break at fun start, already init? -->
-<p><a name="index-break-189"></a><a name="index-b-_0040r_007b_0028_0040code_007bbreak_007d_0029_007d-190"></a><a name="index-_0024bpnum_0040r_007b_002c-convenience-variable_007d-191"></a><a name="index-latest-breakpoint-192"></a>Breakpoints are set with the <code>break</code> command (abbreviated
-<code>b</code>).  The debugger convenience variable <span class="samp">$bpnum</span> records the
+<p><a name="index-break-189"></a><a name="index-b-_0040r_007b_0028_0040code_007bbreak_007d_0029_007d-190"></a><a name="index-g_t_0024bpnum_0040r_007b_002c-convenience-variable_007d-191"></a><a name="index-latest-breakpoint-192"></a>Breakpoints are set with the <code>break</code> command (abbreviated
+<code>b</code>).  The debugger convenience variable `<samp><span class="samp">$bpnum</span></samp>' records the
 number of the breakpoint you've set most recently; see <a href="Convenience-Vars.html#Convenience-Vars">Convenience Variables</a>, for a discussion of what you can do with
 convenience variables.
 
@@ -86,7 +88,7 @@ existed when your program stopped.
      <br><dt><code>break ... if </code><var>cond</var><dd>Set a breakpoint with condition <var>cond</var>; evaluate the expression
 <var>cond</var> each time the breakpoint is reached, and stop only if the
 value is nonzero&mdash;that is, if <var>cond</var> evaluates as true. 
-<span class="samp">...</span> stands for one of the possible arguments described
+`<samp><span class="samp">...</span></samp>' stands for one of the possible arguments described
 above (or no argument) specifying where to break.  See <a href="Conditions.html#Conditions">Break Conditions</a>, for more information on breakpoint conditions.
 
      <p><a name="index-tbreak-193"></a><br><dt><code>tbreak </code><var>args</var><dd>Set a breakpoint enabled only for one stop.  <var>args</var> are the
@@ -129,7 +131,7 @@ the <code>break</code> command.  You can delete them, disable them, or make
 them conditional the same way as any other breakpoint.
 
      <p>The syntax of the regular expression is the standard one used with tools
-like <span class="file">grep</span>.  Note that this is different from the syntax used by
+like <samp><span class="file">grep</span></samp>.  Note that this is different from the syntax used by
 shells, so for instance <code>foo*</code> matches all functions that include
 an <code>fo</code> followed by zero or more <code>o</code>s.  There is an implicit
 <code>.*</code> leading and trailing the regular expression you supply, so to
@@ -144,7 +146,7 @@ classes.
 
      <pre class="smallexample">          (gdb) rbreak .
      </pre>
-     <p><a name="index-info-breakpoints-203"></a><a name="index-_0040code_007b_0024_005f_007d-and-_0040code_007binfo-breakpoints_007d-204"></a><br><dt><code>info breakpoints </code><span class="roman">[</span><var>n</var><span class="roman">]</span><dt><code>info break </code><span class="roman">[</span><var>n</var><span class="roman">]</span><dt><code>info watchpoints </code><span class="roman">[</span><var>n</var><span class="roman">]</span><dd>Print a table of all breakpoints, watchpoints, and catchpoints set and
+     <p><a name="index-info-breakpoints-203"></a><a name="index-g_t_0040code_007b_0024_005f_007d-and-_0040code_007binfo-breakpoints_007d-204"></a><br><dt><code>info breakpoints </code><span class="roman">[</span><var>n</var><span class="roman">]</span><dt><code>info break </code><span class="roman">[</span><var>n</var><span class="roman">]</span><dt><code>info watchpoints </code><span class="roman">[</span><var>n</var><span class="roman">]</span><dd>Print a table of all breakpoints, watchpoints, and catchpoints set and
 not deleted.  Optional argument <var>n</var> means print information only
 about the specified breakpoint (or watchpoint or catchpoint).  For
 each breakpoint, following columns are printed:
@@ -152,11 +154,11 @@ each breakpoint, following columns are printed:
           <dl>
 <dt><em>Breakpoint Numbers</em><br><dt><em>Type</em><dd>Breakpoint, watchpoint, or catchpoint. 
 <br><dt><em>Disposition</em><dd>Whether the breakpoint is marked to be disabled or deleted when hit. 
-<br><dt><em>Enabled or Disabled</em><dd>Enabled breakpoints are marked with <span class="samp">y</span>.  <span class="samp">n</span> marks breakpoints
+<br><dt><em>Enabled or Disabled</em><dd>Enabled breakpoints are marked with `<samp><span class="samp">y</span></samp>'.  `<samp><span class="samp">n</span></samp>' marks breakpoints
 that are not enabled. 
 <br><dt><em>Address</em><dd>Where the breakpoint is in your program, as a memory address.  If the
 breakpoint is pending (see below for details) on a future load of a shared library, the address
-will be listed as <span class="samp">&lt;PENDING&gt;</span>. 
+will be listed as `<samp><span class="samp">&lt;PENDING&gt;</span></samp>'. 
 <br><dt><em>What</em><dd>Where the breakpoint is in the source for your program, as a file and
 line number.  For a pending breakpoint, the original string passed to
 the breakpoint command will be listed as it cannot be resolved until
@@ -258,9 +260,9 @@ trying to set software breakpoint at a read-only address.
    <p><a name="index-negative-breakpoint-numbers-212"></a><a name="index-internal-_0040value_007bGDBN_007d-breakpoints-213"></a><span class="sc">gdb</span> itself sometimes sets breakpoints in your program for
 special purposes, such as proper handling of <code>longjmp</code> (in C
 programs).  These internal breakpoints are assigned negative numbers,
-starting with <code>-1</code>; <span class="samp">info breakpoints</span> does not display them. 
+starting with <code>-1</code>; `<samp><span class="samp">info breakpoints</span></samp>' does not display them. 
 You can see these breakpoints with the <span class="sc">gdb</span> maintenance command
-<span class="samp">maint info breakpoints</span> (see <a href="maint-info-breakpoints.html#maint-info-breakpoints">maint info breakpoints</a>).
+`<samp><span class="samp">maint info breakpoints</span></samp>' (see <a href="maint-info-breakpoints.html#maint-info-breakpoints">maint info breakpoints</a>).
 
    </body></html>
 

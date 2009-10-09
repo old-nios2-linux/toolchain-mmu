@@ -3,7 +3,7 @@
 <title>Generic Conversion Interface - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Generic-Charset-Conversion.html#Generic-Charset-Conversion" title="Generic Charset Conversion">
 <link rel="next" href="iconv-Examples.html#iconv-Examples" title="iconv Examples">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Generic-Conversion-Interface"></a>Next:&nbsp;<a rel="next" accesskey="n" href="iconv-Examples.html#iconv-Examples">iconv Examples</a>,
+<a name="Generic-Conversion-Interface"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="iconv-Examples.html#iconv-Examples">iconv Examples</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Generic-Charset-Conversion.html#Generic-Charset-Conversion">Generic Charset Conversion</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">6.5.1 Generic Character Set Conversion Interface</h4>
@@ -36,14 +38,14 @@ which implements one step.
 
    <p>Before the interfaces are described it is necessary to introduce a
 data type.  Just like other open&ndash;use&ndash;close interfaces the functions
-introduced here work using handles and the <span class="file">iconv.h</span> header
+introduced here work using handles and the <samp><span class="file">iconv.h</span></samp> header
 defines a special type for the handles used.
 
 <!-- iconv.h -->
 <!-- XPG2 -->
 <div class="defun">
 &mdash; Data Type: <b>iconv_t</b><var><a name="index-iconv_005ft-667"></a></var><br>
-<blockquote><p>This data type is an abstract type defined in <span class="file">iconv.h</span>.  The user
+<blockquote><p>This data type is an abstract type defined in <samp><span class="file">iconv.h</span></samp>.  The user
 must not assume anything about the definition of this type; it must be
 completely opaque.
 
@@ -91,13 +93,13 @@ the necessary files with data and code in an arbitrary number of
 directories.  How this extension must be written will be explained below
 (see <a href="glibc-iconv-Implementation.html#glibc-iconv-Implementation">glibc iconv Implementation</a>).  Here it is only important to say
 that all directories mentioned in the <code>GCONV_PATH</code> environment
-variable are considered only if they contain a file <span class="file">gconv-modules</span>. 
+variable are considered only if they contain a file <samp><span class="file">gconv-modules</span></samp>. 
 These directories need not necessarily be created by the system
 administrator.  In fact, this extension is introduced to help users
 writing and using their own, new conversions.  Of course, this does not
 work for security reasons in SUID binaries; in this case only the system
 directory is considered and this normally is
-<var>prefix</var><span class="file">/lib/gconv</span>.  The <code>GCONV_PATH</code> environment
+<samp><var>prefix</var><span class="file">/lib/gconv</span></samp>.  The <code>GCONV_PATH</code> environment
 variable is examined exactly once at the first call of the
 <code>iconv_open</code> function.  Later modifications of the variable have no
 effect.
@@ -106,7 +108,7 @@ effect.
 Portability Guide, version&nbsp;2<!-- /@w -->.  It is supported by all commercial
 Unices as it is required for the Unix branding.  However, the quality and
 completeness of the implementation varies widely.  The <code>iconv_open</code>
-function is declared in <span class="file">iconv.h</span>. 
+function is declared in <samp><span class="file">iconv.h</span></samp>. 
 </p></blockquote></div>
 
    <p>The <code>iconv</code> implementation can associate large data structure with
@@ -131,7 +133,7 @@ Defined error are:
 </dl>
 
         <p><a name="index-iconv_002eh-671"></a>The <code>iconv_close</code> function was introduced together with the rest
-of the <code>iconv</code> functions in XPG2 and is declared in <span class="file">iconv.h</span>. 
+of the <code>iconv</code> functions in XPG2 and is declared in <samp><span class="file">iconv.h</span></samp>. 
 </p></blockquote></div>
 
    <p>The standard defines only one actual conversion function.  This has,
@@ -220,7 +222,7 @@ of the input buffer.
 </dl>
 
         <p><a name="index-iconv_002eh-674"></a>The <code>iconv</code> function was introduced in the XPG2 standard and is
-declared in the <span class="file">iconv.h</span> header. 
+declared in the <samp><span class="file">iconv.h</span></samp> header. 
 </p></blockquote></div>
 
    <p>The definition of the <code>iconv</code> function is quite good overall.  It

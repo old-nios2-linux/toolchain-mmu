@@ -3,7 +3,7 @@
 <title>The catgets Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Message-catalogs-a-la-X_002fOpen.html#Message-catalogs-a-la-X_002fOpen" title="Message catalogs a la X/Open">
 <link rel="next" href="The-message-catalog-files.html#The-message-catalog-files" title="The message catalog files">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="The-catgets-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="The-message-catalog-files.html#The-message-catalog-files">The message catalog files</a>,
+<a name="The-catgets-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="The-message-catalog-files.html#The-message-catalog-files">The message catalog files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Message-catalogs-a-la-X_002fOpen.html#Message-catalogs-a-la-X_002fOpen">Message catalogs a la X/Open</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">8.1.1 The <code>catgets</code> function family</h4>
@@ -122,7 +124,7 @@ to all other platforms providing the <code>catgets</code> interface.
 environment are examined (see <a href="Standard-Environment.html#Standard-Environment">Standard Environment</a>).  Which
 variables are examined is decided by the <var>flag</var> parameter of
 <code>catopen</code>.  If the value is <code>NL_CAT_LOCALE</code> (which is defined
-in <span class="file">nl_types.h</span>) then the <code>catopen</code> function use the name of
+in <samp><span class="file">nl_types.h</span></samp>) then the <code>catopen</code> function use the name of
 the locale currently selected for the <code>LC_MESSAGES</code> category.
 
         <p>If <var>flag</var> is zero the <code>LANG</code> environment variable is examined. 

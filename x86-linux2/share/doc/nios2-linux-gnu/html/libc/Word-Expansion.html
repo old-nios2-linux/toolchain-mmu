@@ -3,7 +3,7 @@
 <title>Word Expansion - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Pattern-Matching.html#Pattern-Matching" title="Pattern Matching">
 <link rel="prev" href="Regular-Expressions.html#Regular-Expressions" title="Regular Expressions">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Word-Expansion"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Regular-Expressions.html#Regular-Expressions">Regular Expressions</a>,
+<a name="Word-Expansion"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Regular-Expressions.html#Regular-Expressions">Regular Expressions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Pattern-Matching.html#Pattern-Matching">Pattern Matching</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">10.4 Shell-Style Word Expansion</h3>
@@ -35,16 +37,16 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Pattern-Matching.html#Pattern-Matching"
 <dfn>words</dfn> and substituting for variables, commands, and wildcards
 just as the shell does.
 
-   <p>For example, when you write <span class="samp">ls -l foo.c</span>, this string is split
-into three separate words&mdash;<span class="samp">ls</span>, <span class="samp">-l</span> and <span class="samp">foo.c</span>. 
+   <p>For example, when you write `<samp><span class="samp">ls -l foo.c</span></samp>', this string is split
+into three separate words&mdash;`<samp><span class="samp">ls</span></samp>', `<samp><span class="samp">-l</span></samp>' and `<samp><span class="samp">foo.c</span></samp>'. 
 This is the most basic function of word expansion.
 
-   <p>When you write <span class="samp">ls *.c</span>, this can become many words, because
-the word <span class="samp">*.c</span> can be replaced with any number of file names. 
+   <p>When you write `<samp><span class="samp">ls *.c</span></samp>', this can become many words, because
+the word `<samp><span class="samp">*.c</span></samp>' can be replaced with any number of file names. 
 This is called <dfn>wildcard expansion</dfn>, and it is also a part of
 word expansion.
 
-   <p>When you use <span class="samp">echo $PATH</span> to print your path, you are taking
+   <p>When you use `<samp><span class="samp">echo $PATH</span></samp>' to print your path, you are taking
 advantage of <dfn>variable substitution</dfn>, which is also part of word
 expansion.
 

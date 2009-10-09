@@ -3,7 +3,7 @@
 <title>Threads - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Running.html#Running" title="Running">
 <link rel="prev" href="Kill-Process.html#Kill-Process" title="Kill Process">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Threads"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Processes.html#Processes">Processes</a>,
+<a name="Threads"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Processes.html#Processes">Processes</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Kill-Process.html#Kill-Process">Kill Process</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Running.html#Running">Running</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">4.9 Debugging Programs with Multiple Threads</h3>
@@ -45,9 +47,9 @@ programs:
 
      <ul>
 <li>automatic notification of new threads
-<li><span class="samp">thread </span><var>threadno</var>, a command to switch among threads
-<li><span class="samp">info threads</span>, a command to inquire about existing threads
-<li><span class="samp">thread apply [</span><var>threadno</var><span class="samp">] [</span><var>all</var><span class="samp">] </span><var>args</var>,
+<li>`<samp><span class="samp">thread </span><var>threadno</var></samp>', a command to switch among threads
+<li>`<samp><span class="samp">info threads</span></samp>', a command to inquire about existing threads
+<li>`<samp><span class="samp">thread apply [</span><var>threadno</var><span class="samp">] [</span><var>all</var><span class="samp">] </span><var>args</var></samp>',
 a command to apply a command to a list of threads
 <li>thread-specific breakpoints
 </ul>
@@ -57,7 +59,7 @@ a command to apply a command to a list of threads
 <span class="sc">gdb</span> configuration where the operating system supports threads. 
 If your <span class="sc">gdb</span> does not support threads, these commands have no
 effect.  For example, a system without thread support shows no output
-from <span class="samp">info threads</span>, and always rejects the <code>thread</code> command,
+from `<samp><span class="samp">info threads</span></samp>', and always rejects the <code>thread</code> command,
 like this:
 
      <pre class="smallexample">          (gdb) info threads
@@ -75,19 +77,19 @@ control, one thread in particular is always the focus of debugging.
 This thread is called the <dfn>current thread</dfn>.  Debugging commands show
 program information from the perspective of the current thread.
 
-   <p><a name="index-_0040code_007bNew_007d-_0040var_007bsystag_007d-message-136"></a><a name="index-thread-identifier-_0028system_0029-137"></a><!-- FIXME-implementors!! It would be more helpful if the [New...] message -->
+   <p><a name="index-g_t_0040code_007bNew_007d-_0040var_007bsystag_007d-message-136"></a><a name="index-thread-identifier-_0028system_0029-137"></a><!-- FIXME-implementors!! It would be more helpful if the [New...] message -->
 <!-- included GDB's numeric thread handle, so you could just go to that -->
 <!-- thread without first checking `info threads'. -->
 Whenever <span class="sc">gdb</span> detects a new thread in your program, it displays
 the target system's identification for the thread with a message in the
-form <span class="samp">[New </span><var>systag</var><span class="samp">]</span>.  <var>systag</var> is a thread identifier
+form `<samp><span class="samp">[New </span><var>systag</var><span class="samp">]</span></samp>'.  <var>systag</var> is a thread identifier
 whose form varies depending on the particular system.  For example, on
 <span class="sc">gnu</span>/Linux, you might see
 
 <pre class="smallexample">     [New Thread 46912507313328 (LWP 25582)]
 </pre>
    <p class="noindent">when <span class="sc">gdb</span> notices a new thread.  In contrast, on an SGI system,
-the <var>systag</var> is simply something like <span class="samp">process 368</span>, with no
+the <var>systag</var> is simply something like `<samp><span class="samp">process 368</span></samp>', with no
 further qualifier.
 
 <!-- FIXME!! (1) Does the [New...] message appear even for the very first -->
@@ -113,7 +115,7 @@ program.  <span class="sc">gdb</span> displays for each thread (in this order):
           <li>the current stack frame summary for that thread
           </ol>
 
-     <p class="noindent">An asterisk <span class="samp">*</span> to the left of the <span class="sc">gdb</span> thread number
+     <p class="noindent">An asterisk `<samp><span class="samp">*</span></samp>' to the left of the <span class="sc">gdb</span> thread number
 indicates the current thread.
 
      <p>For example,
@@ -132,12 +134,12 @@ indicates the current thread.
 number&mdash;a small integer assigned in thread-creation order&mdash;with each
 thread in your program.
 
-   <p><a name="index-_0040code_007bNew_007d-_0040var_007bsystag_007d-message_002c-on-HP_002dUX-143"></a><a name="index-thread-identifier-_0028system_0029_002c-on-HP_002dUX-144"></a><!-- FIXME-implementors!! It would be more helpful if the [New...] message -->
+   <p><a name="index-g_t_0040code_007bNew_007d-_0040var_007bsystag_007d-message_002c-on-HP_002dUX-143"></a><a name="index-thread-identifier-_0028system_0029_002c-on-HP_002dUX-144"></a><!-- FIXME-implementors!! It would be more helpful if the [New...] message -->
 <!-- included GDB's numeric thread handle, so you could just go to that -->
 <!-- thread without first checking `info threads'. -->
 Whenever <span class="sc">gdb</span> detects a new thread in your program, it displays
 both <span class="sc">gdb</span>'s thread number and the target system's identification for the thread with a message in the
-form <span class="samp">[New </span><var>systag</var><span class="samp">]</span>.  <var>systag</var> is a thread identifier
+form `<samp><span class="samp">[New </span><var>systag</var><span class="samp">]</span></samp>'.  <var>systag</var> is a thread identifier
 whose form varies depending on the particular system.  For example, on
 HP-UX, you see
 
@@ -158,7 +160,7 @@ program.  <span class="sc">gdb</span> displays for each thread (in this order):
           <li>the current stack frame summary for that thread
           </ol>
 
-     <p class="noindent">An asterisk <span class="samp">*</span> to the left of the <span class="sc">gdb</span> thread number
+     <p class="noindent">An asterisk `<samp><span class="samp">*</span></samp>' to the left of the <span class="sc">gdb</span> thread number
 indicates the current thread.
 
      <p>For example,
@@ -184,7 +186,7 @@ Solaris-specific command:
 <a name="index-thread-_0040var_007bthreadno_007d-148"></a>
 <dl><dt><code>thread </code><var>threadno</var><dd>Make thread number <var>threadno</var> the current thread.  The command
 argument <var>threadno</var> is the internal <span class="sc">gdb</span> thread number, as
-shown in the first field of the <span class="samp">info threads</span> display. 
+shown in the first field of the `<samp><span class="samp">info threads</span></samp>' display. 
 <span class="sc">gdb</span> responds by displaying the system identifier of the thread
 you selected, and its current stack frame summary:
 
@@ -193,15 +195,15 @@ you selected, and its current stack frame summary:
           [Switching to process 35 thread 23]
           0x34e5 in sigpause ()
      </pre>
-     <p class="noindent">As with the <span class="samp">[New ...]</span> message, the form of the text after
-<span class="samp">Switching to</span> depends on your system's conventions for identifying
+     <p class="noindent">As with the `<samp><span class="samp">[New ...]</span></samp>' message, the form of the text after
+`<samp><span class="samp">Switching to</span></samp>' depends on your system's conventions for identifying
 threads.
 
      <p><a name="index-thread-apply-149"></a><a name="index-apply-command-to-several-threads-150"></a><br><dt><code>thread apply [</code><var>threadno</var><code>] [</code><var>all</var><code>] </code><var>command</var><dd>The <code>thread apply</code> command allows you to apply the named
 <var>command</var> to one or more threads.  Specify the numbers of the
 threads that you want affected with the command argument
 <var>threadno</var>.  It can be a single thread number, one of the numbers
-shown in the first field of the <span class="samp">info threads</span> display; or it
+shown in the first field of the `<samp><span class="samp">info threads</span></samp>' display; or it
 could be a range of thread numbers, as in <code>2-4</code>.  To apply a
 command to all threads, type <kbd>thread apply all </kbd><var>command</var>. 
 </dl>
@@ -209,7 +211,7 @@ command to all threads, type <kbd>thread apply all </kbd><var>command</var>.
    <p><a name="index-automatic-thread-selection-151"></a><a name="index-switching-threads-automatically-152"></a><a name="index-threads_002c-automatic-switching-153"></a>Whenever <span class="sc">gdb</span> stops your program, due to a breakpoint or a
 signal, it automatically selects the thread where that breakpoint or
 signal happened.  <span class="sc">gdb</span> alerts you to the context switch with a
-message of the form <span class="samp">[Switching to </span><var>systag</var><span class="samp">]</span> to identify the
+message of the form `<samp><span class="samp">[Switching to </span><var>systag</var><span class="samp">]</span></samp>' to identify the
 thread.
 
    <p>See <a href="Thread-Stops.html#Thread-Stops">Stopping and Starting Multi-thread Programs</a>, for

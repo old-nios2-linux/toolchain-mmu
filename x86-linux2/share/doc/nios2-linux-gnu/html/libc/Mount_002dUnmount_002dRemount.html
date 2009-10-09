@@ -3,7 +3,7 @@
 <title>Mount-Unmount-Remount - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Filesystem-Handling.html#Filesystem-Handling" title="Filesystem Handling">
 <link rel="prev" href="Mount-Information.html#Mount-Information" title="Mount Information">
@@ -16,16 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Mount_002dUnmount_002dRemount"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Mount-Information.html#Mount-Information">Mount Information</a>,
+<a name="Mount-Unmount-Remount"></a>
+<a name="Mount_002dUnmount_002dRemount"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Mount-Information.html#Mount-Information">Mount Information</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Filesystem-Handling.html#Filesystem-Handling">Filesystem Handling</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">30.3.2 Mount, Unmount, Remount</h4>
@@ -35,10 +38,10 @@ remounting filesystems.
 
    <p>Only the superuser can mount, unmount, or remount a filesystem.
 
-   <p>These functions do not access the <span class="file">fstab</span> and <span class="file">mtab</span> files.  You
+   <p>These functions do not access the <samp><span class="file">fstab</span></samp> and <samp><span class="file">mtab</span></samp> files.  You
 should maintain and use these separately.  See <a href="Mount-Information.html#Mount-Information">Mount Information</a>.
 
-   <p>The symbols in this section are declared in <span class="file">sys/mount.h</span>.
+   <p>The symbols in this section are declared in <samp><span class="file">sys/mount.h</span></samp>.
 
 <!-- sys/mount.h -->
 <!-- SVID, BSD -->
@@ -71,7 +74,7 @@ unmounting and mounting again.
 and can be thought of as the name of a filesystem driver.  The
 acceptable values are system dependent.  On a system with a Linux kernel
 and the <code>proc</code> filesystem, the list of possible values is in the
-file <span class="file">filesystems</span> in the <code>proc</code> filesystem (e.g. type
+file <samp><span class="file">filesystems</span></samp> in the <code>proc</code> filesystem (e.g. type
 <kbd>cat /proc/filesystems</kbd> to see the list).  With a Linux kernel, the
 types of filesystems that <code>mount</code> can mount, and their type names,
 depends on what filesystem drivers are configured into the kernel or
@@ -160,7 +163,7 @@ entirely by the filesystem driver in the kernel.
           mount("/dev/hda2", "/mnt", MS_MGC_VAL | MS_REMOUNT, "");
      </pre>
         <p>Appropriate arguments for <code>mount</code> are conventionally recorded in
-the <span class="file">fstab</span> table.  See <a href="Mount-Information.html#Mount-Information">Mount Information</a>.
+the <samp><span class="file">fstab</span></samp> table.  See <a href="Mount-Information.html#Mount-Information">Mount Information</a>.
 
         <p>The return value is zero if the mount or remount is successful.  Otherwise,
 it is <code>-1</code> and <code>errno</code> is set appropriately.  The values of

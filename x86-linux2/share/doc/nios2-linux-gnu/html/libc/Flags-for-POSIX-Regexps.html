@@ -3,7 +3,7 @@
 <title>Flags for POSIX Regexps - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Regular-Expressions.html#Regular-Expressions" title="Regular Expressions">
 <link rel="prev" href="POSIX-Regexp-Compilation.html#POSIX-Regexp-Compilation" title="POSIX Regexp Compilation">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Flags-for-POSIX-Regexps"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Matching-POSIX-Regexps.html#Matching-POSIX-Regexps">Matching POSIX Regexps</a>,
+<a name="Flags-for-POSIX-Regexps"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Matching-POSIX-Regexps.html#Matching-POSIX-Regexps">Matching POSIX Regexps</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="POSIX-Regexp-Compilation.html#POSIX-Regexp-Compilation">POSIX Regexp Compilation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Regular-Expressions.html#Regular-Expressions">Regular Expressions</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">10.3.2 Flags for POSIX Regular Expressions</h4>
@@ -52,9 +54,9 @@ basic regular expression.
      <!-- regex.h -->
 <!-- POSIX.2 -->
 <br><dt><code>REG_NEWLINE</code><dd>Treat a newline in <var>string</var> as dividing <var>string</var> into multiple
-lines, so that <span class="samp">$</span> can match before the newline and <span class="samp">^</span> can
-match after.  Also, don't permit <span class="samp">.</span> to match a newline, and don't
-permit <span class="samp">[^...]</span> to match a newline.
+lines, so that `<samp><span class="samp">$</span></samp>' can match before the newline and `<samp><span class="samp">^</span></samp>' can
+match after.  Also, don't permit `<samp><span class="samp">.</span></samp>' to match a newline, and don't
+permit `<samp><span class="samp">[^...]</span></samp>' to match a newline.
 
      <p>Otherwise, newline acts like any other ordinary character. 
 </dl>

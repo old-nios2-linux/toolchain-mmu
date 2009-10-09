@@ -3,7 +3,7 @@
 <title>System Calls - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Program-Basics.html#Program-Basics" title="Program Basics">
 <link rel="prev" href="Environment-Variables.html#Environment-Variables" title="Environment Variables">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="System-Calls"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Program-Termination.html#Program-Termination">Program Termination</a>,
+<a name="System-Calls"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Program-Termination.html#Program-Termination">Program Termination</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Environment-Variables.html#Environment-Variables">Environment Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Program-Basics.html#Program-Basics">Program Basics</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">25.5 System Calls</h3>
@@ -64,7 +66,7 @@ we won't describe it here either because anyone who is coding
 library source code as a specification of the interface between them
 anyway.
 
-   <p><code>syscall</code> is declared in <span class="file">unistd.h</span>.
+   <p><code>syscall</code> is declared in <samp><span class="file">unistd.h</span></samp>.
 
 <!-- unistd.h -->
 <!-- ??? -->
@@ -75,7 +77,7 @@ anyway.
 
         <p><a name="index-system-call-number-3128"></a><var>sysno</var> is the system call number.  Each kind of system call is
 identified by a number.  Macros for all the possible system call numbers
-are defined in <span class="file">sys/syscall.h</span>
+are defined in <samp><span class="file">sys/syscall.h</span></samp>
 
         <p>The remaining arguments are the arguments for the system call, in
 order, and their meanings depend on the kind of system call.  Each kind

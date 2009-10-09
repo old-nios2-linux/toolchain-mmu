@@ -3,7 +3,7 @@
 <title>Streams and I18N - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="I_002fO-on-Streams.html#I_002fO-on-Streams" title="I/O on Streams">
 <link rel="prev" href="Streams-and-Threads.html#Streams-and-Threads" title="Streams and Threads">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Streams-and-I18N"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Simple-Output.html#Simple-Output">Simple Output</a>,
+<a name="Streams-and-I18N"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Simple-Output.html#Simple-Output">Simple Output</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Streams-and-Threads.html#Streams-and-Threads">Streams and Threads</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="I_002fO-on-Streams.html#I_002fO-on-Streams">I/O on Streams</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">12.6 Streams in Internationalized Applications</h3>
@@ -106,7 +108,7 @@ value if the stream is narrow, not at all, or wide oriented
 respectively.
 
         <p>This function was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w --> and is
-declared in <span class="file">wchar.h</span>. 
+declared in <samp><span class="file">wchar.h</span></samp>. 
 </p></blockquote></div>
 
    <p>It is generally a good idea to orient a stream as early as possible. 
@@ -147,7 +149,7 @@ either.  What happens instead is that the bytes read from or written to
 the underlying media are first converted into the internal encoding
 chosen by the implementation for <code>wchar_t</code>.  The external encoding
 is determined by the <code>LC_CTYPE</code> category of the current locale or
-by the <span class="samp">ccs</span> part of the mode specification given to <code>fopen</code>,
+by the `<samp><span class="samp">ccs</span></samp>' part of the mode specification given to <code>fopen</code>,
 <code>fopen64</code>, <code>freopen</code>, or <code>freopen64</code>.  How and when the
 conversion happens is unspecified and it happens invisible to the user.
 

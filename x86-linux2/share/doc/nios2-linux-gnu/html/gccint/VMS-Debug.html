@@ -3,7 +3,7 @@
 <title>VMS Debug - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Debugging-Info.html#Debugging-Info" title="Debugging Info">
 <link rel="prev" href="SDB-and-DWARF.html#SDB-and-DWARF" title="SDB and DWARF">
@@ -37,16 +37,18 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="VMS-Debug"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="SDB-and-DWARF.html#SDB-and-DWARF">SDB and DWARF</a>,
+<a name="VMS-Debug"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="SDB-and-DWARF.html#SDB-and-DWARF">SDB and DWARF</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Debugging-Info.html#Debugging-Info">Debugging Info</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">14.20.6 Macros for VMS Debug Format</h4>
@@ -57,9 +59,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Debugging-Info.html#Debugging-Info">Deb
 <div class="defun">
 &mdash; Macro: <b>VMS_DEBUGGING_INFO</b><var><a name="index-VMS_005fDEBUGGING_005fINFO-2478"></a></var><br>
 <blockquote><p>Define this macro if GCC should produce debugging output for VMS
-in response to the <span class="option">-g</span> option.  The default behavior for VMS
+in response to the <samp><span class="option">-g</span></samp> option.  The default behavior for VMS
 is to generate minimal debug info for a traceback in the absence of
-<span class="option">-g</span> unless explicitly overridden with <span class="option">-g0</span>.  This
+<samp><span class="option">-g</span></samp> unless explicitly overridden with <samp><span class="option">-g0</span></samp>.  This
 behavior is controlled by <code>OPTIMIZATION_OPTIONS</code> and
 <code>OVERRIDE_OPTIONS</code>. 
 </p></blockquote></div>

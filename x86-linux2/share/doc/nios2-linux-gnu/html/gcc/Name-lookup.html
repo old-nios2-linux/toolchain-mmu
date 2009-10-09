@@ -3,7 +3,7 @@
 <title>Name lookup - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002b_002b-Misunderstandings.html#C_002b_002b-Misunderstandings" title="C++ Misunderstandings">
 <link rel="prev" href="Static-Definitions.html#Static-Definitions" title="Static Definitions">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Name-lookup"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Temporaries.html#Temporaries">Temporaries</a>,
+<a name="Name-lookup"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Temporaries.html#Temporaries">Temporaries</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Static-Definitions.html#Static-Definitions">Static Definitions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002b_002b-Misunderstandings.html#C_002b_002b-Misunderstandings">C++ Misunderstandings</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">10.8.2 Name lookup, templates, and accessing members of base classes</h4>
@@ -145,11 +147,11 @@ compiler will consequently produce the following error message:
           allowing the use of an undeclared name is deprecated)
 </pre>
  <p>To make the code valid either use <code>this-&gt;f()</code>, or
-<code>Base&lt;T&gt;::f()</code>.  Using the <span class="option">-fpermissive</span> flag will also let
+<code>Base&lt;T&gt;::f()</code>.  Using the <samp><span class="option">-fpermissive</span></samp> flag will also let
 the compiler accept the code, by marking all function calls for which no
 declaration is visible at the time of definition of the template for
 later lookup at instantiation time, as if it were a dependent call. 
-We do not recommend using <span class="option">-fpermissive</span> to work around invalid
+We do not recommend using <samp><span class="option">-fpermissive</span></samp> to work around invalid
 code, and it will also only catch cases where functions in base classes
 are called, not where variables in base classes are used (as in the
 example above).

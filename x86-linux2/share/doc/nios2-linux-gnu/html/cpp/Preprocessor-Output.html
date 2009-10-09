@@ -3,7 +3,7 @@
 <title>Preprocessor Output - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Other-Directives.html#Other-Directives" title="Other Directives">
 <link rel="next" href="Traditional-Mode.html#Traditional-Mode" title="Traditional Mode">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,17 +40,19 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Preprocessor-Output"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-Mode.html#Traditional-Mode">Traditional Mode</a>,
+<a name="Preprocessor-Output"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Traditional-Mode.html#Traditional-Mode">Traditional Mode</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Other-Directives.html#Other-Directives">Other Directives</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">9 Preprocessor Output</h2>
@@ -89,34 +91,34 @@ that the following line originated in file <var>filename</var> at line
 <var>linenum</var>.  <var>filename</var> will never contain any non-printing
 characters; they are replaced with octal escape sequences.
 
-   <p>After the file name comes zero or more flags, which are <span class="samp">1</span>,
-<span class="samp">2</span>, <span class="samp">3</span>, or <span class="samp">4</span>.  If there are multiple flags, spaces
+   <p>After the file name comes zero or more flags, which are `<samp><span class="samp">1</span></samp>',
+`<samp><span class="samp">2</span></samp>', `<samp><span class="samp">3</span></samp>', or `<samp><span class="samp">4</span></samp>'.  If there are multiple flags, spaces
 separate them.  Here is what the flags mean:
 
      <dl>
-<dt><span class="samp">1</span><dd>This indicates the start of a new file. 
-<br><dt><span class="samp">2</span><dd>This indicates returning to a file (after having included another file). 
-<br><dt><span class="samp">3</span><dd>This indicates that the following text comes from a system header file,
+<dt>`<samp><span class="samp">1</span></samp>'<dd>This indicates the start of a new file. 
+<br><dt>`<samp><span class="samp">2</span></samp>'<dd>This indicates returning to a file (after having included another file). 
+<br><dt>`<samp><span class="samp">3</span></samp>'<dd>This indicates that the following text comes from a system header file,
 so certain warnings should be suppressed. 
-<br><dt><span class="samp">4</span><dd>This indicates that the following text should be treated as being
+<br><dt>`<samp><span class="samp">4</span></samp>'<dd>This indicates that the following text should be treated as being
 wrapped in an implicit <code>extern "C"</code> block. 
 <!-- maybe cross reference NO_IMPLICIT_EXTERN_C -->
 </dl>
 
    <p>As an extension, the preprocessor accepts linemarkers in non-assembler
-input files.  They are treated like the corresponding <span class="samp">#line</span>
+input files.  They are treated like the corresponding `<samp><span class="samp">#line</span></samp>'
 directive, (see <a href="Line-Control.html#Line-Control">Line Control</a>), except that trailing flags are
 permitted, and are interpreted with the meanings described above.  If
 multiple flags are given, they must be in ascending order.
 
    <p>Some directives may be duplicated in the output of the preprocessor. 
-These are <span class="samp">#ident</span> (always), <span class="samp">#pragma</span> (only if the
-preprocessor does not handle the pragma itself), and <span class="samp">#define</span> and
-<span class="samp">#undef</span> (with certain debugging options).  If this happens, the
-<span class="samp">#</span> of the directive will always be in the first column, and there
-will be no space between the <span class="samp">#</span> and the directive name.  If macro
+These are `<samp><span class="samp">#ident</span></samp>' (always), `<samp><span class="samp">#pragma</span></samp>' (only if the
+preprocessor does not handle the pragma itself), and `<samp><span class="samp">#define</span></samp>' and
+`<samp><span class="samp">#undef</span></samp>' (with certain debugging options).  If this happens, the
+`<samp><span class="samp">#</span></samp>' of the directive will always be in the first column, and there
+will be no space between the `<samp><span class="samp">#</span></samp>' and the directive name.  If macro
 expansion happens to generate tokens which might be mistaken for a
-duplicated directive, a space will be inserted between the <span class="samp">#</span> and
+duplicated directive, a space will be inserted between the `<samp><span class="samp">#</span></samp>' and
 the directive name.
 
    </body></html>

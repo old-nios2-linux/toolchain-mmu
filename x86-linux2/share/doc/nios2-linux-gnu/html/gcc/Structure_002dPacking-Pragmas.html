@@ -3,7 +3,7 @@
 <title>Structure-Packing Pragmas - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Pragmas.html#Pragmas" title="Pragmas">
 <link rel="prev" href="Symbol_002dRenaming-Pragmas.html#Symbol_002dRenaming-Pragmas" title="Symbol-Renaming Pragmas">
@@ -38,17 +38,20 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Structure_002dPacking-Pragmas"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Weak-Pragmas.html#Weak-Pragmas">Weak Pragmas</a>,
+<a name="Structure-Packing-Pragmas"></a>
+<a name="Structure_002dPacking-Pragmas"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Weak-Pragmas.html#Weak-Pragmas">Weak Pragmas</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Symbol_002dRenaming-Pragmas.html#Symbol_002dRenaming-Pragmas">Symbol-Renaming Pragmas</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Pragmas.html#Pragmas">Pragmas</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">5.49.8 Structure-Packing Pragmas</h4>
@@ -63,7 +66,7 @@ of two and specifies the new alignment in bytes.
 <li><code>#pragma pack(</code><var>n</var><code>)</code> simply sets the new alignment. 
 <li><code>#pragma pack()</code> sets the alignment to the one that was in
 effect when compilation started (see also command line option
-<span class="option">-fpack-struct[=&lt;n&gt;]</span> see <a href="Code-Gen-Options.html#Code-Gen-Options">Code Gen Options</a>). 
+<samp><span class="option">-fpack-struct[=&lt;n&gt;]</span></samp> see <a href="Code-Gen-Options.html#Code-Gen-Options">Code Gen Options</a>). 
 <li><code>#pragma pack(push[,</code><var>n</var><code>])</code> pushes the current alignment
 setting on an internal stack and then optionally sets the new alignment. 
 <li><code>#pragma pack(pop)</code> restores the alignment setting to the one

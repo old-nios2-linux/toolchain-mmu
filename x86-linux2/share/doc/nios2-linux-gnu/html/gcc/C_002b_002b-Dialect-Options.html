@@ -3,7 +3,7 @@
 <title>C++ Dialect Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GCC.html#Invoking-GCC" title="Invoking GCC">
 <link rel="prev" href="C-Dialect-Options.html#C-Dialect-Options" title="C Dialect Options">
@@ -38,17 +38,20 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="C_002b_002b-Dialect-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Objective_002dC-and-Objective_002dC_002b_002b-Dialect-Options.html#Objective_002dC-and-Objective_002dC_002b_002b-Dialect-Options">Objective-C and Objective-C++ Dialect Options</a>,
+<a name="C++-Dialect-Options"></a>
+<a name="C_002b_002b-Dialect-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Objective_002dC-and-Objective_002dC_002b_002b-Dialect-Options.html#Objective_002dC-and-Objective_002dC_002b_002b-Dialect-Options">Objective-C and Objective-C++ Dialect Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="C-Dialect-Options.html#C-Dialect-Options">C Dialect Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-GCC.html#Invoking-GCC">Invoking GCC</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">3.5 Options Controlling C++ Dialect</h3>
@@ -60,7 +63,7 @@ might compile a file <code>firstClass.C</code> like this:
 
 <pre class="smallexample">     g++ -g -frepo -O -c firstClass.C
 </pre>
- <p class="noindent">In this example, only <span class="option">-frepo</span> is an option meant
+ <p class="noindent">In this example, only <samp><span class="option">-frepo</span></samp> is an option meant
 only for C++ programs; you can use the other options with any
 language supported by GCC.
 
@@ -83,11 +86,11 @@ around bugs in the access control code.
 before attempting to modify the storage allocated.  This check is
 normally unnecessary because the C++ standard specifies that
 <code>operator new</code> will only return <code>0</code> if it is declared
-<span class="samp">throw()</span>, in which case the compiler will always check the
+`<samp><span class="samp">throw()</span></samp>', in which case the compiler will always check the
 return value even without this option.  In all other cases, when
 <code>operator new</code> has a non-empty exception specification, memory
 exhaustion is signalled by throwing <code>std::bad_alloc</code>.  See also
-<span class="samp">new (nothrow)</span>.
+`<samp><span class="samp">new (nothrow)</span></samp>'.
 
      <br><dt><code>-fconserve-space</code><dd><a name="index-fconserve_002dspace-127"></a>Put uninitialized or runtime-initialized global variables into the
 common segment, as C does.  This saves space in the executable at the
@@ -113,7 +116,7 @@ release of G++.
 
      <br><dt><code>-fno-const-strings</code><dd><a name="index-fno_002dconst_002dstrings-129"></a>Give string constants type <code>char *</code> instead of type <code>const
 char *</code>.  By default, G++ uses type <code>const char *</code> as required by
-the standard.  Even if you use <span class="option">-fno-const-strings</span>, you cannot
+the standard.  Even if you use <samp><span class="option">-fno-const-strings</span></samp>, you cannot
 actually modify the value of a string constant.
 
      <p>This option might be removed in a future release of G++.  For maximum
@@ -128,15 +131,15 @@ call the copy constructor in all cases.
      <br><dt><code>-fno-enforce-eh-specs</code><dd><a name="index-fno_002denforce_002deh_002dspecs-131"></a>Don't generate code to check for violation of exception specifications
 at runtime.  This option violates the C++ standard, but may be useful
 for reducing code size in production builds, much like defining
-<span class="samp">NDEBUG</span>.  This does not give user code permission to throw
+`<samp><span class="samp">NDEBUG</span></samp>'.  This does not give user code permission to throw
 exceptions in violation of the exception specifications; the compiler
 will still optimize based on the specifications, so throwing an
 unexpected exception will result in undefined behavior.
 
-     <br><dt><code>-ffor-scope</code><dt><code>-fno-for-scope</code><dd><a name="index-ffor_002dscope-132"></a><a name="index-fno_002dfor_002dscope-133"></a>If <span class="option">-ffor-scope</span> is specified, the scope of variables declared in
-a <i>for-init-statement</i> is limited to the <span class="samp">for</span> loop itself,
+     <br><dt><code>-ffor-scope</code><dt><code>-fno-for-scope</code><dd><a name="index-ffor_002dscope-132"></a><a name="index-fno_002dfor_002dscope-133"></a>If <samp><span class="option">-ffor-scope</span></samp> is specified, the scope of variables declared in
+a <i>for-init-statement</i> is limited to the `<samp><span class="samp">for</span></samp>' loop itself,
 as specified by the C++ standard. 
-If <span class="option">-fno-for-scope</span> is specified, the scope of variables declared in
+If <samp><span class="option">-fno-for-scope</span></samp> is specified, the scope of variables declared in
 a <i>for-init-statement</i> extends to the end of the enclosing scope,
 as was the case in old versions of G++, and other (traditional)
 implementations of C++.
@@ -147,7 +150,7 @@ otherwise be invalid, or have different behavior.
 
      <br><dt><code>-fno-gnu-keywords</code><dd><a name="index-fno_002dgnu_002dkeywords-134"></a>Do not recognize <code>typeof</code> as a keyword, so that code can use this
 word as an identifier.  You can use the keyword <code>__typeof__</code> instead. 
-<span class="option">-ansi</span> implies <span class="option">-fno-gnu-keywords</span>.
+<samp><span class="option">-ansi</span></samp> implies <samp><span class="option">-fno-gnu-keywords</span></samp>.
 
      <br><dt><code>-fno-implicit-templates</code><dd><a name="index-fno_002dimplicit_002dtemplates-135"></a>Never emit code for non-inline templates which are instantiated
 implicitly (i.e. by use); only emit code for explicit instantiations. 
@@ -158,7 +161,7 @@ The default is to handle inlines differently so that compiles with and
 without optimization will need the same set of explicit instantiations.
 
      <br><dt><code>-fno-implement-inlines</code><dd><a name="index-fno_002dimplement_002dinlines-137"></a>To save space, do not emit out-of-line copies of inline functions
-controlled by <span class="samp">#pragma implementation</span>.  This will cause linker
+controlled by `<samp><span class="samp">#pragma implementation</span></samp>'.  This will cause linker
 errors if these functions are not inlined everywhere they are called.
 
      <br><dt><code>-fms-extensions</code><dd><a name="index-fms_002dextensions-138"></a>Disable pedantic warnings about constructs used in MFC, such as implicit
@@ -177,15 +180,15 @@ issue.  Currently, the only such diagnostic issued by G++ is the one for
 a name having multiple meanings within a class.
 
      <br><dt><code>-fpermissive</code><dd><a name="index-fpermissive-142"></a>Downgrade some diagnostics about nonconformant code from errors to
-warnings.  Thus, using <span class="option">-fpermissive</span> will allow some
+warnings.  Thus, using <samp><span class="option">-fpermissive</span></samp> will allow some
 nonconforming code to compile.
 
      <br><dt><code>-frepo</code><dd><a name="index-frepo-143"></a>Enable automatic template instantiation at link time.  This option also
-implies <span class="option">-fno-implicit-templates</span>.  See <a href="Template-Instantiation.html#Template-Instantiation">Template Instantiation</a>, for more information.
+implies <samp><span class="option">-fno-implicit-templates</span></samp>.  See <a href="Template-Instantiation.html#Template-Instantiation">Template Instantiation</a>, for more information.
 
      <br><dt><code>-fno-rtti</code><dd><a name="index-fno_002drtti-144"></a>Disable generation of information about every class with virtual
 functions for use by the C++ runtime type identification features
-(<span class="samp">dynamic_cast</span> and <span class="samp">typeid</span>).  If you don't use those parts
+(`<samp><span class="samp">dynamic_cast</span></samp>' and `<samp><span class="samp">typeid</span></samp>').  If you don't use those parts
 of the language, you can save some space by using this flag.  Note that
 exception handling uses the same information, but it will generate it as
 needed.
@@ -219,7 +222,7 @@ it can cause bloating through duplication of code within each DSO where
 it is used, often the wastage is less than the considerable space occupied
 by a long symbol name in the export table which is typical when using
 templates and namespaces.  For even more savings, combine with the
-<span class="option">-fvisibility=hidden</span> switch.
+<samp><span class="option">-fvisibility=hidden</span></samp> switch.
 
      <br><dt><code>-fno-weak</code><dd><a name="index-fno_002dweak-150"></a>Do not use weak symbol support, even if it is provided by the linker. 
 By default, G++ will use weak symbols if they are available.  This
@@ -236,7 +239,7 @@ is used when building the C++ library.)
 have meanings only for C++ programs:
 
      <dl>
-<dt><code>-fno-default-inline</code><dd><a name="index-fno_002ddefault_002dinline-152"></a>Do not assume <span class="samp">inline</span> for functions defined inside a class scope. 
+<dt><code>-fno-default-inline</code><dd><a name="index-fno_002ddefault_002dinline-152"></a>Do not assume `<samp><span class="samp">inline</span></samp>' for functions defined inside a class scope. 
 See <a href="Optimize-Options.html#Optimize-Options">Options That Control Optimization</a>.  Note that these
 functions will have linkage like inline functions; they just won't be
 inlined by default.
@@ -323,7 +326,7 @@ public static member functions.
 
      <br><dt><code>-Wnon-virtual-dtor </code><span class="roman">(C++ only)</span><dd><a name="index-Wnon_002dvirtual_002ddtor-155"></a>Warn when a class appears to be polymorphic, thereby requiring a virtual
 destructor, yet it declares a non-virtual one. 
-This warning is enabled by <span class="option">-Wall</span>.
+This warning is enabled by <samp><span class="option">-Wall</span></samp>.
 
      <br><dt><code>-Wreorder </code><span class="roman">(C++ only)</span><dd><a name="index-Wreorder-156"></a><a name="index-reordering_002c-warning-157"></a><a name="index-warning-for-reordering-of-member-initializers-158"></a>Warn when the order of member initializers given in the code does not
 match the order in which they must be executed.  For instance:
@@ -334,12 +337,12 @@ match the order in which they must be executed.  For instance:
             A(): j (0), i (1) { }
           };
      </pre>
-     <p>The compiler will rearrange the member initializers for <span class="samp">i</span>
-and <span class="samp">j</span> to match the declaration order of the members, emitting
-a warning to that effect.  This warning is enabled by <span class="option">-Wall</span>. 
+     <p>The compiler will rearrange the member initializers for `<samp><span class="samp">i</span></samp>'
+and `<samp><span class="samp">j</span></samp>' to match the declaration order of the members, emitting
+a warning to that effect.  This warning is enabled by <samp><span class="option">-Wall</span></samp>. 
 </dl>
 
- <p>The following <span class="option">-W...</span> options are not affected by <span class="option">-Wall</span>.
+ <p>The following <samp><span class="option">-W...</span></samp> options are not affected by <samp><span class="option">-Wall</span></samp>.
 
      <dl>
 <dt><code>-Weffc++ </code><span class="roman">(C++ only)</span><dd><a name="index-Weffc_002b_002b-159"></a>Warn about violations of the following style guidelines from Scott Meyers'
@@ -371,7 +374,7 @@ decrement operators.
      </ul>
 
      <p>When selecting this option, be aware that the standard library
-headers do not obey all of these guidelines; use <span class="samp">grep -v</span>
+headers do not obey all of these guidelines; use `<samp><span class="samp">grep -v</span></samp>'
 to filter out those warnings.
 
      <br><dt><code>-Wno-deprecated </code><span class="roman">(C++ only)</span><dd><a name="index-Wno_002ddeprecated-160"></a>Do not warn about usage of deprecated features.  See <a href="Deprecated-Features.html#Deprecated-Features">Deprecated Features</a>.
@@ -385,20 +388,20 @@ not portable across different compilers.
      <br><dt><code>-Wno-non-template-friend </code><span class="roman">(C++ only)</span><dd><a name="index-Wno_002dnon_002dtemplate_002dfriend-162"></a>Disable warnings when non-templatized friend functions are declared
 within a template.  Since the advent of explicit template specification
 support in G++, if the name of the friend is an unqualified-id (i.e.,
-<span class="samp">friend foo(int)</span>), the C++ language specification demands that the
+`<samp><span class="samp">friend foo(int)</span></samp>'), the C++ language specification demands that the
 friend declare or define an ordinary, nontemplate function.  (Section
 14.5.3).  Before G++ implemented explicit specification, unqualified-ids
 could be interpreted as a particular specialization of a templatized
 function.  Because this non-conforming behavior is no longer the default
-behavior for G++, <span class="option">-Wnon-template-friend</span> allows the compiler to
+behavior for G++, <samp><span class="option">-Wnon-template-friend</span></samp> allows the compiler to
 check existing code for potential trouble spots and is on by default. 
 This new compiler behavior can be turned off with
-<span class="option">-Wno-non-template-friend</span> which keeps the conformant compiler code
+<samp><span class="option">-Wno-non-template-friend</span></samp> which keeps the conformant compiler code
 but disables the helpful warning.
 
      <br><dt><code>-Wold-style-cast </code><span class="roman">(C++ only)</span><dd><a name="index-Wold_002dstyle_002dcast-163"></a>Warn if an old-style (C-style) cast to a non-void type is used within
-a C++ program.  The new-style casts (<span class="samp">dynamic_cast</span>,
-<span class="samp">static_cast</span>, <span class="samp">reinterpret_cast</span>, and <span class="samp">const_cast</span>) are
+a C++ program.  The new-style casts (`<samp><span class="samp">dynamic_cast</span></samp>',
+`<samp><span class="samp">static_cast</span></samp>', `<samp><span class="samp">reinterpret_cast</span></samp>', and `<samp><span class="samp">const_cast</span></samp>') are
 less vulnerable to unintended effects and much easier to search for.
 
      <br><dt><code>-Woverloaded-virtual </code><span class="roman">(C++ only)</span><dd><a name="index-Woverloaded_002dvirtual-164"></a><a name="index-overloaded-virtual-fn_002c-warning-165"></a><a name="index-warning-for-overloaded-virtual-fn-166"></a>Warn when a function declaration hides virtual functions from a
@@ -439,8 +442,8 @@ unsignedness, but the standard mandates the current behavior.
             a = b;
           }
      </pre>
-     <p>In this example, G++ will synthesize a default <span class="samp">A&amp; operator =
-(const A&amp;);</span>, while cfront will use the user-defined <span class="samp">operator =</span>. 
+     <p>In this example, G++ will synthesize a default `<samp><span class="samp">A&amp; operator =
+(const A&amp;);</span></samp>', while cfront will use the user-defined `<samp><span class="samp">operator =</span></samp>'. 
 </dl>
 
  </body></html>

@@ -3,7 +3,7 @@
 <title>Limits on Resources - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Resource-Usage-And-Limitation.html#Resource-Usage-And-Limitation" title="Resource Usage And Limitation">
 <link rel="prev" href="Resource-Usage.html#Resource-Usage" title="Resource Usage">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Limits-on-Resources"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Priority.html#Priority">Priority</a>,
+<a name="Limits-on-Resources"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Priority.html#Priority">Priority</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Resource-Usage.html#Resource-Usage">Resource Usage</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Resource-Usage-And-Limitation.html#Resource-Usage-And-Limitation">Resource Usage And Limitation</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">22.2 Limiting Resource Usage</h3>
@@ -55,7 +57,7 @@ limit.
 
    <p><a name="index-sys_002fresource_002eh-2712"></a>The symbols for use with <code>getrlimit</code>, <code>setrlimit</code>,
 <code>getrlimit64</code>, and <code>setrlimit64</code> are defined in
-<span class="file">sys/resource.h</span>.
+<samp><span class="file">sys/resource.h</span></samp>.
 
 <!-- sys/resource.h -->
 <!-- BSD -->
@@ -142,7 +144,7 @@ and resource.  It has two fields:
 values.  For <code>setrlimit</code>, it specifies the new values. 
 </p></blockquote></div>
 
-   <p>For the LFS functions a similar type is defined in <span class="file">sys/resource.h</span>.
+   <p>For the LFS functions a similar type is defined in <samp><span class="file">sys/resource.h</span></samp>.
 
 <!-- sys/resource.h -->
 <!-- Unix98 -->
@@ -242,7 +244,7 @@ the limit value in <code>setrlimit</code>.
    <p>The following are historical functions to do some of what the functions
 above do.  The functions above are better choices.
 
-   <p><code>ulimit</code> and the command symbols are declared in <span class="file">ulimit.h</span>. 
+   <p><code>ulimit</code> and the command symbols are declared in <samp><span class="file">ulimit.h</span></samp>. 
 <a name="index-ulimit_002eh-2730"></a>
 <!-- ulimit.h -->
 <!-- BSD -->
@@ -284,7 +286,7 @@ the return value is zero.  When the function fails, the return value is
 
         </blockquote></div>
 
-   <p><code>vlimit</code> and its resource symbols are declared in <span class="file">sys/vlimit.h</span>. 
+   <p><code>vlimit</code> and its resource symbols are declared in <samp><span class="file">sys/vlimit.h</span></samp>. 
 <a name="index-sys_002fvlimit_002eh-2732"></a>
 <!-- sys/vlimit.h -->
 <!-- BSD -->

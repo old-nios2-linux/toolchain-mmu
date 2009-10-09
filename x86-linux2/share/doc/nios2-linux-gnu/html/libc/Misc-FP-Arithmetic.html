@@ -3,7 +3,7 @@
 <title>Misc FP Arithmetic - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Arithmetic-Functions.html#Arithmetic-Functions" title="Arithmetic Functions">
 <link rel="prev" href="FP-Comparison-Functions.html#FP-Comparison-Functions" title="FP Comparison Functions">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Misc-FP-Arithmetic"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="FP-Comparison-Functions.html#FP-Comparison-Functions">FP Comparison Functions</a>,
+<a name="Misc-FP-Arithmetic"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="FP-Comparison-Functions.html#FP-Comparison-Functions">FP Comparison Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Arithmetic-Functions.html#Arithmetic-Functions">Arithmetic Functions</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">20.8.7 Miscellaneous FP arithmetic functions</h4>
@@ -107,15 +109,15 @@ sometimes improve the precision of a calculation.
 
         <p>This function was introduced because some processors have a special
 instruction to perform multiply-add.  The C compiler cannot use it
-directly, because the expression <span class="samp">x*y + z</span> is defined to round the
+directly, because the expression `<samp><span class="samp">x*y + z</span></samp>' is defined to round the
 intermediate result.  <code>fma</code> lets you choose when you want to round
 only once.
 
         <p><a name="index-FP_005fFAST_005fFMA-2519"></a>On processors which do not implement multiply-add in hardware,
 <code>fma</code> can be very slow since it must avoid intermediate rounding. 
-<span class="file">math.h</span> defines the symbols <code>FP_FAST_FMA</code>,
+<samp><span class="file">math.h</span></samp> defines the symbols <code>FP_FAST_FMA</code>,
 <code>FP_FAST_FMAF</code>, and <code>FP_FAST_FMAL</code> when the corresponding
-version of <code>fma</code> is no slower than the expression <span class="samp">x*y + z</span>. 
+version of <code>fma</code> is no slower than the expression `<samp><span class="samp">x*y + z</span></samp>'. 
 In the GNU C library, this always means the operation is implemented in
 hardware. 
 </p></blockquote></div>

@@ -3,7 +3,7 @@
 <title>Limits for Files - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="System-Configuration.html#System-Configuration" title="System Configuration">
 <link rel="prev" href="Minimums.html#Minimums" title="Minimums">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Limits-for-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Options-for-Files.html#Options-for-Files">Options for Files</a>,
+<a name="Limits-for-Files"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Options-for-Files.html#Options-for-Files">Options for Files</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Minimums.html#Minimums">Minimums</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="System-Configuration.html#System-Configuration">System Configuration</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">31.6 Limits on File System Capacity</h3>
@@ -40,14 +42,14 @@ parameters, even different files) to have different maximum limits.  For
 example, this is very likely if you use NFS to mount some of the file
 systems from other machines.
 
-   <p><a name="index-limits_002eh-3646"></a>Each of the following macros is defined in <span class="file">limits.h</span> only if the
+   <p><a name="index-limits_002eh-3646"></a>Each of the following macros is defined in <samp><span class="file">limits.h</span></samp> only if the
 system has a fixed, uniform limit for the parameter in question.  If the
 system allows different file systems or files to have different limits,
 then the macro is undefined; use <code>pathconf</code> or <code>fpathconf</code> to
 find out the limit that applies to a particular file.  See <a href="Pathconf.html#Pathconf">Pathconf</a>.
 
    <p>Each parameter also has another macro, with a name starting with
-<span class="samp">_POSIX</span>, which gives the lowest value that the limit is allowed to
+`<samp><span class="samp">_POSIX</span></samp>', which gives the lowest value that the limit is allowed to
 have on <em>any</em> POSIX system.  See <a href="File-Minimums.html#File-Minimums">File Minimums</a>.
 
    <p><a name="index-limits_002c-link-count-of-files-3647"></a><!-- limits.h -->
@@ -110,7 +112,7 @@ interleaved in chunks of this size.  See <a href="Pipes-and-FIFOs.html#Pipes-and
 <div class="defun">
 &mdash; Macro: int <b>MAXNAMLEN</b><var><a name="index-MAXNAMLEN-3657"></a></var><br>
 <blockquote><p>This is the BSD name for <code>NAME_MAX</code>.  It is defined in
-<span class="file">dirent.h</span>. 
+<samp><span class="file">dirent.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- stdio.h -->
@@ -119,7 +121,7 @@ interleaved in chunks of this size.  See <a href="Pipes-and-FIFOs.html#Pipes-and
 &mdash; Macro: int <b>FILENAME_MAX</b><var><a name="index-FILENAME_005fMAX-3658"></a></var><br>
 <blockquote><p>The value of this macro is an integer constant expression that
 represents the maximum length of a file name string.  It is defined in
-<span class="file">stdio.h</span>.
+<samp><span class="file">stdio.h</span></samp>.
 
         <p>Unlike <code>PATH_MAX</code>, this macro is defined even if there is no actual
 limit imposed.  In such a case, its value is typically a very large

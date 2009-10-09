@@ -3,7 +3,7 @@
 <title>Output - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Sequences.html#Sequences" title="Sequences">
 <link rel="prev" href="Command-Files.html#Command-Files" title="Command Files">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Output"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Command-Files.html#Command-Files">Command Files</a>,
+<a name="Output"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Command-Files.html#Command-Files">Command Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Sequences.html#Sequences">Sequences</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">21.4 Commands for Controlled Output</h3>
@@ -41,14 +43,14 @@ want.
 <dl><dt><code>echo </code><var>text</var><dd><!-- I do not consider backslash-space a standard C escape sequence -->
 <!-- because it is not in ANSI. -->
 Print <var>text</var>.  Nonprinting characters can be included in
-<var>text</var> using C escape sequences, such as <span class="samp">\n</span> to print a
+<var>text</var> using C escape sequences, such as `<samp><span class="samp">\n</span></samp>' to print a
 newline.  <strong>No newline is printed unless you specify one.</strong>
 In addition to the standard C escape sequences, a backslash followed
 by a space stands for a space.  This is useful for displaying a
 string with spaces at the beginning or the end, since leading and
 trailing spaces are otherwise trimmed from all arguments. 
-To print <span class="samp">&nbsp;<!-- /@w -->and foo =&nbsp;<!-- /@w --></span>, use the command
-<span class="samp">echo \&nbsp;<!-- /@w -->and foo = \&nbsp;<!-- /@w --></span>.
+To print `<samp><span class="samp">&nbsp;<!-- /@w -->and foo =&nbsp;<!-- /@w --></span></samp>', use the command
+`<samp><span class="samp">echo \&nbsp;<!-- /@w -->and foo = \&nbsp;<!-- /@w --></span></samp>'.
 
      <p>A backslash at the end of <var>text</var> can be used, as in C, to continue
 the command onto subsequent lines.  For example,
@@ -64,7 +66,7 @@ the command onto subsequent lines.  For example,
           echo onto several lines.\n
      </pre>
      <p><a name="index-output-1313"></a><br><dt><code>output </code><var>expression</var><dd>Print the value of <var>expression</var> and nothing but that value: no
-newlines, no <span class="samp">$</span><var>nn</var><span class="samp"> = </span>.  The value is not entered in the
+newlines, no `<samp><span class="samp">$</span><var>nn</var><span class="samp"> = </span></samp>'.  The value is not entered in the
 value history either.  See <a href="Expressions.html#Expressions">Expressions</a>, for more information
 on expressions.
 

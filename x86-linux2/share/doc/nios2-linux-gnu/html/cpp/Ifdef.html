@@ -3,7 +3,7 @@
 <title>Ifdef - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Conditional-Syntax.html#Conditional-Syntax" title="Conditional Syntax">
 <link rel="next" href="If.html#If" title="If">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,21 +40,23 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Ifdef"></a>Next:&nbsp;<a rel="next" accesskey="n" href="If.html#If">If</a>,
+<a name="Ifdef"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="If.html#If">If</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Conditional-Syntax.html#Conditional-Syntax">Conditional Syntax</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">4.2.1 Ifdef</h4>
 
-<p><a name="index-_0023ifdef-84"></a><a name="index-_0023endif-85"></a>
+<p><a name="index-g_t_0023ifdef-84"></a><a name="index-g_t_0023endif-85"></a>
 The simplest sort of conditional is
 
 <pre class="smallexample">     #ifdef <var>MACRO</var>
@@ -72,8 +74,8 @@ will be included in the output of the preprocessor if and only if
 preprocessing directives.  They are executed only if the conditional
 succeeds.  You can nest conditional groups inside other conditional
 groups, but they must be completely nested.  In other words,
-<span class="samp">#endif</span> always matches the nearest <span class="samp">#ifdef</span> (or
-<span class="samp">#ifndef</span>, or <span class="samp">#if</span>).  Also, you cannot start a conditional
+`<samp><span class="samp">#endif</span></samp>' always matches the nearest `<samp><span class="samp">#ifdef</span></samp>' (or
+`<samp><span class="samp">#ifndef</span></samp>', or `<samp><span class="samp">#if</span></samp>').  Also, you cannot start a conditional
 group in one file and end it in another.
 
    <p>Even if a conditional fails, the <var>controlled text</var> inside it is
@@ -82,17 +84,17 @@ it must all be lexically valid C.  Normally the only way this matters is
 that all comments and string literals inside a failing conditional group
 must still be properly ended.
 
-   <p>The comment following the <span class="samp">#endif</span> is not required, but it is a
+   <p>The comment following the `<samp><span class="samp">#endif</span></samp>' is not required, but it is a
 good practice if there is a lot of <var>controlled text</var>, because it
-helps people match the <span class="samp">#endif</span> to the corresponding <span class="samp">#ifdef</span>. 
+helps people match the `<samp><span class="samp">#endif</span></samp>' to the corresponding `<samp><span class="samp">#ifdef</span></samp>'. 
 Older programs sometimes put <var>MACRO</var> directly after the
-<span class="samp">#endif</span> without enclosing it in a comment.  This is invalid code
+`<samp><span class="samp">#endif</span></samp>' without enclosing it in a comment.  This is invalid code
 according to the C standard.  CPP accepts it with a warning.  It
-never affects which <span class="samp">#ifndef</span> the <span class="samp">#endif</span> matches.
+never affects which `<samp><span class="samp">#ifndef</span></samp>' the `<samp><span class="samp">#endif</span></samp>' matches.
 
-   <p><a name="index-_0023ifndef-87"></a>Sometimes you wish to use some code if a macro is <em>not</em> defined. 
-You can do this by writing <span class="samp">#ifndef</span> instead of <span class="samp">#ifdef</span>. 
-One common use of <span class="samp">#ifndef</span> is to include code only the first
+   <p><a name="index-g_t_0023ifndef-87"></a>Sometimes you wish to use some code if a macro is <em>not</em> defined. 
+You can do this by writing `<samp><span class="samp">#ifndef</span></samp>' instead of `<samp><span class="samp">#ifdef</span></samp>'. 
+One common use of `<samp><span class="samp">#ifndef</span></samp>' is to include code only the first
 time a header file is included.  See <a href="Once_002dOnly-Headers.html#Once_002dOnly-Headers">Once-Only Headers</a>.
 
    <p>Macro definitions can vary between compilations for several reasons. 
@@ -107,7 +109,7 @@ code specially tuned for a particular machine.
 they implement.  You can test these macros with conditionals to avoid
 using a system feature on a machine where it is not implemented.
 
-     <li>Macros can be defined or undefined with the <span class="option">-D</span> and <span class="option">-U</span>
+     <li>Macros can be defined or undefined with the <samp><span class="option">-D</span></samp> and <samp><span class="option">-U</span></samp>
 command line options when you compile the program.  You can arrange to
 compile the same source file into two different programs by choosing a
 macro name to specify which program you want, writing conditionals to
@@ -116,10 +118,10 @@ state of the macro with command line options, perhaps set in the
 Makefile.  See <a href="Invocation.html#Invocation">Invocation</a>.
 
      <li>Your program might have a special header file (often called
-<span class="file">config.h</span>) that is adjusted when the program is compiled.  It can
+<samp><span class="file">config.h</span></samp>) that is adjusted when the program is compiled.  It can
 define or not define macros depending on the features of the system and
 the desired capabilities of the program.  The adjustment can be
-automated by a tool such as <span class="command">autoconf</span>, or done by hand. 
+automated by a tool such as <samp><span class="command">autoconf</span></samp>, or done by hand. 
 </ul>
 
    </body></html>

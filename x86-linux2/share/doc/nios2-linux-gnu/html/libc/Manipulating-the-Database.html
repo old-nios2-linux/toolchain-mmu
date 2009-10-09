@@ -3,7 +3,7 @@
 <title>Manipulating the Database - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="User-Accounting-Database.html#User-Accounting-Database" title="User Accounting Database">
 <link rel="next" href="XPG-Functions.html#XPG-Functions" title="XPG Functions">
@@ -16,22 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Manipulating-the-Database"></a>Next:&nbsp;<a rel="next" accesskey="n" href="XPG-Functions.html#XPG-Functions">XPG Functions</a>,
+<a name="Manipulating-the-Database"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="XPG-Functions.html#XPG-Functions">XPG Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="User-Accounting-Database.html#User-Accounting-Database">User Accounting Database</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">29.12.1 Manipulating the User Accounting Database</h4>
 
 <p>These functions and the corresponding data structures are declared in
-the header file <span class="file">utmp.h</span>. 
+the header file <samp><span class="file">utmp.h</span></samp>. 
 <a name="index-utmp_002eh-3336"></a>
 <!-- utmp.h -->
 <!-- SVID -->
@@ -63,7 +65,7 @@ members:
 
           <br><dt><code>pid_t ut_pid</code><dd>The process ID number of the login process.
 
-          <br><dt><code>char ut_line[]</code><dd>The device name of the tty (without <span class="file">/dev/</span>).
+          <br><dt><code>char ut_line[]</code><dd>The device name of the tty (without <samp><span class="file">/dev/</span></samp>).
 
           <br><dt><code>char ut_id[]</code><dd>The inittab ID of the process.
 
@@ -86,7 +88,7 @@ the time when the system clock changed, and for entries of type
    <p>The <code>ut_type</code>, <code>ut_pid</code>, <code>ut_id</code>, <code>ut_tv</code>, and
 <code>ut_host</code> fields are not available on all systems.  Portable
 applications therefore should be prepared for these situations.  To help
-doing this the <span class="file">utmp.h</span> header provides macros
+doing this the <samp><span class="file">utmp.h</span></samp> header provides macros
 <code>_HAVE_UT_TYPE</code>, <code>_HAVE_UT_PID</code>, <code>_HAVE_UT_ID</code>,
 <code>_HAVE_UT_TV</code>, and <code>_HAVE_UT_HOST</code> if the respective field is
 available.  The programmer can handle the situations by using
@@ -145,7 +147,7 @@ accounting information.
    <p>Many older systems have, instead of an <code>ut_tv</code> member, an
 <code>ut_time</code> member, usually of type <code>time_t</code>, for representing
 the time associated with the entry.  Therefore, for backwards
-compatibility only, <span class="file">utmp.h</span> defines <code>ut_time</code> as an alias for
+compatibility only, <samp><span class="file">utmp.h</span></samp> defines <code>ut_time</code> as an alias for
 <code>ut_tv.tv_sec</code>.
 
 <!-- utmp.h -->
@@ -317,7 +319,7 @@ successful the function return <code>-1</code>.
 
    <p>In addition to the user accounting database, most systems keep a number
 of similar databases.  For example most systems keep a log file with all
-previous logins (usually in <span class="file">/etc/wtmp</span> or <span class="file">/var/log/wtmp</span>).
+previous logins (usually in <samp><span class="file">/etc/wtmp</span></samp> or <samp><span class="file">/var/log/wtmp</span></samp>).
 
    <p>For specifying which database to examine, the following function should
 be used.
@@ -334,12 +336,12 @@ default <code>getutent</code>, <code>getutid</code>, <code>getutline</code> and
         <p>The following macros are defined for use as the <var>file</var> argument:
 
      <div class="defun">
-&mdash; Macro: char * <b>_PATH_UTMP</b><var><a name="index-_005fPATH_005fUTMP-3359"></a></var><br>
+&mdash; Macro: char * <b>_PATH_UTMP</b><var><a name="index-g_t_005fPATH_005fUTMP-3359"></a></var><br>
 <blockquote><p>This macro is used to specify the user accounting database. 
 </p></blockquote></div>
 
      <div class="defun">
-&mdash; Macro: char * <b>_PATH_WTMP</b><var><a name="index-_005fPATH_005fWTMP-3360"></a></var><br>
+&mdash; Macro: char * <b>_PATH_WTMP</b><var><a name="index-g_t_005fPATH_005fWTMP-3360"></a></var><br>
 <blockquote><p>This macro is used to specify the user accounting log file. 
 </p></blockquote></div>
 

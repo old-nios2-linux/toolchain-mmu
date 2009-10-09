@@ -3,7 +3,7 @@
 <title>Adding Target Described Register Support - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Target-Descriptions.html#Target-Descriptions" title="Target Descriptions">
 <link rel="prev" href="Target-Descriptions-Implementation.html#Target-Descriptions-Implementation" title="Target Descriptions Implementation">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Adding-Target-Described-Register-Support"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Target-Descriptions-Implementation.html#Target-Descriptions-Implementation">Target Descriptions Implementation</a>,
+<a name="Adding-Target-Described-Register-Support"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Target-Descriptions-Implementation.html#Target-Descriptions-Implementation">Target Descriptions Implementation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Target-Descriptions.html#Target-Descriptions">Target Descriptions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">10.2 Adding Target Described Register Support</h3>
@@ -81,7 +83,7 @@ for any additional registers in the description.
      <ul>
 <li>Using <code>tdesc_numbered_register</code> allows the architecture to give
 constant register numbers to standard architectural registers, e.g. 
-as an <code>enum</code> in <var>arch</var><span class="file">-tdep.h</span>.  But because
+as an <code>enum</code> in <samp><var>arch</var><span class="file">-tdep.h</span></samp>.  But because
 pseudo-registers are always numbered above <code>num_regs</code>,
 which may be increased by the description, constant numbers
 can not be used for pseudos.  They must be numbered relative to

@@ -3,7 +3,7 @@
 <title>Frame Annotations - GDB's Obsolete Annotations</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB's Obsolete Annotations">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Value-Annotations.html#Value-Annotations" title="Value Annotations">
 <link rel="next" href="Displays.html#Displays" title="Displays">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Frame-Annotations"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Displays.html#Displays">Displays</a>,
+<a name="Frame-Annotations"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Displays.html#Displays">Displays</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Value-Annotations.html#Value-Annotations">Value Annotations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">6 Frames</h2>
@@ -35,8 +37,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 a number of frame commands.</em>
 
    <p><em>Frame annotations are no longer available.  The </em><span class="sc">gdb/mi</span><em>
-provides </em><span class="samp">-stack-list-arguments</span><em>, </em><span class="samp">-stack-list-locals</span><em>, and
-</em><span class="samp">-stack-list-frames</span><em> commands.</em>
+provides `<samp></em><span class="samp">-stack-list-arguments</span><em></samp>', `<samp></em><span class="samp">-stack-list-locals</span><em></samp>', and
+`<samp></em><span class="samp">-stack-list-frames</span><em></samp>' commands.</em>
 
    <p><a name="index-annotations-for-frames-21"></a>Whenever <span class="sc">gdb</span> prints a frame, it annotates it.  For example, this applies
 to frames printed when <span class="sc">gdb</span> stops, output from commands such as
@@ -51,7 +53,7 @@ to frames printed when <span class="sc">gdb</span> stops, output from commands s
 and other frames have positive numbers), <var>address</var> is the address of
 the code executing in that frame, and <var>level-string</var> is a string
 designed to convey the level to the user.  <var>address</var> is in the form
-<span class="samp">0x</span> followed by one or more lowercase hex digits (note that this
+`<samp><span class="samp">0x</span></samp>' followed by one or more lowercase hex digits (note that this
 does not depend on the language).  The frame ends with
 
    <p><a name="index-frame_002dend-23"></a>
@@ -103,7 +105,7 @@ benefit.
           <var>arguments</var>
      </pre>
      <p>where <var>function-name</var> is the name of the function executing in the
-frame, or <span class="samp">??</span> if not known, and <var>arguments</var> are the arguments
+frame, or `<samp><span class="samp">??</span></samp>' if not known, and <var>arguments</var> are the arguments
 to the frame, with parentheses around them (each argument is annotated
 individually as well, see <a href="Value-Annotations.html#Value-Annotations">Value Annotations</a>).
 

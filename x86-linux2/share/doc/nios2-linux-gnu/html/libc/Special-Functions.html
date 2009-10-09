@@ -3,7 +3,7 @@
 <title>Special Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mathematics.html#Mathematics" title="Mathematics">
 <link rel="prev" href="Hyperbolic-Functions.html#Hyperbolic-Functions" title="Hyperbolic Functions">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Special-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Errors-in-Math-Functions.html#Errors-in-Math-Functions">Errors in Math Functions</a>,
+<a name="Special-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Errors-in-Math-Functions.html#Errors-in-Math-Functions">Errors in Math Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Hyperbolic-Functions.html#Hyperbolic-Functions">Hyperbolic Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mathematics.html#Mathematics">Mathematics</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">19.6 Special Functions</h3>
@@ -81,7 +83,7 @@ the gamma function of <var>x</var>.  The gamma function is defined as
      <pre class="smallexample">          gamma (x) = integral from 0 to &amp;infin; of t^(x-1) e^-t dt
      </pre>
         <p><a name="index-signgam-2251"></a>The sign of the gamma function is stored in the global variable
-<var>signgam</var>, which is declared in <span class="file">math.h</span>.  It is <code>1</code> if
+<var>signgam</var>, which is declared in <samp><span class="file">math.h</span></samp>.  It is <code>1</code> if
 the intermediate result was positive or zero, or <code>-1</code> if it was
 negative.
 

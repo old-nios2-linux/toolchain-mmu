@@ -3,7 +3,7 @@
 <title>Floating Point Parameters - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Floating-Type-Macros.html#Floating-Type-Macros" title="Floating Type Macros">
 <link rel="prev" href="Floating-Point-Concepts.html#Floating-Point-Concepts" title="Floating Point Concepts">
@@ -17,34 +17,36 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Floating-Point-Parameters"></a>Next:&nbsp;<a rel="next" accesskey="n" href="IEEE-Floating-Point.html#IEEE-Floating-Point">IEEE Floating Point</a>,
+<a name="Floating-Point-Parameters"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="IEEE-Floating-Point.html#IEEE-Floating-Point">IEEE Floating Point</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Floating-Point-Concepts.html#Floating-Point-Concepts">Floating Point Concepts</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Floating-Type-Macros.html#Floating-Type-Macros">Floating Type Macros</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="subsubsection">A.5.3.2 Floating Point Parameters</h5>
 
 <p><a name="index-float_002eh-3779"></a>These macro definitions can be accessed by including the header file
-<span class="file">float.h</span> in your program.
+<samp><span class="file">float.h</span></samp> in your program.
 
-   <p>Macro names starting with <span class="samp">FLT_</span> refer to the <code>float</code> type,
-while names beginning with <span class="samp">DBL_</span> refer to the <code>double</code> type
-and names beginning with <span class="samp">LDBL_</span> refer to the <code>long double</code>
+   <p>Macro names starting with `<samp><span class="samp">FLT_</span></samp>' refer to the <code>float</code> type,
+while names beginning with `<samp><span class="samp">DBL_</span></samp>' refer to the <code>double</code> type
+and names beginning with `<samp><span class="samp">LDBL_</span></samp>' refer to the <code>long double</code>
 type.  (If GCC does not support <code>long double</code> as a distinct data
-type on a target machine then the values for the <span class="samp">LDBL_</span> constants
+type on a target machine then the values for the `<samp><span class="samp">LDBL_</span></samp>' constants
 are equal to the corresponding constants for the <code>double</code> type.)
 
    <p>Of these macros, only <code>FLT_RADIX</code> is guaranteed to be a constant
 expression.  The other macros listed here cannot be reliably used in
-places that require constant expressions, such as <span class="samp">#if</span>
+places that require constant expressions, such as `<samp><span class="samp">#if</span></samp>'
 preprocessing directives or in the dimensions of static arrays.
 
    <p>Although the ISO&nbsp;C<!-- /@w --> standard specifies minimum and maximum values for

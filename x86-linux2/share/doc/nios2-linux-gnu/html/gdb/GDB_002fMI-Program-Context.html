@@ -3,7 +3,7 @@
 <title>GDB/MI Program Context - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="GDB_002fMI.html#GDB_002fMI" title="GDB/MI">
 <link rel="prev" href="GDB_002fMI-Breakpoint-Commands.html#GDB_002fMI-Breakpoint-Commands" title="GDB/MI Breakpoint Commands">
@@ -17,35 +17,38 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="GDB_002fMI-Program-Context"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Thread-Commands.html#GDB_002fMI-Thread-Commands">GDB/MI Thread Commands</a>,
+<a name="GDB%2fMI-Program-Context"></a>
+<a name="GDB_002fMI-Program-Context"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="GDB_002fMI-Thread-Commands.html#GDB_002fMI-Thread-Commands">GDB/MI Thread Commands</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="GDB_002fMI-Breakpoint-Commands.html#GDB_002fMI-Breakpoint-Commands">GDB/MI Breakpoint Commands</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">25.8 <span class="sc">gdb/mi</span>  Program Context</h3>
 
 <h4 class="subheading">The <code>-exec-arguments</code> Command</h4>
 
-<p><a name="index-_002dexec_002darguments-1406"></a>
+<p><a name="index-g_t_002dexec_002darguments-1406"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -exec-arguments <var>args</var>
 </pre>
    <p>Set the inferior program arguments, to be used in the next
-<span class="samp">-exec-run</span>.
+`<samp><span class="samp">-exec-run</span></samp>'.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">set args</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">set args</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -54,7 +57,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h4 class="subheading">The <code>-exec-show-arguments</code> Command</h4>
 
-<p><a name="index-_002dexec_002dshow_002darguments-1407"></a>
+<p><a name="index-g_t_002dexec_002dshow_002darguments-1407"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -64,7 +67,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">show args</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">show args</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -72,7 +75,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h4 class="subheading">The <code>-environment-cd</code> Command</h4>
 
-<p><a name="index-_002denvironment_002dcd-1408"></a>
+<p><a name="index-g_t_002denvironment_002dcd-1408"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -82,7 +85,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">cd</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">cd</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -93,16 +96,16 @@ Up:&nbsp;<a rel="up" accesskey="u" href="GDB_002fMI.html#GDB_002fMI">GDB/MI</a>
 </pre>
 <h4 class="subheading">The <code>-environment-directory</code> Command</h4>
 
-<p><a name="index-_002denvironment_002ddirectory-1409"></a>
+<p><a name="index-g_t_002denvironment_002ddirectory-1409"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -environment-directory [ -r ] [ <var>pathdir</var> ]+
 </pre>
    <p>Add directories <var>pathdir</var> to beginning of search path for source files. 
-If the <span class="samp">-r</span> option is used, the search path is reset to the default
+If the `<samp><span class="samp">-r</span></samp>' option is used, the search path is reset to the default
 search path.  If directories <var>pathdir</var> are supplied in addition to the
-<span class="samp">-r</span> option, the search path is first reset and then addition
+`<samp><span class="samp">-r</span></samp>' option, the search path is first reset and then addition
 occurs as normal. 
 Multiple directories may be specified, separated by blanks.  Specifying
 multiple directories in a single command
@@ -118,7 +121,7 @@ If no directories are specified, the current search path is displayed.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">dir</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">dir</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -138,17 +141,17 @@ If no directories are specified, the current search path is displayed.
 </pre>
 <h4 class="subheading">The <code>-environment-path</code> Command</h4>
 
-<p><a name="index-_002denvironment_002dpath-1410"></a>
+<p><a name="index-g_t_002denvironment_002dpath-1410"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
 <pre class="smallexample">      -environment-path [ -r ] [ <var>pathdir</var> ]+
 </pre>
    <p>Add directories <var>pathdir</var> to beginning of search path for object files. 
-If the <span class="samp">-r</span> option is used, the search path is reset to the original
+If the `<samp><span class="samp">-r</span></samp>' option is used, the search path is reset to the original
 search path that existed at gdb start-up.  If directories <var>pathdir</var> are
 supplied in addition to the
-<span class="samp">-r</span> option, the search path is first reset and then addition
+`<samp><span class="samp">-r</span></samp>' option, the search path is first reset and then addition
 occurs as normal. 
 Multiple directories may be specified, separated by blanks.  Specifying
 multiple directories in a single command
@@ -164,7 +167,7 @@ If no directories are specified, the current path is displayed.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">path</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">path</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 
@@ -181,7 +184,7 @@ If no directories are specified, the current path is displayed.
 </pre>
 <h4 class="subheading">The <code>-environment-pwd</code> Command</h4>
 
-<p><a name="index-_002denvironment_002dpwd-1411"></a>
+<p><a name="index-g_t_002denvironment_002dpwd-1411"></a>
 
 <h5 class="subsubheading">Synopsis</h5>
 
@@ -191,7 +194,7 @@ If no directories are specified, the current path is displayed.
 
 <h5 class="subsubheading"><span class="sc">gdb</span> Command</h5>
 
-<p>The corresponding <span class="sc">gdb</span> command is <span class="samp">pwd</span>.
+<p>The corresponding <span class="sc">gdb</span> command is `<samp><span class="samp">pwd</span></samp>'.
 
 <h5 class="subsubheading">Example</h5>
 

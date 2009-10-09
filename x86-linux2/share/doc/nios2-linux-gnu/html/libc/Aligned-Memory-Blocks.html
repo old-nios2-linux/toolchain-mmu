@@ -3,7 +3,7 @@
 <title>Aligned Memory Blocks - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Unconstrained-Allocation.html#Unconstrained-Allocation" title="Unconstrained Allocation">
 <link rel="prev" href="Efficiency-and-Malloc.html#Efficiency-and-Malloc" title="Efficiency and Malloc">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Aligned-Memory-Blocks"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Malloc-Tunable-Parameters.html#Malloc-Tunable-Parameters">Malloc Tunable Parameters</a>,
+<a name="Aligned-Memory-Blocks"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Malloc-Tunable-Parameters.html#Malloc-Tunable-Parameters">Malloc Tunable Parameters</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Efficiency-and-Malloc.html#Efficiency-and-Malloc">Efficiency and Malloc</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Unconstrained-Allocation.html#Unconstrained-Allocation">Unconstrained Allocation</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="subsubsection">3.2.2.7 Allocating Aligned Memory Blocks</h5>
@@ -36,8 +38,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Unconstrained-Allocation.html#Unconstra
 the GNU system is always a multiple of eight (or sixteen on 64-bit
 systems).  If you need a block whose address is a multiple of a higher
 power of two than that, use <code>memalign</code>, <code>posix_memalign</code>, or
-<code>valloc</code>.  <code>memalign</code> is declared in <span class="file">malloc.h</span> and
-<code>posix_memalign</code> is declared in <span class="file">stdlib.h</span>.
+<code>valloc</code>.  <code>memalign</code> is declared in <samp><span class="file">malloc.h</span></samp> and
+<code>posix_memalign</code> is declared in <samp><span class="file">stdlib.h</span></samp>.
 
    <p>With the GNU library, you can use <code>free</code> to free the blocks that
 <code>memalign</code>, <code>posix_memalign</code>, and <code>valloc</code> return.  That

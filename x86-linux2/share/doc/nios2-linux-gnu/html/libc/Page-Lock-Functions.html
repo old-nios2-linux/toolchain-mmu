@@ -3,7 +3,7 @@
 <title>Page Lock Functions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Locking-Pages.html#Locking-Pages" title="Locking Pages">
 <link rel="prev" href="Locked-Memory-Details.html#Locked-Memory-Details" title="Locked Memory Details">
@@ -16,31 +16,33 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Page-Lock-Functions"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Locked-Memory-Details.html#Locked-Memory-Details">Locked Memory Details</a>,
+<a name="Page-Lock-Functions"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Locked-Memory-Details.html#Locked-Memory-Details">Locked Memory Details</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Locking-Pages.html#Locking-Pages">Locking Pages</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.4.3 Functions To Lock And Unlock Pages</h4>
 
-<p>The symbols in this section are declared in <span class="file">sys/mman.h</span>.  These
+<p>The symbols in this section are declared in <samp><span class="file">sys/mman.h</span></samp>.  These
 functions are defined by POSIX.1b, but their availability depends on
 your kernel.  If your kernel doesn't allow these functions, they exist
 but always fail.  They <em>are</em> available with a Linux kernel.
 
    <p><strong>Portability Note:</strong> POSIX.1b requires that when the <code>mlock</code>
-and <code>munlock</code> functions are available, the file <span class="file">unistd.h</span>
+and <code>munlock</code> functions are available, the file <samp><span class="file">unistd.h</span></samp>
 define the macro <code>_POSIX_MEMLOCK_RANGE</code> and the file
 <code>limits.h</code> define the macro <code>PAGESIZE</code> to be the size of a
 memory page in bytes.  It requires that when the <code>mlockall</code> and
-<code>munlockall</code> functions are available, the <span class="file">unistd.h</span> file
+<code>munlockall</code> functions are available, the <samp><span class="file">unistd.h</span></samp> file
 define the macro <code>_POSIX_MEMLOCK</code>.  The GNU C library conforms to
 this requirement.
 

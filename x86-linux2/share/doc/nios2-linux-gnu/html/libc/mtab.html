@@ -3,7 +3,7 @@
 <title>mtab - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Mount-Information.html#Mount-Information" title="Mount Information">
 <link rel="prev" href="fstab.html#fstab" title="fstab">
@@ -17,22 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="mtab"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Other-Mount-Information.html#Other-Mount-Information">Other Mount Information</a>,
+<a name="mtab"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Other-Mount-Information.html#Other-Mount-Information">Other Mount Information</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="fstab.html#fstab">fstab</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Mount-Information.html#Mount-Information">Mount Information</a>
-<hr><br>
+<hr>
 </div>
 
-<h5 class="subsubsection">30.3.1.2 The <span class="file">mtab</span> file</h5>
+<h5 class="subsubsection">30.3.1.2 The <samp><span class="file">mtab</span></samp> file</h5>
 
-<p>The following functions and data structure access the <span class="file">mtab</span> file.
+<p>The following functions and data structure access the <samp><span class="file">mtab</span></samp> file.
 
 <!-- mntent.h -->
 <!-- BSD -->
@@ -51,20 +53,20 @@ filesystem.  It corresponds to the <code>fs_file</code> element in
 <code>struct fstab</code>.
 
           <br><dt><code>char *mnt_type</code><dd><code>mnt_type</code> describes the filesystem type and is therefore
-equivalent to <code>fs_vfstype</code> in <code>struct fstab</code>.  <span class="file">mntent.h</span>
+equivalent to <code>fs_vfstype</code> in <code>struct fstab</code>.  <samp><span class="file">mntent.h</span></samp>
 defines a few symbolic names for some of the values this string can have. 
 But since the kernel can support arbitrary filesystems it does not
 make much sense to give them symbolic names.  If one knows the symbol
 name one also knows the filesystem name.  Nevertheless here follows the
-list of the symbols provided in <span class="file">mntent.h</span>.
+list of the symbols provided in <samp><span class="file">mntent.h</span></samp>.
 
                <dl>
 <dt><code>MNTTYPE_IGNORE</code><a name="index-MNTTYPE_005fIGNORE-3475"></a><dd>This symbol expands to <code>"ignore"</code>.  The value is sometime used in
-<span class="file">fstab</span> files to make sure entries are not used without removing them. 
+<samp><span class="file">fstab</span></samp> files to make sure entries are not used without removing them. 
 <br><dt><code>MNTTYPE_NFS</code><a name="index-MNTTYPE_005fNFS-3476"></a><dd>Expands to <code>"nfs"</code>.  Using this macro sometimes could make sense
 since it names the default NFS implementation, in case both version 2
 and 3 are supported. 
-<br><dt><code>MNTTYPE_SWAP</code><a name="index-MNTTYPE_005fSWAP-3477"></a><dd>This symbol expands to <code>"swap"</code>.  It names the special <span class="file">fstab</span>
+<br><dt><code>MNTTYPE_SWAP</code><a name="index-MNTTYPE_005fSWAP-3477"></a><dd>This symbol expands to <code>"swap"</code>.  It names the special <samp><span class="file">fstab</span></samp>
 entry which names one of the possibly multiple swap partitions. 
 </dl>
 
@@ -73,7 +75,7 @@ the filesystem.  As for the equivalent element <code>fs_mntops</code> of
 <code>struct fstab</code> it is best to use the function <code>getsubopt</code>
 (see <a href="Suboptions.html#Suboptions">Suboptions</a>) to access the parts of this string.
 
-          <p>The <span class="file">mntent.h</span> file defines a number of macros with string values
+          <p>The <samp><span class="file">mntent.h</span></samp> file defines a number of macros with string values
 which correspond to some of the options understood by the kernel.  There
 might be many more options which are possible so it doesn't make much sense
 to rely on these macros but to be consistent here is the list:
@@ -92,7 +94,7 @@ started.
 the SUID bit for all files from the filesystem is ignored. 
 <br><dt><code>MNTOPT_NOAUTO</code><a name="index-MNTOPT_005fNOAUTO-3483"></a><dd>Expands to <code>"noauto"</code>.  At startup time the <code>mount</code> program
 will ignore this entry if it is started with the <code>-a</code> option to
-mount all filesystems mentioned in the <span class="file">fstab</span> file. 
+mount all filesystems mentioned in the <samp><span class="file">fstab</span></samp> file. 
 </dl>
 
           <p>As for the <code>FSTAB_*</code> entries introduced above it is important to
@@ -106,9 +108,9 @@ which is uninteresting for all programs beside <code>dump</code>.
 </dl>
         </p></blockquote></div>
 
-   <p>For accessing the <span class="file">mtab</span> file there is again a set of three
+   <p>For accessing the <samp><span class="file">mtab</span></samp> file there is again a set of three
 functions to access all entries in a row.  Unlike the functions to
-handle <span class="file">fstab</span> these functions do not access a fixed file and there
+handle <samp><span class="file">fstab</span></samp> these functions do not access a fixed file and there
 is even a thread safe variant of the get function.  Beside this the GNU
 libc contains functions to alter the file and test for specific options.
 
@@ -117,7 +119,7 @@ libc contains functions to alter the file and test for specific options.
 <div class="defun">
 &mdash; Function: FILE * <b>setmntent</b> (<var>const char *file, const char *mode</var>)<var><a name="index-setmntent-3484"></a></var><br>
 <blockquote><p>The <code>setmntent</code> function prepares the file named <var>FILE</var> which
-must be in the format of a <span class="file">fstab</span> and <span class="file">mtab</span> file for the
+must be in the format of a <samp><span class="file">fstab</span></samp> and <samp><span class="file">mtab</span></samp> file for the
 upcoming processing through the other functions of the family.  The
 <var>mode</var> parameter can be chosen in the way the <var>opentype</var>
 parameter for <code>fopen</code> (see <a href="Opening-Streams.html#Opening-Streams">Opening Streams</a>) can be chosen.  If

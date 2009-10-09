@@ -3,7 +3,7 @@
 <title>Testsuite - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Releasing-GDB.html#Releasing-GDB" title="Releasing GDB">
 <link rel="next" href="Hints.html#Hints" title="Hints">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Testsuite"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Hints.html#Hints">Hints</a>,
+<a name="Testsuite"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Hints.html#Hints">Hints</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Releasing-GDB.html#Releasing-GDB">Releasing GDB</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">19 Testsuite</h2>
@@ -107,18 +109,18 @@ will give a result of &ldquo;UNRESOLVED&rdquo;, like this:
 </pre>
    <h3 class="section">19.2 Testsuite Organization</h3>
 
-<p><a name="index-test-suite-organization-503"></a>The testsuite is entirely contained in <span class="file">gdb/testsuite</span>.  While the
+<p><a name="index-test-suite-organization-503"></a>The testsuite is entirely contained in <samp><span class="file">gdb/testsuite</span></samp>.  While the
 testsuite includes some makefiles and configury, these are very minimal,
 and used for little besides cleaning up, since the tests themselves
 handle the compilation of the programs that <span class="sc">gdb</span> will run.  The file
-<span class="file">testsuite/lib/gdb.exp</span> contains common utility procs useful for
-all <span class="sc">gdb</span> tests, while the directory <span class="file">testsuite/config</span> contains
+<samp><span class="file">testsuite/lib/gdb.exp</span></samp> contains common utility procs useful for
+all <span class="sc">gdb</span> tests, while the directory <samp><span class="file">testsuite/config</span></samp> contains
 configuration-specific files, typically used for special-purpose
 definitions of procs like <code>gdb_load</code> and <code>gdb_start</code>.
 
-   <p>The tests themselves are to be found in <span class="file">testsuite/gdb.*</span> and
+   <p>The tests themselves are to be found in <samp><span class="file">testsuite/gdb.*</span></samp> and
 subdirectories of those.  The names of the test files must always end
-with <span class="file">.exp</span>.  DejaGNU collects the test files by wildcarding
+with <samp><span class="file">.exp</span></samp>.  DejaGNU collects the test files by wildcarding
 in the test directories, so both subdirectories and individual files
 get chosen and run in alphabetical order.
 
@@ -129,28 +131,28 @@ execution environment, this organization is simply for convenience and
 intelligibility.
 
      <dl>
-<dt><span class="file">gdb.base</span><dd>This is the base testsuite.  The tests in it should apply to all
+<dt><samp><span class="file">gdb.base</span></samp><dd>This is the base testsuite.  The tests in it should apply to all
 configurations of <span class="sc">gdb</span> (but generic native-only tests may live here). 
 The test programs should be in the subset of C that is valid K&amp;R,
 ANSI/ISO, and C<tt>++</tt> (<code>#ifdef</code>s are allowed if necessary, for instance
 for prototypes).
 
-     <br><dt><span class="file">gdb.</span><var>lang</var><dd>Language-specific tests for any language <var>lang</var> besides C.  Examples are
-<span class="file">gdb.cp</span> and <span class="file">gdb.java</span>.
+     <br><dt><samp><span class="file">gdb.</span><var>lang</var></samp><dd>Language-specific tests for any language <var>lang</var> besides C.  Examples are
+<samp><span class="file">gdb.cp</span></samp> and <samp><span class="file">gdb.java</span></samp>.
 
-     <br><dt><span class="file">gdb.</span><var>platform</var><dd>Non-portable tests.  The tests are specific to a specific configuration
-(host or target), such as HP-UX or eCos.  Example is <span class="file">gdb.hp</span>, for
+     <br><dt><samp><span class="file">gdb.</span><var>platform</var></samp><dd>Non-portable tests.  The tests are specific to a specific configuration
+(host or target), such as HP-UX or eCos.  Example is <samp><span class="file">gdb.hp</span></samp>, for
 HP-UX.
 
-     <br><dt><span class="file">gdb.</span><var>compiler</var><dd>Tests specific to a particular compiler.  As of this writing (June
+     <br><dt><samp><span class="file">gdb.</span><var>compiler</var></samp><dd>Tests specific to a particular compiler.  As of this writing (June
 1999), there aren't currently any groups of tests in this category that
 couldn't just as sensibly be made platform-specific, but one could
-imagine a <span class="file">gdb.gcc</span>, for tests of <span class="sc">gdb</span>'s handling of GCC
+imagine a <samp><span class="file">gdb.gcc</span></samp>, for tests of <span class="sc">gdb</span>'s handling of GCC
 extensions.
 
-     <br><dt><span class="file">gdb.</span><var>subsystem</var><dd>Tests that exercise a specific <span class="sc">gdb</span> subsystem in more depth.  For
-instance, <span class="file">gdb.disasm</span> exercises various disassemblers, while
-<span class="file">gdb.stabs</span> tests pathways through the stabs symbol reader. 
+     <br><dt><samp><span class="file">gdb.</span><var>subsystem</var></samp><dd>Tests that exercise a specific <span class="sc">gdb</span> subsystem in more depth.  For
+instance, <samp><span class="file">gdb.disasm</span></samp> exercises various disassemblers, while
+<samp><span class="file">gdb.stabs</span></samp> tests pathways through the stabs symbol reader. 
 </dl>
 
 <h3 class="section">19.3 Writing Tests</h3>
@@ -162,7 +164,7 @@ should be able to copy existing tests to handle new cases.
    <p>You should try to use <code>gdb_test</code> whenever possible, since it
 includes cases to handle all the unexpected errors that might happen. 
 However, it doesn't cost anything to add new test procedures; for
-instance, <span class="file">gdb.base/exprs.exp</span> defines a <code>test_expr</code> that
+instance, <samp><span class="file">gdb.base/exprs.exp</span></samp> defines a <code>test_expr</code> that
 calls <code>gdb_test</code> multiple times.
 
    <p>Only use <code>send_gdb</code> and <code>gdb_expect</code> when absolutely

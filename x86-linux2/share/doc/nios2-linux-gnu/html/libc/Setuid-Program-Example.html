@@ -3,7 +3,7 @@
 <title>Setuid Program Example - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Users-and-Groups.html#Users-and-Groups" title="Users and Groups">
 <link rel="prev" href="Enable_002fDisable-Setuid.html#Enable_002fDisable-Setuid" title="Enable/Disable Setuid">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Setuid-Program-Example"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Tips-for-Setuid.html#Tips-for-Setuid">Tips for Setuid</a>,
+<a name="Setuid-Program-Example"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Tips-for-Setuid.html#Tips-for-Setuid">Tips for Setuid</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Enable_002fDisable-Setuid.html#Enable_002fDisable-Setuid">Enable/Disable Setuid</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Users-and-Groups.html#Users-and-Groups">Users and Groups</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">29.9 Setuid Program Example</h3>
@@ -36,20 +38,20 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Users-and-Groups.html#Users-and-Groups"
 effective user ID.
 
    <p>This is part of a game program called <code>caber-toss</code> that manipulates
-a file <span class="file">scores</span> that should be writable only by the game program
+a file <samp><span class="file">scores</span></samp> that should be writable only by the game program
 itself.  The program assumes that its executable file will be installed
-with the setuid bit set and owned by the same user as the <span class="file">scores</span>
+with the setuid bit set and owned by the same user as the <samp><span class="file">scores</span></samp>
 file.  Typically, a system administrator will set up an account like
 <code>games</code> for this purpose.
 
    <p>The executable file is given mode <code>4755</code>, so that doing an
-<span class="samp">ls -l</span> on it produces output like:
+`<samp><span class="samp">ls -l</span></samp>' on it produces output like:
 
 <pre class="smallexample">     -rwsr-xr-x   1 games    184422 Jul 30 15:17 caber-toss
 </pre>
-   <p class="noindent">The setuid bit shows up in the file modes as the <span class="samp">s</span>.
+   <p class="noindent">The setuid bit shows up in the file modes as the `<samp><span class="samp">s</span></samp>'.
 
-   <p>The scores file is given mode <code>644</code>, and doing an <span class="samp">ls -l</span> on
+   <p>The scores file is given mode <code>644</code>, and doing an `<samp><span class="samp">ls -l</span></samp>' on
 it shows:
 
 <pre class="smallexample">     -rw-r--r--  1 games           0 Jul 31 15:33 scores

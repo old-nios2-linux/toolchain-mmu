@@ -3,7 +3,7 @@
 <title>Class Names - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cplusplus.html#Cplusplus" title="Cplusplus">
 <link rel="next" href="Nested-Symbols.html#Nested-Symbols" title="Nested Symbols">
@@ -16,27 +16,29 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Class-Names"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Nested-Symbols.html#Nested-Symbols">Nested Symbols</a>,
+<a name="Class-Names"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Nested-Symbols.html#Nested-Symbols">Nested Symbols</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cplusplus.html#Cplusplus">Cplusplus</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">8.1 C<tt>++</tt> Class Names</h3>
 
 <p>In C<tt>++</tt>, a class name which is declared with <code>class</code>, <code>struct</code>,
 or <code>union</code>, is not only a tag, as in C, but also a type name.  Thus
-there should be stabs with both <span class="samp">t</span> and <span class="samp">T</span> symbol descriptors
+there should be stabs with both `<samp><span class="samp">t</span></samp>' and `<samp><span class="samp">T</span></samp>' symbol descriptors
 (see <a href="Typedefs.html#Typedefs">Typedefs</a>).
 
    <p>To save space, there is a special abbreviation for this case.  If the
-<span class="samp">T</span> symbol descriptor is followed by <span class="samp">t</span>, then the stab
+`<samp><span class="samp">T</span></samp>' symbol descriptor is followed by `<samp><span class="samp">t</span></samp>', then the stab
 defines both a type name and a tag.
 
    <p>For example, the C<tt>++</tt> code

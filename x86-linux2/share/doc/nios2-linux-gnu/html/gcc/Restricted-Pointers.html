@@ -3,7 +3,7 @@
 <title>Restricted Pointers - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions" title="C++ Extensions">
 <link rel="prev" href="Volatiles.html#Volatiles" title="Volatiles">
@@ -38,17 +38,19 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Restricted-Pointers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Vague-Linkage.html#Vague-Linkage">Vague Linkage</a>,
+<a name="Restricted-Pointers"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Vague-Linkage.html#Vague-Linkage">Vague Linkage</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Volatiles.html#Volatiles">Volatiles</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C_002b_002b-Extensions.html#C_002b_002b-Extensions">C++ Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">6.2 Restricting Pointer Aliasing</h3>
@@ -56,7 +58,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="C_002b_002b-Extensions.html#C_002b_002b
 <p><a name="index-restricted-pointers-2512"></a><a name="index-restricted-references-2513"></a><a name="index-restricted-this-pointer-2514"></a>
 As with the C front end, G++ understands the C99 feature of restricted pointers,
 specified with the <code>__restrict__</code>, or <code>__restrict</code> type
-qualifier.  Because you cannot compile C++ by specifying the <span class="option">-std=c99</span>
+qualifier.  Because you cannot compile C++ by specifying the <samp><span class="option">-std=c99</span></samp>
 language flag, <code>restrict</code> is not a keyword in C++.
 
  <p>In addition to allowing restricted pointers, you can specify restricted

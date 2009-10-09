@@ -3,7 +3,7 @@
 <title>Labels as Values - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C-Extensions.html#C-Extensions" title="C Extensions">
 <link rel="prev" href="Local-Labels.html#Local-Labels" title="Local Labels">
@@ -38,24 +38,26 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Labels-as-Values"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Nested-Functions.html#Nested-Functions">Nested Functions</a>,
+<a name="Labels-as-Values"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Nested-Functions.html#Nested-Functions">Nested Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Local-Labels.html#Local-Labels">Local Labels</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C-Extensions.html#C-Extensions">C Extensions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.3 Labels as Values</h3>
 
 <p><a name="index-labels-as-values-1728"></a><a name="index-computed-gotos-1729"></a><a name="index-goto-with-computed-label-1730"></a><a name="index-address-of-a-label-1731"></a>
 You can get the address of a label defined in the current function
-(or a containing function) with the unary operator <span class="samp">&amp;&amp;</span>.  The
+(or a containing function) with the unary operator `<samp><span class="samp">&amp;&amp;</span></samp>'.  The
 value has type <code>void *</code>.  This value is a constant and can be used
 wherever a constant of that type is valid.  For example:
 

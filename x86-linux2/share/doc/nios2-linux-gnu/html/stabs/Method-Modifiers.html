@@ -3,7 +3,7 @@
 <title>Method Modifiers - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Cplusplus.html#Cplusplus" title="Cplusplus">
 <link rel="prev" href="Protections.html#Protections" title="Protections">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Method-Modifiers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Virtual-Methods.html#Virtual-Methods">Virtual Methods</a>,
+<a name="Method-Modifiers"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Virtual-Methods.html#Virtual-Methods">Virtual Methods</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Protections.html#Protections">Protections</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Cplusplus.html#Cplusplus">Cplusplus</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">8.10 Method Modifiers (<code>const</code>, <code>volatile</code>, <code>const volatile</code>)</h3>
@@ -37,9 +39,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Cplusplus.html#Cplusplus">Cplusplus</a>
    <p>In the class example described above all the methods have the normal
 modifier.  This method modifier information is located just after the
 protection information for the method.  This field has four possible
-character values.  Normal methods use <span class="samp">A</span>, const methods use
-<span class="samp">B</span>, volatile methods use <span class="samp">C</span>, and const volatile methods use
-<span class="samp">D</span>.  Consider the class definition below:
+character values.  Normal methods use `<samp><span class="samp">A</span></samp>', const methods use
+`<samp><span class="samp">B</span></samp>', volatile methods use `<samp><span class="samp">C</span></samp>', and const volatile methods use
+`<samp><span class="samp">D</span></samp>'.  Consider the class definition below:
 
 <pre class="example">     class A {
      public:

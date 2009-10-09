@@ -3,7 +3,7 @@
 <title>Global Variables - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Variables.html#Variables" title="Variables">
 <link rel="prev" href="Stack-Variables.html#Stack-Variables" title="Stack Variables">
@@ -17,24 +17,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Global-Variables"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Register-Variables.html#Register-Variables">Register Variables</a>,
+<a name="Global-Variables"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Register-Variables.html#Register-Variables">Register Variables</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Stack-Variables.html#Stack-Variables">Stack Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Variables.html#Variables">Variables</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">4.2 Global Variables</h3>
 
 <p><a name="index-N_005fGSYM-27"></a><a name="index-C_005fGSYM-28"></a><!-- FIXME: verify for sure that it really is C_GSYM on XCOFF -->
 A variable whose scope is not specific to just one source file is
-represented by the <span class="samp">G</span> symbol descriptor.  These stabs use the
+represented by the `<samp><span class="samp">G</span></samp>' symbol descriptor.  These stabs use the
 <code>N_GSYM</code> stab type (C_GSYM for XCOFF).  The type information for
 the stab (see <a href="String-Field.html#String-Field">String Field</a>) gives the type of the variable.
 

@@ -3,7 +3,7 @@
 <title>Tracing on Symmetrix - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Agent-Expressions.html#Agent-Expressions" title="Agent Expressions">
 <link rel="prev" href="Varying-Target-Capabilities.html#Varying-Target-Capabilities" title="Varying Target Capabilities">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Tracing-on-Symmetrix"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Rationale.html#Rationale">Rationale</a>,
+<a name="Tracing-on-Symmetrix"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Rationale.html#Rationale">Rationale</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Varying-Target-Capabilities.html#Varying-Target-Capabilities">Varying Target Capabilities</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Agent-Expressions.html#Agent-Expressions">Agent Expressions</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">E.5 Tracing on Symmetrix</h3>
@@ -96,7 +98,7 @@ sixteen, and return <code>OK_TARGET_RESPONSE</code>, since <code>f</code> saves
 sixteen bytes from <code>0x8000</code> at <code>0x1000</code>.
 
      <br><dt><code>adbg_find_memory_in_frame (f, (char *) 0x8004, &amp;buffer, &amp;size)</code><dd>This would set <code>buffer</code> to <code>0x1004</code>, set <code>size</code> to
-twelve, and return <code>OK_TARGET_RESPONSE</code>, since <span class="file">f</span> saves the
+twelve, and return <code>OK_TARGET_RESPONSE</code>, since <samp><span class="file">f</span></samp> saves the
 twelve bytes from <code>0x8004</code> starting four bytes into the buffer at
 <code>0x1000</code>.  This shows that request addresses may fall in the middle
 of saved areas; the function should return the address and size of the

@@ -3,7 +3,7 @@
 <title>Submodel Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Invoking-GCC.html#Invoking-GCC" title="Invoking GCC">
 <link rel="prev" href="Target-Options.html#Target-Options" title="Target Options">
@@ -38,28 +38,30 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Submodel-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Code-Gen-Options.html#Code-Gen-Options">Code Gen Options</a>,
+<a name="Submodel-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Code-Gen-Options.html#Code-Gen-Options">Code Gen Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Target-Options.html#Target-Options">Target Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Invoking-GCC.html#Invoking-GCC">Invoking GCC</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">3.17 Hardware Models and Configurations</h3>
 
 <p><a name="index-submodel-options-718"></a><a name="index-specifying-hardware-config-719"></a><a name="index-hardware-models-and-configurations_002c-specifying-720"></a><a name="index-machine-dependent-options-721"></a>
-Earlier we discussed the standard option <span class="option">-b</span> which chooses among
+Earlier we discussed the standard option <samp><span class="option">-b</span></samp> which chooses among
 different installed compilers for completely different target
 machines, such as VAX vs. 68000 vs. 80386.
 
  <p>In addition, each of these target machine types can have its own
-special options, starting with <span class="samp">-m</span>, to choose among various
+special options, starting with `<samp><span class="samp">-m</span></samp>', to choose among various
 hardware models or configurations&mdash;for example, 68010 vs 68020,
 floating coprocessor or none.  A single installed version of the
 compiler can compile for any model or configuration, according to the

@@ -3,7 +3,7 @@
 <title>Input/Output - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Running.html#Running" title="Running">
 <link rel="prev" href="Working-Directory.html#Working-Directory" title="Working Directory">
@@ -17,17 +17,20 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Input_002fOutput"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Attach.html#Attach">Attach</a>,
+<a name="Input%2fOutput"></a>
+<a name="Input_002fOutput"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Attach.html#Attach">Attach</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Working-Directory.html#Working-Directory">Working Directory</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Running.html#Running">Running</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">4.6 Your Program's Input and Output</h3>
@@ -49,7 +52,7 @@ redirection with the <code>run</code> command.  For example,
 
 <pre class="smallexample">     run &gt; outfile
 </pre>
-   <p class="noindent">starts your program, diverting its output to the file <span class="file">outfile</span>.
+   <p class="noindent">starts your program, diverting its output to the file <samp><span class="file">outfile</span></samp>.
 
    <p><a name="index-tty-121"></a><a name="index-controlling-terminal-122"></a>Another way to specify where your program should do input and output is
 with the <code>tty</code> command.  This command accepts a file name as
@@ -60,7 +63,7 @@ process, for future <code>run</code> commands.  For example,
 <pre class="smallexample">     tty /dev/ttyb
 </pre>
    <p class="noindent">directs that processes started with subsequent <code>run</code> commands
-default to do input and output on the terminal <span class="file">/dev/ttyb</span> and have
+default to do input and output on the terminal <samp><span class="file">/dev/ttyb</span></samp> and have
 that as their controlling terminal.
 
    <p>An explicit redirection in <code>run</code> overrides the <code>tty</code> command's

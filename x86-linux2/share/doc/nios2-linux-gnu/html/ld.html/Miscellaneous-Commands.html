@@ -3,7 +3,7 @@
 <title>Miscellaneous Commands - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Simple-Commands.html#Simple-Commands" title="Simple Commands">
 <link rel="prev" href="Format-Commands.html#Format-Commands" title="Format Commands">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Miscellaneous-Commands"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Format-Commands.html#Format-Commands">Format Commands</a>,
+<a name="Miscellaneous-Commands"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Format-Commands.html#Format-Commands">Format Commands</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Simple-Commands.html#Simple-Commands">Simple Commands</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.4.4 Other Linker Script Commands</h4>
@@ -40,17 +42,17 @@ with an error code, and print <var>message</var>.
 symbol.  Doing this may, for example, trigger linking of additional
 modules from standard libraries.  You may list several <var>symbol</var>s for
 each <code>EXTERN</code>, and you may use <code>EXTERN</code> multiple times.  This
-command has the same effect as the <span class="samp">-u</span> command-line option.
+command has the same effect as the `<samp><span class="samp">-u</span></samp>' command-line option.
 
-     <br><dt><code>FORCE_COMMON_ALLOCATION</code><dd><a name="index-FORCE_005fCOMMON_005fALLOCATION-338"></a><a name="index-common-allocation-in-linker-script-339"></a>This command has the same effect as the <span class="samp">-d</span> command-line option:
-to make <span class="command">ld</span> assign space to common symbols even if a relocatable
-output file is specified (<span class="samp">-r</span>).
+     <br><dt><code>FORCE_COMMON_ALLOCATION</code><dd><a name="index-FORCE_005fCOMMON_005fALLOCATION-338"></a><a name="index-common-allocation-in-linker-script-339"></a>This command has the same effect as the `<samp><span class="samp">-d</span></samp>' command-line option:
+to make <samp><span class="command">ld</span></samp> assign space to common symbols even if a relocatable
+output file is specified (`<samp><span class="samp">-r</span></samp>').
 
-     <br><dt><code>INHIBIT_COMMON_ALLOCATION</code><dd><a name="index-INHIBIT_005fCOMMON_005fALLOCATION-340"></a><a name="index-common-allocation-in-linker-script-341"></a>This command has the same effect as the <span class="samp">--no-define-common</span>
+     <br><dt><code>INHIBIT_COMMON_ALLOCATION</code><dd><a name="index-INHIBIT_005fCOMMON_005fALLOCATION-340"></a><a name="index-common-allocation-in-linker-script-341"></a>This command has the same effect as the `<samp><span class="samp">--no-define-common</span></samp>'
 command-line option: to make <code>ld</code> omit the assignment of addresses
 to common symbols even for a non-relocatable output file.
 
-     <br><dt><code>NOCROSSREFS(</code><var>section</var> <var>section</var><code> ...)</code><dd><a name="index-NOCROSSREFS_0028_0040var_007bsections_007d_0029-342"></a><a name="index-cross-references-343"></a>This command may be used to tell <span class="command">ld</span> to issue an error about any
+     <br><dt><code>NOCROSSREFS(</code><var>section</var> <var>section</var><code> ...)</code><dd><a name="index-NOCROSSREFS_0028_0040var_007bsections_007d_0029-342"></a><a name="index-cross-references-343"></a>This command may be used to tell <samp><span class="command">ld</span></samp> to issue an error about any
 references among certain output sections.
 
      <p>In certain types of programs, particularly on embedded systems when
@@ -60,7 +62,7 @@ errors.  For example, it would be an error if code in one section called
 a function defined in the other section.
 
      <p>The <code>NOCROSSREFS</code> command takes a list of output section names.  If
-<span class="command">ld</span> detects any cross references between the sections, it reports
+<samp><span class="command">ld</span></samp> detects any cross references between the sections, it reports
 an error and returns a non-zero exit status.  Note that the
 <code>NOCROSSREFS</code> command uses output section names, not input section
 names.
@@ -68,7 +70,7 @@ names.
      <br><dt><code>OUTPUT_ARCH(</code><var>bfdarch</var><code>)</code><dd><a name="index-OUTPUT_005fARCH_0028_0040var_007bbfdarch_007d_0029-344"></a><a name="index-machine-architecture-345"></a><a name="index-architecture-346"></a>Specify a particular output machine architecture.  The argument is one
 of the names used by the BFD library (see <a href="BFD.html#BFD">BFD</a>).  You can see the
 architecture of an object file by using the <code>objdump</code> program with
-the <span class="samp">-f</span> option. 
+the `<samp><span class="samp">-f</span></samp>' option. 
 </dl>
 
    </body></html>

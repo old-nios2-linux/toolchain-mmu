@@ -3,7 +3,7 @@
 <title>RTL Objects - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="RTL.html#RTL" title="RTL">
 <link rel="next" href="RTL-Classes.html#RTL-Classes" title="RTL Classes">
@@ -37,16 +37,18 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="RTL-Objects"></a>Next:&nbsp;<a rel="next" accesskey="n" href="RTL-Classes.html#RTL-Classes">RTL Classes</a>,
+<a name="RTL-Objects"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="RTL-Classes.html#RTL-Classes">RTL Classes</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="RTL.html#RTL">RTL</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">11.1 RTL Object Types</h3>
@@ -89,12 +91,12 @@ need not escape each quote character with a backslash.
  <p>A vector contains an arbitrary number of pointers to expressions.  The
 number of elements in the vector is explicitly present in the vector. 
 The written form of a vector consists of square brackets
-(<span class="samp">[...]</span>) surrounding the elements, in sequence and with
+(`<samp><span class="samp">[...]</span></samp>') surrounding the elements, in sequence and with
 whitespace separating them.  Vectors of length zero are not created;
 null pointers are used instead.
 
  <p><a name="index-expression-codes-619"></a><a name="index-codes_002c-RTL-expression-620"></a><a name="index-GET_005fCODE-621"></a><a name="index-PUT_005fCODE-622"></a>Expressions are classified by <dfn>expression codes</dfn> (also called RTX
-codes).  The expression code is a name defined in <span class="file">rtl.def</span>, which is
+codes).  The expression code is a name defined in <samp><span class="file">rtl.def</span></samp>, which is
 also (in uppercase) a C enumeration constant.  The possible expression
 codes and their meanings are machine-independent.  The code of an RTX can
 be extracted with the macro <code>GET_CODE (</code><var>x</var><code>)</code> and altered with
@@ -114,11 +116,11 @@ there is one operand, which is to be regarded as a string.
 expression type, its flags and machine mode if any, and then the operands
 of the expression (separated by spaces).
 
- <p>Expression code names in the <span class="samp">md</span> file are written in lowercase,
+ <p>Expression code names in the `<samp><span class="samp">md</span></samp>' file are written in lowercase,
 but when they appear in C code they are written in uppercase.  In this
 manual, they are shown as follows: <code>const_int</code>.
 
- <p><a name="index-_0028nil_0029-623"></a><a name="index-nil-624"></a>In a few contexts a null pointer is valid where an expression is normally
+ <p><a name="index-g_t_0028nil_0029-623"></a><a name="index-nil-624"></a>In a few contexts a null pointer is valid where an expression is normally
 wanted.  The written form of this is <code>(nil)</code>.
 
  </body></html>

@@ -3,7 +3,7 @@
 <title>Parameters - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Variables.html#Variables" title="Variables">
 <link rel="prev" href="Based-Variables.html#Based-Variables" title="Based Variables">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Parameters"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Based-Variables.html#Based-Variables">Based Variables</a>,
+<a name="Parameters"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Based-Variables.html#Based-Variables">Based Variables</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Variables.html#Variables">Variables</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">4.7 Parameters</h3>
@@ -36,7 +38,7 @@ the debugger should print the parameters (i.e., the order in which the
 parameters are declared in the source file).  The exact form of the stab
 depends on how the parameter is being passed.
 
-   <p><a name="index-N_005fPSYM-44"></a><a name="index-C_005fPSYM-45"></a>Parameters passed on the stack use the symbol descriptor <span class="samp">p</span> and
+   <p><a name="index-N_005fPSYM-44"></a><a name="index-C_005fPSYM-45"></a>Parameters passed on the stack use the symbol descriptor `<samp><span class="samp">p</span></samp>' and
 the <code>N_PSYM</code> symbol type (or <code>C_PSYM</code> for XCOFF).  The value
 of the symbol is an offset used to locate the parameter on the stack;
 its exact meaning is machine-dependent, but on most machines it is an

@@ -3,7 +3,7 @@
 <title>Implementation-defined behavior - The C Preprocessor</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The C Preprocessor">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Implementation-Details.html#Implementation-Details" title="Implementation Details">
 <link rel="next" href="Implementation-limits.html#Implementation-limits" title="Implementation limits">
@@ -31,7 +31,7 @@ This manual contains no Invariant Sections.  The Front-Cover Texts are
      You have freedom to copy and modify this GNU Manual, like GNU
      software.  Copies published by the Free Software Foundation raise
      funds for GNU development.
-man end-->
+-->
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -40,16 +40,19 @@ man end-->
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Implementation_002ddefined-behavior"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Implementation-limits.html#Implementation-limits">Implementation limits</a>,
+<a name="Implementation-defined-behavior"></a>
+<a name="Implementation_002ddefined-behavior"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Implementation-limits.html#Implementation-limits">Implementation limits</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Implementation-Details.html#Implementation-Details">Implementation Details</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">11.1 Implementation-defined behavior</h3>
@@ -67,30 +70,30 @@ execution character set.
 
      <p>Currently, CPP requires its input to be ASCII or UTF-8.  The execution
 character set may be controlled by the user, with the
-<span class="option">-fexec-charset</span> and <span class="option">-fwide-exec-charset</span> options.
+<samp><span class="option">-fexec-charset</span></samp> and <samp><span class="option">-fwide-exec-charset</span></samp> options.
 
      <li>Identifier characters. 
 <a name="Identifier-characters"></a>
 
-     <p>The C and C++ standards allow identifiers to be composed of <span class="samp">_</span>
+     <p>The C and C++ standards allow identifiers to be composed of `<samp><span class="samp">_</span></samp>'
 and the alphanumeric characters.  C++ and C99 also allow universal
 character names, and C99 further permits implementation-defined
 characters.  GCC currently only permits universal character names if
-<span class="option">-fextended-identifiers</span> is used, because the implementation of
+<samp><span class="option">-fextended-identifiers</span></samp> is used, because the implementation of
 universal character names in identifiers is experimental.
 
-     <p>GCC allows the <span class="samp">$</span> character in identifiers as an extension for
-most targets.  This is true regardless of the <span class="option">std=</span> switch,
+     <p>GCC allows the `<samp><span class="samp">$</span></samp>' character in identifiers as an extension for
+most targets.  This is true regardless of the <samp><span class="option">std=</span></samp> switch,
 since this extension cannot conflict with standards-conforming
 programs.  When preprocessing assembler, however, dollars are not
 identifier characters by default.
 
-     <p>Currently the targets that by default do not permit <span class="samp">$</span> are AVR,
+     <p>Currently the targets that by default do not permit `<samp><span class="samp">$</span></samp>' are AVR,
 IP2K, MMIX, MIPS Irix 3, ARM aout, and PowerPC targets for the AIX and
 BeOS operating systems.
 
-     <p>You can override the default with <span class="option">-fdollars-in-identifiers</span> or
-<span class="option">fno-dollars-in-identifiers</span>.  See <a href="fdollars_002din_002didentifiers.html#fdollars_002din_002didentifiers">fdollars-in-identifiers</a>.
+     <p>You can override the default with <samp><span class="option">-fdollars-in-identifiers</span></samp> or
+<samp><span class="option">fno-dollars-in-identifiers</span></samp>.  See <a href="fdollars_002din_002didentifiers.html#fdollars_002din_002didentifiers">fdollars-in-identifiers</a>.
 
      <li>Non-empty sequences of whitespace characters.
 
@@ -102,7 +105,7 @@ same column as it did in the original source file.
      <li>The numeric value of character constants in preprocessor expressions.
 
      <p>The preprocessor and compiler interpret character constants in the
-same way; i.e. escape sequences such as <span class="samp">\a</span> are given the
+same way; i.e. escape sequences such as `<samp><span class="samp">\a</span></samp>' are given the
 values they would have on the target machine.
 
      <p>The compiler values a multi-character character constant a character
@@ -117,7 +120,7 @@ compiler issues a warning, and the excess leading characters are
 ignored.
 
      <p>For example, <code>'ab'</code> for a target with an 8-bit <code>char</code> would be
-interpreted as <span class="samp">(int)&nbsp;((unsigned&nbsp;char)&nbsp;'a'&nbsp;*&nbsp;256&nbsp;+&nbsp;(unsigned&nbsp;char)&nbsp;'b')</span><!-- /@w -->, and <code>'\234a'</code> as <span class="samp">(int)&nbsp;((unsigned&nbsp;char)&nbsp;'\234'&nbsp;*&nbsp;256&nbsp;+&nbsp;(unsigned&nbsp;char)&nbsp;'a')</span><!-- /@w -->.
+interpreted as `<samp><span class="samp">(int)&nbsp;((unsigned&nbsp;char)&nbsp;'a'&nbsp;*&nbsp;256&nbsp;+&nbsp;(unsigned&nbsp;char)&nbsp;'b')</span></samp>'<!-- /@w -->, and <code>'\234a'</code> as `<samp><span class="samp">(int)&nbsp;((unsigned&nbsp;char)&nbsp;'\234'&nbsp;*&nbsp;256&nbsp;+&nbsp;(unsigned&nbsp;char)&nbsp;'a')</span></samp>'<!-- /@w -->.
 
      <li>Source file inclusion.
 
@@ -125,14 +128,14 @@ interpreted as <span class="samp">(int)&nbsp;((unsigned&nbsp;char)&nbsp;'a'&nbsp
 <a href="Include-Operation.html#Include-Operation">Include Operation</a>.
 
      <li>Interpretation of the filename resulting from a macro-expanded
-<span class="samp">#include</span> directive.
+`<samp><span class="samp">#include</span></samp>' directive.
 
      <p>See <a href="Computed-Includes.html#Computed-Includes">Computed Includes</a>.
 
-     <li>Treatment of a <span class="samp">#pragma</span> directive that after macro-expansion
+     <li>Treatment of a `<samp><span class="samp">#pragma</span></samp>' directive that after macro-expansion
 results in a standard pragma.
 
-     <p>No macro expansion occurs on any <span class="samp">#pragma</span> directive line, so the
+     <p>No macro expansion occurs on any `<samp><span class="samp">#pragma</span></samp>' directive line, so the
 question does not arise.
 
      <p>Note that GCC does not yet implement any of the standard

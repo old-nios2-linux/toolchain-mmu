@@ -3,7 +3,7 @@
 <title>Config Names - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Installing-GDB.html#Installing-GDB" title="Installing GDB">
 <link rel="prev" href="Separate-Objdir.html#Separate-Objdir" title="Separate Objdir">
@@ -17,22 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Config-Names"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Configure-Options.html#Configure-Options">Configure Options</a>,
+<a name="Config-Names"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Configure-Options.html#Configure-Options">Configure Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Separate-Objdir.html#Separate-Objdir">Separate Objdir</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Installing-GDB.html#Installing-GDB">Installing GDB</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">B.4 Specifying Names for Hosts and Targets</h3>
 
-<p>The specifications used for hosts and targets in the <span class="file">configure</span>
+<p>The specifications used for hosts and targets in the <samp><span class="file">configure</span></samp>
 script are based on a three-part naming scheme, but some short predefined
 aliases are also supported.  The full naming scheme encodes three pieces
 of information in the following pattern:
@@ -41,11 +43,11 @@ of information in the following pattern:
 </pre>
    <p>For example, you can use the alias <code>sun4</code> as a <var>host</var> argument,
 or as the value for <var>target</var> in a <code>--target=</code><var>target</var>
-option.  The equivalent full name is <span class="samp">sparc-sun-sunos4</span>.
+option.  The equivalent full name is `<samp><span class="samp">sparc-sun-sunos4</span></samp>'.
 
-   <p>The <span class="file">configure</span> script accompanying <span class="sc">gdb</span> does not provide
+   <p>The <samp><span class="file">configure</span></samp> script accompanying <span class="sc">gdb</span> does not provide
 any query facility to list all supported host and target names or
-aliases.  <span class="file">configure</span> calls the Bourne shell script
+aliases.  <samp><span class="file">configure</span></samp> calls the Bourne shell script
 <code>config.sub</code> to map abbreviations to full names; you can read the
 script, if you wish, or you can use it to test your guesses on
 abbreviations&mdash;for example:
@@ -64,7 +66,7 @@ abbreviations&mdash;for example:
      Invalid configuration `i986v': machine `i986v' not recognized
 </pre>
    <p class="noindent"><code>config.sub</code> is also distributed in the <span class="sc">gdb</span> source
-directory (<span class="file">gdb-6.6.50.20070620-cvs</span>, for version 6.6.50.20070620-cvs).
+directory (<samp><span class="file">gdb-6.6.50.20070620-cvs</span></samp>, for version 6.6.50.20070620-cvs).
 
    </body></html>
 

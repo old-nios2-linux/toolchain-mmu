@@ -3,7 +3,7 @@
 <title>Include Files - Untitled</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Untitled">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Program-Structure.html#Program-Structure" title="Program Structure">
 <link rel="prev" href="Source-Files.html#Source-Files" title="Source Files">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Include-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Line-Numbers.html#Line-Numbers">Line Numbers</a>,
+<a name="Include-Files"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Line-Numbers.html#Line-Numbers">Line Numbers</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Source-Files.html#Source-Files">Source Files</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Program-Structure.html#Program-Structure">Program Structure</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">2.3 Names of Include Files</h3>
@@ -67,8 +69,8 @@ match up <code>N_EXCL</code> and <code>N_BINCL</code> symbols which have the sam
 filename.  The <code>N_EINCL</code> value, and the values of the other and
 description fields for all three, appear to always be zero.
 
-   <p><a name="index-C_005fBINCL-8"></a><a name="index-C_005fEINCL-9"></a>For the start of an include file in XCOFF, use the <span class="file">.bi</span> assembler
-directive, which generates a <code>C_BINCL</code> symbol.  A <span class="file">.ei</span>
+   <p><a name="index-C_005fBINCL-8"></a><a name="index-C_005fEINCL-9"></a>For the start of an include file in XCOFF, use the <samp><span class="file">.bi</span></samp> assembler
+directive, which generates a <code>C_BINCL</code> symbol.  A <samp><span class="file">.ei</span></samp>
 directive, which generates a <code>C_EINCL</code> symbol, denotes the end of
 the include file.  Both directives are followed by the name of the
 source file in quotes, which becomes the string for the symbol. 

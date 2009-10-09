@@ -3,7 +3,7 @@
 <title>String Length - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="String-and-Array-Utilities.html#String-and-Array-Utilities" title="String and Array Utilities">
 <link rel="prev" href="String_002fArray-Conventions.html#String_002fArray-Conventions" title="String/Array Conventions">
@@ -17,23 +17,25 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="String-Length"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Copying-and-Concatenation.html#Copying-and-Concatenation">Copying and Concatenation</a>,
+<a name="String-Length"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Copying-and-Concatenation.html#Copying-and-Concatenation">Copying and Concatenation</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="String_002fArray-Conventions.html#String_002fArray-Conventions">String/Array Conventions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="String-and-Array-Utilities.html#String-and-Array-Utilities">String and Array Utilities</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.3 String Length</h3>
 
 <p>You can get the length of a string using the <code>strlen</code> function. 
-This function is declared in the header file <span class="file">string.h</span>. 
+This function is declared in the header file <samp><span class="file">string.h</span></samp>. 
 <a name="index-string_002eh-472"></a>
 <!-- string.h -->
 <!-- ISO -->
@@ -93,7 +95,7 @@ code can be used:
 bytes) is needed often it is better to work with wide characters. 
 </p></blockquote></div>
 
-   <p>The wide character equivalent is declared in <span class="file">wchar.h</span>.
+   <p>The wide character equivalent is declared in <samp><span class="file">wchar.h</span></samp>.
 
 <!-- wchar.h -->
 <!-- ISO -->
@@ -128,7 +130,7 @@ null-terminated.
           strnlen (string, 5)
               =&gt; 5
      </pre>
-        <p>This function is a GNU extension and is declared in <span class="file">string.h</span>. 
+        <p>This function is a GNU extension and is declared in <samp><span class="file">string.h</span></samp>. 
 </p></blockquote></div>
 
 <!-- wchar.h -->
@@ -138,7 +140,7 @@ null-terminated.
 <blockquote><p><code>wcsnlen</code> is the wide character equivalent to <code>strnlen</code>.  The
 <var>maxlen</var> parameter specifies the maximum number of wide characters.
 
-        <p>This function is a GNU extension and is declared in <span class="file">wchar.h</span>. 
+        <p>This function is a GNU extension and is declared in <samp><span class="file">wchar.h</span></samp>. 
 </p></blockquote></div>
 
    </body></html>

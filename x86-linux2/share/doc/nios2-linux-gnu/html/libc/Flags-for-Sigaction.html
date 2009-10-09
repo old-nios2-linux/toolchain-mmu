@@ -3,7 +3,7 @@
 <title>Flags for Sigaction - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Signal-Actions.html#Signal-Actions" title="Signal Actions">
 <link rel="prev" href="Sigaction-Function-Example.html#Sigaction-Function-Example" title="Sigaction Function Example">
@@ -17,22 +17,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Flags-for-Sigaction"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Initial-Signal-Actions.html#Initial-Signal-Actions">Initial Signal Actions</a>,
+<a name="Flags-for-Sigaction"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Initial-Signal-Actions.html#Initial-Signal-Actions">Initial Signal Actions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Sigaction-Function-Example.html#Sigaction-Function-Example">Sigaction Function Example</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Signal-Actions.html#Signal-Actions">Signal Actions</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">24.3.5 Flags for <code>sigaction</code></h4>
 
-<p><a name="index-signal-flags-2921"></a><a name="index-flags-for-_0040code_007bsigaction_007d-2922"></a><a name="index-_0040code_007bsigaction_007d-flags-2923"></a>
+<p><a name="index-signal-flags-2921"></a><a name="index-flags-for-_0040code_007bsigaction_007d-2922"></a><a name="index-g_t_0040code_007bsigaction_007d-flags-2923"></a>
 The <code>sa_flags</code> member of the <code>sigaction</code> structure is a
 catch-all for special features.  Most of the time, <code>SA_RESTART</code> is
 a good value to use for this field.
@@ -50,7 +52,7 @@ that you specify apply only to that particular signal.
 the flags to zero except for <code>SA_RESTART</code>, whose value depends on
 the settings you have made with <code>siginterrupt</code>.  See <a href="Interrupted-Primitives.html#Interrupted-Primitives">Interrupted Primitives</a>, to see what this is about.
 
-   <p><a name="index-signal_002eh-2924"></a>These macros are defined in the header file <span class="file">signal.h</span>.
+   <p><a name="index-signal_002eh-2924"></a>These macros are defined in the header file <samp><span class="file">signal.h</span></samp>.
 
 <!-- signal.h -->
 <!-- POSIX.1 -->

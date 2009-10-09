@@ -3,7 +3,7 @@
 <title>File Position Primitive - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="I_002fO-Primitives.html#I_002fO-Primitives" title="I/O Primitives">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="File-Position-Primitive"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Descriptors-and-Streams.html#Descriptors-and-Streams">Descriptors and Streams</a>,
+<a name="File-Position-Primitive"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Descriptors-and-Streams.html#Descriptors-and-Streams">Descriptors and Streams</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="I_002fO-Primitives.html#I_002fO-Primitives">I/O Primitives</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.3 Setting the File Position of a Descriptor</h3>
@@ -156,7 +158,7 @@ other.  For example,
        read (d2, buf, 4);
      }
 </pre>
-   <p class="noindent">will read the first four characters of the file <span class="file">foo</span>.  (The
+   <p class="noindent">will read the first four characters of the file <samp><span class="file">foo</span></samp>.  (The
 error-checking code necessary for a real program has been omitted here
 for brevity.)
 
@@ -177,7 +179,7 @@ reading or writing data, affects all of them alike.  Thus, for example,
      }
 </pre>
    <p class="noindent">will read four characters starting with the 1024'th character of
-<span class="file">foo</span>, and then four more characters starting with the 1028'th
+<samp><span class="file">foo</span></samp>, and then four more characters starting with the 1028'th
 character.
 
 <!-- sys/types.h -->
@@ -204,9 +206,9 @@ on 32 bit machines, where the <code>off_t</code> type would have 32 bits,
 available under the name <code>off_t</code>. 
 </p></blockquote></div>
 
-   <p>These aliases for the <span class="samp">SEEK_...</span> constants exist for the sake
+   <p>These aliases for the `<samp><span class="samp">SEEK_...</span></samp>' constants exist for the sake
 of compatibility with older BSD systems.  They are defined in two
-different header files: <span class="file">fcntl.h</span> and <span class="file">sys/file.h</span>.
+different header files: <samp><span class="file">fcntl.h</span></samp> and <samp><span class="file">sys/file.h</span></samp>.
 
      <dl>
 <dt><code>L_SET</code><dd>An alias for <code>SEEK_SET</code>.

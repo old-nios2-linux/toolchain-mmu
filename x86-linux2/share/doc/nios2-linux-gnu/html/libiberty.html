@@ -3,7 +3,7 @@
 <title>GNU libiberty</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU libiberty">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="top" href="#Top">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -14,8 +14,9 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
@@ -68,8 +69,9 @@
 
 <div class="node">
 <p><hr>
-<a name="Top"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Using">Using</a>
-<br>
+<a name="Top"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Using">Using</a>
+
 </div>
 
 <h2 class="unnumbered">Introduction</h2>
@@ -98,10 +100,11 @@ License; for more information, see <a href="#Library-Copying">Library Copying</a
 
 <div class="node">
 <p><hr>
-<a name="Using"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Overview">Overview</a>,
+<a name="Using"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Overview">Overview</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Top">Top</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
-<br>
+
 </div>
 
 <h2 class="chapter">1 Using</h2>
@@ -118,11 +121,11 @@ with your own sources; the library would then be linked in at the end.  This
 prevents any possible version mismatches with other copies of libiberty
 elsewhere on the system.
 
-   <p>Passing <span class="option">--enable-install-libiberty</span> to the <span class="command">configure</span>
+   <p>Passing <samp><span class="option">--enable-install-libiberty</span></samp> to the <samp><span class="command">configure</span></samp>
 script when building <code>libiberty</code> causes the header files and archive library
 to be installed when <kbd>make install</kbd> is run.  This option also takes
 an (optional) argument to specify the installation location, in the same
-manner as <span class="option">--prefix</span>.
+manner as <samp><span class="option">--prefix</span></samp>.
 
    <p>For your own projects, an approach which offers stability and flexibility
 is to include <code>libiberty</code> with your code, but allow the end user to optionally
@@ -134,14 +137,15 @@ has proven useful with software using the GNU <code>readline</code> library.)
    <p>Making use of <code>libiberty</code> code usually requires that you include one or more
 header files from the <code>libiberty</code> distribution.  (They will be named as
 necessary in the function descriptions.)  At link time, you will need to
-add <span class="option">-liberty</span> to your link command invocation.
+add <samp><span class="option">-liberty</span></samp> to your link command invocation.
 
 <div class="node">
 <p><hr>
-<a name="Overview"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Functions">Functions</a>,
+<a name="Overview"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Functions">Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Using">Using</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
-<br>
+
 </div>
 
 <h2 class="chapter">2 Overview</h2>
@@ -161,9 +165,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 
 <div class="node">
 <p><hr>
-<a name="Supplemental-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Replacement-Functions">Replacement Functions</a>,
+<a name="Supplemental-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Replacement-Functions">Replacement Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Overview">Overview</a>
-<br>
+
 </div>
 
 <h3 class="section">2.1 Supplemental Functions</h3>
@@ -184,17 +189,18 @@ family of systems.
    <p>Many such functions are provided in <code>libiberty</code>.  They are quickly
 listed here with little description, as systems which lack them
 become less and less common.  Each function <var>foo</var> is implemented
-in <var>foo</var><span class="file">.c</span> but not declared in any <code>libiberty</code> header file; more
+in <samp><var>foo</var><span class="file">.c</span></samp> but not declared in any <code>libiberty</code> header file; more
 comments and caveats for each function's implementation are often
 available in the source file.  Generally, the function can simply
 be declared as <code>extern</code>.
 
 <div class="node">
 <p><hr>
-<a name="Replacement-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Extensions">Extensions</a>,
+<a name="Replacement-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Extensions">Extensions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Supplemental-Functions">Supplemental Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Overview">Overview</a>
-<br>
+
 </div>
 
 <h3 class="section">2.2 Replacement Functions</h3>
@@ -207,7 +213,7 @@ appropriate action taken if memory has been exhausted.  A group of
 &ldquo;replacement functions&rdquo; is available in <code>libiberty</code> to address these issues
 for some of the most commonly used subroutines.
 
-   <p>All of these functions are declared in the <span class="file">libiberty.h</span> header
+   <p>All of these functions are declared in the <samp><span class="file">libiberty.h</span></samp> header
 file.  Many of the implementations will use preprocessor macros set by
 GNU Autoconf, if you decide to make use of that program.  Some of these
 functions may call one another.
@@ -222,15 +228,16 @@ functions may call one another.
 
 <div class="node">
 <p><hr>
-<a name="Memory-Allocation"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Exit-Handlers">Exit Handlers</a>,
+<a name="Memory-Allocation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Exit-Handlers">Exit Handlers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Replacement-Functions">Replacement Functions</a>
-<br>
+
 </div>
 
 <h4 class="subsection">2.2.1 Memory Allocation</h4>
 
 <p><a name="index-memory-allocation-9"></a>
-The functions beginning with the letter <span class="samp">x</span> are wrappers around
+The functions beginning with the letter `<samp><span class="samp">x</span></samp>' are wrappers around
 standard functions; the functions provided by the system environment
 are called and their results checked before the results are passed back
 to client code.  If the standard functions fail, these wrappers will
@@ -238,10 +245,11 @@ terminate the program.  Thus, these versions can be used with impunity.
 
 <div class="node">
 <p><hr>
-<a name="Exit-Handlers"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Error-Reporting">Error Reporting</a>,
+<a name="Exit-Handlers"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Error-Reporting">Error Reporting</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Memory-Allocation">Memory Allocation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Replacement-Functions">Replacement Functions</a>
-<br>
+
 </div>
 
 <h4 class="subsection">2.2.2 Exit Handlers</h4>
@@ -253,24 +261,26 @@ implementation via <code>xatexit</code> and <code>xexit</code>.
 
 <div class="node">
 <p><hr>
-<a name="Error-Reporting"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="#Exit-Handlers">Exit Handlers</a>,
+<a name="Error-Reporting"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Exit-Handlers">Exit Handlers</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Replacement-Functions">Replacement Functions</a>
-<br>
+
 </div>
 
 <h4 class="subsection">2.2.3 Error Reporting</h4>
 
 <p><a name="index-error-reporting-11"></a>
 These are a set of routines to facilitate programming with the system
-<code>errno</code> interface.  The <code>libiberty</code> source file <span class="file">strerror.c</span>
+<code>errno</code> interface.  The <code>libiberty</code> source file <samp><span class="file">strerror.c</span></samp>
 contains a good deal of documentation for these functions.
 
 <!-- signal stuff -->
 <div class="node">
 <p><hr>
-<a name="Extensions"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="#Replacement-Functions">Replacement Functions</a>,
+<a name="Extensions"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Replacement-Functions">Replacement Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Overview">Overview</a>
-<br>
+
 </div>
 
 <h3 class="section">2.3 Extensions</h3>
@@ -290,10 +300,11 @@ central location from which to use, maintain, and distribute them.
 <!-- script of Phil's.  Hope it's accurate. -->
 <div class="node">
 <p><hr>
-<a name="Obstacks"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Licenses">Licenses</a>,
+<a name="Obstacks"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Licenses">Licenses</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Functions">Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
-<br>
+
 </div>
 
 <h2 class="chapter">3 Obstacks</h2>
@@ -331,15 +342,16 @@ the padding needed to start each object on a suitable boundary.
 
 <div class="node">
 <p><hr>
-<a name="Creating-Obstacks"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Preparing-for-Obstacks">Preparing for Obstacks</a>,
+<a name="Creating-Obstacks"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Preparing-for-Obstacks">Preparing for Obstacks</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.1 Creating Obstacks</h3>
 
 <p>The utilities for manipulating obstacks are declared in the header
-file <span class="file">obstack.h</span>. 
+file <samp><span class="file">obstack.h</span></samp>. 
 <a name="index-obstack_002eh-15"></a>
 <!-- obstack.h -->
 <!-- GNU -->
@@ -379,16 +391,17 @@ These matters are described in the following section.
 
 <div class="node">
 <p><hr>
-<a name="Preparing-for-Obstacks"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Allocation-in-an-Obstack">Allocation in an Obstack</a>,
+<a name="Preparing-for-Obstacks"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Allocation-in-an-Obstack">Allocation in an Obstack</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Creating-Obstacks">Creating Obstacks</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.2 Preparing for Using Obstacks</h3>
 
 <p>Each source file in which you plan to use the obstack functions
-must include the header file <span class="file">obstack.h</span>, like this:
+must include the header file <samp><span class="file">obstack.h</span></samp>, like this:
 
 <pre class="smallexample">     #include &lt;obstack.h&gt;
 </pre>
@@ -401,7 +414,7 @@ them are freed.  These macros should appear before any use of obstacks
 in the source file.
 
    <p>Usually these are defined to use <code>malloc</code> via the intermediary
-<code>xmalloc</code> (see <a href="libc.html#Unconstrained-Allocation">Unconstrained Allocation (The GNU C Library Reference Manual)</a>).  This is done with
+<code>xmalloc</code> (see <a href="libc.html#Unconstrained-Allocation">Unconstrained Allocation</a>).  This is done with
 the following pair of macro definitions:
 
 <pre class="smallexample">     #define obstack_chunk_alloc xmalloc
@@ -449,7 +462,7 @@ initialize it.  First, an obstack that is a static variable:
 <code>obstack</code> uses when <code>obstack_chunk_alloc</code> fails to allocate
 memory.  The default action is to print a message and abort. 
 You should supply a function that either calls <code>exit</code>
-(see <a href="libc.html#Program-Termination">Program Termination (The GNU C Library Reference Manual)</a>) or <code>longjmp</code> (see <a href="libc.html#Non_002dLocal-Exits">Non-Local Exits (The GNU C Library Reference Manual)</a>) and doesn't return.
+(see <a href="libc.html#Program-Termination">Program Termination</a>) or <code>longjmp</code> (see <a href="libc.html#Non_002dLocal-Exits">Non-Local Exits</a>) and doesn't return.
 
      <pre class="smallexample">          void my_obstack_alloc_failed (void)
           ...
@@ -459,10 +472,11 @@ You should supply a function that either calls <code>exit</code>
 
 <div class="node">
 <p><hr>
-<a name="Allocation-in-an-Obstack"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Freeing-Obstack-Objects">Freeing Obstack Objects</a>,
+<a name="Allocation-in-an-Obstack"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Freeing-Obstack-Objects">Freeing Obstack Objects</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Preparing-for-Obstacks">Preparing for Obstacks</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.3 Allocation in an Obstack</h3>
@@ -533,14 +547,15 @@ example of its use:
      }
 </pre>
    <p class="noindent">Contrast this with the previous example of <code>savestring</code> using
-<code>malloc</code> (see <a href="libc.html#Basic-Allocation">Basic Allocation (The GNU C Library Reference Manual)</a>).
+<code>malloc</code> (see <a href="libc.html#Basic-Allocation">Basic Allocation</a>).
 
 <div class="node">
 <p><hr>
-<a name="Freeing-Obstack-Objects"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Obstack-Functions">Obstack Functions</a>,
+<a name="Freeing-Obstack-Objects"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Obstack-Functions">Obstack Functions</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Allocation-in-an-Obstack">Allocation in an Obstack</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.4 Freeing Objects in an Obstack</h3>
@@ -575,10 +590,11 @@ obstacks, or non-obstack allocation, can reuse the space of the chunk.
 
 <div class="node">
 <p><hr>
-<a name="Obstack-Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Growing-Objects">Growing Objects</a>,
+<a name="Obstack-Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Growing-Objects">Growing Objects</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Freeing-Obstack-Objects">Freeing Obstack Objects</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.5 Obstack Functions and Macros</h3>
@@ -621,7 +637,7 @@ function name in parentheses, as shown here:
      funcp = obstack_alloc;
 </pre>
    <p class="noindent">This is the same situation that exists in ISO&nbsp;C<!-- /@w --> for the standard library
-functions.  See <a href="libc.html#Macro-Definitions">Macro Definitions (The GNU C Library Reference Manual)</a>.
+functions.  See <a href="libc.html#Macro-Definitions">Macro Definitions</a>.
 
    <p><strong>Warning:</strong> When you do use the macros, you must observe the
 precaution of avoiding side effects in the first operand, even in ISO&nbsp;C<!-- /@w -->.
@@ -632,10 +648,11 @@ compute each argument only once.
 
 <div class="node">
 <p><hr>
-<a name="Growing-Objects"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Extra-Fast-Growing">Extra Fast Growing</a>,
+<a name="Growing-Objects"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Extra-Fast-Growing">Extra Fast Growing</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Obstack-Functions">Obstack Functions</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.6 Growing Objects</h3>
@@ -756,10 +773,11 @@ length&mdash;there's no telling what will happen if you do that.
 
 <div class="node">
 <p><hr>
-<a name="Extra-Fast-Growing"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Status-of-an-Obstack">Status of an Obstack</a>,
+<a name="Extra-Fast-Growing"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Status-of-an-Obstack">Status of an Obstack</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Growing-Objects">Growing Objects</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.7 Extra Fast Growing Objects</h3>
@@ -867,10 +885,11 @@ start using the fast growth functions again.
 </pre>
    <div class="node">
 <p><hr>
-<a name="Status-of-an-Obstack"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Obstacks-Data-Alignment">Obstacks Data Alignment</a>,
+<a name="Status-of-an-Obstack"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Obstacks-Data-Alignment">Obstacks Data Alignment</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Extra-Fast-Growing">Extra Fast Growing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.8 Status of an Obstack</h3>
@@ -917,10 +936,11 @@ This is equivalent to
 
 <div class="node">
 <p><hr>
-<a name="Obstacks-Data-Alignment"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Obstack-Chunks">Obstack Chunks</a>,
+<a name="Obstacks-Data-Alignment"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Obstack-Chunks">Obstack Chunks</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Status-of-an-Obstack">Status of an Obstack</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.9 Alignment of Data in Obstacks</h3>
@@ -962,10 +982,11 @@ the next object.
 
 <div class="node">
 <p><hr>
-<a name="Obstack-Chunks"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Summary-of-Obstacks">Summary of Obstacks</a>,
+<a name="Obstack-Chunks"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Summary-of-Obstacks">Summary of Obstacks</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Obstacks-Data-Alignment">Obstacks Data Alignment</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.10 Obstack Chunks</h3>
@@ -1021,9 +1042,10 @@ is how to do so cleanly:
 </pre>
    <div class="node">
 <p><hr>
-<a name="Summary-of-Obstacks"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="#Obstack-Chunks">Obstack Chunks</a>,
+<a name="Summary-of-Obstacks"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Obstack-Chunks">Obstack Chunks</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Obstacks">Obstacks</a>
-<br>
+
 </div>
 
 <h3 class="section">3.11 Summary of Obstack Functions</h3>
@@ -1088,10 +1110,11 @@ See <a href="#Status-of-an-Obstack">Status of an Obstack</a>.
 
 <div class="node">
 <p><hr>
-<a name="Functions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Obstacks">Obstacks</a>,
+<a name="Functions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Obstacks">Obstacks</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Overview">Overview</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
-<br>
+
 </div>
 
 <h2 class="chapter">4 Function, Variable, and Macro Listing.</h2>
@@ -1105,8 +1128,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 &mdash; Extension: <b>HOST_CHARSET</b><var><a name="index-HOST_005fCHARSET-55"></a></var><br>
 <blockquote><p>This macro indicates the basic character set and encoding used by the
 host: more precisely, the encoding used for character constants in
-preprocessor <span class="samp">#if</span> statements (the C "execution character set"). 
-It is defined by <span class="file">safe-ctype.h</span>, and will be an integer constant
+preprocessor `<samp><span class="samp">#if</span></samp>' statements (the C "execution character set"). 
+It is defined by <samp><span class="file">safe-ctype.h</span></samp>, and will be an integer constant
 with one of the following values:
 
           <dl>
@@ -1130,7 +1153,7 @@ the memory immediately but will do so eventually during subsequent
 calls to this function.  Memory is allocated using <code>xmalloc</code> under
 normal circumstances.
 
-        <p>The header file <span class="file">alloca-conf.h</span> can be used in conjunction with the
+        <p>The header file <samp><span class="file">alloca-conf.h</span></samp> can be used in conjunction with the
 GNU Autoconf test <code>AC_FUNC_ALLOCA</code> to test for and properly make
 available this function.  The <code>AC_FUNC_ALLOCA</code> test requires that
 client code use a block of preprocessor code to be safe (see the Autoconf
@@ -1278,7 +1301,7 @@ files in.
 &mdash; Supplemental: long <b>clock</b> (<var>void</var>)<var><a name="index-clock-71"></a></var><br>
 <blockquote>
 <p>Returns an approximation of the CPU time used by the process as a
-<code>clock_t</code>; divide this number by <span class="samp">CLOCKS_PER_SEC</span> to get the
+<code>clock_t</code>; divide this number by `<samp><span class="samp">CLOCKS_PER_SEC</span></samp>' to get the
 number of seconds used.
 
         </blockquote></div>
@@ -1331,7 +1354,7 @@ symbolic name or message.
 <blockquote>
 <p>The <var>argcp</var> and <code>argvp</code> arguments are pointers to the usual
 <code>argc</code> and <code>argv</code> arguments to <code>main</code>.  This function
-looks for arguments that begin with the character <span class="samp">@</span>.  Any such
+looks for arguments that begin with the character `<samp><span class="samp">@</span></samp>'.  Any such
 arguments are interpreted as &ldquo;response files&rdquo;.  The contents of the
 response file are interpreted as additional command line options.  In
 particular, the file is separated into whitespace-separated strings;
@@ -1354,7 +1377,7 @@ operating system to free the memory when the program exits.
 This is useful, for example, when we have an open file descriptor for
 an unnamed file, and the name of a file that we believe to correspond
 to that fd.  This can happen when we are exec'd with an already open
-file (<code>stdout</code> for example) or from the SVR4 <span class="file">/proc</span> calls
+file (<code>stdout</code> for example) or from the SVR4 <samp><span class="file">/proc</span></samp> calls
 that return open file descriptors for mapped address spaces.  All we
 have to do is open the file by name and check the two file descriptors
 for a match, which is done by comparing major and minor device numbers
@@ -1408,7 +1431,7 @@ and backward slashes are equal.
 matches, <code>FNM_NOMATCH</code> if not.  <var>pattern</var> may contain the
 wildcards <code>?</code> to match any one character, <code>*</code> to match any
 zero or more characters, or a set of alternate characters in square
-brackets, like <span class="samp">[a-gt8]</span>, which match one character (<code>a</code>
+brackets, like `<samp><span class="samp">[a-gt8]</span></samp>', which match one character (<code>a</code>
 through <code>g</code>, or <code>t</code>, or <code>8</code>, in this example) if that one
 character is in the set.  A set may be inverted (i.e., match anything
 except what's in the set) by giving <code>^</code> or <code>!</code> as the first
@@ -1416,8 +1439,8 @@ character in the set.  To include those characters in the set, list them
 as anything other than the first character of the set.  To include a
 dash in the set, list it last in the set.  A backslash character makes
 the following character not special, so for example you could match
-against a literal asterisk with <span class="samp">\*</span>.  To match a literal
-backslash, use <span class="samp">\\</span>.
+against a literal asterisk with `<samp><span class="samp">\*</span></samp>'.  To match a literal
+backslash, use `<samp><span class="samp">\\</span></samp>'.
 
         <p><code>flags</code> controls various aspects of the matching process, and is a
 boolean OR of zero or more of the following values (defined in
@@ -1435,8 +1458,8 @@ boolean OR of zero or more of the following values (defined in
 
           <br><dt><code>FNM_LEADING_DIR</code><dd>Means that <var>string</var> also matches <var>pattern</var> if some initial part
 of <var>string</var> matches, and is followed by <code>/</code> and zero or more
-characters.  For example, <span class="samp">foo*</span> would match either <span class="samp">foobar</span>
-or <span class="samp">foobar/grill</span>.
+characters.  For example, `<samp><span class="samp">foo*</span></samp>' would match either `<samp><span class="samp">foobar</span></samp>'
+or `<samp><span class="samp">foobar/grill</span></samp>'.
 
           <br><dt><code>FNM_CASEFOLD</code><dd>Ignores case when performing the comparison.
 
@@ -1614,12 +1637,12 @@ back pointer, like this prototype (although no prototype is provided):
 &mdash; Extension: <b>ISUPPER</b> (<var>c</var>)<var><a name="index-ISUPPER-105"></a></var><br>
 &mdash; Extension: <b>ISXDIGIT</b> (<var>c</var>)<var><a name="index-ISXDIGIT-106"></a></var><br>
 <blockquote>
-<p>These twelve macros are defined by <span class="file">safe-ctype.h</span>.  Each has the
+<p>These twelve macros are defined by <samp><span class="file">safe-ctype.h</span></samp>.  Each has the
 same meaning as the corresponding macro (with name in lowercase)
-defined by the standard header <span class="file">ctype.h</span>.  For example,
+defined by the standard header <samp><span class="file">ctype.h</span></samp>.  For example,
 <code>ISALPHA</code> returns true for alphabetic characters and false for
 others.  However, there are two differences between these macros and
-those provided by <span class="file">ctype.h</span>:
+those provided by <samp><span class="file">ctype.h</span></samp>:
 
           <ul>
 <li>These macros are guaranteed to have well-defined behavior for all
@@ -1657,7 +1680,7 @@ false for characters with numeric values from 128 to 255.
 &mdash; Extension: <b>IS_NVSPACE</b> (<var>c</var>)<var><a name="index-IS_005fNVSPACE-110"></a></var><br>
 &mdash; Extension: <b>IS_SPACE_OR_NUL</b> (<var>c</var>)<var><a name="index-IS_005fSPACE_005fOR_005fNUL-111"></a></var><br>
 &mdash; Extension: <b>IS_ISOBASIC</b> (<var>c</var>)<var><a name="index-IS_005fISOBASIC-112"></a></var><br>
-<blockquote><p>These six macros are defined by <span class="file">safe-ctype.h</span> and provide
+<blockquote><p>These six macros are defined by <samp><span class="file">safe-ctype.h</span></samp> and provide
 additional character classes which are useful when doing lexical
 analysis of C or similar languages.  They are true for the following
 sets of characters:
@@ -1676,8 +1699,8 @@ sets of characters:
 &mdash; Replacement: const char* <b>lbasename</b> (<var>const char *name</var>)<var><a name="index-lbasename-113"></a></var><br>
 <blockquote>
 <p>Given a pointer to a string containing a typical pathname
-(<span class="samp">/usr/src/cmd/ls/ls.c</span> for example), returns a pointer to the
-last component of the pathname (<span class="samp">ls.c</span> in this case).  The
+(`<samp><span class="samp">/usr/src/cmd/ls/ls.c</span></samp>' for example), returns a pointer to the
+last component of the pathname (`<samp><span class="samp">ls.c</span></samp>' in this case).  The
 returned pointer is guaranteed to lie within the original
 string.  This latter fact is not true of many vendor C
 libraries, which return special strings or modify the passed
@@ -1711,7 +1734,7 @@ portion of <var>progname</var>, followed by a relative pathname of the
 difference between <var>bin_prefix</var> and <var>prefix</var>.
 
         <p>If <var>progname</var> does not contain any directory separators,
-<code>make_relative_prefix</code> will search <span class="env">PATH</span> to find a program
+<code>make_relative_prefix</code> will search <samp><span class="env">PATH</span></samp> to find a program
 named <var>progname</var>.  Also, if <var>progname</var> is a symbolic link,
 the symbolic link will be resolved.
 
@@ -1808,7 +1831,7 @@ as if comparing unsigned char arrays.
      </pre>
         <p><var>suffix_len</var> tells us how long <var>suffix</var> is (it can be zero
 length).  The last six characters of <var>pattern</var> before <var>suffix</var>
-must be <span class="samp">XXXXXX</span>; they are replaced with a string that makes the
+must be `<samp><span class="samp">XXXXXX</span></samp>'; they are replaced with a string that makes the
 filename unique.  Returns a file descriptor open on the file for
 reading and writing.
 
@@ -1922,7 +1945,7 @@ functions support, consider using <code>pex_input_file</code> instead.
 
           <ul>
 <li>Most systems' pipes can buffer only a fixed amount of data; a process
-that writes to a full pipe blocks.  Thus, if you write to <span class="file">fp</span>
+that writes to a full pipe blocks.  Thus, if you write to <samp><span class="file">fp</span></samp>
 before starting the first process, you run the risk of blocking when
 there is no child process yet to read the data and allow you to
 continue.  <code>pex_input_pipe</code> makes no promises about the
@@ -2114,7 +2137,7 @@ followed by a newline.
 <blockquote>
 <p>Uses <code>setenv</code> or <code>unsetenv</code> to put <var>string</var> into
 the environment or remove it.  If <var>string</var> is of the form
-<span class="samp">name=value</span> the string is added; if no <span class="samp">=</span> is present the
+`<samp><span class="samp">name=value</span></samp>' the string is added; if no `<samp><span class="samp">=</span></samp>' is present the
 name is unset/removed.
 
         </blockquote></div>
@@ -2298,7 +2321,7 @@ symbolic name of that error number, as found in <code>&lt;errno.h&gt;</code>.
 
         <p>If the supplied error number is within the valid range of indices for
 symbolic names, but no name is available for the particular error
-number, then returns the string <span class="samp">Error </span><var>num</var>, where <var>num</var>
+number, then returns the string `<samp><span class="samp">Error </span><var>num</var></samp>', where <var>num</var>
 is the error number.
 
         <p>If the supplied error number is not within the range of valid
@@ -2320,7 +2343,7 @@ strings will be the same as the ones used by <code>perror</code>.
 
         <p>If the supplied error number is within the valid range of indices for
 the <code>sys_errlist</code>, but no message is available for the particular
-error number, then returns the string <span class="samp">Error </span><var>num</var>, where
+error number, then returns the string `<samp><span class="samp">Error </span><var>num</var></samp>', where
 <var>num</var> is the error number.
 
         <p>If the supplied error number is not a valid index into
@@ -2379,7 +2402,7 @@ ones used by <code>psignal()</code>.
 
         <p>If the supplied signal number is within the valid range of indices for
 the <code>sys_siglist</code>, but no message is available for the particular
-signal number, then returns the string <span class="samp">Signal </span><var>num</var>, where
+signal number, then returns the string `<samp><span class="samp">Signal </span><var>num</var></samp>', where
 <var>num</var> is the signal number.
 
         <p>If the supplied signal number is not a valid index into
@@ -2399,7 +2422,7 @@ symbolic name of that signal number, as found in <code>&lt;signal.h&gt;</code>.
 
         <p>If the supplied signal number is within the valid range of indices for
 symbolic names, but no name is available for the particular signal
-number, then returns the string <span class="samp">Signal </span><var>num</var>, where
+number, then returns the string `<samp><span class="samp">Signal </span><var>num</var></samp>', where
 <var>num</var> is the signal number.
 
         <p>If the supplied signal number is not within the range of valid
@@ -2728,10 +2751,11 @@ always NUL terminated.
 
 <div class="node">
 <p><hr>
-<a name="Licenses"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#Index">Index</a>,
+<a name="Licenses"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Index">Index</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Obstacks">Obstacks</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
-<br>
+
 </div>
 
 <h2 class="appendix">Appendix A Licenses</h2>
@@ -2746,9 +2770,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <!-- GNU web site, with its @node line altered to make makeinfo shut up. -->
 <div class="node">
 <p><hr>
-<a name="Library-Copying"></a>Next:&nbsp;<a rel="next" accesskey="n" href="#BSD">BSD</a>,
+<a name="Library-Copying"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="#BSD">BSD</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Licenses">Licenses</a>
-<br>
+
 </div>
 
 <h3 class="appendixsec">A.1 GNU LESSER GENERAL PUBLIC LICENSE</h3>
@@ -3260,9 +3285,10 @@ necessary.  Here is a sample; alter the names:
 
 <div class="node">
 <p><hr>
-<a name="BSD"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="#Library-Copying">Library Copying</a>,
+<a name="BSD"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Library-Copying">Library Copying</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Licenses">Licenses</a>
-<br>
+
 </div>
 
 <h3 class="appendixsec">A.2 BSD</h3>
@@ -3305,9 +3331,10 @@ SUCH DAMAGE.
 
 <div class="node">
 <p><hr>
-<a name="Index"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="#Licenses">Licenses</a>,
+<a name="Index"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Licenses">Licenses</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
-<br>
+
 </div>
 
 <h2 class="unnumbered">Index</h2>

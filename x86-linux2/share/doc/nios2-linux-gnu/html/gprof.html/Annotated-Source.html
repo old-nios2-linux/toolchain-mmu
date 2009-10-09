@@ -3,7 +3,7 @@
 <title>Annotated Source - GNU gprof</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU gprof">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Output.html#Output" title="Output">
 <link rel="prev" href="Line_002dby_002dline.html#Line_002dby_002dline" title="Line-by-line">
@@ -16,26 +16,28 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Annotated-Source"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Line_002dby_002dline.html#Line_002dby_002dline">Line-by-line</a>,
+<a name="Annotated-Source"></a>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Line_002dby_002dline.html#Line_002dby_002dline">Line-by-line</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Output.html#Output">Output</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">5.4 The Annotated Source Listing</h3>
 
-<p><code>gprof</code>'s <span class="samp">-A</span> option triggers an annotated source listing,
+<p><code>gprof</code>'s `<samp><span class="samp">-A</span></samp>' option triggers an annotated source listing,
 which lists the program's source code, each function labeled with the
 number of times it was called.  You may also need to specify the
-<span class="samp">-I</span> option, if <code>gprof</code> can't find the source code files.
+`<samp><span class="samp">-I</span></samp>' option, if <code>gprof</code> can't find the source code files.
 
-   <p>Compiling with <span class="samp">gcc ... -g -pg -a</span> augments your program
+   <p>Compiling with `<samp><span class="samp">gcc ... -g -pg -a</span></samp>' augments your program
 with basic-block counting code, in addition to function counting code. 
 This enables <code>gprof</code> to determine how many times each line
 of code was executed. 
@@ -72,8 +74,8 @@ the fifth basic-block.  The compiler may also generate additional
 basic-blocks to handle various special cases.
 
    <p>A program augmented for basic-block counting can be analyzed with
-<span class="samp">gprof -l -A</span>. 
-The <span class="samp">-x</span> option is also helpful,
+`<samp><span class="samp">gprof -l -A</span></samp>'. 
+The `<samp><span class="samp">-x</span></samp>' option is also helpful,
 to ensure that each line of code is labeled at least once. 
 Here is <code>updcrc</code>'s
 annotated source listing for a sample <code>gzip</code> run:

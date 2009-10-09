@@ -1,4 +1,4 @@
-This is libc.info, produced by makeinfo version 4.7 from libc.texinfo.
+This is libc.info, produced by makeinfo version 4.8 from libc.texinfo.
 
 INFO-DIR-SECTION GNU libraries
 START-INFO-DIR-ENTRY
@@ -3662,7 +3662,7 @@ relying on semantics undefined within the standard.
 
      Note that if you do this, you must link your program with the BSD
      compatibility library by passing the `-lbsd-compat' option to the
-     compiler or linker.  *Note:* If you forget to do this, you may get
+     compiler or linker.  *Note_* If you forget to do this, you may get
      very strange errors at run time.
 
  -- Macro: _REENTRANT
@@ -6938,7 +6938,7 @@ several reasons:
      additional block on each iteration.  This is impossible with
      variable-sized arrays.
 
-   *Note:* If you mix use of `alloca' and variable-sized arrays within
+   *Note_* If you mix use of `alloca' and variable-sized arrays within
 one function, exiting a scope in which a variable-sized array was
 declared frees all blocks allocated with `alloca' during the execution
 of that scope.

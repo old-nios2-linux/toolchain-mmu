@@ -3,7 +3,7 @@
 <title>Opening and Closing Files - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="next" href="I_002fO-Primitives.html#I_002fO-Primitives" title="I/O Primitives">
@@ -16,24 +16,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Opening-and-Closing-Files"></a>Next:&nbsp;<a rel="next" accesskey="n" href="I_002fO-Primitives.html#I_002fO-Primitives">I/O Primitives</a>,
+<a name="Opening-and-Closing-Files"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="I_002fO-Primitives.html#I_002fO-Primitives">I/O Primitives</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.1 Opening and Closing Files</h3>
 
 <p><a name="index-opening-a-file-descriptor-1196"></a><a name="index-closing-a-file-descriptor-1197"></a>This section describes the primitives for opening and closing files
 using file descriptors.  The <code>open</code> and <code>creat</code> functions are
-declared in the header file <span class="file">fcntl.h</span>, while <code>close</code> is
-declared in <span class="file">unistd.h</span>. 
+declared in the header file <samp><span class="file">fcntl.h</span></samp>, while <code>close</code> is
+declared in <samp><span class="file">unistd.h</span></samp>. 
 <a name="index-unistd_002eh-1198"></a><a name="index-fcntl_002eh-1199"></a>
 <!-- fcntl.h -->
 <!-- POSIX.1 -->
@@ -48,7 +50,7 @@ to supply the argument in any case.
 
         <p>The <var>flags</var> argument controls how the file is to be opened.  This is
 a bit mask; you create the value by the bitwise OR of the appropriate
-parameters (using the <span class="samp">|</span> operator in C). 
+parameters (using the `<samp><span class="samp">|</span></samp>' operator in C). 
 See <a href="File-Status-Flags.html#File-Status-Flags">File Status Flags</a>, for the parameters available.
 
         <p>The normal return value from <code>open</code> is a non-negative integer file

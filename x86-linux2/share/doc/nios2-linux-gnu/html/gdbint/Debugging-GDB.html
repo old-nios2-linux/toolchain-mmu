@@ -3,7 +3,7 @@
 <title>Debugging GDB - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Hints.html#Hints" title="Hints">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -15,15 +15,17 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Debugging-GDB"></a>Up:&nbsp;<a rel="up" accesskey="u" href="Hints.html#Hints">Hints</a>
-<hr><br>
+<a name="Debugging-GDB"></a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Hints.html#Hints">Hints</a>
+<hr>
 </div>
 
 <h3 class="section">20.2 Debugging <span class="sc">gdb</span> with itself</h3>
@@ -32,14 +34,14 @@
 If <span class="sc">gdb</span> is limping on your machine, this is the preferred way to get it
 fully functional.  Be warned that in some ancient Unix systems, like
 Ultrix 4.2, a program can't be running in one process while it is being
-debugged in another.  Rather than typing the command <kbd>./gdb&nbsp;./gdb<!-- /@w --></kbd>, which works on Suns and such, you can copy <span class="file">gdb</span> to
-<span class="file">gdb2</span> and then type <kbd>./gdb&nbsp;./gdb2<!-- /@w --></kbd>.
+debugged in another.  Rather than typing the command <kbd>./gdb&nbsp;./gdb<!-- /@w --></kbd>, which works on Suns and such, you can copy <samp><span class="file">gdb</span></samp> to
+<samp><span class="file">gdb2</span></samp> and then type <kbd>./gdb&nbsp;./gdb2<!-- /@w --></kbd>.
 
    <p>When you run <span class="sc">gdb</span> in the <span class="sc">gdb</span> source directory, it will read a
-<span class="file">.gdbinit</span> file that sets up some simple things to make debugging
+<samp><span class="file">.gdbinit</span></samp> file that sets up some simple things to make debugging
 gdb easier.  The <code>info</code> command, when executed without a subcommand
 in a <span class="sc">gdb</span> being debugged by gdb, will pop you back up to the top level
-gdb.  See <span class="file">.gdbinit</span> for details.
+gdb.  See <samp><span class="file">.gdbinit</span></samp> for details.
 
    <p>If you use emacs, you will probably want to do a <code>make TAGS</code> after
 you configure your distribution; this will put the machine dependent
@@ -79,15 +81,15 @@ since we maintain it for them).
    <p>Technically, the easiest way to receive changes is to receive each
 feature as a small context diff or unidiff, suitable for <code>patch</code>. 
 Each message sent to me should include the changes to C code and
-header files for a single feature, plus <span class="file">ChangeLog</span> entries for
+header files for a single feature, plus <samp><span class="file">ChangeLog</span></samp> entries for
 each directory where files were modified, and diffs for any changes
-needed to the manuals (<span class="file">gdb/doc/gdb.texinfo</span> or
-<span class="file">gdb/doc/gdbint.texinfo</span>).  If there are a lot of changes for a
+needed to the manuals (<samp><span class="file">gdb/doc/gdb.texinfo</span></samp> or
+<samp><span class="file">gdb/doc/gdbint.texinfo</span></samp>).  If there are a lot of changes for a
 single feature, they can be split down into multiple messages.
 
    <p>In this way, if we read and like the feature, we can add it to the
 sources with a single patch command, do some testing, and check it in. 
-If you leave out the <span class="file">ChangeLog</span>, we have to write one.  If you leave
+If you leave out the <samp><span class="file">ChangeLog</span></samp>, we have to write one.  If you leave
 out the doc, we have to puzzle out what needs documenting.  Etc., etc.
 
    <p>The reason to send each change in a separate message is that we will not
@@ -128,7 +130,7 @@ gets the info portably from there.  The values in <span class="sc">gdb</span>'s 
 files should be moved into BFD configuration files (if needed there),
 and deleted from all of <span class="sc">gdb</span>'s config files.
 
-     <p>Any <var>foo</var><span class="file">-xdep.c</span> file that references STACK_END_ADDR
+     <p>Any <samp><var>foo</var><span class="file">-xdep.c</span></samp> file that references STACK_END_ADDR
 is so old that it has never been converted to use BFD.  Now that's old!
 
    </dl>

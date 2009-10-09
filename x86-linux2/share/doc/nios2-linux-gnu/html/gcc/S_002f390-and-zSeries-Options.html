@@ -3,7 +3,7 @@
 <title>S/390 and zSeries Options - Using the GNU Compiler Collection (GCC)</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using the GNU Compiler Collection (GCC)">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Submodel-Options.html#Submodel-Options" title="Submodel Options">
 <link rel="prev" href="RS_002f6000-and-PowerPC-Options.html#RS_002f6000-and-PowerPC-Options" title="RS/6000 and PowerPC Options">
@@ -38,29 +38,32 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="S_002f390-and-zSeries-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="SH-Options.html#SH-Options">SH Options</a>,
+<a name="S%2f390-and-zSeries-Options"></a>
+<a name="S_002f390-and-zSeries-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="SH-Options.html#SH-Options">SH Options</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="RS_002f6000-and-PowerPC-Options.html#RS_002f6000-and-PowerPC-Options">RS/6000 and PowerPC Options</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Submodel-Options.html#Submodel-Options">Submodel Options</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.17.29 S/390 and zSeries Options</h4>
 
 <p><a name="index-S_002f390-and-zSeries-Options-1472"></a>
-These are the <span class="samp">-m</span> options defined for the S/390 and zSeries architecture.
+These are the `<samp><span class="samp">-m</span></samp>' options defined for the S/390 and zSeries architecture.
 
      <dl>
 <dt><code>-mhard-float</code><dt><code>-msoft-float</code><dd><a name="index-mhard_002dfloat-1473"></a><a name="index-msoft_002dfloat-1474"></a>Use (do not use) the hardware floating-point instructions and registers
-for floating-point operations.  When <span class="option">-msoft-float</span> is specified,
-functions in <span class="file">libgcc.a</span> will be used to perform floating-point
-operations.  When <span class="option">-mhard-float</span> is specified, the compiler
+for floating-point operations.  When <samp><span class="option">-msoft-float</span></samp> is specified,
+functions in <samp><span class="file">libgcc.a</span></samp> will be used to perform floating-point
+operations.  When <samp><span class="option">-mhard-float</span></samp> is specified, the compiler
 generates IEEE floating-point instructions.  This is the default.
 
      <br><dt><code>-mlong-double-64</code><dt><code>-mlong-double-128</code><dd><a name="index-mlong_002ddouble_002d64-1475"></a><a name="index-mlong_002ddouble_002d128-1476"></a>These switches control the size of <code>long double</code> type. A size
@@ -71,39 +74,39 @@ type. This is the default.
 into the callee's stack frame. 
 A backchain may be needed to allow debugging using tools that do not understand
 DWARF-2 call frame information. 
-When <span class="option">-mno-packed-stack</span> is in effect, the backchain pointer is stored
-at the bottom of the stack frame; when <span class="option">-mpacked-stack</span> is in effect,
+When <samp><span class="option">-mno-packed-stack</span></samp> is in effect, the backchain pointer is stored
+at the bottom of the stack frame; when <samp><span class="option">-mpacked-stack</span></samp> is in effect,
 the backchain is placed into the topmost word of the 96/160 byte register
 save area.
 
-     <p>In general, code compiled with <span class="option">-mbackchain</span> is call-compatible with
-code compiled with <span class="option">-mmo-backchain</span>; however, use of the backchain
+     <p>In general, code compiled with <samp><span class="option">-mbackchain</span></samp> is call-compatible with
+code compiled with <samp><span class="option">-mmo-backchain</span></samp>; however, use of the backchain
 for debugging purposes usually requires that the whole binary is built with
-<span class="option">-mbackchain</span>.  Note that the combination of <span class="option">-mbackchain</span>,
-<span class="option">-mpacked-stack</span> and <span class="option">-mhard-float</span> is not supported.  In order
-to build a linux kernel use <span class="option">-msoft-float</span>.
+<samp><span class="option">-mbackchain</span></samp>.  Note that the combination of <samp><span class="option">-mbackchain</span></samp>,
+<samp><span class="option">-mpacked-stack</span></samp> and <samp><span class="option">-mhard-float</span></samp> is not supported.  In order
+to build a linux kernel use <samp><span class="option">-msoft-float</span></samp>.
 
      <p>The default is to not maintain the backchain.
 
-     <br><dt><code>-mpacked-stack</code><br><dt><code>-mno-packed-stack</code><dd><a name="index-mpacked_002dstack-1479"></a><a name="index-mno_002dpacked_002dstack-1480"></a>Use (do not use) the packed stack layout.  When <span class="option">-mno-packed-stack</span> is
+     <br><dt><code>-mpacked-stack</code><br><dt><code>-mno-packed-stack</code><dd><a name="index-mpacked_002dstack-1479"></a><a name="index-mno_002dpacked_002dstack-1480"></a>Use (do not use) the packed stack layout.  When <samp><span class="option">-mno-packed-stack</span></samp> is
 specified, the compiler uses the all fields of the 96/160 byte register save
 area only for their default purpose; unused fields still take up stack space. 
-When <span class="option">-mpacked-stack</span> is specified, register save slots are densely
+When <samp><span class="option">-mpacked-stack</span></samp> is specified, register save slots are densely
 packed at the top of the register save area; unused space is reused for other
 purposes, allowing for more efficient use of the available stack space. 
-However, when <span class="option">-mbackchain</span> is also in effect, the topmost word of
+However, when <samp><span class="option">-mbackchain</span></samp> is also in effect, the topmost word of
 the save area is always used to store the backchain, and the return address
 register is always saved two words below the backchain.
 
      <p>As long as the stack frame backchain is not used, code generated with
-<span class="option">-mpacked-stack</span> is call-compatible with code generated with
-<span class="option">-mno-packed-stack</span>.  Note that some non-FSF releases of GCC 2.95 for
+<samp><span class="option">-mpacked-stack</span></samp> is call-compatible with code generated with
+<samp><span class="option">-mno-packed-stack</span></samp>.  Note that some non-FSF releases of GCC 2.95 for
 S/390 or zSeries generated code that uses the stack frame backchain at run
 time, not just for debugging purposes.  Such code is not call-compatible
-with code compiled with <span class="option">-mpacked-stack</span>.  Also, note that the
-combination of <span class="option">-mbackchain</span>,
-<span class="option">-mpacked-stack</span> and <span class="option">-mhard-float</span> is not supported.  In order
-to build a linux kernel use <span class="option">-msoft-float</span>.
+with code compiled with <samp><span class="option">-mpacked-stack</span></samp>.  Also, note that the
+combination of <samp><span class="option">-mbackchain</span></samp>,
+<samp><span class="option">-mpacked-stack</span></samp> and <samp><span class="option">-mhard-float</span></samp> is not supported.  In order
+to build a linux kernel use <samp><span class="option">-msoft-float</span></samp>.
 
      <p>The default is to not use the packed stack layout.
 
@@ -113,24 +116,24 @@ This only works reliably if the total executable size does not
 exceed 64k.  The default is to use the <code>basr</code> instruction instead,
 which does not have this limitation.
 
-     <br><dt><code>-m64</code><dt><code>-m31</code><dd><a name="index-m64-1483"></a><a name="index-m31-1484"></a>When <span class="option">-m31</span> is specified, generate code compliant to the
-GNU/Linux for S/390 ABI.  When <span class="option">-m64</span> is specified, generate
+     <br><dt><code>-m64</code><dt><code>-m31</code><dd><a name="index-m64-1483"></a><a name="index-m31-1484"></a>When <samp><span class="option">-m31</span></samp> is specified, generate code compliant to the
+GNU/Linux for S/390 ABI.  When <samp><span class="option">-m64</span></samp> is specified, generate
 code compliant to the GNU/Linux for zSeries ABI.  This allows GCC in
-particular to generate 64-bit instructions.  For the <span class="samp">s390</span>
-targets, the default is <span class="option">-m31</span>, while the <span class="samp">s390x</span>
-targets default to <span class="option">-m64</span>.
+particular to generate 64-bit instructions.  For the `<samp><span class="samp">s390</span></samp>'
+targets, the default is <samp><span class="option">-m31</span></samp>, while the `<samp><span class="samp">s390x</span></samp>'
+targets default to <samp><span class="option">-m64</span></samp>.
 
-     <br><dt><code>-mzarch</code><dt><code>-mesa</code><dd><a name="index-mzarch-1485"></a><a name="index-mesa-1486"></a>When <span class="option">-mzarch</span> is specified, generate code using the
+     <br><dt><code>-mzarch</code><dt><code>-mesa</code><dd><a name="index-mzarch-1485"></a><a name="index-mesa-1486"></a>When <samp><span class="option">-mzarch</span></samp> is specified, generate code using the
 instructions available on z/Architecture. 
-When <span class="option">-mesa</span> is specified, generate code using the
-instructions available on ESA/390.  Note that <span class="option">-mesa</span> is
-not possible with <span class="option">-m64</span>. 
+When <samp><span class="option">-mesa</span></samp> is specified, generate code using the
+instructions available on ESA/390.  Note that <samp><span class="option">-mesa</span></samp> is
+not possible with <samp><span class="option">-m64</span></samp>. 
 When generating code compliant to the GNU/Linux for S/390 ABI,
-the default is <span class="option">-mesa</span>.  When generating code compliant
-to the GNU/Linux for zSeries ABI, the default is <span class="option">-mzarch</span>.
+the default is <samp><span class="option">-mesa</span></samp>.  When generating code compliant
+to the GNU/Linux for zSeries ABI, the default is <samp><span class="option">-mzarch</span></samp>.
 
      <br><dt><code>-mmvcle</code><dt><code>-mno-mvcle</code><dd><a name="index-mmvcle-1487"></a><a name="index-mno_002dmvcle-1488"></a>Generate (or do not generate) code using the <code>mvcle</code> instruction
-to perform block moves.  When <span class="option">-mno-mvcle</span> is specified,
+to perform block moves.  When <samp><span class="option">-mno-mvcle</span></samp> is specified,
 use a <code>mvc</code> loop instead.  This is the default unless optimizing for
 size.
 
@@ -139,15 +142,15 @@ The default is to not print debug information.
 
      <br><dt><code>-march=</code><var>cpu-type</var><dd><a name="index-march-1491"></a>Generate code that will run on <var>cpu-type</var>, which is the name of a system
 representing a certain processor type.  Possible values for
-<var>cpu-type</var> are <span class="samp">g5</span>, <span class="samp">g6</span>, <span class="samp">z900</span>, and <span class="samp">z990</span>. 
+<var>cpu-type</var> are `<samp><span class="samp">g5</span></samp>', `<samp><span class="samp">g6</span></samp>', `<samp><span class="samp">z900</span></samp>', and `<samp><span class="samp">z990</span></samp>'. 
 When generating code using the instructions available on z/Architecture,
-the default is <span class="option">-march=z900</span>.  Otherwise, the default is
-<span class="option">-march=g5</span>.
+the default is <samp><span class="option">-march=z900</span></samp>.  Otherwise, the default is
+<samp><span class="option">-march=g5</span></samp>.
 
      <br><dt><code>-mtune=</code><var>cpu-type</var><dd><a name="index-mtune-1492"></a>Tune to <var>cpu-type</var> everything applicable about the generated code,
 except for the ABI and the set of available instructions. 
-The list of <var>cpu-type</var> values is the same as for <span class="option">-march</span>. 
-The default is the value used for <span class="option">-march</span>.
+The list of <var>cpu-type</var> values is the same as for <samp><span class="option">-march</span></samp>. 
+The default is the value used for <samp><span class="option">-march</span></samp>.
 
      <br><dt><code>-mtpf-trace</code><dt><code>-mno-tpf-trace</code><dd><a name="index-mtpf_002dtrace-1493"></a><a name="index-mno_002dtpf_002dtrace-1494"></a>Generate code that adds (does not add) in TPF OS specific branches to trace
 routines in the operating system.  This option is off by default, even

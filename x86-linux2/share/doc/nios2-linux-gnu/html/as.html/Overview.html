@@ -3,7 +3,7 @@
 <title>Overview - Using as</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Using as">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="index.html#Top" title="Top">
 <link rel="next" href="Invoking.html#Invoking" title="Invoking">
@@ -16,22 +16,24 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Overview"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Invoking.html#Invoking">Invoking</a>,
+<a name="Overview"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Invoking.html#Invoking">Invoking</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="index.html#Top">Top</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">1 Overview</h2>
 
-<p><a name="index-invocation-summary-1"></a><a name="index-option-summary-2"></a><a name="index-summary-of-options-3"></a>Here is a brief summary of how to invoke <span class="command">as</span>.  For details,
+<p><a name="index-invocation-summary-1"></a><a name="index-option-summary-2"></a><a name="index-summary-of-options-3"></a>Here is a brief summary of how to invoke <samp><span class="command">as</span></samp>.  For details,
 see <a href="Invoking.html#Invoking">Command-Line Options</a>.
 
 <!-- man title AS the portable GNU assembler. -->
@@ -247,9 +249,9 @@ with a backslash.  The <var>file</var> may itself contain additional
           <br><dt><code>=file</code><dd>set the name of the listing file
 </dl>
 
-     <p>You may combine these options; for example, use <span class="samp">-aln</span> for assembly
-listing without forms processing.  The <span class="samp">=file</span> option, if used, must be
-the last one.  By itself, <span class="samp">-a</span> defaults to <span class="samp">-ahls</span>.
+     <p>You may combine these options; for example, use `<samp><span class="samp">-aln</span></samp>' for assembly
+listing without forms processing.  The `<samp><span class="samp">=file</span></samp>' option, if used, must be
+the last one.  By itself, `<samp><span class="samp">-a</span></samp>' defaults to `<samp><span class="samp">-ahls</span></samp>'.
 
      <br><dt><code>--alternate</code><dd>Begin in alternate macro mode. 
 See <a href="Altmacro.html#Altmacro"><code>.altmacro</code></a>.
@@ -258,8 +260,8 @@ See <a href="Altmacro.html#Altmacro"><code>.altmacro</code></a>.
 other assemblers.
 
      <br><dt><code>--defsym </code><var>sym</var><code>=</code><var>value</var><dd>Define the symbol <var>sym</var> to be <var>value</var> before assembling the input file. 
-<var>value</var> must be an integer constant.  As in C, a leading <span class="samp">0x</span>
-indicates a hexadecimal value, and a leading <span class="samp">0</span> indicates an octal
+<var>value</var> must be an integer constant.  As in C, a leading `<samp><span class="samp">0x</span></samp>'
+indicates a hexadecimal value, and a leading `<samp><span class="samp">0</span></samp>' indicates an octal
 value.  The value of the symbol can be overridden inside a source file via the
 use of a <code>.set</code> pseudo-op.
 
@@ -294,8 +296,8 @@ option is only supported by some targets, not all of them.
      <br><dt><code>-K</code><dd>Issue warnings when difference tables altered for long displacements.
 
      <br><dt><code>-L</code><dt><code>--keep-locals</code><dd>Keep (in the symbol table) local symbols.  These symbols start with
-system-specific local label prefixes, typically <span class="samp">.L</span> for ELF systems
-or <span class="samp">L</span> for traditional a.out systems. 
+system-specific local label prefixes, typically `<samp><span class="samp">.L</span></samp>' for ELF systems
+or `<samp><span class="samp">L</span></samp>' for traditional a.out systems. 
 See <a href="Symbol-Names.html#Symbol-Names">Symbol Names</a>.
 
      <br><dt><code>--listing-lhs-width=</code><var>number</var><dd>Set the maximum width, in words, of the output data column for an assembler
@@ -310,11 +312,11 @@ lines in an assembler listing to <var>number</var>.
      <br><dt><code>--listing-cont-lines=</code><var>number</var><dd>Set the maximum number of lines printed in a listing for a single line of input
 to <var>number</var> + 1.
 
-     <br><dt><code>-o </code><var>objfile</var><dd>Name the object-file output from <span class="command">as</span> <var>objfile</var>.
+     <br><dt><code>-o </code><var>objfile</var><dd>Name the object-file output from <samp><span class="command">as</span></samp> <var>objfile</var>.
 
      <br><dt><code>-R</code><dd>Fold the data section into the text section.
 
-     <p><a name="index-_002d_002dhash_002dsize_003d_0040var_007bnumber_007d-4"></a>Set the default size of GAS's hash tables to a prime number close to
+     <p><a name="index-g_t_002d_002dhash_002dsize_003d_0040var_007bnumber_007d-4"></a>Set the default size of GAS's hash tables to a prime number close to
 <var>number</var>.  Increasing this value can reduce the length of time it takes the
 assembler to perform its tasks, at the expense of increasing the assembler's
 memory requirements.  Similarly reducing this value can reduce the memory
@@ -322,16 +324,16 @@ requirements at the expense of speed.
 
      <br><dt><code>--reduce-memory-overheads</code><dd>This option reduces GAS's memory requirements, at the expense of making the
 assembly processes slower.  Currently this switch is a synonym for
-<span class="samp">--hash-size=4051</span>, but in the future it may have other effects as well.
+`<samp><span class="samp">--hash-size=4051</span></samp>', but in the future it may have other effects as well.
 
      <br><dt><code>--statistics</code><dd>Print the maximum space (in bytes) and total time (in seconds) used by
 assembly.
 
      <br><dt><code>--strip-local-absolute</code><dd>Remove local absolute symbols from the outgoing symbol table.
 
-     <br><dt><code>-v</code><dt><code>-version</code><dd>Print the <span class="command">as</span> version.
+     <br><dt><code>-v</code><dt><code>-version</code><dd>Print the <samp><span class="command">as</span></samp> version.
 
-     <br><dt><code>--version</code><dd>Print the <span class="command">as</span> version and exit.
+     <br><dt><code>--version</code><dd>Print the <samp><span class="command">as</span></samp> version and exit.
 
      <br><dt><code>-W</code><dt><code>--no-warn</code><dd>Suppress warning messages.
 
@@ -469,7 +471,7 @@ see <a href="PDP_002d11_002dOptions.html#PDP_002d11_002dOptions">PDP-11-Options<
 
      <dl>
 <dt><code>-mpic | -mno-pic</code><dd>Generate position-independent (or position-dependent) code.  The
-default is <span class="option">-mpic</span>.
+default is <samp><span class="option">-mpic</span></samp>.
 
      <br><dt><code>-mall</code><dt><code>-mall-extensions</code><dd>Enable all instruction set extensions.  This is the default.
 
@@ -527,20 +529,20 @@ when the instruction does not support direct addressing mode.
      <br><dt><code>--print-opcodes</code><dd>print the list of instructions with syntax and then exit.
 
      <br><dt><code>--generate-example</code><dd>print an example of instruction for each possible instruction and then exit. 
-This option is only useful for testing <span class="command">as</span>.
+This option is only useful for testing <samp><span class="command">as</span></samp>.
 
    </dl>
 
-   <p>The following options are available when <span class="command">as</span> is configured
+   <p>The following options are available when <samp><span class="command">as</span></samp> is configured
 for the SPARC architecture:
 
      <dl>
 <dt><code>-Av6 | -Av7 | -Av8 | -Asparclet | -Asparclite</code><dt><code>-Av8plus | -Av8plusa | -Av9 | -Av9a</code><dd>Explicitly select a variant of the SPARC architecture.
 
-     <p><span class="samp">-Av8plus</span> and <span class="samp">-Av8plusa</span> select a 32 bit environment. 
-<span class="samp">-Av9</span> and <span class="samp">-Av9a</span> select a 64 bit environment.
+     <p>`<samp><span class="samp">-Av8plus</span></samp>' and `<samp><span class="samp">-Av8plusa</span></samp>' select a 32 bit environment. 
+`<samp><span class="samp">-Av9</span></samp>' and `<samp><span class="samp">-Av9a</span></samp>' select a 64 bit environment.
 
-     <p><span class="samp">-Av8plusa</span> and <span class="samp">-Av9a</span> enable the SPARC V9 instruction set with
+     <p>`<samp><span class="samp">-Av8plusa</span></samp>' and `<samp><span class="samp">-Av9a</span></samp>' enable the SPARC V9 instruction set with
 UltraSPARC extensions.
 
      <br><dt><code>-xarch=v8plus | -xarch=v8plusa</code><dd>For compatibility with the Solaris v9 assembler.  These options are
@@ -573,14 +575,14 @@ use ECOFF format, such as a DECstation running Ultrix.  The default value is 8.
      <p><a name="index-little-endian-output_002c-MIPS-18"></a><br><dt><code>-EL</code><dd>Generate &ldquo;little endian&rdquo; format output.
 
      <p><a name="index-MIPS-ISA-19"></a><br><dt><code>-mips1</code><dt><code>-mips2</code><dt><code>-mips3</code><dt><code>-mips4</code><dt><code>-mips5</code><dt><code>-mips32</code><dt><code>-mips32r2</code><dt><code>-mips64</code><dt><code>-mips64r2</code><dd>Generate code for a particular <span class="sc">mips</span> Instruction Set Architecture level. 
-<span class="samp">-mips1</span> is an alias for <span class="samp">-march=r3000</span>, <span class="samp">-mips2</span> is an
-alias for <span class="samp">-march=r6000</span>, <span class="samp">-mips3</span> is an alias for
-<span class="samp">-march=r4000</span> and <span class="samp">-mips4</span> is an alias for <span class="samp">-march=r8000</span>. 
-<span class="samp">-mips5</span>, <span class="samp">-mips32</span>, <span class="samp">-mips32r2</span>, <span class="samp">-mips64</span>, and
-<span class="samp">-mips64r2</span>
+`<samp><span class="samp">-mips1</span></samp>' is an alias for `<samp><span class="samp">-march=r3000</span></samp>', `<samp><span class="samp">-mips2</span></samp>' is an
+alias for `<samp><span class="samp">-march=r6000</span></samp>', `<samp><span class="samp">-mips3</span></samp>' is an alias for
+`<samp><span class="samp">-march=r4000</span></samp>' and `<samp><span class="samp">-mips4</span></samp>' is an alias for `<samp><span class="samp">-march=r8000</span></samp>'. 
+`<samp><span class="samp">-mips5</span></samp>', `<samp><span class="samp">-mips32</span></samp>', `<samp><span class="samp">-mips32r2</span></samp>', `<samp><span class="samp">-mips64</span></samp>', and
+`<samp><span class="samp">-mips64r2</span></samp>'
 correspond to generic
-<span class="samp">MIPS V</span>, <span class="samp">MIPS32</span>, <span class="samp">MIPS32 Release 2</span>, <span class="samp">MIPS64</span>,
-and <span class="samp">MIPS64 Release 2</span>
+`<samp><span class="samp">MIPS V</span></samp>', `<samp><span class="samp">MIPS32</span></samp>', `<samp><span class="samp">MIPS32 Release 2</span></samp>', `<samp><span class="samp">MIPS64</span></samp>',
+and `<samp><span class="samp">MIPS64 Release 2</span></samp>'
 ISA processors, respectively.
 
      <br><dt><code>-march=</code><var>CPU</var><dd>Generate code for a particular <span class="sc">mips</span> cpu.
@@ -597,60 +599,60 @@ section instead of the standard ELF .stabs sections.
 
      <br><dt><code>-mgp32</code><dt><code>-mfp32</code><dd>The register sizes are normally inferred from the ISA and ABI, but these
 flags force a certain group of registers to be treated as 32 bits wide at
-all times.  <span class="samp">-mgp32</span> controls the size of general-purpose registers
-and <span class="samp">-mfp32</span> controls the size of floating-point registers.
+all times.  `<samp><span class="samp">-mgp32</span></samp>' controls the size of general-purpose registers
+and `<samp><span class="samp">-mfp32</span></samp>' controls the size of floating-point registers.
 
      <br><dt><code>-mips16</code><dt><code>-no-mips16</code><dd>Generate code for the MIPS 16 processor.  This is equivalent to putting
-<code>.set mips16</code> at the start of the assembly file.  <span class="samp">-no-mips16</span>
+<code>.set mips16</code> at the start of the assembly file.  `<samp><span class="samp">-no-mips16</span></samp>'
 turns off this option.
 
      <br><dt><code>-msmartmips</code><dt><code>-mno-smartmips</code><dd>Enables the SmartMIPS extension to the MIPS32 instruction set. This is
 equivalent to putting <code>.set smartmips</code> at the start of the assembly file. 
-<span class="samp">-mno-smartmips</span> turns off this option.
+`<samp><span class="samp">-mno-smartmips</span></samp>' turns off this option.
 
      <br><dt><code>-mips3d</code><dt><code>-no-mips3d</code><dd>Generate code for the MIPS-3D Application Specific Extension. 
 This tells the assembler to accept MIPS-3D instructions. 
-<span class="samp">-no-mips3d</span> turns off this option.
+`<samp><span class="samp">-no-mips3d</span></samp>' turns off this option.
 
      <br><dt><code>-mdmx</code><dt><code>-no-mdmx</code><dd>Generate code for the MDMX Application Specific Extension. 
 This tells the assembler to accept MDMX instructions. 
-<span class="samp">-no-mdmx</span> turns off this option.
+`<samp><span class="samp">-no-mdmx</span></samp>' turns off this option.
 
      <br><dt><code>-mdsp</code><dt><code>-mno-dsp</code><dd>Generate code for the DSP Release 1 Application Specific Extension. 
 This tells the assembler to accept DSP Release 1 instructions. 
-<span class="samp">-mno-dsp</span> turns off this option.
+`<samp><span class="samp">-mno-dsp</span></samp>' turns off this option.
 
      <br><dt><code>-mdspr2</code><dt><code>-mno-dspr2</code><dd>Generate code for the DSP Release 2 Application Specific Extension. 
 This option implies -mdsp. 
 This tells the assembler to accept DSP Release 2 instructions. 
-<span class="samp">-mno-dspr2</span> turns off this option.
+`<samp><span class="samp">-mno-dspr2</span></samp>' turns off this option.
 
      <br><dt><code>-mmt</code><dt><code>-mno-mt</code><dd>Generate code for the MT Application Specific Extension. 
 This tells the assembler to accept MT instructions. 
-<span class="samp">-mno-mt</span> turns off this option.
+`<samp><span class="samp">-mno-mt</span></samp>' turns off this option.
 
-     <br><dt><code>--construct-floats</code><dt><code>--no-construct-floats</code><dd>The <span class="samp">--no-construct-floats</span> option disables the construction of
+     <br><dt><code>--construct-floats</code><dt><code>--no-construct-floats</code><dd>The `<samp><span class="samp">--no-construct-floats</span></samp>' option disables the construction of
 double width floating point constants by loading the two halves of the
 value into the two single width floating point registers that make up
-the double width register.  By default <span class="samp">--construct-floats</span> is
+the double width register.  By default `<samp><span class="samp">--construct-floats</span></samp>' is
 selected, allowing construction of these floating point constants.
 
-     <p><a name="index-emulation-20"></a><br><dt><code>--emulation=</code><var>name</var><dd>This option causes <span class="command">as</span> to emulate <span class="command">as</span> configured
+     <p><a name="index-emulation-20"></a><br><dt><code>--emulation=</code><var>name</var><dd>This option causes <samp><span class="command">as</span></samp> to emulate <samp><span class="command">as</span></samp> configured
 for some other target, in all respects, including output format (choosing
 between ELF and ECOFF only), handling of pseudo-opcodes which may generate
 debugging information or store symbol table information, and default
-endianness.  The available configuration names are: <span class="samp">mipsecoff</span>,
-<span class="samp">mipself</span>, <span class="samp">mipslecoff</span>, <span class="samp">mipsbecoff</span>, <span class="samp">mipslelf</span>,
-<span class="samp">mipsbelf</span>.  The first two do not alter the default endianness from that
+endianness.  The available configuration names are: `<samp><span class="samp">mipsecoff</span></samp>',
+`<samp><span class="samp">mipself</span></samp>', `<samp><span class="samp">mipslecoff</span></samp>', `<samp><span class="samp">mipsbecoff</span></samp>', `<samp><span class="samp">mipslelf</span></samp>',
+`<samp><span class="samp">mipsbelf</span></samp>'.  The first two do not alter the default endianness from that
 of the primary target for which the assembler was configured; the others change
-the default to little- or big-endian as indicated by the <span class="samp">b</span> or <span class="samp">l</span>
-in the name.  Using <span class="samp">-EB</span> or <span class="samp">-EL</span> will override the endianness
+the default to little- or big-endian as indicated by the `<samp><span class="samp">b</span></samp>' or `<samp><span class="samp">l</span></samp>'
+in the name.  Using `<samp><span class="samp">-EB</span></samp>' or `<samp><span class="samp">-EL</span></samp>' will override the endianness
 selection in any case.
 
      <p>This option is currently supported only when the primary target
-<span class="command">as</span> is configured for is a <span class="sc">mips</span> ELF or ECOFF target. 
+<samp><span class="command">as</span></samp> is configured for is a <span class="sc">mips</span> ELF or ECOFF target. 
 Furthermore, the primary target or others specified with
-<span class="samp">--enable-targets=...</span> at configuration time must include support for
+`<samp><span class="samp">--enable-targets=...</span></samp>' at configuration time must include support for
 the other format, if both are to be available.  For example, the Irix 5
 configuration includes support for both.
 
@@ -658,16 +660,16 @@ configuration includes support for both.
 fine-grained control over the assembler's behavior, and will be supported for
 more processors.
 
-     <br><dt><code>-nocpp</code><dd><span class="command">as</span> ignores this option.  It is accepted for compatibility with
+     <br><dt><code>-nocpp</code><dd><samp><span class="command">as</span></samp> ignores this option.  It is accepted for compatibility with
 the native tools.
 
      <br><dt><code>--trap</code><dt><code>--no-trap</code><dt><code>--break</code><dt><code>--no-break</code><dd>Control how to deal with multiplication overflow and division by zero. 
-<span class="samp">--trap</span> or <span class="samp">--no-break</span> (which are synonyms) take a trap exception
+`<samp><span class="samp">--trap</span></samp>' or `<samp><span class="samp">--no-break</span></samp>' (which are synonyms) take a trap exception
 (and only work for Instruction Set Architecture level 2 and higher);
-<span class="samp">--break</span> or <span class="samp">--no-trap</span> (also synonyms, and the default) take a
+`<samp><span class="samp">--break</span></samp>' or `<samp><span class="samp">--no-trap</span></samp>' (also synonyms, and the default) take a
 break exception.
 
-     <br><dt><code>-n</code><dd>When this option is used, <span class="command">as</span> will issue a warning every
+     <br><dt><code>-n</code><dd>When this option is used, <samp><span class="command">as</span></samp> will issue a warning every
 time it generates a nop instruction from a macro. 
 </dl>
 
@@ -676,10 +678,10 @@ an MCore processor.
 
      <dl>
 <dt><code>-jsri2bsr</code><dt><code>-nojsri2bsr</code><dd>Enable or disable the JSRI to BSR transformation.  By default this is enabled. 
-The command line option <span class="samp">-nojsri2bsr</span> can be used to disable it.
+The command line option `<samp><span class="samp">-nojsri2bsr</span></samp>' can be used to disable it.
 
      <br><dt><code>-sifilter</code><dt><code>-nosifilter</code><dd>Enable or disable the silicon filter behaviour.  By default this is disabled. 
-The default can be overridden by the <span class="samp">-sifilter</span> command line option.
+The default can be overridden by the `<samp><span class="samp">-sifilter</span></samp>' command line option.
 
      <br><dt><code>-relax</code><dd>Alter jump instructions for long displacements.
 
@@ -698,9 +700,9 @@ can be assembled.
 an Xtensa processor.
 
      <dl>
-<dt><code>--text-section-literals | --no-text-section-literals</code><dd>With <span class="option">--text-section-literals</span>, literal pools are interspersed
+<dt><code>--text-section-literals | --no-text-section-literals</code><dd>With <samp><span class="option">--text-section-literals</span></samp>, literal pools are interspersed
 in the text section.  The default is
-<span class="option">--no-text-section-literals</span>, which places literals in a
+<samp><span class="option">--no-text-section-literals</span></samp>, which places literals in a
 separate section in the output file.  These options only affect literals
 referenced via PC-relative <code>L32R</code> instructions; literals for
 absolute mode <code>L32R</code> instructions are handled separately.
@@ -711,15 +713,15 @@ if the Xtensa processor includes the absolute <code>L32R</code> addressing
 option.  Otherwise, only the PC-relative <code>L32R</code> mode can be used.
 
      <br><dt><code>--target-align | --no-target-align</code><dd>Enable or disable automatic alignment to reduce branch penalties at the
-expense of some code density.  The default is <span class="option">--target-align</span>.
+expense of some code density.  The default is <samp><span class="option">--target-align</span></samp>.
 
      <br><dt><code>--longcalls | --no-longcalls</code><dd>Enable or disable transformation of call instructions to allow calls
 across a greater range of addresses.  The default is
-<span class="option">--no-longcalls</span>.
+<samp><span class="option">--no-longcalls</span></samp>.
 
      <br><dt><code>--transform | --no-transform</code><dd>Enable or disable all assembler transformations of Xtensa instructions. 
-The default is <span class="option">--transform</span>;
-<span class="option">--no-transform</span> should be used only in the rare cases when the
+The default is <samp><span class="option">--transform</span></samp>;
+<samp><span class="option">--no-transform</span></samp> should be used only in the rare cases when the
 instructions must be exactly as specified in the assembly source. 
 </dl>
 

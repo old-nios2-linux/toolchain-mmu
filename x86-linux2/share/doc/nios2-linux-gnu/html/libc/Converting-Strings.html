@@ -3,7 +3,7 @@
 <title>Converting Strings - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Restartable-multibyte-conversion.html#Restartable-multibyte-conversion" title="Restartable multibyte conversion">
 <link rel="prev" href="Converting-a-Character.html#Converting-a-Character" title="Converting a Character">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Converting-Strings"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Multibyte-Conversion-Example.html#Multibyte-Conversion-Example">Multibyte Conversion Example</a>,
+<a name="Converting-Strings"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Multibyte-Conversion-Example.html#Multibyte-Conversion-Example">Multibyte Conversion Example</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Converting-a-Character.html#Converting-a-Character">Converting a Character</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Restartable-multibyte-conversion.html#Restartable-multibyte-conversion">Restartable multibyte conversion</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">6.3.4 Converting Multibyte and Wide Character Strings</h4>
@@ -77,7 +79,7 @@ the NUL byte in the input string was reached) or the address of the byte
 following the last converted multibyte character.
 
         <p><a name="index-wchar_002eh-655"></a><code>mbsrtowcs</code> was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w --> and is
-declared in <span class="file">wchar.h</span>. 
+declared in <samp><span class="file">wchar.h</span></samp>. 
 </p></blockquote></div>
 
    <p>The definition of the <code>mbsrtowcs</code> function has one important
@@ -157,7 +159,7 @@ last conversion.  The state is the initial shift state in case the
 terminating NUL wide character was converted.
 
         <p><a name="index-wchar_002eh-658"></a>The <code>wcsrtombs</code> function was introduced in Amendment&nbsp;1<!-- /@w --> to
-ISO&nbsp;C90<!-- /@w --> and is declared in <span class="file">wchar.h</span>. 
+ISO&nbsp;C90<!-- /@w --> and is declared in <samp><span class="file">wchar.h</span></samp>. 
 </p></blockquote></div>
 
    <p>The restriction mentioned above for the <code>mbsrtowcs</code> function applies

@@ -3,7 +3,7 @@
 <title>Wildcard Matching - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Pattern-Matching.html#Pattern-Matching" title="Pattern Matching">
 <link rel="next" href="Globbing.html#Globbing" title="Globbing">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Wildcard-Matching"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Globbing.html#Globbing">Globbing</a>,
+<a name="Wildcard-Matching"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Globbing.html#Globbing">Globbing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Pattern-Matching.html#Pattern-Matching">Pattern Matching</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">10.1 Wildcard Matching</h3>
@@ -33,7 +35,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Pattern-Matching.html#Pattern-Matching"
 <p><a name="index-fnmatch_002eh-847"></a>This section describes how to match a wildcard pattern against a
 particular string.  The result is a yes or no answer: does the
 string fit the pattern or not.  The symbols described here are all
-declared in <span class="file">fnmatch.h</span>.
+declared in <samp><span class="file">fnmatch.h</span></samp>.
 
 <!-- fnmatch.h -->
 <!-- POSIX.2 -->
@@ -59,10 +61,10 @@ They would do so by returning nonzero values that are not equal to
      <dl>
 <!-- fnmatch.h -->
 <!-- GNU -->
-<dt><code>FNM_FILE_NAME</code><dd>Treat the <span class="samp">/</span> character specially, for matching file names.  If
+<dt><code>FNM_FILE_NAME</code><dd>Treat the `<samp><span class="samp">/</span></samp>' character specially, for matching file names.  If
 this flag is set, wildcard constructs in <var>pattern</var> cannot match
-<span class="samp">/</span> in <var>string</var>.  Thus, the only way to match <span class="samp">/</span> is with
-an explicit <span class="samp">/</span> in <var>pattern</var>.
+`<samp><span class="samp">/</span></samp>' in <var>string</var>.  Thus, the only way to match `<samp><span class="samp">/</span></samp>' is with
+an explicit `<samp><span class="samp">/</span></samp>' in <var>pattern</var>.
 
      <!-- fnmatch.h -->
 <!-- POSIX.2 -->
@@ -72,34 +74,34 @@ file names.
 
      <!-- fnmatch.h -->
 <!-- POSIX.2 -->
-<br><dt><code>FNM_PERIOD</code><dd>Treat the <span class="samp">.</span> character specially if it appears at the beginning of
+<br><dt><code>FNM_PERIOD</code><dd>Treat the `<samp><span class="samp">.</span></samp>' character specially if it appears at the beginning of
 <var>string</var>.  If this flag is set, wildcard constructs in <var>pattern</var>
-cannot match <span class="samp">.</span> as the first character of <var>string</var>.
+cannot match `<samp><span class="samp">.</span></samp>' as the first character of <var>string</var>.
 
      <p>If you set both <code>FNM_PERIOD</code> and <code>FNM_FILE_NAME</code>, then the
-special treatment applies to <span class="samp">.</span> following <span class="samp">/</span> as well as to
-<span class="samp">.</span> at the beginning of <var>string</var>.  (The shell uses the
+special treatment applies to `<samp><span class="samp">.</span></samp>' following `<samp><span class="samp">/</span></samp>' as well as to
+`<samp><span class="samp">.</span></samp>' at the beginning of <var>string</var>.  (The shell uses the
 <code>FNM_PERIOD</code> and <code>FNM_FILE_NAME</code> flags together for matching
 file names.)
 
      <!-- fnmatch.h -->
 <!-- POSIX.2 -->
-<br><dt><code>FNM_NOESCAPE</code><dd>Don't treat the <span class="samp">\</span> character specially in patterns.  Normally,
-<span class="samp">\</span> quotes the following character, turning off its special meaning
+<br><dt><code>FNM_NOESCAPE</code><dd>Don't treat the `<samp><span class="samp">\</span></samp>' character specially in patterns.  Normally,
+`<samp><span class="samp">\</span></samp>' quotes the following character, turning off its special meaning
 (if any) so that it matches only itself.  When quoting is enabled, the
-pattern <span class="samp">\?</span> matches only the string <span class="samp">?</span>, because the question
+pattern `<samp><span class="samp">\?</span></samp>' matches only the string `<samp><span class="samp">?</span></samp>', because the question
 mark in the pattern acts like an ordinary character.
 
-     <p>If you use <code>FNM_NOESCAPE</code>, then <span class="samp">\</span> is an ordinary character.
+     <p>If you use <code>FNM_NOESCAPE</code>, then `<samp><span class="samp">\</span></samp>' is an ordinary character.
 
      <!-- fnmatch.h -->
 <!-- GNU -->
-<br><dt><code>FNM_LEADING_DIR</code><dd>Ignore a trailing sequence of characters starting with a <span class="samp">/</span> in
+<br><dt><code>FNM_LEADING_DIR</code><dd>Ignore a trailing sequence of characters starting with a `<samp><span class="samp">/</span></samp>' in
 <var>string</var>; that is to say, test whether <var>string</var> starts with a
 directory name that <var>pattern</var> matches.
 
-     <p>If this flag is set, either <span class="samp">foo*</span> or <span class="samp">foobar</span> as a pattern
-would match the string <span class="samp">foobar/frobozz</span>.
+     <p>If this flag is set, either `<samp><span class="samp">foo*</span></samp>' or `<samp><span class="samp">foobar</span></samp>' as a pattern
+would match the string `<samp><span class="samp">foobar/frobozz</span></samp>'.
 
      <!-- fnmatch.h -->
 <!-- GNU -->
@@ -108,7 +110,7 @@ would match the string <span class="samp">foobar/frobozz</span>.
      <!-- fnmatch.h -->
 <!-- GNU -->
 <br><dt><code>FNM_EXTMATCH</code><dd><a name="index-Korn-Shell-849"></a><a name="index-ksh-850"></a>Recognize beside the normal patterns also the extended patterns
-introduced in <span class="file">ksh</span>.  The patterns are written in the form
+introduced in <samp><span class="file">ksh</span></samp>.  The patterns are written in the form
 explained in the following table where <var>pattern-list</var> is a <code>|</code>
 separated list of patterns.
 

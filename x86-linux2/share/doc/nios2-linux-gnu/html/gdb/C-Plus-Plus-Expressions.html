@@ -3,7 +3,7 @@
 <title>C Plus Plus Expressions - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="C.html#C" title="C">
 <link rel="prev" href="C-Constants.html#C-Constants" title="C Constants">
@@ -17,29 +17,31 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="C-Plus-Plus-Expressions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="C-Defaults.html#C-Defaults">C Defaults</a>,
+<a name="C-Plus-Plus-Expressions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="C-Defaults.html#C-Defaults">C Defaults</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="C-Constants.html#C-Constants">C Constants</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="C.html#C">C</a>
-<hr><br>
+<hr>
 </div>
 
 <h5 class="subsubsection">13.4.1.3 C<tt>++</tt> Expressions</h5>
 
 <p><a name="index-expressions-in-C_0040t_007b_002b_002b_007d-639"></a><span class="sc">gdb</span> expression handling can interpret most C<tt>++</tt> expressions.
 
-   <p><a name="index-debugging-C_0040t_007b_002b_002b_007d-programs-640"></a><a name="index-C_0040t_007b_002b_002b_007d-compilers-641"></a><a name="index-debug-formats-and-C_0040t_007b_002b_002b_007d-642"></a><a name="index-_0040value_007bNGCC_007d-and-C_0040t_007b_002b_002b_007d-643"></a><blockquote>
+   <p><a name="index-debugging-C_0040t_007b_002b_002b_007d-programs-640"></a><a name="index-C_0040t_007b_002b_002b_007d-compilers-641"></a><a name="index-debug-formats-and-C_0040t_007b_002b_002b_007d-642"></a><a name="index-g_t_0040value_007bNGCC_007d-and-C_0040t_007b_002b_002b_007d-643"></a><blockquote>
 <em>Warning:</em> <span class="sc">gdb</span> can only debug C<tt>++</tt> code if you use the
 proper compiler and the proper debug format.  Currently, <span class="sc">gdb</span>
 works best when debugging C<tt>++</tt> code that is compiled with
 <span class="sc">gcc</span> 2.95.3 or with <span class="sc">gcc</span> 3.1 or newer, using the options
-<span class="option">-gdwarf-2</span> or <span class="option">-gstabs+</span>.  DWARF 2 is preferred over
+<samp><span class="option">-gdwarf-2</span></samp> or <samp><span class="option">-gstabs+</span></samp>.  DWARF 2 is preferred over
 stabs+.  Most configurations of <span class="sc">gcc</span> emit either DWARF 2 or
 stabs+ as their default debug format, so you usually don't need to
 specify a debug format explicitly.  Other compilers and/or debug formats
@@ -89,13 +91,13 @@ dereferenced.
 reference variables are not displayed (unlike other variables); this
 avoids clutter, since references are often used for large structures. 
 The <em>address</em> of a reference variable is always shown, unless
-you have specified <span class="samp">set print address off</span>.
+you have specified `<samp><span class="samp">set print address off</span></samp>'.
 
      <li><span class="sc">gdb</span> supports the C<tt>++</tt> name resolution operator <code>::</code>&mdash;your
 expressions can use it just as expressions in your program do.  Since
 one scope may be defined in another, you can use <code>::</code> repeatedly if
 necessary, for example in an expression like
-<var>scope1</var><span class="samp">::</span><var>scope2</var><span class="samp">::</span><var>name</var>.  <span class="sc">gdb</span> also allows
+`<samp><var>scope1</var><span class="samp">::</span><var>scope2</var><span class="samp">::</span><var>name</var></samp>'.  <span class="sc">gdb</span> also allows
 resolving name scope by reference to source files, in both C and C<tt>++</tt>
 debugging (see <a href="Variables.html#Variables">Program Variables</a>).
         </ol>

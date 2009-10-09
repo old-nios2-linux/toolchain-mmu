@@ -3,7 +3,7 @@
 <title>Duplicating Descriptors - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO" title="Low-Level I/O">
 <link rel="prev" href="Control-Operations.html#Control-Operations" title="Control Operations">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Duplicating-Descriptors"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Descriptor-Flags.html#Descriptor-Flags">Descriptor Flags</a>,
+<a name="Duplicating-Descriptors"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Descriptor-Flags.html#Descriptor-Flags">Descriptor Flags</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Control-Operations.html#Control-Operations">Control Operations</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-I_002fO.html#Low_002dLevel-I_002fO">Low-Level I/O</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">13.12 Duplicating Descriptors</h3>
@@ -47,9 +49,9 @@ file or pipe that a particular file descriptor corresponds to.
 <code>F_DUPFD</code> command, but there are also convenient functions
 <code>dup</code> and <code>dup2</code> for duplicating descriptors.
 
-   <p><a name="index-unistd_002eh-1316"></a><a name="index-fcntl_002eh-1317"></a>The <code>fcntl</code> function and flags are declared in <span class="file">fcntl.h</span>,
+   <p><a name="index-unistd_002eh-1316"></a><a name="index-fcntl_002eh-1317"></a>The <code>fcntl</code> function and flags are declared in <samp><span class="file">fcntl.h</span></samp>,
 while prototypes for <code>dup</code> and <code>dup2</code> are in the header file
-<span class="file">unistd.h</span>.
+<samp><span class="file">unistd.h</span></samp>.
 
 <!-- unistd.h -->
 <!-- POSIX.1 -->

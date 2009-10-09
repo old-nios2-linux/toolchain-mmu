@@ -3,7 +3,7 @@
 <title>Porting GDB - GDB Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GDB Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Coding.html#Coding" title="Coding">
 <link rel="next" href="Versions-and-Branches.html#Versions-and-Branches" title="Versions and Branches">
@@ -16,17 +16,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Porting-GDB"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Versions-and-Branches.html#Versions-and-Branches">Versions and Branches</a>,
+<a name="Porting-GDB"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Versions-and-Branches.html#Versions-and-Branches">Versions and Branches</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Coding.html#Coding">Coding</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr><br>
+<hr>
 </div>
 
 <h2 class="chapter">15 Porting <span class="sc">gdb</span></h2>
@@ -36,12 +38,12 @@ Most of the work in making <span class="sc">gdb</span> compile on a new machine 
 specifying the configuration of the machine.  This is done in a
 dizzying variety of header files and configuration scripts, which we
 hope to make more sensible soon.  Let's say your new host is called an
-<var>xyz</var> (e.g.,  <span class="samp">sun4</span>), and its full three-part configuration
+<var>xyz</var> (e.g.,  `<samp><span class="samp">sun4</span></samp>'), and its full three-part configuration
 name is <var>arch</var><code>-</code><var>xvend</var><code>-</code><var>xos</var> (e.g.,
-<span class="samp">sparc-sun-sunos4</span>).  In particular:
+`<samp><span class="samp">sparc-sun-sunos4</span></samp>').  In particular:
 
      <ul>
-<li>In the top level directory, edit <span class="file">config.sub</span> and add <var>arch</var>,
+<li>In the top level directory, edit <samp><span class="file">config.sub</span></samp> and add <var>arch</var>,
 <var>xvend</var>, and <var>xos</var> to the lists of supported architectures,
 vendors, and operating systems near the bottom of the file.  Also, add
 <var>xyz</var> as an alias that maps to
@@ -60,21 +62,21 @@ and no error messages.
      <p class="noindent">You need to port BFD, if that hasn't been done already.  Porting BFD is
 beyond the scope of this manual.
 
-     <li>To configure <span class="sc">gdb</span> itself, edit <span class="file">gdb/configure.host</span> to recognize
+     <li>To configure <span class="sc">gdb</span> itself, edit <samp><span class="file">gdb/configure.host</span></samp> to recognize
 your system and set <code>gdb_host</code> to <var>xyz</var>, and (unless your
-desired target is already available) also edit <span class="file">gdb/configure.tgt</span>,
+desired target is already available) also edit <samp><span class="file">gdb/configure.tgt</span></samp>,
 setting <code>gdb_target</code> to something appropriate (for instance,
 <var>xyz</var>).
 
      <p><em>Maintainer's note: Work in progress.  The file
-</em><span class="file">gdb/configure.host</span><em> originally needed to be modified when either a
+<samp></em><span class="file">gdb/configure.host</span><em></samp> originally needed to be modified when either a
 new native target or a new host machine was being added to </em><span class="sc">gdb</span><em>. 
 Recent changes have removed this requirement.  The file now only needs
 to be modified when adding a new native configuration.  This will likely
 changed again in the future.</em>
 
      <li>Finally, you'll need to specify and define <span class="sc">gdb</span>'s host-, native-, and
-target-dependent <span class="file">.h</span> and <span class="file">.c</span> files used for your
+target-dependent <samp><span class="file">.h</span></samp> and <samp><span class="file">.c</span></samp> files used for your
 configuration. 
 </ul>
 

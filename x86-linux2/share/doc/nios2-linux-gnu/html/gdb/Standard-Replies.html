@@ -3,7 +3,7 @@
 <title>Standard Replies - Debugging with GDB</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Debugging with GDB">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Remote-Protocol.html#Remote-Protocol" title="Remote Protocol">
 <link rel="prev" href="Overview.html#Overview" title="Overview">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Standard-Replies"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Packets.html#Packets">Packets</a>,
+<a name="Standard-Replies"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Packets.html#Packets">Packets</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Overview.html#Overview">Overview</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Remote-Protocol.html#Remote-Protocol">Remote Protocol</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">D.2 Standard Replies</h3>
@@ -36,18 +38,18 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Remote-Protocol.html#Remote-Protocol">R
 support these, except as noted in the individual command descriptions.
 
      <dl>
-<dt><dd><a name="index-empty-response_002c-for-unsupported-packets-1712"></a><a name="index-unsupported-packets_002c-empty-response-for-1713"></a>For any <var>command</var> not supported by the stub, an empty response
-(<span class="samp">$#00</span>) should be returned.  That way it is possible to extend the
+<dt>`<samp></samp>'<dd><a name="index-empty-response_002c-for-unsupported-packets-1712"></a><a name="index-unsupported-packets_002c-empty-response-for-1713"></a>For any <var>command</var> not supported by the stub, an empty response
+(`<samp><span class="samp">$#00</span></samp>') should be returned.  That way it is possible to extend the
 protocol.  A newer <span class="sc">gdb</span> can tell if a packet is supported based
 on that response (but see also <a href="qSupported.html#qSupported">qSupported</a>).
 
-     <br><dt><span class="samp">E </span><var>xx</var><dd>An error has occurred; <var>xx</var> is a two-digit hexadecimal error
+     <br><dt>`<samp><span class="samp">E </span><var>xx</var></samp>'<dd>An error has occurred; <var>xx</var> is a two-digit hexadecimal error
 number.  In almost all cases, the protocol does not specify the
 meaning of the error numbers; GDB usually ignores the numbers, or
 displays them to the user without further interpretation.
 
-     <br><dt><span class="samp">E.</span><var>name</var><span class="samp">[.</span><var>message</var><span class="samp">]</span><dd>An error has occurred; <var>name</var> is the name of the error.  The name
-may contain letters, numbers, and <span class="samp">-</span> characters.  If present,
+     <br><dt>`<samp><span class="samp">E.</span><var>name</var><span class="samp">[.</span><var>message</var><span class="samp">]</span></samp>'<dd>An error has occurred; <var>name</var> is the name of the error.  The name
+may contain letters, numbers, and `<samp><span class="samp">-</span></samp>' characters.  If present,
 <var>message</var> is an error message, encoded using the escaped eight-bit
 conventions for binary data described above.
 
@@ -59,15 +61,15 @@ named errors have been added to the protocol.
      <p>The protocol uses the following error names:
 
           <dl>
-<dt><span class="samp">fatal</span><dd>A fatal error has occurred; the stub will be unable to interact
+<dt>`<samp><span class="samp">fatal</span></samp>'<dd>A fatal error has occurred; the stub will be unable to interact
 further with <span class="sc">gdb</span>.  Fatal errors should always include a
 message explaining their cause.
 
           <p>Any command may return this error.
 
-          <br><dt><span class="samp">memtype</span><dd>The memory addressed is of the wrong type for the given command.  For
-example, a <span class="samp">vFlashWrite</span> command applied to non-flash memory
-elicits an <span class="samp">E.memtype</span> error response.
+          <br><dt>`<samp><span class="samp">memtype</span></samp>'<dd>The memory addressed is of the wrong type for the given command.  For
+example, a `<samp><span class="samp">vFlashWrite</span></samp>' command applied to non-flash memory
+elicits an `<samp><span class="samp">E.memtype</span></samp>' error response.
 
      </dl>
      </dl>

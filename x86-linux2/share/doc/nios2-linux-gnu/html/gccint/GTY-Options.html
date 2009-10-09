@@ -3,7 +3,7 @@
 <title>GTY Options - GNU Compiler Collection (GCC) Internals</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="GNU Compiler Collection (GCC) Internals">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Type-Information.html#Type-Information" title="Type Information">
 <link rel="next" href="GGC-Roots.html#GGC-Roots" title="GGC Roots">
@@ -37,16 +37,18 @@ included in the section entitled ``GNU Free Documentation License''.
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="GTY-Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="GGC-Roots.html#GGC-Roots">GGC Roots</a>,
+<a name="GTY-Options"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="GGC-Roots.html#GGC-Roots">GGC Roots</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Type-Information.html#Type-Information">Type Information</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">19.1 The Inside of a <code>GTY(())</code></h3>
@@ -64,7 +66,7 @@ equivalent.
 special escapes may be used in these strings, to refer to pieces of
 the data structure being marked:
 
- <p><a name="index-_0025-in-GTY-option-2675"></a>
+ <p><a name="index-g_t_0025-in-GTY-option-2675"></a>
      <dl>
 <dt><code>%h</code><dd>The current structure. 
 <br><dt><code>%1</code><dd>The structure that immediately contains the current structure. 
@@ -82,9 +84,9 @@ the array item currently being marked.
      };
 </pre>
  <p class="noindent">and <code>b</code> is a variable of type <code>struct B</code>.  When marking
-<span class="samp">b.foo[11]</span>, <code>%h</code> would expand to <span class="samp">b.foo[11]</span>,
-<code>%0</code> and <code>%1</code> would both expand to <span class="samp">b</span>, and <code>%a</code>
-would expand to <span class="samp">[11]</span>.
+`<samp><span class="samp">b.foo[11]</span></samp>', <code>%h</code> would expand to `<samp><span class="samp">b.foo[11]</span></samp>',
+<code>%0</code> and <code>%1</code> would both expand to `<samp><span class="samp">b</span></samp>', and <code>%a</code>
+would expand to `<samp><span class="samp">[11]</span></samp>'.
 
  <p>As in ordinary C, adjacent strings will be concatenated; this is
 helpful when you have a complicated expression.
@@ -251,7 +253,7 @@ the precompiled header machinery needs to change that ordering, it
 will call the function referenced by the <code>reorder</code> option, before
 changing the pointers in the object that's pointed to by the field the
 option applies to.  The function must take four arguments, with the
-signature <span class="samp">void&nbsp;*,&nbsp;void&nbsp;*,&nbsp;gt_pointer_operator,&nbsp;void&nbsp;*<!-- /@w --></span>. 
+signature `<samp><span class="samp">void&nbsp;*,&nbsp;void&nbsp;*,&nbsp;gt_pointer_operator,&nbsp;void&nbsp;*<!-- /@w --></span></samp>'. 
 The first parameter is a pointer to the structure that contains the
 object being updated, or the object itself if there is no containing
 structure.  The second parameter is a cookie that should be ignored. 
@@ -267,7 +269,7 @@ number or the hash of a string instead.
      <p><a name="index-special-2693"></a><br><dt><code>special ("</code><var>name</var><code>")</code><dd>
 The <code>special</code> option is used to mark types that have to be dealt
 with by special case machinery.  The parameter is the name of the
-special case.  See <span class="file">gengtype.c</span> for further details.  Avoid
+special case.  See <samp><span class="file">gengtype.c</span></samp> for further details.  Avoid
 adding new special cases unless there is no other alternative. 
 </dl>
 

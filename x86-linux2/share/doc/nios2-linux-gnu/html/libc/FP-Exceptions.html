@@ -3,7 +3,7 @@
 <title>FP Exceptions - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Floating-Point-Errors.html#Floating-Point-Errors" title="Floating Point Errors">
 <link rel="next" href="Infinity-and-NaN.html#Infinity-and-NaN" title="Infinity and NaN">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="FP-Exceptions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Infinity-and-NaN.html#Infinity-and-NaN">Infinity and NaN</a>,
+<a name="FP-Exceptions"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Infinity-and-NaN.html#Infinity-and-NaN">Infinity and NaN</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Floating-Point-Errors.html#Floating-Point-Errors">Floating Point Errors</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">20.5.1 FP Exceptions</h4>
@@ -58,7 +60,7 @@ new programs.
 <p class="noindent">The exceptions defined in IEEE&nbsp;754<!-- /@w --> are:
 
      <dl>
-<dt><span class="samp">Invalid Operation</span><dd>This exception is raised if the given operands are invalid for the
+<dt>`<samp><span class="samp">Invalid Operation</span></samp>'<dd>This exception is raised if the given operands are invalid for the
 operation to be performed.  Examples are
 (see IEEE&nbsp;754<!-- /@w -->, section&nbsp;7<!-- /@w -->):
           <ol type=1 start=1>
@@ -82,11 +84,11 @@ the unordered comparison functions instead; see <a href="FP-Comparison-Functions
 
      <p>If the exception does not trap, the result of the operation is NaN.
 
-     <br><dt><span class="samp">Division by Zero</span><dd>This exception is raised when a finite nonzero number is divided
+     <br><dt>`<samp><span class="samp">Division by Zero</span></samp>'<dd>This exception is raised when a finite nonzero number is divided
 by zero.  If no trap occurs the result is either +&amp;infin; or
 -&amp;infin;, depending on the signs of the operands.
 
-     <br><dt><span class="samp">Overflow</span><dd>This exception is raised whenever the result cannot be represented
+     <br><dt>`<samp><span class="samp">Overflow</span></samp>'<dd>This exception is raised whenever the result cannot be represented
 as a finite value in the precision format of the destination.  If no trap
 occurs the result depends on the sign of the intermediate result and the
 current rounding mode (IEEE&nbsp;754<!-- /@w -->, section&nbsp;7.3<!-- /@w -->):
@@ -107,7 +109,7 @@ to &amp;infin;.
      <p>Whenever the overflow exception is raised, the inexact exception is also
 raised.
 
-     <br><dt><span class="samp">Underflow</span><dd>The underflow exception is raised when an intermediate result is too
+     <br><dt>`<samp><span class="samp">Underflow</span></samp>'<dd>The underflow exception is raised when an intermediate result is too
 small to be calculated accurately, or if the operation's result rounded
 to the destination precision is too small to be normalized.
 
@@ -117,7 +119,7 @@ accuracy have been detected.  If no trap handler is installed the
 operation continues with an imprecise small value, or zero if the
 destination precision cannot hold the small exact result.
 
-     <br><dt><span class="samp">Inexact</span><dd>This exception is signalled if a rounded result is not exact (such as
+     <br><dt>`<samp><span class="samp">Inexact</span></samp>'<dd>This exception is signalled if a rounded result is not exact (such as
 when calculating the square root of two) or a result overflows without
 an overflow trap. 
 </dl>

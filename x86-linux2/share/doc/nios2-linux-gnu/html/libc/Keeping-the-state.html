@@ -3,7 +3,7 @@
 <title>Keeping the state - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Restartable-multibyte-conversion.html#Restartable-multibyte-conversion" title="Restartable multibyte conversion">
 <link rel="prev" href="Selecting-the-Conversion.html#Selecting-the-Conversion" title="Selecting the Conversion">
@@ -17,17 +17,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Keeping-the-state"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Converting-a-Character.html#Converting-a-Character">Converting a Character</a>,
+<a name="Keeping-the-state"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Converting-a-Character.html#Converting-a-Character">Converting a Character</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Selecting-the-Conversion.html#Selecting-the-Conversion">Selecting the Conversion</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Restartable-multibyte-conversion.html#Restartable-multibyte-conversion">Restartable multibyte conversion</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">6.3.2 Representing the state of the conversion</h4>
@@ -48,7 +50,7 @@ functions to another.
 about the <dfn>shift state</dfn> needed from one call to a conversion
 function to another.
 
-        <p><a name="index-wchar_002eh-640"></a><code>mbstate_t</code> is defined in <span class="file">wchar.h</span>.  It was introduced in
+        <p><a name="index-wchar_002eh-640"></a><code>mbstate_t</code> is defined in <samp><span class="file">wchar.h</span></samp>.  It was introduced in
 Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w -->. 
 </p></blockquote></div>
 
@@ -85,7 +87,7 @@ the object is in the initial state the return value is nonzero.  Otherwise
 it is zero.
 
         <p><a name="index-wchar_002eh-642"></a><code>mbsinit</code> was introduced in Amendment&nbsp;1<!-- /@w --> to ISO&nbsp;C90<!-- /@w --> and is
-declared in <span class="file">wchar.h</span>. 
+declared in <samp><span class="file">wchar.h</span></samp>. 
 </p></blockquote></div>
 
    <p>Code using <code>mbsinit</code> often looks similar to this:

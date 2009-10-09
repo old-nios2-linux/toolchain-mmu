@@ -3,7 +3,7 @@
 <title>Terminal Modes - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Low_002dLevel-Terminal-Interface.html#Low_002dLevel-Terminal-Interface" title="Low-Level Terminal Interface">
 <link rel="prev" href="Canonical-or-Not.html#Canonical-or-Not" title="Canonical or Not">
@@ -17,24 +17,26 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Terminal-Modes"></a>Next:&nbsp;<a rel="next" accesskey="n" href="BSD-Terminal-Modes.html#BSD-Terminal-Modes">BSD Terminal Modes</a>,
+<a name="Terminal-Modes"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="BSD-Terminal-Modes.html#BSD-Terminal-Modes">BSD Terminal Modes</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Canonical-or-Not.html#Canonical-or-Not">Canonical or Not</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Low_002dLevel-Terminal-Interface.html#Low_002dLevel-Terminal-Interface">Low-Level Terminal Interface</a>
-<hr><br>
+<hr>
 </div>
 
 <h3 class="section">17.4 Terminal Modes</h3>
 
 <p><a name="index-termios_002eh-1855"></a>This section describes the various terminal attributes that control how
 input and output are done.  The functions, data structures, and symbolic
-constants are all declared in the header file <span class="file">termios.h</span>.
+constants are all declared in the header file <samp><span class="file">termios.h</span></samp>.
 
    <p>Don't confuse terminal attributes with file attributes.  A device special
 file which is associated with a terminal has file attributes as described

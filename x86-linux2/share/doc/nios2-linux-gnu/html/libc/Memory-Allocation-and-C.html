@@ -3,7 +3,7 @@
 <title>Memory Allocation and C - The GNU C Library</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="The GNU C Library">
-<meta name="generator" content="makeinfo 4.7">
+<meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Memory-Allocation.html#Memory-Allocation" title="Memory Allocation">
 <link rel="next" href="Unconstrained-Allocation.html#Unconstrained-Allocation" title="Unconstrained Allocation">
@@ -16,16 +16,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Memory-Allocation-and-C"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Unconstrained-Allocation.html#Unconstrained-Allocation">Unconstrained Allocation</a>,
+<a name="Memory-Allocation-and-C"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Unconstrained-Allocation.html#Unconstrained-Allocation">Unconstrained Allocation</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Memory-Allocation.html#Memory-Allocation">Memory Allocation</a>
-<hr><br>
+<hr>
 </div>
 
 <h4 class="subsection">3.2.1 Memory Allocation in C Programs</h4>
@@ -93,8 +95,8 @@ neither static nor automatic allocation will serve.
 <code>struct foobar</code>, you cannot declare a variable of type <code>struct
 foobar</code> whose contents are the dynamically allocated space.  But you can
 declare a variable of pointer type <code>struct foobar *</code> and assign it the
-address of the space.  Then you can use the operators <span class="samp">*</span> and
-<span class="samp">-&gt;</span> on this pointer variable to refer to the contents of the space:
+address of the space.  Then you can use the operators `<samp><span class="samp">*</span></samp>' and
+`<samp><span class="samp">-&gt;</span></samp>' on this pointer variable to refer to the contents of the space:
 
 <pre class="smallexample">     {
        struct foobar *ptr
